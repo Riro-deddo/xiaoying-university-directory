@@ -17,9 +17,33 @@ describe('QS cohort and official source registry', () => {
     expect(universities.every((item) => cohortIds.has(item.id))).toBe(true);
   });
 
+  it('covers every frozen cohort university exactly once without pending records', () => {
+    const cohortIds = [...cohort.universities.map((item) => item.id)].sort();
+    const publicIds = [...universities.map((item) => item.id)].sort();
+
+    expect(publicIds).toEqual(cohortIds);
+    expect(universities.every((item) => item.state !== 'pending')).toBe(true);
+  });
+
   it('references only explicitly registered official sources', () => {
     const sourceIds = new Set(sources.map((source) => source.id));
     expect(universities.flatMap((item) => item.sourceIds)
       .every((id) => sourceIds.has(id))).toBe(true);
+  });
+
+  it('gives every university an official-domain source', () => {
+    const universityById = new Map(universities.map((university) => [university.id, university]));
+    const sourceById = new Map(sources.map((source) => [source.id, source]));
+
+    for (const university of universities) {
+      expect(university.sourceIds.length).toBeGreaterThan(0);
+      for (const sourceId of university.sourceIds) {
+        const source = sourceById.get(sourceId);
+        expect(source?.universityId).toBe(university.id);
+        const sourceHost = new URL(source!.url).hostname;
+        const officialHost = new URL(universityById.get(university.id)!.officialDomain).hostname;
+        expect(sourceHost === officialHost || sourceHost.endsWith(`.${officialHost}`)).toBe(true);
+      }
+    }
   });
 });
