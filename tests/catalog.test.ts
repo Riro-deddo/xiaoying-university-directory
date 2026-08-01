@@ -64,11 +64,65 @@ describe('QS cohort and official source registry', () => {
     const emptyHash = 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855';
     expect(requirements.every((fact) => sourceById.get(fact.sourceId)?.parser.mode !== 'link-only')).toBe(true);
     expect(requirements.every((fact) => /^[a-f0-9]{64}$/u.test(fact.contentHash) && fact.contentHash !== emptyHash)).toBe(true);
-    expect(institutions.every((institution) => !/[?]/u.test(`${'nameZh' in institution ? institution.nameZh ?? '' : ''}${institution.nameEn}`))).toBe(true);
+    const userFacingStrings = [
+      ...universities.flatMap((item) => [item.nameZh, item.nameEn, ...item.aliases, 'noteZh' in item ? item.noteZh : undefined]),
+      ...sources.flatMap((source) => [source.labelZh, source.scopeZh, source.parser.defaultTierOfficial]),
+      ...institutions.flatMap((institution) => [institution.nameZh, institution.nameEn, ...institution.aliases]),
+      ...requirements.flatMap((fact) => [fact.tierOfficial, 'scoreOfficial' in fact ? fact.scoreOfficial : undefined, fact.scopeZh]),
+    ].filter((value): value is string => typeof value === 'string');
+    expect(userFacingStrings.every((value) => value.trim().length > 0 && !/[?\uFFFD]/u.test(value))).toBe(true);
     for (const source of sources.filter((item) => item.parser.mode !== 'link-only')) {
       const count = requirements.filter((fact) => fact.sourceId === source.id).length;
       expect(count).toBeGreaterThanOrEqual(source.parser.guard.minimumRecords);
       expect(count).toBeLessThanOrEqual(source.parser.guard.maximumRecords);
+    }
+  });
+
+  it('preserves registered source scope and configured official tiers exactly', () => {
+    const sourceById = new Map(sources.map((source) => [source.id, source]));
+
+    for (const fact of requirements) {
+      const source = sourceById.get(fact.sourceId)!;
+      expect(fact.scope).toBe(source.scope);
+      expect(fact.scopeZh).toBe(source.scopeZh);
+      expect(fact.tierOfficial).toBe(source.parser.defaultTierOfficial);
+      if (source.cycle) expect(fact.cycle).toBe(source.cycle);
+    }
+  });
+
+  it('keeps accepted parser counts and emits no facts for link-only sources', () => {
+    expect(requirements.filter((fact) => fact.sourceId === 'ucl-china')).toHaveLength(84);
+    expect(requirements.filter((fact) => fact.sourceId === 'edinburgh-china')).toHaveLength(81);
+    expect(requirements.filter((fact) => fact.sourceId === 'sheffield-china')).toHaveLength(0);
+
+    const linkOnlyIds = new Set(sources
+      .filter((source) => source.parser.mode === 'link-only')
+      .map((source) => source.id));
+    expect(requirements.every((fact) => !linkOnlyIds.has(fact.sourceId))).toBe(true);
+  });
+
+  it('canonicalizes cross-source English variants without losing exact official names', () => {
+    const variants = [
+      ['Beihang University (formerly Beijing University of Aeronautics & Astronautics)', 'Beihang University'],
+      ['North China Electric Power University / Huabei Electric Power University', 'North China Electric Power University'],
+      ['Beijing Jiaotong University (formerly Beifang (Northern) Jiaotong University)', 'Beijing Jiaotong University'],
+      ['Beijing Normal University (see note regarding United International College) *', 'Beijing Normal University'],
+      ['Shanghai Jiaotong University', 'Shanghai Jiao Tong University'],
+      ['Huazhong Agricultural University / Central China Agricultural University', 'Huazhong Agricultural University'],
+      ['Sun Yat-Sen University (might appear as Zhongshan University)', 'Sun Yat-Sen University'],
+      ['Suzhou (Soochow) University**', 'Soochow University'],
+      ["Xidian University (also known as Xi'an Electronic Science and Technology University)**", 'Xidian University'],
+      ['Zhengzhou University**', 'Zhengzhou University'],
+    ];
+
+    expect(institutions).toHaveLength(118);
+    for (const pair of variants) {
+      const matches = pair.map((officialName) => institutions.find((institution) =>
+        [institution.nameEn, ...institution.aliases].includes(officialName)));
+      expect(matches[0]?.id).toBe(matches[1]?.id);
+      expect(new Set(requirements
+        .filter((fact) => fact.institutionId === matches[0]?.id)
+        .map((fact) => fact.sourceId))).toEqual(new Set(['ucl-china', 'edinburgh-china']));
     }
   });
 });

@@ -66,6 +66,7 @@ describe('normalized requirement contracts', () => {
   });
 
   it.each([
+    ['missing Chinese name', { id: validInstitution.id, nameEn: validInstitution.nameEn, aliases: validInstitution.aliases }, '/0'],
     ['Chinese name', { ...validInstitution, nameZh: '   ' }, '/0/nameZh'],
     ['English name', { ...validInstitution, nameEn: '   ' }, '/0/nameEn'],
     ['alias', { ...validInstitution, aliases: ['   '] }, '/0/aliases/0'],

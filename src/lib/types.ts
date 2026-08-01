@@ -83,7 +83,7 @@ export interface SourceStatus {
 
 export interface InstitutionRecord {
   id: string;
-  nameZh?: string;
+  nameZh: string;
   nameEn: string;
   aliases: string[];
 }
