@@ -3,3 +3,4 @@ dist/
 .astro/
 work-dev-*.log
 src/data/status.json.next
+.worktrees/
