@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { joinUniversityStatuses, validateUniversities } from '../src/lib/data';
+import { joinUniversityStatuses, loadUniversities, validateUniversities } from '../src/lib/data';
 import type { StatusMap, University } from '../src/lib/types';
 
 const validUniversity: University = {
@@ -56,5 +56,19 @@ describe('joinUniversityStatuses', () => {
 
     expect(joined.sources[0].status?.health).toBe('ok');
     expect(validUniversity).toEqual(input);
+  });
+});
+
+describe('QS 2027 starter ranks', () => {
+  it('matches the published QS 2027 positions', () => {
+    const ranks = Object.fromEntries(
+      loadUniversities().map((university) => [university.id, university.qs.rank]),
+    );
+
+    expect(ranks).toMatchObject({
+      'imperial-college-london': 2,
+      'university-college-london': 8,
+      'university-of-edinburgh': 35,
+    });
   });
 });

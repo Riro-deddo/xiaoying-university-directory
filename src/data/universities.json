@@ -22,7 +22,7 @@
     "nameZh": "伦敦大学学院",
     "nameEn": "University College London",
     "aliases": ["伦敦大学", "UCL"],
-    "qs": { "edition": 2027, "rank": 9 },
+    "qs": { "edition": 2027, "rank": 8 },
     "state": "pending",
     "sources": [],
     "noteZh": "官方来源待进一步核验；该状态不代表学校不接受申请。"
@@ -32,7 +32,7 @@
     "nameZh": "爱丁堡大学",
     "nameEn": "The University of Edinburgh",
     "aliases": ["爱大", "Edinburgh"],
-    "qs": { "edition": 2027, "rank": 27 },
+    "qs": { "edition": 2027, "rank": 35 },
     "state": "pending",
     "sources": [],
     "noteZh": "官方来源待进一步核验；该状态不代表学校不接受申请。"
