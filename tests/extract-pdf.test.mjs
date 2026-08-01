@@ -3,10 +3,12 @@ import { describe, expect, it } from 'vitest';
 import { extractPdfFacts } from '../scripts/extractors/pdf.mjs';
 
 const fixtureBytes = async () => new Uint8Array(await readFile(new URL('./fixtures/sources/list-text-layer.pdf', import.meta.url)));
+const footerFixtureBytes = async () => new Uint8Array(await readFile(new URL('./fixtures/sources/list-with-footer.pdf', import.meta.url)));
 const scannedBytes = async () => new Uint8Array(await readFile(new URL('./fixtures/sources/scanned-no-text.pdf', import.meta.url)));
 const pdfConfig = {
   mode: 'pdf-text',
   headingPattern: '^University \\| Tier$',
+  rowPattern: '^(Example University) \\| (Group 1)$',
   institutionColumn: 0,
   tierColumn: 1,
 };
@@ -16,6 +18,12 @@ describe('extractPdfFacts', () => {
     const facts = await extractPdfFacts(pdfConfig, await fixtureBytes());
 
     expect(facts[0]).toMatchObject({ institutionOfficial: 'Example University', tierOfficial: 'Group 1' });
+  });
+
+  it('ignores footer lines that do not match the registered row pattern', async () => {
+    await expect(extractPdfFacts(pdfConfig, await footerFixtureBytes())).resolves.toEqual([
+      { institutionOfficial: 'Example University', tierOfficial: 'Group 1' },
+    ]);
   });
 
   it('returns a typed no-text anomaly for scanned PDFs', async () => {

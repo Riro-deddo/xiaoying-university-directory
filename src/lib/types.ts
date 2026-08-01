@@ -39,6 +39,7 @@ export interface ParserConfig {
   tierColumn?: number;
   scoreColumn?: number;
   headingPattern?: string;
+  rowPattern?: string;
   guard: ParserGuard;
 }
 

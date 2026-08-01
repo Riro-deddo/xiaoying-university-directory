@@ -22,7 +22,8 @@ export async function extractHtmlFacts(config, html) {
     if (!config.rowSelector || !Number.isInteger(config.institutionColumn)) return [];
     const { document } = parseHTML(html);
     return Array.from(document.querySelectorAll(config.rowSelector)).flatMap((row) => {
-      const cells = Array.from(row.querySelectorAll('th, td'));
+      const cells = Array.from(row.children)
+        .filter((element) => element.localName === 'th' || element.localName === 'td');
       const institutionOfficial = textAt(cells, config.institutionColumn);
       if (!institutionOfficial) return [];
 

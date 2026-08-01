@@ -26,6 +26,7 @@
           "tierColumn": { "type": "integer", "minimum": 0 },
           "scoreColumn": { "type": "integer", "minimum": 0 },
           "headingPattern": { "type": "string", "minLength": 1 },
+          "rowPattern": { "type": "string", "minLength": 1 },
           "guard": {
             "type": "object",
             "additionalProperties": false,
@@ -36,7 +37,13 @@
               "maximumRemovalRatio": { "type": "number", "minimum": 0, "maximum": 1 }
             }
           }
-        }
+        },
+        "allOf": [
+          {
+            "if": { "properties": { "mode": { "const": "pdf-text" } }, "required": ["mode"] },
+            "then": { "required": ["headingPattern", "rowPattern", "institutionColumn"] }
+          }
+        ]
       }
     },
     "allOf": [

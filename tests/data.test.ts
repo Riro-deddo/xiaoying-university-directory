@@ -60,6 +60,15 @@ describe('validateOfficialSources', () => {
     ['non-HTTPS URL', { ...validSource, url: 'http://example.com/list' }],
     ['invalid removal ratio', { ...validSource, parser: { ...validSource.parser, guard: { ...validSource.parser.guard, maximumRemovalRatio: 1.1 } } }],
     ['faculty source without scope description', { ...validSource, scope: 'faculty', scopeZh: '' }],
+    ['PDF parser without a registered row pattern', {
+      ...validSource,
+      parser: {
+        mode: 'pdf-text',
+        headingPattern: '^University \\| Tier$',
+        institutionColumn: 0,
+        guard: validSource.parser.guard,
+      },
+    }],
   ])('rejects %s', (_label, source) => {
     expect(() => validateOfficialSources([source])).toThrow();
   });

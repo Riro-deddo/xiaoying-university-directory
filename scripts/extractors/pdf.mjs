@@ -22,8 +22,8 @@ function textLines(items) {
     .filter(Boolean);
 }
 
-function factFromRow(line, config) {
-  const columns = line.split('|').map((column) => column.trim());
+function factFromRow(match, config) {
+  const columns = match.slice(1).map((column) => column.trim());
   const requestedColumns = [config.institutionColumn, config.tierColumn, config.scoreColumn]
     .filter((column) => column !== undefined);
   if (!Number.isInteger(config.institutionColumn) || requestedColumns.some((column) => !Number.isInteger(column) || columns[column] === undefined)) {
@@ -37,8 +37,8 @@ function factFromRow(line, config) {
 }
 
 export async function extractPdfFacts(config, bytes) {
-  if (config.mode !== 'pdf-text' || !config.headingPattern) {
-    throw new ExtractorError('PARSER_STRUCTURE_CHANGED', 'PDF extraction requires a registered heading pattern.');
+  if (config.mode !== 'pdf-text' || !config.headingPattern || !config.rowPattern) {
+    throw new ExtractorError('PARSER_STRUCTURE_CHANGED', 'PDF extraction requires registered heading and row patterns.');
   }
 
   const pdf = await getDocument({ data: bytes }).promise;
@@ -53,11 +53,15 @@ export async function extractPdfFacts(config, bytes) {
   if (!foundText) throw new ExtractorError('PDF_NO_TEXT_LAYER', 'PDF has no extractable text layer.');
 
   const heading = new RegExp(config.headingPattern);
+  const row = new RegExp(config.rowPattern);
   const lines = pages.flat();
   const headingIndex = lines.findIndex((line) => heading.test(line));
   if (headingIndex === -1) throw new ExtractorError('PARSER_EMPTY', 'Registered PDF heading was not found.');
 
-  const facts = lines.slice(headingIndex + 1).map((line) => factFromRow(line, config));
+  const facts = lines.slice(headingIndex + 1).flatMap((line) => {
+    const match = line.match(row);
+    return match ? [factFromRow(match, config)] : [];
+  });
   if (facts.length === 0) throw new ExtractorError('PARSER_EMPTY', 'Registered PDF heading has no rows.');
   return facts;
 }
