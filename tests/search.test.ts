@@ -5,15 +5,15 @@ import type { UniversityWithStatus } from '../src/lib/types';
 const records: UniversityWithStatus[] = [
   {
     id: 'imperial', nameZh: '帝国理工学院', nameEn: 'Imperial College London', aliases: ['ICL', '帝国理工'],
-    qs: { edition: 2027, rank: 2 }, state: 'official-list', sources: [],
+    qs: { edition: 2027, rank: 2 }, state: 'official-list', officialDomain: 'https://www.imperial.ac.uk', sources: [],
   },
   {
     id: 'ucl', nameZh: '伦敦大学学院', nameEn: 'University College London', aliases: ['UCL'],
-    qs: { edition: 2027, rank: 9 }, state: 'china-requirements', sources: [],
+    qs: { edition: 2027, rank: 9 }, state: 'china-requirements', officialDomain: 'https://www.ucl.ac.uk', sources: [],
   },
   {
     id: 'edinburgh', nameZh: '爱丁堡大学', nameEn: 'The University of Edinburgh', aliases: ['爱大', 'Edinburgh'],
-    qs: { edition: 2027, rank: 27 }, state: 'faculty-only', sources: [],
+    qs: { edition: 2027, rank: 27 }, state: 'faculty-only', officialDomain: 'https://www.ed.ac.uk', sources: [],
   },
 ];
 

@@ -7,14 +7,44 @@ export type UniversityState =
 
 export type SourceKind = 'official-list' | 'china-requirements' | 'faculty-page';
 export type SourceHealth = 'ok' | 'redirected' | 'changed' | 'temporary-error' | 'unavailable' | 'unchecked';
+export type SourceScope = 'university' | 'faculty' | 'programme';
+export type ParserMode = 'html-table' | 'html-list' | 'pdf-text' | 'link-only';
 
-export interface SourceLink {
+export interface QsCohortEntry {
   id: string;
+  nameEn: string;
+  rank: number;
+  edition: 2027;
+  country: 'United Kingdom';
+}
+
+export interface ParserGuard {
+  minimumRecords: number;
+  maximumRecords: number;
+  maximumRemovalRatio: number;
+}
+
+export interface ParserConfig {
+  mode: ParserMode;
+  selector?: string;
+  rowSelector?: string;
+  institutionColumn?: number;
+  tierColumn?: number;
+  scoreColumn?: number;
+  headingPattern?: string;
+  guard: ParserGuard;
+}
+
+export interface OfficialSourceConfig {
+  id: string;
+  universityId: string;
   labelZh: string;
   url: string;
   kind: SourceKind;
-  scopeZh?: string;
+  scope: SourceScope;
+  scopeZh: string;
   cycle?: string;
+  parser: ParserConfig;
 }
 
 export interface University {
@@ -24,7 +54,8 @@ export interface University {
   aliases: string[];
   qs: { edition: 2027; rank: number };
   state: UniversityState;
-  sources: SourceLink[];
+  officialDomain: string;
+  sourceIds: string[];
   noteZh?: string;
 }
 
@@ -42,5 +73,5 @@ export interface SourceStatus {
 }
 
 export type StatusMap = Record<string, SourceStatus>;
-export type SourceWithStatus = SourceLink & { status?: SourceStatus };
-export type UniversityWithStatus = Omit<University, 'sources'> & { sources: SourceWithStatus[] };
+export type SourceWithStatus = OfficialSourceConfig & { status?: SourceStatus };
+export type UniversityWithStatus = Omit<University, 'sourceIds'> & { sources: SourceWithStatus[] };

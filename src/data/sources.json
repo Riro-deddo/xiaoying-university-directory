@@ -1,0 +1,19 @@
+[
+  {
+    "id": "imperial-east-asia",
+    "universityId": "imperial-college-london",
+    "labelZh": "查看中国申请要求",
+    "url": "https://www.imperial.ac.uk/study/international-students/information-by-region/east-asia/",
+    "kind": "china-requirements",
+    "scope": "university",
+    "scopeZh": "学校官网面向东亚申请者的信息",
+    "parser": {
+      "mode": "link-only",
+      "guard": {
+        "minimumRecords": 0,
+        "maximumRecords": 1,
+        "maximumRemovalRatio": 0
+      }
+    }
+  }
+]

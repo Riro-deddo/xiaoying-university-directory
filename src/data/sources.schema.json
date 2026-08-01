@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["id", "universityId", "labelZh", "url", "kind", "scope", "scopeZh", "parser"],
+    "properties": {
+      "id": { "type": "string", "minLength": 1, "pattern": "^[a-z0-9-]+$" },
+      "universityId": { "type": "string", "minLength": 1, "pattern": "^[a-z0-9-]+$" },
+      "labelZh": { "type": "string", "minLength": 1 },
+      "url": { "type": "string", "pattern": "^https://" },
+      "kind": { "enum": ["official-list", "china-requirements", "faculty-page"] },
+      "scope": { "enum": ["university", "faculty", "programme"] },
+      "scopeZh": { "type": "string" },
+      "cycle": { "type": "string", "minLength": 1 },
+      "parser": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["mode", "guard"],
+        "properties": {
+          "mode": { "enum": ["html-table", "html-list", "pdf-text", "link-only"] },
+          "selector": { "type": "string", "minLength": 1 },
+          "rowSelector": { "type": "string", "minLength": 1 },
+          "institutionColumn": { "type": "integer", "minimum": 0 },
+          "tierColumn": { "type": "integer", "minimum": 0 },
+          "scoreColumn": { "type": "integer", "minimum": 0 },
+          "headingPattern": { "type": "string", "minLength": 1 },
+          "guard": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["minimumRecords", "maximumRecords", "maximumRemovalRatio"],
+            "properties": {
+              "minimumRecords": { "type": "integer", "minimum": 0 },
+              "maximumRecords": { "type": "integer", "minimum": 0 },
+              "maximumRemovalRatio": { "type": "number", "minimum": 0, "maximum": 1 }
+            }
+          }
+        }
+      }
+    },
+    "allOf": [
+      {
+        "if": { "properties": { "scope": { "enum": ["faculty", "programme"] } }, "required": ["scope"] },
+        "then": { "properties": { "scopeZh": { "type": "string", "minLength": 1 } } }
+      }
+    ]
+  }
+}

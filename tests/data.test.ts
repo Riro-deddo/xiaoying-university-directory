@@ -1,23 +1,35 @@
 import { describe, expect, it } from 'vitest';
-import { joinUniversityStatuses, loadUniversities, validateUniversities } from '../src/lib/data';
-import type { StatusMap, University } from '../src/lib/types';
+import {
+  joinUniversityStatuses,
+  loadUniversities,
+  validateOfficialSources,
+  validateUniversities,
+} from '../src/lib/data';
+import type { OfficialSourceConfig, StatusMap, University } from '../src/lib/types';
 
 const validUniversity: University = {
   id: 'imperial',
-  nameZh: '帝国理工学院',
+  nameZh: 'Imperial',
   nameEn: 'Imperial College London',
   aliases: ['IC', 'ICL'],
   qs: { edition: 2027, rank: 2 },
   state: 'official-list',
-  sources: [
-    {
-      id: 'imperial-china',
-      labelZh: '查看中国申请要求',
-      url: 'https://www.imperial.ac.uk/study/international-students/information-by-region/east-asia/',
-      kind: 'china-requirements',
-      scopeZh: '学校官网面向东亚申请者的信息',
-    },
-  ],
+  officialDomain: 'https://www.imperial.ac.uk',
+  sourceIds: ['imperial-china'],
+};
+
+const validSource: OfficialSourceConfig = {
+  id: 'imperial-china',
+  universityId: 'imperial',
+  labelZh: 'China requirements',
+  url: 'https://www.imperial.ac.uk/study/international-students/information-by-region/east-asia/',
+  kind: 'china-requirements',
+  scope: 'university',
+  scopeZh: 'Official information for East Asia applicants',
+  parser: {
+    mode: 'link-only',
+    guard: { minimumRecords: 0, maximumRecords: 1, maximumRemovalRatio: 0 },
+  },
 };
 
 describe('validateUniversities', () => {
@@ -27,34 +39,54 @@ describe('validateUniversities', () => {
 
   it.each([
     ['unsupported state', { ...validUniversity, state: 'rejected' }],
-    ['non-HTTPS source', { ...validUniversity, sources: [{ ...validUniversity.sources[0], url: 'http://example.com/list' }] }],
+    ['non-HTTPS official domain', { ...validUniversity, officialDomain: 'http://example.com' }],
     ['missing Chinese name', { ...validUniversity, nameZh: '' }],
   ])('rejects %s', (_label, record) => {
     expect(() => validateUniversities([record])).toThrow();
   });
 
   it('rejects duplicate stable IDs', () => {
-    expect(() => validateUniversities([validUniversity, validUniversity])).toThrow(/重复/);
+    expect(() => validateUniversities([validUniversity, validUniversity])).toThrow(/duplicate/i);
+  });
+});
+
+describe('validateOfficialSources', () => {
+  it('accepts an explicitly configured official source', () => {
+    expect(validateOfficialSources([validSource])).toEqual([validSource]);
+  });
+
+  it.each([
+    ['unknown field', { ...validSource, untracked: true }],
+    ['non-HTTPS URL', { ...validSource, url: 'http://example.com/list' }],
+    ['invalid removal ratio', { ...validSource, parser: { ...validSource.parser, guard: { ...validSource.parser.guard, maximumRemovalRatio: 1.1 } } }],
+    ['faculty source without scope description', { ...validSource, scope: 'faculty', scopeZh: '' }],
+  ])('rejects %s', (_label, source) => {
+    expect(() => validateOfficialSources([source])).toThrow();
+  });
+
+  it('rejects duplicate source IDs', () => {
+    expect(() => validateOfficialSources([validSource, validSource])).toThrow(/duplicate/i);
   });
 });
 
 describe('joinUniversityStatuses', () => {
-  it('joins machine status by source ID without mutating human data', () => {
+  it('joins registered source status without mutating human data', () => {
     const input = structuredClone(validUniversity);
     const status: StatusMap = {
       'imperial-china': {
-        sourceId: 'imperial-china',
+        sourceId: validSource.id,
         health: 'ok',
         checkedAt: '2026-08-01T08:00:00.000Z',
         lastSuccessfulAt: '2026-08-01T08:00:00.000Z',
         httpStatus: 200,
-        finalUrl: validUniversity.sources[0].url,
+        finalUrl: validSource.url,
       },
     };
 
-    const [joined] = joinUniversityStatuses([validUniversity], status);
+    const [joined] = joinUniversityStatuses([validUniversity], [validSource], status);
 
     expect(joined.sources[0].status?.health).toBe('ok');
+    expect(joined.sources[0].id).toBe(validSource.id);
     expect(validUniversity).toEqual(input);
   });
 });

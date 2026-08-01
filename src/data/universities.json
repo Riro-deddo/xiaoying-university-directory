@@ -6,25 +6,19 @@
     "aliases": ["帝国理工", "IC", "ICL"],
     "qs": { "edition": 2027, "rank": 2 },
     "state": "china-requirements",
-    "sources": [
-      {
-        "id": "imperial-east-asia",
-        "labelZh": "查看中国申请要求",
-        "url": "https://www.imperial.ac.uk/study/international-students/information-by-region/east-asia/",
-        "kind": "china-requirements",
-        "scopeZh": "学校官网面向东亚申请者的信息"
-      }
-    ],
+    "officialDomain": "https://www.imperial.ac.uk",
+    "sourceIds": ["imperial-east-asia"],
     "noteZh": "当前仅收录已核验的官方地区申请信息；是否存在适用于具体专业的院校名单，请以院系页面为准。"
   },
   {
     "id": "university-college-london",
     "nameZh": "伦敦大学学院",
-    "nameEn": "University College London",
+    "nameEn": "UCL",
     "aliases": ["伦敦大学", "UCL"],
     "qs": { "edition": 2027, "rank": 8 },
     "state": "pending",
-    "sources": [],
+    "officialDomain": "https://www.ucl.ac.uk",
+    "sourceIds": [],
     "noteZh": "官方来源待进一步核验；该状态不代表学校不接受申请。"
   },
   {
@@ -34,7 +28,8 @@
     "aliases": ["爱大", "Edinburgh"],
     "qs": { "edition": 2027, "rank": 35 },
     "state": "pending",
-    "sources": [],
+    "officialDomain": "https://www.ed.ac.uk",
+    "sourceIds": [],
     "noteZh": "官方来源待进一步核验；该状态不代表学校不接受申请。"
   }
 ]
