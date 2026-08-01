@@ -65,7 +65,7 @@ function assertSchema(
 }
 
 function assertUniqueInstitutionNames(records: InstitutionRecord[]): void {
-  const names = records.flatMap((record) => [record.nameZh, record.nameEn, ...record.aliases]);
+  const names = records.flatMap((record) => [record.nameZh, record.nameEn, ...record.aliases].filter(Boolean));
   if (new Set(names).size !== names.length) {
     throw new DataValidationError('Institution', ['/ must contain globally unique raw names']);
   }

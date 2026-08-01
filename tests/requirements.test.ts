@@ -43,7 +43,7 @@ describe('normalized requirement contracts', () => {
   });
 
   it('requires every institution to have non-empty unique raw names', () => {
-    const allNames = institutionRecords.flatMap((item) => [item.nameZh, item.nameEn, ...item.aliases]);
+    const allNames = institutionRecords.flatMap((item) => [item.nameZh, item.nameEn, ...item.aliases].filter((name): name is string => Boolean(name)));
     expect(allNames.every((name) => name.trim().length > 0)).toBe(true);
     expect(new Set(allNames).size).toBe(allNames.length);
   });

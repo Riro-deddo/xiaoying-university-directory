@@ -58,4 +58,17 @@ describe('QS cohort and official source registry', () => {
       expect(facts.every((fact) => institutions.some((institution) => institution.id === fact.institutionId))).toBe(true);
     }
   });
+
+  it('keeps generated facts refreshable and free from placeholders', () => {
+    const sourceById = new Map(sources.map((source) => [source.id, source]));
+    const emptyHash = 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855';
+    expect(requirements.every((fact) => sourceById.get(fact.sourceId)?.parser.mode !== 'link-only')).toBe(true);
+    expect(requirements.every((fact) => /^[a-f0-9]{64}$/u.test(fact.contentHash) && fact.contentHash !== emptyHash)).toBe(true);
+    expect(institutions.every((institution) => !/[?]/u.test(`${'nameZh' in institution ? institution.nameZh ?? '' : ''}${institution.nameEn}`))).toBe(true);
+    for (const source of sources.filter((item) => item.parser.mode !== 'link-only')) {
+      const count = requirements.filter((fact) => fact.sourceId === source.id).length;
+      expect(count).toBeGreaterThanOrEqual(source.parser.guard.minimumRecords);
+      expect(count).toBeLessThanOrEqual(source.parser.guard.maximumRecords);
+    }
+  });
 });

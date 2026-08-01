@@ -61,9 +61,12 @@
     "cycle": "2026/27",
     "parser": {
       "mode": "html-table",
-      "rowSelector": "table tbody > tr",
-      "institutionColumns": [0, 1],
-      "defaultTierOfficial": "Listed by UCL",
+      "rowSelector": "table[width=\"2458\"] tbody > tr",
+      "institutionColumns": [
+        0,
+        1
+      ],
+      "defaultTierOfficial": "Applicants from the list of universities below",
       "guard": {
         "minimumRecords": 84,
         "maximumRecords": 92,
@@ -75,7 +78,7 @@
     "id": "edinburgh-china",
     "universityId": "university-of-edinburgh",
     "labelZh": "中国研究生入学要求",
-    "url": "https://www.ed.ac.uk/sites/default/files/atoms/files/priority_list_of_chinese_universities.pdf",
+    "url": "https://edwebcontent.ed.ac.uk/sites/default/files/atoms/files/priority_list_of_chinese_universities.pdf",
     "kind": "official-list",
     "scope": "university",
     "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
@@ -86,8 +89,8 @@
       "institutionColumn": 0,
       "defaultTierOfficial": "Priority List of Chinese universities – October 2024",
       "guard": {
-      "minimumRecords": 81,
-      "maximumRecords": 91,
+        "minimumRecords": 81,
+        "maximumRecords": 89,
         "maximumRemovalRatio": 0.05
       }
     }
@@ -233,10 +236,17 @@
     "universityId": "university-of-sheffield",
     "labelZh": "中国研究生入学要求",
     "url": "https://sheffield.ac.uk/international/entry-requirements/china",
-    "kind": "official-list",
+    "kind": "china-requirements",
     "scope": "university",
     "scopeZh": "学校中国研究生要求及院校查询链接",
-    "parser": { "mode": "link-only", "guard": { "minimumRecords": 0, "maximumRecords": 1, "maximumRemovalRatio": 0 } }
+    "parser": {
+      "mode": "link-only",
+      "guard": {
+        "minimumRecords": 0,
+        "maximumRecords": 1,
+        "maximumRemovalRatio": 0
+      }
+    }
   },
   {
     "id": "durham-china",

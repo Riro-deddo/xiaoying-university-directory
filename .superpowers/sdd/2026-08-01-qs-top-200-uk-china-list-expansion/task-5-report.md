@@ -45,3 +45,7 @@ No deterministic list parser was enabled and no institution/fact was populated. 
 - Sheffield's subsequent direct response returned only the four public summary-band rows (77,903 bytes) rather than the earlier 1.88 MB full roster. Its parser is therefore deliberately link-only rather than an unsafe non-reproducible configuration; captured facts remain traceable to the exact official URL and content hash.
 
 Final verified JSON counts after conservative duplicate-name consolidation: 2,910 institutions and 3,051 requirements.
+
+## Fix round 3 final state
+
+The historical Sheffield roster capture has been removed: its current response exposes only four summary bands, so Sheffield is `not-public`, `china-requirements`, and link-only with zero facts. UCL and Edinburgh are the only parser-enabled sources. Their regenerated exact English-name records intentionally omit `nameZh` where no Chinese official name is supplied; the institution contract now permits that rather than inventing a translation or placeholder. Final data: 128 institutions, 165 facts (UCL 84; Edinburgh 81; Sheffield 0). Edinburgh facts use SHA-256 `d89ccc58ecedaf9685656b4304ae4c79adbb32f6699cba9dc3fa947c70f573d2` from the 204,706-byte official PDF. Parser guard ranges are UCL 84–92 and Edinburgh 81–89.
