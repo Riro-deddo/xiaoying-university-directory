@@ -8,8 +8,8 @@
     "node": ">=22"
   },
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro check && astro build",
+    "dev": "cross-env ASTRO_TELEMETRY_DISABLED=1 astro dev",
+    "build": "cross-env ASTRO_TELEMETRY_DISABLED=1 astro check && cross-env ASTRO_TELEMETRY_DISABLED=1 astro build",
     "test": "vitest",
     "test:run": "vitest run",
     "check:data": "vitest run tests/data.test.ts",
@@ -22,8 +22,9 @@
   },
   "devDependencies": {
     "@astrojs/check": "0.9.6",
+    "cross-env": "10.1.0",
     "tsx": "4.23.1",
-    "typescript": "7.0.2",
+    "typescript": "6.0.3",
     "vitest": "4.1.10"
   }
 }

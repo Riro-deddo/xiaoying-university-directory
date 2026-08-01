@@ -1,7 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import { joinUniversityStatuses, validateUniversities } from '../src/lib/data';
+import type { StatusMap, University } from '../src/lib/types';
 
-const validUniversity = {
+const validUniversity: University = {
   id: 'imperial',
   nameZh: '帝国理工学院',
   nameEn: 'Imperial College London',
@@ -40,7 +41,7 @@ describe('validateUniversities', () => {
 describe('joinUniversityStatuses', () => {
   it('joins machine status by source ID without mutating human data', () => {
     const input = structuredClone(validUniversity);
-    const status = {
+    const status: StatusMap = {
       'imperial-china': {
         sourceId: 'imperial-china',
         health: 'ok',

@@ -1,0 +1,134 @@
+---
+import '../styles/global.css';
+import { loadUniversities } from '../lib/data';
+import { sourceHealthCopy, stateCopy } from '../lib/presentation';
+
+const universities = loadUniversities();
+const filters = [
+  ['all', '全部'],
+  ['official-list', '公开院校 List'],
+  ['china-requirements', '中国申请要求'],
+  ['faculty-only', '部分学院公开'],
+  ['not-public', '未公开'],
+  ['pending', '待确认'],
+] as const;
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="集中查找英国大学面向中国本科背景发布的官方院校 List 与申请要求。" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>小英高校百科｜英国大学官方 List 导航</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/">小英高校百科</a>
+      <a class="method-link" href="/methodology/">数据方法</a>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <h1 id="page-title">英国大学官方 List，一页查清</h1>
+        <p>集中查找英国大学面向中国本科背景发布的院校名单与申请要求。</p>
+
+        <label class="search-box">
+          <span class="sr-only">搜索大学</span>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m16 16 5 5"></path></svg>
+          <input id="university-search" type="search" placeholder="搜索大学中文名、英文名或简称" autocomplete="off" />
+        </label>
+
+        <div class="filters" aria-label="按公开信息状态筛选">
+          {filters.map(([value, label]) => (
+            <button class:list={['filter', { active: value === 'all' }]} type="button" data-state={value} aria-pressed={value === 'all'}>{label}</button>
+          ))}
+        </div>
+      </section>
+
+      <section class="directory" aria-labelledby="result-count">
+        <p id="result-count" class="result-count" aria-live="polite">共 {universities.length} 所大学</p>
+        <div class="list-head" aria-hidden="true">
+          <span>大学</span><span>QS 2027 排名</span><span>公开状态</span><span>内容范围</span><span>官方来源与操作</span>
+        </div>
+        <div id="university-list" class="university-list">
+          {universities.map((university) => (
+            <article class="university-row" data-id={university.id}>
+              <div class="university-name">
+                <h2>{university.nameZh}</h2>
+                <p>{university.nameEn}</p>
+              </div>
+              <div class="rank"><span class="mobile-label">QS 2027</span>{university.qs.rank}</div>
+              <div class="state">
+                <span class:list={['status-dot', `status-${university.state}`]}></span>
+                <span title={stateCopy[university.state].description}>{stateCopy[university.state].label}</span>
+              </div>
+              <div class="scope">
+                {university.sources.length > 0
+                  ? university.sources.map((source) => <span>{source.scopeZh ?? source.labelZh}</span>)
+                  : <span>{university.noteZh}</span>}
+              </div>
+              <div class="source-actions">
+                {university.sources.length > 0
+                  ? university.sources.map((source) => (
+                      <a href={source.url} target="_blank" rel="noopener noreferrer">
+                        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9"></path><path d="M19 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6"></path></svg>
+                        <span>{source.labelZh}</span>
+                        <small>{sourceHealthCopy[source.status?.health ?? 'unchecked']}</small>
+                      </a>
+                    ))
+                  : <span class="no-source">尚无已核验的公开入口</span>}
+              </div>
+            </article>
+          ))}
+        </div>
+        <div id="empty-state" class="empty-state" hidden>
+          <h2>暂时没有匹配结果</h2>
+          <p>可以尝试英文名或简称；具体要求请以大学官网及招生部门答复为准。</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <nav aria-label="页脚导航"><a href="/methodology/">数据方法</a><a href="https://github.com/" target="_blank" rel="noopener noreferrer">提交纠错</a></nav>
+      <p>本站仅作官方信息导航，最终要求以大学官网及招生部门答复为准。</p>
+    </footer>
+
+    <script is:inline id="directory-data" type="application/json" set:html={JSON.stringify(universities)}></script>
+    <script>
+      import { createUniversitySearch } from '../lib/search';
+      import type { UniversityState, UniversityWithStatus } from '../lib/types';
+
+      const dataNode = document.querySelector<HTMLScriptElement>('#directory-data');
+      const records = JSON.parse(dataNode?.textContent ?? '[]') as UniversityWithStatus[];
+      const directory = createUniversitySearch(records);
+      const input = document.querySelector<HTMLInputElement>('#university-search');
+      const buttons = [...document.querySelectorAll<HTMLButtonElement>('.filter')];
+      const rows = [...document.querySelectorAll<HTMLElement>('.university-row')];
+      const count = document.querySelector<HTMLElement>('#result-count');
+      const empty = document.querySelector<HTMLElement>('#empty-state');
+      let selected: UniversityState[] = [];
+
+      function update() {
+        const matches = directory.search(input?.value ?? '', selected);
+        const visible = new Set(matches.map((item) => item.id));
+        rows.forEach((row) => { row.hidden = !visible.has(row.dataset.id ?? ''); });
+        if (count) count.textContent = `共 ${matches.length} 所大学`;
+        if (empty) empty.hidden = matches.length !== 0;
+      }
+
+      input?.addEventListener('input', update);
+      buttons.forEach((button) => button.addEventListener('click', () => {
+        const value = button.dataset.state;
+        buttons.forEach((item) => {
+          const active = item === button;
+          item.classList.toggle('active', active);
+          item.setAttribute('aria-pressed', String(active));
+        });
+        selected = value && value !== 'all' ? [value as UniversityState] : [];
+        update();
+      }));
+    </script>
+  </body>
+</html>
