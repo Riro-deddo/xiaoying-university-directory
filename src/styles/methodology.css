@@ -1,0 +1,7 @@
+.methodology { max-width: 820px; margin: 0 auto; padding-top: 60px; padding-bottom: 80px; }
+.methodology h1, .methodology h2 { font-family: "Noto Serif SC", "Songti SC", SimSun, serif; }
+.methodology h1 { font-size: 48px; margin: 0 0 20px; }
+.methodology h2 { font-size: 25px; margin: 44px 0 12px; }
+.methodology p, .methodology dd { font-size: 17px; line-height: 1.9; color: #3f3d3a; }
+.methodology dt { font-weight: 700; color: var(--navy); margin-top: 16px; }
+.methodology dd { margin: 4px 0 0; }

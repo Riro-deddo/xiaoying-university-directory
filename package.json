@@ -1,0 +1,30 @@
+{
+  "name": "xiaoying-university-directory",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.13.1",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "cross-env ASTRO_TELEMETRY_DISABLED=1 astro dev",
+    "build": "cross-env ASTRO_TELEMETRY_DISABLED=1 astro check && cross-env ASTRO_TELEMETRY_DISABLED=1 astro build",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "check:data": "vitest run tests/data.test.ts",
+    "check:sources": "node scripts/check-sources.mjs"
+  },
+  "dependencies": {
+    "ajv": "8.20.0",
+    "astro": "7.1.6",
+    "fuse.js": "7.5.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.6",
+    "cross-env": "10.1.0",
+    "tsx": "4.23.1",
+    "typescript": "6.0.3",
+    "vitest": "4.1.10"
+  }
+}
