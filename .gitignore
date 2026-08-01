@@ -1,0 +1,5 @@
+node_modules/
+dist/
+.astro/
+work-dev-*.log
+src/data/status.json.next

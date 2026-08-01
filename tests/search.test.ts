@@ -34,6 +34,10 @@ describe('createUniversitySearch', () => {
     expect(directory.search('', []).map((item) => item.id)).toEqual(['imperial', 'ucl', 'edinburgh']);
   });
 
+  it('does not include a fuzzy neighbour when an alias matches exactly', () => {
+    expect(directory.search('UCL', []).map((item) => item.id)).toEqual(['ucl']);
+  });
+
   it('filters by one or more official-information states', () => {
     expect(directory.search('', ['official-list', 'faculty-only']).map((item) => item.id)).toEqual(['imperial', 'edinburgh']);
   });

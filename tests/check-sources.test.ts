@@ -2,7 +2,7 @@ import { describe, expect, it, vi } from 'vitest';
 import { checkSource } from '../scripts/source-checker.mjs';
 
 const source = { id: 'source-1', url: 'https://www.example.ac.uk/china' };
-const response = (status: number, headers: Record<string, string> = {}, url = source.url) =>
+const response = (status: number, headers: Record<string, string> = {}) =>
   new Response(status === 200 ? '<html>official requirements</html>' : null, { status, headers: { ...headers, 'content-type': 'text/html' } });
 
 describe('checkSource', () => {

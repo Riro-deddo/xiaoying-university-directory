@@ -1,0 +1,14 @@
+---
+import '../styles/global.css';
+import '../styles/methodology.css';
+const base = import.meta.env.BASE_URL;
+---
+<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width"/><title>数据方法｜小英高校百科</title></head><body>
+<header class="site-header"><a class="brand" href={base}>小英高校百科</a><a class="method-link" href={base}>返回目录</a></header>
+<main class="methodology"><h1>数据方法</h1><p>本站是一份官方信息导航，不是录取判断工具。</p>
+<h2>信息从哪里来</h2><p>只收录无需登录即可访问的大学官网页面，以及由大学官方域名公开提供的 PDF、Excel 等文件。论坛、留学机构和社交媒体内容不能作为结论来源。</p>
+<h2>状态是什么意思</h2><dl><dt>公开院校 List</dt><dd>已找到大学公开发布的院校名单或分组信息。</dd><dt>中国申请要求</dt><dd>已找到面向中国申请者的官方要求，但未确认存在完整公开 List。</dd><dt>部分学院公开</dt><dd>信息只适用于部分学院、专业或课程。</dd><dt>未发现公开 List</dt><dd>只表示目前没有找到公开名单，不代表学校不接受申请。</dd><dt>待确认</dt><dd>来源仍在核验，不代表学校不接受申请。</dd></dl>
+<h2>怎样更新</h2><p>系统每天低频检查一次已登记入口。自动任务只更新链接状态，不修改人工总结；内容疑似变化时会等待复核。定时任务可能延迟，页面应以最近一次成功检查时间为准。</p>
+<h2>翻译原则</h2><p>无法完全对应的术语采用“中文解释 + 官方原称”。例如“官方申请分组：A 组（官网原称 Band A）”。大学分组不是中国官方院校等级。</p>
+<h2>使用边界</h2><p>具体要求可能因申请季、学院和专业不同。最终要求始终以大学官网和招生部门答复为准。</p></main>
+<footer><nav><a href={base}>返回目录</a><a href="https://github.com/" target="_blank" rel="noopener noreferrer">提交纠错</a></nav><p>免费、开放、不提供录取概率。</p></footer></body></html>

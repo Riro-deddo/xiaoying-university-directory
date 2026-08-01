@@ -20,7 +20,11 @@ export function createUniversitySearch(records: UniversityWithStatus[]) {
   return {
     search(query: string, states: UniversityState[]): UniversityWithStatus[] {
       const normalized = normalizeQuery(query);
-      const matches = normalized ? fuse.search(normalized).map(({ item }) => item) : ranked;
+      const exact = ranked.filter((record) =>
+        [record.nameZh, record.nameEn, ...record.aliases]
+          .some((value) => normalizeQuery(value).toLocaleLowerCase() === normalized.toLocaleLowerCase()),
+      );
+      const matches = normalized ? (exact.length > 0 ? exact : fuse.search(normalized).map(({ item }) => item)) : ranked;
       if (states.length === 0) return matches;
       const allowed = new Set(states);
       return matches.filter((record) => allowed.has(record.state));
