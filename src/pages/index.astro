@@ -1,7 +1,12 @@
 ---
 import '../styles/global.css';
 import { loadUniversities } from '../lib/data';
-import { sourceHealthCopy, stateCopy } from '../lib/presentation';
+import {
+  directoryFilters,
+  sourceFreshnessCopy,
+  sourceHealthCopy,
+  stateCopy,
+} from '../lib/presentation';
 import { withBase } from '../lib/urls';
 
 const universities = loadUniversities();
@@ -10,14 +15,6 @@ const homeUrl = withBase(base, '');
 const methodologyUrl = withBase(base, 'methodology/');
 const faviconUrl = withBase(base, 'favicon.svg');
 const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directory/issues/new';
-const filters = [
-  ['all', '全部'],
-  ['official-list', '公开院校 List'],
-  ['china-requirements', '中国申请要求'],
-  ['faculty-only', '部分学院公开'],
-  ['not-public', '未公开'],
-  ['pending', '待确认'],
-] as const;
 ---
 
 <!doctype html>
@@ -47,7 +44,7 @@ const filters = [
         </label>
 
         <div class="filters" aria-label="按公开信息状态筛选">
-          {filters.map(([value, label]) => (
+          {directoryFilters.map(([value, label]) => (
             <button class:list={['filter', { active: value === 'all' }]} type="button" data-state={value} aria-pressed={value === 'all'}>{label}</button>
           ))}
         </div>
@@ -81,7 +78,7 @@ const filters = [
                       <a href={source.url} target="_blank" rel="noopener noreferrer">
                         <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9"></path><path d="M19 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6"></path></svg>
                         <span>{source.labelZh}</span>
-                        <small>{sourceHealthCopy[source.status?.health ?? 'unchecked']}</small>
+                        <small>{sourceHealthCopy[source.status?.health ?? 'unchecked']} · {sourceFreshnessCopy(source.status)}</small>
                       </a>
                     ))
                   : <span class="no-source">尚无已核验的公开入口</span>}

@@ -1,4 +1,4 @@
-import type { SourceHealth, UniversityState } from './types';
+import type { SourceHealth, SourceStatus, UniversityState } from './types';
 
 export const stateCopy: Record<UniversityState, { label: string; description: string }> = {
   'official-list': { label: '公开院校 List', description: '已找到大学公开发布的院校名单或分组信息。' },
@@ -16,3 +16,22 @@ export const sourceHealthCopy: Record<SourceHealth, string> = {
   unavailable: '链接暂不可用',
   unchecked: '尚未检查',
 };
+
+export const directoryFilters = [
+  ['all', '全部'],
+  ['official-list', stateCopy['official-list'].label],
+  ['china-requirements', stateCopy['china-requirements'].label],
+  ['faculty-only', stateCopy['faculty-only'].label],
+  ['not-public', stateCopy['not-public'].label],
+  ['pending', stateCopy.pending.label],
+] as const;
+
+export function sourceFreshnessCopy(status?: SourceStatus): string {
+  if (status?.lastSuccessfulAt) {
+    return `最近成功检查：${status.lastSuccessfulAt.slice(0, 10)}`;
+  }
+  if (status?.checkedAt) {
+    return `最近检查：${status.checkedAt.slice(0, 10)}`;
+  }
+  return '尚无检查时间';
+}
