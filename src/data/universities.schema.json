@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["id", "nameZh", "nameEn", "aliases", "qs", "state", "sources"],
+    "properties": {
+      "id": { "type": "string", "minLength": 1, "pattern": "^[a-z0-9-]+$" },
+      "nameZh": { "type": "string", "minLength": 1 },
+      "nameEn": { "type": "string", "minLength": 1 },
+      "aliases": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true },
+      "qs": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["edition", "rank"],
+        "properties": {
+          "edition": { "const": 2027 },
+          "rank": { "type": "integer", "minimum": 1, "maximum": 100 }
+        }
+      },
+      "state": { "enum": ["official-list", "china-requirements", "faculty-only", "not-public", "pending"] },
+      "sources": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["id", "labelZh", "url", "kind"],
+          "properties": {
+            "id": { "type": "string", "minLength": 1, "pattern": "^[a-z0-9-]+$" },
+            "labelZh": { "type": "string", "minLength": 1 },
+            "url": { "type": "string", "pattern": "^https://" },
+            "kind": { "enum": ["official-list", "china-requirements", "faculty-page"] },
+            "scopeZh": { "type": "string", "minLength": 1 },
+            "cycle": { "type": "string", "minLength": 1 }
+          }
+        }
+      },
+      "noteZh": { "type": "string", "minLength": 1 }
+    }
+  }
+}
