@@ -9,6 +9,8 @@
   },
   "scripts": {
     "dev": "cross-env ASTRO_TELEMETRY_DISABLED=1 astro dev",
+    "build:index": "node scripts/build-reverse-index.mjs",
+    "prebuild": "pnpm build:index",
     "build": "cross-env ASTRO_TELEMETRY_DISABLED=1 astro check && cross-env ASTRO_TELEMETRY_DISABLED=1 astro build",
     "test": "vitest",
     "test:run": "vitest run",

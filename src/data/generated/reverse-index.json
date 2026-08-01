@@ -1,0 +1,1571 @@
+[
+  {
+    "institutionId": "anhui-university-4d325618",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "beihang-university-formerly-beijing-university-of-aeronautics-astronautics-e1caae39",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "beihang-university-formerly-beijing-university-of-aeronautics-astronautics-e1caae39",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "beijing-foreign-studies-university-c44143af",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "beijing-foreign-studies-university-c44143af",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "beijing-forestry-university-b3351c0d",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "beijing-forestry-university-b3351c0d",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "beijing-institute-of-technology-9484ee28",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "beijing-jiaotong-university-formerly-beifang-northern-jiaotong-university-6c628689",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "beijing-jiaotong-university-formerly-beifang-northern-jiaotong-university-6c628689",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "beijing-normal-university-hong-kong-baptist-university-united-international-college-6107eb6a",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "beijing-normal-university-see-note-regarding-united-international-college-c88360f6",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "beijing-normal-university-see-note-regarding-united-international-college-c88360f6",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "beijing-sport-university-f9ccc13f",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "beijing-university-of-chemical-technology-a79139e9",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "beijing-university-of-chinese-medicine-70aac221",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "beijing-university-of-posts-and-telecommunications-63e3d04f",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "central-conservatory-of-music-2a7c01dd",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "central-south-university-3352f6a2",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "central-south-university-3352f6a2",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "central-university-of-finance-and-economics-2259e13d",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "chang-an-university-178fc794",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "chang-an-university-178fc794",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "china-agricultural-university-7f24114a",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "china-agricultural-university-7f24114a",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "china-pharmaceutical-university-03ca6012",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "china-pharmaceutical-university-03ca6012",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "china-university-of-geosciences-beijing-and-wuhan-e49191e5",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "china-university-of-mining-and-technology-xuzhou-beijing-df570a22",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "china-university-of-petroleum-beijing-and-east-china-campuses-12ce0907",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "china-university-of-political-science-and-law-2ee2c283",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "chinese-academy-of-sciences-733200f1",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "chongqing-university-3a110f6c",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "chongqing-university-3a110f6c",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "communication-university-of-china-3a1bb185",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "dalian-maritime-university-8696305d",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "dalian-university-of-technology-d7cc67a0",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "donghua-university-8fab8235",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "donghua-university-8fab8235",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "east-china-normal-university-8ce642ca",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "east-china-normal-university-8ce642ca",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "east-china-university-of-science-and-technology-77dcefa9",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "fudan-university-749651d4",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "fudan-university-749651d4",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "fuzhou-university-e59f3da9",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "guangxi-university-cabb03f5",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "guizhou-university-55c5778b",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "hainan-university-70fc5cd1",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "harbin-engineering-university-a81a0bdd",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "harbin-institute-of-technology-7c521149",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "hefei-university-of-technology-1c5fd4db",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "hohai-university-8e8ac8be",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "hohai-university-8e8ac8be",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "huazhong-agricultural-university-central-china-agricultural-university-5cb9ba1d",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "huazhong-agricultural-university-central-china-agricultural-university-5cb9ba1d",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "huazhong-normal-university-central-china-normal-university-3a822b99",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "huazhong-university-of-science-technology-97cee7bd",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "hunan-normal-university-95554cb7",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "hunan-university-75a3814e",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "hunan-university-75a3814e",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "inner-mongolia-arts-university-05fa9653",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "inner-mongolia-university-ffd71f0e",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "jiangnan-university-2654a04a",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "jiangnan-university-2654a04a",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "jilin-university-3c8d9a5b",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "jilin-university-3c8d9a5b",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "jinan-university-fdd34254",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "jingdezhen-ceramic-institute-f3db41ac",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "lanzhou-university-52c21e54",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "lanzhou-university-52c21e54",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "liaoning-university-80e8b162",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "minzu-university-of-china-7bbdd5ab",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "nanchang-university-3dc3ad6c",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "nanhang-jincheng-college-independent-college-of-nanjing-university-of-aeronautics-and-astronautics-7e1b9462",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "nanjing-agricultural-university-c39b4a83",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "nanjing-agricultural-university-c39b4a83",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "nanjing-normal-university-4bbad3a8",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "nanjing-university-8fbdf4ba",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "nanjing-university-8fbdf4ba",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "nanjing-university-of-science-and-technology-af39a57f",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "nankai-university-fed7345f",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "nankai-university-fed7345f",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "national-university-of-defense-technology-471f1540",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "ningxia-university-b5450df6",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "north-china-electric-power-university-huabei-electric-power-university-68bcce4b",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "north-china-electric-power-university-huabei-electric-power-university-68bcce4b",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "northeast-agricultural-university-271d6328",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "northeast-forestry-university-d79f64f5",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "northeast-forestry-university-d79f64f5",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "northeast-normal-university-a77c4549",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "northeast-normal-university-a77c4549",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "northeastern-university-677adfe6",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "northeastern-university-677adfe6",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "northwest-university-2a8585db",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "northwest-university-2a8585db",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "northwestern-polytechnical-university-1e858b31",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "northwestern-polytechnical-university-1e858b31",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "ocean-university-of-china-qingdao-ab3847cd",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "peking-university-4818c188",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "peking-university-4818c188",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "qinghai-university-e7f8995a",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "renmin-university-of-china-9e74b938",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "shaanxi-normal-university-d6405edd",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "shandong-university-fd3a1051",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "shandong-university-fd3a1051",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "shanghai-2nd-medical-university-6a167102",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "shanghai-international-studies-university-b9e33065",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "shanghai-international-studies-university-b9e33065",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "shanghai-jiaotong-university-95ef14bb",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "shanghai-jiaotong-university-95ef14bb",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "shanghai-university-b933744c",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "shanghai-university-of-finance-and-economics-a5566168",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "shenzhen-moscow-state-university-and-beijing-institute-of-technology-university-85730974",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "shenzhen-university-c29d3a31",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "shihezi-university-2f997caf",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "sichuan-agricultural-university-2e7fba53",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "sichuan-fine-arts-institute-60415366",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "sichuan-university-2721d57b",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "sichuan-university-2721d57b",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "south-china-normal-university-1646a6bc",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "south-china-university-of-technology-09771dd9",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "southeast-university-53eebce9",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "southeast-university-53eebce9",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "southwest-jiaotong-university-9e83d9d0",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "southwest-jiaotong-university-9e83d9d0",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "southwest-university-14772c4d",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "southwest-university-14772c4d",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "southwestern-university-of-finance-and-economics-9e667ea4",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "sun-yat-sen-university-might-appear-as-zhongshan-university-d94644f6",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "sun-yat-sen-university-might-appear-as-zhongshan-university-d94644f6",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "suzhou-soochow-university-16c0f71b",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "suzhou-soochow-university-16c0f71b",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "the-second-military-medical-university-55f6f4f4",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "tianjin-medical-university-65b3512e",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "tianjin-university-1c8bcb86",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "tianjin-university-1c8bcb86",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "tibet-university-44adba65",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "tongji-university-a6533d2e",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "tongji-university-a6533d2e",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "tsinghua-university-88293fa6",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "tsinghua-university-88293fa6",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "university-of-electronic-science-and-technology-of-china-101301b5",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "university-of-international-business-and-economics-2a13872d",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "university-of-science-and-technology-beijing-0c404289",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "university-of-science-and-technology-of-china-ustc-a638543a",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "wuhan-university-102c49fc",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "wuhan-university-102c49fc",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "wuhan-university-of-technology-85782e2d",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "xi-an-jiaotong-university-95c2779f",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "xiamen-university-5271b226",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "xiamen-university-5271b226",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "xiangtan-university-cfb27bdb",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "xidian-university-also-known-as-xi-an-electronic-science-and-technology-university-14c4a29e",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "xidian-university-also-known-as-xi-an-electronic-science-and-technology-university-14c4a29e",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "xinjiang-university-e1c08fa3",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "yanbian-university-61996de7",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "yanshan-university-634a3bf5",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "yunnan-university-d0bc6178",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "yunnan-university-d0bc6178",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "zhejiang-university-41292b6f",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "zhejiang-university-41292b6f",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "zhejiang-university-of-technology-86cf9f79",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "zhengzhou-university-ccf4b546",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  },
+  {
+    "institutionId": "zhengzhou-university-ccf4b546",
+    "universityId": "university-of-edinburgh",
+    "evidenceState": "official-match",
+    "tierOfficial": "Priority List of Chinese universities – October 2024",
+    "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "sourceId": "edinburgh-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z"
+  },
+  {
+    "institutionId": "zhongnan-university-of-economics-and-law-71156a7a",
+    "universityId": "university-college-london",
+    "evidenceState": "official-match",
+    "tierOfficial": "Applicants from the list of universities below",
+    "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+    "sourceId": "ucl-china",
+    "lastSuccessfulAt": "2026-08-02T00:00:00.000Z",
+    "cycle": "2026/27"
+  }
+]
