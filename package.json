@@ -13,6 +13,7 @@
     "test": "vitest",
     "test:run": "vitest run",
     "check:data": "vitest run tests/data.test.ts",
+    "sync:sources": "node scripts/sync-sources.mjs",
     "check:sources": "node scripts/check-sources.mjs"
   },
   "dependencies": {

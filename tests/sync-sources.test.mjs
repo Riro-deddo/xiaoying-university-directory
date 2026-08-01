@@ -1,0 +1,221 @@
+import { access, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { dirname, join } from 'node:path';
+import { afterEach, describe, expect, it, vi } from 'vitest';
+import { decideSourceUpdate, syncRegisteredSources } from '../scripts/sync-sources.mjs';
+
+const guard = {
+  minimumRecords: 80,
+  maximumRecords: 150,
+  maximumRemovalRatio: 0.1,
+  universityId: 'example-university',
+  sourceId: 'example-source',
+};
+
+const source = {
+  id: 'example-source',
+  universityId: 'example-university',
+  url: 'https://www.example.ac.uk/china-list',
+  parser: { mode: 'html-table', guard },
+};
+
+function facts(count, overrides = {}) {
+  return Array.from({ length: count }, (_, index) => ({
+    id: `example-fact-${index + 1}`,
+    universityId: 'example-university',
+    sourceId: 'example-source',
+    institutionId: `institution-${index + 1}`,
+    tierOfficial: 'Band A',
+    scope: 'university',
+    scopeZh: 'University-wide list',
+    extractedAt: '2026-08-01T10:00:00.000Z',
+    contentHash: 'fixture-hash',
+    ...overrides,
+  }));
+}
+
+const temporaryDirectories = [];
+
+async function createFiles(requirements = facts(100), status = {}) {
+  const directory = await mkdtemp(join(tmpdir(), 'xiaoying-source-sync-'));
+  temporaryDirectories.push(directory);
+  const paths = {
+    requirementsPath: join(directory, 'requirements.json'),
+    statusPath: join(directory, 'status.json'),
+    anomaliesPath: join(directory, 'source-anomalies.json'),
+  };
+  await Promise.all([
+    writeFile(paths.requirementsPath, `${JSON.stringify(requirements)}\n`),
+    writeFile(paths.statusPath, `${JSON.stringify(status)}\n`),
+    writeFile(paths.anomaliesPath, '[]\n'),
+  ]);
+  return paths;
+}
+
+function acceptedResponse() {
+  return new Response('<table></table>', { status: 200, headers: { 'content-type': 'text/html' } });
+}
+
+afterEach(async () => {
+  await Promise.all(temporaryDirectories.splice(0).map((directory) => rm(directory, { recursive: true, force: true })));
+});
+
+describe('decideSourceUpdate', () => {
+  it('accepts a structurally valid small change', () => {
+    expect(decideSourceUpdate(facts(100), facts(102), guard))
+      .toEqual({ accepted: true, reason: 'valid-change' });
+  });
+
+  it('rejects each unsafe candidate with a stable reason code', () => {
+    expect(decideSourceUpdate(facts(100), [], guard)).toEqual({ accepted: false, reason: 'empty-output' });
+    expect(decideSourceUpdate(facts(100), facts(79), { ...guard, maximumRemovalRatio: 0.5 }))
+      .toEqual({ accepted: false, reason: 'below-minimum-records' });
+    expect(decideSourceUpdate([], facts(151), guard)).toEqual({ accepted: false, reason: 'above-maximum-records' });
+    expect(decideSourceUpdate([], facts(2, { id: 'duplicate-fact' }), guard))
+      .toEqual({ accepted: false, reason: 'duplicate-fact-ids' });
+    expect(decideSourceUpdate([], facts(1, { universityId: 'other-university' }), guard))
+      .toEqual({ accepted: false, reason: 'university-mismatch' });
+    expect(decideSourceUpdate([], facts(1, { sourceId: 'other-source' }), guard))
+      .toEqual({ accepted: false, reason: 'source-mismatch' });
+  });
+
+  it('rejects mass removal before the configured lower bound', () => {
+    expect(decideSourceUpdate(facts(100), facts(20), guard))
+      .toEqual({ accepted: false, reason: 'removal-ratio-exceeded' });
+  });
+});
+
+describe('syncRegisteredSources', () => {
+  it('preserves trusted facts, writes an anomaly, and leaves no candidate after a rejected removal', async () => {
+    const previousRequirements = facts(100);
+    const paths = await createFiles(previousRequirements);
+
+    const result = await syncRegisteredSources({
+      ...paths,
+      sources: [source],
+      fetchImpl: vi.fn().mockResolvedValue(acceptedResponse()),
+      extractFacts: async () => facts(20),
+      now: new Date('2026-08-01T10:00:00Z'),
+    });
+
+    expect(result.requirements).toEqual(previousRequirements);
+    expect(JSON.parse(await readFile(paths.requirementsPath, 'utf8'))).toEqual(previousRequirements);
+    expect(JSON.parse(await readFile(paths.anomaliesPath, 'utf8'))).toMatchObject([
+      { sourceId: 'example-source', reason: 'removal-ratio-exceeded', retainedTrustedFacts: true },
+    ]);
+    await expect(access(`${paths.requirementsPath}.next`)).rejects.toThrow();
+  });
+
+  it('treats a temporary fetch error as status-only without replacing requirements', async () => {
+    const previousRequirements = facts(100);
+    const paths = await createFiles(previousRequirements, {
+      'example-source': { health: 'ok', lastSuccessfulAt: '2026-07-31T10:00:00.000Z' },
+    });
+
+    const result = await syncRegisteredSources({
+      ...paths,
+      sources: [source],
+      fetchImpl: vi.fn().mockRejectedValue(new TypeError('network unavailable')),
+      now: new Date('2026-08-01T10:00:00Z'),
+    });
+
+    expect(result.requirements).toEqual(previousRequirements);
+    expect(result.status['example-source']).toMatchObject({
+      health: 'temporary-error',
+      lastSuccessfulAt: '2026-07-31T10:00:00.000Z',
+    });
+    expect(JSON.parse(await readFile(paths.anomaliesPath, 'utf8'))).toEqual([]);
+  });
+
+  it('records a parser rejection without replacing trusted facts', async () => {
+    const previousRequirements = facts(100);
+    const paths = await createFiles(previousRequirements);
+    const parserError = Object.assign(new Error('registered heading missing'), { code: 'PARSER_EMPTY' });
+
+    const result = await syncRegisteredSources({
+      ...paths,
+      sources: [source],
+      fetchImpl: vi.fn().mockResolvedValue(acceptedResponse()),
+      extractFacts: async () => { throw parserError; },
+      now: new Date('2026-08-01T10:00:00Z'),
+    });
+
+    expect(result.requirements).toEqual(previousRequirements);
+    expect(result.status['example-source'].health).toBe('changed');
+    expect(result.anomalies).toMatchObject([
+      { sourceId: 'example-source', reason: 'parser-error', parserCode: 'PARSER_EMPTY' },
+    ]);
+  });
+
+  it('creates the anomaly output directory before recording a rejected candidate', async () => {
+    const paths = await createFiles();
+    paths.anomaliesPath = join(dirname(paths.anomaliesPath), 'artifacts', 'source-anomalies.json');
+
+    await syncRegisteredSources({
+      ...paths,
+      sources: [source],
+      fetchImpl: vi.fn().mockResolvedValue(acceptedResponse()),
+      extractFacts: async () => facts(20),
+      now: new Date('2026-08-01T10:00:00Z'),
+    });
+
+    expect(JSON.parse(await readFile(paths.anomaliesPath, 'utf8'))).toMatchObject([
+      { reason: 'removal-ratio-exceeded' },
+    ]);
+  });
+
+  it('atomically replaces only accepted facts for the updated source', async () => {
+    const otherSourceFacts = facts(1, { id: 'other-fact', sourceId: 'other-source', universityId: 'other-university' });
+    const paths = await createFiles([...facts(100), ...otherSourceFacts]);
+
+    const result = await syncRegisteredSources({
+      ...paths,
+      sources: [source],
+      fetchImpl: vi.fn().mockResolvedValue(acceptedResponse()),
+      extractFacts: async () => facts(102),
+      now: new Date('2026-08-01T10:00:00Z'),
+    });
+
+    expect(result.requirements).toEqual([...facts(102), ...otherSourceFacts]);
+    expect(JSON.parse(await readFile(paths.requirementsPath, 'utf8'))).toEqual([...facts(102), ...otherSourceFacts]);
+    await expect(access(`${paths.requirementsPath}.next`)).rejects.toThrow();
+  });
+
+  it('fetches registered parser sources serially with the configured gap', async () => {
+    const secondFacts = facts(100).map((fact) => ({
+      ...fact,
+      id: fact.id.replace('example-', 'second-'),
+      sourceId: 'second-source',
+      universityId: 'second-university',
+    }));
+    const secondSource = { ...source, id: 'second-source', universityId: 'second-university', url: 'https://www.second.example.ac.uk/china-list', parser: { ...source.parser, guard: { ...guard, sourceId: 'second-source', universityId: 'second-university' } } };
+    const paths = await createFiles([...facts(100), ...secondFacts]);
+    const events = [];
+
+    await syncRegisteredSources({
+      ...paths,
+      sources: [source, secondSource],
+      fetchImpl: async (url) => {
+        events.push(`fetch:${url}`);
+        return acceptedResponse();
+      },
+      extractFacts: async (registeredSource) => {
+        events.push(`extract:${registeredSource.id}`);
+        return registeredSource.id === 'example-source'
+          ? facts(100)
+          : secondFacts;
+      },
+      wait: async (milliseconds) => events.push(`wait:${milliseconds}`),
+      minimumGapMs: 600,
+      now: new Date('2026-08-01T10:00:00Z'),
+    });
+
+    expect(events).toEqual([
+      'fetch:https://www.example.ac.uk/china-list',
+      'extract:example-source',
+      'wait:600',
+      'fetch:https://www.second.example.ac.uk/china-list',
+      'extract:second-source',
+    ]);
+  });
+});
