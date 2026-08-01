@@ -12,7 +12,7 @@
       "url": { "type": "string", "pattern": "^https://" },
       "kind": { "enum": ["official-list", "china-requirements", "faculty-page"] },
       "scope": { "enum": ["university", "faculty", "programme"] },
-      "scopeZh": { "type": "string" },
+      "scopeZh": { "type": "string", "minLength": 1, "pattern": "\\S" },
       "cycle": { "type": "string", "minLength": 1 },
       "parser": {
         "type": "object",
@@ -24,6 +24,7 @@
           "rowSelector": { "type": "string", "minLength": 1 },
           "institutionColumn": { "type": "integer", "minimum": 0 },
           "tierColumn": { "type": "integer", "minimum": 0 },
+          "defaultTierOfficial": { "type": "string", "minLength": 1, "pattern": "\\S" },
           "scoreColumn": { "type": "integer", "minimum": 0 },
           "headingPattern": { "type": "string", "minLength": 1 },
           "rowPattern": { "type": "string", "minLength": 1 },
@@ -42,15 +43,13 @@
           {
             "if": { "properties": { "mode": { "const": "pdf-text" } }, "required": ["mode"] },
             "then": { "required": ["headingPattern", "rowPattern", "institutionColumn"] }
+          },
+          {
+            "if": { "properties": { "mode": { "const": "html-list" } }, "required": ["mode"] },
+            "then": { "required": ["selector", "defaultTierOfficial"] }
           }
         ]
       }
-    },
-    "allOf": [
-      {
-        "if": { "properties": { "scope": { "enum": ["faculty", "programme"] } }, "required": ["scope"] },
-        "then": { "properties": { "scopeZh": { "type": "string", "minLength": 1 } } }
-      }
-    ]
+    }
   }
 }

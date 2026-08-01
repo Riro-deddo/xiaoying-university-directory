@@ -37,6 +37,7 @@ export interface ParserConfig {
   rowSelector?: string;
   institutionColumn?: number;
   tierColumn?: number;
+  defaultTierOfficial?: string;
   scoreColumn?: number;
   headingPattern?: string;
   rowPattern?: string;

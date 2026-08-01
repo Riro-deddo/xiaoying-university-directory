@@ -293,6 +293,38 @@ describe('syncRegisteredSources', () => {
     await expect(access(`${paths.requirementsPath}.next`)).rejects.toThrow();
   });
 
+  it('uses the registered official default tier for an HTML list row', async () => {
+    const paths = await createFiles([]);
+    const fixtureBody = await readFile(new URL('./fixtures/sources/html-list.html', import.meta.url));
+    const configuredSource = {
+      ...source,
+      parser: {
+        mode: 'html-list',
+        selector: '#official-list',
+        defaultTierOfficial: 'Official List Category A',
+        guard: { minimumRecords: 1, maximumRecords: 2, maximumRemovalRatio: 0 },
+      },
+    };
+
+    const result = await syncRegisteredSources({
+      ...paths,
+      sources: [configuredSource],
+      institutions: [registeredInstitution],
+      fetchImpl: vi.fn().mockResolvedValue(new Response(fixtureBody, {
+        status: 200,
+        headers: { 'content-type': 'text/html' },
+      })),
+      now: new Date('2026-08-01T10:00:00Z'),
+    });
+
+    expect(result.requirements).toMatchObject([{
+      institutionId: 'example-institution',
+      tierOfficial: 'Official List Category A',
+      scopeZh: 'University-wide list',
+    }]);
+    expect(JSON.parse(await readFile(paths.requirementsPath, 'utf8'))).toEqual(result.requirements);
+  });
+
   it('fetches registered parser sources serially with the configured gap', async () => {
     const secondFacts = facts(100).map((fact) => ({
       ...fact,

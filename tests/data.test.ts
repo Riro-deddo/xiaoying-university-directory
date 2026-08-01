@@ -59,7 +59,16 @@ describe('validateOfficialSources', () => {
     ['unknown field', { ...validSource, untracked: true }],
     ['non-HTTPS URL', { ...validSource, url: 'http://example.com/list' }],
     ['invalid removal ratio', { ...validSource, parser: { ...validSource.parser, guard: { ...validSource.parser.guard, maximumRemovalRatio: 1.1 } } }],
+    ['blank scope description', { ...validSource, scopeZh: '   ' }],
     ['faculty source without scope description', { ...validSource, scope: 'faculty', scopeZh: '' }],
+    ['HTML list parser without an official default tier', {
+      ...validSource,
+      parser: {
+        mode: 'html-list',
+        selector: '#official-list',
+        guard: validSource.parser.guard,
+      },
+    }],
     ['PDF parser without a registered row pattern', {
       ...validSource,
       parser: {

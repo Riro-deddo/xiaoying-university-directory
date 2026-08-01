@@ -93,7 +93,10 @@ function requirementFactId(sourceId, institutionId) {
 }
 
 function completeRequirementFact(rawFact, source, institutions, now, contentHash) {
-  const fact = normalizeExtractedFact(rawFact);
+  const fact = normalizeExtractedFact({
+    ...rawFact,
+    tierOfficial: rawFact.tierOfficial ?? source.parser.defaultTierOfficial,
+  });
   if (!fact.tierOfficial) throw new Error(`Official source row has no tier: ${fact.institutionOfficial}`);
   const institutionId = registeredInstitutionId(fact.institutionOfficial, institutions);
   const requirement = {
