@@ -4,6 +4,7 @@ import requirements from '../src/data/generated/requirements.json';
 import sources from '../src/data/sources.json';
 import universities from '../src/data/universities.json';
 import {
+  DataValidationError,
   loadInstitutions,
   loadRequirements,
   validateRequirementData,
@@ -14,6 +15,25 @@ const institutionRecords = institutions as InstitutionRecord[];
 const requirementRecords = requirements as RequirementFact[];
 const sourceRecords = sources as OfficialSourceConfig[];
 const universityRecords = universities as University[];
+
+const validInstitution: InstitutionRecord = {
+  id: 'peking-university',
+  nameZh: '北京大学',
+  nameEn: 'Peking University',
+  aliases: ['Beida'],
+};
+
+const validRequirement: RequirementFact = {
+  id: 'ucl-peking-university-2026',
+  universityId: 'university-college-london',
+  sourceId: 'ucl-china-requirements',
+  institutionId: 'peking-university',
+  tierOfficial: 'Group A',
+  scope: 'university',
+  scopeZh: '大学层级',
+  extractedAt: '2026-08-01T12:00:00.000Z',
+  contentHash: 'example-hash',
+};
 
 describe('normalized requirement contracts', () => {
   it('rejects facts without traceable scope, cycle, and source', () => {
@@ -43,5 +63,53 @@ describe('normalized requirement contracts', () => {
   it('loads empty, schema-valid generated datasets', () => {
     expect(loadInstitutions()).toEqual([]);
     expect(loadRequirements()).toEqual([]);
+  });
+
+  it.each([
+    ['Chinese name', { ...validInstitution, nameZh: '   ' }, '/0/nameZh'],
+    ['English name', { ...validInstitution, nameEn: '   ' }, '/0/nameEn'],
+    ['alias', { ...validInstitution, aliases: ['   '] }, '/0/aliases/0'],
+  ])('rejects whitespace-only institution %s', (_label, record, path) => {
+    expect(() => loadInstitutions([record])).toThrow(DataValidationError);
+    try {
+      loadInstitutions([record]);
+    } catch (error) {
+      expect(error).toMatchObject({
+        dataset: 'Institution',
+        paths: expect.arrayContaining([expect.stringContaining(path)]),
+      });
+    }
+  });
+
+  it('reports duplicate institution IDs as data validation errors with paths', () => {
+    expect(() => loadInstitutions([validInstitution, { ...validInstitution }]))
+      .toThrow(DataValidationError);
+    try {
+      loadInstitutions([validInstitution, { ...validInstitution }]);
+    } catch (error) {
+      expect(error).toMatchObject({
+        dataset: 'Institution',
+        paths: expect.arrayContaining([
+          expect.stringContaining('/0/id'),
+          expect.stringContaining('/1/id'),
+        ]),
+      });
+    }
+  });
+
+  it('reports duplicate requirement IDs as data validation errors with paths', () => {
+    expect(() => loadRequirements([validRequirement, { ...validRequirement }]))
+      .toThrow(DataValidationError);
+    try {
+      loadRequirements([validRequirement, { ...validRequirement }]);
+    } catch (error) {
+      expect(error).toMatchObject({
+        dataset: 'Requirement',
+        paths: expect.arrayContaining([
+          expect.stringContaining('/0/id'),
+          expect.stringContaining('/1/id'),
+        ]),
+      });
+    }
   });
 });

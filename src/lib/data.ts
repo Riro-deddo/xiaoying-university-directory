@@ -38,9 +38,18 @@ function formatSchemaError(errors: ErrorObject[] | null | undefined): string {
   return ajv.errorsText(errors, { separator: '; ' });
 }
 
-function assertUniqueIds(records: Array<{ id: string }>, label: string): void {
-  const ids = records.map((record) => record.id);
-  if (new Set(ids).size !== ids.length) throw new Error(`${label} contains duplicate stable IDs`);
+function assertUniqueIds(records: Array<{ id: string }>, dataset: string): void {
+  const indexesById = new Map<string, number[]>();
+  records.forEach((record, index) => {
+    const indexes = indexesById.get(record.id) ?? [];
+    indexes.push(index);
+    indexesById.set(record.id, indexes);
+  });
+
+  const duplicatePaths = [...indexesById.values()]
+    .filter((indexes) => indexes.length > 1)
+    .flatMap((indexes) => indexes.map((index) => `/${index}/id duplicate stable ID`));
+  if (duplicatePaths.length > 0) throw new DataValidationError(dataset, duplicatePaths);
 }
 
 function schemaPaths(errors: ErrorObject[] | null | undefined): string[] {
@@ -68,7 +77,7 @@ export function validateUniversities(input: unknown): University[] {
   }
 
   const records = input as University[];
-  assertUniqueIds(records, 'University data');
+  assertUniqueIds(records, 'University');
   return records;
 }
 
@@ -90,28 +99,28 @@ export function validateRequirementData(input: unknown): boolean {
   return validateRequirementSchema(input) as boolean;
 }
 
-export function loadInstitutions(): InstitutionRecord[] {
+export function loadInstitutions(input: unknown = institutionsJson): InstitutionRecord[] {
   assertSchema(
-    validateInstitutionData(institutionsJson),
+    validateInstitutionData(input),
     validateInstitutionSchema.errors,
     'Institution',
   );
 
-  const records = institutionsJson as InstitutionRecord[];
-  assertUniqueIds(records, 'Institution data');
+  const records = input as InstitutionRecord[];
+  assertUniqueIds(records, 'Institution');
   assertUniqueInstitutionNames(records);
   return records;
 }
 
-export function loadRequirements(): RequirementFact[] {
+export function loadRequirements(input: unknown = requirementsJson): RequirementFact[] {
   assertSchema(
-    validateRequirementData(requirementsJson),
+    validateRequirementData(input),
     validateRequirementSchema.errors,
     'Requirement',
   );
 
-  const records = requirementsJson as RequirementFact[];
-  assertUniqueIds(records, 'Requirement data');
+  const records = input as RequirementFact[];
+  assertUniqueIds(records, 'Requirement');
 
   const universityIds = new Set(validateUniversities(universitiesJson).map((record) => record.id));
   const sourceById = new Map(validateOfficialSources(sourcesJson).map((record) => [record.id, record]));
