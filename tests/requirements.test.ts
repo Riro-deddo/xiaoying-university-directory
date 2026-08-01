@@ -60,9 +60,9 @@ describe('normalized requirement contracts', () => {
     )).toBe(true);
   });
 
-  it('loads empty, schema-valid generated datasets', () => {
-    expect(loadInstitutions()).toEqual([]);
-    expect(loadRequirements()).toEqual([]);
+  it('loads schema-valid generated official-list datasets', () => {
+    expect(loadInstitutions().length).toBeGreaterThan(0);
+    expect(loadRequirements().length).toBeGreaterThan(0);
   });
 
   it.each([

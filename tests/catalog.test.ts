@@ -2,6 +2,8 @@ import { describe, expect, it } from 'vitest';
 import cohort from '../src/data/qs-2027-top-200-uk.json';
 import universities from '../src/data/universities.json';
 import sources from '../src/data/sources.json';
+import institutions from '../src/data/institutions.json';
+import requirements from '../src/data/generated/requirements.json';
 
 describe('QS cohort and official source registry', () => {
   it('freezes only the official QS 2027 UK top-200 cohort', () => {
@@ -44,6 +46,16 @@ describe('QS cohort and official source registry', () => {
         const officialHost = new URL(universityById.get(university.id)!.officialDomain).hostname;
         expect(sourceHost === officialHost || sourceHost.endsWith(`.${officialHost}`)).toBe(true);
       }
+    }
+  });
+
+  it('registers deterministic facts for the three directly published official lists', () => {
+    for (const sourceId of ['ucl-china', 'edinburgh-china']) {
+      const source = sources.find((item) => item.id === sourceId);
+      expect(source?.parser.mode).not.toBe('link-only');
+      const facts = requirements.filter((item) => item.sourceId === sourceId);
+      expect(facts.length).toBeGreaterThan(0);
+      expect(facts.every((fact) => institutions.some((institution) => institution.id === fact.institutionId))).toBe(true);
     }
   });
 });

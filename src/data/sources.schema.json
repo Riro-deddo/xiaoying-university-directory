@@ -23,6 +23,7 @@
           "selector": { "type": "string", "minLength": 1 },
           "rowSelector": { "type": "string", "minLength": 1 },
           "institutionColumn": { "type": "integer", "minimum": 0 },
+          "institutionColumns": { "type": "array", "items": { "type": "integer", "minimum": 0 }, "minItems": 1, "uniqueItems": true },
           "tierColumn": { "type": "integer", "minimum": 0 },
           "defaultTierOfficial": { "type": "string", "minLength": 1, "pattern": "\\S" },
           "scoreColumn": { "type": "integer", "minimum": 0 },
