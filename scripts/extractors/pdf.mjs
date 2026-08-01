@@ -23,16 +23,20 @@ function textLines(items) {
 }
 
 function factFromRow(match, config) {
-  const columns = match.slice(1).map((column) => column.trim());
-  const requestedColumns = [config.institutionColumn, config.tierColumn, config.scoreColumn]
+  const columns = match.slice(1).map((column) => column?.trim());
+  const requiredColumns = [config.institutionColumn, config.tierColumn]
     .filter((column) => column !== undefined);
-  if (!Number.isInteger(config.institutionColumn) || requestedColumns.some((column) => !Number.isInteger(column) || columns[column] === undefined)) {
+  if (!Number.isInteger(config.institutionColumn)
+    || requiredColumns.some((column) => !Number.isInteger(column) || columns[column] === undefined)
+    || (config.scoreColumn !== undefined && (!Number.isInteger(config.scoreColumn) || config.scoreColumn >= columns.length))) {
     throw new ExtractorError('PARSER_STRUCTURE_CHANGED', 'Registered PDF columns are no longer available.');
   }
 
   const fact = { institutionOfficial: columns[config.institutionColumn] };
   if (config.tierColumn !== undefined) fact.tierOfficial = columns[config.tierColumn];
-  if (config.scoreColumn !== undefined) fact.scoreOfficial = columns[config.scoreColumn];
+  if (config.scoreColumn !== undefined && columns[config.scoreColumn] !== undefined) {
+    fact.scoreOfficial = columns[config.scoreColumn];
+  }
   return fact;
 }
 

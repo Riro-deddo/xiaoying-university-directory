@@ -39,4 +39,14 @@ describe('extractPdfFacts', () => {
     await expect(extractPdfFacts({ ...pdfConfig, scoreColumn: 2 }, await fixtureBytes()))
       .rejects.toMatchObject({ code: 'PARSER_STRUCTURE_CHANGED' });
   });
+
+  it('omits an unmatched optional score capture without crashing', async () => {
+    await expect(extractPdfFacts({
+      ...pdfConfig,
+      rowPattern: '^(Example University) \\| (Group 1)(?: \\| (.+))?$',
+      scoreColumn: 2,
+    }, await fixtureBytes())).resolves.toEqual([
+      { institutionOfficial: 'Example University', tierOfficial: 'Group 1' },
+    ]);
+  });
 });
