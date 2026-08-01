@@ -16,7 +16,16 @@ const source = {
   id: 'example-source',
   universityId: 'example-university',
   url: 'https://www.example.ac.uk/china-list',
+  scope: 'university',
+  scopeZh: 'University-wide list',
   parser: { mode: 'html-table', guard },
+};
+
+const registeredInstitution = {
+  id: 'example-institution',
+  nameZh: 'Example Institution',
+  nameEn: 'Example University',
+  aliases: [],
 };
 
 function facts(count, overrides = {}) {
@@ -147,6 +156,25 @@ describe('syncRegisteredSources', () => {
     ]);
   });
 
+  it('records a generic extraction rejection without replacing trusted facts', async () => {
+    const previousRequirements = facts(100);
+    const paths = await createFiles(previousRequirements);
+
+    const result = await syncRegisteredSources({
+      ...paths,
+      sources: [source],
+      fetchImpl: vi.fn().mockResolvedValue(acceptedResponse()),
+      extractFacts: async () => { throw new Error('unexpected extraction failure'); },
+      now: new Date('2026-08-01T10:00:00Z'),
+    });
+
+    expect(result.requirements).toEqual(previousRequirements);
+    expect(result.status['example-source'].health).toBe('changed');
+    expect(result.anomalies).toMatchObject([
+      { sourceId: 'example-source', reason: 'extraction-error', retainedTrustedFacts: true },
+    ]);
+  });
+
   it('creates the anomaly output directory before recording a rejected candidate', async () => {
     const paths = await createFiles();
     paths.anomaliesPath = join(dirname(paths.anomaliesPath), 'artifacts', 'source-anomalies.json');
@@ -178,6 +206,90 @@ describe('syncRegisteredSources', () => {
 
     expect(result.requirements).toEqual([...facts(102), ...otherSourceFacts]);
     expect(JSON.parse(await readFile(paths.requirementsPath, 'utf8'))).toEqual([...facts(102), ...otherSourceFacts]);
+    await expect(access(`${paths.requirementsPath}.next`)).rejects.toThrow();
+  });
+
+  it('rejects a candidate ID that collides with an unaffected source fact', async () => {
+    const otherSourceFacts = facts(1, { id: 'example-fact-1', sourceId: 'other-source', universityId: 'other-university' });
+    const previousRequirements = [...facts(100), ...otherSourceFacts];
+    const paths = await createFiles(previousRequirements);
+
+    const result = await syncRegisteredSources({
+      ...paths,
+      sources: [source],
+      fetchImpl: vi.fn().mockResolvedValue(acceptedResponse()),
+      extractFacts: async () => facts(102),
+      now: new Date('2026-08-01T10:00:00Z'),
+    });
+
+    expect(result.requirements).toEqual(previousRequirements);
+    expect(result.anomalies).toMatchObject([{ reason: 'duplicate-fact-ids' }]);
+  });
+
+  it.each([
+    {
+      name: 'HTML table',
+      fixture: new URL('./fixtures/sources/html-table.html', import.meta.url),
+      contentType: 'text/html',
+      parser: {
+        mode: 'html-table',
+        rowSelector: '#nested-list tbody > tr',
+        institutionColumn: 1,
+        tierColumn: 2,
+        scoreColumn: 3,
+      },
+      expected: { tierOfficial: 'Band B', scoreOfficial: '75%' },
+    },
+    {
+      name: 'PDF text layer',
+      fixture: new URL('./fixtures/sources/list-text-layer.pdf', import.meta.url),
+      contentType: 'application/pdf',
+      parser: {
+        mode: 'pdf-text',
+        headingPattern: '^University \\| Tier$',
+        rowPattern: '^(Example University) \\| (Group 1)$',
+        institutionColumn: 0,
+        tierColumn: 1,
+      },
+      expected: { tierOfficial: 'Group 1' },
+    },
+  ])('maps Task 3 $name output into schema-valid facts and atomically accepts it', async ({ fixture, contentType, parser, expected }) => {
+    const paths = await createFiles([]);
+    const fixtureBody = await readFile(fixture);
+    const configuredSource = {
+      ...source,
+      parser: {
+        ...parser,
+        guard: { minimumRecords: 1, maximumRecords: 2, maximumRemovalRatio: 0 },
+      },
+    };
+
+    const result = await syncRegisteredSources({
+      ...paths,
+      sources: [configuredSource],
+      institutions: [registeredInstitution],
+      fetchImpl: vi.fn().mockResolvedValue(new Response(fixtureBody, {
+        status: 200,
+        headers: { 'content-type': contentType },
+      })),
+      now: new Date('2026-08-01T10:00:00Z'),
+    });
+
+    expect(result.requirements).toHaveLength(1);
+    expect(result.requirements[0]).toMatchObject({
+      universityId: 'example-university',
+      sourceId: 'example-source',
+      institutionId: 'example-institution',
+      scope: 'university',
+      scopeZh: 'University-wide list',
+      extractedAt: '2026-08-01T10:00:00.000Z',
+      ...expected,
+    });
+    expect(result.requirements[0]).toMatchObject({
+      id: expect.stringMatching(/^example-source-[a-f0-9]{16}$/u),
+      contentHash: expect.stringMatching(/^[a-f0-9]{64}$/u),
+    });
+    expect(JSON.parse(await readFile(paths.requirementsPath, 'utf8'))).toEqual(result.requirements);
     await expect(access(`${paths.requirementsPath}.next`)).rejects.toThrow();
   });
 

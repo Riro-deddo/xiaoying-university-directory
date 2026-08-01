@@ -1,3 +1,4 @@
+import { createHash } from 'node:crypto';
 import { mkdir, readFile, rename, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -38,6 +39,7 @@ function defaultWait(milliseconds) {
 function sourcePaths(options) {
   return {
     sourcesPath: options.sourcesPath ?? join(root, 'src', 'data', 'sources.json'),
+    institutionsPath: options.institutionsPath ?? join(root, 'src', 'data', 'institutions.json'),
     requirementsPath: options.requirementsPath ?? join(root, 'src', 'data', 'generated', 'requirements.json'),
     statusPath: options.statusPath ?? join(root, 'src', 'data', 'status.json'),
     anomaliesPath: options.anomaliesPath ?? join(root, 'artifacts', 'source-anomalies.json'),
@@ -69,16 +71,63 @@ function anomaly(source, reason, now, details = {}) {
   };
 }
 
-async function extractRegisteredFacts(source, response) {
+function normalizedInstitutionName(value) {
+  return String(value ?? '')
+    .normalize('NFKC')
+    .replace(/[\s\u3000]+/gu, ' ')
+    .trim()
+    .toLocaleLowerCase('en-US');
+}
+
+function registeredInstitutionId(institutionOfficial, institutions) {
+  const officialName = normalizedInstitutionName(institutionOfficial);
+  const institution = institutions.find((record) => [record.nameZh, record.nameEn, ...record.aliases]
+    .some((name) => normalizedInstitutionName(name) === officialName));
+  if (!institution) throw new Error(`No registered institution matches official source row: ${institutionOfficial}`);
+  return institution.id;
+}
+
+function requirementFactId(sourceId, institutionId) {
+  const suffix = createHash('sha256').update(`${sourceId}\u0000${institutionId}`).digest('hex').slice(0, 16);
+  return `${sourceId}-${suffix}`;
+}
+
+function completeRequirementFact(rawFact, source, institutions, now, contentHash) {
+  const fact = normalizeExtractedFact(rawFact);
+  if (!fact.tierOfficial) throw new Error(`Official source row has no tier: ${fact.institutionOfficial}`);
+  const institutionId = registeredInstitutionId(fact.institutionOfficial, institutions);
+  const requirement = {
+    id: requirementFactId(source.id, institutionId),
+    universityId: source.universityId,
+    sourceId: source.id,
+    institutionId,
+    tierOfficial: fact.tierOfficial,
+    scope: source.scope,
+    scopeZh: source.scopeZh,
+    extractedAt: timestamp(now),
+    contentHash,
+  };
+  if (fact.scoreOfficial) requirement.scoreOfficial = fact.scoreOfficial;
+  if (source.cycle) requirement.cycle = source.cycle;
+  return requirement;
+}
+
+async function extractRegisteredFacts(source, response, { institutions, now }) {
+  let rawFacts;
+  let contentHash;
   if (source.parser.mode === 'html-table' || source.parser.mode === 'html-list') {
-    const rawFacts = await extractHtmlFacts(source.parser, await response.text());
-    return rawFacts.map((fact) => normalizeExtractedFact(fact));
+    const html = await response.text();
+    rawFacts = await extractHtmlFacts(source.parser, html);
+    contentHash = createHash('sha256').update(html).digest('hex');
+  } else if (source.parser.mode === 'pdf-text') {
+    const bytes = new Uint8Array(await response.arrayBuffer());
+    rawFacts = await extractPdfFacts(source.parser, bytes);
+    contentHash = createHash('sha256').update(bytes).digest('hex');
+  } else {
+    return [];
   }
-  if (source.parser.mode === 'pdf-text') {
-    const rawFacts = await extractPdfFacts(source.parser, new Uint8Array(await response.arrayBuffer()));
-    return rawFacts.map((fact) => normalizeExtractedFact(fact));
-  }
-  return [];
+
+  return rawFacts.map((fact) => completeRequirementFact(fact, source, institutions, now, contentHash));
 }
 
 function fetchHealth(response) {
@@ -88,6 +137,7 @@ function fetchHealth(response) {
 export async function syncRegisteredSources(options = {}) {
   const paths = sourcePaths(options);
   const sources = options.sources ?? await readJson(paths.sourcesPath);
+  const institutions = options.institutions ?? await readJson(paths.institutionsPath);
   let requirements = options.requirements ?? await readJson(paths.requirementsPath);
   const status = { ...(options.status ?? await readJson(paths.statusPath)) };
   const anomalies = [];
@@ -107,18 +157,28 @@ export async function syncRegisteredSources(options = {}) {
       continue;
     }
 
+    let response;
     try {
-      const response = await fetchImpl(source.url, {
+      response = await fetchImpl(source.url, {
         headers: { 'user-agent': 'Xiaoying-University-Directory/0.1 (+guarded official source synchronisation)' },
       });
-      if (!response.ok) {
-        const health = fetchHealth(response);
-        status[source.id] = sourceStatus(source, previousStatus, now, { health, httpStatus: response.status, finalUrl: response.url || source.url });
-        if (health !== 'temporary-error') anomalies.push(anomaly(source, 'fetch-unavailable', now, { httpStatus: response.status }));
-        continue;
-      }
+    } catch (error) {
+      status[source.id] = sourceStatus(source, previousStatus, now, {
+        health: 'temporary-error',
+        error: error instanceof Error ? error.message : 'unknown error',
+      });
+      continue;
+    }
 
-      const nextFacts = await extractFacts(source, response);
+    if (!response.ok) {
+      const health = fetchHealth(response);
+      status[source.id] = sourceStatus(source, previousStatus, now, { health, httpStatus: response.status, finalUrl: response.url || source.url });
+      if (health !== 'temporary-error') anomalies.push(anomaly(source, 'fetch-unavailable', now, { httpStatus: response.status }));
+      continue;
+    }
+
+    try {
+      const nextFacts = await extractFacts(source, response, { institutions, now });
       const guard = { ...source.parser.guard, sourceId: source.id, universityId: source.universityId };
       const previousFacts = requirements.filter((fact) => fact.sourceId === source.id);
       const decision = decideSourceUpdate(previousFacts, nextFacts, guard);
@@ -134,6 +194,11 @@ export async function syncRegisteredSources(options = {}) {
       const afterSource = requirements.slice(firstSourceIndex === -1 ? requirements.length : firstSourceIndex)
         .filter((fact) => fact.sourceId !== source.id);
       const candidateRequirements = [...beforeSource, ...nextFacts, ...afterSource];
+      if (new Set(candidateRequirements.map((fact) => fact.id)).size !== candidateRequirements.length) {
+        status[source.id] = sourceStatus(source, previousStatus, now, { health: 'changed', finalUrl: response.url || source.url });
+        anomalies.push(anomaly(source, 'duplicate-fact-ids', now));
+        continue;
+      }
       if (!validateRequirements(candidateRequirements)) {
         status[source.id] = sourceStatus(source, previousStatus, now, { health: 'changed', finalUrl: response.url || source.url });
         anomalies.push(anomaly(source, 'candidate-validation-failed', now, { validationErrors: validateRequirements.errors }));
@@ -158,9 +223,10 @@ export async function syncRegisteredSources(options = {}) {
         continue;
       }
       status[source.id] = sourceStatus(source, previousStatus, now, {
-        health: 'temporary-error',
+        health: 'changed',
         error: error instanceof Error ? error.message : 'unknown error',
       });
+      anomalies.push(anomaly(source, 'extraction-error', now));
     }
   }
 
