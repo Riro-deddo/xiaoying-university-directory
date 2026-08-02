@@ -66,7 +66,15 @@ describe('QS cohort and official source registry', () => {
     expect(requirements.every((fact) => /^[a-f0-9]{64}$/u.test(fact.contentHash) && fact.contentHash !== emptyHash)).toBe(true);
     const userFacingStrings = [
       ...universities.flatMap((item) => [item.nameZh, item.nameEn, ...item.aliases, 'noteZh' in item ? item.noteZh : undefined]),
-      ...sources.flatMap((source) => [source.labelZh, source.scopeZh, source.parser.defaultTierOfficial]),
+      ...sources.flatMap((source) => [
+        source.labelZh,
+        source.scopeZh,
+        source.parser.defaultTierOfficial,
+        source.institutionRule.summaryZh,
+        source.institutionRule.listedMeaningZh,
+        source.institutionRule.unlistedMeaningZh,
+        source.institutionRule.caveatZh,
+      ]),
       ...institutions.flatMap((institution) => [institution.nameZh, institution.nameEn, ...institution.aliases]),
       ...requirements.flatMap((fact) => [fact.tierOfficial, 'scoreOfficial' in fact ? fact.scoreOfficial : undefined, fact.scopeZh]),
     ].filter((value): value is string => typeof value === 'string');

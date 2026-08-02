@@ -9,7 +9,7 @@
     "scopeZh": "学校面向中国申请人的研究生学历要求",
     "institutionRule": {
       "type": "none",
-      "summaryZh": "学校面向中国申请人的研究生学历要求??????????????????????"
+      "summaryZh": "该官方来源提供中国申请要求，但本站未确认其中包含中国本科院校名单。"
     },
     "parser": {
       "mode": "link-only",
@@ -30,7 +30,7 @@
     "scopeZh": "学校研究生国际学历要求中的中国章节",
     "institutionRule": {
       "type": "none",
-      "summaryZh": "学校研究生国际学历要求中的中国章节??????????????????????"
+      "summaryZh": "该官方来源提供中国申请要求，但本站未确认其中包含中国本科院校名单。"
     },
     "parser": {
       "mode": "link-only",
@@ -51,7 +51,7 @@
     "scopeZh": "学校研究生入学要求及国际学历链接",
     "institutionRule": {
       "type": "none",
-      "summaryZh": "学校研究生入学要求及国际学历链接??????????????????????"
+      "summaryZh": "该官方来源提供中国申请要求，但本站未确认其中包含中国本科院校名单。"
     },
     "parser": {
       "mode": "link-only",
@@ -73,10 +73,10 @@
     "cycle": "2026/27",
     "institutionRule": {
       "type": "grade-threshold",
-      "summaryZh": "????????? UCL ????????????",
-      "listedMeaningZh": "??????????2:1 ?????? 85%?2:2 ?? 80%?",
-      "unlistedMeaningZh": "??????????????????????2:1 ??? 90%?2:2 ??? 85%?",
-      "caveatZh": "??????????????????????????????????"
+      "summaryZh": "中国本科院校会影响 UCL 的成绩门槛，不是能否申请的白名单。",
+      "listedMeaningZh": "名单内院校通常要求：2:1 对应均分 85%，2:2 对应 80%。",
+      "unlistedMeaningZh": "其他受中国教育部认可的院校仍可申请，通常要求：2:1 对应 90%，2:2 对应 85%。",
+      "caveatZh": "具体课程可能设更高要求，最终以课程页和学校最新说明为准。"
     },
     "parser": {
       "mode": "html-table",
@@ -103,10 +103,10 @@
     "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
     "institutionRule": {
       "type": "mixed",
-      "summaryZh": "Priority List ???????????????? Band?",
-      "listedMeaningZh": "Band A/B ?? Priority List ???Band C ??????????????",
-      "unlistedMeaningZh": "?????????????????? Band?Band C/D ????????",
-      "caveatZh": "????????? Band???? Priority List?"
+      "summaryZh": "Priority List 同时影响部分成绩分档和部分 Band 的申请资格。",
+      "listedMeaningZh": "Band A/B 要求申请人来自 Priority List；Band C 对名单内院校采用较低成绩门槛。",
+      "unlistedMeaningZh": "名单外不等于全部不能申请；Band C/D 仍可能接受符合条件的院校背景。",
+      "caveatZh": "必须结合目标课程所属 Band 阅读，不能只看 Priority List。"
     },
     "parser": {
       "mode": "pdf-text",
@@ -131,7 +131,7 @@
     "scopeZh": "学校当前面向国际申请人的研究生授课型课程申请指南（非中国院校名单）",
     "institutionRule": {
       "type": "none",
-      "summaryZh": "学校当前面向国际申请人的研究生授课型课程申请指南（非中国院校名单）??????????????????????"
+      "summaryZh": "该官方来源提供中国申请要求，但本站未确认其中包含中国本科院校名单。"
     },
     "parser": {
       "mode": "link-only",
@@ -152,7 +152,7 @@
     "scopeZh": "人文学院法学中国研究生要求",
     "institutionRule": {
       "type": "none",
-      "summaryZh": "?????????????????????????????"
+      "summaryZh": "该学院页面公开了中国申请要求，但没有公开中国本科院校名单。"
     },
     "parser": {
       "mode": "link-only",
@@ -173,7 +173,7 @@
     "scopeZh": "学校面向中国申请人的研究生要求",
     "institutionRule": {
       "type": "none",
-      "summaryZh": "学校面向中国申请人的研究生要求??????????????????????"
+      "summaryZh": "该官方来源提供中国申请要求，但本站未确认其中包含中国本科院校名单。"
     },
     "parser": {
       "mode": "link-only",
@@ -194,7 +194,7 @@
     "scopeZh": "学校研究生国际学历要求",
     "institutionRule": {
       "type": "none",
-      "summaryZh": "学校研究生国际学历要求??????????????????????"
+      "summaryZh": "该官方来源提供中国申请要求，但本站未确认其中包含中国本科院校名单。"
     },
     "parser": {
       "mode": "link-only",
@@ -215,7 +215,7 @@
     "scopeZh": "学校国际学历要求中的中国章节",
     "institutionRule": {
       "type": "none",
-      "summaryZh": "学校国际学历要求中的中国章节??????????????????????"
+      "summaryZh": "该官方来源提供中国申请要求，但本站未确认其中包含中国本科院校名单。"
     },
     "parser": {
       "mode": "link-only",
@@ -236,7 +236,7 @@
     "scopeZh": "学校中国研究生分组要求说明（未公开分组院校名册）",
     "institutionRule": {
       "type": "none",
-      "summaryZh": "学校中国研究生分组要求说明（未公开分组院校名册）??????????????????????"
+      "summaryZh": "该官方来源提供中国申请要求，但本站未确认其中包含中国本科院校名单。"
     },
     "parser": {
       "mode": "link-only",
@@ -257,7 +257,7 @@
     "scopeZh": "学校面向中国申请人的研究生要求",
     "institutionRule": {
       "type": "none",
-      "summaryZh": "学校面向中国申请人的研究生要求??????????????????????"
+      "summaryZh": "该官方来源提供中国申请要求，但本站未确认其中包含中国本科院校名单。"
     },
     "parser": {
       "mode": "link-only",
@@ -278,7 +278,7 @@
     "scopeZh": "学校面向中国申请人的国际学历要求",
     "institutionRule": {
       "type": "none",
-      "summaryZh": "学校面向中国申请人的国际学历要求??????????????????????"
+      "summaryZh": "该官方来源提供中国申请要求，但本站未确认其中包含中国本科院校名单。"
     },
     "parser": {
       "mode": "link-only",
@@ -299,7 +299,7 @@
     "scopeZh": "学校中国研究生要求及院校查询链接",
     "institutionRule": {
       "type": "none",
-      "summaryZh": "学校中国研究生要求及院校查询链接??????????????????????"
+      "summaryZh": "该官方来源提供中国申请要求，但本站未确认其中包含中国本科院校名单。"
     },
     "parser": {
       "mode": "link-only",
@@ -320,7 +320,7 @@
     "scopeZh": "学校面向中国申请人的研究生要求",
     "institutionRule": {
       "type": "none",
-      "summaryZh": "学校面向中国申请人的研究生要求??????????????????????"
+      "summaryZh": "该官方来源提供中国申请要求，但本站未确认其中包含中国本科院校名单。"
     },
     "parser": {
       "mode": "link-only",
@@ -341,7 +341,7 @@
     "scopeZh": "学校面向中国申请人的研究生要求",
     "institutionRule": {
       "type": "none",
-      "summaryZh": "学校面向中国申请人的研究生要求??????????????????????"
+      "summaryZh": "该官方来源提供中国申请要求，但本站未确认其中包含中国本科院校名单。"
     },
     "parser": {
       "mode": "link-only",
@@ -362,7 +362,7 @@
     "scopeZh": "学校面向中国申请人的研究生要求",
     "institutionRule": {
       "type": "none",
-      "summaryZh": "学校面向中国申请人的研究生要求??????????????????????"
+      "summaryZh": "该官方来源提供中国申请要求，但本站未确认其中包含中国本科院校名单。"
     },
     "parser": {
       "mode": "link-only",
@@ -384,10 +384,10 @@
     "cycle": "2025/26",
     "institutionRule": {
       "type": "grade-threshold",
-      "summaryZh": "???????? Tier ??????????????",
-      "listedMeaningZh": "????????? Tier A?B?C?",
-      "unlistedMeaningZh": "??????????? Tier D ???????",
-      "caveatZh": "??????????????????????? Tier ??"
+      "summaryZh": "中国院校所属 Tier 决定对应的最低成绩要求。",
+      "listedMeaningZh": "官网名单将院校分为 Tier A、B、C。",
+      "unlistedMeaningZh": "未出现在名单中的院校按 Tier D 评估，仍不代表自动拒绝。",
+      "caveatZh": "本站暂不复制完整名册，请通过官方链接核对当前 Tier 归属。"
     },
     "parser": {
       "mode": "link-only",
@@ -408,7 +408,7 @@
     "scopeZh": "学校面向中国申请人的研究生要求",
     "institutionRule": {
       "type": "none",
-      "summaryZh": "学校面向中国申请人的研究生要求??????????????????????"
+      "summaryZh": "该官方来源提供中国申请要求，但本站未确认其中包含中国本科院校名单。"
     },
     "parser": {
       "mode": "link-only",
@@ -429,7 +429,7 @@
     "scopeZh": "学校国际学历要求中的中国章节",
     "institutionRule": {
       "type": "none",
-      "summaryZh": "学校国际学历要求中的中国章节??????????????????????"
+      "summaryZh": "该官方来源提供中国申请要求，但本站未确认其中包含中国本科院校名单。"
     },
     "parser": {
       "mode": "link-only",
@@ -450,7 +450,7 @@
     "scopeZh": "学校面向中国申请人的研究生要求",
     "institutionRule": {
       "type": "none",
-      "summaryZh": "学校面向中国申请人的研究生要求??????????????????????"
+      "summaryZh": "该官方来源提供中国申请要求，但本站未确认其中包含中国本科院校名单。"
     },
     "parser": {
       "mode": "link-only",
@@ -471,7 +471,7 @@
     "scopeZh": "学校面向中国申请人的研究生要求",
     "institutionRule": {
       "type": "none",
-      "summaryZh": "学校面向中国申请人的研究生要求??????????????????????"
+      "summaryZh": "该官方来源提供中国申请要求，但本站未确认其中包含中国本科院校名单。"
     },
     "parser": {
       "mode": "link-only",
@@ -492,7 +492,7 @@
     "scopeZh": "学校面向中国申请人的研究生要求",
     "institutionRule": {
       "type": "none",
-      "summaryZh": "学校面向中国申请人的研究生要求??????????????????????"
+      "summaryZh": "该官方来源提供中国申请要求，但本站未确认其中包含中国本科院校名单。"
     },
     "parser": {
       "mode": "link-only",
@@ -513,7 +513,7 @@
     "scopeZh": "学校面向中国申请人的研究生要求",
     "institutionRule": {
       "type": "none",
-      "summaryZh": "学校面向中国申请人的研究生要求??????????????????????"
+      "summaryZh": "该官方来源提供中国申请要求，但本站未确认其中包含中国本科院校名单。"
     },
     "parser": {
       "mode": "link-only",
@@ -535,7 +535,7 @@
     "cycle": "2026",
     "institutionRule": {
       "type": "none",
-      "summaryZh": "学校中国研究生学历等值要求??????????????????????"
+      "summaryZh": "该官方来源提供中国申请要求，但本站未确认其中包含中国本科院校名单。"
     },
     "parser": {
       "mode": "link-only",
@@ -556,7 +556,7 @@
     "scopeZh": "学校面向中国申请人的研究生要求",
     "institutionRule": {
       "type": "none",
-      "summaryZh": "学校面向中国申请人的研究生要求??????????????????????"
+      "summaryZh": "该官方来源提供中国申请要求，但本站未确认其中包含中国本科院校名单。"
     },
     "parser": {
       "mode": "link-only",
@@ -577,7 +577,7 @@
     "scopeZh": "学校面向中国申请人的研究生要求",
     "institutionRule": {
       "type": "none",
-      "summaryZh": "学校面向中国申请人的研究生要求??????????????????????"
+      "summaryZh": "该官方来源提供中国申请要求，但本站未确认其中包含中国本科院校名单。"
     },
     "parser": {
       "mode": "link-only",
@@ -598,7 +598,7 @@
     "scopeZh": "学校面向中国申请人的研究生要求",
     "institutionRule": {
       "type": "none",
-      "summaryZh": "学校面向中国申请人的研究生要求??????????????????????"
+      "summaryZh": "该官方来源提供中国申请要求，但本站未确认其中包含中国本科院校名单。"
     },
     "parser": {
       "mode": "link-only",
