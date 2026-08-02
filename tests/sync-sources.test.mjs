@@ -2,7 +2,7 @@ import { access, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { decideSourceUpdate, syncRegisteredSources } from '../scripts/sync-sources.mjs';
+import { decideSourceUpdate, reconcileInstitution, syncRegisteredSources } from '../scripts/sync-sources.mjs';
 
 const guard = {
   minimumRecords: 80,
@@ -51,11 +51,13 @@ async function createFiles(requirements = facts(100), status = {}) {
   const directory = await mkdtemp(join(tmpdir(), 'xiaoying-source-sync-'));
   temporaryDirectories.push(directory);
   const paths = {
+    institutionsPath: join(directory, 'institutions.json'),
     requirementsPath: join(directory, 'requirements.json'),
     statusPath: join(directory, 'status.json'),
     anomaliesPath: join(directory, 'source-anomalies.json'),
   };
   await Promise.all([
+    writeFile(paths.institutionsPath, '[]\n'),
     writeFile(paths.requirementsPath, `${JSON.stringify(requirements)}\n`),
     writeFile(paths.statusPath, `${JSON.stringify(status)}\n`),
     writeFile(paths.anomaliesPath, '[]\n'),
@@ -118,6 +120,125 @@ describe('decideSourceUpdate', () => {
 });
 
 describe('syncRegisteredSources', () => {
+  it('reconciles existing Chinese, English, and alias names before creating a deterministic bilingual record', () => {
+    const existing = {
+      id: 'existing-institution',
+      nameZh: 'åŒ—äº¬å¤§å­¦',
+      nameEn: 'Peking University',
+      aliases: ['Beida'],
+    };
+    const institutions = [existing];
+
+    expect(reconcileInstitution({ institutionOfficial: 'Peking University', institutionNameZh: 'åŒ—äº¬å¤§å­¦' }, institutions))
+      .toBe(existing);
+    expect(reconcileInstitution({ institutionOfficial: 'Beida' }, institutions)).toBe(existing);
+    expect(reconcileInstitution({ institutionOfficial: 'New University', institutionNameZh: 'æ–°å¤§å­¦' }, institutions))
+      .toMatchObject({
+        id: expect.stringMatching(/^cn-[a-f0-9]{16}$/u),
+        nameEn: 'New University',
+        nameZh: 'æ–°å¤§å­¦',
+        aliases: [],
+      });
+    expect(() => reconcileInstitution({ institutionOfficial: 'Unknown English Only' }, institutions))
+      .toThrow(/No registered institution/u);
+  });
+
+  it('commits a bilingual institution only when its guarded source update is accepted', async () => {
+    const paths = await createFiles([]);
+    const bilingualSource = {
+      ...source,
+      id: 'glasgow-china',
+      parser: {
+        mode: 'html-table',
+        rowSelector: 'tr',
+        institutionColumn: 0,
+        nameZhColumn: 1,
+        tierColumn: 2,
+        guard: { minimumRecords: 2, maximumRecords: 2, maximumRemovalRatio: 0 },
+      },
+    };
+
+    const result = await syncRegisteredSources({
+      ...paths,
+      sources: [bilingualSource],
+      fetchImpl: vi.fn().mockResolvedValue(new Response('<table><tr><td>New University</td><td>æ–°å¤§å­¦</td><td>A</td></tr></table>', { status: 200 })),
+      now: new Date('2026-08-02T10:00:00Z'),
+    });
+
+    expect(result.requirements).toEqual([]);
+    expect(result.institutions).toEqual([]);
+    expect(JSON.parse(await readFile(paths.institutionsPath, 'utf8'))).toEqual([]);
+    expect(result.anomalies).toMatchObject([{ sourceId: 'glasgow-china', reason: 'below-minimum-records' }]);
+  });
+
+  it('processes bilingual providers before earlier English-only sources and commits both accepted datasets', async () => {
+    const paths = await createFiles([]);
+    const englishOnlySource = {
+      ...source,
+      id: 'english-only-source',
+      url: 'https://www.example.ac.uk/english-only',
+      parser: {
+        mode: 'html-list',
+        selector: '#official-list',
+        defaultTierOfficial: 'B',
+        guard: { minimumRecords: 1, maximumRecords: 1, maximumRemovalRatio: 0 },
+      },
+    };
+    const bilingualProvider = {
+      ...source,
+      id: 'glasgow-china',
+      url: 'https://www.example.ac.uk/bilingual-provider',
+      parser: {
+        mode: 'html-table',
+        rowSelector: 'tr',
+        institutionColumn: 0,
+        nameZhColumn: 1,
+        tierColumn: 2,
+        guard: { minimumRecords: 1, maximumRecords: 1, maximumRemovalRatio: 0 },
+      },
+    };
+    const result = await syncRegisteredSources({
+      ...paths,
+      sources: [englishOnlySource, bilingualProvider],
+      fetchImpl: vi.fn(async (url) => new Response(
+        url.endsWith('bilingual-provider')
+          ? '<table><tr><td>New University</td><td>æ–°å¤§å­¦</td><td>A</td></tr></table>'
+          : '<ul id="official-list"><li>New University</li></ul>',
+        { status: 200 },
+      )),
+      now: new Date('2026-08-02T10:00:00Z'),
+    });
+
+    expect(result.anomalies).toEqual([]);
+    expect(result.requirements).toHaveLength(2);
+    expect(result.requirements.map((fact) => fact.institutionId)).toEqual([result.institutions[0].id, result.institutions[0].id]);
+    expect(result.institutions).toMatchObject([{ id: expect.stringMatching(/^cn-[a-f0-9]{16}$/u), nameEn: 'New University', nameZh: 'æ–°å¤§å­¦' }]);
+    expect(JSON.parse(await readFile(paths.institutionsPath, 'utf8'))).toEqual(result.institutions);
+  });
+
+  it('reports an English-only unknown row without changing trusted institutions', async () => {
+    const paths = await createFiles([]);
+    const result = await syncRegisteredSources({
+      ...paths,
+      sources: [{
+        ...source,
+        parser: {
+          mode: 'html-list',
+          selector: '#official-list',
+          defaultTierOfficial: 'A',
+          guard: { minimumRecords: 1, maximumRecords: 1, maximumRemovalRatio: 0 },
+        },
+      }],
+      fetchImpl: vi.fn().mockResolvedValue(new Response('<ul id="official-list"><li>Unknown English Only</li></ul>', { status: 200 })),
+      now: new Date('2026-08-02T10:00:00Z'),
+    });
+
+    expect(result.requirements).toEqual([]);
+    expect(result.institutions).toEqual([]);
+    expect(JSON.parse(await readFile(paths.institutionsPath, 'utf8'))).toEqual([]);
+    expect(result.anomalies).toMatchObject([{ reason: 'unknown-english-only-institution', retainedTrustedFacts: true }]);
+  });
+
   it('preserves trusted facts, writes an anomaly, and leaves no candidate after a rejected removal', async () => {
     const previousRequirements = facts(100);
     const paths = await createFiles(previousRequirements);

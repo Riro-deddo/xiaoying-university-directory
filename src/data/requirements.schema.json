@@ -22,6 +22,7 @@
       "sourceId": { "type": "string", "minLength": 1, "pattern": "^[a-z0-9-]+$" },
       "institutionId": { "type": "string", "minLength": 1, "pattern": "^[a-z0-9-]+$" },
       "institutionOfficial": { "type": "string", "minLength": 1 },
+      "institutionNameZh": { "type": "string", "minLength": 1 },
       "tierOfficial": { "type": "string", "minLength": 1 },
       "tierZh": { "type": "string", "minLength": 1 },
       "scoreOfficial": { "type": "string", "minLength": 1 },

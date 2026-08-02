@@ -13,6 +13,7 @@ export function normalizeExtractedFact(raw, context = {}) {
 
   if (raw.tierOfficial !== undefined) fact.tierOfficial = normalizeOfficialText(raw.tierOfficial);
   if (raw.scoreOfficial !== undefined) fact.scoreOfficial = normalizeOfficialText(raw.scoreOfficial);
+  if (raw.institutionNameZh !== undefined) fact.institutionNameZh = normalizeOfficialText(raw.institutionNameZh);
 
   return fact;
 }

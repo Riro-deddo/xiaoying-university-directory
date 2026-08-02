@@ -22,19 +22,28 @@ function textLines(items) {
     .filter(Boolean);
 }
 
-function factFromRow(match, config) {
+export function extractPdfFactFromRow(line, config) {
+  const match = new RegExp(config.rowPattern).exec(line);
+  if (!match) return undefined;
+
   const columns = match.slice(1).map((column) => column?.trim());
-  const requiredColumns = [config.institutionColumn, config.tierColumn]
+  const requiredColumns = [config.institutionColumn, config.tierColumn, config.nameZhColumn]
     .filter((column) => column !== undefined);
   if (!Number.isInteger(config.institutionColumn)
     || requiredColumns.some((column) => !Number.isInteger(column) || columns[column] === undefined)
-    || (config.scoreColumn !== undefined && (!Number.isInteger(config.scoreColumn) || config.scoreColumn >= columns.length))) {
+    || (config.scoreColumn !== undefined && (!Number.isInteger(config.scoreColumn) || config.scoreColumn >= columns.length))
+    || (config.scoreColumns ?? []).some(({ label, column }) => (
+      !label || !Number.isInteger(column) || columns[column] === undefined
+    ))) {
     throw new ExtractorError('PARSER_STRUCTURE_CHANGED', 'Registered PDF columns are no longer available.');
   }
 
   const fact = { institutionOfficial: columns[config.institutionColumn] };
+  if (config.nameZhColumn !== undefined) fact.institutionNameZh = columns[config.nameZhColumn];
   if (config.tierColumn !== undefined) fact.tierOfficial = columns[config.tierColumn];
-  if (config.scoreColumn !== undefined && columns[config.scoreColumn] !== undefined) {
+  if (Array.isArray(config.scoreColumns)) {
+    fact.scoreOfficial = config.scoreColumns.map(({ label, column }) => `${label}: ${columns[column]}`).join('ï¼›');
+  } else if (config.scoreColumn !== undefined && columns[config.scoreColumn] !== undefined) {
     fact.scoreOfficial = columns[config.scoreColumn];
   }
   return fact;
@@ -63,8 +72,8 @@ export async function extractPdfFacts(config, bytes) {
   if (headingIndex === -1) throw new ExtractorError('PARSER_EMPTY', 'Registered PDF heading was not found.');
 
   const facts = lines.slice(headingIndex + 1).flatMap((line) => {
-    const match = line.match(row);
-    return match ? [factFromRow(match, config)] : [];
+    const fact = extractPdfFactFromRow(line, { ...config, rowPattern: row.source });
+    return fact ? [fact] : [];
   });
   if (facts.length === 0) throw new ExtractorError('PARSER_EMPTY', 'Registered PDF heading has no rows.');
   return facts;

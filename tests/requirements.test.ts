@@ -37,6 +37,13 @@ const validRequirement: RequirementFact = {
 };
 
 describe('normalized requirement contracts', () => {
+  it('allows persisted bilingual source spelling alongside the canonical institution ID', () => {
+    expect(validateRequirementData([{
+      ...validRequirement,
+      institutionNameZh: 'åŒ—äº¬å¤§å­¦',
+    }])).toBe(true);
+  });
+
   it('requires every persisted fact to retain the source-specific institution spelling', () => {
     const { institutionOfficial: _institutionOfficial, ...missingOfficialName } = validRequirement;
     expect(validateRequirementData(missingOfficialName)).toBe(false);

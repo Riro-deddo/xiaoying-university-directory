@@ -12,6 +12,13 @@ import { decideSourceUpdate } from './update-guard.mjs';
 
 export { decideSourceUpdate };
 
+const bilingualRegistryProviderIds = new Set([
+  'sheffield-china',
+  'glasgow-china',
+  'nottingham-china',
+  'southampton-china',
+]);
+
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const requirementsSchema = JSON.parse(await readFile(join(root, 'src', 'data', 'requirements.schema.json'), 'utf8'));
 const validateRequirements = new Ajv2020({ allErrors: true }).compile(requirementsSchema);
@@ -141,12 +148,48 @@ function normalizedInstitutionName(value) {
     .toLocaleLowerCase('en-US');
 }
 
-function registeredInstitutionId(institutionOfficial, institutions) {
-  const officialName = normalizedInstitutionName(institutionOfficial);
-  const institution = institutions.find((record) => [record.nameZh, record.nameEn, ...record.aliases]
-    .some((name) => normalizedInstitutionName(name) === officialName));
-  if (!institution) throw new Error(`No registered institution matches official source row: ${institutionOfficial}`);
-  return institution.id;
+class InstitutionReconciliationError extends Error {
+  constructor(code, message) {
+    super(message);
+    this.name = 'InstitutionReconciliationError';
+    this.code = code;
+  }
+}
+
+export function reconcileInstitution(rawFact, institutions) {
+  const officialName = normalizedInstitutionName(rawFact.institutionOfficial);
+  const ChineseName = normalizedInstitutionName(rawFact.institutionNameZh);
+
+  if (ChineseName) {
+    const ChineseMatch = institutions.find((record) => normalizedInstitutionName(record.nameZh) === ChineseName);
+    if (ChineseMatch) return ChineseMatch;
+  }
+
+  if (officialName) {
+    const EnglishMatch = institutions.find((record) => normalizedInstitutionName(record.nameEn) === officialName);
+    if (EnglishMatch) return EnglishMatch;
+
+    const aliasMatch = institutions.find((record) => record.aliases
+      .some((alias) => normalizedInstitutionName(alias) === officialName));
+    if (aliasMatch) return aliasMatch;
+  }
+
+  if (officialName && ChineseName) {
+    const id = `cn-${createHash('sha256').update(`${ChineseName}\u0000${officialName}`).digest('hex').slice(0, 16)}`;
+    const collision = institutions.find((record) => record.id === id);
+    if (collision) return collision;
+    return {
+      id,
+      nameZh: rawFact.institutionNameZh.trim(),
+      nameEn: rawFact.institutionOfficial.trim(),
+      aliases: [],
+    };
+  }
+
+  throw new InstitutionReconciliationError(
+    'UNKNOWN_ENGLISH_ONLY_INSTITUTION',
+    `No registered institution matches official source row: ${rawFact.institutionOfficial}`,
+  );
 }
 
 function requirementFactId(sourceId, institutionId) {
@@ -160,12 +203,13 @@ function completeRequirementFact(rawFact, source, institutions, now, contentHash
     tierOfficial: rawFact.tierOfficial ?? source.parser.defaultTierOfficial,
   });
   if (!fact.tierOfficial) throw new Error(`Official source row has no tier: ${fact.institutionOfficial}`);
-  const institutionId = registeredInstitutionId(fact.institutionOfficial, institutions);
+  const institution = reconcileInstitution(fact, institutions);
+  if (!institutions.some((record) => record.id === institution.id)) institutions.push(institution);
   const requirement = {
-    id: requirementFactId(source.id, institutionId),
+    id: requirementFactId(source.id, institution.id),
     universityId: source.universityId,
     sourceId: source.id,
-    institutionId,
+    institutionId: institution.id,
     institutionOfficial: fact.institutionOfficial,
     tierOfficial: fact.tierOfficial,
     scope: source.scope,
@@ -174,6 +218,7 @@ function completeRequirementFact(rawFact, source, institutions, now, contentHash
     contentHash,
   };
   if (fact.scoreOfficial) requirement.scoreOfficial = fact.scoreOfficial;
+  if (fact.institutionNameZh) requirement.institutionNameZh = fact.institutionNameZh;
   if (source.cycle) requirement.cycle = source.cycle;
   return requirement;
 }
@@ -203,7 +248,7 @@ function fetchHealth(response) {
 export async function syncRegisteredSources(options = {}) {
   const paths = sourcePaths(options);
   const sources = options.sources ?? await readJson(paths.sourcesPath);
-  const institutions = options.institutions ?? await readJson(paths.institutionsPath);
+  let institutions = options.institutions ?? await readJson(paths.institutionsPath);
   let requirements = options.requirements ?? await readJson(paths.requirementsPath);
   const status = { ...(options.status ?? await readJson(paths.statusPath)) };
   const anomalies = [];
@@ -214,8 +259,16 @@ export async function syncRegisteredSources(options = {}) {
   const minimumGapMs = options.minimumGapMs ?? 600;
   const fetchTimeoutMs = options.fetchTimeoutMs ?? 12_000;
   let acceptedUpdate = false;
+  let acceptedInstitutionUpdate = false;
 
-  for (const [index, source] of sources.entries()) {
+  const orderedSources = sources
+    .map((source, index) => ({ source, index }))
+    .sort((left, right) => (
+      Number(bilingualRegistryProviderIds.has(right.source.id)) - Number(bilingualRegistryProviderIds.has(left.source.id))
+      || left.index - right.index
+    ));
+
+  for (const [index, { source }] of orderedSources.entries()) {
     if (index > 0) await wait(minimumGapMs);
     const previousStatus = status[source.id];
 
@@ -265,7 +318,8 @@ export async function syncRegisteredSources(options = {}) {
     }
 
     try {
-      const nextFacts = await extractFacts(source, response, { institutions, now });
+      const candidateInstitutions = [...institutions];
+      const nextFacts = await extractFacts(source, response, { institutions: candidateInstitutions, now });
       const guard = { ...source.parser.guard, sourceId: source.id, universityId: source.universityId };
       const previousFacts = requirements.filter((fact) => fact.sourceId === source.id);
       const decision = decideSourceUpdate(previousFacts, nextFacts, guard);
@@ -293,6 +347,8 @@ export async function syncRegisteredSources(options = {}) {
       }
 
       requirements = candidateRequirements;
+      if (candidateInstitutions.length !== institutions.length) acceptedInstitutionUpdate = true;
+      institutions = candidateInstitutions;
       acceptedUpdate = true;
       status[source.id] = sourceStatus(source, previousStatus, now, {
         health: response.redirected ? 'redirected' : 'ok',
@@ -301,6 +357,14 @@ export async function syncRegisteredSources(options = {}) {
       });
     } catch (error) {
       const parserCode = error && typeof error === 'object' ? error.code : undefined;
+      if (parserCode === 'UNKNOWN_ENGLISH_ONLY_INSTITUTION') {
+        status[source.id] = sourceStatus(source, previousStatus, now, {
+          health: 'changed',
+          error: error instanceof Error ? error.message : 'unknown institution',
+        });
+        anomalies.push(anomaly(source, 'unknown-english-only-institution', now));
+        continue;
+      }
       if (typeof parserCode === 'string' && /^(PARSER|PDF)_/u.test(parserCode)) {
         status[source.id] = sourceStatus(source, previousStatus, now, {
           health: 'changed',
@@ -318,9 +382,10 @@ export async function syncRegisteredSources(options = {}) {
   }
 
   if (acceptedUpdate) await writeJsonAtomically(paths.requirementsPath, requirements);
+  if (acceptedInstitutionUpdate) await writeJsonAtomically(paths.institutionsPath, institutions);
   await writeJsonAtomically(paths.statusPath, status);
   await writeJsonAtomically(paths.anomaliesPath, anomalies);
-  return { requirements, status, anomalies };
+  return { institutions, requirements, status, anomalies };
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {

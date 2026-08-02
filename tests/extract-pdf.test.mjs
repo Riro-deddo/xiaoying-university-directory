@@ -1,6 +1,6 @@
 import { readFile } from 'node:fs/promises';
 import { describe, expect, it } from 'vitest';
-import { extractPdfFacts } from '../scripts/extractors/pdf.mjs';
+import { extractPdfFactFromRow, extractPdfFacts } from '../scripts/extractors/pdf.mjs';
 
 const fixtureBytes = async () => new Uint8Array(await readFile(new URL('./fixtures/sources/list-text-layer.pdf', import.meta.url)));
 const footerFixtureBytes = async () => new Uint8Array(await readFile(new URL('./fixtures/sources/list-with-footer.pdf', import.meta.url)));
@@ -14,6 +14,26 @@ const pdfConfig = {
 };
 
 describe('extractPdfFacts', () => {
+  it('captures bilingual Glasgow rows and combines registered score columns', () => {
+    const fact = extractPdfFactFromRow(
+      'Beihang University åŒ—äº¬èˆªç©ºèˆªå¤©å¤§å­¦ 70% 65% A',
+      {
+        rowPattern: '^(Beihang University) (åŒ—äº¬èˆªç©ºèˆªå¤©å¤§å­¦) (70%) (65%) (A)$',
+        institutionColumn: 0,
+        nameZhColumn: 1,
+        scoreColumns: [{ label: '2:1', column: 2 }, { label: '2:2', column: 3 }],
+        tierColumn: 4,
+      },
+    );
+
+    expect(fact).toEqual({
+      institutionOfficial: 'Beihang University',
+      institutionNameZh: 'åŒ—äº¬èˆªç©ºèˆªå¤©å¤§å­¦',
+      scoreOfficial: '2:1: 70%ï¼›2:2: 65%',
+      tierOfficial: 'A',
+    });
+  });
+
   it('extracts text-layer rows and preserves official tier wording', async () => {
     const facts = await extractPdfFacts(pdfConfig, await fixtureBytes());
 
