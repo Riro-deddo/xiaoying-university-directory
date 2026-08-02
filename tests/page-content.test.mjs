@@ -33,12 +33,25 @@ describe('dual-direction search page', () => {
     expect(`${page}${search}`).not.toMatch(/可以申请|不能申请|保底|冲刺/);
   });
 
-  it('renders collapsed official Lists without treating link-only sources as local Lists', () => {
+  it('describes the directory as Chinese institution rules rather than one universal List type', () => {
+    expect(page).toContain('英国大学中国院校规则，一页查清');
+    expect(page).not.toContain('英国大学官方 List，一页查清');
+  });
+
+  it('labels institution rules by meaning instead of treating every source as an eligibility List', () => {
     expect(page).toContain('<details class="official-list-panel">');
-    expect(page).toContain('查看已收录院校 List（');
+    expect(page).toContain('officialPanelTitle(panel.ruleType, panel.rows.length)');
+    expect(page).toContain('panel.ruleSummaryZh');
+    expect(page).toContain('panel.listedMeaningZh');
+    expect(page).toContain('panel.unlistedMeaningZh');
+    expect(page).toContain("panel.scope !== 'university'");
+    expect(page).toContain('仅适用于：');
     expect(page).toContain('官方分组/等级');
-    expect(page).toContain('官网名单暂未完成安全结构化，本站暂不附表');
+    expect(page).toContain('官网存在院校规则，但本站暂未完成安全结构化');
+    expect(page).not.toContain('查看已收录院校 List（');
     expect(page).not.toContain('不能申请');
+    expect(styles).toContain('.official-rule-meaning');
+    expect(styles).toContain('.rule-type');
   });
 });
 

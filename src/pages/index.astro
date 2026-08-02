@@ -4,6 +4,8 @@ import { loadInstitutions, loadRequirements, loadUniversities } from '../lib/dat
 import { buildOfficialListDisplays } from '../lib/official-list-display';
 import {
   directoryFilters,
+  institutionRuleTypeCopy,
+  officialPanelTitle,
   sourceFreshnessCopy,
   sourceHealthCopy,
   stateCopy,
@@ -28,9 +30,9 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="description" content="集中查找英国大学面向中国本科背景发布的官方院校 List 与申请要求。" />
+    <meta name="description" content="集中查找英国大学面向中国本科背景发布的院校准入、成绩分档与申请要求。" />
     <link rel="icon" type="image/svg+xml" href={faviconUrl} />
-    <title>小英高校百科｜英国大学官方 List 导航</title>
+    <title>小英高校百科｜英国大学中国院校规则导航</title>
   </head>
   <body>
     <header class="site-header">
@@ -40,8 +42,8 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
 
     <main>
       <section class="intro" aria-labelledby="page-title">
-        <h1 id="page-title">英国大学官方 List，一页查清</h1>
-        <p>集中查找英国大学面向中国本科背景发布的院校名单与申请要求。</p>
+        <h1 id="page-title">英国大学中国院校规则，一页查清</h1>
+        <p>分清院校准入限制、成绩门槛分档与普通中国申请要求。</p>
 
         <div class="search-modes" role="group" aria-label="搜索方向">
           <button class="search-mode active" type="button" data-search-mode="uk-university" aria-pressed="true">查英国大学</button>
@@ -90,6 +92,7 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
                       <a href={source.url} target="_blank" rel="noopener noreferrer">
                         <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9"></path><path d="M19 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6"></path></svg>
                         <span>{source.labelZh}</span>
+                        <small class="rule-type">{institutionRuleTypeCopy[source.institutionRule.type].label}</small>
                         <small>{sourceHealthCopy[source.status?.health ?? 'unchecked']} · {sourceFreshnessCopy(source.status)}</small>
                       </a>
                     ))
@@ -97,7 +100,14 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
               </div>
               {(officialListsByUniversity.get(university.id) ?? []).map((panel) => (
                 <details class="official-list-panel">
-                  <summary>查看已收录院校 List（{panel.rows.length} 所）</summary>
+                  <summary>{officialPanelTitle(panel.ruleType, panel.rows.length)}</summary>
+                  <div class="official-rule-meaning">
+                    <strong>{panel.ruleSummaryZh}</strong>
+                    <p><span>名单内：</span>{panel.listedMeaningZh}</p>
+                    <p><span>名单外：</span>{panel.unlistedMeaningZh}</p>
+                    {panel.caveatZh && <p>{panel.caveatZh}</p>}
+                    {panel.scope !== 'university' && <p class="scope-warning">仅适用于：{panel.scopeZh}</p>}
+                  </div>
                   <div class="official-list-meta">
                     <span>{panel.sourceLabelZh}</span>
                     <span>适用范围：{panel.scopeZh}</span>
@@ -127,10 +137,16 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
                   </ol>
                 </details>
               ))}
-              {university.state === 'official-list'
-                && !(officialListsByUniversity.get(university.id)?.length)
-                && university.sources.some((source) => source.kind === 'official-list' && source.parser.mode === 'link-only')
-                && <p class="link-only-disclosure">官网名单暂未完成安全结构化，本站暂不附表</p>}
+              {university.sources.map((source) => source.parser.mode === 'link-only'
+                && source.institutionRule.type !== 'none'
+                && (
+                  <div class="link-only-disclosure">
+                    <strong>{institutionRuleTypeCopy[source.institutionRule.type].label}</strong>
+                    <span>{source.institutionRule.summaryZh}</span>
+                    <span>官网存在院校规则，但本站暂未完成安全结构化，本站暂不附表。</span>
+                    {source.institutionRule.unlistedMeaningZh && <span>{source.institutionRule.unlistedMeaningZh}</span>}
+                  </div>
+                ))}
             </article>
           ))}
         </div>
