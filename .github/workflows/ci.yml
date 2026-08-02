@@ -1,17 +1,26 @@
 name: CI
-on: [push, pull_request]
+on:
+  push:
+  pull_request:
+  repository_dispatch:
+    types: [guarded-source-update]
 permissions:
   contents: read
 jobs:
   verify:
+    if: github.event_name != 'repository_dispatch' || github.event.client_payload.sha == github.sha
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          ref: ${{ github.event.client_payload.sha || github.sha }}
       - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6.5.0
         with:
           node-version: 22
           package-manager-cache: false
       - run: corepack enable
       - run: pnpm install --frozen-lockfile
+      - run: pnpm build:index
+      - run: git diff --exit-code -- src/data/generated/reverse-index.json
       - run: pnpm test:run
       - run: pnpm build
