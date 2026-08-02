@@ -35,8 +35,18 @@ function normalizeQuery(query: string): string {
   return query.normalize('NFKC').trim().replace(/\s+/g, ' ');
 }
 
+export function compareDirectoryUniversities(left: UniversityWithStatus, right: UniversityWithStatus): number {
+  if (left.directoryCategory !== right.directoryCategory) {
+    return left.directoryCategory === 'qs-top-200' ? -1 : 1;
+  }
+  if (left.directoryCategory === 'qs-top-200' && right.directoryCategory === 'qs-top-200') {
+    return left.qs!.rank - right.qs!.rank;
+  }
+  return 0;
+}
+
 export function createUniversitySearch(records: UniversityWithStatus[]) {
-  const ranked = [...records].sort((a, b) => a.qs.rank - b.qs.rank);
+  const ranked = [...records].sort(compareDirectoryUniversities);
   const fuse = new Fuse(ranked, {
     threshold: 0.34,
     ignoreLocation: true,
@@ -107,7 +117,7 @@ export function createInstitutionEvidenceSearch({
     if (!institution) return { kind: 'unknown', suggestions: [] };
 
     const cards = [...universities]
-      .sort((left, right) => left.qs.rank - right.qs.rank)
+      .sort(compareDirectoryUniversities)
       .map((university) => {
         const entries = reverseIndex.filter((entry) =>
           entry.institutionId === institution.id && entry.universityId === university.id,

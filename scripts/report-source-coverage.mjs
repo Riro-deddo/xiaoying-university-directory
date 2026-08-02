@@ -15,11 +15,14 @@ function sourceIsOfficial(source, university) {
 export function evaluateCoverage({ cohort, universities, sources }) {
   const cohortIds = new Set(cohort.universities.map((item) => item.id));
   const universityIds = universities.map((item) => item.id);
+  const rankedUniversityIds = universities
+    .filter((item) => item.directoryCategory === 'qs-top-200')
+    .map((item) => item.id);
   const sourceIds = sources.map((item) => item.id);
   const sourceById = new Map(sources.map((item) => [item.id, item]));
   const failures = [];
 
-  if (universityIds.length !== cohortIds.size || universityIds.some((id) => !cohortIds.has(id)) || new Set(universityIds).size !== universityIds.length) {
+  if (rankedUniversityIds.length !== cohortIds.size || rankedUniversityIds.some((id) => !cohortIds.has(id)) || new Set(universityIds).size !== universityIds.length) {
     failures.push('public university IDs must exactly equal the QS cohort');
   }
   if (new Set(sourceIds).size !== sourceIds.length) failures.push('duplicate source IDs');
@@ -41,8 +44,8 @@ export function evaluateCoverage({ cohort, universities, sources }) {
 
   for (const source of sources) {
     const university = universities.find((item) => item.id === source.universityId);
-    if (!university || !cohortIds.has(source.universityId)) {
-      failures.push(`source university is outside the cohort: ${source.id}`);
+    if (!university) {
+      failures.push(`source university is unregistered: ${source.id}`);
       continue;
     }
     if (!university.sourceIds.includes(source.id)) {

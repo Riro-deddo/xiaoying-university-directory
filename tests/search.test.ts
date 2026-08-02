@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { createUniversitySearch } from '../src/lib/search';
+import { compareDirectoryUniversities, createUniversitySearch } from '../src/lib/search';
 import { createInstitutionEvidenceSearch } from '../src/lib/search';
 import type { UniversityWithStatus } from '../src/lib/types';
 
@@ -18,15 +18,19 @@ const gradeThresholdRule = {
 const records: UniversityWithStatus[] = [
   {
     id: 'imperial', nameZh: '帝国理工学院', nameEn: 'Imperial College London', aliases: ['ICL', '帝国理工'],
-    qs: { edition: 2027, rank: 2 }, state: 'official-list', officialDomain: 'https://www.imperial.ac.uk', sources: [],
+    directoryCategory: 'qs-top-200', qs: { edition: 2027, rank: 2 }, state: 'official-list', officialDomain: 'https://www.imperial.ac.uk', sources: [],
   },
   {
     id: 'ucl', nameZh: '伦敦大学学院', nameEn: 'University College London', aliases: ['UCL'],
-    qs: { edition: 2027, rank: 9 }, state: 'china-requirements', officialDomain: 'https://www.ucl.ac.uk', sources: [],
+    directoryCategory: 'qs-top-200', qs: { edition: 2027, rank: 9 }, state: 'china-requirements', officialDomain: 'https://www.ucl.ac.uk', sources: [],
   },
   {
     id: 'edinburgh', nameZh: '爱丁堡大学', nameEn: 'The University of Edinburgh', aliases: ['爱大', 'Edinburgh'],
-    qs: { edition: 2027, rank: 27 }, state: 'faculty-only', officialDomain: 'https://www.ed.ac.uk', sources: [],
+    directoryCategory: 'qs-top-200', qs: { edition: 2027, rank: 27 }, state: 'faculty-only', officialDomain: 'https://www.ed.ac.uk', sources: [],
+  },
+  {
+    id: 'london-business-school', nameZh: 'London Business School', nameEn: 'London Business School', aliases: ['LBS'],
+    directoryCategory: 'specialist', state: 'not-public', officialDomain: 'https://www.london.edu', sources: [],
   },
 ];
 
@@ -43,8 +47,13 @@ describe('createUniversitySearch', () => {
     expect(directory.search(query, []).map((item) => item.id)).toContain(id);
   });
 
-  it('returns all records in QS rank order for an empty query', () => {
-    expect(directory.search('', []).map((item) => item.id)).toEqual(['imperial', 'ucl', 'edinburgh']);
+  it('returns ranked records before specialist institutions for an empty query', () => {
+    expect(directory.search('', []).map((item) => item.id)).toEqual(['imperial', 'ucl', 'edinburgh', 'london-business-school']);
+    expect(directory.search('', []).at(-1)?.id).toBe('london-business-school');
+  });
+
+  it('sorts ranked universities before specialist institutions', () => {
+    expect(compareDirectoryUniversities(records[2], records[3])).toBeLessThan(0);
   });
 
   it('does not include a fuzzy neighbour when an alias matches exactly', () => {

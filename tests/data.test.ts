@@ -13,6 +13,7 @@ const validUniversity: University = {
   nameZh: 'Imperial',
   nameEn: 'Imperial College London',
   aliases: ['IC', 'ICL'],
+  directoryCategory: 'qs-top-200',
   qs: { edition: 2027, rank: 2 },
   state: 'official-list',
   officialDomain: 'https://www.imperial.ac.uk',
@@ -122,7 +123,9 @@ describe('joinUniversityStatuses', () => {
 describe('QS 2027 starter ranks', () => {
   it('matches the published QS 2027 positions', () => {
     const ranks = Object.fromEntries(
-      loadUniversities().map((university) => [university.id, university.qs.rank]),
+      loadUniversities()
+        .filter((university) => university.directoryCategory === 'qs-top-200')
+        .map((university) => [university.id, university.qs!.rank]),
     );
 
     expect(ranks).toMatchObject({
@@ -130,5 +133,19 @@ describe('QS 2027 starter ranks', () => {
       'university-college-london': 8,
       'university-of-edinburgh': 35,
     });
+  });
+});
+
+describe('explicit directory scope', () => {
+  it('includes 28 ranked universities and LBS as a specialist institution', () => {
+    const universities = loadUniversities();
+
+    expect(universities.filter((item) => item.directoryCategory === 'qs-top-200')).toHaveLength(28);
+    expect(universities.find((item) => item.id === 'london-business-school')).toMatchObject({
+      directoryCategory: 'specialist',
+      state: 'not-public',
+    });
+    expect(universities.find((item) => item.id === 'london-business-school')).not.toHaveProperty('qs');
+    expect(new Set(universities.map((item) => item.id)).size).toBe(29);
   });
 });

@@ -13,6 +13,11 @@ describe('source coverage report', () => {
     expect(evaluateCoverage({ cohort, universities, sources }).failures).toEqual([]);
   });
 
+  it('allows a specialist university and its linked official source outside the QS cohort', () => {
+    expect(evaluateCoverage({ cohort, universities, sources }).failures)
+      .not.toContain('public university IDs must exactly equal the QS cohort');
+  });
+
   it.each([
     ['missing university', { universities: universities.slice(1) }],
     ['missing source', { sources: sources.slice(1) }],

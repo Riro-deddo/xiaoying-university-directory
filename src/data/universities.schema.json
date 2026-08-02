@@ -4,12 +4,13 @@
   "items": {
     "type": "object",
     "additionalProperties": false,
-    "required": ["id", "nameZh", "nameEn", "aliases", "qs", "state", "officialDomain", "sourceIds"],
+    "required": ["id", "nameZh", "nameEn", "aliases", "directoryCategory", "state", "officialDomain", "sourceIds"],
     "properties": {
       "id": { "type": "string", "minLength": 1, "pattern": "^[a-z0-9-]+$" },
       "nameZh": { "type": "string", "minLength": 1 },
       "nameEn": { "type": "string", "minLength": 1 },
       "aliases": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true },
+      "directoryCategory": { "enum": ["qs-top-200", "specialist"] },
       "qs": {
         "type": "object",
         "additionalProperties": false,
@@ -23,6 +24,13 @@
       "officialDomain": { "type": "string", "pattern": "^https://" },
       "sourceIds": { "type": "array", "items": { "type": "string", "minLength": 1, "pattern": "^[a-z0-9-]+$" }, "uniqueItems": true },
       "noteZh": { "type": "string", "minLength": 1 }
-    }
+    },
+    "allOf": [
+      {
+        "if": { "properties": { "directoryCategory": { "const": "qs-top-200" } }, "required": ["directoryCategory"] },
+        "then": { "required": ["qs"] },
+        "else": { "not": { "required": ["qs"] } }
+      }
+    ]
   }
 }

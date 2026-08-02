@@ -624,4 +624,5 @@
       }
     }
   }
+  ,{ "id":"lbs-mim-entry", "universityId":"london-business-school", "labelZh":"LBS 管理学硕士申请要求", "url":"https://www.london.edu/masters-degrees/masters-in-management/apply", "kind":"china-requirements", "scope":"programme", "scopeZh":"LBS Masters in Management（管理学硕士）", "institutionRule":{ "type":"none", "summaryZh":"官网公开了管理学硕士的一般学位、成绩与申请要求；本轮未发现针对中国本科院校的公开名单。" }, "parser":{ "mode":"link-only", "guard":{ "minimumRecords":0, "maximumRecords":1, "maximumRemovalRatio":0 } } }
 ]

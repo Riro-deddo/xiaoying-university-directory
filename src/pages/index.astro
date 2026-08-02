@@ -78,7 +78,7 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
                 <h2>{university.nameZh}</h2>
                 <p>{university.nameEn}</p>
               </div>
-              <div class="rank"><span class="mobile-label">QS 2027</span>{university.qs.rank}</div>
+              <div class="rank"><span class="mobile-label">QS 2027</span>{university.qs?.rank ?? '—'}</div>
               <div class="state">
                 <span class:list={['status-dot', `status-${university.state}`]}></span>
                 <span title={stateCopy[university.state].description}>{stateCopy[university.state].label}</span>
@@ -266,7 +266,9 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
           const copy = evidenceCopyFor(card.evidence);
           const article = makeElement('article');
           article.className = 'evidence-card';
-          const title = makeElement('h3', `${card.university.nameZh}｜QS ${card.university.qs.rank}`);
+          const title = makeElement('h3', card.university.qs
+            ? `${card.university.nameZh}｜QS ${card.university.qs.rank}`
+            : card.university.nameZh);
           const status = makeElement('p', copy.label);
           status.className = 'evidence-state';
           const description = makeElement('p', copy.description);

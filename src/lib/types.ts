@@ -5,6 +5,8 @@ export type UniversityState =
   | 'not-public'
   | 'pending';
 
+export type DirectoryCategory = 'qs-top-200' | 'specialist';
+
 export type SourceKind = 'official-list' | 'china-requirements' | 'faculty-page';
 export type SourceHealth = 'ok' | 'redirected' | 'changed' | 'temporary-error' | 'unavailable' | 'unchecked';
 export type SourceScope = 'university' | 'faculty' | 'programme';
@@ -76,7 +78,8 @@ export interface University {
   nameZh: string;
   nameEn: string;
   aliases: string[];
-  qs: { edition: 2027; rank: number };
+  directoryCategory: DirectoryCategory;
+  qs?: { edition: 2027; rank: number };
   state: UniversityState;
   officialDomain: string;
   sourceIds: string[];

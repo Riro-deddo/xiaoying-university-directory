@@ -16,12 +16,16 @@ describe('QS cohort and official source registry', () => {
 
   it('does not contain universities outside the frozen cohort', () => {
     const cohortIds = new Set(cohort.universities.map((item) => item.id));
-    expect(universities.every((item) => cohortIds.has(item.id))).toBe(true);
+    const rankedUniversities = universities.filter((item) => item.directoryCategory === 'qs-top-200');
+    expect(rankedUniversities.every((item) => cohortIds.has(item.id))).toBe(true);
   });
 
   it('covers every frozen cohort university exactly once without pending records', () => {
     const cohortIds = [...cohort.universities.map((item) => item.id)].sort();
-    const publicIds = [...universities.map((item) => item.id)].sort();
+    const publicIds = universities
+      .filter((item) => item.directoryCategory === 'qs-top-200')
+      .map((item) => item.id)
+      .sort();
 
     expect(publicIds).toEqual(cohortIds);
     expect(universities.every((item) => item.state !== 'pending')).toBe(true);
@@ -31,6 +35,14 @@ describe('QS cohort and official source registry', () => {
     const sourceIds = new Set(sources.map((source) => source.id));
     expect(universities.flatMap((item) => item.sourceIds)
       .every((id) => sourceIds.has(id))).toBe(true);
+  });
+
+  it('registers and links the LBS Masters in Management source', () => {
+    expect(universities.find((item) => item.id === 'london-business-school')?.sourceIds).toEqual(['lbs-mim-entry']);
+    expect(sources.find((item) => item.id === 'lbs-mim-entry')).toMatchObject({
+      universityId: 'london-business-school',
+      url: 'https://www.london.edu/masters-degrees/masters-in-management/apply',
+    });
   });
 
   it('gives every university an official-domain source', () => {
