@@ -1,6 +1,10 @@
 import type {
   InstitutionRecord,
+  InstitutionRule,
+  InstitutionRuleType,
   RequirementFact,
+  SourceScope,
+  SourceWithStatus,
   UniversityWithStatus,
 } from './types';
 
@@ -17,6 +21,12 @@ export interface OfficialListDisplayPanel {
   sourceId: string;
   sourceLabelZh: string;
   sourceUrl: string;
+  ruleType: Exclude<InstitutionRuleType, 'none'>;
+  ruleSummaryZh: string;
+  listedMeaningZh: string;
+  unlistedMeaningZh: string;
+  caveatZh?: string;
+  scope: SourceScope;
   scopeZh: string;
   cycle?: string;
   extractedAt: string;
@@ -25,6 +35,21 @@ export interface OfficialListDisplayPanel {
 
 interface WorkingPanel extends OfficialListDisplayPanel {
   institutionIds: Set<string>;
+}
+
+function assertDisplayableRule(source: SourceWithStatus): asserts source is SourceWithStatus & {
+  institutionRule: InstitutionRule & {
+    type: Exclude<InstitutionRuleType, 'none'>;
+    listedMeaningZh: string;
+    unlistedMeaningZh: string;
+  };
+} {
+  if (source.institutionRule.type === 'none') {
+    throw new Error(`Source ${source.id} is requirements-only and cannot carry institution facts`);
+  }
+  if (!source.institutionRule.listedMeaningZh || !source.institutionRule.unlistedMeaningZh) {
+    throw new Error(`Source ${source.id} has incomplete institution rule meaning`);
+  }
 }
 
 export function buildOfficialListDisplays(input: {
@@ -46,6 +71,7 @@ export function buildOfficialListDisplays(input: {
     if (!source || source.universityId !== university.id) {
       throw new Error(`Requirement ${fact.id} references a missing or mismatched source ${fact.sourceId}`);
     }
+    assertDisplayableRule(source);
     if (source.parser.mode === 'link-only') {
       throw new Error(`Requirement ${fact.id} cannot be displayed from link-only source ${source.id}`);
     }
@@ -63,6 +89,12 @@ export function buildOfficialListDisplays(input: {
         sourceId: source.id,
         sourceLabelZh: source.labelZh,
         sourceUrl: source.url,
+        ruleType: source.institutionRule.type,
+        ruleSummaryZh: source.institutionRule.summaryZh,
+        listedMeaningZh: source.institutionRule.listedMeaningZh,
+        unlistedMeaningZh: source.institutionRule.unlistedMeaningZh,
+        ...(source.institutionRule.caveatZh ? { caveatZh: source.institutionRule.caveatZh } : {}),
+        scope: source.scope,
         scopeZh: source.scopeZh,
         ...(source.cycle ? { cycle: source.cycle } : {}),
         extractedAt: fact.extractedAt,

@@ -16,6 +16,13 @@ const structuredSource: SourceWithStatus = {
   scope: 'university',
   scopeZh: '全校',
   cycle: '2026/27',
+  institutionRule: {
+    type: 'grade-threshold',
+    summaryZh: '本科院校影响最低成绩门槛。',
+    listedMeaningZh: '名单内使用较低成绩门槛。',
+    unlistedMeaningZh: '名单外认可院校使用较高成绩门槛。',
+    caveatZh: '具体课程可能要求更高。',
+  },
   parser: {
     mode: 'html-list',
     guard: { minimumRecords: 1, maximumRecords: 100, maximumRemovalRatio: 0.2 },
@@ -131,5 +138,51 @@ describe('official List presentation model', () => {
         fact('duplicate', beihang.id, '2026-08-01T00:00:00.000Z'),
       ],
     })).toThrow(/duplicate institution/i);
+  });
+
+  it('carries grade-threshold meaning and exact scope into a folded panel', () => {
+    const panel = buildOfficialListDisplays({
+      universities: [university(structuredSource.universityId, structuredSource)],
+      institutions: [beihang],
+      requirements: [fact('beihang', beihang.id, '2026-08-01T00:00:00.000Z')],
+    }).get(structuredSource.universityId)?.[0];
+
+    expect(panel).toMatchObject({
+      ruleType: 'grade-threshold',
+      ruleSummaryZh: structuredSource.institutionRule.summaryZh,
+      listedMeaningZh: structuredSource.institutionRule.listedMeaningZh,
+      unlistedMeaningZh: structuredSource.institutionRule.unlistedMeaningZh,
+      scope: 'university',
+    });
+  });
+
+  it('supports a safely structured faculty rule without making it university-wide', () => {
+    const faculty: SourceWithStatus = {
+      ...structuredSource,
+      id: 'faculty-rule',
+      kind: 'faculty-page',
+      scope: 'faculty',
+      scopeZh: '商学院硕士项目',
+    };
+    const panel = buildOfficialListDisplays({
+      universities: [university(faculty.universityId, faculty)],
+      institutions: [beihang],
+      requirements: [fact('faculty', beihang.id, '2026-08-01T00:00:00.000Z', faculty)],
+    }).get(faculty.universityId)?.[0];
+
+    expect(panel).toMatchObject({ scope: 'faculty', scopeZh: '商学院硕士项目' });
+  });
+
+  it('rejects institution facts for a source classified as requirements-only', () => {
+    const noListSource: SourceWithStatus = {
+      ...structuredSource,
+      institutionRule: { type: 'none', summaryZh: '只有一般要求。' },
+    };
+
+    expect(() => buildOfficialListDisplays({
+      universities: [university(noListSource.universityId, noListSource)],
+      institutions: [beihang],
+      requirements: [fact('invalid', beihang.id, '2026-08-01T00:00:00.000Z', noListSource)],
+    })).toThrow(/requirements-only|institution rule/i);
   });
 });

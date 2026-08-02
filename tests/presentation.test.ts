@@ -2,6 +2,8 @@ import { describe, expect, it } from 'vitest';
 import {
   directoryFilters,
   evidenceStateCopy,
+  institutionRuleTypeCopy,
+  officialPanelTitle,
   sourceFreshnessCopy,
   stateCopy,
   sourceHealthCopy,
@@ -9,12 +11,12 @@ import {
 
 describe('stateCopy', () => {
   it('uses neutral language for unpublished information', () => {
-    expect(stateCopy['not-public'].label).toBe('未发现公开 List');
+    expect(stateCopy['not-public'].label).toBe('未发现院校规则');
     expect(stateCopy.pending.description).toContain('不代表学校不接受申请');
   });
 
-  it('preserves official List terminology in Chinese labels', () => {
-    expect(stateCopy['official-list'].label).toBe('公开院校 List');
+  it('labels the public state as institution rules rather than one kind of List', () => {
+    expect(stateCopy['official-list'].label).toBe('有中国院校规则');
   });
 });
 
@@ -27,7 +29,22 @@ describe('sourceHealthCopy', () => {
 describe('directoryFilters', () => {
   it('reuses the neutral state label in the public filter', () => {
     expect(directoryFilters.find(([value]) => value === 'not-public')?.[1])
-      .toBe('未发现公开 List');
+      .toBe('未发现院校规则');
+  });
+});
+
+describe('institution rule presentation', () => {
+  it('uses distinct Chinese labels for eligibility, grade, mixed, and no-list rules', () => {
+    expect(institutionRuleTypeCopy.eligibility.label).toBe('院校准入限制');
+    expect(institutionRuleTypeCopy['grade-threshold'].label).toBe('院校成绩分档');
+    expect(institutionRuleTypeCopy.mixed.label).toBe('准入与成绩混合规则');
+    expect(institutionRuleTypeCopy.none.label).toBe('未发现院校名单');
+  });
+
+  it('uses rule-specific folded panel titles', () => {
+    expect(officialPanelTitle('eligibility', 12)).toBe('查看官方院校准入名单（12 所）');
+    expect(officialPanelTitle('grade-threshold', 84)).toBe('查看官方院校成绩分档（84 所）');
+    expect(officialPanelTitle('mixed', 81)).toBe('查看官方 Priority List（81 所）');
   });
 });
 

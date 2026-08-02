@@ -1,10 +1,10 @@
-import type { EvidenceState, SourceHealth, SourceStatus, UniversityState } from './types';
+import type { EvidenceState, InstitutionRuleType, SourceHealth, SourceStatus, UniversityState } from './types';
 
 export const stateCopy: Record<UniversityState, { label: string; description: string }> = {
-  'official-list': { label: '公开院校 List', description: '已找到大学公开发布的院校名单或分组信息。' },
+  'official-list': { label: '有中国院校规则', description: '已找到大学公开发布的中国院校准入、成绩分档或混合规则。' },
   'china-requirements': { label: '中国申请要求', description: '已找到面向中国申请者的官方要求，未确认完整院校 List。' },
   'faculty-only': { label: '部分学院公开', description: '公开信息只适用于部分学院、专业或课程。' },
-  'not-public': { label: '未发现公开 List', description: '暂未发现公开院校名单，不代表学校不接受申请。' },
+  'not-public': { label: '未发现院校规则', description: '暂未发现公开的中国院校规则，不代表学校不接受申请。' },
   pending: { label: '待确认', description: '官方来源仍在核验中，不代表学校不接受申请。' },
 };
 
@@ -16,6 +16,19 @@ export const sourceHealthCopy: Record<SourceHealth, string> = {
   unavailable: '链接暂不可用',
   unchecked: '尚未检查',
 };
+
+export const institutionRuleTypeCopy = {
+  eligibility: { label: '院校准入限制' },
+  'grade-threshold': { label: '院校成绩分档' },
+  mixed: { label: '准入与成绩混合规则' },
+  none: { label: '未发现院校名单' },
+} satisfies Record<InstitutionRuleType, { label: string }>;
+
+export function officialPanelTitle(type: Exclude<InstitutionRuleType, 'none'>, count: number): string {
+  if (type === 'eligibility') return `查看官方院校准入名单（${count} 所）`;
+  if (type === 'grade-threshold') return `查看官方院校成绩分档（${count} 所）`;
+  return `查看官方 Priority List（${count} 所）`;
+}
 
 export const evidenceStateCopy: Record<EvidenceState, { label: string; description: string }> = {
   'official-match': { label: '公开 List 中找到', description: '在大学公开发布的院校名单或要求中找到该院校。' },
