@@ -872,8 +872,8 @@
       "tierOfficial": "Tier C"
     },
     {
-      "institutionId": "cn-294892d926a099b1",
-      "nameZh": "阜阳师范学院",
+      "institutionId": "cn-3eed51e9f008d2ea",
+      "nameZh": "阜阳师范大学",
       "nameEn": "Fuyang Normal University",
       "tierOfficial": "Tier C"
     },
@@ -974,8 +974,8 @@
       "tierOfficial": "Tier C"
     },
     {
-      "institutionId": "cn-eb05e0e2c3858178",
-      "nameZh": "广东技术师范学院",
+      "institutionId": "cn-13a3c963f474ff79",
+      "nameZh": "广东技术师范大学",
       "nameEn": "Guangdong Polytechnic Normal University",
       "tierOfficial": "Tier C"
     },
@@ -2210,16 +2210,16 @@
       "tierOfficial": "Tier B"
     },
     {
+      "institutionId": "cn-9e338bea93785dc4",
+      "nameZh": "嘉兴大学",
+      "nameEn": "Jiaxing University",
+      "tierOfficial": "Tier B"
+    },
+    {
       "institutionId": "cn-bc83fe0a6560fe96",
       "nameZh": "嘉兴南湖学院",
       "nameEn": "Jiaxing Nanhu University",
       "tierOfficial": "Tier C"
-    },
-    {
-      "institutionId": "cn-228da9869d132d1c",
-      "nameZh": "嘉兴学院",
-      "nameEn": "Jiaxing University",
-      "tierOfficial": "Tier B"
     },
     {
       "institutionId": "cn-5f1f3bf01578f017",
@@ -2918,8 +2918,8 @@
       "tierOfficial": "Tier C"
     },
     {
-      "institutionId": "cn-4608925f6f37c011",
-      "nameZh": "宁夏师范学院",
+      "institutionId": "cn-420d922c78eeff4e",
+      "nameZh": "宁夏师范大学",
       "nameEn": "Ningxia Normal University",
       "tierOfficial": "Tier C"
     },
@@ -4658,8 +4658,8 @@
       "tierOfficial": "Tier C"
     },
     {
-      "institutionId": "cn-e198010d37f04649",
-      "nameZh": "伊犁师范学院",
+      "institutionId": "cn-8e869295f3c945de",
+      "nameZh": "伊犁师范大学",
       "nameEn": "Yili Normal University",
       "tierOfficial": "Tier C"
     },

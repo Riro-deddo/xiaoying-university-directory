@@ -6,6 +6,7 @@ import { serializeJsonForHtml } from '../lib/html-json';
 import {
   directoryFilters,
   directoryRankCopy,
+  directoryScopeCopy,
   institutionRuleTypeCopy,
   officialPanelTitle,
   sourceFreshnessCopy,
@@ -29,7 +30,11 @@ const officialListPanelsByUniversity = new Map(
     })),
   ]),
 );
-const searchData = { institutions, universities, reverseIndexUrl: withBase(base, 'generated/reverse-index.json') };
+const searchData = {
+  universities,
+  institutionRegistryUrl: withBase(base, 'generated/institutions.json'),
+  reverseIndexUrl: withBase(base, 'generated/reverse-index.json'),
+};
 const searchDataJson = serializeJsonForHtml(searchData);
 const homeUrl = withBase(base, '');
 const methodologyUrl = withBase(base, 'methodology/');
@@ -56,7 +61,7 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
       <section class="intro" aria-labelledby="page-title">
         <h1 id="page-title">英国大学中国院校规则，一页查清</h1>
         <p>分清院校准入限制、成绩门槛分档与普通中国申请要求。</p>
-        <p class="directory-scope">28 所 QS 2027 世界前 200 英国大学 + 1 所专业院校</p>
+        <p class="directory-scope">{directoryScopeCopy}</p>
 
         <div class="search-modes" role="group" aria-label="搜索方向">
           <button class="search-mode active" type="button" data-search-mode="uk-university" aria-pressed="true">查英国大学</button>
@@ -167,14 +172,15 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
 
     <script is:inline id="directory-data" type="application/json" set:html={searchDataJson}></script>
     <script>
-      import { createInstitutionEvidenceSearch, createUniversitySearch } from '../lib/search';
-      import { directoryRankCopy, evidenceCopyFor, sourceFreshnessCopy } from '../lib/presentation';
-      import type { UniversityState, UniversityWithStatus } from '../lib/types';
+      import { createInstitutionEvidenceSearch, createUniversitySearch, type ReverseIndexEntry } from '../lib/search';
+      import { fetchInstitutionSearchData } from '../lib/lazy-institution-data';
+      import { directoryRankCopy, directoryScopeCopy, evidenceCopyFor, sourceFreshnessCopy } from '../lib/presentation';
+      import type { InstitutionRecord, UniversityState, UniversityWithStatus } from '../lib/types';
 
       const dataNode = document.querySelector<HTMLScriptElement>('#directory-data');
       const data = JSON.parse(dataNode?.textContent ?? '{}') as {
-        institutions: Parameters<typeof createInstitutionEvidenceSearch>[0]['institutions'];
         universities: UniversityWithStatus[];
+        institutionRegistryUrl: string;
         reverseIndexUrl: string;
       };
       const directory = createUniversitySearch(data.universities ?? []);
@@ -200,19 +206,22 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
 
       async function loadInstitutionDirectory() {
         if (institutionDirectory || reverseIndexLoading) return reverseIndexLoading;
-        reverseIndexMessage = '正在加载中国院校索引…';
-        reverseIndexLoading = fetch(data.reverseIndexUrl, { cache: 'force-cache' })
-          .then(async (response) => {
-            if (!response.ok) throw new Error(`Reverse index request failed: ${response.status}`);
-            const reverseIndex = await response.json();
-            if (!Array.isArray(reverseIndex)) throw new Error('Reverse index payload is invalid');
+        reverseIndexMessage = '正在加载中国院校查询数据…';
+        reverseIndexLoading = fetchInstitutionSearchData(
+          (url) => fetch(url, { cache: 'force-cache' }),
+          data.institutionRegistryUrl,
+          data.reverseIndexUrl,
+        )
+          .then(({ institutions, reverseIndex }) => {
             institutionDirectory = createInstitutionEvidenceSearch({
-              institutions: data.institutions ?? [], universities: data.universities ?? [], reverseIndex,
+              institutions: institutions as InstitutionRecord[],
+              universities: data.universities ?? [],
+              reverseIndex: reverseIndex as ReverseIndexEntry[],
             });
             reverseIndexMessage = '';
           })
           .catch(() => {
-            reverseIndexMessage = '中国院校索引暂时无法加载，请稍后重试。';
+            reverseIndexMessage = '中国院校查询数据暂时无法加载，请稍后重试。';
             institutionDirectory = undefined;
           })
           .finally(() => { reverseIndexLoading = undefined; update(); });
@@ -245,7 +254,7 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
         if (!institutionDirectory) {
           chooser?.replaceChildren();
           evidence?.replaceChildren();
-          if (institutionCount) institutionCount.textContent = reverseIndexMessage || '正在加载中国院校索引…';
+          if (institutionCount) institutionCount.textContent = reverseIndexMessage || '正在加载中国院校查询数据…';
           return;
         }
         const result = institutionDirectory.search(input?.value ?? '');
@@ -261,7 +270,7 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
         }
         if (result.kind === 'suggestions') {
           if (institutionCount) institutionCount.textContent = `找到 ${result.suggestions.length} 个可能的院校，请选择一个规范名称`;
-          const title = makeElement('p', '请选择规范院校名称后查看 28 所英国大学的公开信息：');
+          const title = makeElement('p', `请选择规范院校名称后查看 ${directoryScopeCopy}的公开信息：`);
           chooser?.append(title);
           result.suggestions.forEach((institution) => {
             const button = makeElement('button', `${institution.nameZh}｜${institution.nameEn}`);
@@ -273,7 +282,7 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
           return;
         }
 
-        if (institutionCount) institutionCount.textContent = `${result.institution.nameZh}：${result.cards.length} 所英国大学的公开信息`;
+        if (institutionCount) institutionCount.textContent = `${result.institution.nameZh}：${directoryScopeCopy}的公开信息`;
         const heading = makeElement('h2', `${result.institution.nameZh}｜${result.institution.nameEn}`);
         evidence?.append(heading);
         result.cards.forEach((card) => {
@@ -325,7 +334,7 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
         });
         if (label) label.textContent = chineseMode ? '搜索中国本科院校' : '搜索英国大学';
         if (input) input.placeholder = chineseMode ? '搜索中国本科院校中文名、英文名或别名' : '搜索大学中文名、英文名或简称';
-        if (help) help.textContent = chineseMode ? '精确匹配会显示 28 所英国大学的公开信息；模糊结果仅供选择规范名称。' : '按大学中文名、英文名或简称搜索，并可按公开信息状态筛选。';
+        if (help) help.textContent = chineseMode ? `精确匹配会显示 ${directoryScopeCopy}的公开信息；模糊结果仅供选择规范名称。` : '按大学中文名、英文名或简称搜索，并可按公开信息状态筛选。';
         if (filters) filters.hidden = chineseMode;
         if (ukDirectory) ukDirectory.hidden = chineseMode;
         if (institutionResults) institutionResults.hidden = !chineseMode;

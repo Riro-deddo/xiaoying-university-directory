@@ -41,8 +41,9 @@ export async function buildPublicData({ outputDir, institutions, requirements, s
   }
 
   const reverseIndex = buildReverseIndex({ institutions, requirements, sources, statuses });
+  await writeFile(join(outputDir, 'institutions.json'), json(institutions), 'utf8');
   await writeFile(join(outputDir, 'reverse-index.json'), json(reverseIndex), 'utf8');
-  return { listFiles: structuredSources(sources).length, reverseIndexEntries: reverseIndex.length };
+  return { listFiles: structuredSources(sources).length, institutionRecords: institutions.length, reverseIndexEntries: reverseIndex.length };
 }
 
 async function loadJson(...parts) {
@@ -59,5 +60,5 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const result = await buildPublicData({
     outputDir: join(root, 'public', 'generated'), institutions, requirements, sources, statuses,
   });
-  console.log(`Built ${result.listFiles} public list files and ${result.reverseIndexEntries} reverse-index entries.`);
+  console.log(`Built ${result.listFiles} public list files, ${result.institutionRecords} institutions, and ${result.reverseIndexEntries} reverse-index entries.`);
 }

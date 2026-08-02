@@ -828,13 +828,6 @@
       "scoreOfficial": "2:1: 70%;2:2: 65%"
     },
     {
-      "institutionId": "cn-675dc89119eb7546",
-      "nameZh": "北京电影学院现代创意媒体学院",
-      "nameEn": "Beijing Film Academy Modern Creative Media College",
-      "tierOfficial": "China ranking list",
-      "scoreOfficial": "2:1: 85%;2:2: 80%"
-    },
-    {
       "institutionId": "cn-b5e3fccfd8826660",
       "nameZh": "北京电子科技学院",
       "nameEn": "Beijing Electronics Science & Technology Institute",
@@ -1559,6 +1552,13 @@
       "institutionId": "cn-c54a8bf9427f90d1",
       "nameZh": "成都锦城学院",
       "nameEn": "Chengdu Jincheng College",
+      "tierOfficial": "China ranking list",
+      "scoreOfficial": "2:1: 85%;2:2: 80%"
+    },
+    {
+      "institutionId": "cn-c54a8bf9427f90d1",
+      "nameZh": "成都锦城学院",
+      "nameEn": "Sichuan University Jincheng College",
       "tierOfficial": "China ranking list",
       "scoreOfficial": "2:1: 85%;2:2: 80%"
     },
@@ -2767,8 +2767,8 @@
       "scoreOfficial": "2:1: 80%;2:2: 75%"
     },
     {
-      "institutionId": "cn-8662abe7b31277c2",
-      "nameZh": "佛山科学技术学院",
+      "institutionId": "cn-d2d1c47bd0bdaac2",
+      "nameZh": "佛山大学",
       "nameEn": "Foshan University",
       "tierOfficial": "China ranking list",
       "scoreOfficial": "2:1: 75%;2:2: 70%"
@@ -3241,6 +3241,13 @@
       "nameEn": "Gansu University Of Chinese Medicine",
       "tierOfficial": "China ranking list",
       "scoreOfficial": "2:1: 80%;2:2: 75%"
+    },
+    {
+      "institutionId": "cn-d65eedfa9c42cf79",
+      "nameZh": "赣南科技学院",
+      "nameEn": "College of Applied Science, Jiangxi University of Science and Technology",
+      "tierOfficial": "China ranking list",
+      "scoreOfficial": "2:1: 85%;2:2: 80%"
     },
     {
       "institutionId": "cn-d65eedfa9c42cf79",
@@ -8612,13 +8619,6 @@
       "scoreOfficial": "2:1: 75%;2:2: 70%"
     },
     {
-      "institutionId": "cn-7d594ee83f0ce08b",
-      "nameZh": "江西理工大学应用科学学院",
-      "nameEn": "College of Applied Science, Jiangxi University of Science and Technology",
-      "tierOfficial": "China ranking list",
-      "scoreOfficial": "2:1: 85%;2:2: 80%"
-    },
-    {
       "institutionId": "cn-a88aa2d3780d3cfe",
       "nameZh": "江西旅游商贸职业学院",
       "nameEn": "Jiangxi Tourism and Commerce Vocational College",
@@ -11580,11 +11580,25 @@
       "scoreOfficial": "2:1: 85%;2:2: 80%"
     },
     {
+      "institutionId": "cn-e1081944b32c4a84",
+      "nameZh": "青岛城市学院",
+      "nameEn": "Qingdao University of Technology, Qindao College",
+      "tierOfficial": "China ranking list",
+      "scoreOfficial": "2:1: 85%;2:2: 80%"
+    },
+    {
       "institutionId": "cn-cefdddc5afd82a02",
       "nameZh": "青岛大学",
       "nameEn": "Qingdao University",
       "tierOfficial": "China ranking list",
       "scoreOfficial": "2:1: 75%;2:2: 70%"
+    },
+    {
+      "institutionId": "cn-798a43f1d58b93f6",
+      "nameZh": "青岛电影学院",
+      "nameEn": "Beijing Film Academy Modern Creative Media College",
+      "tierOfficial": "China ranking list",
+      "scoreOfficial": "2:1: 85%;2:2: 80%"
     },
     {
       "institutionId": "cn-798a43f1d58b93f6",
@@ -11655,13 +11669,6 @@
       "nameEn": "Qingdao University of Technology",
       "tierOfficial": "China ranking list",
       "scoreOfficial": "2:1: 75%;2:2: 70%"
-    },
-    {
-      "institutionId": "cn-f31b82d745f6036c",
-      "nameZh": "青岛理工大学琴岛学院",
-      "nameEn": "Qingdao University of Technology, Qindao College",
-      "tierOfficial": "China ranking list",
-      "scoreOfficial": "2:1: 85%;2:2: 80%"
     },
     {
       "institutionId": "cn-14039889388d7bd2",
@@ -14266,13 +14273,6 @@
       "nameEn": "Sichuan University",
       "tierOfficial": "China ranking list",
       "scoreOfficial": "2:1: 70%;2:2: 65%"
-    },
-    {
-      "institutionId": "cn-5014762bda41f881",
-      "nameZh": "四川大学锦城学院",
-      "nameEn": "Sichuan University Jincheng College",
-      "tierOfficial": "China ranking list",
-      "scoreOfficial": "2:1: 85%;2:2: 80%"
     },
     {
       "institutionId": "cn-e0e7c337467c7bee",
@@ -19035,8 +19035,8 @@
       "scoreOfficial": "2:1: 85%;2:2: 80%"
     },
     {
-      "institutionId": "cn-555a8af33ef74196",
-      "nameZh": "浙江树人学院浙江树人大学",
+      "institutionId": "cn-3016ad038539ee1a",
+      "nameZh": "浙江树人学院",
       "nameEn": "Zhejiang Shuren University",
       "tierOfficial": "China ranking list",
       "scoreOfficial": "2:1: 85%;2:2: 80%"

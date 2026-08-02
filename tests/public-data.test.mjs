@@ -37,12 +37,15 @@ describe('public lazy-data build', () => {
       statuses: { 'ucl-china': { sourceId: 'ucl-china', health: 'ok', lastSuccessfulAt: '2026-08-02T00:00:00.000Z' } },
     });
 
-    expect(result).toEqual({ listFiles: 1, reverseIndexEntries: 1 });
+    expect(result).toEqual({ listFiles: 1, institutionRecords: 1, reverseIndexEntries: 1 });
     expect(await readdir(join(outputDir, 'lists'))).toEqual(['ucl-china.json']);
     expect(JSON.parse(await readFile(join(outputDir, 'lists', 'ucl-china.json'), 'utf8'))).toMatchObject({
       sourceId: 'ucl-china', rows: [{ nameZh: '北京大学' }],
     });
     expect(JSON.parse(await readFile(join(outputDir, 'reverse-index.json'), 'utf8'))).toHaveLength(1);
+    expect(JSON.parse(await readFile(join(outputDir, 'institutions.json'), 'utf8'))).toMatchObject([
+      { id: 'peking', nameZh: '北京大学' },
+    ]);
   });
 
   it('writes all nine reviewed university-level lists from the trusted source snapshot', async () => {
@@ -62,5 +65,7 @@ describe('public lazy-data build', () => {
       'nottingham-china.json', 'sheffield-china.json', 'southampton-china.json', 'ucl-china.json', 'warwick-china.json',
     ]);
     expect(result.reverseIndexEntries).toBeGreaterThan(4_000);
+    expect(result.institutionRecords).toBeGreaterThan(2_900);
+    expect(JSON.parse(await readFile(join(outputDir, 'institutions.json'), 'utf8'))).toHaveLength(result.institutionRecords);
   });
 });

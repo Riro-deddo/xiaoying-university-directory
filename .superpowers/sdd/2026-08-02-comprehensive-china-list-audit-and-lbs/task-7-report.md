@@ -34,3 +34,11 @@
 ## Remaining concern
 
 The rendered desktop/mobile interaction loop is intentionally left for Task 8. The implementation has automated load/retry safeguards and build inspection, but Task 8 must still exercise real browser interactions.
+
+## Review fix round
+
+- Re-generated the lazy registry from the reconciled 2,915-record source into `public/generated/institutions.json` (480,470 bytes), with 5,753 reverse-index entries (2,733,892 bytes). Chinese-institution mode fetches both resources together and initializes search only after both succeed.
+- Added a post-build initial-HTML guard that rejects inline registry/reverse-index data, including the first and last registry names. The GitHub Pages-path build produces a 101,670-byte initial page and retains only nine list-panel metadata URLs.
+- Reverse-search copy now reuses the full `28 所 QS 2027 世界前 200 英国大学 + 1 所专业院校` scope. Fold titles now say `条规则记录`, avoiding a false unique-institution count.
+- Parenthesized official abbreviations now resolve as exact search aliases, so UIBE and SUSTech each return one canonical Chinese institution and its complete 29-school evidence set. The normalized-collision inventory is locked to only the reviewed Taizhou and Wuyi English-name pairs; canonical Chinese names remain singular.
+- The retryable initialization unit is covered with a failed first request followed by a successful retry. Focused and full verification: 254/254; local and GitHub Pages-path builds pass with Astro check (one pre-existing hint in `scripts/sync-sources.mjs`).

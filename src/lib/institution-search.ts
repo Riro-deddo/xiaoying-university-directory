@@ -3,6 +3,7 @@ import type { InstitutionRecord } from './types';
 
 const punctuation = /\p{P}+/gu;
 const whitespace = /[\s\u3000]+/gu;
+const parentheticalAbbreviation = /\(([^()]+)\)/gu;
 
 export function normalizeInstitutionName(name: string): string {
   return name
@@ -13,11 +14,21 @@ export function normalizeInstitutionName(name: string): string {
     .trim();
 }
 
+function searchNames(record: InstitutionRecord): string[] {
+  const names = [record.nameZh, record.nameEn, ...record.aliases];
+  for (const name of [...names]) {
+    for (const match of name.matchAll(parentheticalAbbreviation)) {
+      if (match[1].trim()) names.push(match[1]);
+    }
+  }
+  return names;
+}
+
 export function createInstitutionSearch(records: InstitutionRecord[]) {
   const byNormalizedName = new Map<string, InstitutionRecord[]>();
 
   for (const record of records) {
-    for (const name of [record.nameZh, record.nameEn, ...record.aliases]) {
+    for (const name of searchNames(record)) {
       const normalized = normalizeInstitutionName(name);
       const matches = byNormalizedName.get(normalized) ?? [];
       if (!matches.some((candidate) => candidate.id === record.id)) matches.push(record);

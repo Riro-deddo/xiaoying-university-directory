@@ -68,9 +68,9 @@ describe('institution rule presentation', () => {
   });
 
   it('uses rule-specific folded panel titles', () => {
-    expect(officialPanelTitle('eligibility', 12)).toBe('查看官方院校准入名单（12 所）');
-    expect(officialPanelTitle('grade-threshold', 84)).toBe('查看官方院校成绩分档（84 所）');
-    expect(officialPanelTitle('mixed', 81)).toBe('查看官方 Priority List（81 所）');
+    expect(officialPanelTitle('eligibility', 12)).toBe('查看官方院校准入名单（12 条规则记录）');
+    expect(officialPanelTitle('grade-threshold', 84)).toBe('查看官方院校成绩分档（84 条规则记录）');
+    expect(officialPanelTitle('mixed', 81)).toBe('查看官方 Priority List（81 条规则记录）');
   });
 });
 

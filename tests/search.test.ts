@@ -1,6 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import { compareDirectoryUniversities, createUniversitySearch } from '../src/lib/search';
-import { createInstitutionEvidenceSearch } from '../src/lib/search';
+import { createInstitutionEvidenceSearch, type ReverseIndexEntry } from '../src/lib/search';
+import { loadInstitutions, loadUniversities } from '../src/lib/data';
+import reverseIndex from '../src/data/generated/reverse-index.json';
 import type { UniversityWithStatus } from '../src/lib/types';
 
 const gradeThresholdRule = {
@@ -122,5 +124,25 @@ describe('createInstitutionEvidenceSearch', () => {
   it('returns no selection for empty and unknown searches', () => {
     expect(directory.search('').kind).toBe('empty');
     expect(directory.search('不存在的院校').kind).toBe('unknown');
+  });
+});
+
+describe('production institution evidence search', () => {
+  const directory = createInstitutionEvidenceSearch({
+    institutions: loadInstitutions(),
+    universities: loadUniversities(),
+    reverseIndex: reverseIndex as ReverseIndexEntry[],
+  });
+
+  it.each([
+    ['UIBE', '对外经济贸易大学'],
+    ['SUSTech', '南方科技大学'],
+  ])('returns one complete evidence set for %s', (query, nameZh) => {
+    const result = directory.search(query);
+    expect(result.kind).toBe('selected');
+    if (result.kind !== 'selected') return;
+    expect(result.institution.nameZh).toBe(nameZh);
+    expect(result.cards).toHaveLength(29);
+    expect(result.cards.some((card) => card.evidence.state === 'official-match' || card.evidence.state === 'faculty-match')).toBe(true);
   });
 });
