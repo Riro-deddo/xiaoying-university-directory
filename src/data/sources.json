@@ -573,7 +573,7 @@
       "summaryZh": "中国院校所属 Tier 决定对应的最低成绩要求。",
       "listedMeaningZh": "官网名单将院校分为 Tier A、B、C。",
       "unlistedMeaningZh": "未出现在名单中的院校按 Tier D 评估，仍不代表自动拒绝。",
-      "caveatZh": "本站暂不复制完整名册，请通过官方链接核对当前 Tier 归属。",
+      "caveatZh": "本站展示最近一次成功提取的院校与分档记录；院校名称或 Tier 可能更新，最终请以大学官网当前页面为准。",
       "verification": {
         "reviewedAt": "2026-08-02",
         "url": "https://www.southampton.ac.uk/international/entry-qualification-equivalencies/china/postgraduate-taught-tier-list",

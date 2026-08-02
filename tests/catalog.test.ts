@@ -452,6 +452,7 @@ describe('QS cohort and official source registry', () => {
       itemSelector: '.copy ul > li',
       guard: { minimumRecords: 500 },
     });
+    expect(source?.institutionRule.caveatZh).toBe('本站展示最近一次成功提取的院校与分档记录；院校名称或 Tier 可能更新，最终请以大学官网当前页面为准。');
   });
 
   it('keeps Edinburgh’s Priority List parser separate from its current China rule verification page', () => {
