@@ -148,6 +148,7 @@ describe('syncRegisteredSources', () => {
       'cn-6df0ef9150bd1ff2', 'cn-555a8af33ef74196', 'cn-675dc89119eb7546', 'cn-7d594ee83f0ce08b',
       'cn-8662abe7b31277c2', 'cn-294892d926a099b1', 'cn-eb05e0e2c3858178', 'cn-228da9869d132d1c',
       'cn-4608925f6f37c011', 'cn-f31b82d745f6036c', 'cn-5014762bda41f881', 'cn-e198010d37f04649',
+      'the-second-military-medical-university-55f6f4f4',
     ];
     const expectedCanonicalFactCounts = new Map([
       ['cn-38fe392afb9e622f', 3],
@@ -166,6 +167,7 @@ describe('syncRegisteredSources', () => {
       ['cn-e1081944b32c4a84', 3],
       ['cn-c54a8bf9427f90d1', 3],
       ['cn-8e869295f3c945de', 4],
+      ['cn-9f87dd4ea325c693', 6],
     ]);
     const expectedCanonicalNames = new Map([
       ['cn-fd334bd375069320', 'Southern University of Science and Technology'],
@@ -194,6 +196,7 @@ describe('syncRegisteredSources', () => {
       ['cn-e1081944b32c4a84', ['sheffield-china', 'southampton-china']],
       ['cn-c54a8bf9427f90d1', ['sheffield-china', 'southampton-china']],
       ['cn-8e869295f3c945de', ['glasgow-china', 'sheffield-china', 'southampton-china']],
+      ['cn-9f87dd4ea325c693', ['bristol-china', 'cambridge-china', 'edinburgh-china', 'sheffield-china', 'southampton-china', 'warwick-china']],
     ]);
 
     const first = await syncRegisteredSources({
@@ -204,7 +207,8 @@ describe('syncRegisteredSources', () => {
       status: {},
     });
 
-    expect(first.institutions).toHaveLength(2915);
+    expect(first.institutions).toHaveLength(2914);
+    expect(first.requirements).toHaveLength(5754);
     expect(first.institutions.some((record) => obsoleteIds.includes(record.id))).toBe(false);
     expect(first.requirements.some((fact) => obsoleteIds.includes(fact.institutionId))).toBe(false);
     for (const [id, expectedCount] of expectedCanonicalFactCounts) {
@@ -221,6 +225,33 @@ describe('syncRegisteredSources', () => {
       expect.objectContaining({ sourceId: 'southampton-china', institutionId: 'cn-d65eedfa9c42cf79', institutionOfficial: 'College of Applied Science, Jiangxi University of Science and Technology', tierOfficial: 'Tier C' }),
       expect.objectContaining({ sourceId: 'southampton-china', institutionId: 'cn-c820c6a1cc7042ee', institutionOfficial: 'Gannan University of Science and Technology', tierOfficial: 'Tier B' }),
     ]));
+    expect(first.requirements
+      .filter((fact) => fact.institutionId === 'cn-9f87dd4ea325c693')
+      .map((fact) => ({
+        sourceId: fact.sourceId,
+        institutionOfficial: fact.institutionOfficial,
+        institutionNameZh: fact.institutionNameZh ?? null,
+      }))
+      .sort((left, right) => left.sourceId.localeCompare(right.sourceId)))
+      .toEqual([
+        { sourceId: 'bristol-china', institutionOfficial: 'Naval Medical University', institutionNameZh: null },
+        { sourceId: 'cambridge-china', institutionOfficial: 'Second Military Medical University', institutionNameZh: null },
+        { sourceId: 'edinburgh-china', institutionOfficial: 'The Second Military Medical University', institutionNameZh: null },
+        { sourceId: 'sheffield-china', institutionOfficial: 'Naval Medical University (The Second Military Medical University)', institutionNameZh: '中国人民解放军海军军医大学(第二军医大学)' },
+        { sourceId: 'southampton-china', institutionOfficial: 'Second Military Medical University', institutionNameZh: '第二军医大学' },
+        { sourceId: 'warwick-china', institutionOfficial: 'Second Military Medical University', institutionNameZh: null },
+      ]);
+    const navalMedicalUniversity = first.institutions.find((record) => record.id === 'cn-9f87dd4ea325c693');
+    expect(navalMedicalUniversity?.aliases).toEqual(expect.arrayContaining([
+      '第二军医大学',
+      'Second Military Medical University',
+      'The Second Military Medical University',
+      'Naval Medical University',
+    ]));
+    expect(first.institutions.find((record) => record.id === 'university-of-international-business-and-economics-2a13872d')?.aliases)
+      .toContain('UIBE');
+    expect(first.institutions.find((record) => record.id === 'cn-fd334bd375069320')?.aliases)
+      .toContain('SUSTech');
     const registryNames = first.institutions.flatMap((record) => [record.nameZh, record.nameEn, ...record.aliases]);
     for (const malformedName of [
       ')北方民族大学', ')对外经济贸易大学', ')南方科技大学', ')香港科技大学(广州)', ')浙大宁波理工学院', '浙江树人学院浙江树人大学',
@@ -235,6 +266,65 @@ describe('syncRegisteredSources', () => {
     });
     expect(second.institutions).toEqual(first.institutions);
     expect(second.requirements).toEqual(first.requirements);
+  });
+
+  it('does not recreate the renamed military medical identity on repeated bilingual refresh', async () => {
+    const paths = await createFiles([]);
+    const migrationSource = {
+      ...source,
+      id: 'southampton-china',
+      parser: {
+        mode: 'html-table',
+        rowSelector: 'tbody tr',
+        institutionColumn: 0,
+        nameZhColumn: 1,
+        tierColumn: 2,
+        guard: { minimumRecords: 1, maximumRecords: 1, maximumRemovalRatio: 0 },
+      },
+    };
+    const institutions = reviewedRegistry.filter((record) => [
+      'cn-9f87dd4ea325c693',
+      'the-second-military-medical-university-55f6f4f4',
+    ].includes(record.id));
+    const response = () => new Response(`
+      <table><tbody>
+        <tr><td>Second Military Medical University</td><td>第二军医大学</td><td>Tier B</td></tr>
+      </tbody></table>
+    `, { status: 200, headers: { 'content-type': 'text/html' } });
+
+    const first = await syncRegisteredSources({
+      ...paths,
+      sources: [migrationSource],
+      institutions: structuredClone(institutions),
+      requirements: [],
+      status: {},
+      fetchImpl: vi.fn().mockImplementation(response),
+      minimumGapMs: 0,
+      now: new Date('2026-08-02T10:00:00Z'),
+    });
+    const second = await syncRegisteredSources({
+      ...paths,
+      sources: [migrationSource],
+      institutions: structuredClone(first.institutions),
+      requirements: structuredClone(first.requirements),
+      status: first.status,
+      fetchImpl: vi.fn().mockImplementation(response),
+      minimumGapMs: 0,
+      now: new Date('2026-08-02T10:00:00Z'),
+    });
+
+    expect(second.anomalies).toEqual([]);
+    expect(second.institutions.map((record) => record.id)).toEqual(['cn-9f87dd4ea325c693']);
+    expect(second.requirements).toEqual(first.requirements);
+    expect(second.requirements).toEqual([
+      expect.objectContaining({
+        sourceId: 'southampton-china',
+        institutionId: 'cn-9f87dd4ea325c693',
+        institutionOfficial: 'Second Military Medical University',
+        institutionNameZh: '第二军医大学',
+        tierOfficial: 'Tier B',
+      }),
+    ]);
   });
 
   it('does not recreate reviewed duplicate identities on a repeated bilingual source refresh', async () => {
@@ -587,6 +677,51 @@ describe('syncRegisteredSources', () => {
     expect(result.requirements.map((fact) => fact.scoreOfficial).sort()).toEqual(['2:1: 80%;2:2: 75%', '2:1: 85%;2:2: 80%']);
   });
 
+  it('collapses alternate English spellings but preserves reviewed historical Chinese rows', async () => {
+    const paths = await createFiles([]);
+    const provider = {
+      ...source,
+      id: 'sheffield-china',
+      parser: {
+        mode: 'html-table', rowSelector: 'tr', institutionColumn: 0, nameZhColumn: 1,
+        scoreColumns: [{ label: '2:1', column: 2 }, { label: '2:2', column: 3 }],
+        defaultTierOfficial: 'Ranking list', dedupeExactRows: true, allowMultipleFactsPerInstitution: true,
+        guard: { minimumRecords: 3, maximumRecords: 4, maximumRemovalRatio: 0 },
+      },
+    };
+    const institutions = [
+      { id: 'example', nameZh: '示例大学', nameEn: 'Example University', aliases: ['Alternate Example University'] },
+      { id: 'renamed', nameZh: '新大学', nameEn: 'Current University', aliases: ['旧学院', 'Old College'] },
+    ];
+    const html = [
+      '<table>',
+      '<tr><td>Example University</td><td>示例大学</td><td>85%</td><td>80%</td></tr>',
+      '<tr><td>Alternate Example University</td><td>示例大学</td><td>85%</td><td>80%</td></tr>',
+      '<tr><td>Old College</td><td>旧学院</td><td>85%</td><td>80%</td></tr>',
+      '<tr><td>Current University</td><td>新大学</td><td>85%</td><td>80%</td></tr>',
+      '</table>',
+    ].join('');
+
+    const result = await syncRegisteredSources({
+      ...paths,
+      sources: [provider],
+      institutions: structuredClone(institutions),
+      requirements: [],
+      status: {},
+      fetchImpl: vi.fn().mockResolvedValue(new Response(html, { status: 200 })),
+      minimumGapMs: 0,
+      now: new Date('2026-08-02T10:00:00Z'),
+    });
+
+    expect(result.anomalies).toEqual([]);
+    expect(result.requirements).toHaveLength(3);
+    expect(result.requirements.filter((fact) => fact.institutionId === 'example')).toHaveLength(1);
+    expect(result.requirements
+      .filter((fact) => fact.institutionId === 'renamed')
+      .map((fact) => fact.institutionNameZh)
+      .sort()).toEqual(['新大学', '旧学院']);
+  });
+
   it('uses the reviewed Chinese-anchored English alias when Glasgow PDF text repeats an English name', () => {
     const institutions = [
       { id: 'hunan', nameZh: 'Hunan Chinese', nameEn: 'Hunan Institute of Technology', aliases: [] },
@@ -633,6 +768,22 @@ describe('syncRegisteredSources', () => {
     });
     expect(institutions.find((record) => record.id === 'anshan')?.aliases).not.toContain('Hunan Institute of Technology');
     expect(institutions.find((record) => record.id === 'hezhou')?.aliases).not.toContain('Chaohu University');
+  });
+
+  it('preserves explicitly reviewed acronyms while removing one-word Glasgow parser fragments', () => {
+    const institutions = [{
+      id: 'university-of-international-business-and-economics-2a13872d',
+      nameZh: '对外经济贸易大学',
+      nameEn: 'University of International Business and Economics',
+      aliases: ['UIBE', 'Technology'],
+    }];
+
+    repairGlasgowBilingualPdfNames([{
+      institutionOfficial: 'University of International Business and Economics',
+      institutionNameZh: '对外经济贸易大学',
+    }], institutions);
+
+    expect(institutions[0].aliases).toEqual(['UIBE']);
   });
 
   it('verifies registered PDF rule text from its text layer before extraction', async () => {

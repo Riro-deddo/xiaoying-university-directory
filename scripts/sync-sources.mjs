@@ -42,6 +42,7 @@ const reviewedInstitutionIdMigrations = new Map([
   ['cn-f31b82d745f6036c', 'cn-e1081944b32c4a84'],
   ['cn-5014762bda41f881', 'cn-c54a8bf9427f90d1'],
   ['cn-e198010d37f04649', 'cn-8e869295f3c945de'],
+  ['the-second-military-medical-university-55f6f4f4', 'cn-9f87dd4ea325c693'],
 ]);
 
 const reviewedHistoricalInstitutionIds = new Set([
@@ -55,6 +56,7 @@ const reviewedHistoricalInstitutionIds = new Set([
   'cn-f31b82d745f6036c',
   'cn-5014762bda41f881',
   'cn-e198010d37f04649',
+  'the-second-military-medical-university-55f6f4f4',
 ]);
 
 const reviewedCanonicalInstitutionNames = new Map([
@@ -67,6 +69,17 @@ const reviewedCanonicalInstitutionNames = new Map([
 ]);
 
 const reviewedPreservedPreviousCanonicalNames = new Set(['cn-fd334bd375069320']);
+
+const reviewedRequiredInstitutionAliases = new Map([
+  ['cn-9f87dd4ea325c693', [
+    '第二军医大学',
+    'Second Military Medical University',
+    'The Second Military Medical University',
+    'Naval Medical University',
+  ]],
+  ['university-of-international-business-and-economics-2a13872d', ['UIBE']],
+  ['cn-fd334bd375069320', ['SUSTech']],
+]);
 
 const reviewedForbiddenRegistryNames = new Map([
   ['cn-6e6aaf892c17a701', new Set(['nanchang institute of technology'])],
@@ -148,6 +161,12 @@ function reconcileReviewedInstitutionRegistry(inputInstitutions, inputRequiremen
     const previousName = institution.nameEn;
     institution.nameEn = canonicalName;
     if (reviewedPreservedPreviousCanonicalNames.has(institutionId)) appendAlias(institution, previousName);
+  }
+
+  for (const [institutionId, aliases] of reviewedRequiredInstitutionAliases) {
+    const institution = institutionById.get(institutionId);
+    if (!institution) continue;
+    for (const alias of aliases) appendAlias(institution, alias);
   }
 
   for (const institution of institutionById.values()) {
@@ -561,8 +580,11 @@ export function repairGlasgowBilingualPdfNames(rawFacts, institutions) {
     const record = institutions.find((institution) => normalizedChineseInstitutionName(institution.nameZh) === Chinese);
     if (!record) continue;
     const correctName = fact.institutionOfficial.trim();
+    const reviewedRequiredAliases = new Set((reviewedRequiredInstitutionAliases.get(record.id) ?? [])
+      .map((alias) => normalizedGlasgowEnglishName(alias)));
     const isBrokenHistoricName = (name) => {
       const english = normalizedGlasgowEnglishName(name);
+      if (reviewedRequiredAliases.has(english)) return false;
       const ChineseNames = ChineseNamesByRepairedEnglish.get(english) ?? new Set();
       return isOneWordEnglishName(name)
         || (!reviewedGlasgowEnglishCollisions.has(english) && [...ChineseNames].some((nameChinese) => nameChinese !== Chinese));
@@ -605,18 +627,40 @@ async function extractRegisteredFacts(source, response, { institutions, now }) {
     )))
     : rawFacts;
   const completedFacts = rawFactsForSource.map((fact) => completeRequirementFact(fact, source, institutions, now, contentHash));
-  const collidingFactIds = new Set(completedFacts
-    .filter((fact, index, facts) => facts.findIndex((candidate) => candidate.id === fact.id) !== index)
-    .map((fact) => fact.id));
-  const factsWithStableRowIds = completedFacts.map((fact) => {
-    if (!collidingFactIds.has(fact.id)) return fact;
-    const rowDiscriminator = [
-      fact.institutionOfficial,
-      fact.institutionNameZh ?? '',
-      fact.tierOfficial,
-      fact.scoreOfficial ?? '',
-    ].join('\u0000');
-    return { ...fact, id: requirementFactId(source.id, fact.institutionId, rowDiscriminator) };
+  const factsByBaseId = new Map();
+  for (const fact of completedFacts) {
+    factsByBaseId.set(fact.id, [...(factsByBaseId.get(fact.id) ?? []), fact]);
+  }
+  const factsWithStableRowIds = [...factsByBaseId.values()].flatMap((facts) => {
+    if (facts.length === 1) return facts;
+
+    const evidenceGroups = new Map();
+    for (const fact of facts) {
+      const evidenceKey = [fact.tierOfficial, fact.scoreOfficial ?? ''].join('\u0000');
+      evidenceGroups.set(evidenceKey, [...(evidenceGroups.get(evidenceKey) ?? []), fact]);
+    }
+    const retainedFacts = [...evidenceGroups.values()].flatMap((matchingEvidence) => {
+      if (matchingEvidence.length === 1) return matchingEvidence;
+
+      // A provider may repeat one rule with alternate English spellings. That
+      // is one piece of evidence, not multiple list rows. Distinct official
+      // Chinese names preserve reviewed historical/current rows after their
+      // identities have been reconciled to one canonical institution.
+      const ChineseNames = new Set(matchingEvidence
+        .map((fact) => normalizedChineseInstitutionName(fact.institutionNameZh)));
+      return ChineseNames.size <= 1 ? [matchingEvidence[0]] : matchingEvidence;
+    });
+    if (retainedFacts.length === 1) return retainedFacts;
+
+    return retainedFacts.map((fact) => {
+      const rowDiscriminator = [
+        fact.institutionOfficial,
+        fact.institutionNameZh ?? '',
+        fact.tierOfficial,
+        fact.scoreOfficial ?? '',
+      ].join('\u0000');
+      return { ...fact, id: requirementFactId(source.id, fact.institutionId, rowDiscriminator) };
+    });
   });
   return factsWithStableRowIds.filter((fact, index) => (
     index === factsWithStableRowIds.findIndex((candidate) => candidate.id === fact.id)

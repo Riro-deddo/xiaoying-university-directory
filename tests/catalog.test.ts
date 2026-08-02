@@ -338,6 +338,7 @@ describe('QS cohort and official source registry', () => {
       .filter((name): name is string => Boolean(name)));
     const glasgowRecords = institutions.filter((record) => glasgowChineseNames.has(record.nameZh));
     const allowedEnglishCollisions = new Set(['taizhou university', 'wuyi university']);
+    const allowedReviewedAcronyms = new Set(['UIBE', 'SUSTech']);
     const recordsByEnglish = new Map<string, Set<string>>();
     const expectedChineseByEnglish = new Map([
       ['Hunan Institute of Technology', '湖南工学院'],
@@ -349,7 +350,7 @@ describe('QS cohort and official source registry', () => {
 
     for (const record of glasgowRecords) {
       for (const name of [record.nameEn, ...record.aliases]) {
-        expect(/^[A-Za-z]+$/u.test(name.trim())).toBe(false);
+        if (/^[A-Za-z]+$/u.test(name.trim())) expect(allowedReviewedAcronyms).toContain(name.trim());
         const normalized = normalizeInstitutionName(name);
         if (!normalized) continue;
         recordsByEnglish.set(normalized, new Set([...(recordsByEnglish.get(normalized) ?? []), record.nameZh]));
@@ -385,11 +386,35 @@ describe('QS cohort and official source registry', () => {
     const registeredIds = new Set(institutions.map((record) => record.id));
     const referencedIds = new Set(requirements.map((fact) => fact.institutionId));
 
-    expect(institutions).toHaveLength(2915);
-    expect(requirements).toHaveLength(5753);
+    expect(institutions).toHaveLength(2914);
+    expect(requirements).toHaveLength(5754);
     expect(collisionKeys).toEqual(['taizhou university', 'wuyi university']);
     expect(requirements.every((fact) => registeredIds.has(fact.institutionId))).toBe(true);
     expect(institutions.every((record) => referencedIds.has(record.id))).toBe(true);
+    expect(registeredIds.has('the-second-military-medical-university-55f6f4f4')).toBe(false);
+
+    const expectedExactSearchIds = new Map([
+      ['中国人民解放军海军军医大学(第二军医大学)', 'cn-9f87dd4ea325c693'],
+      ['第二军医大学', 'cn-9f87dd4ea325c693'],
+      ['Second Military Medical University', 'cn-9f87dd4ea325c693'],
+      ['The Second Military Medical University', 'cn-9f87dd4ea325c693'],
+      ['Naval Medical University', 'cn-9f87dd4ea325c693'],
+      ['UIBE', 'university-of-international-business-and-economics-2a13872d'],
+      ['SUSTech', 'cn-fd334bd375069320'],
+    ]);
+    for (const [query, expectedId] of expectedExactSearchIds) {
+      expect([...recordIdsByName.get(normalizeInstitutionName(query)) ?? []]).toEqual([expectedId]);
+    }
+
+    const navalFacts = requirements.filter((fact) => fact.institutionId === 'cn-9f87dd4ea325c693');
+    expect([...new Set(navalFacts.map((fact) => fact.sourceId))].sort()).toEqual([
+      'bristol-china',
+      'cambridge-china',
+      'edinburgh-china',
+      'sheffield-china',
+      'southampton-china',
+      'warwick-china',
+    ]);
   });
 
   it('preserves every distinct historical source row whose identity was merged', () => {

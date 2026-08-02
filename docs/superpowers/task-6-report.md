@@ -41,8 +41,8 @@ Verification completed:
 
 ## Full registry identity reconciliation — 2026-08-02
 
-- Reviewed A/B migrations merged 16 duplicate or malformed records and rewrote every requirement reference to its canonical ID. Registry size changed from 2,931 to 2,915 with zero orphan records or missing fact references.
+- Reviewed A/B migrations plus the Naval/Second Military Medical University identity merge rewrote every requirement reference to its canonical ID. Registry size changed from 2,931 to 2,914 with zero orphan records or missing fact references.
 - Reviewed C/D/E policies disambiguate Nanchang, both Beijing Normal Zhuhai identities, China University of Geosciences (Wuhan), and the two distinct Gannan institutions while preserving source-official fact text and Southampton Tier B/Tier C evidence.
-- The first refreshed output exposed nine distinct historical source rows that shared a canonical fact ID. They were not exact duplicates: four Sheffield rows and five Southampton rows had distinct official English or Chinese evidence. Stable row discriminators now retain all nine, restoring requirements and reverse-index counts from 5,744 to 5,753.
+- Stable row discriminators retain reviewed historical/current Chinese rows and different tier/score evidence, while alternate English spellings for the same Chinese row and rule deduplicate. The current output contains 5,754 facts, including Southampton's official Tier B and Tier C rows for 珠海科技学院.
 - Full normalized registry collisions are now exactly `Taizhou University` and `Wuyi University`, the two reviewed ambiguities. Malformed leading-parenthesis, incomplete-English, and concatenated-Chinese registry names are absent.
 - Verification: 250 tests passing across 21 files; Astro check/build 0 errors (one existing hint); source coverage unchanged; guarded sync accepted all 31 sources with an empty anomaly report.
