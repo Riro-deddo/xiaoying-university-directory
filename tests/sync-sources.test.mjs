@@ -211,6 +211,7 @@ describe('syncRegisteredSources', () => {
     expect(result.status['example-source'].health).toBe('changed');
     expect(result.anomalies).toMatchObject([{
       reason: 'institution-rule-text-changed',
+      ruleSourceUrl: 'https://www.example.ac.uk/china-rule',
       missingRequiredText: ['unlisted threshold 90%'],
     }]);
   });

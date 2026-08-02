@@ -229,6 +229,7 @@ export async function syncRegisteredSources(options = {}) {
         });
         if (ruleDecision.health !== 'temporary-error') {
           anomalies.push(anomaly(source, ruleDecision.reason, now, {
+            ruleSourceUrl: source.institutionRule.verification?.url,
             ...(ruleDecision.httpStatus ? { httpStatus: ruleDecision.httpStatus } : {}),
             ...(ruleDecision.missingRequiredText ? { missingRequiredText: ruleDecision.missingRequiredText } : {}),
           }));
