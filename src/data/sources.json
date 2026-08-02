@@ -302,11 +302,12 @@
   {
     "id": "southampton-china",
     "universityId": "university-of-southampton",
-    "labelZh": "中国研究生入学要求",
-    "url": "https://www.southampton.ac.uk/international/entry-qualification-equivalencies/china",
+    "labelZh": "中国院校 Tier 名单",
+    "url": "https://www.southampton.ac.uk/international/entry-qualification-equivalencies/china/postgraduate-taught-tier-list",
     "kind": "official-list",
     "scope": "university",
     "scopeZh": "学校中国研究生要求及院校层级链接",
+    "cycle": "2025/26",
     "parser": {
       "mode": "link-only",
       "guard": {

@@ -101,6 +101,15 @@ describe('QS cohort and official source registry', () => {
     expect(requirements.every((fact) => !linkOnlyIds.has(fact.sourceId))).toBe(true);
   });
 
+  it('links Southampton directly to its official tier list without enabling incomplete matching', () => {
+    const source = sources.find((item) => item.id === 'southampton-china');
+
+    expect(source?.url).toBe('https://www.southampton.ac.uk/international/entry-qualification-equivalencies/china/postgraduate-taught-tier-list');
+    expect(source?.labelZh).toBe('中国院校 Tier 名单');
+    expect(source?.cycle).toBe('2025/26');
+    expect(source?.parser.mode).toBe('link-only');
+  });
+
   it('canonicalizes cross-source English variants without losing exact official names', () => {
     const variants = [
       ['Beihang University (formerly Beijing University of Aeronautics & Astronautics)', 'Beihang University'],
