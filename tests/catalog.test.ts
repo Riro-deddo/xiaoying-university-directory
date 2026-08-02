@@ -42,6 +42,9 @@ describe('QS cohort and official source registry', () => {
     expect(sources.find((item) => item.id === 'lbs-mim-entry')).toMatchObject({
       universityId: 'london-business-school',
       url: 'https://www.london.edu/masters-degrees/masters-in-management/apply',
+      institutionRule: {
+        verification: { reviewedAt: '2026-08-02' },
+      },
     });
   });
 

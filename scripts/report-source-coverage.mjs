@@ -18,12 +18,21 @@ export function evaluateCoverage({ cohort, universities, sources }) {
   const rankedUniversityIds = universities
     .filter((item) => item.directoryCategory === 'qs-top-200')
     .map((item) => item.id);
+  const specialistUniversityIds = universities
+    .filter((item) => item.directoryCategory === 'specialist')
+    .map((item) => item.id);
   const sourceIds = sources.map((item) => item.id);
   const sourceById = new Map(sources.map((item) => [item.id, item]));
   const failures = [];
 
-  if (rankedUniversityIds.length !== cohortIds.size || rankedUniversityIds.some((id) => !cohortIds.has(id)) || new Set(universityIds).size !== universityIds.length) {
-    failures.push('public university IDs must exactly equal the QS cohort');
+  if (
+    rankedUniversityIds.length !== cohortIds.size
+    || rankedUniversityIds.some((id) => !cohortIds.has(id))
+    || specialistUniversityIds.length !== 1
+    || specialistUniversityIds[0] !== 'london-business-school'
+    || new Set(universityIds).size !== universityIds.length
+  ) {
+    failures.push('directory scope must equal the QS cohort plus London Business School');
   }
   if (new Set(sourceIds).size !== sourceIds.length) failures.push('duplicate source IDs');
 

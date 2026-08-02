@@ -15,7 +15,19 @@ describe('source coverage report', () => {
 
   it('allows a specialist university and its linked official source outside the QS cohort', () => {
     expect(evaluateCoverage({ cohort, universities, sources }).failures)
-      .not.toContain('public university IDs must exactly equal the QS cohort');
+      .not.toContain('directory scope must equal the QS cohort plus London Business School');
+  });
+
+  it('rejects an unapproved specialist even when it has an official linked source', () => {
+    const lbs = universities.find((item) => item.id === 'london-business-school');
+    const lbsSource = sources.find((item) => item.id === 'lbs-mim-entry');
+    const result = evaluateCoverage({
+      cohort,
+      universities: [...universities, { ...lbs, id: 'unapproved-specialist', sourceIds: ['unapproved-specialist-source'] }],
+      sources: [...sources, { ...lbsSource, id: 'unapproved-specialist-source', universityId: 'unapproved-specialist' }],
+    });
+
+    expect(result.failures).toContain('directory scope must equal the QS cohort plus London Business School');
   });
 
   it.each([
