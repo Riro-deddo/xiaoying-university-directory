@@ -343,6 +343,8 @@ Expected: PASS, 29 directory institutions, 9 university-level public lists, and 
 data: add all reviewed public China lists
 ```
 
+Follow-up completed 2026-08-02: sync transactionality and Glasgow bilingual-PDF repairs are covered by regression tests and were persisted through a guarded synchronisation.
+
 ---
 
 ### Task 7: Present the new states and specialist ranking safely

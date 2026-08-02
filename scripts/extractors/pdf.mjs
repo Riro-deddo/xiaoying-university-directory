@@ -42,7 +42,7 @@ export function extractPdfFactFromRow(line, config) {
   if (config.nameZhColumn !== undefined) fact.institutionNameZh = columns[config.nameZhColumn];
   if (config.tierColumn !== undefined) fact.tierOfficial = columns[config.tierColumn];
   if (Array.isArray(config.scoreColumns)) {
-    fact.scoreOfficial = config.scoreColumns.map(({ label, column }) => `${label}: ${columns[column]}`).join('ï¼›');
+    fact.scoreOfficial = config.scoreColumns.map(({ label, column }) => `${label}: ${columns[column]}`).join('；');
   } else if (config.scoreColumn !== undefined && columns[config.scoreColumn] !== undefined) {
     fact.scoreOfficial = columns[config.scoreColumn];
   }
@@ -64,21 +64,35 @@ export async function extractPdfText(bytes) {
   return pages.flat();
 }
 
+export function extractPdfFactsFromLines(config, lines) {
+  const heading = new RegExp(config.headingPattern);
+  const row = new RegExp(config.rowPattern);
+  const headingIndex = lines.findIndex((line) => heading.test(line));
+  if (headingIndex === -1) throw new ExtractorError('PARSER_EMPTY', 'Registered PDF heading was not found.');
+
+  const facts = [];
+  let wrappedEnglishLine = '';
+  for (const line of lines.slice(headingIndex + 1)) {
+    const fact = extractPdfFactFromRow(line, { ...config, rowPattern: row.source });
+    if (!fact) {
+      if (line.trim()) wrappedEnglishLine = line.trim();
+      continue;
+    }
+    if (/^[A-Za-z]+$/u.test(fact.institutionOfficial) && wrappedEnglishLine) {
+      fact.institutionOfficial = `${wrappedEnglishLine} ${fact.institutionOfficial}`;
+    }
+    wrappedEnglishLine = '';
+    facts.push(fact);
+  }
+  if (facts.length === 0) throw new ExtractorError('PARSER_EMPTY', 'Registered PDF heading has no rows.');
+  return facts;
+}
+
 export async function extractPdfFacts(config, bytes) {
   if (config.mode !== 'pdf-text' || !config.headingPattern || !config.rowPattern) {
     throw new ExtractorError('PARSER_STRUCTURE_CHANGED', 'PDF extraction requires registered heading and row patterns.');
   }
 
-  const heading = new RegExp(config.headingPattern);
-  const row = new RegExp(config.rowPattern);
   const lines = await extractPdfText(bytes);
-  const headingIndex = lines.findIndex((line) => heading.test(line));
-  if (headingIndex === -1) throw new ExtractorError('PARSER_EMPTY', 'Registered PDF heading was not found.');
-
-  const facts = lines.slice(headingIndex + 1).flatMap((line) => {
-    const fact = extractPdfFactFromRow(line, { ...config, rowPattern: row.source });
-    return fact ? [fact] : [];
-  });
-  if (facts.length === 0) throw new ExtractorError('PARSER_EMPTY', 'Registered PDF heading has no rows.');
-  return facts;
+  return extractPdfFactsFromLines(config, lines);
 }

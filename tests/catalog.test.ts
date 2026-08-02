@@ -303,6 +303,33 @@ describe('QS cohort and official source registry', () => {
     expect(requirements.every((fact) => !linkOnlyIds.has(fact.sourceId))).toBe(true);
   });
 
+  it('keeps Glasgow bilingual PDF facts free of fragments, mojibake, and unreviewed English collisions', () => {
+    const glasgowFacts = requirements.filter((fact) => fact.sourceId === 'glasgow-china');
+    const expectedEnglishByChinese = new Map([
+      ['湖南工学院', 'Hunan Institute of Technology'],
+      ['鞍山师范学院', 'Anshan Normal University'],
+      ['哈尔滨学院', 'Harbin University'],
+      ['湖北工程学院', 'Hubei Engineering University'],
+    ]);
+    const allowedEnglishCollisions = new Set(['taizhou university', 'wuyi university']);
+    const chineseByEnglish = new Map<string, Set<string>>();
+
+    for (const fact of glasgowFacts) {
+      expect(fact.institutionOfficial.trim().split(/\s+/u).length).toBeGreaterThan(1);
+      expect(Array.from(String(fact.scoreOfficial ?? '')).some((character) => ['\u00ef', '\u00bc', '\ufffd'].includes(character))).toBe(false);
+      const english = fact.institutionOfficial.trim().toLocaleLowerCase('en-US');
+      const chinese = fact.institutionNameZh?.trim();
+      if (chinese) chineseByEnglish.set(english, new Set([...(chineseByEnglish.get(english) ?? []), chinese]));
+    }
+
+    for (const [chinese, expectedEnglish] of expectedEnglishByChinese) {
+      expect(glasgowFacts.find((fact) => fact.institutionNameZh === chinese)?.institutionOfficial).toBe(expectedEnglish);
+    }
+    for (const [english, chineseNames] of chineseByEnglish) {
+      if (chineseNames.size > 1) expect(allowedEnglishCollisions).toContain(english);
+    }
+  });
+
   it('links Southampton directly to its official tier list with a grouped bilingual parser', () => {
     const source = sources.find((item) => item.id === 'southampton-china');
 

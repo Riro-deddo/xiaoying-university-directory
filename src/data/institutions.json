@@ -1112,10 +1112,10 @@
   {
     "id": "cn-3b5a7566d0cf1963",
     "nameZh": "中国人民公安大学",
-    "nameEn": "People's Public Security University of China (DFC)",
+    "nameEn": "People's Public Security University of China",
     "aliases": [
       "People’s Public Security University of China",
-      "People's Public Security University of China"
+      "People's Public Security University of China (DFC)"
     ]
   },
   {
@@ -1682,17 +1682,17 @@
   {
     "id": "cn-e9af83046cc2b9a5",
     "nameZh": "贺州学院",
-    "nameEn": "Chaohu University",
+    "nameEn": "Hezhou University",
     "aliases": [
-      "Hezhou University"
+      "Chaohu University"
     ]
   },
   {
     "id": "cn-3c2a3fcc930103f2",
     "nameZh": "平顶山学院",
-    "nameEn": "Chaohu University",
+    "nameEn": "Pingdingshan University",
     "aliases": [
-      "Pingdingshan University"
+      "Chaohu University"
     ]
   },
   {
@@ -2228,7 +2228,9 @@
     "id": "cn-bc8b96deb93f137f",
     "nameZh": "广西师范大学",
     "nameEn": "Guangxi Normal University",
-    "aliases": []
+    "aliases": [
+      "Guangxi Minzu University"
+    ]
   },
   {
     "id": "cn-bcb982ec197ae168",
@@ -2249,7 +2251,8 @@
     "nameZh": "广西科技师范学院",
     "nameEn": "University",
     "aliases": [
-      "Guangxi Science & Technology Normal University"
+      "Guangxi Science & Technology Normal University",
+      "Guangxi Science and Technology Normal University"
     ]
   },
   {
@@ -3049,25 +3052,26 @@
   {
     "id": "cn-76a6298cfbcafe62",
     "nameZh": "鞍山师范学院",
-    "nameEn": "Hunan Institute of Technology",
+    "nameEn": "Anshan Normal University",
     "aliases": [
-      "Anshan Normal University Liaoning China"
+      "Anshan Normal University Liaoning China",
+      "Hunan Institute of Technology"
     ]
   },
   {
     "id": "cn-d2fd76414cfa752e",
     "nameZh": "哈尔滨学院",
-    "nameEn": "Hunan Institute of Technology",
+    "nameEn": "Harbin University",
     "aliases": [
-      "Harbin University"
+      "Hunan Institute of Technology"
     ]
   },
   {
     "id": "cn-4f4437ed99f793e7",
     "nameZh": "湖北工程学院",
-    "nameEn": "Hunan Institute of Technology",
+    "nameEn": "Hubei Engineering University",
     "aliases": [
-      "Hubei Engineering University"
+      "Hunan Institute of Technology"
     ]
   },
   {
@@ -3509,7 +3513,8 @@
     "nameZh": "昆明传媒学院",
     "nameEn": "Communication",
     "aliases": [
-      "Wenhua College of Yunnan Art University"
+      "Wenhua College of Yunnan Art University",
+      "Kunming College of Media and Communication"
     ]
   },
   {
@@ -4202,7 +4207,8 @@
     "nameZh": "山东石油化工学院",
     "nameEn": "TECHNOLOGY",
     "aliases": [
-      "Shandong Institute of Petroleum and Chemical Technology"
+      "Shandong Institute of Petroleum and Chemical Technology",
+      "PETROLEUM AND CHEMICAL TECHNOLOGY"
     ]
   },
   {
@@ -4686,9 +4692,9 @@
   {
     "id": "cn-bf7e5b687c8d35bd",
     "nameZh": "咸阳师范学院",
-    "nameEn": "Sichuan Tourism University",
+    "nameEn": "Xianyang Normal University",
     "aliases": [
-      "Xianyang Normal University"
+      "Sichuan Tourism University"
     ]
   },
   {
@@ -4879,7 +4885,8 @@
     "nameZh": "天津传媒学院",
     "nameEn": "Communication",
     "aliases": [
-      "Tianjin College of Media and Arts"
+      "Tianjin College of Media and Arts",
+      "Tianjin College of Media and Communication"
     ]
   },
   {
@@ -5042,9 +5049,9 @@
   {
     "id": "cn-420d922c78eeff4e",
     "nameZh": "宁夏师范大学",
-    "nameEn": "Weinan Normal University",
+    "nameEn": "Ningxia Normal University",
     "aliases": [
-      "Ningxia Normal University"
+      "Weinan Normal University"
     ]
   },
   {
@@ -5373,7 +5380,8 @@
     "nameEn": "Law",
     "aliases": [
       "Xinjiang University of Political Science and Law",
-      "Xinjiang University of Political Science And Law"
+      "Xinjiang University of Political Science And Law",
+      "Xinjiang Institute Of Political Science And Law"
     ]
   },
   {
@@ -5447,9 +5455,9 @@
   {
     "id": "cn-c64b2c664a9c1d3f",
     "nameZh": "黄山学院",
-    "nameEn": "Xinyang Agriculture and Forestry University",
+    "nameEn": "Huangshan University",
     "aliases": [
-      "Huangshan University"
+      "Xinyang Agriculture and Forestry University"
     ]
   },
   {

@@ -24,3 +24,10 @@ Verification completed:
 - Full suite: 227 passing across 19 files.
 - Astro check and static build: 0 errors (one existing TypeScript hint).
 - Source coverage: 28 QS universities, 1 specialist university, 9 public lists, 16 rule-only, and 4 no-public-list records.
+
+## Follow-up sync integrity fix — 2026-08-02
+
+- Institution candidates are now deep-cloned and compared by content, so alias-only reconciliations persist atomically and rejected sources cannot leak aliases into later accepted updates.
+- Glasgow PDF rows reconstruct English continuations and apply Chinese-anchored reviewed names when its text layer repeats an English name for multiple institutions. The affected Hunan, Anshan, Harbin, and Hubei records now use their correct English names.
+- Glasgow score delimiters use `；`; generated score facts contain no mojibake. Only the reviewed Taizhou University and Wuyi University English-name collisions remain.
+- Final verification: 232 tests passing across 19 files; Astro check/build 0 errors (one existing hint); source coverage unchanged; guarded synchronisation completed with zero retained anomalies.

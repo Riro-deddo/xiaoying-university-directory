@@ -2,7 +2,7 @@ import { access, mkdtemp, readFile, rename, rm, writeFile } from 'node:fs/promis
 import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { decideSourceUpdate, reconcileInstitution, syncRegisteredSources } from '../scripts/sync-sources.mjs';
+import { decideSourceUpdate, reconcileInstitution, repairGlasgowBilingualPdfNames, syncRegisteredSources } from '../scripts/sync-sources.mjs';
 import reviewedRegistry from '../src/data/institutions.json';
 
 const guard = {
@@ -193,6 +193,46 @@ describe('syncRegisteredSources', () => {
 
     expect(resolved.id).toBe('beihang');
     expect(resolved.aliases).toContain('Beihang University (formerly known as Beijing University of Aeronautics and Astronautics)');
+  });
+
+  it('persists an accepted alias-only reconciliation update', async () => {
+    const paths = await createFiles([facts(1)[0]]);
+    const trusted = { id: 'institution-1', nameZh: 'Chinese institution-1', nameEn: 'English institution-1', aliases: [] };
+    await writeFile(paths.institutionsPath, `${JSON.stringify([trusted])}\n`);
+    const configuredSource = { ...source, parser: { ...source.parser, guard: { minimumRecords: 1, maximumRecords: 1, maximumRemovalRatio: 0 } } };
+
+    const result = await syncRegisteredSources({
+      ...paths, sources: [configuredSource], fetchImpl: vi.fn().mockResolvedValue(acceptedResponse()),
+      extractFacts: async (_source, _response, { institutions }) => [
+        { ...facts(1)[0], institutionOfficial: 'Reviewed alias', institutionId: reconcileInstitution({ institutionOfficial: 'Reviewed alias', institutionNameZh: trusted.nameZh }, institutions).id },
+      ],
+    });
+
+    expect(result.institutions[0].aliases).toContain('Reviewed alias');
+    expect(JSON.parse(await readFile(paths.institutionsPath, 'utf8'))[0].aliases).toContain('Reviewed alias');
+  });
+
+  it('does not leak a rejected alias mutation into the next accepted source update', async () => {
+    const paths = await createFiles([facts(1)[0]]);
+    const trusted = { id: 'institution-1', nameZh: 'Chinese institution-1', nameEn: 'English institution-1', aliases: [] };
+    await writeFile(paths.institutionsPath, `${JSON.stringify([trusted])}\n`);
+    const rejected = { ...source, id: 'rejected-source', parser: { ...source.parser, guard: { minimumRecords: 2, maximumRecords: 2, maximumRemovalRatio: 0 } } };
+    const accepted = { ...source, id: 'accepted-source', parser: { ...source.parser, guard: { minimumRecords: 1, maximumRecords: 1, maximumRemovalRatio: 0 } } };
+
+    const result = await syncRegisteredSources({
+      ...paths, sources: [rejected, accepted], fetchImpl: vi.fn().mockResolvedValue(acceptedResponse()),
+      extractFacts: async (registeredSource, _response, { institutions }) => {
+        if (registeredSource.id === 'rejected-source') {
+          reconcileInstitution({ institutionOfficial: 'Rejected alias', institutionNameZh: trusted.nameZh }, institutions);
+          return [{ ...facts(1)[0], sourceId: 'rejected-source', institutionId: trusted.id }];
+        }
+        institutions.push({ id: 'new-record', nameZh: 'New Chinese', nameEn: 'New English', aliases: [] });
+        return [{ ...facts(1)[0], sourceId: 'accepted-source', institutionId: 'new-record' }];
+      },
+    });
+
+    expect(result.institutions.find((record) => record.id === trusted.id)?.aliases).toEqual([]);
+    expect(JSON.parse(await readFile(paths.institutionsPath, 'utf8')).find((record) => record.id === trusted.id)?.aliases).toEqual([]);
   });
 
   it('does not add a bilingual source spelling as an alias when another Chinese institution already claims it', () => {
@@ -392,6 +432,23 @@ describe('syncRegisteredSources', () => {
     expect(new Set(result.requirements.map((fact) => fact.id)).size).toBe(2);
     expect(new Set(result.requirements.map((fact) => fact.institutionId))).toEqual(new Set([result.institutions[0].id]));
     expect(result.requirements.map((fact) => fact.scoreOfficial).sort()).toEqual(['2:1: 80%;2:2: 75%', '2:1: 85%;2:2: 80%']);
+  });
+
+  it('uses the reviewed Chinese-anchored English alias when Glasgow PDF text repeats an English name', () => {
+    const institutions = [
+      { id: 'hunan', nameZh: 'Hunan Chinese', nameEn: 'Hunan Institute of Technology', aliases: [] },
+      { id: 'anshan', nameZh: 'Anshan Chinese', nameEn: 'Hunan Institute of Technology', aliases: ['Anshan Normal University'] },
+    ];
+    const repaired = repairGlasgowBilingualPdfNames([
+      { institutionOfficial: 'Hunan Institute of Technology', institutionNameZh: 'Hunan Chinese' },
+      { institutionOfficial: 'Hunan Institute of Technology', institutionNameZh: 'Anshan Chinese' },
+    ], institutions);
+
+    expect(repaired[1].institutionOfficial).toBe('Anshan Normal University');
+    expect(institutions[1]).toMatchObject({
+      nameEn: 'Anshan Normal University',
+      aliases: expect.arrayContaining(['Hunan Institute of Technology']),
+    });
   });
 
   it('verifies registered PDF rule text from its text layer before extraction', async () => {

@@ -362,6 +362,41 @@ function completeRequirementFact(rawFact, source, institutions, now, contentHash
   return requirement;
 }
 
+const reviewedGlasgowEnglishByChinese = new Map([
+  ['鞍山师范学院', 'Anshan Normal University'],
+]);
+
+export function repairGlasgowBilingualPdfNames(rawFacts, institutions) {
+  const ChineseNamesByEnglish = new Map();
+  for (const fact of rawFacts) {
+    const english = normalizedInstitutionName(fact.institutionOfficial);
+    const Chinese = normalizedChineseInstitutionName(fact.institutionNameZh);
+    if (!english || !Chinese) continue;
+    ChineseNamesByEnglish.set(english, new Set([...(ChineseNamesByEnglish.get(english) ?? []), Chinese]));
+  }
+
+  return rawFacts.map((fact) => {
+    const english = normalizedInstitutionName(fact.institutionOfficial);
+    const Chinese = normalizedChineseInstitutionName(fact.institutionNameZh);
+    if (!Chinese || (ChineseNamesByEnglish.get(english)?.size ?? 0) < 2) return fact;
+    const record = institutions.find((institution) => normalizedChineseInstitutionName(institution.nameZh) === Chinese);
+    if (!record) return fact;
+    const reviewedAlias = record.aliases.find((alias) => (
+      normalizedInstitutionName(alias) !== english
+      && alias.trim().split(/\s+/u).length > 1
+      && !/\sAKA\s/iu.test(alias)
+    ));
+    const preferredName = reviewedGlasgowEnglishByChinese.get(record.nameZh) ?? reviewedAlias ?? record.nameEn;
+    if (preferredName && record.nameEn !== preferredName) {
+      const previousNameEn = record.nameEn;
+      record.nameEn = preferredName;
+      if (reviewedAlias === preferredName) record.aliases = record.aliases.filter((alias) => alias !== reviewedAlias);
+      appendAlias(record, previousNameEn);
+    }
+    return { ...fact, institutionOfficial: preferredName };
+  });
+}
+
 async function extractRegisteredFacts(source, response, { institutions, now }) {
   let rawFacts;
   let contentHash;
@@ -376,6 +411,8 @@ async function extractRegisteredFacts(source, response, { institutions, now }) {
   } else {
     return [];
   }
+
+  if (source.id === 'glasgow-china') rawFacts = repairGlasgowBilingualPdfNames(rawFacts, institutions);
 
   const rawFactsForSource = source.parser.dedupeExactRows
     ? rawFacts.filter((fact, index) => index === rawFacts.findIndex((candidate) => (
@@ -466,7 +503,10 @@ export async function syncRegisteredSources(options = {}) {
     }
 
     try {
-      const candidateInstitutions = [...institutions];
+      const candidateInstitutions = institutions.map((institution) => ({
+        ...institution,
+        aliases: [...institution.aliases],
+      }));
       const nextFacts = await extractFacts(source, response, { institutions: candidateInstitutions, now });
       const guard = { ...source.parser.guard, sourceId: source.id, universityId: source.universityId };
       const previousFacts = requirements.filter((fact) => fact.sourceId === source.id);
@@ -501,7 +541,7 @@ export async function syncRegisteredSources(options = {}) {
       }
 
       requirements = candidateRequirements;
-      if (candidateInstitutions.length !== institutions.length) acceptedInstitutionUpdate = true;
+      if (JSON.stringify(candidateInstitutions) !== JSON.stringify(institutions)) acceptedInstitutionUpdate = true;
       institutions = candidateInstitutions;
       acceptedUpdate = true;
       status[source.id] = sourceStatus(source, previousStatus, now, {
