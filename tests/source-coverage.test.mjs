@@ -27,6 +27,15 @@ describe('source coverage report', () => {
     expect(result.failures).toContain('audit state mismatch: university-college-london');
   });
 
+  it('rejects an audit row whose reviewed directory category differs from the catalog', () => {
+    const alteredAudit = audit.map((row) => row.universityId === 'university-college-london'
+      ? { ...row, directoryCategory: 'specialist' }
+      : row);
+    const result = evaluateCoverage({ cohort, universities, sources, audit: alteredAudit });
+
+    expect(result.failures).toContain('audit directory category mismatch: university-college-london');
+  });
+
   it('rejects an unapproved specialist even when it has an official linked source', () => {
     const lbs = universities.find((item) => item.id === 'london-business-school');
     const lbsSource = sources.find((item) => item.id === 'lbs-mim-entry');
@@ -72,6 +81,33 @@ describe('source coverage report', () => {
 
     expect(result.status).toBe(1);
     expect(result.stderr).toContain('Coverage failure');
+  });
+
+  it.each([
+    ['an empty finding', (rows) => rows.map((row) => row.universityId === 'university-of-exeter'
+      ? { ...row, finding: '' }
+      : row)],
+    ['an invalid review date', (rows) => rows.map((row) => row.universityId === 'university-of-exeter'
+      ? { ...row, reviewDate: '2026/08/02' }
+      : row)],
+  ])('exits nonzero when a data-root contains %s in the audit matrix', async (_label, mutateAudit) => {
+    const root = await mkdtemp(join(tmpdir(), 'source-coverage-audit-'));
+    const dataRoot = join(root, 'data');
+    const auditMatchingCurrentCatalog = audit.map((row) => ({
+      ...row,
+      expectedState: universities.find((university) => university.id === row.universityId).state,
+    }));
+    await cp(resolve('src/data'), dataRoot, { recursive: true });
+    await writeFile(join(dataRoot, 'china-rule-audit.json'), `${JSON.stringify(mutateAudit(auditMatchingCurrentCatalog))}\n`);
+    const result = spawnSync(process.execPath, ['scripts/report-source-coverage.mjs'], {
+      cwd: process.cwd(),
+      env: { ...process.env, SOURCE_COVERAGE_DATA_ROOT: dataRoot },
+      encoding: 'utf8',
+    });
+    await rm(root, { recursive: true, force: true });
+
+    expect(result.status).toBe(1);
+    expect(result.stderr).toContain('China rule audit data validation failed');
   });
 
   it.each([

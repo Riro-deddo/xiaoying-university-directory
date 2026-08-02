@@ -1,6 +1,10 @@
+import Ajv2020 from 'ajv/dist/2020.js';
 import { readFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import chinaRuleAuditSchema from '../src/data/china-rule-audit.schema.json' with { type: 'json' };
+
+const validateChinaRuleAudit = new Ajv2020({ allErrors: true }).compile(chinaRuleAuditSchema);
 
 function sourceIsOfficial(source, university) {
   try {
@@ -25,7 +29,8 @@ export function evaluateCoverage({ cohort, universities, sources, audit }) {
   const sourceIds = sources.map((item) => item.id);
   const sourceById = new Map(sources.map((item) => [item.id, item]));
   const failures = [];
-  const auditRows = Array.isArray(audit) ? audit : [];
+  const auditIsValid = validateChinaRuleAudit(audit);
+  const auditRows = auditIsValid ? audit : [];
 
   if (
     rankedUniversityIds.length !== cohortIds.size
@@ -40,6 +45,9 @@ export function evaluateCoverage({ cohort, universities, sources, audit }) {
 
   if (!Array.isArray(audit)) {
     failures.push('missing audit matrix');
+  } else if (!auditIsValid) {
+    failures.push(`China rule audit data validation failed: ${validateChinaRuleAudit.errors?.map((error) =>
+      `${error.instancePath || '/'} ${error.message ?? error.keyword}`).join('; ')}`);
   } else {
     const auditRowsByUniversityId = new Map();
     for (const row of auditRows) {
