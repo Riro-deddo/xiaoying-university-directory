@@ -152,18 +152,18 @@
   {
     "id": "kcl-china",
     "universityId": "kings-college-london",
-    "labelZh": "研究生授课型课程申请指南",
-    "url": "https://www.kcl.ac.uk/study/postgraduate-taught/how-to-apply",
+    "labelZh": "中国研究生入学要求",
+    "url": "https://www.kcl.ac.uk/study-legacy/postgraduate/apply/entry-requirements/international",
     "kind": "china-requirements",
     "scope": "university",
-    "scopeZh": "学校当前面向国际申请人的研究生授课型课程申请指南（非中国院校名单）",
+    "scopeZh": "学校面向中国申请人的研究生国际学历要求；不同课程可适用不同门槛",
     "institutionRule": {
       "type": "none",
-      "summaryZh": "伦敦国王学院的中国研究生要求会参考本科院校背景，但未公开完整的中国院校名称名单。",
+      "summaryZh": "伦敦国王学院将中国大学区分为“名校”和其他受认可中国大学，分别采用不同加权平均分；名校参照 UK ENIC 或 Project 211/双一流，但完整名单未公开。",
       "verification": {
         "reviewedAt": "2026-08-02",
-        "url": "https://www.kcl.ac.uk/study/postgraduate-taught/how-to-apply",
-        "requiredText": ["postgraduate", "application"]
+        "url": "https://www.kcl.ac.uk/study-legacy/postgraduate/apply/entry-requirements/international",
+        "requiredText": ["China", "Chinese Universities considered Prestigious", "Other recognised Chinese universities", "Project 211/Double First Class"]
       }
     },
     "parser": {

@@ -36,3 +36,10 @@ The live source check recorded 25 `ok` responses, five `unavailable` 403 respons
 ## Commit
 
 `0f75e0ddb515246566ab70950309fbe3318d3153` — `fix: correct reviewed China institution rules`
+
+## Fix round 1 — KCL evidence correction
+
+- Red: the new KCL regression failed because `kcl-china` used the generic postgraduate application guide and only verified `postgraduate` / `application`.
+- Green: `kcl-china` now uses KCL's China-specific international requirements page, verifies the China, prestigious-university, other-recognised-university, and Project 211/Double First Class text, and remains `none` because KCL does not publish a complete KCL-owned university roster.
+- Focused suite: 55 tests passed across 3 files. Full suite: 187 tests passed across 19 files. `pnpm check:sources` checked 31 sources. Astro check reported 0 errors, 0 warnings, and 0 hints.
+- The live KCL source check completed successfully. The generated reverse-index timestamp refresh was regenerated back to the baseline and remains out of the fix-round commit.

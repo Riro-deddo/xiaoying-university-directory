@@ -115,6 +115,27 @@ describe('QS cohort and official source registry', () => {
     }
   });
 
+  it('uses KCL’s China-specific requirements page without inventing a university-owned roster', () => {
+    const source = sources.find((item) => item.id === 'kcl-china');
+
+    expect(source).toMatchObject({
+      url: 'https://www.kcl.ac.uk/study-legacy/postgraduate/apply/entry-requirements/international',
+      labelZh: '中国研究生入学要求',
+      scope: 'university',
+      institutionRule: {
+        type: 'none',
+      },
+    });
+    expect(source?.institutionRule.verification?.requiredText).toEqual(expect.arrayContaining([
+      'China',
+      'Chinese Universities considered Prestigious',
+      'Other recognised Chinese universities',
+    ]));
+    expect(source?.institutionRule.summaryZh).toContain('名校');
+    expect(source?.institutionRule.summaryZh).toContain('其他受认可中国大学');
+    expect(source?.institutionRule.summaryZh).toContain('完整名单未公开');
+  });
+
   it('keeps all nine reviewed public lists as official university-level sources pending structured extraction', () => {
     const expectedSourceSemantics = [
       ['cambridge-china', 'grade-threshold', 'link-only'],
