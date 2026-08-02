@@ -553,7 +553,6 @@
     "nameZh": "国防科技大学",
     "nameEn": "National University of Defense Technology",
     "aliases": [
-      "National University of Defense Technology **",
       "National University of Defence Technology",
       "The PLA National University of Defense Technology",
       "中国人民解放军国防科技大学"
@@ -1055,8 +1054,8 @@
     "nameZh": "西南政法大学",
     "nameEn": "Southwest University of Political Science & Law",
     "aliases": [
-      "Southwest University of Political Science and Law",
-      "Southwest Politics and Law University"
+      "Southwest Politics and Law University",
+      "Southwest University of Political Science and Law"
     ]
   },
   {
@@ -1112,10 +1111,10 @@
   {
     "id": "cn-3b5a7566d0cf1963",
     "nameZh": "中国人民公安大学",
-    "nameEn": "People's Public Security University of China",
+    "nameEn": "People's Public Security University of China (DFC)",
     "aliases": [
       "People’s Public Security University of China",
-      "People's Public Security University of China (DFC)"
+      "People's Public Security University of China"
     ]
   },
   {
@@ -1279,8 +1278,8 @@
     "nameZh": "安徽科技学院",
     "nameEn": "Anhui Science and Technology University",
     "aliases": [
-      "Anhui Science And Technology University",
-      "Anhui Science and Technology University (AKA University of Science And Technology of Anhui)"
+      "Anhui Science and Technology University (AKA University of Science And Technology of Anhui)",
+      "Anhui Science And Technology University"
     ]
   },
   {
@@ -1484,8 +1483,8 @@
     "nameZh": "北京农学院",
     "nameEn": "Beijing University of Agriculture",
     "aliases": [
-      "Beijing University Of Agriculture",
-      "Beijing Agricultural College AKA: Beijing University of Agriculture"
+      "Beijing Agricultural College AKA: Beijing University of Agriculture",
+      "Beijing University Of Agriculture"
     ]
   },
   {
@@ -1559,8 +1558,8 @@
     "nameZh": "首都体育学院",
     "nameEn": "Capital University of Physical Education and Sports",
     "aliases": [
-      "Capital University of Physical Education And Sports",
-      "Capital Sport University"
+      "Capital Sport University",
+      "Capital University of Physical Education And Sports"
     ]
   },
   {
@@ -1683,17 +1682,13 @@
     "id": "cn-e9af83046cc2b9a5",
     "nameZh": "贺州学院",
     "nameEn": "Hezhou University",
-    "aliases": [
-      "Chaohu University"
-    ]
+    "aliases": []
   },
   {
     "id": "cn-3c2a3fcc930103f2",
     "nameZh": "平顶山学院",
     "nameEn": "Pingdingshan University",
-    "aliases": [
-      "Chaohu University"
-    ]
+    "aliases": []
   },
   {
     "id": "cn-8b3b001b933af9f5",
@@ -1906,10 +1901,8 @@
   {
     "id": "cn-a75c34e61e7c0122",
     "nameZh": "南京传媒学院",
-    "nameEn": "Nanjing",
-    "aliases": [
-      "Communication University of China, Nanjing"
-    ]
+    "nameEn": "Communication University of China, Nanjing",
+    "aliases": []
   },
   {
     "id": "cn-2ce0377076fb6ab6",
@@ -2112,9 +2105,8 @@
   {
     "id": "cn-d65eedfa9c42cf79",
     "nameZh": "赣南科技学院",
-    "nameEn": "Technology",
+    "nameEn": "Gannan University of Science and Technology",
     "aliases": [
-      "Gannan University of Science and Technology",
       "College of Applied Science, Jiangxi University of Science and Technology"
     ]
   },
@@ -2135,8 +2127,8 @@
     "nameZh": "甘肃民族师范学院",
     "nameEn": "Gansu Normal University for Nationalities",
     "aliases": [
-      "Gansu Normal University For Nationalities",
-      "Gansu Normal University for Nationalities AKA Gansu Normal University of Nationalities"
+      "Gansu Normal University for Nationalities AKA Gansu Normal University of Nationalities",
+      "Gansu Normal University For Nationalities"
     ]
   },
   {
@@ -2235,10 +2227,8 @@
   {
     "id": "cn-bcb982ec197ae168",
     "nameZh": "广西民族师范学院",
-    "nameEn": "Nationalities",
-    "aliases": [
-      "Guangxi Normal University for Nationalities"
-    ]
+    "nameEn": "Guangxi Normal University for Nationalities",
+    "aliases": []
   },
   {
     "id": "cn-deca9be65c4695c4",
@@ -2249,10 +2239,9 @@
   {
     "id": "cn-19317b8421d8c22f",
     "nameZh": "广西科技师范学院",
-    "nameEn": "University",
+    "nameEn": "Guangxi Science and Technology Normal University",
     "aliases": [
-      "Guangxi Science & Technology Normal University",
-      "Guangxi Science and Technology Normal University"
+      "Guangxi Science & Technology Normal University"
     ]
   },
   {
@@ -2331,10 +2320,9 @@
   {
     "id": "cn-f9e834c56b1d1782",
     "nameZh": "桂林航天工业学院",
-    "nameEn": "Technology",
+    "nameEn": "Guilin University of Aerospace Technology",
     "aliases": [
-      "Guilin University Of Aerospace Technology",
-      "Guilin University of Aerospace Technology"
+      "Guilin University Of Aerospace Technology"
     ]
   },
   {
@@ -2407,10 +2395,8 @@
   {
     "id": "cn-87b8196aa0798c77",
     "nameZh": "贵州工程应用技术学院",
-    "nameEn": "Science",
-    "aliases": [
-      "Guizhou University of Engineering Science"
-    ]
+    "nameEn": "Guizhou University of Engineering Science",
+    "aliases": []
   },
   {
     "id": "cn-1947dfa0e8b68f34",
@@ -2627,10 +2613,8 @@
   {
     "id": "cn-2246d433494df1f6",
     "nameZh": "河北环境工程学院",
-    "nameEn": "Engineering",
-    "aliases": [
-      "Hebei University of Environmental Engineering"
-    ]
+    "nameEn": "Hebei University of Environmental Engineering",
+    "aliases": []
   },
   {
     "id": "cn-9840cbff81ffab6e",
@@ -3054,25 +3038,20 @@
     "nameZh": "鞍山师范学院",
     "nameEn": "Anshan Normal University",
     "aliases": [
-      "Anshan Normal University Liaoning China",
-      "Hunan Institute of Technology"
+      "Anshan Normal University Liaoning China"
     ]
   },
   {
     "id": "cn-d2fd76414cfa752e",
     "nameZh": "哈尔滨学院",
     "nameEn": "Harbin University",
-    "aliases": [
-      "Hunan Institute of Technology"
-    ]
+    "aliases": []
   },
   {
     "id": "cn-4f4437ed99f793e7",
     "nameZh": "湖北工程学院",
     "nameEn": "Hubei Engineering University",
-    "aliases": [
-      "Hunan Institute of Technology"
-    ]
+    "aliases": []
   },
   {
     "id": "cn-bd2baa17cbb09230",
@@ -3336,9 +3315,8 @@
   {
     "id": "cn-f723f8f824129044",
     "nameZh": "吉林农业科技学院",
-    "nameEn": "University",
+    "nameEn": "Jilin Agricultural Science and Technology University",
     "aliases": [
-      "Jilin Agricultural Science and Technology University",
       "JiLin Agricultural Science and Technology University"
     ]
   },
@@ -3511,10 +3489,9 @@
   {
     "id": "cn-58cd7ed02131ddfe",
     "nameZh": "昆明传媒学院",
-    "nameEn": "Communication",
+    "nameEn": "Kunming College of Media and Communication",
     "aliases": [
-      "Wenhua College of Yunnan Art University",
-      "Kunming College of Media and Communication"
+      "Wenhua College of Yunnan Art University"
     ]
   },
   {
@@ -3608,10 +3585,8 @@
   {
     "id": "cn-ae427a2a81ade8f0",
     "nameZh": "辽宁科技学院",
-    "nameEn": "Technology",
-    "aliases": [
-      "Liaoning Institute of Science and Technology"
-    ]
+    "nameEn": "Liaoning Institute of Science and Technology",
+    "aliases": []
   },
   {
     "id": "cn-174414eafa37a726",
@@ -3732,8 +3707,8 @@
     "nameZh": "绵阳师范学院",
     "nameEn": "Mianyang Teachers’ College",
     "aliases": [
-      "MianYang Teachers' College",
-      "Mianyang Teachers' College AKA Mianyang Normal University"
+      "Mianyang Teachers' College AKA Mianyang Normal University",
+      "MianYang Teachers' College"
     ]
   },
   {
@@ -4156,8 +4131,8 @@
     "nameZh": "陕西科技大学",
     "nameEn": "Shaanxi University of Science and Technology",
     "aliases": [
-      "Shaanxi University of Science & Technology",
-      "Shaanxi University of Science Technology"
+      "Shaanxi University of Science Technology",
+      "Shaanxi University of Science & Technology"
     ]
   },
   {
@@ -4181,10 +4156,8 @@
   {
     "id": "cn-b1506fd73f92d581",
     "nameZh": "山东农业工程学院",
-    "nameEn": "University",
-    "aliases": [
-      "Shandong Agriculture and Engineering University"
-    ]
+    "nameEn": "Shandong Agriculture and Engineering University",
+    "aliases": []
   },
   {
     "id": "cn-37f52063d7661c77",
@@ -4205,10 +4178,9 @@
   {
     "id": "cn-d23e20c3eab774df",
     "nameZh": "山东石油化工学院",
-    "nameEn": "TECHNOLOGY",
+    "nameEn": "PETROLEUM AND CHEMICAL TECHNOLOGY",
     "aliases": [
-      "Shandong Institute of Petroleum and Chemical Technology",
-      "PETROLEUM AND CHEMICAL TECHNOLOGY"
+      "Shandong Institute of Petroleum and Chemical Technology"
     ]
   },
   {
@@ -4319,10 +4291,9 @@
   {
     "id": "cn-1a9ab6593dfaad4b",
     "nameZh": "山东青年政治学院",
-    "nameEn": "Science",
+    "nameEn": "Shandong Youth University of Political Science",
     "aliases": [
-      "Shandong Youth University Of Political Science",
-      "Shandong Youth University of Political Science"
+      "Shandong Youth University Of Political Science"
     ]
   },
   {
@@ -4693,9 +4664,7 @@
     "id": "cn-bf7e5b687c8d35bd",
     "nameZh": "咸阳师范学院",
     "nameEn": "Xianyang Normal University",
-    "aliases": [
-      "Sichuan Tourism University"
-    ]
+    "aliases": []
   },
   {
     "id": "cn-bff4f266b2fd2880",
@@ -4706,10 +4675,8 @@
   {
     "id": "cn-b2d6116cefebce41",
     "nameZh": "四川传媒学院",
-    "nameEn": "Communications",
-    "aliases": [
-      "Sichuan University of Media and Communications"
-    ]
+    "nameEn": "Sichuan University of Media and Communications",
+    "aliases": []
   },
   {
     "id": "cn-a2c2f00fccfa7688",
@@ -4858,8 +4825,8 @@
     "nameZh": "香港中文大学(深圳)",
     "nameEn": "The Chinese University of Hong Kong, Shenzhen",
     "aliases": [
-      "The Chinese University of Hong Kong (Shenzhen)",
-      "Chinese University of Hong Kong, Shenzen"
+      "Chinese University of Hong Kong, Shenzen",
+      "The Chinese University of Hong Kong (Shenzhen)"
     ]
   },
   {
@@ -4883,10 +4850,9 @@
   {
     "id": "cn-8e302e42f9720c2c",
     "nameZh": "天津传媒学院",
-    "nameEn": "Communication",
+    "nameEn": "Tianjin College of Media and Communication",
     "aliases": [
-      "Tianjin College of Media and Arts",
-      "Tianjin College of Media and Communication"
+      "Tianjin College of Media and Arts"
     ]
   },
   {
@@ -5050,9 +5016,7 @@
     "id": "cn-420d922c78eeff4e",
     "nameZh": "宁夏师范大学",
     "nameEn": "Ningxia Normal University",
-    "aliases": [
-      "Weinan Normal University"
-    ]
+    "aliases": []
   },
   {
     "id": "cn-51314af84be5fd25",
@@ -5101,10 +5065,8 @@
   {
     "id": "cn-59f37fca84e30c7b",
     "nameZh": "滇西应用技术大学",
-    "nameEn": "Sciences",
-    "aliases": [
-      "West Yunnan University of Applied Sciences"
-    ]
+    "nameEn": "West Yunnan University of Applied Sciences",
+    "aliases": []
   },
   {
     "id": "cn-eace07f6c2f3fae8",
@@ -5377,11 +5339,10 @@
   {
     "id": "cn-e0e88cd34577ed68",
     "nameZh": "新疆政法学院",
-    "nameEn": "Law",
+    "nameEn": "Xinjiang Institute Of Political Science And Law",
     "aliases": [
       "Xinjiang University of Political Science and Law",
-      "Xinjiang University of Political Science And Law",
-      "Xinjiang Institute Of Political Science And Law"
+      "Xinjiang University of Political Science And Law"
     ]
   },
   {
@@ -5425,10 +5386,8 @@
   {
     "id": "cn-3fe59cc14713c4da",
     "nameZh": "新疆科技学院",
-    "nameEn": "Technology",
-    "aliases": [
-      "Xinjiang University of Science and Technology"
-    ]
+    "nameEn": "Xinjiang University of Science and Technology",
+    "aliases": []
   },
   {
     "id": "cn-f5653ddb1743cdc5",
@@ -5456,9 +5415,7 @@
     "id": "cn-c64b2c664a9c1d3f",
     "nameZh": "黄山学院",
     "nameEn": "Huangshan University",
-    "aliases": [
-      "Xinyang Agriculture and Forestry University"
-    ]
+    "aliases": []
   },
   {
     "id": "cn-517889c51df22bec",
@@ -5511,8 +5468,8 @@
     "nameZh": "延安大学",
     "nameEn": "Yan’an University",
     "aliases": [
-      "Yan'an University",
-      "Yanan University"
+      "Yanan University",
+      "Yan'an University"
     ]
   },
   {

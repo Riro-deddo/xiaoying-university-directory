@@ -345,6 +345,8 @@ data: add all reviewed public China lists
 
 Follow-up completed 2026-08-02: sync transactionality and Glasgow bilingual-PDF repairs are covered by regression tests and were persisted through a guarded synchronisation.
 
+Second follow-up completed 2026-08-02: Glasgow Chinese-anchored registry migration removes historic parser fragments and carried aliases; only the reviewed Taizhou University and Wuyi University English collisions remain.
+
 ---
 
 ### Task 7: Present the new states and specialist ranking safely

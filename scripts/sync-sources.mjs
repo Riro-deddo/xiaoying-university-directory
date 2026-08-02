@@ -365,6 +365,21 @@ function completeRequirementFact(rawFact, source, institutions, now, contentHash
 const reviewedGlasgowEnglishByChinese = new Map([
   ['鞍山师范学院', 'Anshan Normal University'],
 ]);
+const reviewedGlasgowEnglishCollisions = new Set(['taizhou university', 'wuyi university']);
+
+function normalizedGlasgowEnglishName(value) {
+  return String(value ?? '')
+    .normalize('NFKC')
+    .toLocaleLowerCase('en-US')
+    .replace(/&/gu, ' and ')
+    .replace(/[^a-z0-9]+/gu, ' ')
+    .trim()
+    .replace(/\s+/gu, ' ');
+}
+
+function isOneWordEnglishName(value) {
+  return /^[A-Za-z]+$/u.test(String(value ?? '').trim());
+}
 
 export function repairGlasgowBilingualPdfNames(rawFacts, institutions) {
   const ChineseNamesByEnglish = new Map();
@@ -375,7 +390,7 @@ export function repairGlasgowBilingualPdfNames(rawFacts, institutions) {
     ChineseNamesByEnglish.set(english, new Set([...(ChineseNamesByEnglish.get(english) ?? []), Chinese]));
   }
 
-  return rawFacts.map((fact) => {
+  const repairedFacts = rawFacts.map((fact) => {
     const english = normalizedInstitutionName(fact.institutionOfficial);
     const Chinese = normalizedChineseInstitutionName(fact.institutionNameZh);
     if (!Chinese || (ChineseNamesByEnglish.get(english)?.size ?? 0) < 2) return fact;
@@ -395,6 +410,36 @@ export function repairGlasgowBilingualPdfNames(rawFacts, institutions) {
     }
     return { ...fact, institutionOfficial: preferredName };
   });
+
+  const ChineseNamesByRepairedEnglish = new Map();
+  for (const fact of repairedFacts) {
+    const english = normalizedGlasgowEnglishName(fact.institutionOfficial);
+    const Chinese = normalizedChineseInstitutionName(fact.institutionNameZh);
+    if (!english || !Chinese) continue;
+    ChineseNamesByRepairedEnglish.set(english, new Set([...(ChineseNamesByRepairedEnglish.get(english) ?? []), Chinese]));
+  }
+
+  for (const fact of repairedFacts) {
+    const Chinese = normalizedChineseInstitutionName(fact.institutionNameZh);
+    if (!Chinese) continue;
+    const record = institutions.find((institution) => normalizedChineseInstitutionName(institution.nameZh) === Chinese);
+    if (!record) continue;
+    const correctName = fact.institutionOfficial.trim();
+    const isBrokenHistoricName = (name) => {
+      const english = normalizedGlasgowEnglishName(name);
+      const ChineseNames = ChineseNamesByRepairedEnglish.get(english) ?? new Set();
+      return isOneWordEnglishName(name)
+        || (!reviewedGlasgowEnglishCollisions.has(english) && [...ChineseNames].some((nameChinese) => nameChinese !== Chinese));
+    };
+
+    if (isBrokenHistoricName(record.nameEn)) record.nameEn = correctName;
+    record.aliases = record.aliases.filter((alias) => (
+      !isBrokenHistoricName(alias)
+      && normalizedGlasgowEnglishName(alias) !== normalizedGlasgowEnglishName(record.nameEn)
+    ));
+  }
+
+  return repairedFacts;
 }
 
 async function extractRegisteredFacts(source, response, { institutions, now }) {

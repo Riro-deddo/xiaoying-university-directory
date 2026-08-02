@@ -447,8 +447,39 @@ describe('syncRegisteredSources', () => {
     expect(repaired[1].institutionOfficial).toBe('Anshan Normal University');
     expect(institutions[1]).toMatchObject({
       nameEn: 'Anshan Normal University',
-      aliases: expect.arrayContaining(['Hunan Institute of Technology']),
+      aliases: [],
     });
+  });
+
+  it('removes broken Glasgow parser names even when the repaired PDF facts are unique', () => {
+    const institutions = [
+      { id: 'hunan', nameZh: 'Hunan Chinese', nameEn: 'Hunan Institute of Technology', aliases: [] },
+      { id: 'anshan', nameZh: 'Anshan Chinese', nameEn: 'Anshan Normal University', aliases: ['Hunan Institute of Technology'] },
+      { id: 'fragment', nameZh: 'Fragment Chinese', nameEn: 'Technology', aliases: ['Gannan University of Science and Technology'] },
+      { id: 'chaohu', nameZh: 'Chaohu Chinese', nameEn: 'Chaohu University', aliases: [] },
+      { id: 'hezhou', nameZh: 'Hezhou Chinese', nameEn: 'Hezhou University', aliases: ['Chaohu University'] },
+    ];
+    const repaired = repairGlasgowBilingualPdfNames([
+      { institutionOfficial: 'Hunan Institute of Technology', institutionNameZh: 'Hunan Chinese' },
+      { institutionOfficial: 'Anshan Normal University', institutionNameZh: 'Anshan Chinese' },
+      { institutionOfficial: 'Gannan University of Science and Technology', institutionNameZh: 'Fragment Chinese' },
+      { institutionOfficial: 'Chaohu University', institutionNameZh: 'Chaohu Chinese' },
+      { institutionOfficial: 'Hezhou University', institutionNameZh: 'Hezhou Chinese' },
+    ], institutions);
+
+    expect(repaired.map((fact) => fact.institutionOfficial)).toEqual([
+      'Hunan Institute of Technology',
+      'Anshan Normal University',
+      'Gannan University of Science and Technology',
+      'Chaohu University',
+      'Hezhou University',
+    ]);
+    expect(institutions.find((record) => record.id === 'fragment')).toMatchObject({
+      nameEn: 'Gannan University of Science and Technology',
+      aliases: [],
+    });
+    expect(institutions.find((record) => record.id === 'anshan')?.aliases).not.toContain('Hunan Institute of Technology');
+    expect(institutions.find((record) => record.id === 'hezhou')?.aliases).not.toContain('Chaohu University');
   });
 
   it('verifies registered PDF rule text from its text layer before extraction', async () => {

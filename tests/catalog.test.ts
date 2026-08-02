@@ -6,6 +6,7 @@ import institutions from '../src/data/institutions.json';
 import requirements from '../src/data/generated/requirements.json';
 import audit from '../src/data/china-rule-audit.json';
 import { loadChinaRuleAudit } from '../src/lib/data';
+import { normalizeInstitutionName } from '../src/lib/institution-search';
 
 describe('QS cohort and official source registry', () => {
   it('freezes only the official QS 2027 UK top-200 cohort', () => {
@@ -327,6 +328,45 @@ describe('QS cohort and official source registry', () => {
     }
     for (const [english, chineseNames] of chineseByEnglish) {
       if (chineseNames.size > 1) expect(allowedEnglishCollisions).toContain(english);
+    }
+  });
+
+  it('keeps Glasgow-linked registry English names unique after removing parser-corrupted aliases', () => {
+    const glasgowChineseNames = new Set(requirements
+      .filter((fact) => fact.sourceId === 'glasgow-china')
+      .map((fact) => fact.institutionNameZh)
+      .filter((name): name is string => Boolean(name)));
+    const glasgowRecords = institutions.filter((record) => glasgowChineseNames.has(record.nameZh));
+    const allowedEnglishCollisions = new Set(['taizhou university', 'wuyi university']);
+    const recordsByEnglish = new Map<string, Set<string>>();
+    const expectedChineseByEnglish = new Map([
+      ['Hunan Institute of Technology', '湖南工学院'],
+      ['Anshan Normal University', '鞍山师范学院'],
+      ['Harbin University', '哈尔滨学院'],
+      ['Hubei Engineering University', '湖北工程学院'],
+      ['Chaohu University', '巢湖学院'],
+    ]);
+
+    for (const record of glasgowRecords) {
+      for (const name of [record.nameEn, ...record.aliases]) {
+        expect(/^[A-Za-z]+$/u.test(name.trim())).toBe(false);
+        const normalized = normalizeInstitutionName(name);
+        if (!normalized) continue;
+        recordsByEnglish.set(normalized, new Set([...(recordsByEnglish.get(normalized) ?? []), record.nameZh]));
+      }
+    }
+
+    for (const [english, chineseNames] of recordsByEnglish) {
+      if (chineseNames.size > 1) expect(allowedEnglishCollisions).toContain(english);
+    }
+    for (const [english, expectedChinese] of expectedChineseByEnglish) {
+      const matches = glasgowRecords.filter((record) => [record.nameEn, ...record.aliases]
+        .some((name) => normalizeInstitutionName(name) === normalizeInstitutionName(english)));
+      expect(matches.map((record) => record.nameZh)).toEqual([expectedChinese]);
+      expect(glasgowRecords.find((record) => record.nameZh === expectedChinese)?.nameEn).toBe(english);
+    }
+    for (const chinese of ['鞍山师范学院', '哈尔滨学院', '湖北工程学院']) {
+      expect(glasgowRecords.find((record) => record.nameZh === chinese)?.aliases).not.toContain('Hunan Institute of Technology');
     }
   });
 

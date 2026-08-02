@@ -31,3 +31,10 @@ Verification completed:
 - Glasgow PDF rows reconstruct English continuations and apply Chinese-anchored reviewed names when its text layer repeats an English name for multiple institutions. The affected Hunan, Anshan, Harbin, and Hubei records now use their correct English names.
 - Glasgow score delimiters use `；`; generated score facts contain no mojibake. Only the reviewed Taizhou University and Wuyi University English-name collisions remain.
 - Final verification: 232 tests passing across 19 files; Astro check/build 0 errors (one existing hint); source coverage unchanged; guarded synchronisation completed with zero retained anomalies.
+
+## Follow-up registry migration — 2026-08-02
+
+- Glasgow repairs now inspect every exact Chinese-name registry match after reconstructing PDF facts, including rows whose corrected English name is unique.
+- Historic parser fragments and carried names are removed instead of preserved as aliases. Canonical records now use the repaired Glasgow English names for Hunan Institute of Technology, Anshan Normal University, Harbin University, Hubei Engineering University, and Chaohu University.
+- Remaining reviewed English-name conflicts: `Taizhou University` and `Wuyi University` only. There are no one-word English registry entries or other cross-Chinese normalized-English conflicts among Glasgow-linked records.
+- Final verification: guarded sync accepted all 31 registered sources with zero anomalies; 234 tests passing across 19 files; Astro check/build 0 errors (one existing hint); source coverage unchanged.
