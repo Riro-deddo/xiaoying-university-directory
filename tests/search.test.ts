@@ -1,6 +1,8 @@
 import { describe, expect, it } from 'vitest';
-import { createUniversitySearch } from '../src/lib/search';
-import { createInstitutionEvidenceSearch } from '../src/lib/search';
+import { compareDirectoryUniversities, createUniversitySearch } from '../src/lib/search';
+import { createInstitutionEvidenceSearch, type ReverseIndexEntry } from '../src/lib/search';
+import { loadInstitutions, loadUniversities } from '../src/lib/data';
+import reverseIndex from '../src/data/generated/reverse-index.json';
 import type { UniversityWithStatus } from '../src/lib/types';
 
 const gradeThresholdRule = {
@@ -18,15 +20,19 @@ const gradeThresholdRule = {
 const records: UniversityWithStatus[] = [
   {
     id: 'imperial', nameZh: '帝国理工学院', nameEn: 'Imperial College London', aliases: ['ICL', '帝国理工'],
-    qs: { edition: 2027, rank: 2 }, state: 'official-list', officialDomain: 'https://www.imperial.ac.uk', sources: [],
+    directoryCategory: 'qs-top-200', qs: { edition: 2027, rank: 2 }, state: 'official-list', officialDomain: 'https://www.imperial.ac.uk', sources: [],
   },
   {
     id: 'ucl', nameZh: '伦敦大学学院', nameEn: 'University College London', aliases: ['UCL'],
-    qs: { edition: 2027, rank: 9 }, state: 'china-requirements', officialDomain: 'https://www.ucl.ac.uk', sources: [],
+    directoryCategory: 'qs-top-200', qs: { edition: 2027, rank: 9 }, state: 'china-requirements', officialDomain: 'https://www.ucl.ac.uk', sources: [],
   },
   {
     id: 'edinburgh', nameZh: '爱丁堡大学', nameEn: 'The University of Edinburgh', aliases: ['爱大', 'Edinburgh'],
-    qs: { edition: 2027, rank: 27 }, state: 'faculty-only', officialDomain: 'https://www.ed.ac.uk', sources: [],
+    directoryCategory: 'qs-top-200', qs: { edition: 2027, rank: 27 }, state: 'faculty-only', officialDomain: 'https://www.ed.ac.uk', sources: [],
+  },
+  {
+    id: 'london-business-school', nameZh: 'London Business School', nameEn: 'London Business School', aliases: ['LBS'],
+    directoryCategory: 'specialist', state: 'not-public', officialDomain: 'https://www.london.edu', sources: [],
   },
 ];
 
@@ -43,8 +49,13 @@ describe('createUniversitySearch', () => {
     expect(directory.search(query, []).map((item) => item.id)).toContain(id);
   });
 
-  it('returns all records in QS rank order for an empty query', () => {
-    expect(directory.search('', []).map((item) => item.id)).toEqual(['imperial', 'ucl', 'edinburgh']);
+  it('returns ranked records before specialist institutions for an empty query', () => {
+    expect(directory.search('', []).map((item) => item.id)).toEqual(['imperial', 'ucl', 'edinburgh', 'london-business-school']);
+    expect(directory.search('', []).at(-1)?.id).toBe('london-business-school');
+  });
+
+  it('sorts ranked universities before specialist institutions', () => {
+    expect(compareDirectoryUniversities(records[2], records[3])).toBeLessThan(0);
   });
 
   it('does not include a fuzzy neighbour when an alias matches exactly', () => {
@@ -113,5 +124,25 @@ describe('createInstitutionEvidenceSearch', () => {
   it('returns no selection for empty and unknown searches', () => {
     expect(directory.search('').kind).toBe('empty');
     expect(directory.search('不存在的院校').kind).toBe('unknown');
+  });
+});
+
+describe('production institution evidence search', () => {
+  const directory = createInstitutionEvidenceSearch({
+    institutions: loadInstitutions(),
+    universities: loadUniversities(),
+    reverseIndex: reverseIndex as ReverseIndexEntry[],
+  });
+
+  it.each([
+    ['UIBE', '对外经济贸易大学'],
+    ['SUSTech', '南方科技大学'],
+  ])('returns one complete evidence set for %s', (query, nameZh) => {
+    const result = directory.search(query);
+    expect(result.kind).toBe('selected');
+    if (result.kind !== 'selected') return;
+    expect(result.institution.nameZh).toBe(nameZh);
+    expect(result.cards).toHaveLength(29);
+    expect(result.cards.some((card) => card.evidence.state === 'official-match' || card.evidence.state === 'faculty-match')).toBe(true);
   });
 });

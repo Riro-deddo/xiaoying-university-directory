@@ -36,7 +36,7 @@ export interface OfficialListDisplayPanel {
 }
 
 interface WorkingPanel extends OfficialListDisplayPanel {
-  institutionIds: Set<string>;
+  rowKeys: Set<string>;
 }
 
 function assertDisplayableRule(source: SourceWithStatus): asserts source is SourceWithStatus & {
@@ -107,19 +107,26 @@ export function buildOfficialListDisplays(input: {
         ...(source.cycle ? { cycle: source.cycle } : {}),
         extractedAt: fact.extractedAt,
         rows: [],
-        institutionIds: new Set<string>(),
+        rowKeys: new Set<string>(),
       };
       panelsByKey.set(key, panel);
     }
 
-    if (panel.institutionIds.has(institution.id)) {
+    const rowKey = [
+      institution.id,
+      fact.institutionOfficial,
+      fact.institutionNameZh ?? institution.nameZh,
+      fact.tierOfficial,
+      fact.scoreOfficial ?? '',
+    ].join('\u0000');
+    if (panel.rowKeys.has(rowKey)) {
       throw new Error(`Duplicate institution ${institution.id} in source ${source.id}`);
     }
-    panel.institutionIds.add(institution.id);
+    panel.rowKeys.add(rowKey);
     panel.extractedAt = fact.extractedAt > panel.extractedAt ? fact.extractedAt : panel.extractedAt;
     panel.rows.push({
       institutionId: institution.id,
-      nameZh: institution.nameZh,
+      nameZh: fact.institutionNameZh ?? institution.nameZh,
       nameEn: fact.institutionOfficial,
       tierOfficial: fact.tierOfficial,
       ...(fact.scoreOfficial ? { scoreOfficial: fact.scoreOfficial } : {}),
@@ -130,9 +137,10 @@ export function buildOfficialListDisplays(input: {
   for (const panel of panelsByKey.values()) {
     panel.rows.sort((left, right) =>
       left.nameZh.localeCompare(right.nameZh, 'zh-CN')
-      || left.institutionId.localeCompare(right.institutionId));
+      || left.institutionId.localeCompare(right.institutionId)
+      || (left.scoreOfficial ?? '').localeCompare(right.scoreOfficial ?? ''));
 
-    const { institutionIds: _institutionIds, ...displayPanel } = panel;
+    const { rowKeys: _rowKeys, ...displayPanel } = panel;
     const universityPanels = result.get(panel.universityId) ?? [];
     universityPanels.push(displayPanel);
     result.set(panel.universityId, universityPanels);

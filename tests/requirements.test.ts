@@ -29,6 +29,7 @@ const validRequirement: RequirementFact = {
   sourceId: 'ucl-china-requirements',
   institutionId: 'peking-university',
   institutionOfficial: 'Peking University',
+  institutionNameZh: 'åŒ—äº¬å¤§å­¦',
   tierOfficial: 'Group A',
   scope: 'university',
   scopeZh: '大学层级',
@@ -37,6 +38,13 @@ const validRequirement: RequirementFact = {
 };
 
 describe('normalized requirement contracts', () => {
+  it('allows persisted bilingual source spelling alongside the canonical institution ID', () => {
+    expect(validateRequirementData([{
+      ...validRequirement,
+      institutionNameZh: 'åŒ—äº¬å¤§å­¦',
+    }])).toBe(true);
+  });
+
   it('requires every persisted fact to retain the source-specific institution spelling', () => {
     const { institutionOfficial: _institutionOfficial, ...missingOfficialName } = validRequirement;
     expect(validateRequirementData(missingOfficialName)).toBe(false);
@@ -48,10 +56,11 @@ describe('normalized requirement contracts', () => {
     })).toBe(false);
   });
 
-  it('requires every institution to have non-empty unique raw names', () => {
+  it('requires non-empty names and unique canonical Chinese identities while preserving source aliases', () => {
     const allNames = institutionRecords.flatMap((item) => [item.nameZh, item.nameEn, ...item.aliases].filter((name): name is string => Boolean(name)));
+    const canonicalChineseNames = institutionRecords.map((item) => item.nameZh);
     expect(allNames.every((name) => name.trim().length > 0)).toBe(true);
-    expect(new Set(allNames).size).toBe(allNames.length);
+    expect(new Set(canonicalChineseNames).size).toBe(canonicalChineseNames.length);
   });
 
   it('requires every fact to reference registered records', () => {
@@ -64,6 +73,18 @@ describe('normalized requirement contracts', () => {
       sourceIds.has(fact.sourceId) &&
       institutionIds.has(fact.institutionId),
     )).toBe(true);
+  });
+
+  it('persists trusted facts for each parser-enabled university-level public list', () => {
+    const publicSources = sourceRecords.filter((source) =>
+      source.kind === 'official-list' && source.scope === 'university');
+
+    expect(publicSources).toHaveLength(9);
+    for (const source of publicSources) {
+      expect(source.parser.mode).not.toBe('link-only');
+      expect(requirementRecords.filter((fact) => fact.sourceId === source.id).length)
+        .toBeGreaterThanOrEqual(source.parser.guard.minimumRecords);
+    }
   });
 
   it('loads schema-valid generated official-list datasets', () => {

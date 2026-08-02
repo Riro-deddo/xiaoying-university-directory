@@ -51,6 +51,7 @@ function university(id: string, source: SourceWithStatus): UniversityWithStatus 
     nameZh: id,
     nameEn: id,
     aliases: [],
+    directoryCategory: 'qs-top-200',
     qs: { edition: 2027, rank: 1 },
     state: 'official-list',
     officialDomain: 'https://example.edu',
@@ -148,6 +149,32 @@ describe('official List presentation model', () => {
         fact('duplicate', beihang.id, '2026-08-01T00:00:00.000Z'),
       ],
     })).toThrow(/duplicate institution/i);
+  });
+
+  it('retains distinct official Chinese rows that resolve to one historical identity', () => {
+    const panel = buildOfficialListDisplays({
+      universities: [university(structuredSource.universityId, structuredSource)],
+      institutions: [beihang],
+      requirements: [
+        { ...fact('current-name', beihang.id, '2026-08-01T00:00:00.000Z'), institutionNameZh: '佛山大学' },
+        { ...fact('historical-name', beihang.id, '2026-08-01T00:00:00.000Z'), institutionNameZh: '佛山科学技术学院' },
+      ],
+    }).get(structuredSource.universityId)?.[0];
+
+    expect(panel?.rows.map((row) => row.nameZh).sort()).toEqual(['佛山大学', '佛山科学技术学院']);
+  });
+
+  it('retains separate official score variants for the same institution', () => {
+    const panel = buildOfficialListDisplays({
+      universities: [university(structuredSource.universityId, structuredSource)],
+      institutions: [beihang],
+      requirements: [
+        fact('first-score', beihang.id, '2026-08-01T00:00:00.000Z'),
+        { ...fact('second-score', beihang.id, '2026-08-01T00:00:00.000Z'), scoreOfficial: '80%' },
+      ],
+    }).get(structuredSource.universityId)?.[0];
+
+    expect(panel?.rows.map((row) => row.scoreOfficial)).toEqual(['80%', '85%']);
   });
 
   it('carries grade-threshold meaning and exact scope into a folded panel', () => {

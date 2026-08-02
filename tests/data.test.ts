@@ -13,6 +13,7 @@ const validUniversity: University = {
   nameZh: 'Imperial',
   nameEn: 'Imperial College London',
   aliases: ['IC', 'ICL'],
+  directoryCategory: 'qs-top-200',
   qs: { edition: 2027, rank: 2 },
   state: 'official-list',
   officialDomain: 'https://www.imperial.ac.uk',
@@ -63,6 +64,33 @@ describe('validateOfficialSources', () => {
   it('requires human-reviewed institution rule metadata on every official source', () => {
     expect(validateOfficialSources(sources)).toHaveLength(sources.length);
     expect(sources.every((source) => source.institutionRule.summaryZh.trim().length > 0)).toBe(true);
+  });
+
+  it('accepts registered grouped and bilingual HTML parser fields', () => {
+    expect(validateOfficialSources([{
+      ...validSource,
+      parser: {
+        mode: 'html-grouped-items',
+        groups: [{ selector: '#China .group-a', tierOfficial: 'Group A' }],
+        itemSelector: 'li',
+        institutionPattern: '^(?<institutionOfficial>.+)$',
+        guard: validSource.parser.guard,
+      },
+    }, {
+      ...validSource,
+      id: 'imperial-bilingual-table',
+      parser: {
+        mode: 'html-table',
+        tableIndex: 0,
+        rowSelector: 'tbody tr',
+        institutionColumn: 0,
+        nameZhColumn: 1,
+        scoreColumns: [{ label: '2:1', column: 2 }, { label: '2:2', column: 3 }],
+        splitOnBreaks: true,
+        institutionPattern: '^(?<institutionOfficial>.+)$',
+        guard: validSource.parser.guard,
+      },
+    }])).toHaveLength(2);
   });
 
   it.each([
@@ -122,7 +150,9 @@ describe('joinUniversityStatuses', () => {
 describe('QS 2027 starter ranks', () => {
   it('matches the published QS 2027 positions', () => {
     const ranks = Object.fromEntries(
-      loadUniversities().map((university) => [university.id, university.qs.rank]),
+      loadUniversities()
+        .filter((university) => university.directoryCategory === 'qs-top-200')
+        .map((university) => [university.id, university.qs!.rank]),
     );
 
     expect(ranks).toMatchObject({
@@ -130,5 +160,19 @@ describe('QS 2027 starter ranks', () => {
       'university-college-london': 8,
       'university-of-edinburgh': 35,
     });
+  });
+});
+
+describe('explicit directory scope', () => {
+  it('includes 28 ranked universities and LBS as a specialist institution', () => {
+    const universities = loadUniversities();
+
+    expect(universities.filter((item) => item.directoryCategory === 'qs-top-200')).toHaveLength(28);
+    expect(universities.find((item) => item.id === 'london-business-school')).toMatchObject({
+      directoryCategory: 'specialist',
+      state: 'not-public',
+    });
+    expect(universities.find((item) => item.id === 'london-business-school')).not.toHaveProperty('qs');
+    expect(new Set(universities.map((item) => item.id)).size).toBe(29);
   });
 });

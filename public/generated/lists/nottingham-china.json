@@ -1,0 +1,1013 @@
+{
+  "sourceId": "nottingham-china",
+  "rows": [
+    {
+      "institutionId": "anhui-university-4d325618",
+      "nameZh": "安徽大学",
+      "nameEn": "Anhui University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "peking-university-4818c188",
+      "nameZh": "北京大学",
+      "nameEn": "Peking University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-a7acbd26b149f215",
+      "nameZh": "北京电影学院",
+      "nameEn": "Beijing Film Academy",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-8b2d05aeefd9334e",
+      "nameZh": "北京工业大学",
+      "nameEn": "Beijing University of Technology",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "beihang-university-formerly-beijing-university-of-aeronautics-astronautics-e1caae39",
+      "nameZh": "北京航空航天大学",
+      "nameEn": "Beihang University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "beijing-university-of-chemical-technology-a79139e9",
+      "nameZh": "北京化工大学",
+      "nameEn": "Beijing University of Chemical Technology",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "beijing-jiaotong-university-formerly-beifang-northern-jiaotong-university-6c628689",
+      "nameZh": "北京交通大学",
+      "nameEn": "Beijing Jiaotong University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "university-of-science-and-technology-beijing-0c404289",
+      "nameZh": "北京科技大学",
+      "nameEn": "University of Science and Technology Beijing",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "beijing-institute-of-technology-9484ee28",
+      "nameZh": "北京理工大学",
+      "nameEn": "Beijing Institute of Technology",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "beijing-forestry-university-b3351c0d",
+      "nameZh": "北京林业大学",
+      "nameEn": "Beijing Forestry University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "beijing-normal-university-see-note-regarding-united-international-college-c88360f6",
+      "nameZh": "北京师范大学",
+      "nameEn": "Beijing Normal University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "beijing-sport-university-f9ccc13f",
+      "nameZh": "北京体育大学",
+      "nameEn": "Beijing Sport University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "beijing-foreign-studies-university-c44143af",
+      "nameZh": "北京外国语大学",
+      "nameEn": "Beijing Foreign Studies University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-a1290c79e9017064",
+      "nameZh": "北京协和医学院",
+      "nameEn": "Peking Union Medical College or Chinese Academy of Medical Sciences",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "beijing-university-of-posts-and-telecommunications-63e3d04f",
+      "nameZh": "北京邮电大学",
+      "nameEn": "Beijing University of Posts and Telecommunications",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-f20f28a40443ce88",
+      "nameZh": "北京语言大学",
+      "nameEn": "Beijing Language and Culture University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "beijing-university-of-chinese-medicine-70aac221",
+      "nameZh": "北京中医药大学",
+      "nameEn": "Beijing University of Chinese Medicine",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-1768c9298c2b8b48",
+      "nameZh": "成都理工大学",
+      "nameEn": "Chengdu University of Technology (DFC)",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-0e85934d3cd50718",
+      "nameZh": "成都中医药大学",
+      "nameEn": "Chengdu University of Traditional Chinese Medicine (DFC)",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "chongqing-university-3a110f6c",
+      "nameZh": "重庆大学",
+      "nameEn": "Chongqing University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "dalian-maritime-university-8696305d",
+      "nameZh": "大连海事大学",
+      "nameEn": "Dalian Maritime University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "dalian-university-of-technology-d7cc67a0",
+      "nameZh": "大连理工大学",
+      "nameEn": "Dalian University of Technology",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "university-of-electronic-science-and-technology-of-china-101301b5",
+      "nameZh": "电子科技大学",
+      "nameEn": "University of Electronic Science and Technology of China",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "northeastern-university-677adfe6",
+      "nameZh": "东北大学",
+      "nameEn": "Northeastern University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "northeast-forestry-university-d79f64f5",
+      "nameZh": "东北林业大学",
+      "nameEn": "Northeast Forestry University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "northeast-agricultural-university-271d6328",
+      "nameZh": "东北农业大学",
+      "nameEn": "Northeast Agricultural University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "northeast-normal-university-a77c4549",
+      "nameZh": "东北师范大学",
+      "nameEn": "Northeast Normal University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "donghua-university-8fab8235",
+      "nameZh": "东华大学",
+      "nameEn": "Donghua University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "southeast-university-53eebce9",
+      "nameZh": "东南大学",
+      "nameEn": "Southeast University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "university-of-international-business-and-economics-2a13872d",
+      "nameZh": "对外经济贸易大学",
+      "nameEn": "University of International Business and Economics",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "fuzhou-university-e59f3da9",
+      "nameZh": "福州大学",
+      "nameEn": "Fuzhou University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "fudan-university-749651d4",
+      "nameZh": "复旦大学",
+      "nameEn": "Fudan University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-5f9bafc51a94a700",
+      "nameZh": "甘肃政法大学",
+      "nameEn": "Gansu University of Political Science and Law",
+      "tierOfficial": "Tier2 二类院校"
+    },
+    {
+      "institutionId": "cn-86892fe833b87a40",
+      "nameZh": "广东财经大学",
+      "nameEn": "Guangdong University of Finance and Economics",
+      "tierOfficial": "Tier2 二类院校"
+    },
+    {
+      "institutionId": "cn-00d6d1ad7d274f1f",
+      "nameZh": "广东外语外贸大学",
+      "nameEn": "Guangdong University of Foreign Studies",
+      "tierOfficial": "Tier2 二类院校"
+    },
+    {
+      "institutionId": "guangxi-university-cabb03f5",
+      "nameZh": "广西大学",
+      "nameEn": "Guangxi University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-eee1085cd82ca50d",
+      "nameZh": "广州大学",
+      "nameEn": "Guangzhou University",
+      "tierOfficial": "Tier2 二类院校"
+    },
+    {
+      "institutionId": "cn-992cbbacda23f7e8",
+      "nameZh": "广州医科大学 (‘广州医学院’)",
+      "nameEn": "Guangzhou Medical University (DFC)",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-6d432ce3999a0af3",
+      "nameZh": "广州中医药大学",
+      "nameEn": "Guangzhou University of Chinese Medicine (DFC)",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "guizhou-university-55c5778b",
+      "nameZh": "贵州大学",
+      "nameEn": "Guizhou University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "national-university-of-defense-technology-471f1540",
+      "nameZh": "国防科技大学",
+      "nameEn": "National University of Defense Technology",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "harbin-engineering-university-a81a0bdd",
+      "nameZh": "哈尔滨工程大学",
+      "nameEn": "Harbin Engineering University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "harbin-institute-of-technology-7c521149",
+      "nameZh": "哈尔滨工业大学",
+      "nameEn": "Harbin Institute of Technology",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "hainan-university-70fc5cd1",
+      "nameZh": "海南大学",
+      "nameEn": "Hainan University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "hefei-university-of-technology-1c5fd4db",
+      "nameZh": "合肥工业大学",
+      "nameEn": "Hefei University of Technology",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-5d15aaaec5fa8a03",
+      "nameZh": "河北大学",
+      "nameEn": "Hebei University",
+      "tierOfficial": "Tier2 二类院校"
+    },
+    {
+      "institutionId": "cn-64682565311f214c",
+      "nameZh": "河北工业大学",
+      "nameEn": "Hebei University of Technology",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "hohai-university-8e8ac8be",
+      "nameZh": "河海大学",
+      "nameEn": "Hohai University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-e72d1587de958af8",
+      "nameZh": "河南大学",
+      "nameEn": "Henan University (DFC)",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-4f4d6eefafbd97be",
+      "nameZh": "黑龙江大学",
+      "nameEn": "Heilongjiang University",
+      "tierOfficial": "Tier2 二类院校"
+    },
+    {
+      "institutionId": "hunan-university-75a3814e",
+      "nameZh": "湖南大学",
+      "nameEn": "Hunan University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "hunan-normal-university-95554cb7",
+      "nameZh": "湖南师范大学",
+      "nameEn": "Hunan Normal University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "north-china-electric-power-university-huabei-electric-power-university-68bcce4b",
+      "nameZh": "华北电力大学",
+      "nameEn": "North China Electric Power University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-165e06f80b97fef1",
+      "nameZh": "华北电力大学(保定)",
+      "nameEn": "North China Electric Power University (Baoding)",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "east-china-university-of-science-and-technology-77dcefa9",
+      "nameZh": "华东理工大学",
+      "nameEn": "East China University of Science and Technology",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "east-china-normal-university-8ce642ca",
+      "nameZh": "华东师范大学",
+      "nameEn": "East China Normal University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-9846526cba397638",
+      "nameZh": "华东政法大学",
+      "nameEn": "East China University of Political Science and Law",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "south-china-university-of-technology-09771dd9",
+      "nameZh": "华南理工大学",
+      "nameEn": "South China University of Technology",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-ce4376976a045805",
+      "nameZh": "华南农业大学",
+      "nameEn": "South China Agricultural University (DFC)",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "south-china-normal-university-1646a6bc",
+      "nameZh": "华南师范大学",
+      "nameEn": "South China Normal University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-9b9093b0fcf8077c",
+      "nameZh": "华侨大学",
+      "nameEn": "Huaqiao University",
+      "tierOfficial": "Tier2 二类院校"
+    },
+    {
+      "institutionId": "huazhong-university-of-science-technology-97cee7bd",
+      "nameZh": "华中科技大学",
+      "nameEn": "Huazhong University of Science and Technology",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "huazhong-agricultural-university-central-china-agricultural-university-5cb9ba1d",
+      "nameZh": "华中农业大学",
+      "nameEn": "Huazhong Agricultural University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "huazhong-normal-university-central-china-normal-university-3a822b99",
+      "nameZh": "华中师范大学",
+      "nameEn": "Central China Normal University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "jilin-university-3c8d9a5b",
+      "nameZh": "吉林大学",
+      "nameEn": "Jilin University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "jinan-university-fdd34254",
+      "nameZh": "暨南大学",
+      "nameEn": "Jinan University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "jiangnan-university-2654a04a",
+      "nameZh": "江南大学",
+      "nameEn": "Jiangnan University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-5a524553988c78c7",
+      "nameZh": "江西财经大学",
+      "nameEn": "Jiangxi University of Finance and Economics",
+      "tierOfficial": "Tier2 二类院校"
+    },
+    {
+      "institutionId": "lanzhou-university-52c21e54",
+      "nameZh": "兰州大学",
+      "nameEn": "Lanzhou University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "liaoning-university-80e8b162",
+      "nameZh": "辽宁大学",
+      "nameEn": "Liaoning University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "nanchang-university-3dc3ad6c",
+      "nameZh": "南昌大学",
+      "nameEn": "Nanchang University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-fd334bd375069320",
+      "nameZh": "南方科技大学",
+      "nameEn": "South University of Science and Technology (DFC)",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-25d485384721b830",
+      "nameZh": "南方医科大学",
+      "nameEn": "Southern Medical University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "nanjing-university-8fbdf4ba",
+      "nameZh": "南京大学",
+      "nameEn": "Nanjing University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-455084ec13ada5a4",
+      "nameZh": "南京航空航天大学",
+      "nameEn": "Nanjing University of Aeronautics and Astronautics",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "nanjing-university-of-science-and-technology-af39a57f",
+      "nameZh": "南京理工大学",
+      "nameEn": "Nanjing University of Science and Technology",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-7fc8cb9cf80e2f0e",
+      "nameZh": "南京林业大学",
+      "nameEn": "Nanjing Forestry University (DFC)",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "nanjing-agricultural-university-c39b4a83",
+      "nameZh": "南京农业大学",
+      "nameEn": "Nanjing Agricultural University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "nanjing-normal-university-4bbad3a8",
+      "nameZh": "南京师范大学",
+      "nameEn": "Nanjing Normal University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-52596fb2bd34dd3f",
+      "nameZh": "南京信息工程大学",
+      "nameEn": "Nanjing University of Information Science and Technology (DFC)",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-e0fc5173f5b0b813",
+      "nameZh": "南京医科大学",
+      "nameEn": "Nanjing Medical University (DFC)",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-98ded03fe5b061ca",
+      "nameZh": "南京邮电大学",
+      "nameEn": "Nanjing University of Posts and Telecommunications (DFC)",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-0518fdd161b38fa4",
+      "nameZh": "南京中医药大学",
+      "nameEn": "Nanjing University of Chinese Medicine (DFC)",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "nankai-university-fed7345f",
+      "nameZh": "南开大学",
+      "nameEn": "Nankai University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "inner-mongolia-university-ffd71f0e",
+      "nameZh": "内蒙古大学",
+      "nameEn": "Inner Mongolia University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-3d37c7d0c88d7564",
+      "nameZh": "宁波大学",
+      "nameEn": "Ningbo University (DFC)",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "ningxia-university-b5450df6",
+      "nameZh": "宁夏大学",
+      "nameEn": "Ningxia University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "qinghai-university-e7f8995a",
+      "nameZh": "青海大学",
+      "nameEn": "Qinghai University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "tsinghua-university-88293fa6",
+      "nameZh": "清华大学",
+      "nameEn": "Tsinghua University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "xiamen-university-5271b226",
+      "nameZh": "厦门大学",
+      "nameEn": "Xiamen University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "shandong-university-fd3a1051",
+      "nameZh": "山东大学",
+      "nameEn": "Shandong University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-6e7eaa04028d873e",
+      "nameZh": "山西大学",
+      "nameEn": "Shanxi University (DFC)",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "shaanxi-normal-university-d6405edd",
+      "nameZh": "陕西师范大学",
+      "nameEn": "Shaanxi Normal University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "shanghai-university-of-finance-and-economics-a5566168",
+      "nameZh": "上海财经大学",
+      "nameEn": "Shanghai University of Finance and Economics",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "shanghai-university-b933744c",
+      "nameZh": "上海大学",
+      "nameEn": "Shanghai University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-b5644094c5e79432",
+      "nameZh": "上海对外经贸大学",
+      "nameEn": "Shanghai University of International Business and Economics",
+      "tierOfficial": "Tier2 二类院校"
+    },
+    {
+      "institutionId": "cn-d10a95448b63a97c",
+      "nameZh": "上海海事大学",
+      "nameEn": "Shanghai Maritime University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-cfc7b6e5ea305c78",
+      "nameZh": "上海海洋大学 (‘上海水产大学’)",
+      "nameEn": "Shanghai Ocean University (DFC)",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "shanghai-jiaotong-university-95ef14bb",
+      "nameZh": "上海交通大学",
+      "nameEn": "Shanghai Jiao Tong University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-eb45aa61b7f92334",
+      "nameZh": "上海科技大学",
+      "nameEn": "ShanghaiTech University (DFC)",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-b0c5ad9361839895",
+      "nameZh": "上海体育学院",
+      "nameEn": "Shanghai University of Sport (DFC)",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "shanghai-international-studies-university-b9e33065",
+      "nameZh": "上海外国语大学",
+      "nameEn": "Shanghai International Studies University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-76ab0dbb8e91e76a",
+      "nameZh": "上海音乐学院",
+      "nameEn": "Shanghai Conservatory of Music (DFC)",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-8fbfa46ba68bb9cc",
+      "nameZh": "上海政法学院",
+      "nameEn": "Shanghai University of Political Science and Law",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-4cb8ebbd13c8f9a0",
+      "nameZh": "上海中医药大学",
+      "nameEn": "Shanghai University of Traditional Chinese Medicine (DFC)",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "shenzhen-university-c29d3a31",
+      "nameZh": "深圳大学",
+      "nameEn": "Shenzhen University",
+      "tierOfficial": "Tier2 二类院校"
+    },
+    {
+      "institutionId": "shihezi-university-2f997caf",
+      "nameZh": "石河子大学",
+      "nameEn": "Shihezi University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-7ce88b3325679720",
+      "nameZh": "首都师范大学",
+      "nameEn": "Capital Normal University (DFC)",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "sichuan-university-2721d57b",
+      "nameZh": "四川大学",
+      "nameEn": "Sichuan University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "sichuan-agricultural-university-2e7fba53",
+      "nameZh": "四川农业大学",
+      "nameEn": "Sichuan Agricultural University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "suzhou-soochow-university-16c0f71b",
+      "nameZh": "苏州大学",
+      "nameEn": "Soochow University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-3138f45f7d32ad1c",
+      "nameZh": "太原理工大学",
+      "nameEn": "Taiyuan University of Technology",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "tianjin-university-1c8bcb86",
+      "nameZh": "天津大学",
+      "nameEn": "Tianjin University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-a9a9f87f07b8162d",
+      "nameZh": "天津工业大学",
+      "nameEn": "Tiangong University (DFC)",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "tianjin-medical-university-65b3512e",
+      "nameZh": "天津医科大学",
+      "nameEn": "Tianjin Medical University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-3646ec25e5e26c13",
+      "nameZh": "天津中医药大学",
+      "nameEn": "Tianjin University of Traditional Chinese Medicine (DFC)",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "tongji-university-a6533d2e",
+      "nameZh": "同济大学",
+      "nameEn": "Tongji University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-df4afcf1001d1788",
+      "nameZh": "外交学院",
+      "nameEn": "China Foreign Affairs University (DFC)",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "wuhan-university-102c49fc",
+      "nameZh": "武汉大学",
+      "nameEn": "Wuhan University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "wuhan-university-of-technology-85782e2d",
+      "nameZh": "武汉理工大学",
+      "nameEn": "Wuhan University of Technology",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "xidian-university-also-known-as-xi-an-electronic-science-and-technology-university-14c4a29e",
+      "nameZh": "西安电子科技大学",
+      "nameEn": "Xidian University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "xi-an-jiaotong-university-95c2779f",
+      "nameZh": "西安交通大学",
+      "nameEn": "Xi'an Jiaotong University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "northwest-university-2a8585db",
+      "nameZh": "西北大学",
+      "nameEn": "Northwest University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "northwestern-polytechnical-university-1e858b31",
+      "nameZh": "西北工业大学",
+      "nameEn": "Northwestern Polytechnical University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-34b69de534cefc31",
+      "nameZh": "西北农林科技大学",
+      "nameEn": "Northwest A&F University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-e41047038b07ee3a",
+      "nameZh": "西北政法大学",
+      "nameEn": "Northwest University of Political Science and Law",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "tibet-university-44adba65",
+      "nameZh": "西藏大学",
+      "nameEn": "Tibet University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "southwestern-university-of-finance-and-economics-9e667ea4",
+      "nameZh": "西南财经大学",
+      "nameEn": "Southwestern University of Finance and Economics",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "southwest-university-14772c4d",
+      "nameZh": "西南大学",
+      "nameEn": "Southwest University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "southwest-jiaotong-university-9e83d9d0",
+      "nameZh": "西南交通大学",
+      "nameEn": "Southwest Jiaotong University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-60ccec0d7e09389a",
+      "nameZh": "西南石油大学",
+      "nameEn": "Southwest Petroleum University (DFC)",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-93c2f8f9024ca6e3",
+      "nameZh": "西南政法大学",
+      "nameEn": "Southwest University of Political Science & Law",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "xiangtan-university-cfb27bdb",
+      "nameZh": "湘潭大学",
+      "nameEn": "Xiangtan University (DFC)",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "xinjiang-university-e1c08fa3",
+      "nameZh": "新疆大学",
+      "nameEn": "Xinjiang University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-484060233a93bcb1",
+      "nameZh": "烟台大学",
+      "nameEn": "Yantai University",
+      "tierOfficial": "Tier2 二类院校"
+    },
+    {
+      "institutionId": "yanbian-university-61996de7",
+      "nameZh": "延边大学",
+      "nameEn": "Yanbian University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "yunnan-university-d0bc6178",
+      "nameZh": "云南大学",
+      "nameEn": "Yunnan University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "chang-an-university-178fc794",
+      "nameZh": "长安大学",
+      "nameEn": "Chang'an University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "zhejiang-university-41292b6f",
+      "nameZh": "浙江大学",
+      "nameEn": "Zhejiang University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-e8a7da73db6d24a7",
+      "nameZh": "浙江工商大学",
+      "nameEn": "Zhejiang Gongshang University",
+      "tierOfficial": "Tier2 二类院校"
+    },
+    {
+      "institutionId": "zhengzhou-university-ccf4b546",
+      "nameZh": "郑州大学",
+      "nameEn": "Zhengzhou University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "communication-university-of-china-3a1bb185",
+      "nameZh": "中国传媒大学",
+      "nameEn": "Communication University of China",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-08552a40bf828f6e",
+      "nameZh": "中国地质大学",
+      "nameEn": "China University of Geosciences",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-113e8c25245f1aff",
+      "nameZh": "中国地质大学(北京)",
+      "nameEn": "China University of Geosciences-Beijing",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-8c19a6a7fc348b4b",
+      "nameZh": "中国电力科学研究院 ('中国电科院')",
+      "nameEn": "China Electric Power Research Institute",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "ocean-university-of-china-qingdao-ab3847cd",
+      "nameZh": "中国海洋大学",
+      "nameEn": "Ocean University of China",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "university-of-science-and-technology-of-china-ustc-a638543a",
+      "nameZh": "中国科学技术大学",
+      "nameEn": "University of Science and Technology of China",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-ac0ae816716042b1",
+      "nameZh": "中国科学院大学",
+      "nameEn": "University of Chinese Academy of Sciences",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-e2aad34e0cff87f8",
+      "nameZh": "中国矿业大学",
+      "nameEn": "China University of Mining and Technology",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-308aebe85f79a4c4",
+      "nameZh": "中国矿业大学(北京)",
+      "nameEn": "China University of Mining and Technology-Beijing",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-ba7d54c0d191038a",
+      "nameZh": "中国美术学院",
+      "nameEn": "China Academy of Art (DFC)",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "china-agricultural-university-7f24114a",
+      "nameZh": "中国农业大学",
+      "nameEn": "China Agricultural University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "renmin-university-of-china-9e74b938",
+      "nameZh": "中国人民大学",
+      "nameEn": "Renmin University of China",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-3b5a7566d0cf1963",
+      "nameZh": "中国人民公安大学",
+      "nameEn": "People's Public Security University of China (DFC)",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-da6a725bc9bb1812",
+      "nameZh": "中国社会科学院大学",
+      "nameEn": "University of Chinese Academy of Social Sciences",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-c6c5fad24bd19c2a",
+      "nameZh": "中国石油大学(北京)",
+      "nameEn": "China University of Petroleum-Beijing",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-1b0f29a5cf1afe4b",
+      "nameZh": "中国石油大学(华东)",
+      "nameEn": "China University of Petroleum",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "china-pharmaceutical-university-03ca6012",
+      "nameZh": "中国药科大学",
+      "nameEn": "China Pharmaceutical University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-910531dbe8f40148",
+      "nameZh": "中国音乐学院",
+      "nameEn": "China Conservatory of music (DFC)",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "china-university-of-political-science-and-law-2ee2c283",
+      "nameZh": "中国政法大学",
+      "nameEn": "China University of Political Science and Law",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "zhongnan-university-of-economics-and-law-71156a7a",
+      "nameZh": "中南财经政法大学",
+      "nameEn": "Zhongnan University of Economics and Law",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "central-south-university-3352f6a2",
+      "nameZh": "中南大学",
+      "nameEn": "Central South University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "sun-yat-sen-university-might-appear-as-zhongshan-university-d94644f6",
+      "nameZh": "中山大学",
+      "nameEn": "Sun Yat-Sen University",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "central-university-of-finance-and-economics-2259e13d",
+      "nameZh": "中央财经大学",
+      "nameEn": "Central University of Finance and Economics",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-c07c6b25fcd89856",
+      "nameZh": "中央美术学院",
+      "nameEn": "Central Academy of Fine Arts",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "minzu-university-of-china-7bbdd5ab",
+      "nameZh": "中央民族大学",
+      "nameEn": "Minzu University of China",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "cn-e8bb522d65cb9397",
+      "nameZh": "中央戏剧学院",
+      "nameEn": "The Central Academy of Drama",
+      "tierOfficial": "Tier 1 一类院校"
+    },
+    {
+      "institutionId": "central-conservatory-of-music-2a7c01dd",
+      "nameZh": "中央音乐学院",
+      "nameEn": "Central Conservatory of Music",
+      "tierOfficial": "Tier 1 一类院校"
+    }
+  ]
+}

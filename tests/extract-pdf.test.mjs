@@ -1,6 +1,6 @@
 import { readFile } from 'node:fs/promises';
 import { describe, expect, it } from 'vitest';
-import { extractPdfFacts } from '../scripts/extractors/pdf.mjs';
+import { extractPdfFactFromRow, extractPdfFacts, extractPdfFactsFromLines } from '../scripts/extractors/pdf.mjs';
 
 const fixtureBytes = async () => new Uint8Array(await readFile(new URL('./fixtures/sources/list-text-layer.pdf', import.meta.url)));
 const footerFixtureBytes = async () => new Uint8Array(await readFile(new URL('./fixtures/sources/list-with-footer.pdf', import.meta.url)));
@@ -14,6 +14,46 @@ const pdfConfig = {
 };
 
 describe('extractPdfFacts', () => {
+  it('captures bilingual Glasgow rows and combines registered score columns', () => {
+    const fact = extractPdfFactFromRow(
+      'Beihang University åŒ—äº¬èˆªç©ºèˆªå¤©å¤§å­¦ 70% 65% A',
+      {
+        rowPattern: '^(Beihang University) (åŒ—äº¬èˆªç©ºèˆªå¤©å¤§å­¦) (70%) (65%) (A)$',
+        institutionColumn: 0,
+        nameZhColumn: 1,
+        scoreColumns: [{ label: '2:1', column: 2 }, { label: '2:2', column: 3 }],
+        tierColumn: 4,
+      },
+    );
+
+    expect(fact).toEqual({
+      institutionOfficial: 'Beihang University',
+      institutionNameZh: 'åŒ—äº¬èˆªç©ºèˆªå¤©å¤§å­¦',
+      scoreOfficial: '2:1: 70%；2:2: 65%',
+      tierOfficial: 'A',
+    });
+  });
+
+  it('reconstructs a wrapped English institution name before its Chinese and score anchors', () => {
+    expect(extractPdfFactsFromLines({
+      mode: 'pdf-text',
+      headingPattern: '^University of Glasgow Accepted Chinese University List 2026$',
+      rowPattern: '^(.+?)(桂林航天工业学院)\\s+(87%)\\s+(85%)\\s+(E)$',
+      institutionColumn: 0,
+      nameZhColumn: 1,
+      scoreColumns: [{ label: '2:1', column: 2 }, { label: '2:2', column: 3 }],
+      tierColumn: 4,
+    }, [
+      'University of Glasgow Accepted Chinese University List 2026',
+      'Guilin University of Aerospace',
+      'Technology 桂林航天工业学院 87% 85% E',
+    ])).toMatchObject([{
+      institutionOfficial: 'Guilin University of Aerospace Technology',
+      institutionNameZh: '桂林航天工业学院',
+      scoreOfficial: '2:1: 87%；2:2: 85%',
+    }]);
+  });
+
   it('extracts text-layer rows and preserves official tier wording', async () => {
     const facts = await extractPdfFacts(pdfConfig, await fixtureBytes());
 

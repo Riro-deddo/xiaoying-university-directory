@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import {
+  directoryRankCopy,
   directoryFilters,
   evidenceCopyFor,
   evidenceStateCopy,
@@ -9,6 +10,7 @@ import {
   stateCopy,
   sourceHealthCopy,
 } from '../src/lib/presentation';
+import type { UniversityWithStatus } from '../src/lib/types';
 
 const gradeThresholdRule = {
   type: 'grade-threshold' as const,
@@ -41,6 +43,22 @@ describe('directoryFilters', () => {
   });
 });
 
+describe('directoryRankCopy', () => {
+  it('renders the specialist label without inventing a QS rank', () => {
+    const specialist: UniversityWithStatus = {
+      id: 'london-business-school',
+      nameZh: '伦敦商学院',
+      nameEn: 'London Business School',
+      aliases: ['LBS'],
+      directoryCategory: 'specialist',
+      state: 'not-public',
+      officialDomain: 'https://www.london.edu',
+      sources: [],
+    };
+    expect(directoryRankCopy(specialist)).toBe('专业院校');
+  });
+});
+
 describe('institution rule presentation', () => {
   it('uses distinct Chinese labels for eligibility, grade, mixed, and no-list rules', () => {
     expect(institutionRuleTypeCopy.eligibility.label).toBe('院校准入限制');
@@ -50,9 +68,9 @@ describe('institution rule presentation', () => {
   });
 
   it('uses rule-specific folded panel titles', () => {
-    expect(officialPanelTitle('eligibility', 12)).toBe('查看官方院校准入名单（12 所）');
-    expect(officialPanelTitle('grade-threshold', 84)).toBe('查看官方院校成绩分档（84 所）');
-    expect(officialPanelTitle('mixed', 81)).toBe('查看官方 Priority List（81 所）');
+    expect(officialPanelTitle('eligibility', 12)).toBe('查看官方院校准入名单（12 条规则记录）');
+    expect(officialPanelTitle('grade-threshold', 84)).toBe('查看官方院校成绩分档（84 条规则记录）');
+    expect(officialPanelTitle('mixed', 81)).toBe('查看官方 Priority List（81 条规则记录）');
   });
 });
 

@@ -28,9 +28,18 @@ describe('guarded daily source workflow', () => {
 
   it('commits only status and accepted generated datasets', () => {
     expect(dailyWorkflow).toContain('src/data/status.json');
+    expect(dailyWorkflow).toContain('src/data/institutions.json');
     expect(dailyWorkflow).toContain('src/data/generated/requirements.json');
     expect(dailyWorkflow).toContain('src/data/generated/reverse-index.json');
     expect(dailyWorkflow).not.toMatch(/git add\s+\.|git add\s+-A/);
+  });
+
+  it('commits the institution registry whenever guarded sync can change it', () => {
+    const diffGuard = dailyWorkflow.match(/if git diff --quiet -- ([^;]+);/)?.[1] ?? '';
+    const gitAdd = dailyWorkflow.match(/^\s*git add (.+)$/m)?.[1] ?? '';
+
+    expect(diffGuard).toContain('src/data/institutions.json');
+    expect(gitAdd).toContain('src/data/institutions.json');
   });
 
   it('keeps CI read-only and checks reverse-index consistency', () => {

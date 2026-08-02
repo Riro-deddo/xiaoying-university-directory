@@ -1,0 +1,509 @@
+{
+  "sourceId": "ucl-china",
+  "rows": [
+    {
+      "institutionId": "peking-university-4818c188",
+      "nameZh": "北京大学",
+      "nameEn": "Peking University",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "beihang-university-formerly-beijing-university-of-aeronautics-astronautics-e1caae39",
+      "nameZh": "北京航空航天大学",
+      "nameEn": "Beihang University (formerly Beijing University of Aeronautics & Astronautics)",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "beijing-university-of-chemical-technology-a79139e9",
+      "nameZh": "北京化工大学",
+      "nameEn": "Beijing University of Chemical Technology",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "beijing-jiaotong-university-formerly-beifang-northern-jiaotong-university-6c628689",
+      "nameZh": "北京交通大学",
+      "nameEn": "Beijing Jiaotong University (formerly Beifang (Northern) Jiaotong University)",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "university-of-science-and-technology-beijing-0c404289",
+      "nameZh": "北京科技大学",
+      "nameEn": "University of Science and Technology Beijing",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "beijing-institute-of-technology-9484ee28",
+      "nameZh": "北京理工大学",
+      "nameEn": "Beijing Institute of Technology",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "beijing-forestry-university-b3351c0d",
+      "nameZh": "北京林业大学",
+      "nameEn": "Beijing Forestry University",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "beijing-normal-university-see-note-regarding-united-international-college-c88360f6",
+      "nameZh": "北京师范大学",
+      "nameEn": "Beijing Normal University (see note regarding United International College) *",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "beijing-foreign-studies-university-c44143af",
+      "nameZh": "北京外国语大学",
+      "nameEn": "Beijing Foreign Studies University",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "beijing-university-of-posts-and-telecommunications-63e3d04f",
+      "nameZh": "北京邮电大学",
+      "nameEn": "Beijing University of Posts and Telecommunications",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "beijing-university-of-chinese-medicine-70aac221",
+      "nameZh": "北京中医药大学",
+      "nameEn": "Beijing University of Chinese Medicine",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "chongqing-university-3a110f6c",
+      "nameZh": "重庆大学",
+      "nameEn": "Chongqing University",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "dalian-university-of-technology-d7cc67a0",
+      "nameZh": "大连理工大学",
+      "nameEn": "Dalian University of Technology",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "university-of-electronic-science-and-technology-of-china-101301b5",
+      "nameZh": "电子科技大学",
+      "nameEn": "University of Electronic Science and Technology of China",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "northeastern-university-677adfe6",
+      "nameZh": "东北大学",
+      "nameEn": "Northeastern University",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "northeast-forestry-university-d79f64f5",
+      "nameZh": "东北林业大学",
+      "nameEn": "Northeast Forestry University",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "northeast-normal-university-a77c4549",
+      "nameZh": "东北师范大学",
+      "nameEn": "Northeast Normal University",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "donghua-university-8fab8235",
+      "nameZh": "东华大学",
+      "nameEn": "Donghua University",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "southeast-university-53eebce9",
+      "nameZh": "东南大学",
+      "nameEn": "Southeast University",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "university-of-international-business-and-economics-2a13872d",
+      "nameZh": "对外经济贸易大学",
+      "nameEn": "University of International Business and Economics",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "fudan-university-749651d4",
+      "nameZh": "复旦大学",
+      "nameEn": "Fudan University",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "national-university-of-defense-technology-471f1540",
+      "nameZh": "国防科技大学",
+      "nameEn": "National University of Defense Technology **",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "harbin-institute-of-technology-7c521149",
+      "nameZh": "哈尔滨工业大学",
+      "nameEn": "Harbin Institute of Technology",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "hefei-university-of-technology-1c5fd4db",
+      "nameZh": "合肥工业大学",
+      "nameEn": "Hefei University of Technology",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "hohai-university-8e8ac8be",
+      "nameZh": "河海大学",
+      "nameEn": "Hohai University",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "hunan-university-75a3814e",
+      "nameZh": "湖南大学",
+      "nameEn": "Hunan University",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "north-china-electric-power-university-huabei-electric-power-university-68bcce4b",
+      "nameZh": "华北电力大学",
+      "nameEn": "North China Electric Power University / Huabei Electric Power University",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "east-china-university-of-science-and-technology-77dcefa9",
+      "nameZh": "华东理工大学",
+      "nameEn": "East China University of Science and Technology",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "east-china-normal-university-8ce642ca",
+      "nameZh": "华东师范大学",
+      "nameEn": "East China Normal University",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "south-china-university-of-technology-09771dd9",
+      "nameZh": "华南理工大学",
+      "nameEn": "South China University of Technology",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "huazhong-university-of-science-technology-97cee7bd",
+      "nameZh": "华中科技大学",
+      "nameEn": "Huazhong University of Science & Technology",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "huazhong-agricultural-university-central-china-agricultural-university-5cb9ba1d",
+      "nameZh": "华中农业大学",
+      "nameEn": "Huazhong Agricultural University / Central China Agricultural University",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "huazhong-normal-university-central-china-normal-university-3a822b99",
+      "nameZh": "华中师范大学",
+      "nameEn": "Huazhong Normal University / Central China Normal University",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "jilin-university-3c8d9a5b",
+      "nameZh": "吉林大学",
+      "nameEn": "Jilin University",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "jiangnan-university-2654a04a",
+      "nameZh": "江南大学",
+      "nameEn": "Jiangnan University",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "lanzhou-university-52c21e54",
+      "nameZh": "兰州大学",
+      "nameEn": "Lanzhou University",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "nanjing-university-8fbdf4ba",
+      "nameZh": "南京大学",
+      "nameEn": "Nanjing University",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "nanhang-jincheng-college-independent-college-of-nanjing-university-of-aeronautics-and-astronautics-7e1b9462",
+      "nameZh": "南京航空航天大学金城学院",
+      "nameEn": "Nanhang Jincheng College (independent college of Nanjing University of Aeronautics and Astronautics) **",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "nanjing-university-of-science-and-technology-af39a57f",
+      "nameZh": "南京理工大学",
+      "nameEn": "Nanjing University of Science and Technology",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "nanjing-agricultural-university-c39b4a83",
+      "nameZh": "南京农业大学",
+      "nameEn": "Nanjing Agricultural University",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "nankai-university-fed7345f",
+      "nameZh": "南开大学",
+      "nameEn": "Nankai University",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "tsinghua-university-88293fa6",
+      "nameZh": "清华大学",
+      "nameEn": "Tsinghua University",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "xiamen-university-5271b226",
+      "nameZh": "厦门大学",
+      "nameEn": "Xiamen University",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "shandong-university-fd3a1051",
+      "nameZh": "山东大学",
+      "nameEn": "Shandong University",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "shanghai-university-of-finance-and-economics-a5566168",
+      "nameZh": "上海财经大学",
+      "nameEn": "Shanghai University of Finance and Economics",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "shanghai-2nd-medical-university-6a167102",
+      "nameZh": "上海第二医科大学",
+      "nameEn": "Shanghai (2nd) Medical University",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "shanghai-jiaotong-university-95ef14bb",
+      "nameZh": "上海交通大学",
+      "nameEn": "Shanghai Jiaotong University",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "shanghai-international-studies-university-b9e33065",
+      "nameZh": "上海外国语大学",
+      "nameEn": "Shanghai International Studies University",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "sichuan-university-2721d57b",
+      "nameZh": "四川大学",
+      "nameEn": "Sichuan University",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "suzhou-soochow-university-16c0f71b",
+      "nameZh": "苏州大学",
+      "nameEn": "Suzhou (Soochow) University**",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "tianjin-university-1c8bcb86",
+      "nameZh": "天津大学",
+      "nameEn": "Tianjin University",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "tongji-university-a6533d2e",
+      "nameZh": "同济大学",
+      "nameEn": "Tongji University",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "wuhan-university-102c49fc",
+      "nameZh": "武汉大学",
+      "nameEn": "Wuhan University",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "wuhan-university-of-technology-85782e2d",
+      "nameZh": "武汉理工大学",
+      "nameEn": "Wuhan University of Technology",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "xidian-university-also-known-as-xi-an-electronic-science-and-technology-university-14c4a29e",
+      "nameZh": "西安电子科技大学",
+      "nameEn": "Xidian University (also known as Xi'an Electronic Science and Technology University)**",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "xi-an-jiaotong-university-95c2779f",
+      "nameZh": "西安交通大学",
+      "nameEn": "Xi'an Jiaotong University",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "northwest-university-2a8585db",
+      "nameZh": "西北大学",
+      "nameEn": "Northwest University",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "northwestern-polytechnical-university-1e858b31",
+      "nameZh": "西北工业大学",
+      "nameEn": "Northwestern Polytechnical University",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "southwestern-university-of-finance-and-economics-9e667ea4",
+      "nameZh": "西南财经大学",
+      "nameEn": "Southwestern University of Finance and Economics",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "southwest-university-14772c4d",
+      "nameZh": "西南大学",
+      "nameEn": "Southwest University",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "southwest-jiaotong-university-9e83d9d0",
+      "nameZh": "西南交通大学",
+      "nameEn": "Southwest Jiaotong University",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "yanshan-university-634a3bf5",
+      "nameZh": "燕山大学",
+      "nameEn": "Yanshan University**",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "yunnan-university-d0bc6178",
+      "nameZh": "云南大学",
+      "nameEn": "Yunnan University",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "chang-an-university-178fc794",
+      "nameZh": "长安大学",
+      "nameEn": "Chang'an University",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "zhejiang-university-41292b6f",
+      "nameZh": "浙江大学",
+      "nameEn": "Zhejiang University",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "zhejiang-university-of-technology-86cf9f79",
+      "nameZh": "浙江工业大学",
+      "nameEn": "Zhejiang University of Technology**",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "zhengzhou-university-ccf4b546",
+      "nameZh": "郑州大学",
+      "nameEn": "Zhengzhou University**",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "communication-university-of-china-3a1bb185",
+      "nameZh": "中国传媒大学",
+      "nameEn": "Communication University of China",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "china-university-of-geosciences-beijing-and-wuhan-e49191e5",
+      "nameZh": "中国地质大学（北京）/中国地质大学（武汉）",
+      "nameEn": "China University of Geosciences, Beijing and Wuhan",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "ocean-university-of-china-qingdao-ab3847cd",
+      "nameZh": "中国海洋大学",
+      "nameEn": "Ocean University of China, Qingdao",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "university-of-science-and-technology-of-china-ustc-a638543a",
+      "nameZh": "中国科学技术大学",
+      "nameEn": "University of Science and Technology of China (USTC)",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "chinese-academy-of-sciences-733200f1",
+      "nameZh": "中国科学院",
+      "nameEn": "Chinese Academy of Sciences",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "china-university-of-mining-and-technology-xuzhou-beijing-df570a22",
+      "nameZh": "中国矿业大学/中国矿业大学（北京）",
+      "nameEn": "China University of Mining and Technology – Xuzhou/Beijing",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "china-agricultural-university-7f24114a",
+      "nameZh": "中国农业大学",
+      "nameEn": "China Agricultural University",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "renmin-university-of-china-9e74b938",
+      "nameZh": "中国人民大学",
+      "nameEn": "Renmin University of China",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "china-university-of-petroleum-beijing-and-east-china-campuses-12ce0907",
+      "nameZh": "中国石油大学（北京）/中国石油大学（华东）",
+      "nameEn": "China University of Petroleum (Beijing and East China campuses)",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "china-pharmaceutical-university-03ca6012",
+      "nameZh": "中国药科大学",
+      "nameEn": "China Pharmaceutical University",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "china-university-of-political-science-and-law-2ee2c283",
+      "nameZh": "中国政法大学",
+      "nameEn": "China University of Political Science and Law",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "zhongnan-university-of-economics-and-law-71156a7a",
+      "nameZh": "中南财经政法大学",
+      "nameEn": "Zhongnan University of Economics and Law",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "central-south-university-3352f6a2",
+      "nameZh": "中南大学",
+      "nameEn": "Central South University",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "sun-yat-sen-university-might-appear-as-zhongshan-university-d94644f6",
+      "nameZh": "中山大学",
+      "nameEn": "Sun Yat-Sen University (might appear as Zhongshan University)",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "central-university-of-finance-and-economics-2259e13d",
+      "nameZh": "中央财经大学",
+      "nameEn": "Central University of Finance and Economics",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "minzu-university-of-china-7bbdd5ab",
+      "nameZh": "中央民族大学",
+      "nameEn": "Minzu University of China",
+      "tierOfficial": "Applicants from the list of universities below"
+    },
+    {
+      "institutionId": "central-conservatory-of-music-2a7c01dd",
+      "nameZh": "中央音乐学院",
+      "nameEn": "Central Conservatory of Music",
+      "tierOfficial": "Applicants from the list of universities below"
+    }
+  ]
+}

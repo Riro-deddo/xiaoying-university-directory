@@ -1,0 +1,5321 @@
+{
+  "sourceId": "southampton-china",
+  "rows": [
+    {
+      "institutionId": "cn-221c631d5da71251",
+      "nameZh": "阿坝师范学院",
+      "nameEn": "Aba Teachers University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-1d1486b581a88465",
+      "nameZh": "安徽财经大学",
+      "nameEn": "Anhui University of Finance & Economics",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "anhui-university-4d325618",
+      "nameZh": "安徽大学",
+      "nameEn": "Anhui University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-c67db40c5f1b3dda",
+      "nameZh": "安徽工程大学",
+      "nameEn": "Anhui Polytechnic University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-2043930eefd771bc",
+      "nameZh": "安徽工业大学",
+      "nameEn": "Anhui University of Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-12c22f8b1a476ce7",
+      "nameZh": "安徽建筑大学",
+      "nameEn": "Anhui University of Architecture",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-90bf8ac29e049f0b",
+      "nameZh": "安徽科技学院",
+      "nameEn": "Anhui Science and Technology University (AKA University of Science And Technology of Anhui)",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-18b26c885fe0bd36",
+      "nameZh": "安徽理工大学",
+      "nameEn": "Anhui University of Science and Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-382e820fb9a6ba36",
+      "nameZh": "安徽农业大学",
+      "nameEn": "Anhui Agricultural University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-d7d7f0e25cde9a6a",
+      "nameZh": "安徽师范大学",
+      "nameEn": "Anhui Normal University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-5b420a085fb63054",
+      "nameZh": "安徽新华学院",
+      "nameEn": "Anhui Xinhua University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-429f7b11cb5e6238",
+      "nameZh": "安徽医科大学",
+      "nameEn": "Anhui Medical University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-5a60ac6a7b9d789a",
+      "nameZh": "安徽艺术学院",
+      "nameEn": "Anhui University of Arts",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-04f4d9917bf05514",
+      "nameZh": "安徽中医药大学",
+      "nameEn": "Anhui University of Chinese Medicine",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-7578e1784d79d672",
+      "nameZh": "安康学院",
+      "nameEn": "Ankang University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-93348f54da389eb2",
+      "nameZh": "安庆师范大学",
+      "nameEn": "Anqing Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-c592a7a0b7095b77",
+      "nameZh": "安顺学院",
+      "nameEn": "Anshun University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-cf8aebb480596e9e",
+      "nameZh": "安阳工学院",
+      "nameEn": "Anyang Institute of Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-ca72113ba117a477",
+      "nameZh": "安阳师范学院",
+      "nameEn": "Anyang Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-76a6298cfbcafe62",
+      "nameZh": "鞍山师范学院",
+      "nameEn": "Anshan Normal University Liaoning China",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-477dd4a0c66734b9",
+      "nameZh": "白城师范学院",
+      "nameEn": "Baicheng Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-f288beba053c7dc8",
+      "nameZh": "百色学院",
+      "nameEn": "Baise University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-a5ff5f04ff2d7d88",
+      "nameZh": "蚌埠学院",
+      "nameEn": "Bengbu University AKA Bengbu College",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-6c844be4423b0aa9",
+      "nameZh": "蚌埠医科大学",
+      "nameEn": "Bengbu Medical College",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-bfbd2ae96285c639",
+      "nameZh": "宝鸡文理学院",
+      "nameEn": "Baoji University of Arts and Sciences",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-d6e3d7b34a11efa5",
+      "nameZh": "保定学院",
+      "nameEn": "Baoding University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-f6f04b2ea56db2fb",
+      "nameZh": "保山学院",
+      "nameEn": "Baoshan University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-85a27aa51d72b3b8",
+      "nameZh": "北部湾大学",
+      "nameEn": "Beibu Gulf University AKA Qinzhou University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-50154ee2d7fbaa61",
+      "nameZh": "北方工业大学",
+      "nameEn": "North China University of Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-38fe392afb9e622f",
+      "nameZh": "北方民族大学",
+      "nameEn": "North Minzu University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-aa2141a95e775934",
+      "nameZh": "北海艺术设计学院",
+      "nameEn": "Beihai College of Art and Design",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-1c110b586ba73518",
+      "nameZh": "北华大学",
+      "nameEn": "Beihua University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-4c4584e0cd28fa90",
+      "nameZh": "北华航天工业学院",
+      "nameEn": "North China Institute of Aerospace Engineering",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "peking-university-4818c188",
+      "nameZh": "北京大学",
+      "nameEn": "Peking University",
+      "tierOfficial": "Tier A"
+    },
+    {
+      "institutionId": "cn-a3e5c83b38c2c804",
+      "nameZh": "北京第二外国语学院",
+      "nameEn": "Beijing International Studies University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-a7acbd26b149f215",
+      "nameZh": "北京电影学院",
+      "nameEn": "Beijing Film Academy",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-b5e3fccfd8826660",
+      "nameZh": "北京电子科技学院",
+      "nameEn": "Beijing Electronic Science and Technology Institute",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-de1035cb8bfd4826",
+      "nameZh": "北京服装学院",
+      "nameEn": "Beijing Institute of Fashion Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-5ea8a0d4eea5f9bd",
+      "nameZh": "北京工商大学",
+      "nameEn": "Beijing Technology and Business University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-8b2d05aeefd9334e",
+      "nameZh": "北京工业大学",
+      "nameEn": "Beijing University of Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "beihang-university-formerly-beijing-university-of-aeronautics-astronautics-e1caae39",
+      "nameZh": "北京航空航天大学",
+      "nameEn": "Beihang University",
+      "tierOfficial": "Tier A"
+    },
+    {
+      "institutionId": "beijing-university-of-chemical-technology-a79139e9",
+      "nameZh": "北京化工大学",
+      "nameEn": "Beijing University of Chemical Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-504e65d7e2120679",
+      "nameZh": "北京建筑大学",
+      "nameEn": "Beijing University of Civil Engineering and Architecture",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "beijing-jiaotong-university-formerly-beifang-northern-jiaotong-university-6c628689",
+      "nameZh": "北京交通大学",
+      "nameEn": "Beijing Jiaotong University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-c5f4db8f1656ce7d",
+      "nameZh": "北京警察学院",
+      "nameEn": "Beijing Police College",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "university-of-science-and-technology-beijing-0c404289",
+      "nameZh": "北京科技大学",
+      "nameEn": "University of Science and Technology Beijing",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "beijing-institute-of-technology-9484ee28",
+      "nameZh": "北京理工大学",
+      "nameEn": "Beijing Institute of Technology",
+      "tierOfficial": "Tier A"
+    },
+    {
+      "institutionId": "cn-1dba518884063969",
+      "nameZh": "北京联合大学",
+      "nameEn": "Beijing Union University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "beijing-forestry-university-b3351c0d",
+      "nameZh": "北京林业大学",
+      "nameEn": "Beijing Forestry University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-61c528a8072c8132",
+      "nameZh": "北京农学院",
+      "nameEn": "Beijing Agricultural College AKA: Beijing University of Agriculture",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "beijing-normal-university-see-note-regarding-united-international-college-c88360f6",
+      "nameZh": "北京师范大学",
+      "nameEn": "Beijing Normal University",
+      "tierOfficial": "Tier A"
+    },
+    {
+      "institutionId": "cn-d5e12e3100f1bfb3",
+      "nameZh": "北京师范大学珠海校区",
+      "nameEn": "Beijing Normal University, Zhuhai",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-8ba891e72f16f9c0",
+      "nameZh": "北京石油化工学院",
+      "nameEn": "Beijing Institute of Petrochemical Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "beijing-sport-university-f9ccc13f",
+      "nameZh": "北京体育大学",
+      "nameEn": "Beijing Sport University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "beijing-foreign-studies-university-c44143af",
+      "nameZh": "北京外国语大学",
+      "nameEn": "Beijing Foreign Studies University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-d527e4dd20986bb4",
+      "nameZh": "北京舞蹈学院",
+      "nameEn": "Beijing Dance Academy",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-ad64960823fd5f29",
+      "nameZh": "北京物资学院",
+      "nameEn": "Beijing Wuzi University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-a1290c79e9017064",
+      "nameZh": "北京协和医学院",
+      "nameEn": "Peking Union Medical College",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-eac3c4e4edefdb32",
+      "nameZh": "北京信息科技大学",
+      "nameEn": "Beijing Information Science & Technology University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-699b840f9ac8cc8e",
+      "nameZh": "北京印刷学院",
+      "nameEn": "Beijing Institute of Graphic Communication",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "beijing-university-of-posts-and-telecommunications-63e3d04f",
+      "nameZh": "北京邮电大学",
+      "nameEn": "Beijing University of Posts and Telecommunications",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-f20f28a40443ce88",
+      "nameZh": "北京语言大学",
+      "nameEn": "Beijing Language and Culture University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "beijing-university-of-chinese-medicine-70aac221",
+      "nameZh": "北京中医药大学",
+      "nameEn": "Beijing University of Chinese Medicine",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-ae8da03792a37640",
+      "nameZh": "滨州医学院",
+      "nameEn": "Binzhou Medical Univeristy",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-dee8707f63ddc4dd",
+      "nameZh": "亳州学院",
+      "nameEn": "Bozhou University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-f4a5d69e8db917fb",
+      "nameZh": "渤海大学",
+      "nameEn": "Bohai University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-805142f5de6ec2a0",
+      "nameZh": "沧州师范学院",
+      "nameEn": "Cangzhou Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-9472eed362c6640b",
+      "nameZh": "昌吉学院",
+      "nameEn": "Changji University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-df0decfce78de537",
+      "nameZh": "常熟理工学院",
+      "nameEn": "Changshu Institute of Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-33b2aa42d8b3aae5",
+      "nameZh": "常州大学",
+      "nameEn": "Changzhou University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-70a4572e96f81e87",
+      "nameZh": "常州工学院",
+      "nameEn": "Changzhou Institute of Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-84ab59f8be78d712",
+      "nameZh": "巢湖学院",
+      "nameEn": "Chaohu University AKA Chao Hu University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-5af7a9b7d945aca8",
+      "nameZh": "成都大学",
+      "nameEn": "Chengdu University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-0d9760c221b97619",
+      "nameZh": "成都工业学院",
+      "nameEn": "Chengdu Technological University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-c54a8bf9427f90d1",
+      "nameZh": "成都锦城学院",
+      "nameEn": "Sichuan University Jincheng College",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-1768c9298c2b8b48",
+      "nameZh": "成都理工大学",
+      "nameEn": "Chengdu University of Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-ccbeba59386e1c2c",
+      "nameZh": "成都师范学院",
+      "nameEn": "Chengdu Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-1a82c9559abcd740",
+      "nameZh": "成都体育学院",
+      "nameEn": "Chengdu Sport University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-de3ff0767e4b9bf3",
+      "nameZh": "成都信息工程大学",
+      "nameEn": "Chengdu University of Information Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-abff27909f0812a3",
+      "nameZh": "成都医学院",
+      "nameEn": "Chengdu Medical College",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-0e85934d3cd50718",
+      "nameZh": "成都中医药大学",
+      "nameEn": "Chengdu University of Traditional Chinese Medicine",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-8b3b001b933af9f5",
+      "nameZh": "承德医学院",
+      "nameEn": "Chengde Medical University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-8e39899f263058cc",
+      "nameZh": "池州学院",
+      "nameEn": "Chizhou University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-710e6224af7547aa",
+      "nameZh": "赤峰学院",
+      "nameEn": "Chifeng University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "chongqing-university-3a110f6c",
+      "nameZh": "重庆大学",
+      "nameEn": "Chongqing University",
+      "tierOfficial": "Tier A"
+    },
+    {
+      "institutionId": "cn-f65575668a146fa5",
+      "nameZh": "重庆第二师范学院",
+      "nameEn": "Chongqing University of Education",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-2c2c8141bc326aff",
+      "nameZh": "重庆工商大学",
+      "nameEn": "Chongqing Technology and Business University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-01eb3042a9a199fa",
+      "nameZh": "重庆交通大学",
+      "nameEn": "Chongqing Jiaotong University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-1f3564e7b345805e",
+      "nameZh": "重庆警察学院",
+      "nameEn": "Chongqing Police College",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-b4862d9f3e1d576a",
+      "nameZh": "重庆科技大学",
+      "nameEn": "Chongqing University of Science and Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-7a43e77c26b41c78",
+      "nameZh": "重庆理工大学",
+      "nameEn": "Chongqing University of Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-91b859eb00bf647c",
+      "nameZh": "重庆人文科技学院",
+      "nameEn": "Chongqing College of Humanities Science and Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-d5f7bf8ddc68ccf9",
+      "nameZh": "重庆三峡学院",
+      "nameEn": "Chongqing Three Gorges University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-4a16768912cfe717",
+      "nameZh": "重庆师范大学",
+      "nameEn": "Chongqing Normal University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-30b7f6e984b73864",
+      "nameZh": "重庆文理学院",
+      "nameEn": "Chongqing University of Arts and Sciences",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-705e40192b046c91",
+      "nameZh": "重庆医科大学",
+      "nameEn": "Chongqing Medical University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-712c08164b9abd3f",
+      "nameZh": "重庆邮电大学",
+      "nameEn": "Chongqing University of Posts and Telecommunications",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-def4cd82083b05b3",
+      "nameZh": "滁州学院",
+      "nameEn": "Chuzhou University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-99edc4ca16e15b66",
+      "nameZh": "楚雄师范学院",
+      "nameEn": "Chuxiong Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-73bcde1a2a031cbb",
+      "nameZh": "川北医学院",
+      "nameEn": "North Sichuan Medical College AKA North Sichuan Medical University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-df5c51aca0ce287a",
+      "nameZh": "大理大学",
+      "nameEn": "Dali University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-3b81d6cd241e8a5d",
+      "nameZh": "大连大学",
+      "nameEn": "Dalian University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-905075bd1935e319",
+      "nameZh": "大连东软信息学院",
+      "nameEn": "Dalian Neusoft University of Information",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-b38de66992ae2c27",
+      "nameZh": "大连工业大学",
+      "nameEn": "Dalian Polytechnic University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "dalian-maritime-university-8696305d",
+      "nameZh": "大连海事大学",
+      "nameEn": "Dalian Maritime University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-a8eca2c5b12d0b20",
+      "nameZh": "大连海洋大学",
+      "nameEn": "Dalian Ocean University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-b2f7aafac0c3ee74",
+      "nameZh": "大连交通大学",
+      "nameEn": "Dalian Jiaotong University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "dalian-university-of-technology-d7cc67a0",
+      "nameZh": "大连理工大学",
+      "nameEn": "Dalian University of Technology",
+      "tierOfficial": "Tier A"
+    },
+    {
+      "institutionId": "cn-3d80f41a7817c089",
+      "nameZh": "大连民族大学",
+      "nameEn": "Dalian Nationalities University AKA Dalian Minzu University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-59583c392cc9c72b",
+      "nameZh": "大连外国语学院",
+      "nameEn": "Dalian University of Foreign Languages",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-c4d4f35bfb8ec5bc",
+      "nameZh": "大连医科大学",
+      "nameEn": "Dalian Medical University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-0bce2d16de0461cb",
+      "nameZh": "大连艺术学院",
+      "nameEn": "Dalian Art College",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-0d7eb6a70200c658",
+      "nameZh": "大庆师范学院",
+      "nameEn": "Daqing Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-98fad80bf2ca118e",
+      "nameZh": "德州学院",
+      "nameEn": "Dezhou University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-9f87dd4ea325c693",
+      "nameZh": "第二军医大学",
+      "nameEn": "Second Military Medical University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-09f63fd100d867b1",
+      "nameZh": "第四军医大学",
+      "nameEn": "Fourth Military Medical University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-7917aadeee3a8d4b",
+      "nameZh": "滇西科技师范学院",
+      "nameEn": "West Yunnan University AKA Dianxi Science and Technology Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-59f37fca84e30c7b",
+      "nameZh": "滇西应用技术大学",
+      "nameEn": "West Yunnan University of Applied Sciences",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "university-of-electronic-science-and-technology-of-china-101301b5",
+      "nameZh": "电子科技大学",
+      "nameEn": "University of Electronic Science and Technology of China",
+      "tierOfficial": "Tier A"
+    },
+    {
+      "institutionId": "cn-087a0c6aa7f6d1ce",
+      "nameZh": "东北财经大学",
+      "nameEn": "Dongbei University of Finance and Economics",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "northeastern-university-677adfe6",
+      "nameZh": "东北大学",
+      "nameEn": "Northeastern University",
+      "tierOfficial": "Tier A"
+    },
+    {
+      "institutionId": "cn-9e60fef4fb8e6d2f",
+      "nameZh": "东北大学秦皇岛分校",
+      "nameEn": "Northeastern University at Qinhuangdao",
+      "tierOfficial": "Tier A"
+    },
+    {
+      "institutionId": "cn-414ed377bb3a1145",
+      "nameZh": "东北电力大学",
+      "nameEn": "Northeast Dianli University AKA: Northeast Electric Power University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "northeast-forestry-university-d79f64f5",
+      "nameZh": "东北林业大学",
+      "nameEn": "Northeast Forestry University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "northeast-agricultural-university-271d6328",
+      "nameZh": "东北农业大学",
+      "nameEn": "Northeast Agricultural University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "northeast-normal-university-a77c4549",
+      "nameZh": "东北师范大学",
+      "nameEn": "Northeast Normal University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-d5290d315c617d17",
+      "nameZh": "东北石油大学",
+      "nameEn": "Northeast Petroleum University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-5931a94db52148e6",
+      "nameZh": "东莞理工学院",
+      "nameEn": "Dongguan University Of Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "donghua-university-8fab8235",
+      "nameZh": "东华大学",
+      "nameEn": "Donghua University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-0ffdebaf59039ecb",
+      "nameZh": "东华理工大学",
+      "nameEn": "East China University of Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "southeast-university-53eebce9",
+      "nameZh": "东南大学",
+      "nameEn": "Southeast University",
+      "tierOfficial": "Tier A"
+    },
+    {
+      "institutionId": "university-of-international-business-and-economics-2a13872d",
+      "nameZh": "对外经济贸易大学",
+      "nameEn": "University of International Business and Economics",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-90887ce277253105",
+      "nameZh": "鄂尔多斯应用技术学院",
+      "nameEn": "Ordos Institute of Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-3f2d3071d100f0ad",
+      "nameZh": "防灾科技学院",
+      "nameEn": "Institute of Disaster Prevention",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-d2d1c47bd0bdaac2",
+      "nameZh": "佛山大学",
+      "nameEn": "Foshan University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-ec4be124ea2ce851",
+      "nameZh": "福建技术师范学院",
+      "nameEn": "Fujian Polytechnic Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-5618e5418e5f1b0a",
+      "nameZh": "福建江夏学院",
+      "nameEn": "Fujian Jiangxia University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-1641eb65a3bd156e",
+      "nameZh": "福建警察学院",
+      "nameEn": "Fujian Police College",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-caabf6abf369ba85",
+      "nameZh": "福建理工大学",
+      "nameEn": "Fujian University of Technology AKA Fujian University of Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-10b2073547ba6cb9",
+      "nameZh": "福建农林大学",
+      "nameEn": "Fujian Agriculture and Forestry University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-8f51170331016664",
+      "nameZh": "福建商学院",
+      "nameEn": "Fujian Business University AKA Fujian Commercial College",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-a1b7307005e9b451",
+      "nameZh": "福建师范大学",
+      "nameEn": "Fujian Normal University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-8e01e19005e3a5c0",
+      "nameZh": "福建医科大学",
+      "nameEn": "Fujian Medical University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-86897c48e46de2e1",
+      "nameZh": "福建中医药大学",
+      "nameEn": "Fujian University of Traditional Chinese Medicine",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "fuzhou-university-e59f3da9",
+      "nameZh": "福州大学",
+      "nameEn": "Fuzhou University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-3eed51e9f008d2ea",
+      "nameZh": "阜阳师范大学",
+      "nameEn": "Fuyang Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-3eed51e9f008d2ea",
+      "nameZh": "阜阳师范学院",
+      "nameEn": "Fuyang Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "fudan-university-749651d4",
+      "nameZh": "复旦大学",
+      "nameEn": "Fudan University",
+      "tierOfficial": "Tier A"
+    },
+    {
+      "institutionId": "cn-7eba267bd551170a",
+      "nameZh": "甘肃民族师范学院",
+      "nameEn": "Gansu Normal University for Nationalities AKA Gansu Normal University of Nationalities",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-372c912dfa9426ea",
+      "nameZh": "甘肃农业大学",
+      "nameEn": "Gansu Agricultural University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-ea162d6fad6bb087",
+      "nameZh": "甘肃医学院",
+      "nameEn": "Gansu Medical College",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-5f9bafc51a94a700",
+      "nameZh": "甘肃政法大学",
+      "nameEn": "Gansu University of Political Science and Law",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-f965a08676e61ff4",
+      "nameZh": "甘肃中医药大学",
+      "nameEn": "Gansu University of Chinese Medicine",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-2fa75933781aae79",
+      "nameZh": "赣东学院",
+      "nameEn": "Gandong College",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-c820c6a1cc7042ee",
+      "nameZh": "赣南科技大学",
+      "nameEn": "Gannan University of Science and Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-d65eedfa9c42cf79",
+      "nameZh": "赣南科技学院",
+      "nameEn": "College of Applied Science, Jiangxi University of Science and Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-33c35b2343a85463",
+      "nameZh": "赣南师范大学",
+      "nameEn": "Gannan Normal University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-d30d998d3f01c020",
+      "nameZh": "赣南医科大学",
+      "nameEn": "Gannan Medical University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-86892fe833b87a40",
+      "nameZh": "广东财经大学",
+      "nameEn": "Guangdong University Of Finance and Economics",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-51e869913c28deb0",
+      "nameZh": "广东第二师范学院",
+      "nameEn": "Guangdong University of Education AKA Guangzhou University of Education",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-ac16f2ad616b39ec",
+      "nameZh": "广东工业大学",
+      "nameEn": "Guangdong University of Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-58e87b0ea630b738",
+      "nameZh": "广东海洋大学",
+      "nameEn": "Guangdong Ocean University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-13a3c963f474ff79",
+      "nameZh": "广东技术师范大学",
+      "nameEn": "Guangdong Polytechnic Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-13a3c963f474ff79",
+      "nameZh": "广东技术师范学院",
+      "nameEn": "Guangdong Polytechnic Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-ac11d639062098a2",
+      "nameZh": "广东金融学院",
+      "nameEn": "Guangdong University of Finance",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-69c1cf5f5041debd",
+      "nameZh": "广东警官学院",
+      "nameEn": "Guangdong Police College",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-34b47b644fc9936d",
+      "nameZh": "广东石油化工学院",
+      "nameEn": "Guangdong University of Petrochemical Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-00d6d1ad7d274f1f",
+      "nameZh": "广东外语外贸大学",
+      "nameEn": "Guangdong University of Foreign Studies",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-2109a1425a234c25",
+      "nameZh": "广东药科大学",
+      "nameEn": "Guangdong Pharmaceutical University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-0f249c8e60bdb9ee",
+      "nameZh": "广东医科大学",
+      "nameEn": "Guangdong Medical University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-88b698e347c9e418",
+      "nameZh": "广西财经学院",
+      "nameEn": "Guangxi University of Finance and Economics",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "guangxi-university-cabb03f5",
+      "nameZh": "广西大学",
+      "nameEn": "Guangxi University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-90da5ed95c839199",
+      "nameZh": "广西科技大学",
+      "nameEn": "Guangxi University of Science and Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-19317b8421d8c22f",
+      "nameZh": "广西科技师范学院",
+      "nameEn": "Guangxi Science & Technology Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-c71b8a755e2e2ab9",
+      "nameZh": "广西民族大学",
+      "nameEn": "Guangxi Minzu University AKA Guangxi University for Nationalities",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-bcb982ec197ae168",
+      "nameZh": "广西民族师范学院",
+      "nameEn": "Guangxi Normal University for Nationalities",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-bc8b96deb93f137f",
+      "nameZh": "广西师范大学",
+      "nameEn": "Guangxi Normal University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-f3085725a3ce0a67",
+      "nameZh": "广西医科大学",
+      "nameEn": "Guangxi Medical University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-c4049628ce4f06d8",
+      "nameZh": "广西艺术学院",
+      "nameEn": "Guangxi Arts University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-0b2ca14a87f16af9",
+      "nameZh": "广西职业师范学院",
+      "nameEn": "Guangxi Vocational Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-c578def538672eaa",
+      "nameZh": "广西中医药大学",
+      "nameEn": "Guangxi University of Chinese Medicine",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-ab317012b98a37ac",
+      "nameZh": "广州城市理工学院",
+      "nameEn": "Guangzhou College of South China University of Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-eee1085cd82ca50d",
+      "nameZh": "广州大学",
+      "nameEn": "Guangzhou University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-e91e3153dd702585",
+      "nameZh": "广州航海学院",
+      "nameEn": "Guangzhou Maritime Institute",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-dcfdff5a210f7645",
+      "nameZh": "广州美术学院",
+      "nameEn": "Guangzhou Academy of Fine Arts",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-b9a14d724394c8ae",
+      "nameZh": "广州体育学院",
+      "nameEn": "Guangzhou Sport University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-992cbbacda23f7e8",
+      "nameZh": "广州医科大学",
+      "nameEn": "Guangzhou Medical University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-6d432ce3999a0af3",
+      "nameZh": "广州中医药大学",
+      "nameEn": "Guangzhou University of Chinese Medicine",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-7f08aca9f562e8fe",
+      "nameZh": "贵阳学院",
+      "nameEn": "Guiyang University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-1947dfa0e8b68f34",
+      "nameZh": "贵州财经大学",
+      "nameEn": "Guizhou University of Finance and Economics",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "guizhou-university-55c5778b",
+      "nameZh": "贵州大学",
+      "nameEn": "Guizhou university",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-87b8196aa0798c77",
+      "nameZh": "贵州工程应用技术学院",
+      "nameEn": "Guizhou University of Engineering Science",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-c682b313ffb3044f",
+      "nameZh": "贵州警察学院",
+      "nameEn": "Guizhou Police College",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-f95f2b0a287e106d",
+      "nameZh": "贵州理工学院",
+      "nameEn": "Guizhou Institute of Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-5d6d9b70ca7ad355",
+      "nameZh": "贵州民族大学",
+      "nameEn": "Guizhou Minzu University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-72cf8cf9de8f8eb6",
+      "nameZh": "贵州商学院",
+      "nameEn": "Guizhou University of Commerce",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-b7f9f043e20fddd6",
+      "nameZh": "贵州师范大学",
+      "nameEn": "Guizhou Normal University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-7e26296618c6844d",
+      "nameZh": "贵州师范学院",
+      "nameEn": "Guizhou Education University AKA Guizhou Normal College",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-57c89a9afc506b56",
+      "nameZh": "贵州医科大学",
+      "nameEn": "Guizhou Medical University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-4a348cfc6a55b1b2",
+      "nameZh": "贵州中医药大学",
+      "nameEn": "Guizhou University of Chinese Medicine",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-2d19d4bcdda5a3dd",
+      "nameZh": "桂林电子科技大学",
+      "nameEn": "Guilin University of Electronic Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-f9e834c56b1d1782",
+      "nameZh": "桂林航天工业学院",
+      "nameEn": "Guilin University of Aerospace Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-c23dcbb92f0a2904",
+      "nameZh": "桂林理工大学",
+      "nameEn": "Guilin university of technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-8dcedb4f5f435a15",
+      "nameZh": "桂林旅游学院",
+      "nameEn": "Guilin Tourism University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-244a574d4cfb3332",
+      "nameZh": "桂林医学院",
+      "nameEn": "Guilin Medical University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "national-university-of-defense-technology-471f1540",
+      "nameZh": "国防科技大学",
+      "nameEn": "National University of Defense Technology",
+      "tierOfficial": "Tier A"
+    },
+    {
+      "institutionId": "cn-bb3a66e826796ad3",
+      "nameZh": "国际关系学院",
+      "nameEn": "University of International Relations",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "harbin-engineering-university-a81a0bdd",
+      "nameZh": "哈尔滨工程大学",
+      "nameEn": "Harbin Engineering University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "harbin-institute-of-technology-7c521149",
+      "nameZh": "哈尔滨工业大学",
+      "nameEn": "Harbin Institute of Technology",
+      "tierOfficial": "Tier A"
+    },
+    {
+      "institutionId": "cn-2976ca278e725c1f",
+      "nameZh": "哈尔滨工业大学(深圳)",
+      "nameEn": "Harbin Institute of Technology, Shenzhen",
+      "tierOfficial": "Tier A"
+    },
+    {
+      "institutionId": "cn-2d981b7bfa97fd26",
+      "nameZh": "哈尔滨工业大学(威海)",
+      "nameEn": "Harbin Institute of Technology, Weihai",
+      "tierOfficial": "Tier A"
+    },
+    {
+      "institutionId": "cn-80d1572ab6ee120b",
+      "nameZh": "哈尔滨金融学院",
+      "nameEn": "Harbin Finance University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-0b9019282f16a2b0",
+      "nameZh": "哈尔滨理工大学",
+      "nameEn": "Harbin University of Science and Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-002b4efbaab58c16",
+      "nameZh": "哈尔滨商业大学",
+      "nameEn": "Harbin University of Commerce",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-0aba8dfc8565e69b",
+      "nameZh": "哈尔滨师范大学",
+      "nameEn": "Harbin Normal University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-57732a8c08268138",
+      "nameZh": "哈尔滨体育学院",
+      "nameEn": "Harbin Sport University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-d2fd76414cfa752e",
+      "nameZh": "哈尔滨学院",
+      "nameEn": "Harbin University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-e76cc496cfbd7568",
+      "nameZh": "哈尔滨医科大学",
+      "nameEn": "Harbin Medical University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-f5da5f1750ade2b1",
+      "nameZh": "哈尔滨音乐学院",
+      "nameEn": "Harbin Conservatory of Music",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "hainan-university-70fc5cd1",
+      "nameZh": "海南大学",
+      "nameEn": "Hainan University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-9c58d0df03a34783",
+      "nameZh": "海南热带海洋学院",
+      "nameEn": "Hainan Tropical Ocean University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-9f88f042988aeac6",
+      "nameZh": "海南师范大学",
+      "nameEn": "Hainan Normal University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-90c00aeab0ddc4d5",
+      "nameZh": "海南医科大学",
+      "nameEn": "Hainan Medical University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-f8e6d33121878eba",
+      "nameZh": "邯郸学院",
+      "nameEn": "Handan University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-de9b0a0d4aa1b4f3",
+      "nameZh": "韩山师范学院",
+      "nameEn": "Hanshan Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-662568481ea2186e",
+      "nameZh": "汉江师范学院",
+      "nameEn": "Hanjiang Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-cfea119a4ce7c5c5",
+      "nameZh": "杭州电子科技大学",
+      "nameEn": "Hangzhou Dianzi University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-e650be5b793443ad",
+      "nameZh": "杭州师范大学",
+      "nameEn": "Hangzhou Normal University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-02e3db16bdca26db",
+      "nameZh": "杭州医学院",
+      "nameEn": "Hangzhou Medical College",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-73e11711756604fe",
+      "nameZh": "合肥大学",
+      "nameEn": "Hefei University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "hefei-university-of-technology-1c5fd4db",
+      "nameZh": "合肥工业大学",
+      "nameEn": "Hefei University of Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-6e9ab80299c4f09e",
+      "nameZh": "合肥理工学院",
+      "nameEn": "Hefei Institute of Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-0ea74b02d665437b",
+      "nameZh": "合肥师范学院",
+      "nameEn": "Hefei Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-e45c1a68a2e792be",
+      "nameZh": "河北北方学院",
+      "nameEn": "Hebei North University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-503680db6c373a97",
+      "nameZh": "河北传媒学院",
+      "nameEn": "Hebei Institute of Communications",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-5d15aaaec5fa8a03",
+      "nameZh": "河北大学",
+      "nameEn": "Hebei University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-4339b4971c35af89",
+      "nameZh": "河北地质大学",
+      "nameEn": "Hebei GEO University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-f018440a04d4341c",
+      "nameZh": "河北工程大学",
+      "nameEn": "Hebei University of Engineering",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-64682565311f214c",
+      "nameZh": "河北工业大学",
+      "nameEn": "Hebei University of Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-2246d433494df1f6",
+      "nameZh": "河北环境工程学院",
+      "nameEn": "Hebei University of Environmental Engineering",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-ee02a0df42b9ae49",
+      "nameZh": "河北建筑工程学院",
+      "nameEn": "Hebei University of Architecture",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-077833e8c9969ebb",
+      "nameZh": "河北金融学院",
+      "nameEn": "Hebei Finance University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-f80ec1bd2c7a3041",
+      "nameZh": "河北经贸大学",
+      "nameEn": "Hebei University of Economics and Business",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-9840cbff81ffab6e",
+      "nameZh": "河北科技大学",
+      "nameEn": "Hebei University of Science Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-36c23d833b14ea71",
+      "nameZh": "河北科技师范学院",
+      "nameEn": "Hebei Normal University of Science & Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-854067c5f309cc42",
+      "nameZh": "河北美术学院",
+      "nameEn": "Hebei Academy of Fine Arts",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-83317129ecb50028",
+      "nameZh": "河北民族师范学院",
+      "nameEn": "Hebei Normal University for Nationalities",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-165f88ee15a774a2",
+      "nameZh": "河北农业大学",
+      "nameEn": "Agricultural University of Hebei AKA Hebei Agricultural University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-80be5a11f4cc4c8f",
+      "nameZh": "河北师范大学",
+      "nameEn": "Hebei Normal University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-312b44cdfd96b124",
+      "nameZh": "河北水利电力学院",
+      "nameEn": "Hebei University of Water Resources and Electric Engineering",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-1b24cdcd701beb73",
+      "nameZh": "河北医科大学",
+      "nameEn": "Hebei Medical University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-6c0818f9365e5e22",
+      "nameZh": "河池学院",
+      "nameEn": "Hechi University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "hohai-university-8e8ac8be",
+      "nameZh": "河海大学",
+      "nameEn": "Hohai university",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-189e8d62a14c2881",
+      "nameZh": "河南财经政法大学",
+      "nameEn": "Henan University of Economics and Law",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-434426ee81c2c814",
+      "nameZh": "河南财政金融学院",
+      "nameEn": "Henan Finance University AKA Henan University of Finance and Economics",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-28602dd5b52f8809",
+      "nameZh": "河南城建学院",
+      "nameEn": "Henan University of Urban Construction",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-e72d1587de958af8",
+      "nameZh": "河南大学",
+      "nameEn": "Henan University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-4e67b221c8c51941",
+      "nameZh": "河南工程学院",
+      "nameEn": "Henan University of Engineering",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-9a74d70439c503b2",
+      "nameZh": "河南工学院",
+      "nameEn": "Henan Institute of Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-a97c983969d6ed21",
+      "nameZh": "河南工业大学",
+      "nameEn": "Henan University of Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-03a41ecdaccb5be0",
+      "nameZh": "河南警察学院",
+      "nameEn": "Henan Police College",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-d12d3d6ed383bf45",
+      "nameZh": "河南科技大学",
+      "nameEn": "Henan University of Science and Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-fb12668bb3597a6a",
+      "nameZh": "河南科技学院",
+      "nameEn": "Henan Institute of Science and Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-bb5e6f350226b0fc",
+      "nameZh": "河南理工大学",
+      "nameEn": "Henan Polytechnic University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-5efaafd7fc4208be",
+      "nameZh": "河南牧业经济学院",
+      "nameEn": "Henan University of Animal Husbandry and Economy",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-8bc9b7bdb2de6c90",
+      "nameZh": "河南农业大学",
+      "nameEn": "Henan Agricultural University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-86f09a978d75478b",
+      "nameZh": "河南师范大学",
+      "nameEn": "Henan Normal University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-26981bca5af4acd8",
+      "nameZh": "河南中医药大学",
+      "nameEn": "Henan University of Chinese Medicine",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-c43056ddd188276f",
+      "nameZh": "河套学院",
+      "nameEn": "Hetao College",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-dd81407eb99c4447",
+      "nameZh": "河西学院",
+      "nameEn": "Hexi University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-14e7df1fd554fa4f",
+      "nameZh": "菏泽学院",
+      "nameEn": "Heze University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-e9af83046cc2b9a5",
+      "nameZh": "贺州学院",
+      "nameEn": "Hezhou University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-07c07694560a2c61",
+      "nameZh": "黑河学院",
+      "nameEn": "Hei He University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-cdabacf804de888c",
+      "nameZh": "黑龙江八一农垦大学",
+      "nameEn": "Heilongjiang Bayi Agricultural University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-4f4d6eefafbd97be",
+      "nameZh": "黑龙江大学",
+      "nameEn": "Heilongjiang University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-78d23b06524e76c2",
+      "nameZh": "黑龙江工程学院",
+      "nameEn": "Heilongjiang Institute of Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-e7e43deb7424e6b3",
+      "nameZh": "黑龙江工业学院",
+      "nameEn": "Heilongjiang University of Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-ce34e50dcf71b5f1",
+      "nameZh": "黑龙江科技大学",
+      "nameEn": "Heilongjiang University of Science and Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-64d18705ddb32d93",
+      "nameZh": "黑龙江中医药大学",
+      "nameEn": "Heilongjiang University of Chinese Medicine",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-77d47c220b11939a",
+      "nameZh": "衡水学院",
+      "nameEn": "Heng Shui University AKA Hengshui University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-868fd3a6cc6ea9e6",
+      "nameZh": "衡阳师范学院",
+      "nameEn": "Hengyang Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-5b92f659ec666013",
+      "nameZh": "红河学院",
+      "nameEn": "Honghe University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-a0b993a93efd4cf2",
+      "nameZh": "呼和浩特民族学院",
+      "nameEn": "Hohhot Minzu College",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-f4ca3106bd6ec7f5",
+      "nameZh": "呼伦贝尔学院",
+      "nameEn": "Hulunbeier University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-9dd73ee3d74691e1",
+      "nameZh": "湖北大学",
+      "nameEn": "Hubei University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-5ac19c924d00d1ad",
+      "nameZh": "湖北第二师范学院",
+      "nameEn": "Hubei University of Education",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-4f4437ed99f793e7",
+      "nameZh": "湖北工程学院",
+      "nameEn": "Hubei Engineering University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-afda288a561281a7",
+      "nameZh": "湖北工业大学",
+      "nameEn": "Hubei University of Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-1b7cbb1c1a337456",
+      "nameZh": "湖北经济学院",
+      "nameEn": "Hubei University of Economics",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-dd36c149ae2ff6ce",
+      "nameZh": "湖北警官学院",
+      "nameEn": "Hubei University of Police",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-1ce9de6db4917a73",
+      "nameZh": "湖北科技学院",
+      "nameEn": "Hubei University of Science and Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-594b8729ae341704",
+      "nameZh": "湖北理工学院",
+      "nameEn": "Hubei Polytechnic University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-ba0f44492e04e278",
+      "nameZh": "湖北美术学院",
+      "nameEn": "Hubei Institute of Fine Arts",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-ed34411d8a2b0ded",
+      "nameZh": "湖北民族大学",
+      "nameEn": "Hubei Minzu University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-5b01f4ed7cf4573b",
+      "nameZh": "湖北汽车工业学院",
+      "nameEn": "Hubei University of Automotive Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-6265f21a2342791d",
+      "nameZh": "湖北师范大学",
+      "nameEn": "Hubei Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-0b52017c4fac0886",
+      "nameZh": "湖北文理学院",
+      "nameEn": "Hubei University of Arts and Science",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-9a11e23ad4c1f4b2",
+      "nameZh": "湖北医药学院",
+      "nameEn": "Hubei University of Medicine",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-393979cea7d4934a",
+      "nameZh": "湖北中医药大学",
+      "nameEn": "Hubei University of Chinese Medicine",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-6547738f46c378ac",
+      "nameZh": "湖南财政经济学院",
+      "nameEn": "Hunan University of Finance and Economics",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-61fabc3fd6c38bc2",
+      "nameZh": "湖南城市学院",
+      "nameEn": "Hunan City University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "hunan-university-75a3814e",
+      "nameZh": "湖南大学",
+      "nameEn": "Hunan university",
+      "tierOfficial": "Tier A"
+    },
+    {
+      "institutionId": "cn-0d9c887c7bafe48d",
+      "nameZh": "湖南第一师范学院",
+      "nameEn": "Hunan First Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-20ce2fddedb6235a",
+      "nameZh": "湖南工程学院",
+      "nameEn": "Hunan Institute of Engineering",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-99365cc37c360713",
+      "nameZh": "湖南工商大学",
+      "nameEn": "Hunan University Of Technology and Business AKA Hunan University of Commerce",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-ef32df0498c4d457",
+      "nameZh": "湖南工学院",
+      "nameEn": "Hunan Institute of Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-8558f718aace2096",
+      "nameZh": "湖南工业大学",
+      "nameEn": "Hunan University of Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-bd2baa17cbb09230",
+      "nameZh": "湖南警察学院",
+      "nameEn": "Hunan Police Academy",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-bf0c0215cfeeee40",
+      "nameZh": "湖南科技大学",
+      "nameEn": "Hunan University of Science and Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-515bb45c7e888ba3",
+      "nameZh": "湖南科技学院",
+      "nameEn": "Hunan University of Science and Engineering",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-18ef0c6295512997",
+      "nameZh": "湖南理工学院",
+      "nameEn": "Hunan Institute of Science and Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-e23c06c2ee76bf8d",
+      "nameZh": "湖南农业大学",
+      "nameEn": "Hunan Agricultural University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-53bc70a9eef0b1a0",
+      "nameZh": "湖南女子学院",
+      "nameEn": "Hunan Women’s University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-9e6a5208769c1fa1",
+      "nameZh": "湖南人文科技学院",
+      "nameEn": "Hunan University of Humanities, Sciences and Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "hunan-normal-university-95554cb7",
+      "nameZh": "湖南师范大学",
+      "nameEn": "Hunan Normal University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-9007807ee1c5f6d6",
+      "nameZh": "湖南文理学院",
+      "nameEn": "Hunan University of Arts and Science",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-d74828516fd9a150",
+      "nameZh": "湖南医药学院",
+      "nameEn": "Hunan University of Medicine",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-6b49a491e0a262b0",
+      "nameZh": "湖南中医药大学",
+      "nameEn": "Hunan University of Chinese Medicine",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-b47317432d0e5a82",
+      "nameZh": "湖州师范学院",
+      "nameEn": "Huzhou University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-47a2a21898a1d4cd",
+      "nameZh": "湖州学院",
+      "nameEn": "Huzhou College",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "north-china-electric-power-university-huabei-electric-power-university-68bcce4b",
+      "nameZh": "华北电力大学",
+      "nameEn": "North China Electric Power University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-01f3706e918c807c",
+      "nameZh": "华北科技学院",
+      "nameEn": "North China Institute of Science and Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-5b86ab909d4ce14d",
+      "nameZh": "华北理工大学",
+      "nameEn": "North China University of Science and Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-13829b04052ede09",
+      "nameZh": "华北水利水电大学",
+      "nameEn": "North China University of Water Resources and Electric Power",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-50cb0cc331a99912",
+      "nameZh": "华东交通大学",
+      "nameEn": "East China Jiaotong University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "east-china-university-of-science-and-technology-77dcefa9",
+      "nameZh": "华东理工大学",
+      "nameEn": "East China University of Science and Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "east-china-normal-university-8ce642ca",
+      "nameZh": "华东师范大学",
+      "nameEn": "East China Normal University",
+      "tierOfficial": "Tier A"
+    },
+    {
+      "institutionId": "cn-9846526cba397638",
+      "nameZh": "华东政法大学",
+      "nameEn": "East China University of Political Science and Law",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "south-china-university-of-technology-09771dd9",
+      "nameZh": "华南理工大学",
+      "nameEn": "South China University of Technology",
+      "tierOfficial": "Tier A"
+    },
+    {
+      "institutionId": "cn-ce4376976a045805",
+      "nameZh": "华南农业大学",
+      "nameEn": "South China Agricultural University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "south-china-normal-university-1646a6bc",
+      "nameZh": "华南师范大学",
+      "nameEn": "South China Normal University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-9b9093b0fcf8077c",
+      "nameZh": "华侨大学",
+      "nameEn": "Huaqiao University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "huazhong-university-of-science-technology-97cee7bd",
+      "nameZh": "华中科技大学",
+      "nameEn": "Huazhong University of Science and Technology",
+      "tierOfficial": "Tier A"
+    },
+    {
+      "institutionId": "huazhong-agricultural-university-central-china-agricultural-university-5cb9ba1d",
+      "nameZh": "华中农业大学",
+      "nameEn": "Huazhong Agricultural University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "huazhong-normal-university-central-china-normal-university-3a822b99",
+      "nameZh": "华中师范大学",
+      "nameEn": "Central China Normal University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-376f02f6e37ed34e",
+      "nameZh": "怀化学院",
+      "nameEn": "Huaihua University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-954f73625855e6d2",
+      "nameZh": "淮北师范大学",
+      "nameEn": "Huaibei Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-9dc57217180f8311",
+      "nameZh": "淮南师范学院",
+      "nameEn": "Huainan Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-8da3965a4673ca81",
+      "nameZh": "淮阴工学院",
+      "nameEn": "Huaiyin Institute of Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-8fe86db4b7689e3f",
+      "nameZh": "淮阴师范学院",
+      "nameEn": "Huaiyin Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-dfa4fb1e82635253",
+      "nameZh": "黄冈师范学院",
+      "nameEn": "Huanggang Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-25eb98b273113c89",
+      "nameZh": "黄河科技学院",
+      "nameEn": "Huanghe University of Science and Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-0fefecd7cb460a8f",
+      "nameZh": "黄淮学院",
+      "nameEn": "Huanghuai University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-c64b2c664a9c1d3f",
+      "nameZh": "黄山学院",
+      "nameEn": "Huangshan University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-1b39dd6b7ef131ed",
+      "nameZh": "惠州学院",
+      "nameEn": "Huizhou University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-8824e3d1f20b62e0",
+      "nameZh": "吉林财经大学",
+      "nameEn": "Jilin University of Finance and Economics",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "jilin-university-3c8d9a5b",
+      "nameZh": "吉林大学",
+      "nameEn": "Jilin University",
+      "tierOfficial": "Tier A"
+    },
+    {
+      "institutionId": "cn-a93b859cc7f90dd8",
+      "nameZh": "吉林动画学院",
+      "nameEn": "Jilin Animation Institute",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-169d33fe5ea3e2ff",
+      "nameZh": "吉林工程技术师范学院",
+      "nameEn": "Jilin Engineering Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-527d33f5cd3cf51f",
+      "nameZh": "吉林工商学院",
+      "nameEn": "Jilin Business and Technology College",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-b80944fc30e71725",
+      "nameZh": "吉林化工学院",
+      "nameEn": "Jilin University of Chemical Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-f04613fe43920330",
+      "nameZh": "吉林建筑大学",
+      "nameEn": "Jilin Jianzhu University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-677fc38038e717f5",
+      "nameZh": "吉林警察学院",
+      "nameEn": "Jilin Police College",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-2efe0a997948bd12",
+      "nameZh": "吉林农业大学",
+      "nameEn": "Jilin Agricultural University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-f723f8f824129044",
+      "nameZh": "吉林农业科技学院",
+      "nameEn": "JiLin Agricultural Science and Technology University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-124ded988fcc58ba",
+      "nameZh": "吉林师范大学",
+      "nameEn": "Jilin Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-d7762c03955144f0",
+      "nameZh": "吉林体育学院",
+      "nameEn": "Jilin Sport University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-4c027b410216de8a",
+      "nameZh": "吉林医药学院",
+      "nameEn": "Jilin Medical University AKA Jilin Medical College",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-3a055f98b11219d9",
+      "nameZh": "吉林艺术学院",
+      "nameEn": "Jilin University of Arts",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-f673c1f00987861c",
+      "nameZh": "吉首大学",
+      "nameEn": "Jishou University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-659beb447957446f",
+      "nameZh": "集美大学",
+      "nameEn": "Jimei University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-4d72f7cca9f915d0",
+      "nameZh": "集宁师范学院",
+      "nameEn": "Jining Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-4541f8c66e145e3e",
+      "nameZh": "济南大学",
+      "nameEn": "Jinan University (in Shandong Province )",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-0dd9c4e8b99d6a76",
+      "nameZh": "济宁学院",
+      "nameEn": "Jining University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-8dabdd5348e6ec57",
+      "nameZh": "济宁医学院",
+      "nameEn": "Jining Medical University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "jinan-university-fdd34254",
+      "nameZh": "暨南大学",
+      "nameEn": "Jinan University (in Guangdong Province )",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-4d0fe21d058e256e",
+      "nameZh": "佳木斯大学",
+      "nameEn": "Jiamusi University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-9e338bea93785dc4",
+      "nameZh": "嘉兴大学",
+      "nameEn": "Jiaxing University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-bc83fe0a6560fe96",
+      "nameZh": "嘉兴南湖学院",
+      "nameEn": "Jiaxing Nanhu University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-9e338bea93785dc4",
+      "nameZh": "嘉兴学院",
+      "nameEn": "Jiaxing University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-5f1f3bf01578f017",
+      "nameZh": "嘉应学院",
+      "nameEn": "Jiaying University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-9bd8f9ee0aefc38b",
+      "nameZh": "江汉大学",
+      "nameEn": "Jianghan University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "jiangnan-university-2654a04a",
+      "nameZh": "江南大学",
+      "nameEn": "Jiangnan university",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-50c9e3325e63c27a",
+      "nameZh": "江苏大学",
+      "nameEn": "Jiangsu University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-4031bea0f975aa0e",
+      "nameZh": "江苏第二师范学院",
+      "nameEn": "Jiangsu Second Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-3673a5835def9f79",
+      "nameZh": "江苏海洋大学",
+      "nameEn": "Jiangsu Ocean University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-7552a4658a1c3e69",
+      "nameZh": "江苏警官学院",
+      "nameEn": "Jiangsu Police Institute",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-5c631cae55147545",
+      "nameZh": "江苏科技大学",
+      "nameEn": "Jiangsu University of Science and Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-06dee06aba4b2197",
+      "nameZh": "江苏理工学院",
+      "nameEn": "Jiangsu University of Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-07ff00135a0aca65",
+      "nameZh": "江苏师范大学",
+      "nameEn": "Jiangsu Normal University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-5a524553988c78c7",
+      "nameZh": "江西财经大学",
+      "nameEn": "Jiangxi University of Finance and Economic",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-ab6754e509be3a5c",
+      "nameZh": "江西服装学院",
+      "nameEn": "Jiangxi Institute of Fashion Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-c9af25ee1429787e",
+      "nameZh": "江西警察学院",
+      "nameEn": "Jiangxi Police College",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-8b2934454457537f",
+      "nameZh": "江西科技师范大学",
+      "nameEn": "Jiangxi Science & Technology Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-cc8bce5b81279972",
+      "nameZh": "江西农业大学",
+      "nameEn": "Jiangxi Agricultural University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-b8539627ef60c27e",
+      "nameZh": "江西师范大学",
+      "nameEn": "Jiangxi Normal University (184 in netbig)",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-dc7911c2a977cce8",
+      "nameZh": "江西中医药大学",
+      "nameEn": "Jiangxi University of Traditional Chinese Medicine",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-68b9a42d2079cb2b",
+      "nameZh": "金陵科技学院",
+      "nameEn": "Jinling Institute of Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-a0a9973888e82b86",
+      "nameZh": "锦州医科大学",
+      "nameEn": "Jinzhou Medical University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-a973a338d7ccb317",
+      "nameZh": "晋中学院",
+      "nameEn": "Jinzhong University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-6980e3a21634cc4f",
+      "nameZh": "荆楚理工学院",
+      "nameEn": "Jingchu University of Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-96d26039e9dafa7d",
+      "nameZh": "井冈山大学",
+      "nameEn": "Jinggangshan University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "jingdezhen-ceramic-institute-f3db41ac",
+      "nameZh": "景德镇陶瓷大学",
+      "nameEn": "Jingdezhen Ceramic Institute",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-31170871538c79a5",
+      "nameZh": "景德镇学院",
+      "nameEn": "Jingdezhen University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-9f5f3292bbb87f41",
+      "nameZh": "九江学院",
+      "nameEn": "Jiujiang University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-24a6f1b68b4205b9",
+      "nameZh": "喀什大学",
+      "nameEn": "Kashgar University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-58da075f4ac6ff81",
+      "nameZh": "凯里学院",
+      "nameEn": "Kaili University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-58cd7ed02131ddfe",
+      "nameZh": "昆明传媒学院",
+      "nameEn": "Wenhua College of Yunnan Art University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-6be7bdb4605d3904",
+      "nameZh": "昆明理工大学",
+      "nameEn": "Kunming University of Science and Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-97f41c475afd8e0b",
+      "nameZh": "昆明学院",
+      "nameEn": "Kunming University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-cb0764078ed972e1",
+      "nameZh": "昆明医科大学",
+      "nameEn": "Kunming Medical University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-8b0d608c8ae8ae4f",
+      "nameZh": "兰州财经大学",
+      "nameEn": "Lanzhou University of Finance and Economics",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-38c094dc0fbc966b",
+      "nameZh": "兰州城市学院",
+      "nameEn": "Lanzhou City University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "lanzhou-university-52c21e54",
+      "nameZh": "兰州大学",
+      "nameEn": "Lanzhou university",
+      "tierOfficial": "Tier A"
+    },
+    {
+      "institutionId": "cn-6d47aa6117904544",
+      "nameZh": "兰州工业学院",
+      "nameEn": "Lanzhou Institute of Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-a0b0d1852d094634",
+      "nameZh": "兰州交通大学",
+      "nameEn": "Lanzhou Jiaotong University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-4f5a5db7c89ae366",
+      "nameZh": "兰州理工大学",
+      "nameEn": "Lanzhou University of Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-9eb0b08da37c2d5a",
+      "nameZh": "兰州文理学院",
+      "nameEn": "Lanzhou University of Arts and Science",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-a1f6348f673dca8d",
+      "nameZh": "廊坊师范学院",
+      "nameEn": "Langfang Normal University AKA Langfang Teachers University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-8b6ae4e30380fda8",
+      "nameZh": "乐山师范学院",
+      "nameEn": "Leshan Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-a412c64a87f2b439",
+      "nameZh": "丽水学院",
+      "nameEn": "Lishui University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-53643480febf79e7",
+      "nameZh": "辽东学院",
+      "nameEn": "Eastern Liaoning University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "liaoning-university-80e8b162",
+      "nameZh": "辽宁大学",
+      "nameEn": "Liaoning University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-bc1aaa68e31a06af",
+      "nameZh": "辽宁工程技术大学",
+      "nameEn": "Liaoning Technical University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-6687e3f63dfa66a7",
+      "nameZh": "辽宁工业大学",
+      "nameEn": "Liaoning University of Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-4f366a5965082a41",
+      "nameZh": "辽宁警察学院",
+      "nameEn": "Liaoning Police College",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-d1dc31e1aa5df302",
+      "nameZh": "辽宁科技大学",
+      "nameEn": "University of Science and Technology Liaoning",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-ae427a2a81ade8f0",
+      "nameZh": "辽宁科技学院",
+      "nameEn": "Liaoning Institute of Science and Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-174414eafa37a726",
+      "nameZh": "辽宁师范大学",
+      "nameEn": "Liaoning Normal University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-b66f234be447ebd6",
+      "nameZh": "辽宁石油化工大学",
+      "nameEn": "Liaoning Petrochemical University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-213a1c878f4bfff2",
+      "nameZh": "辽宁中医药大学",
+      "nameEn": "Liaoning University of Traditional Chinese Medicine",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-2ecff76f8db922b1",
+      "nameZh": "聊城大学",
+      "nameEn": "Liaocheng University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-88a9df8d2605d24b",
+      "nameZh": "临沂大学",
+      "nameEn": "Linyi University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-3eafe3e0f615f226",
+      "nameZh": "岭南师范学院",
+      "nameEn": "Lingnan Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-599127f6f21d1eef",
+      "nameZh": "六盘水师范学院",
+      "nameEn": "Liupanshui Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-e304e51e26f32c2a",
+      "nameZh": "龙岩学院",
+      "nameEn": "Longyan University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-92479839aa9e89c7",
+      "nameZh": "陇东学院",
+      "nameEn": "Longdong University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-8665385e9c00847a",
+      "nameZh": "鲁东大学",
+      "nameEn": "Ludong University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-8587bec8480d235a",
+      "nameZh": "鲁迅美术学院",
+      "nameEn": "LuXun Academy of Fine Arts",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-bd84c6c4efcba0e0",
+      "nameZh": "吕梁学院",
+      "nameEn": "Lvliang University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-1e18e54c1a270b09",
+      "nameZh": "洛阳理工学院",
+      "nameEn": "Luoyang Institute of Science and Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-c36459ae6337dde1",
+      "nameZh": "洛阳师范学院",
+      "nameEn": "Luoyang Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-4851a28dfdd5fd02",
+      "nameZh": "绵阳师范学院",
+      "nameEn": "Mianyang Teachers' College AKA Mianyang Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-b66fd8021d6912b2",
+      "nameZh": "闽江学院",
+      "nameEn": "Minjiang University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-5dbaf033b2ac7712",
+      "nameZh": "闽南师范大学",
+      "nameEn": "Minnan Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-fde4f5b27f86fa2d",
+      "nameZh": "牡丹江师范学院",
+      "nameEn": "Mudanjiang Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-c2d504692a024a08",
+      "nameZh": "牡丹江医科大学",
+      "nameEn": "Mudanjiang Medical University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "nanchang-university-3dc3ad6c",
+      "nameZh": "南昌大学",
+      "nameEn": "Nanchang University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-6e6aaf892c17a701",
+      "nameZh": "南昌工程学院",
+      "nameEn": "Nanchang Institute of Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-e2a1f04ae5a5794a",
+      "nameZh": "南昌航空大学",
+      "nameEn": "Nanchang Hangkong University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-64b3839d04f10b00",
+      "nameZh": "南昌师范学院",
+      "nameEn": "Nanchang Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-c2fe93f826054b85",
+      "nameZh": "南昌医学院",
+      "nameEn": "Nanchang Medical College",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-fd334bd375069320",
+      "nameZh": "南方科技大学",
+      "nameEn": "Southern University of Science and Technology",
+      "tierOfficial": "Tier A"
+    },
+    {
+      "institutionId": "cn-25d485384721b830",
+      "nameZh": "南方医科大学",
+      "nameEn": "Southern Medical University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-b2514758578ec733",
+      "nameZh": "南华大学",
+      "nameEn": "University of South China",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-cfd80442d89c0935",
+      "nameZh": "南京财经大学",
+      "nameEn": "Nanjing University of Finance and Economics",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-a75c34e61e7c0122",
+      "nameZh": "南京传媒学院",
+      "nameEn": "Communication University of China, Nanjing",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "nanjing-university-8fbdf4ba",
+      "nameZh": "南京大学",
+      "nameEn": "Nanjing University",
+      "tierOfficial": "Tier A"
+    },
+    {
+      "institutionId": "cn-c3547543a17c1e2e",
+      "nameZh": "南京工程学院",
+      "nameEn": "Nanjing Institute of Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-66d2d094bcb5412d",
+      "nameZh": "南京工业大学",
+      "nameEn": "Nanjing Tech University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-455084ec13ada5a4",
+      "nameZh": "南京航空航天大学",
+      "nameEn": "Nanjing University of Aeronautics and Astronautics",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-2302eacd0602ab8c",
+      "nameZh": "南京警察学院",
+      "nameEn": "Nanjing Police College",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "nanjing-university-of-science-and-technology-af39a57f",
+      "nameZh": "南京理工大学",
+      "nameEn": "Nanjing University of Science and Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-7fc8cb9cf80e2f0e",
+      "nameZh": "南京林业大学",
+      "nameEn": "Nanjing Forestry University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "nanjing-agricultural-university-c39b4a83",
+      "nameZh": "南京农业大学",
+      "nameEn": "Nanjing Agricultural University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-8626f600ce33bc20",
+      "nameZh": "南京审计大学",
+      "nameEn": "Nanjing Audit University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "nanjing-normal-university-4bbad3a8",
+      "nameZh": "南京师范大学",
+      "nameEn": "Nanjing Normal University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-26b4c2b26039c345",
+      "nameZh": "南京特殊教育师范学院",
+      "nameEn": "Nanjing Normal University of Special Education",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-61dfd5110e994e7f",
+      "nameZh": "南京体育学院",
+      "nameEn": "Nanjing Sport Institute",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-cf2eacbe4baba83a",
+      "nameZh": "南京晓庄学院",
+      "nameEn": "Nanjing Xiaozhuang University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-52596fb2bd34dd3f",
+      "nameZh": "南京信息工程大学",
+      "nameEn": "Nanjing University of Information Science and Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-e0fc5173f5b0b813",
+      "nameZh": "南京医科大学",
+      "nameEn": "Nanjing Medical University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-c040f3f9fbaf2edd",
+      "nameZh": "南京艺术学院",
+      "nameEn": "Nanjing University of the Arts",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-98ded03fe5b061ca",
+      "nameZh": "南京邮电大学",
+      "nameEn": "Nanjing University of Posts and Telecommunications",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-0518fdd161b38fa4",
+      "nameZh": "南京中医药大学",
+      "nameEn": "Nanjing University of Chinese Medicine",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "nankai-university-fed7345f",
+      "nameZh": "南开大学",
+      "nameEn": "Nankai University",
+      "tierOfficial": "Tier A"
+    },
+    {
+      "institutionId": "cn-b82946bc356cda3d",
+      "nameZh": "南宁师范大学",
+      "nameEn": "Guangxi Teachers Education University AKA Nanning Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-2028b05d1de45079",
+      "nameZh": "南通大学",
+      "nameEn": "Nantong University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-7f7eb5050ca3119a",
+      "nameZh": "南阳理工学院",
+      "nameEn": "Nanyang Institute of Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-980caa765e427846",
+      "nameZh": "南阳师范学院",
+      "nameEn": "Nanyang Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-0b8604eeeadcfc3b",
+      "nameZh": "内江师范学院",
+      "nameEn": "Neijiang Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-3b1678f4e0083073",
+      "nameZh": "内蒙古财经大学",
+      "nameEn": "Inner Mongolia University of Finance and Economics",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "inner-mongolia-university-ffd71f0e",
+      "nameZh": "内蒙古大学",
+      "nameEn": "Inner Mongolia University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-9ab16266b3fb247f",
+      "nameZh": "内蒙古工业大学",
+      "nameEn": "Inner Mongolia University of Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-c31f3a6c124cfa48",
+      "nameZh": "内蒙古科技大学",
+      "nameEn": "Inner Mongolia University of Science and Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-16e7ceb6b56a59c4",
+      "nameZh": "内蒙古科技大学包头师范学院",
+      "nameEn": "Baotou Teachers' College",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-af0680d9132ed7e4",
+      "nameZh": "内蒙古民族大学",
+      "nameEn": "Inner Mongolia University For The Nationlities",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-e17c2d50b106d2e1",
+      "nameZh": "内蒙古农业大学",
+      "nameEn": "Inner Mongolia Agricultural University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-a1acf13c79f13da3",
+      "nameZh": "内蒙古师范大学",
+      "nameEn": "Inner Mongolia Normal University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-2c2b9abf048479e4",
+      "nameZh": "内蒙古医科大学",
+      "nameEn": "Inner Mongolia Medical University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "inner-mongolia-arts-university-05fa9653",
+      "nameZh": "内蒙古艺术学院",
+      "nameEn": "Inner Mongolia Arts University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-3d37c7d0c88d7564",
+      "nameZh": "宁波大学",
+      "nameEn": "Ningbo university",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-561929b07cda1165",
+      "nameZh": "宁波工程学院",
+      "nameEn": "Ningbo University of Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-dd38bca4ca3bf331",
+      "nameZh": "宁德师范学院",
+      "nameEn": "Ningde Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "ningxia-university-b5450df6",
+      "nameZh": "宁夏大学",
+      "nameEn": "Ningxia University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-420d922c78eeff4e",
+      "nameZh": "宁夏师范大学",
+      "nameEn": "Ningxia Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-420d922c78eeff4e",
+      "nameZh": "宁夏师范学院",
+      "nameEn": "Ningxia Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-f029b5c4de40ffc9",
+      "nameZh": "宁夏医科大学",
+      "nameEn": "Ningxia Medical University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-2bf38792bc58042c",
+      "nameZh": "攀枝花学院",
+      "nameEn": "Panzhihua University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-3c2a3fcc930103f2",
+      "nameZh": "平顶山学院",
+      "nameEn": "Pingdingshan University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-9b0681270485662e",
+      "nameZh": "萍乡学院",
+      "nameEn": "Pingxiang University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-e9ab44f034c6c97c",
+      "nameZh": "莆田学院",
+      "nameEn": "Putian University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-cdb080c6760ac280",
+      "nameZh": "普洱学院",
+      "nameEn": "Puer University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-2503de36c5364431",
+      "nameZh": "齐鲁工业大学",
+      "nameEn": "Qilu University Of Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-28dfaa434273fecc",
+      "nameZh": "齐鲁理工学院",
+      "nameEn": "Qilu Institute of Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-348541a2dbb165b1",
+      "nameZh": "齐鲁师范学院",
+      "nameEn": "Qilu Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-ee629141ac48a74d",
+      "nameZh": "齐齐哈尔大学",
+      "nameEn": "Qiqihar University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-e3663f777b3078b5",
+      "nameZh": "齐齐哈尔医学院",
+      "nameEn": "Qiqihar Medical University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-9f9e55b3d3c6308a",
+      "nameZh": "黔南民族师范学院",
+      "nameEn": "Qiannan Normal University for Nationalities",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-e1081944b32c4a84",
+      "nameZh": "青岛城市学院",
+      "nameEn": "Qingdao University of Technology Qindao College",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-cefdddc5afd82a02",
+      "nameZh": "青岛大学",
+      "nameEn": "Qingdao University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-798a43f1d58b93f6",
+      "nameZh": "青岛电影学院",
+      "nameEn": "Beijing Film Academy Modern Creative Media College",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-d0501c4f4f85cd1f",
+      "nameZh": "青岛黄海学院",
+      "nameEn": "Qingdao Huanghai University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-2d18ecf9189ca65f",
+      "nameZh": "青岛科技大学",
+      "nameEn": "Qingdao University of Science and Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-e4372d68e6cf954b",
+      "nameZh": "青岛理工大学",
+      "nameEn": "Qingdao Technological University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-14039889388d7bd2",
+      "nameZh": "青岛农业大学",
+      "nameEn": "Qingdao Agricultural University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "qinghai-university-e7f8995a",
+      "nameZh": "青海大学",
+      "nameEn": "Qinghai University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-c864bc89aa62f740",
+      "nameZh": "青海民族大学",
+      "nameEn": "Qinghai Nationalities University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-4ccda4da248fdfdc",
+      "nameZh": "青海师范大学",
+      "nameEn": "Qinghai Normal University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "tsinghua-university-88293fa6",
+      "nameZh": "清华大学",
+      "nameEn": "Tsinghua University",
+      "tierOfficial": "Tier A"
+    },
+    {
+      "institutionId": "cn-020974d2b4f1f430",
+      "nameZh": "琼台师范学院",
+      "nameEn": "Qiongtai Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-5c2642748d1d5e9b",
+      "nameZh": "曲阜师范大学",
+      "nameEn": "Qufu Normal University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-39bb87a1a6601ce4",
+      "nameZh": "曲靖师范学院",
+      "nameEn": "Qujing Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-7e8eabf58577ba8b",
+      "nameZh": "衢州学院",
+      "nameEn": "Quzhou University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-b081a4a748551193",
+      "nameZh": "泉州师范学院",
+      "nameEn": "Quanzhou Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-8af9230c5764083d",
+      "nameZh": "三明学院",
+      "nameEn": "Sanming University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-7b114301429acaad",
+      "nameZh": "三峡大学",
+      "nameEn": "China Three Gorges University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "xiamen-university-5271b226",
+      "nameZh": "厦门大学",
+      "nameEn": "Xiamen University",
+      "tierOfficial": "Tier A"
+    },
+    {
+      "institutionId": "cn-3a555acba710ed1a",
+      "nameZh": "厦门大学嘉庚学院",
+      "nameEn": "Xiamen University - Tan Kah Kee College",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-53e6b1d6d49a0b21",
+      "nameZh": "厦门大学马来西亚分校",
+      "nameEn": "Xiamen University of Malaysia",
+      "tierOfficial": "Tier A"
+    },
+    {
+      "institutionId": "cn-6bca0031f717dc4e",
+      "nameZh": "厦门理工学院",
+      "nameEn": "Xiamen University of Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-46e27d52246390b8",
+      "nameZh": "厦门医学院",
+      "nameEn": "Xiamen Medical College",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-7d878327ab4225d7",
+      "nameZh": "山东财经大学",
+      "nameEn": "Shandong University of Finance and Economics",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "shandong-university-fd3a1051",
+      "nameZh": "山东大学",
+      "nameEn": "Shandong University",
+      "tierOfficial": "Tier A"
+    },
+    {
+      "institutionId": "cn-c33b92447be76a83",
+      "nameZh": "山东第二医科大学",
+      "nameEn": "Shandong Second Medical University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-22bbfe9561215d71",
+      "nameZh": "山东第一医科大学",
+      "nameEn": "Shandong First Medical University(Shandong Academy of Medical Sciences)",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-fbdb8252ab4315ed",
+      "nameZh": "山东工商学院",
+      "nameEn": "Shandong Technology and Business University AKA Shandong Institute of Business and Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-42a4a776197b63a2",
+      "nameZh": "山东工艺美术学院",
+      "nameEn": "Shandong University of Art & Design",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-5dee15fe816c4dfb",
+      "nameZh": "山东管理学院",
+      "nameEn": "Shandong Management University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-37f52063d7661c77",
+      "nameZh": "山东航空学院",
+      "nameEn": "Shandong University of Aeronautics",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-7b1cf34f4c998443",
+      "nameZh": "山东建筑大学",
+      "nameEn": "Shandong Jianzhu University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-820fd738c4099eff",
+      "nameZh": "山东交通学院",
+      "nameEn": "Shandong Jiaotong University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-95632bf53773f567",
+      "nameZh": "山东警察学院",
+      "nameEn": "Shandong Police College",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-11c7d41c24a0e8c6",
+      "nameZh": "山东科技大学",
+      "nameEn": "Shandong University of Science and Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-ec637cc1b188241d",
+      "nameZh": "山东理工大学",
+      "nameEn": "Shandong University of Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-82d9531d6a84e5f3",
+      "nameZh": "山东农业大学",
+      "nameEn": "Shandong Agricultural University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-b1506fd73f92d581",
+      "nameZh": "山东农业工程学院",
+      "nameEn": "Shandong Agriculture and Engineering University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-7a75dcb69cf29b04",
+      "nameZh": "山东女子学院",
+      "nameEn": "Shandong Women’s University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-1a9ab6593dfaad4b",
+      "nameZh": "山东青年政治学院",
+      "nameEn": "Shandong Youth University of Political Science",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-631f59041ec1fc89",
+      "nameZh": "山东师范大学",
+      "nameEn": "Shandong Normal University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-d23e20c3eab774df",
+      "nameZh": "山东石油化工学院",
+      "nameEn": "Shandong Institute of Petroleum and Chemical Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-ffb292091970adeb",
+      "nameZh": "山东体育学院",
+      "nameEn": "Shandong Sport University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-a41e11531aa2aa31",
+      "nameZh": "山东协和学院",
+      "nameEn": "Shandong Xiehe University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-922a7c3b2b1a0f73",
+      "nameZh": "山东艺术学院",
+      "nameEn": "Shandong University of Arts",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-382f1ca7d266384d",
+      "nameZh": "山东政法学院",
+      "nameEn": "Shandong University of Political Science and Law",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-20b304937d7795da",
+      "nameZh": "山东中医药大学",
+      "nameEn": "Shandong University of Traditional Chinese Medicine",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-de7ed595888bd6ad",
+      "nameZh": "山西财经大学",
+      "nameEn": "Shanxi University of Finance and Economics",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-2ce0377076fb6ab6",
+      "nameZh": "山西传媒学院",
+      "nameEn": "Communication University of Shanxi",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-cb6811f5475b77e6",
+      "nameZh": "山西大同大学",
+      "nameEn": "Shanxi Datong University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-6e7eaa04028d873e",
+      "nameZh": "山西大学",
+      "nameEn": "Shanxi University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-429ce01ecf0b0b37",
+      "nameZh": "山西电子科技学院",
+      "nameEn": "Shanxi University of Electronic Science and Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-67ed82b06a033957",
+      "nameZh": "山西工程技术学院",
+      "nameEn": "Shanxi Institute of Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-e06a73579186c398",
+      "nameZh": "山西工学院",
+      "nameEn": "SHANXI COLLEGE OF TECHNOLOGY",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-2a576f5d92eb20d4",
+      "nameZh": "山西科技学院",
+      "nameEn": "Shanxi Institute of Science and Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-959e110ef72987ef",
+      "nameZh": "山西能源学院",
+      "nameEn": "Shanxi Institute of Energy",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-8e8d39b7e602465b",
+      "nameZh": "山西农业大学",
+      "nameEn": "Shanxi Agricultural University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-de7f00aea57752bd",
+      "nameZh": "山西师范大学",
+      "nameEn": "Shanxi Normal University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-57145af4454592bd",
+      "nameZh": "山西医科大学",
+      "nameEn": "Shanxi Medical University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-90b4d58f29ffec37",
+      "nameZh": "山西中医药大学",
+      "nameEn": "Shanxi University of Chinese Medicine",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-ad2aa00ff7e118af",
+      "nameZh": "陕西科技大学",
+      "nameEn": "Shaanxi University of Science Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-185b495fb2a2b8be",
+      "nameZh": "陕西理工大学",
+      "nameEn": "Shaanxi University of Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "shaanxi-normal-university-d6405edd",
+      "nameZh": "陕西师范大学",
+      "nameEn": "Shaanxi Normal University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-18d37467d884e80b",
+      "nameZh": "陕西学前师范学院",
+      "nameEn": "Shaanxi Xueqian Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-f21387d39854a964",
+      "nameZh": "陕西中医药大学",
+      "nameEn": "Shaanxi University of Chinese Medicine",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-3248e9701268a380",
+      "nameZh": "汕头大学",
+      "nameEn": "Shantou University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-ebf0e4ce1ec846ea",
+      "nameZh": "商洛学院",
+      "nameEn": "Shangluo University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-a094de7ee43dd489",
+      "nameZh": "商丘师范学院",
+      "nameEn": "Shangqiu Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "shanghai-university-of-finance-and-economics-a5566168",
+      "nameZh": "上海财经大学",
+      "nameEn": "Shanghai University of Finance and Economics",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "shanghai-university-b933744c",
+      "nameZh": "上海大学",
+      "nameEn": "Shanghai University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-f1b7d27b50c3e665",
+      "nameZh": "上海第二工业大学",
+      "nameEn": "Shanghai Second Polytechnic University (AKA Shanghai Polytechnic University)",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-9001c8fa38cafcaf",
+      "nameZh": "上海电机学院",
+      "nameEn": "Shanghai Dianji University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-a9d74cfb80feea9f",
+      "nameZh": "上海电力大学",
+      "nameEn": "Shanghai University of Electric Power",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-b5644094c5e79432",
+      "nameZh": "上海对外经贸大学",
+      "nameEn": "Shanghai University of International Business and Economics",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-e65e4a6296230250",
+      "nameZh": "上海工程技术大学",
+      "nameEn": "Shanghai University of Engineering Science",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-d2de21c9853e47a1",
+      "nameZh": "上海公安学院",
+      "nameEn": "Shanghai Police College",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-1d0ed119cebb0f32",
+      "nameZh": "上海海关学院",
+      "nameEn": "Shanghai Customs College",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-d10a95448b63a97c",
+      "nameZh": "上海海事大学",
+      "nameEn": "Shanghai Maritime University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-cfc7b6e5ea305c78",
+      "nameZh": "上海海洋大学",
+      "nameEn": "Shanghai Ocean University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-76c5fb8a29eb0b74",
+      "nameZh": "上海建桥学院",
+      "nameEn": "Shanghai Jianqiao University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-d88e57bcc7df41c2",
+      "nameZh": "上海健康医学院",
+      "nameEn": "Shanghai University of Medicine and Health Sciences",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "shanghai-jiaotong-university-95ef14bb",
+      "nameZh": "上海交通大学",
+      "nameEn": "Shanghai Jiao Tong University",
+      "tierOfficial": "Tier A"
+    },
+    {
+      "institutionId": "cn-eb45aa61b7f92334",
+      "nameZh": "上海科技大学",
+      "nameEn": "ShanghaiTech University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-d29a6543c8bb3bd9",
+      "nameZh": "上海理工大学",
+      "nameEn": "University of Shanghai for Science and Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-9dcfdf65ccfe4cf1",
+      "nameZh": "上海立信会计金融学院",
+      "nameEn": "Shanghai Lixin University of Accounting and Finance",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-d50e1f5e986521fc",
+      "nameZh": "上海商学院",
+      "nameEn": "Shanghai Business School",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-6c705e0f6bc8cb9c",
+      "nameZh": "上海师范大学",
+      "nameEn": "Shanghai Normal University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-cc8859b820a6285b",
+      "nameZh": "上海视觉艺术学院",
+      "nameEn": "Shanghai Institute of Visual Arts",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-b0c5ad9361839895",
+      "nameZh": "上海体育大学",
+      "nameEn": "Shanghai University of Sport",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "shanghai-international-studies-university-b9e33065",
+      "nameZh": "上海外国语大学",
+      "nameEn": "Shanghai International Studies University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-e9bfa20de5215a34",
+      "nameZh": "上海戏剧学院",
+      "nameEn": "Shanghai Theatre Academy",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-76ab0dbb8e91e76a",
+      "nameZh": "上海音乐学院",
+      "nameEn": "Shanghai Conservatory of Music",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-5d67b3f01219151f",
+      "nameZh": "上海应用技术大学",
+      "nameEn": "Shanghai Institute of Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-8fbfa46ba68bb9cc",
+      "nameZh": "上海政法学院",
+      "nameEn": "Shanghai University of Political Science and Law",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-4cb8ebbd13c8f9a0",
+      "nameZh": "上海中医药大学",
+      "nameEn": "Shanghai University of Traditional Chinese Medicine",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-29ef66b4ce7aa7ac",
+      "nameZh": "上饶师范学院",
+      "nameEn": "Shangrao Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-f6e82e044ecd3ab6",
+      "nameZh": "韶关学院",
+      "nameEn": "Shaoguan University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-1f13c3fad0f9b53b",
+      "nameZh": "邵阳学院",
+      "nameEn": "Shaoyang University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-5f8d261e8651f188",
+      "nameZh": "绍兴文理学院",
+      "nameEn": "Shaoxing University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "shenzhen-university-c29d3a31",
+      "nameZh": "深圳大学",
+      "nameEn": "Shenzhen University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-2f607cfb2cd2f8e2",
+      "nameZh": "深圳技术大学",
+      "nameEn": "Shenzhen Technology University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-1852dc4a1e3466a0",
+      "nameZh": "沈阳大学",
+      "nameEn": "Shenyang University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-439fa065864f2c02",
+      "nameZh": "沈阳工程学院",
+      "nameEn": "Shenyang Institute of Engineeting",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-b9604c716fb30c4a",
+      "nameZh": "沈阳工业大学",
+      "nameEn": "Shenyang University of Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-15ce08ce64e818e8",
+      "nameZh": "沈阳航空航天大学",
+      "nameEn": "Shenyang Aerospace University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-cb2331af15da7eda",
+      "nameZh": "沈阳化工大学",
+      "nameEn": "Shenyang University of Chemical Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-4df8111109118a64",
+      "nameZh": "沈阳建筑大学",
+      "nameEn": "Shenyang Jianzhu University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-0332b94a1d1ff267",
+      "nameZh": "沈阳理工大学",
+      "nameEn": "Shenyang Ligong University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-9f17441fdd3ac472",
+      "nameZh": "沈阳农业大学",
+      "nameEn": "Shenyang Agricultural University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-45f92ebdd67244ad",
+      "nameZh": "沈阳师范大学",
+      "nameEn": "Shenyang Normal University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-0fae165f6df95b3a",
+      "nameZh": "沈阳体育学院",
+      "nameEn": "Shenyang Sport University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-45770eb68fdbdd20",
+      "nameZh": "沈阳药科大学",
+      "nameEn": "Shenyang Pharmaceutical University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-8071d9aea340c24f",
+      "nameZh": "沈阳医学院",
+      "nameEn": "Shenyang Medical College",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-dece23ddcb9b5038",
+      "nameZh": "沈阳音乐学院",
+      "nameEn": "Shenyang Conservatory of Music",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "shihezi-university-2f997caf",
+      "nameZh": "石河子大学",
+      "nameEn": "Shihezi University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-5ba2d0b9952e0330",
+      "nameZh": "石家庄铁道大学",
+      "nameEn": "Shijiazhuang Tiedao University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-0699209d33d7607e",
+      "nameZh": "石家庄学院",
+      "nameEn": "Shijiazhuang University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-2565770c56095da1",
+      "nameZh": "首都经济贸易大学",
+      "nameEn": "Capital University of Economics and Business",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-7ce88b3325679720",
+      "nameZh": "首都师范大学",
+      "nameEn": "Capital Normal University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-dad0ce2165227067",
+      "nameZh": "首都体育学院",
+      "nameEn": "Capital Sport University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-f4547609017e297d",
+      "nameZh": "首都医科大学",
+      "nameEn": "Capital Medical University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-b2d6116cefebce41",
+      "nameZh": "四川传媒学院",
+      "nameEn": "Sichuan University of Media and Communications",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "sichuan-university-2721d57b",
+      "nameZh": "四川大学",
+      "nameEn": "Sichuan University",
+      "tierOfficial": "Tier A"
+    },
+    {
+      "institutionId": "cn-dfbad85b82a29fcf",
+      "nameZh": "四川电影电视学院",
+      "nameEn": "Sichuan Film and Television College",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-d5aa73e207289784",
+      "nameZh": "四川警察学院",
+      "nameEn": "Sichuan Police College",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-9ace08daae038137",
+      "nameZh": "四川旅游学院",
+      "nameEn": "Sichuan Tourism University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "sichuan-fine-arts-institute-60415366",
+      "nameZh": "四川美术学院",
+      "nameEn": "Sichuan Fine Arts Institute",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-0969f1c3bbf11a0c",
+      "nameZh": "四川民族学院",
+      "nameEn": "Sichuan Minzu College AKA Sichuan Minzu University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "sichuan-agricultural-university-2e7fba53",
+      "nameZh": "四川农业大学",
+      "nameEn": "Sichuan Agricultural University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-a2c2f00fccfa7688",
+      "nameZh": "四川轻化工大学",
+      "nameEn": "Sichuan University of Science and Engineering",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-7ab7a137b3cddb15",
+      "nameZh": "四川师范大学",
+      "nameEn": "Sichuan Normal University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-745ddc6644648d7e",
+      "nameZh": "四川外国语大学",
+      "nameEn": "Sichuan International Studies University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-e4d68f0cda509009",
+      "nameZh": "四川文化艺术学院",
+      "nameEn": "Sichuan University of Culture and Arts",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-bff4f266b2fd2880",
+      "nameZh": "四川文理学院",
+      "nameEn": "Sichuan University of Arts and Science",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-2d57174532e7e143",
+      "nameZh": "四川音乐学院",
+      "nameEn": "Sichuan Conservatory of Music",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-71b1d0b56052561a",
+      "nameZh": "苏州城市学院",
+      "nameEn": "Suzhou City University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "suzhou-soochow-university-16c0f71b",
+      "nameZh": "苏州大学",
+      "nameEn": "Soochow University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-950b0187a36af8c8",
+      "nameZh": "苏州科技大学",
+      "nameEn": "Suzhou University of Science and Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-95b9166353df08c3",
+      "nameZh": "宿迁学院",
+      "nameEn": "Suqian University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-afb4b1f993585a40",
+      "nameZh": "宿州学院",
+      "nameEn": "Suzhou University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-0f96355e12a49281",
+      "nameZh": "绥化学院",
+      "nameEn": "Sui Hua University AKA Suihua University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-2957b2487bcebe9a",
+      "nameZh": "塔里木大学",
+      "nameEn": "Tarim University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-c2388dc8089d8ecb",
+      "nameZh": "台州学院",
+      "nameEn": "Taizhou University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-60a3b8a4a0f6cf8b",
+      "nameZh": "太原工业学院",
+      "nameEn": "Taiyuan Institute of Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-15e6ab28437466cc",
+      "nameZh": "太原科技大学",
+      "nameEn": "Taiyuan University of Science and Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-3138f45f7d32ad1c",
+      "nameZh": "太原理工大学",
+      "nameEn": "Taiyuan University of Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-3fdddaae783e1c00",
+      "nameZh": "太原师范学院",
+      "nameEn": "Taiyuan Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-1695fcd6dc0266c4",
+      "nameZh": "太原学院",
+      "nameEn": "Taiyuan University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-bdb98b73075a5aaf",
+      "nameZh": "泰山学院",
+      "nameEn": "Taishan University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-79d6215ce67db635",
+      "nameZh": "泰州学院",
+      "nameEn": "Taizhou University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-ac0952a67833d1eb",
+      "nameZh": "唐山师范学院",
+      "nameEn": "Tangshan Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-2252630b7a0cc721",
+      "nameZh": "唐山学院",
+      "nameEn": "Tangshan University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-866b18aa83952ef9",
+      "nameZh": "天津财经大学",
+      "nameEn": "Tianjin University of Finance and Economics",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-797a1aca562250a2",
+      "nameZh": "天津城建大学",
+      "nameEn": "Tianjin Chengjian University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-8e302e42f9720c2c",
+      "nameZh": "天津传媒学院",
+      "nameEn": "Tianjin College of Media and Arts",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "tianjin-university-1c8bcb86",
+      "nameZh": "天津大学",
+      "nameEn": "Tianjin University",
+      "tierOfficial": "Tier A"
+    },
+    {
+      "institutionId": "cn-a9a9f87f07b8162d",
+      "nameZh": "天津工业大学",
+      "nameEn": "Tianjin Polytechnic University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-44181d7b54320498",
+      "nameZh": "天津科技大学",
+      "nameEn": "Tianjin University Of Science& Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-9f67267b73bdaaa1",
+      "nameZh": "天津理工大学",
+      "nameEn": "Tianjin University of Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-36e869a7152adce3",
+      "nameZh": "天津美术学院",
+      "nameEn": "Tianjin Academy of Fine Arts",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-134679c27d5e9cbf",
+      "nameZh": "天津农学院",
+      "nameEn": "Tianjin Agricultural University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-2d6f3bcc703de246",
+      "nameZh": "天津商业大学",
+      "nameEn": "Tianjin University of Commerce",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-9992f1d0e6ea7b43",
+      "nameZh": "天津师范大学",
+      "nameEn": "Tianjin Normal University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-70aaae4034d7d81e",
+      "nameZh": "天津体育学院",
+      "nameEn": "Tianjin University of Sport",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-88b67394f3f00103",
+      "nameZh": "天津外国语大学",
+      "nameEn": "Tianjin Foreign Studies University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "tianjin-medical-university-65b3512e",
+      "nameZh": "天津医科大学",
+      "nameEn": "Tianjin Medical University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-16e111ac51e23b43",
+      "nameZh": "天津音乐学院",
+      "nameEn": "Tianjin Conservatory of Music",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-7ea120c6e923ca65",
+      "nameZh": "天津职业技术师范大学",
+      "nameEn": "Tianjin University of Technology and Education",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-946f630faaf65808",
+      "nameZh": "天津中德应用技术大学",
+      "nameEn": "Tianjin Sino-German University of Applied Sciences",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-3646ec25e5e26c13",
+      "nameZh": "天津中医药大学",
+      "nameEn": "Tianjin University of Traditional Chinese Medicine",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-b9b1939ac1e73bf8",
+      "nameZh": "天水师范学院",
+      "nameEn": "Tianshui Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-793ded852734e759",
+      "nameZh": "通化师范学院",
+      "nameEn": "Tonghua Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "tongji-university-a6533d2e",
+      "nameZh": "同济大学",
+      "nameEn": "Tongji University",
+      "tierOfficial": "Tier A"
+    },
+    {
+      "institutionId": "cn-c6590061d3e5a8d2",
+      "nameZh": "铜陵学院",
+      "nameEn": "Tongling University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-4cb7727abd273623",
+      "nameZh": "铜仁学院",
+      "nameEn": "Tongren University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-df4afcf1001d1788",
+      "nameZh": "外交学院",
+      "nameEn": "China Foreign Affairs University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-a3c71d110a8fe7f5",
+      "nameZh": "皖南医学院",
+      "nameEn": "Wannan Medical College",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-b0668d159d4aaef3",
+      "nameZh": "皖西学院",
+      "nameEn": "West Anhui University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-ba3c0f4702a72cee",
+      "nameZh": "潍坊科技学院",
+      "nameEn": "Weifang University of Science and Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-95e136e7ce4bf8d0",
+      "nameZh": "潍坊学院",
+      "nameEn": "Weifang University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-1319fda1b0097994",
+      "nameZh": "渭南师范学院",
+      "nameEn": "Weinan Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-586b61d1f799c7c2",
+      "nameZh": "温州大学",
+      "nameEn": "Wenzhou University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-48b08efd1a690487",
+      "nameZh": "温州理工学院",
+      "nameEn": "Wenzhou University of Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-123f1a90e1196282",
+      "nameZh": "温州医科大学",
+      "nameEn": "Wenzhou Medical University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-51314af84be5fd25",
+      "nameZh": "文山学院",
+      "nameEn": "Wenshan University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-ba9ef5ad85daadba",
+      "nameZh": "无锡太湖学院",
+      "nameEn": "Taihu University of Wuxi",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-7cd7dac7f399c0a6",
+      "nameZh": "无锡学院",
+      "nameEn": "Wuxi University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-a8974cb41d153be5",
+      "nameZh": "梧州学院",
+      "nameEn": "Wuzhou University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-606aa744bd4add70",
+      "nameZh": "五邑大学",
+      "nameEn": "Wuyi University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-2887d61534ec4a97",
+      "nameZh": "武昌理工学院",
+      "nameEn": "Wuchang University of Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-0a73fd093dc0479b",
+      "nameZh": "武昌首义学院",
+      "nameEn": "Wuchang Shouyi University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-5e4f2f3a4ad0c511",
+      "nameZh": "武汉传媒学院",
+      "nameEn": "Wuhan College of Communication",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "wuhan-university-102c49fc",
+      "nameZh": "武汉大学",
+      "nameEn": "Wuhan University",
+      "tierOfficial": "Tier A"
+    },
+    {
+      "institutionId": "cn-72d784fe13d43d6b",
+      "nameZh": "武汉东湖学院",
+      "nameEn": "Wuhan Donghu University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-c15e3685422f1b6d",
+      "nameZh": "武汉纺织大学",
+      "nameEn": "Wuhan Textile University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-ad2473fd149df5dd",
+      "nameZh": "武汉工程大学",
+      "nameEn": "Wuhan Institute of Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-86f6965b9a3b5269",
+      "nameZh": "武汉科技大学",
+      "nameEn": "Wuhan University of Science and Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "wuhan-university-of-technology-85782e2d",
+      "nameZh": "武汉理工大学",
+      "nameEn": "Wuhan University of Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-9ed28ff778297114",
+      "nameZh": "武汉轻工大学",
+      "nameEn": "Wuhan Polytechnic University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-eace07f6c2f3fae8",
+      "nameZh": "武汉商学院",
+      "nameEn": "Wuhan Business University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-ae6038cfbedd9adc",
+      "nameZh": "武汉生物工程学院",
+      "nameEn": "Wuhan University of Bioengineering",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-9909693b33cef561",
+      "nameZh": "武汉体育学院",
+      "nameEn": "Wuhan Sports University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-4b9946c21d4a4991",
+      "nameZh": "武汉音乐学院",
+      "nameEn": "Wuhan conservatory of Music",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-0f4e2477ec1b1de6",
+      "nameZh": "武夷学院",
+      "nameEn": "Wuyi University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-885e4dd1f6bcc2e4",
+      "nameZh": "西安财经大学",
+      "nameEn": "Xi'an University of Finance and Economics",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "xidian-university-also-known-as-xi-an-electronic-science-and-technology-university-14c4a29e",
+      "nameZh": "西安电子科技大学",
+      "nameEn": "Xidian University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-e157ba255dc83b03",
+      "nameZh": "西安工程大学",
+      "nameEn": "Xi'an Polytechnic University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-7159f8b96c5a7ba6",
+      "nameZh": "西安工业大学",
+      "nameEn": "Xi'an Technological University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-8a7dfcc44de26438",
+      "nameZh": "西安航空学院",
+      "nameEn": "Xi'an Aeronautical University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-de989aba09911e4c",
+      "nameZh": "西安建筑科技大学",
+      "nameEn": "Xi'an University of Architecture and Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "xi-an-jiaotong-university-95c2779f",
+      "nameZh": "西安交通大学",
+      "nameEn": "Xi'an Jiaotong University",
+      "tierOfficial": "Tier A"
+    },
+    {
+      "institutionId": "cn-c1a38cd93310b57a",
+      "nameZh": "西安科技大学",
+      "nameEn": "Xi’an University of Science and Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-0013ad2fd63e891f",
+      "nameZh": "西安理工大学",
+      "nameEn": "Xi'an University of Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-7f166b19f5f7b265",
+      "nameZh": "西安美术学院",
+      "nameEn": "Xi'an Academy of Fine Arts",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-e7af3667c2186a37",
+      "nameZh": "西安石油大学",
+      "nameEn": "Xi'an Shiyou University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-08de04d1c7df448c",
+      "nameZh": "西安体育学院",
+      "nameEn": "Xi’an Physical Education University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-6efda8a5a04542f6",
+      "nameZh": "西安外国语大学",
+      "nameEn": "Xi`an International Studies University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-79f512b9a9b59e52",
+      "nameZh": "西安文理学院",
+      "nameEn": "Xi'an University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-bf3ca456da2a198d",
+      "nameZh": "西安医学院",
+      "nameEn": "Xi'an Medical University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-f7a27d752d951a4f",
+      "nameZh": "西安音乐学院",
+      "nameEn": "Xi'an conservatory of music",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-7f1f5a2004436880",
+      "nameZh": "西安邮电大学",
+      "nameEn": "Xi'an University of Posts and Telecommunications",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "northwest-university-2a8585db",
+      "nameZh": "西北大学",
+      "nameEn": "Northwest University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "northwestern-polytechnical-university-1e858b31",
+      "nameZh": "西北工业大学",
+      "nameEn": "Northwestern Polytechnical University",
+      "tierOfficial": "Tier A"
+    },
+    {
+      "institutionId": "cn-db00874b3081c30f",
+      "nameZh": "西北民族大学",
+      "nameEn": "Northwest Minzu University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-34b69de534cefc31",
+      "nameZh": "西北农林科技大学",
+      "nameEn": "Northwest A&F University",
+      "tierOfficial": "Tier A"
+    },
+    {
+      "institutionId": "cn-a02edfc06783b0c8",
+      "nameZh": "西北师范大学",
+      "nameEn": "Northwest Normal University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-e41047038b07ee3a",
+      "nameZh": "西北政法大学",
+      "nameEn": "Northwest University of Politics and Law",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-46113e050ff5d5f8",
+      "nameZh": "西藏藏医药大学",
+      "nameEn": "Tibet University of Tibetan Medicine",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "tibet-university-44adba65",
+      "nameZh": "西藏大学",
+      "nameEn": "Tibet University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-c5e4f7b68db8fbb7",
+      "nameZh": "西藏民族大学",
+      "nameEn": "Xizang Minzu University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-247a999d490c5497",
+      "nameZh": "西藏农牧学院",
+      "nameEn": "Xizang Agricultural and Animal Husbandry University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-a8a057a98332bdcf",
+      "nameZh": "西昌学院",
+      "nameEn": "Xichang University AKA Xichang College",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-71cc3cb798a72343",
+      "nameZh": "西湖大学",
+      "nameEn": "Westlake University",
+      "tierOfficial": "Tier A"
+    },
+    {
+      "institutionId": "cn-a915c92606d1bbaa",
+      "nameZh": "西华大学",
+      "nameEn": "Xihua University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-a3846ffb3691ca80",
+      "nameZh": "西华师范大学",
+      "nameEn": "China West Normal University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-34193943f518d3c2",
+      "nameZh": "西京学院",
+      "nameEn": "Xijing University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "southwestern-university-of-finance-and-economics-9e667ea4",
+      "nameZh": "西南财经大学",
+      "nameEn": "Southwestern University of Finance and Economics",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "southwest-university-14772c4d",
+      "nameZh": "西南大学",
+      "nameEn": "Southwest University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "southwest-jiaotong-university-9e83d9d0",
+      "nameZh": "西南交通大学",
+      "nameEn": "Southwest Jiaotong University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-c994aee33c22b253",
+      "nameZh": "西南科技大学",
+      "nameEn": "Southwest University of Science and Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-7b675314194f87e8",
+      "nameZh": "西南林业大学",
+      "nameEn": "Southwest Forestry University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-66ee34cc8d89fe4b",
+      "nameZh": "西南民族大学",
+      "nameEn": "Southwest University for Nationalities AKA Southwest Minzu University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-60ccec0d7e09389a",
+      "nameZh": "西南石油大学",
+      "nameEn": "Southwest Petroleum University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-3fa6249495c2a90e",
+      "nameZh": "西南医科大学",
+      "nameEn": "Southwest Medical University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-93c2f8f9024ca6e3",
+      "nameZh": "西南政法大学",
+      "nameEn": "Southwest Politics and Law University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-bf7e5b687c8d35bd",
+      "nameZh": "咸阳师范学院",
+      "nameEn": "Xianyang Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-9b79c3adbd2171ec",
+      "nameZh": "湘南学院",
+      "nameEn": "Xiangnan University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "xiangtan-university-cfb27bdb",
+      "nameZh": "湘潭大学",
+      "nameEn": "Xiangtan University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-1fbd889ff15df2d5",
+      "nameZh": "忻州师范学院",
+      "nameEn": "Xinzhou Teachers University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-046148e7f4930ca7",
+      "nameZh": "新疆财经大学",
+      "nameEn": "Xinjiang University of Finance and Economics",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "xinjiang-university-e1c08fa3",
+      "nameZh": "新疆大学",
+      "nameEn": "Xinjiang university",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-f6489e02804ef630",
+      "nameZh": "新疆工程学院",
+      "nameEn": "Xinjiang Institute of Engineering",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-55b47d1c3b13ed59",
+      "nameZh": "新疆理工学院",
+      "nameEn": "Xinjiang Institute of Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-fb17d9cf5a58368c",
+      "nameZh": "新疆农业大学",
+      "nameEn": "Xinjiang Agricultural University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-ffee234ddb4190da",
+      "nameZh": "新疆师范大学",
+      "nameEn": "Xinjiang Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-7df8cd8df3ce1278",
+      "nameZh": "新疆医科大学",
+      "nameEn": "Xinjiang Medical University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-0613e1ae10bec1e4",
+      "nameZh": "新疆艺术学院",
+      "nameEn": "Xinjiang Arts University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-e0e88cd34577ed68",
+      "nameZh": "新疆政法学院",
+      "nameEn": "Xinjiang University of Political Science And Law",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-62e74a44d9dda774",
+      "nameZh": "新乡学院",
+      "nameEn": "Xinxiang University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-f5653ddb1743cdc5",
+      "nameZh": "新乡医学院",
+      "nameEn": "Xinxiang Medical University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-cbe15265f5a4b779",
+      "nameZh": "新余学院",
+      "nameEn": "Xinyu University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-1b8540df3934e147",
+      "nameZh": "信阳农林学院",
+      "nameEn": "Xinyang Agricultural and Forestry University AKA Xinyang Collee of Agriculture and Forestry",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-517889c51df22bec",
+      "nameZh": "信阳师范大学",
+      "nameEn": "Xinyang Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-7c7ac8b41aada9ea",
+      "nameZh": "星海音乐学院",
+      "nameEn": "Xinghai Conservatory of Music",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-09fb429c7ec4aef1",
+      "nameZh": "邢台学院",
+      "nameEn": "Xingtai University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-8ca8c522ca913335",
+      "nameZh": "兴义民族师范学院",
+      "nameEn": "Xingyi Normal University for Nationalities",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-78f07023ef745ff1",
+      "nameZh": "徐州工程学院",
+      "nameEn": "Xuzhou Institute of Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-689048fb0fff408f",
+      "nameZh": "徐州医科大学",
+      "nameEn": "Xuzhou Medical University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-b1bf356a5165372e",
+      "nameZh": "许昌学院",
+      "nameEn": "Xuchang University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-484060233a93bcb1",
+      "nameZh": "烟台大学",
+      "nameEn": "Yantai University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-93fd83828fc3c3b1",
+      "nameZh": "延安大学",
+      "nameEn": "Yanan University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "yanbian-university-61996de7",
+      "nameZh": "延边大学",
+      "nameEn": "Yanbian University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-d0b8ba46da5c8043",
+      "nameZh": "盐城工学院",
+      "nameEn": "Yancheng Institute of Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-9460998b2c94ed58",
+      "nameZh": "盐城师范学院",
+      "nameEn": "Yancheng Teachers University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "yanshan-university-634a3bf5",
+      "nameZh": "燕山大学",
+      "nameEn": "Yanshan University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-8c9ed7b1b710f042",
+      "nameZh": "扬州大学",
+      "nameEn": "Yangzhou University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-8e869295f3c945de",
+      "nameZh": "伊犁师范大学",
+      "nameEn": "Yili Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-8e869295f3c945de",
+      "nameZh": "伊犁师范学院",
+      "nameEn": "Yili Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-7a641cb73f188725",
+      "nameZh": "宜宾学院",
+      "nameEn": "Yibin University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-c3646d041f47be51",
+      "nameZh": "宜春学院",
+      "nameEn": "Yichun University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-3f1f0df372ff21ba",
+      "nameZh": "营口理工学院",
+      "nameEn": "Yingkou Institute of Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-5b9f7792e80ad10b",
+      "nameZh": "右江民族医学院",
+      "nameEn": "Youjiang Medical University for Nationalities",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-f4681a4b9f33cc93",
+      "nameZh": "榆林学院",
+      "nameEn": "Yulin University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-7fc6fd80a97471d7",
+      "nameZh": "玉林师范学院",
+      "nameEn": "Yulin Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-05543c59e4b1c221",
+      "nameZh": "玉溪师范学院",
+      "nameEn": "Yuxi Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-fd309a0acb8b4617",
+      "nameZh": "豫章师范学院",
+      "nameEn": "Yuzhang Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-605d0e59d5dabab5",
+      "nameZh": "云南财经大学",
+      "nameEn": "Yunnan University of Finance and Economics",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "yunnan-university-d0bc6178",
+      "nameZh": "云南大学",
+      "nameEn": "Yunnan University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-e53c6272597a69be",
+      "nameZh": "云南警官学院",
+      "nameEn": "Yunnan Police College",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-9c9b6e00eae87e6c",
+      "nameZh": "云南民族大学",
+      "nameEn": "Yunnan Minzu University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-d000bc6b9dc1384c",
+      "nameZh": "云南农业大学",
+      "nameEn": "Yunnan Agricultural University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-9be767e0dacaa70e",
+      "nameZh": "云南师范大学",
+      "nameEn": "Yunnan Normal University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-3825f433f87ec024",
+      "nameZh": "云南艺术学院",
+      "nameEn": "Yunnan Arts University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-27b4d875fb085522",
+      "nameZh": "云南中医药大学",
+      "nameEn": "Yunnan University of Chinese Medicine",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-8a12a1993201d306",
+      "nameZh": "运城学院",
+      "nameEn": "Yuncheng University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-cba9bcc927dcb305",
+      "nameZh": "枣庄学院",
+      "nameEn": "Zaozhuang University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-5b71f9f85b74301c",
+      "nameZh": "张家口学院",
+      "nameEn": "Zhangjiakou University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "chang-an-university-178fc794",
+      "nameZh": "长安大学",
+      "nameEn": "Chang'an University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-8a70af070e7add59",
+      "nameZh": "长春大学",
+      "nameEn": "Changchun University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-ee433861029ac9c7",
+      "nameZh": "长春工程学院",
+      "nameEn": "Changchun Institute of Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-2b07099098083480",
+      "nameZh": "长春工业大学",
+      "nameEn": "Changchun University Of Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-f02a3ad5db1280c7",
+      "nameZh": "长春理工大学",
+      "nameEn": "Changchun University of Science and Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-1b96e68a86e9033a",
+      "nameZh": "长春师范大学",
+      "nameEn": "Changchun Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-8a66964e4e53e9e4",
+      "nameZh": "长春中医药大学",
+      "nameEn": "Changchun University of Chinese Medicine",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-7c89575d4ee5a577",
+      "nameZh": "长江大学",
+      "nameEn": "Yangtze University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-b8747b1a6d3cc53f",
+      "nameZh": "长江师范学院",
+      "nameEn": "Yangtze Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-b09053035d0e907b",
+      "nameZh": "长沙理工大学",
+      "nameEn": "Changsha University of Science and Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-880fc8e3f6d1257f",
+      "nameZh": "长沙师范学院",
+      "nameEn": "Changsha Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-b0ae49386afe5f85",
+      "nameZh": "长沙学院",
+      "nameEn": "Changsha University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-7ec63b4b40d714ee",
+      "nameZh": "长治学院",
+      "nameEn": "Changzhi University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-3751b1c747d9f8ab",
+      "nameZh": "长治医学院",
+      "nameEn": "Changzhi Medical College",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-30704b9836ccdae2",
+      "nameZh": "昭通学院",
+      "nameEn": "Zhaotong University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-c8ac3e85ee9fbac6",
+      "nameZh": "肇庆学院",
+      "nameEn": "Zhaoqing University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-4a446c3b691bceb9",
+      "nameZh": "浙大城市学院",
+      "nameEn": "Hangzhou City University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-5e462a0463a6da6f",
+      "nameZh": "浙大宁波理工学院",
+      "nameEn": "NingboTech University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-dfba598c4bb8fb7a",
+      "nameZh": "浙江财经大学",
+      "nameEn": "Zhejiang University of Finance and Economics",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-cf383d91f1071701",
+      "nameZh": "浙江传媒学院",
+      "nameEn": "Communication University of Zhejiang",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "zhejiang-university-41292b6f",
+      "nameZh": "浙江大学",
+      "nameEn": "Zhejiang University",
+      "tierOfficial": "Tier A"
+    },
+    {
+      "institutionId": "cn-e8a7da73db6d24a7",
+      "nameZh": "浙江工商大学",
+      "nameEn": "Zhejiang Gongshang University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "zhejiang-university-of-technology-86cf9f79",
+      "nameZh": "浙江工业大学",
+      "nameEn": "Zhejiang University of Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-7c822bf225fb1f38",
+      "nameZh": "浙江海洋大学",
+      "nameEn": "Zhejiang Ocean University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-5e73f7795951d0c3",
+      "nameZh": "浙江警察学院",
+      "nameEn": "Zhejiang Police College",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-0141ce1ecb916d53",
+      "nameZh": "浙江科技大学",
+      "nameEn": "Zhejiang University of Science and Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-23848683755c00bd",
+      "nameZh": "浙江理工大学",
+      "nameEn": "Zhejiang Sci-Tech University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-957d524fdb966b85",
+      "nameZh": "浙江农林大学",
+      "nameEn": "Zhejiang A & F University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-8149281acc873225",
+      "nameZh": "浙江师范大学",
+      "nameEn": "Zhejiang Normal University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-3016ad038539ee1a",
+      "nameZh": "浙江树人学院",
+      "nameEn": "Zhejiang Shuren University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-0fe907aada49f984",
+      "nameZh": "浙江水利水电学院",
+      "nameEn": "Zhejiang University of Water Resources and Electric Power",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-aaf3d6d0164e1321",
+      "nameZh": "浙江外国语学院",
+      "nameEn": "Zhejiang International Studies University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-0977fc50a8bf4f72",
+      "nameZh": "浙江万里学院",
+      "nameEn": "Zhejiang Wanli University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-5e021dc4e8ecaf6a",
+      "nameZh": "浙江音乐学院",
+      "nameEn": "Zhejiang Conservatory of Music",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-77524bd3e4513c8c",
+      "nameZh": "浙江越秀外国语学院",
+      "nameEn": "Zhhejiang Yuexiu University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-053c66b2b00eb7a1",
+      "nameZh": "浙江中医药大学",
+      "nameEn": "Zhejiang Chinese Medical University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-946f4d143c462904",
+      "nameZh": "浙江专美学院",
+      "nameEn": "Communication University of Zhejiang",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "zhengzhou-university-ccf4b546",
+      "nameZh": "郑州大学",
+      "nameEn": "Zhengzhou university",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-e690332c30f94712",
+      "nameZh": "郑州工程技术学院",
+      "nameEn": "Zhengzhou Institute of Technology",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-70c04cde2f6b2884",
+      "nameZh": "郑州航空工业管理学院",
+      "nameEn": "Zhengzhou Institute of Aeronautical Industry Management",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-a8e3b4d45786bb4b",
+      "nameZh": "郑州警察学院",
+      "nameEn": "Zhengzhou Police University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-52df5f87e0b05569",
+      "nameZh": "郑州轻工业大学",
+      "nameEn": "Zhengzhou University of Light Industry",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-46c2eeee09d2fd9c",
+      "nameZh": "郑州师范学院",
+      "nameEn": "Zhengzhou Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-53132dacf393404a",
+      "nameZh": "中北大学",
+      "nameEn": "North University of China",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "communication-university-of-china-3a1bb185",
+      "nameZh": "中国传媒大学",
+      "nameEn": "Communication University of China",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-113e8c25245f1aff",
+      "nameZh": "中国地质大学(北京)",
+      "nameEn": "China University of Geosciences (Beijing",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-a384f90b16d88cfa",
+      "nameZh": "中国地质大学(武汉)",
+      "nameEn": "China University of Geosciences (Wuhan)",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "ocean-university-of-china-qingdao-ab3847cd",
+      "nameZh": "中国海洋大学",
+      "nameEn": "Ocean University of China",
+      "tierOfficial": "Tier A"
+    },
+    {
+      "institutionId": "cn-19ba5b1e3bc7726e",
+      "nameZh": "中国计量大学",
+      "nameEn": "China Jiliang University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "university-of-science-and-technology-of-china-ustc-a638543a",
+      "nameZh": "中国科学技术大学",
+      "nameEn": "University of Science and Technology of China",
+      "tierOfficial": "Tier A"
+    },
+    {
+      "institutionId": "cn-ac0ae816716042b1",
+      "nameZh": "中国科学院大学",
+      "nameEn": "University of Chinese Academy of Sciences",
+      "tierOfficial": "Tier A"
+    },
+    {
+      "institutionId": "cn-e2aad34e0cff87f8",
+      "nameZh": "中国矿业大学",
+      "nameEn": "China University of Mining and Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-308aebe85f79a4c4",
+      "nameZh": "中国矿业大学(北京)",
+      "nameEn": "China University of Mining and Technology-Beijing",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-1400a07fe3616c8d",
+      "nameZh": "中国劳动关系学院",
+      "nameEn": "China University of Labor Relations AKA China Institute of Industrial Relations",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-ba7d54c0d191038a",
+      "nameZh": "中国美术学院",
+      "nameEn": "China Academy of Art",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-17872a944588595e",
+      "nameZh": "中国民航大学",
+      "nameEn": "Civil Aviation University of China",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-acd20584050cb3f3",
+      "nameZh": "中国民用航空飞行学院",
+      "nameEn": "Civil Aviation Flight University of China",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "china-agricultural-university-7f24114a",
+      "nameZh": "中国农业大学",
+      "nameEn": "China Agricultural University",
+      "tierOfficial": "Tier A"
+    },
+    {
+      "institutionId": "cn-4f26bc120ac6f383",
+      "nameZh": "中国青年政治学院",
+      "nameEn": "China Youth University of Political Studies",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "renmin-university-of-china-9e74b938",
+      "nameZh": "中国人民大学",
+      "nameEn": "Renmin University of China",
+      "tierOfficial": "Tier A"
+    },
+    {
+      "institutionId": "cn-3b5a7566d0cf1963",
+      "nameZh": "中国人民公安大学",
+      "nameEn": "People's Public Security University of China",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-b8c64a34bb57f737",
+      "nameZh": "中国人民警察大学",
+      "nameEn": "People’s Public Security University of China",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-da6a725bc9bb1812",
+      "nameZh": "中国社会科学院大学",
+      "nameEn": "University of Chinese Academy of Social Sciences",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-c6c5fad24bd19c2a",
+      "nameZh": "中国石油大学(北京)",
+      "nameEn": "China University of Petroleum-Beijing",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-1b0f29a5cf1afe4b",
+      "nameZh": "中国石油大学(华东)",
+      "nameEn": "China University of Petroleum",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-eef21eddc4b3bea2",
+      "nameZh": "中国戏曲学院",
+      "nameEn": "National Academy of Chinese Theatre Arts",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-85a91064368b0a4d",
+      "nameZh": "中国刑事警察学院",
+      "nameEn": "Criminal Investigation Police University of China",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "china-pharmaceutical-university-03ca6012",
+      "nameZh": "中国药科大学",
+      "nameEn": "China Pharmaceutical University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-f4f9259040228368",
+      "nameZh": "中国医科大学",
+      "nameEn": "China Medical University",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-910531dbe8f40148",
+      "nameZh": "中国音乐学院",
+      "nameEn": "China Conservatory of Music",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "china-university-of-political-science-and-law-2ee2c283",
+      "nameZh": "中国政法大学",
+      "nameEn": "China University of Political Science and Law",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-c12b8f8eb792b56d",
+      "nameZh": "中华女子学院",
+      "nameEn": "China Women’s University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "zhongnan-university-of-economics-and-law-71156a7a",
+      "nameZh": "中南财经政法大学",
+      "nameEn": "Zhongnan University of Economics and Law",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "central-south-university-3352f6a2",
+      "nameZh": "中南大学",
+      "nameEn": "Central South University",
+      "tierOfficial": "Tier A"
+    },
+    {
+      "institutionId": "cn-8d1d62253a3b1845",
+      "nameZh": "中南林业科技大学",
+      "nameEn": "Central South University of Forestry and Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-e31169eb60aa48af",
+      "nameZh": "中南民族大学",
+      "nameEn": "South-central University for Nationalities",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "sun-yat-sen-university-might-appear-as-zhongshan-university-d94644f6",
+      "nameZh": "中山大学",
+      "nameEn": "Sun Yat-sen University",
+      "tierOfficial": "Tier A"
+    },
+    {
+      "institutionId": "central-university-of-finance-and-economics-2259e13d",
+      "nameZh": "中央财经大学",
+      "nameEn": "Central University of Finance and Economics",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-c07c6b25fcd89856",
+      "nameZh": "中央美术学院",
+      "nameEn": "Central Academy of Fine Arts",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "minzu-university-of-china-7bbdd5ab",
+      "nameZh": "中央民族大学",
+      "nameEn": "Minzu University of China",
+      "tierOfficial": "Tier A"
+    },
+    {
+      "institutionId": "cn-8301f0575a794a16",
+      "nameZh": "中央司法警官学院",
+      "nameEn": "The National Police University for Criminal Justice",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-e8bb522d65cb9397",
+      "nameZh": "中央戏剧学院",
+      "nameEn": "Central Academy of Drama",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "central-conservatory-of-music-2a7c01dd",
+      "nameZh": "中央音乐学院",
+      "nameEn": "Central Conservatory of Music",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-1fed216d641f6aec",
+      "nameZh": "中原工学院",
+      "nameEn": "Zhongyuan University of Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-c32eb4c267e325b3",
+      "nameZh": "仲恺农业工程学院",
+      "nameEn": "Zhongkai University of Agriculture and Engineering",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-61863303f16f1f01",
+      "nameZh": "周口师范学院",
+      "nameEn": "Zhoukou Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-0b3004b2be000a1a",
+      "nameZh": "珠海科技学院",
+      "nameEn": "Zhuhai College of Science and Technology",
+      "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-0b3004b2be000a1a",
+      "nameZh": "珠海科技学院",
+      "nameEn": "Zhuhai College of Jilin University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-862a0b1eeb7f588c",
+      "nameZh": "遵义师范学院",
+      "nameEn": "Zunyi Normal University",
+      "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-f8e04f1eb3b1e6aa",
+      "nameZh": "遵义医科大学",
+      "nameEn": "Zunyi Medical University",
+      "tierOfficial": "Tier B"
+    }
+  ]
+}
