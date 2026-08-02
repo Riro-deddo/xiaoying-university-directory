@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "id",
+      "universityId",
+      "sourceId",
+      "institutionId",
+      "institutionOfficial",
+      "tierOfficial",
+      "scope",
+      "scopeZh",
+      "extractedAt",
+      "contentHash"
+    ],
+    "properties": {
+      "id": { "type": "string", "minLength": 1, "pattern": "^[a-z0-9-]+$" },
+      "universityId": { "type": "string", "minLength": 1, "pattern": "^[a-z0-9-]+$" },
+      "sourceId": { "type": "string", "minLength": 1, "pattern": "^[a-z0-9-]+$" },
+      "institutionId": { "type": "string", "minLength": 1, "pattern": "^[a-z0-9-]+$" },
+      "institutionOfficial": { "type": "string", "minLength": 1 },
+      "tierOfficial": { "type": "string", "minLength": 1 },
+      "tierZh": { "type": "string", "minLength": 1 },
+      "scoreOfficial": { "type": "string", "minLength": 1 },
+      "scope": { "enum": ["university", "faculty", "programme"] },
+      "scopeZh": { "type": "string", "minLength": 1 },
+      "cycle": { "type": "string", "minLength": 1 },
+      "extractedAt": { "type": "string", "minLength": 1 },
+      "contentHash": { "type": "string", "minLength": 1 }
+    }
+  }
+}

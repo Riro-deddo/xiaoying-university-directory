@@ -1,5 +1,18 @@
+verbose = "info"
+no_progress = true
 max_retries = 2
+max_concurrency = 4
+host_concurrency = 1
+host_request_interval = "600ms"
+user_agent = "Xiaoying-University-Directory/0.1 (+public educational link checker)"
 timeout = 20
-max_concurrency = 3
-accept = [200, 204, 206, 301, 302, 307, 308, 429]
-exclude = ["https://github.com/$"]
+retry_wait_time = 2
+accept = ["100..=103", "200..=299", "429", "500..=599"]
+scheme = ["http", "https"]
+exclude_private = true
+exclude_link_local = true
+exclude_loopback = true
+exclude = [
+  '^https?://localhost(?:[:/]|$)',
+  '^https?://github\.com/.*/edit(?:/|$)',
+]

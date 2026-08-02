@@ -9,16 +9,22 @@
   },
   "scripts": {
     "dev": "cross-env ASTRO_TELEMETRY_DISABLED=1 astro dev",
+    "build:index": "node scripts/build-reverse-index.mjs",
+    "prebuild": "pnpm build:index",
     "build": "cross-env ASTRO_TELEMETRY_DISABLED=1 astro check && cross-env ASTRO_TELEMETRY_DISABLED=1 astro build",
     "test": "vitest",
     "test:run": "vitest run",
     "check:data": "vitest run tests/data.test.ts",
+    "sync:sources": "node scripts/sync-sources.mjs",
     "check:sources": "node scripts/check-sources.mjs"
   },
   "dependencies": {
+    "@mozilla/readability": "^0.6.0",
     "ajv": "8.20.0",
     "astro": "7.1.6",
-    "fuse.js": "7.5.0"
+    "fuse.js": "7.5.0",
+    "linkedom": "^0.18.13",
+    "pdfjs-dist": "^6.2.108"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.6",

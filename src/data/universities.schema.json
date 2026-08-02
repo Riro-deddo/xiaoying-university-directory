@@ -4,7 +4,7 @@
   "items": {
     "type": "object",
     "additionalProperties": false,
-    "required": ["id", "nameZh", "nameEn", "aliases", "qs", "state", "sources"],
+    "required": ["id", "nameZh", "nameEn", "aliases", "qs", "state", "officialDomain", "sourceIds"],
     "properties": {
       "id": { "type": "string", "minLength": 1, "pattern": "^[a-z0-9-]+$" },
       "nameZh": { "type": "string", "minLength": 1 },
@@ -16,26 +16,12 @@
         "required": ["edition", "rank"],
         "properties": {
           "edition": { "const": 2027 },
-          "rank": { "type": "integer", "minimum": 1, "maximum": 100 }
+          "rank": { "type": "integer", "minimum": 1, "maximum": 200 }
         }
       },
       "state": { "enum": ["official-list", "china-requirements", "faculty-only", "not-public", "pending"] },
-      "sources": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "additionalProperties": false,
-          "required": ["id", "labelZh", "url", "kind"],
-          "properties": {
-            "id": { "type": "string", "minLength": 1, "pattern": "^[a-z0-9-]+$" },
-            "labelZh": { "type": "string", "minLength": 1 },
-            "url": { "type": "string", "pattern": "^https://" },
-            "kind": { "enum": ["official-list", "china-requirements", "faculty-page"] },
-            "scopeZh": { "type": "string", "minLength": 1 },
-            "cycle": { "type": "string", "minLength": 1 }
-          }
-        }
-      },
+      "officialDomain": { "type": "string", "pattern": "^https://" },
+      "sourceIds": { "type": "array", "items": { "type": "string", "minLength": 1, "pattern": "^[a-z0-9-]+$" }, "uniqueItems": true },
       "noteZh": { "type": "string", "minLength": 1 }
     }
   }

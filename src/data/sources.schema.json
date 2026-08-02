@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["id", "universityId", "labelZh", "url", "kind", "scope", "scopeZh", "institutionRule", "parser"],
+    "properties": {
+      "id": { "type": "string", "minLength": 1, "pattern": "^[a-z0-9-]+$" },
+      "universityId": { "type": "string", "minLength": 1, "pattern": "^[a-z0-9-]+$" },
+      "labelZh": { "type": "string", "minLength": 1 },
+      "url": { "type": "string", "pattern": "^https://" },
+      "kind": { "enum": ["official-list", "china-requirements", "faculty-page"] },
+      "scope": { "enum": ["university", "faculty", "programme"] },
+      "scopeZh": { "type": "string", "minLength": 1, "pattern": "\\S" },
+      "cycle": { "type": "string", "minLength": 1 },
+      "institutionRule": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["type", "summaryZh"],
+        "properties": {
+          "type": { "enum": ["eligibility", "grade-threshold", "mixed", "none"] },
+          "summaryZh": { "type": "string", "minLength": 1, "pattern": "\\S" },
+          "listedMeaningZh": { "type": "string", "minLength": 1, "pattern": "\\S" },
+          "unlistedMeaningZh": { "type": "string", "minLength": 1, "pattern": "\\S" },
+          "caveatZh": { "type": "string", "minLength": 1, "pattern": "\\S" },
+          "verification": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["reviewedAt", "url", "requiredText"],
+            "properties": {
+              "reviewedAt": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+              "url": { "type": "string", "pattern": "^https://" },
+              "requiredText": {
+                "type": "array",
+                "minItems": 2,
+                "uniqueItems": true,
+                "items": { "type": "string", "minLength": 2, "pattern": "\\S" }
+              }
+            }
+          }
+        },
+        "allOf": [
+          {
+            "if": { "properties": { "type": { "const": "none" } }, "required": ["type"] },
+            "then": {},
+            "else": { "required": ["listedMeaningZh", "unlistedMeaningZh", "verification"] }
+          }
+        ]
+      },
+      "parser": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["mode", "guard"],
+        "properties": {
+          "mode": { "enum": ["html-table", "html-list", "pdf-text", "link-only"] },
+          "selector": { "type": "string", "minLength": 1 },
+          "rowSelector": { "type": "string", "minLength": 1 },
+          "institutionColumn": { "type": "integer", "minimum": 0 },
+          "institutionColumns": { "type": "array", "items": { "type": "integer", "minimum": 0 }, "minItems": 1, "uniqueItems": true },
+          "tierColumn": { "type": "integer", "minimum": 0 },
+          "defaultTierOfficial": { "type": "string", "minLength": 1, "pattern": "\\S" },
+          "scoreColumn": { "type": "integer", "minimum": 0 },
+          "headingPattern": { "type": "string", "minLength": 1 },
+          "rowPattern": { "type": "string", "minLength": 1 },
+          "guard": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["minimumRecords", "maximumRecords", "maximumRemovalRatio"],
+            "properties": {
+              "minimumRecords": { "type": "integer", "minimum": 0 },
+              "maximumRecords": { "type": "integer", "minimum": 0 },
+              "maximumRemovalRatio": { "type": "number", "minimum": 0, "maximum": 1 }
+            }
+          }
+        },
+        "allOf": [
+          {
+            "if": { "properties": { "mode": { "const": "pdf-text" } }, "required": ["mode"] },
+            "then": { "required": ["headingPattern", "rowPattern", "institutionColumn"] }
+          },
+          {
+            "if": { "properties": { "mode": { "const": "html-list" } }, "required": ["mode"] },
+            "then": { "required": ["selector", "defaultTierOfficial"] }
+          }
+        ]
+      }
+    }
+  }
+}
