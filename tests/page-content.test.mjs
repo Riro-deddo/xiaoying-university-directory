@@ -82,6 +82,13 @@ describe('dual-direction search page', () => {
     expect(page).toContain('institutionDirectory = undefined;');
   });
 
+  it('offers a visible accessible retry for failed Chinese-institution data loading', () => {
+    expect(page).toContain('id="institution-retry"');
+    expect(page).toContain('重新加载中国院校查询数据');
+    expect(page).toContain("institutionRetry?.addEventListener('click', () => {");
+    expect(page).toContain('void loadInstitutionDirectory();');
+  });
+
   it('uses the full 28 plus one scope in all reverse-search copy', () => {
     expect(page).toContain('directoryScopeCopy');
     expect(presentation).toContain("directoryScopeCopy = '28 所 QS 2027 世界前 200 英国大学 + 1 所专业院校'");
@@ -120,7 +127,7 @@ describe('published methodology and contributor guidance', () => {
 
   it('states the full cohort, daily automation, and zero-paid-service boundary', () => {
     expect(readme).toContain('QS 2027 世界前 200');
-    expect(readme).toContain('28 所');
+    expect(readme).toContain('28 所 QS 2027 世界前 200 英国大学 + 1 所专业院校');
     expect(readme).toContain('每天');
     expect(readme).toContain('不依赖付费 API');
   });

@@ -3,7 +3,6 @@ import type { InstitutionRecord } from './types';
 
 const punctuation = /\p{P}+/gu;
 const whitespace = /[\s\u3000]+/gu;
-const parentheticalAbbreviation = /\(([^()]+)\)/gu;
 
 export function normalizeInstitutionName(name: string): string {
   return name
@@ -15,18 +14,11 @@ export function normalizeInstitutionName(name: string): string {
 }
 
 function searchNames(record: InstitutionRecord): string[] {
-  const names = [record.nameZh, record.nameEn, ...record.aliases];
-  for (const name of [...names]) {
-    for (const match of name.matchAll(parentheticalAbbreviation)) {
-      if (match[1].trim()) names.push(match[1]);
-    }
-  }
-  return names;
+  return [record.nameZh, record.nameEn, ...record.aliases];
 }
 
-export function createInstitutionSearch(records: InstitutionRecord[]) {
+function exactNameIndex(records: InstitutionRecord[]): Map<string, InstitutionRecord[]> {
   const byNormalizedName = new Map<string, InstitutionRecord[]>();
-
   for (const record of records) {
     for (const name of searchNames(record)) {
       const normalized = normalizeInstitutionName(name);
@@ -35,6 +27,18 @@ export function createInstitutionSearch(records: InstitutionRecord[]) {
       byNormalizedName.set(normalized, matches);
     }
   }
+  return byNormalizedName;
+}
+
+export function exactSearchNameCollisions(records: InstitutionRecord[]): Array<readonly [string, string[]]> {
+  return [...exactNameIndex(records).entries()]
+    .filter(([, matches]) => matches.length > 1)
+    .map(([name, matches]) => [name, matches.map((record) => record.id).sort()] as const)
+    .sort(([left], [right]) => left.localeCompare(right));
+}
+
+export function createInstitutionSearch(records: InstitutionRecord[]) {
+  const byNormalizedName = exactNameIndex(records);
 
   const fuse = new Fuse(records, {
     threshold: 0.34,

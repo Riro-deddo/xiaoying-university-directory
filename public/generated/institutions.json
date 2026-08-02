@@ -343,7 +343,8 @@
     "nameZh": "对外经济贸易大学",
     "nameEn": "University of International Business and Economics",
     "aliases": [
-      "University of International Business and Economics (UIBE)"
+      "University of International Business and Economics (UIBE)",
+      "UIBE"
     ]
   },
   {
@@ -678,15 +679,6 @@
     "aliases": []
   },
   {
-    "id": "the-second-military-medical-university-55f6f4f4",
-    "nameZh": "海军军医大学",
-    "nameEn": "The Second Military Medical University",
-    "aliases": [
-      "第二军医大学",
-      "Second Military Medical University"
-    ]
-  },
-  {
     "id": "shaanxi-normal-university-d6405edd",
     "nameZh": "陕西师范大学",
     "nameEn": "Shaanxi Normal University",
@@ -881,7 +873,8 @@
     "nameEn": "Southern University of Science and Technology",
     "aliases": [
       "South University of Science and Technology (DFC)",
-      "Southern University of Science and Technology (SUSTech)"
+      "Southern University of Science and Technology (SUSTech)",
+      "SUSTech"
     ]
   },
   {
@@ -12721,7 +12714,11 @@
     "nameZh": "中国人民解放军海军军医大学(第二军医大学)",
     "nameEn": "Naval Medical University (The Second Military Medical University)",
     "aliases": [
-      "Naval Medical University"
+      "Naval Medical University",
+      "海军军医大学",
+      "The Second Military Medical University",
+      "第二军医大学",
+      "Second Military Medical University"
     ]
   },
   {
@@ -15308,7 +15305,9 @@
     "id": "cn-2a43c086fb3735e8",
     "nameZh": "香港科技大学(广州)",
     "nameEn": "The Hong Kong University of Science and Technology (Guangzhou)",
-    "aliases": []
+    "aliases": [
+      "Hong Kong University of Science and Technology (Guangzhou)"
+    ]
   },
   {
     "id": "cn-de295a5bab75df4c",

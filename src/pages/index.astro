@@ -160,6 +160,7 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
 
       <section id="institution-results" class="institution-results" aria-labelledby="institution-result-count" hidden>
         <p id="institution-result-count" class="result-count" aria-live="polite">输入中国本科院校名称开始查询</p>
+        <button id="institution-retry" type="button" hidden>重新加载中国院校查询数据</button>
         <div id="institution-chooser" class="institution-chooser" aria-live="polite"></div>
         <div id="institution-evidence" class="institution-evidence"></div>
       </section>
@@ -187,6 +188,7 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
       let institutionDirectory: ReturnType<typeof createInstitutionEvidenceSearch> | undefined;
       let reverseIndexLoading: Promise<void> | undefined;
       let reverseIndexMessage = '';
+      let reverseIndexFailed = false;
       const input = document.querySelector<HTMLInputElement>('#university-search');
       const buttons = [...document.querySelectorAll<HTMLButtonElement>('.filter')];
       const modeButtons = [...document.querySelectorAll<HTMLButtonElement>('[data-search-mode]')];
@@ -199,6 +201,7 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
       const ukDirectory = document.querySelector<HTMLElement>('#uk-directory');
       const institutionResults = document.querySelector<HTMLElement>('#institution-results');
       const institutionCount = document.querySelector<HTMLElement>('#institution-result-count');
+      const institutionRetry = document.querySelector<HTMLButtonElement>('#institution-retry');
       const chooser = document.querySelector<HTMLElement>('#institution-chooser');
       const evidence = document.querySelector<HTMLElement>('#institution-evidence');
       let selected: UniversityState[] = [];
@@ -207,6 +210,7 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
       async function loadInstitutionDirectory() {
         if (institutionDirectory || reverseIndexLoading) return reverseIndexLoading;
         reverseIndexMessage = '正在加载中国院校查询数据…';
+        reverseIndexFailed = false;
         reverseIndexLoading = fetchInstitutionSearchData(
           (url) => fetch(url, { cache: 'force-cache' }),
           data.institutionRegistryUrl,
@@ -222,6 +226,7 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
           })
           .catch(() => {
             reverseIndexMessage = '中国院校查询数据暂时无法加载，请稍后重试。';
+            reverseIndexFailed = true;
             institutionDirectory = undefined;
           })
           .finally(() => { reverseIndexLoading = undefined; update(); });
@@ -254,9 +259,11 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
         if (!institutionDirectory) {
           chooser?.replaceChildren();
           evidence?.replaceChildren();
+          if (institutionRetry) institutionRetry.hidden = !reverseIndexFailed;
           if (institutionCount) institutionCount.textContent = reverseIndexMessage || '正在加载中国院校查询数据…';
           return;
         }
+        if (institutionRetry) institutionRetry.hidden = true;
         const result = institutionDirectory.search(input?.value ?? '');
         chooser?.replaceChildren();
         evidence?.replaceChildren();
@@ -367,6 +374,10 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
         if (result.kind !== 'selected') return;
         if (input) input.value = result.institution.nameZh;
         renderInstitutionResult();
+      });
+      institutionRetry?.addEventListener('click', () => {
+        void loadInstitutionDirectory();
+        update();
       });
 
       function listValue(labelText: string, value: string) {

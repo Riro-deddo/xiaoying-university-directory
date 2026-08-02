@@ -134,12 +134,6 @@
       "tierOfficial": "Priority List of Chinese universities – October 2024"
     },
     {
-      "institutionId": "the-second-military-medical-university-55f6f4f4",
-      "nameZh": "海军军医大学",
-      "nameEn": "The Second Military Medical University",
-      "tierOfficial": "Priority List of Chinese universities – October 2024"
-    },
-    {
       "institutionId": "hainan-university-70fc5cd1",
       "nameZh": "海南大学",
       "nameEn": "Hainan University",
@@ -467,6 +461,12 @@
       "institutionId": "china-agricultural-university-7f24114a",
       "nameZh": "中国农业大学",
       "nameEn": "China Agricultural University",
+      "tierOfficial": "Priority List of Chinese universities – October 2024"
+    },
+    {
+      "institutionId": "cn-9f87dd4ea325c693",
+      "nameZh": "中国人民解放军海军军医大学(第二军医大学)",
+      "nameEn": "The Second Military Medical University",
       "tierOfficial": "Priority List of Chinese universities – October 2024"
     },
     {

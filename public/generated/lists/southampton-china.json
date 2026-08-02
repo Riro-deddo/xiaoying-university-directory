@@ -657,7 +657,7 @@
     },
     {
       "institutionId": "cn-59583c392cc9c72b",
-      "nameZh": "大连外国语大学",
+      "nameZh": "大连外国语学院",
       "nameEn": "Dalian University of Foreign Languages",
       "tierOfficial": "Tier B"
     },
@@ -684,6 +684,12 @@
       "nameZh": "德州学院",
       "nameEn": "Dezhou University",
       "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-9f87dd4ea325c693",
+      "nameZh": "第二军医大学",
+      "nameEn": "Second Military Medical University",
+      "tierOfficial": "Tier B"
     },
     {
       "institutionId": "cn-09f63fd100d867b1",
@@ -873,7 +879,7 @@
     },
     {
       "institutionId": "cn-3eed51e9f008d2ea",
-      "nameZh": "阜阳师范大学",
+      "nameZh": "阜阳师范学院",
       "nameEn": "Fuyang Normal University",
       "tierOfficial": "Tier C"
     },
@@ -975,7 +981,7 @@
     },
     {
       "institutionId": "cn-13a3c963f474ff79",
-      "nameZh": "广东技术师范大学",
+      "nameZh": "广东技术师范学院",
       "nameEn": "Guangdong Polytechnic Normal University",
       "tierOfficial": "Tier C"
     },
@@ -1307,12 +1313,6 @@
       "institutionId": "cn-f5da5f1750ade2b1",
       "nameZh": "哈尔滨音乐学院",
       "nameEn": "Harbin Conservatory of Music",
-      "tierOfficial": "Tier B"
-    },
-    {
-      "institutionId": "the-second-military-medical-university-55f6f4f4",
-      "nameZh": "海军军医大学",
-      "nameEn": "Second Military Medical University",
       "tierOfficial": "Tier B"
     },
     {
@@ -2210,16 +2210,16 @@
       "tierOfficial": "Tier B"
     },
     {
-      "institutionId": "cn-9e338bea93785dc4",
-      "nameZh": "嘉兴大学",
-      "nameEn": "Jiaxing University",
-      "tierOfficial": "Tier B"
-    },
-    {
       "institutionId": "cn-bc83fe0a6560fe96",
       "nameZh": "嘉兴南湖学院",
       "nameEn": "Jiaxing Nanhu University",
       "tierOfficial": "Tier C"
+    },
+    {
+      "institutionId": "cn-9e338bea93785dc4",
+      "nameZh": "嘉兴学院",
+      "nameEn": "Jiaxing University",
+      "tierOfficial": "Tier B"
     },
     {
       "institutionId": "cn-5f1f3bf01578f017",
@@ -2919,7 +2919,7 @@
     },
     {
       "institutionId": "cn-420d922c78eeff4e",
-      "nameZh": "宁夏师范大学",
+      "nameZh": "宁夏师范学院",
       "nameEn": "Ningxia Normal University",
       "tierOfficial": "Tier C"
     },
@@ -4659,7 +4659,7 @@
     },
     {
       "institutionId": "cn-8e869295f3c945de",
-      "nameZh": "伊犁师范大学",
+      "nameZh": "伊犁师范学院",
       "nameEn": "Yili Normal University",
       "tierOfficial": "Tier C"
     },
@@ -5298,6 +5298,12 @@
       "nameZh": "珠海科技学院",
       "nameEn": "Zhuhai College of Science and Technology",
       "tierOfficial": "Tier B"
+    },
+    {
+      "institutionId": "cn-0b3004b2be000a1a",
+      "nameZh": "珠海科技学院",
+      "nameEn": "Zhuhai College of Jilin University",
+      "tierOfficial": "Tier C"
     },
     {
       "institutionId": "cn-862a0b1eeb7f588c",

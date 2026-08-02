@@ -352,6 +352,13 @@
       "scoreOfficial": "2:1: 70%;2:2: 65%"
     },
     {
+      "institutionId": "beijing-normal-university-hong-kong-baptist-university-united-international-college-6107eb6a",
+      "nameZh": "北京师范大学-香港浸会大学联合国际学院",
+      "nameEn": "Beijing Normal University–Hong Kong Baptist University United International College",
+      "tierOfficial": "TNE",
+      "scoreOfficial": "2:1: GPA 2.85;2:2: GPA 2.5"
+    },
+    {
       "institutionId": "cn-8ba891e72f16f9c0",
       "nameZh": "北京石油化工学院",
       "nameEn": "Beijing Institute of Petrochemical Technology",
@@ -427,13 +434,6 @@
       "nameEn": "Beijing University of Chinese Medicine",
       "tierOfficial": "B",
       "scoreOfficial": "2:1: 75%;2:2: 70%"
-    },
-    {
-      "institutionId": "beijing-normal-university-hong-kong-baptist-university-united-international-college-6107eb6a",
-      "nameZh": "北师香港浸会大学",
-      "nameEn": "Beijing Normal University–Hong Kong Baptist University United International College",
-      "tierOfficial": "TNE",
-      "scoreOfficial": "2:1: GPA 2.85;2:2: GPA 2.5"
     },
     {
       "institutionId": "cn-ae8da03792a37640",

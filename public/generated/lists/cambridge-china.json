@@ -200,12 +200,6 @@
       "tierOfficial": "Group A"
     },
     {
-      "institutionId": "the-second-military-medical-university-55f6f4f4",
-      "nameZh": "海军军医大学",
-      "nameEn": "Second Military Medical University",
-      "tierOfficial": "Group B"
-    },
-    {
       "institutionId": "hainan-university-70fc5cd1",
       "nameZh": "海南大学",
       "nameEn": "Hainan University",
@@ -648,6 +642,12 @@
       "nameZh": "中国人民大学",
       "nameEn": "Renmin University of China",
       "tierOfficial": "Group A"
+    },
+    {
+      "institutionId": "cn-9f87dd4ea325c693",
+      "nameZh": "中国人民解放军海军军医大学(第二军医大学)",
+      "nameEn": "Second Military Medical University",
+      "tierOfficial": "Group B"
     },
     {
       "institutionId": "cn-c6c5fad24bd19c2a",

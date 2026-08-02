@@ -597,13 +597,6 @@
       "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
     },
     {
-      "institutionId": "the-second-military-medical-university-55f6f4f4",
-      "nameZh": "海军军医大学",
-      "nameEn": "Second Military Medical University",
-      "tierOfficial": "Postgraduate institution requirements",
-      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
-    },
-    {
       "institutionId": "hainan-university-70fc5cd1",
       "nameZh": "海南大学",
       "nameEn": "Hainan University (82-89% for Law*)",
@@ -2338,6 +2331,13 @@
       "nameEn": "People's Public Security University of China (85-89% for Public Security*) (82-89% for Law*)",
       "tierOfficial": "Postgraduate institution requirements",
       "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-9f87dd4ea325c693",
+      "nameZh": "中国人民解放军海军军医大学(第二军医大学)",
+      "nameEn": "Second Military Medical University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
     },
     {
       "institutionId": "cn-7933a994467dbd1c",

@@ -26,7 +26,7 @@ export async function buildPublicData({ outputDir, institutions, requirements, s
         if (!institution) throw new Error(`Public list fact references unknown institution: ${fact.id}`);
         return {
           institutionId: institution.id,
-          nameZh: institution.nameZh,
+          nameZh: fact.institutionNameZh ?? institution.nameZh,
           nameEn: fact.institutionOfficial,
           tierOfficial: fact.tierOfficial,
           ...(fact.scoreOfficial ? { scoreOfficial: fact.scoreOfficial } : {}),

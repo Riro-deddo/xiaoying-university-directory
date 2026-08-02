@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { createInstitutionSearch, normalizeInstitutionName } from '../src/lib/institution-search';
+import { createInstitutionSearch, exactSearchNameCollisions, normalizeInstitutionName } from '../src/lib/institution-search';
 import { loadInstitutions } from '../src/lib/data';
 import type { InstitutionRecord } from '../src/lib/types';
 
@@ -29,13 +29,18 @@ describe('createInstitutionSearch', () => {
     expect(search.find(query).map((record) => record.id)).toEqual([id]);
   });
 
-  it('finds an abbreviation preserved in parentheses in an official English name', () => {
+  it('uses only explicit aliases for standalone abbreviations', () => {
     const abbreviated = createInstitutionSearch([
-      { id: 'uibe', nameZh: '对外经济贸易大学', nameEn: 'University of International Business and Economics (UIBE)', aliases: [] },
-      { id: 'sustech', nameZh: '南方科技大学', nameEn: 'Southern University of Science and Technology (SUSTech)', aliases: [] },
+      { id: 'uibe', nameZh: '对外经济贸易大学', nameEn: 'University of International Business and Economics (UIBE)', aliases: ['UIBE'] },
+      { id: 'sustech', nameZh: '南方科技大学', nameEn: 'Southern University of Science and Technology (SUSTech)', aliases: ['SUSTech'] },
     ]);
     expect(abbreviated.find('UIBE').map((record) => record.id)).toEqual(['uibe']);
     expect(abbreviated.find('SUSTech').map((record) => record.id)).toEqual(['sustech']);
+
+    const noDerivedAlias = createInstitutionSearch([
+      { id: 'uibe', nameZh: '对外经济贸易大学', nameEn: 'University of International Business and Economics (UIBE)', aliases: [] },
+    ]);
+    expect(noDerivedAlias.find('UIBE')).toEqual([]);
   });
 
   it('returns all exact matches for a reviewed ambiguous English name without choosing one', () => {
@@ -54,21 +59,7 @@ describe('createInstitutionSearch', () => {
 
   it('keeps only the two reviewed normalized English collisions and singular canonical Chinese names', () => {
     const institutions = loadInstitutions();
-    const normalizedOwners = new Map<string, string[]>();
-    for (const record of institutions) {
-      for (const name of [record.nameZh, record.nameEn, ...record.aliases]) {
-        const normalized = normalizeInstitutionName(name);
-        const owners = normalizedOwners.get(normalized) ?? [];
-        if (!owners.includes(record.id)) owners.push(record.id);
-        normalizedOwners.set(normalized, owners);
-      }
-    }
-
-    const collisions = [...normalizedOwners.entries()]
-      .filter(([, owners]) => owners.length > 1)
-      .map(([normalized, owners]) => [normalized, [...owners].sort()] as const)
-      .sort(([left], [right]) => left.localeCompare(right));
-    expect(collisions).toEqual([
+    expect(exactSearchNameCollisions(institutions)).toEqual([
       ['taizhou university', ['cn-79d6215ce67db635', 'cn-c2388dc8089d8ecb']],
       ['wuyi university', ['cn-0f4e2477ec1b1de6', 'cn-606aa744bd4add70']],
     ]);

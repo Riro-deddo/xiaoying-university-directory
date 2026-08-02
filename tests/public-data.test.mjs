@@ -68,4 +68,28 @@ describe('public lazy-data build', () => {
     expect(result.institutionRecords).toBeGreaterThan(2_900);
     expect(JSON.parse(await readFile(join(outputDir, 'institutions.json'), 'utf8'))).toHaveLength(result.institutionRecords);
   });
+
+  it('preserves fact-level official Chinese row names for renamed institutions', async () => {
+    const root = process.cwd();
+    const outputDir = await mkdtemp(join(tmpdir(), 'xiaoying-public-row-names-'));
+    const readJson = async (...parts) => JSON.parse(await readFile(join(root, ...parts), 'utf8'));
+    const [institutions, requirements, sources, statuses] = await Promise.all([
+      readJson('src', 'data', 'institutions.json'),
+      readJson('src', 'data', 'generated', 'requirements.json'),
+      readJson('src', 'data', 'sources.json'),
+      readJson('src', 'data', 'status.json'),
+    ]);
+    await buildPublicData({ outputDir, institutions, requirements, sources, statuses });
+
+    const rowsFor = async (sourceId) => (JSON.parse(await readFile(join(outputDir, 'lists', `${sourceId}.json`), 'utf8'))).rows;
+    const southamptonRows = await rowsFor('southampton-china');
+    const southamptonOldNames = ['阜阳师范学院', '广东技术师范学院', '嘉兴学院', '宁夏师范学院', '伊犁师范学院'];
+    expect(southamptonRows.map((row) => row.nameZh)).toEqual(expect.arrayContaining(southamptonOldNames));
+
+    const byId = new Map(institutions.map((institution) => [institution.id, institution]));
+    const expectedSheffieldNames = requirements
+      .filter((fact) => fact.sourceId === 'sheffield-china' && fact.institutionNameZh && fact.institutionNameZh !== byId.get(fact.institutionId)?.nameZh)
+      .map((fact) => fact.institutionNameZh);
+    expect((await rowsFor('sheffield-china')).map((row) => row.nameZh)).toEqual(expect.arrayContaining(expectedSheffieldNames));
+  });
 });
