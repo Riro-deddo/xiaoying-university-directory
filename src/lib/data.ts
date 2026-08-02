@@ -1,5 +1,7 @@
 import Ajv2020 from 'ajv/dist/2020.js';
 import type { ErrorObject } from 'ajv';
+import chinaRuleAuditJson from '../data/china-rule-audit.json';
+import chinaRuleAuditSchema from '../data/china-rule-audit.schema.json';
 import institutionsJson from '../data/institutions.json';
 import institutionsSchema from '../data/institutions.schema.json';
 import requirementsJson from '../data/generated/requirements.json';
@@ -11,18 +13,29 @@ import universitiesJson from '../data/universities.json';
 import universitiesSchema from '../data/universities.schema.json';
 import type {
   InstitutionRecord,
+  DirectoryCategory,
   OfficialSourceConfig,
   RequirementFact,
   StatusMap,
   University,
+  UniversityState,
   UniversityWithStatus,
 } from './types';
+
+export interface ChinaRuleAuditRow {
+  universityId: string;
+  directoryCategory: DirectoryCategory;
+  expectedState: UniversityState;
+  reviewDate: string;
+  finding: string;
+}
 
 const ajv = new Ajv2020({ allErrors: true });
 const validateUniversitySchema = ajv.compile(universitiesSchema);
 const validateSourceSchema = ajv.compile(sourcesSchema);
 const validateInstitutionSchema = ajv.compile(institutionsSchema);
 const validateRequirementSchema = ajv.compile(requirementsSchema);
+const validateChinaRuleAuditSchema = ajv.compile(chinaRuleAuditSchema);
 
 export class DataValidationError extends Error {
   constructor(
@@ -97,6 +110,27 @@ export function validateInstitutionData(input: unknown): boolean {
 
 export function validateRequirementData(input: unknown): boolean {
   return validateRequirementSchema(input) as boolean;
+}
+
+export function loadChinaRuleAudit(input: unknown = chinaRuleAuditJson): ChinaRuleAuditRow[] {
+  assertSchema(
+    validateChinaRuleAuditSchema(input),
+    validateChinaRuleAuditSchema.errors,
+    'China rule audit',
+  );
+
+  const records = input as ChinaRuleAuditRow[];
+  const indexesByUniversityId = new Map<string, number[]>();
+  records.forEach((record, index) => {
+    const indexes = indexesByUniversityId.get(record.universityId) ?? [];
+    indexes.push(index);
+    indexesByUniversityId.set(record.universityId, indexes);
+  });
+  const duplicates = [...indexesByUniversityId.entries()]
+    .filter(([, indexes]) => indexes.length > 1)
+    .flatMap(([universityId, indexes]) => indexes.map((index) => `/${index}/universityId duplicate ${universityId}`));
+  if (duplicates.length > 0) throw new DataValidationError('China rule audit', duplicates);
+  return records;
 }
 
 export function loadInstitutions(input: unknown = institutionsJson): InstitutionRecord[] {

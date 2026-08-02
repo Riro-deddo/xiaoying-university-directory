@@ -12,8 +12,9 @@ function sourceIsOfficial(source, university) {
   }
 }
 
-export function evaluateCoverage({ cohort, universities, sources }) {
+export function evaluateCoverage({ cohort, universities, sources, audit }) {
   const cohortIds = new Set(cohort.universities.map((item) => item.id));
+  const expectedDirectoryIds = new Set([...cohortIds, 'london-business-school']);
   const universityIds = universities.map((item) => item.id);
   const rankedUniversityIds = universities
     .filter((item) => item.directoryCategory === 'qs-top-200')
@@ -24,6 +25,7 @@ export function evaluateCoverage({ cohort, universities, sources }) {
   const sourceIds = sources.map((item) => item.id);
   const sourceById = new Map(sources.map((item) => [item.id, item]));
   const failures = [];
+  const auditRows = Array.isArray(audit) ? audit : [];
 
   if (
     rankedUniversityIds.length !== cohortIds.size
@@ -35,6 +37,41 @@ export function evaluateCoverage({ cohort, universities, sources }) {
     failures.push('directory scope must equal the QS cohort plus London Business School');
   }
   if (new Set(sourceIds).size !== sourceIds.length) failures.push('duplicate source IDs');
+
+  if (!Array.isArray(audit)) {
+    failures.push('missing audit matrix');
+  } else {
+    const auditRowsByUniversityId = new Map();
+    for (const row of auditRows) {
+      const rows = auditRowsByUniversityId.get(row.universityId) ?? [];
+      rows.push(row);
+      auditRowsByUniversityId.set(row.universityId, rows);
+    }
+    for (const [universityId, rows] of auditRowsByUniversityId) {
+      if (rows.length > 1) failures.push(`duplicate audit row: ${universityId}`);
+    }
+    if (
+      auditRows.length !== expectedDirectoryIds.size
+      || auditRowsByUniversityId.size !== expectedDirectoryIds.size
+      || [...expectedDirectoryIds].some((id) => !auditRowsByUniversityId.has(id))
+      || [...auditRowsByUniversityId.keys()].some((id) => !expectedDirectoryIds.has(id))
+    ) {
+      failures.push('audit rows must cover every directory university exactly once');
+    }
+    for (const row of auditRows) {
+      const university = universities.find((item) => item.id === row.universityId);
+      if (!university) {
+        failures.push(`audit university is unregistered: ${row.universityId}`);
+        continue;
+      }
+      if (university.directoryCategory !== row.directoryCategory) {
+        failures.push(`audit directory category mismatch: ${row.universityId}`);
+      }
+      if (university.state !== row.expectedState) {
+        failures.push(`audit state mismatch: ${row.universityId}`);
+      }
+    }
+  }
 
   for (const university of universities) {
     if (university.state === 'pending') failures.push(`pending university: ${university.id}`);
@@ -65,14 +102,16 @@ export function evaluateCoverage({ cohort, universities, sources }) {
     }
   }
 
-  const count = (state) => universities.filter((item) => item.state === state).length;
+  const auditCount = (state) => auditRows.filter((item) => item.expectedState === state).length;
   return {
     failures,
     counts: {
       cohortUniversities: cohortIds.size,
-      fullPublicLists: count('official-list'),
-      facultyOnlyLists: count('faculty-only'),
-      noPublicListRecords: count('not-public'),
+      qsUniversities: auditRows.filter((item) => item.directoryCategory === 'qs-top-200').length,
+      specialistUniversities: auditRows.filter((item) => item.directoryCategory === 'specialist').length,
+      fullPublicLists: auditCount('official-list'),
+      ruleOnlyUniversities: auditCount('china-requirements'),
+      noPublicListRecords: auditCount('not-public'),
       parserEnabledSources: sources.filter((item) => item.parser.mode !== 'link-only').length,
       linkOnlySources: sources.filter((item) => item.parser.mode === 'link-only').length,
     },
@@ -82,15 +121,18 @@ export function evaluateCoverage({ cohort, universities, sources }) {
 async function main() {
   const root = join(dirname(fileURLToPath(import.meta.url)), '..');
   const dataRoot = process.env.SOURCE_COVERAGE_DATA_ROOT ?? join(root, 'src', 'data');
-  const [cohort, universities, sources] = await Promise.all([
+  const [cohort, universities, sources, audit] = await Promise.all([
     readFile(join(dataRoot, 'qs-2027-top-200-uk.json'), 'utf8').then(JSON.parse),
     readFile(join(dataRoot, 'universities.json'), 'utf8').then(JSON.parse),
     readFile(join(dataRoot, 'sources.json'), 'utf8').then(JSON.parse),
+    readFile(join(dataRoot, 'china-rule-audit.json'), 'utf8').then(JSON.parse),
   ]);
-  const { counts, failures } = evaluateCoverage({ cohort, universities, sources });
+  const { counts, failures } = evaluateCoverage({ cohort, universities, sources, audit });
   console.log(`Cohort universities: ${counts.cohortUniversities}`);
+  console.log(`QS universities: ${counts.qsUniversities}`);
+  console.log(`Specialist universities: ${counts.specialistUniversities}`);
   console.log(`Full public lists: ${counts.fullPublicLists}`);
-  console.log(`Faculty-only lists: ${counts.facultyOnlyLists}`);
+  console.log(`Rule-only universities: ${counts.ruleOnlyUniversities}`);
   console.log(`No-public-list records: ${counts.noPublicListRecords}`);
   console.log(`Parser-enabled sources: ${counts.parserEnabledSources}`);
   console.log(`Link-only sources: ${counts.linkOnlySources}`);

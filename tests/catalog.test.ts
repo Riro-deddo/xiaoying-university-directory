@@ -4,6 +4,8 @@ import universities from '../src/data/universities.json';
 import sources from '../src/data/sources.json';
 import institutions from '../src/data/institutions.json';
 import requirements from '../src/data/generated/requirements.json';
+import audit from '../src/data/china-rule-audit.json';
+import { loadChinaRuleAudit } from '../src/lib/data';
 
 describe('QS cohort and official source registry', () => {
   it('freezes only the official QS 2027 UK top-200 cohort', () => {
@@ -29,6 +31,30 @@ describe('QS cohort and official source registry', () => {
 
     expect(publicIds).toEqual(cohortIds);
     expect(universities.every((item) => item.state !== 'pending')).toBe(true);
+  });
+
+  it('loads a reviewed 29-school China rule audit with the binding classifications', () => {
+    expect(loadChinaRuleAudit()).toEqual(audit);
+    expect(audit).toHaveLength(29);
+    expect(audit.filter((row) => row.expectedState === 'official-list').map((row) => row.universityId).sort()).toEqual([
+      'university-college-london',
+      'university-of-bristol',
+      'university-of-cambridge',
+      'university-of-edinburgh',
+      'university-of-glasgow',
+      'university-of-nottingham',
+      'university-of-sheffield',
+      'university-of-southampton',
+      'university-of-warwick',
+    ].sort());
+    expect(audit.find((row) => row.universityId === 'university-of-manchester')).toMatchObject({
+      expectedState: 'china-requirements',
+      directoryCategory: 'qs-top-200',
+    });
+    expect(audit.find((row) => row.universityId === 'university-of-exeter')).toMatchObject({
+      expectedState: 'not-public',
+      finding: expect.stringMatching(/2026.*removed.*ranking.*all.*Ministry of Education.*uniform/i),
+    });
   });
 
   it('references only explicitly registered official sources', () => {
