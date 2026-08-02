@@ -4,6 +4,7 @@ import { dirname, join } from 'node:path';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { decideSourceUpdate, reconcileInstitution, repairGlasgowBilingualPdfNames, syncRegisteredSources } from '../scripts/sync-sources.mjs';
 import reviewedRegistry from '../src/data/institutions.json';
+import reviewedRequirements from '../src/data/generated/requirements.json';
 
 const guard = {
   minimumRecords: 80,
@@ -140,6 +141,158 @@ describe('decideSourceUpdate', () => {
 });
 
 describe('syncRegisteredSources', () => {
+  it('reconciles every reviewed search identity before source refresh and remains idempotent', async () => {
+    const paths = await createFiles([]);
+    const obsoleteIds = [
+      'cn-0f8a1bf9dbc39920', 'cn-ac97c4410bc4bf72', 'cn-c3666f26ac904b46', 'cn-9c79fa3641a2c89f',
+      'cn-6df0ef9150bd1ff2', 'cn-555a8af33ef74196', 'cn-675dc89119eb7546', 'cn-7d594ee83f0ce08b',
+      'cn-8662abe7b31277c2', 'cn-294892d926a099b1', 'cn-eb05e0e2c3858178', 'cn-228da9869d132d1c',
+      'cn-4608925f6f37c011', 'cn-f31b82d745f6036c', 'cn-5014762bda41f881', 'cn-e198010d37f04649',
+    ];
+    const expectedCanonicalFactCounts = new Map([
+      ['cn-38fe392afb9e622f', 3],
+      ['university-of-international-business-and-economics-2a13872d', 8],
+      ['cn-fd334bd375069320', 7],
+      ['cn-2a43c086fb3735e8', 2],
+      ['cn-5e462a0463a6da6f', 3],
+      ['cn-3016ad038539ee1a', 2],
+      ['cn-798a43f1d58b93f6', 4],
+      ['cn-d65eedfa9c42cf79', 4],
+      ['cn-d2d1c47bd0bdaac2', 3],
+      ['cn-3eed51e9f008d2ea', 4],
+      ['cn-13a3c963f474ff79', 4],
+      ['cn-9e338bea93785dc4', 4],
+      ['cn-420d922c78eeff4e', 4],
+      ['cn-e1081944b32c4a84', 3],
+      ['cn-c54a8bf9427f90d1', 3],
+      ['cn-8e869295f3c945de', 4],
+    ]);
+    const expectedCanonicalNames = new Map([
+      ['cn-fd334bd375069320', 'Southern University of Science and Technology'],
+      ['cn-6e6aaf892c17a701', 'Nanchang Institute of Engineering'],
+      ['cn-b8f2ae9f9e50d8de', 'Nanchang Institute of Technology'],
+      ['cn-5cd7c382c835dda0', 'Beijing Normal University Zhuhai Branch Campus'],
+      ['cn-d5e12e3100f1bfb3', 'Beijing Normal University, Zhuhai Campus'],
+      ['cn-a384f90b16d88cfa', 'China University of Geosciences (Wuhan)'],
+      ['cn-d65eedfa9c42cf79', 'College of Applied Science, Jiangxi University of Science and Technology'],
+      ['cn-c820c6a1cc7042ee', 'Gannan University of Science and Technology'],
+    ]);
+    const expectedSourceIds = new Map([
+      ['cn-38fe392afb9e622f', ['glasgow-china', 'sheffield-china', 'southampton-china']],
+      ['university-of-international-business-and-economics-2a13872d', ['bristol-china', 'cambridge-china', 'glasgow-china', 'nottingham-china', 'sheffield-china', 'southampton-china', 'ucl-china', 'warwick-china']],
+      ['cn-fd334bd375069320', ['bristol-china', 'cambridge-china', 'glasgow-china', 'nottingham-china', 'sheffield-china', 'southampton-china', 'warwick-china']],
+      ['cn-2a43c086fb3735e8', ['glasgow-china', 'sheffield-china']],
+      ['cn-5e462a0463a6da6f', ['glasgow-china', 'sheffield-china', 'southampton-china']],
+      ['cn-3016ad038539ee1a', ['sheffield-china', 'southampton-china']],
+      ['cn-798a43f1d58b93f6', ['glasgow-china', 'sheffield-china', 'southampton-china']],
+      ['cn-d65eedfa9c42cf79', ['glasgow-china', 'sheffield-china', 'southampton-china']],
+      ['cn-d2d1c47bd0bdaac2', ['glasgow-china', 'sheffield-china', 'southampton-china']],
+      ['cn-3eed51e9f008d2ea', ['glasgow-china', 'sheffield-china', 'southampton-china']],
+      ['cn-13a3c963f474ff79', ['glasgow-china', 'sheffield-china', 'southampton-china']],
+      ['cn-9e338bea93785dc4', ['glasgow-china', 'sheffield-china', 'southampton-china']],
+      ['cn-420d922c78eeff4e', ['glasgow-china', 'sheffield-china', 'southampton-china']],
+      ['cn-e1081944b32c4a84', ['sheffield-china', 'southampton-china']],
+      ['cn-c54a8bf9427f90d1', ['sheffield-china', 'southampton-china']],
+      ['cn-8e869295f3c945de', ['glasgow-china', 'sheffield-china', 'southampton-china']],
+    ]);
+
+    const first = await syncRegisteredSources({
+      ...paths,
+      sources: [],
+      institutions: structuredClone(reviewedRegistry),
+      requirements: structuredClone(reviewedRequirements),
+      status: {},
+    });
+
+    expect(first.institutions).toHaveLength(2915);
+    expect(first.institutions.some((record) => obsoleteIds.includes(record.id))).toBe(false);
+    expect(first.requirements.some((fact) => obsoleteIds.includes(fact.institutionId))).toBe(false);
+    for (const [id, expectedCount] of expectedCanonicalFactCounts) {
+      expect(first.requirements.filter((fact) => fact.institutionId === id)).toHaveLength(expectedCount);
+    }
+    for (const [id, sourceIds] of expectedSourceIds) {
+      expect([...new Set(first.requirements.filter((fact) => fact.institutionId === id).map((fact) => fact.sourceId))].sort()).toEqual(sourceIds);
+    }
+    for (const [id, expectedName] of expectedCanonicalNames) {
+      expect(first.institutions.find((record) => record.id === id)?.nameEn).toBe(expectedName);
+    }
+    expect(first.requirements).toEqual(expect.arrayContaining([
+      expect.objectContaining({ sourceId: 'glasgow-china', institutionId: 'cn-d65eedfa9c42cf79', institutionOfficial: 'Gannan University of Science and Technology', tierOfficial: 'E' }),
+      expect.objectContaining({ sourceId: 'southampton-china', institutionId: 'cn-d65eedfa9c42cf79', institutionOfficial: 'College of Applied Science, Jiangxi University of Science and Technology', tierOfficial: 'Tier C' }),
+      expect.objectContaining({ sourceId: 'southampton-china', institutionId: 'cn-c820c6a1cc7042ee', institutionOfficial: 'Gannan University of Science and Technology', tierOfficial: 'Tier B' }),
+    ]));
+    const registryNames = first.institutions.flatMap((record) => [record.nameZh, record.nameEn, ...record.aliases]);
+    for (const malformedName of [
+      ')北方民族大学', ')对外经济贸易大学', ')南方科技大学', ')香港科技大学(广州)', ')浙大宁波理工学院', '浙江树人学院浙江树人大学',
+    ]) expect(registryNames).not.toContain(malformedName);
+
+    const second = await syncRegisteredSources({
+      ...paths,
+      sources: [],
+      institutions: structuredClone(first.institutions),
+      requirements: structuredClone(first.requirements),
+      status: {},
+    });
+    expect(second.institutions).toEqual(first.institutions);
+    expect(second.requirements).toEqual(first.requirements);
+  });
+
+  it('does not recreate reviewed duplicate identities on a repeated bilingual source refresh', async () => {
+    const paths = await createFiles([]);
+    const migrationSource = {
+      ...source,
+      id: 'glasgow-china',
+      parser: {
+        mode: 'html-table',
+        rowSelector: 'tbody tr',
+        institutionColumn: 0,
+        nameZhColumn: 1,
+        tierColumn: 2,
+        guard: { minimumRecords: 4, maximumRecords: 4, maximumRemovalRatio: 0 },
+      },
+    };
+    const institutions = reviewedRegistry.filter((record) => [
+      'cn-d2d1c47bd0bdaac2', 'cn-8662abe7b31277c2', 'cn-38fe392afb9e622f', 'cn-0f8a1bf9dbc39920',
+      'cn-2a43c086fb3735e8', 'cn-9c79fa3641a2c89f',
+    ].includes(record.id));
+    const response = () => new Response(`
+      <table><tbody>
+        <tr><td>Foshan University</td><td>佛山大学</td><td>B</td></tr>
+        <tr><td>Foshan University</td><td>佛山科学技术学院</td><td>B</td></tr>
+        <tr><td>Beifang Minzu University (Northern Minzu University</td><td>)北方民族大学</td><td>C</td></tr>
+        <tr><td>Hong Kong University of Science and Technology (Guangzhou</td><td>)香港科技大学 (广州)</td><td>TNE</td></tr>
+      </tbody></table>
+    `, { status: 200, headers: { 'content-type': 'text/html' } });
+
+    const first = await syncRegisteredSources({
+      ...paths,
+      sources: [migrationSource],
+      institutions: structuredClone(institutions),
+      requirements: [],
+      status: {},
+      fetchImpl: vi.fn().mockImplementation(response),
+      minimumGapMs: 0,
+      now: new Date('2026-08-02T10:00:00Z'),
+    });
+    const second = await syncRegisteredSources({
+      ...paths,
+      sources: [migrationSource],
+      institutions: structuredClone(first.institutions),
+      requirements: structuredClone(first.requirements),
+      status: first.status,
+      fetchImpl: vi.fn().mockImplementation(response),
+      minimumGapMs: 0,
+      now: new Date('2026-08-02T10:00:00Z'),
+    });
+
+    expect(second.anomalies).toEqual([]);
+    expect(second.institutions.map((record) => record.id).sort()).toEqual(['cn-2a43c086fb3735e8', 'cn-38fe392afb9e622f', 'cn-d2d1c47bd0bdaac2']);
+    expect(second.requirements.map((fact) => fact.institutionId).sort()).toEqual(['cn-2a43c086fb3735e8', 'cn-38fe392afb9e622f', 'cn-d2d1c47bd0bdaac2', 'cn-d2d1c47bd0bdaac2']);
+    expect(second.requirements.filter((fact) => fact.institutionId === 'cn-d2d1c47bd0bdaac2').map((fact) => fact.institutionNameZh).sort())
+      .toEqual(['佛山大学', '佛山科学技术学院']);
+    expect(second.requirements).toEqual(first.requirements);
+  });
+
   it('reconciles existing Chinese, English, and alias names before creating a deterministic bilingual record', () => {
     const existing = {
       id: 'existing-institution',

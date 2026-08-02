@@ -26,6 +26,63 @@ const reviewedInstitutionIdMigrations = new Map([
   ['cn-3e8df3d654a710b7', 'cn-992cbbacda23f7e8'],
   ['cn-daf081c02379f0bd', 'cn-cfc7b6e5ea305c78'],
   ['cn-24a4136d3396b70b', 'cn-b0c5ad9361839895'],
+  ['cn-0f8a1bf9dbc39920', 'cn-38fe392afb9e622f'],
+  ['cn-ac97c4410bc4bf72', 'university-of-international-business-and-economics-2a13872d'],
+  ['cn-c3666f26ac904b46', 'cn-fd334bd375069320'],
+  ['cn-9c79fa3641a2c89f', 'cn-2a43c086fb3735e8'],
+  ['cn-6df0ef9150bd1ff2', 'cn-5e462a0463a6da6f'],
+  ['cn-555a8af33ef74196', 'cn-3016ad038539ee1a'],
+  ['cn-675dc89119eb7546', 'cn-798a43f1d58b93f6'],
+  ['cn-7d594ee83f0ce08b', 'cn-d65eedfa9c42cf79'],
+  ['cn-8662abe7b31277c2', 'cn-d2d1c47bd0bdaac2'],
+  ['cn-294892d926a099b1', 'cn-3eed51e9f008d2ea'],
+  ['cn-eb05e0e2c3858178', 'cn-13a3c963f474ff79'],
+  ['cn-228da9869d132d1c', 'cn-9e338bea93785dc4'],
+  ['cn-4608925f6f37c011', 'cn-420d922c78eeff4e'],
+  ['cn-f31b82d745f6036c', 'cn-e1081944b32c4a84'],
+  ['cn-5014762bda41f881', 'cn-c54a8bf9427f90d1'],
+  ['cn-e198010d37f04649', 'cn-8e869295f3c945de'],
+]);
+
+const reviewedHistoricalInstitutionIds = new Set([
+  'cn-675dc89119eb7546',
+  'cn-7d594ee83f0ce08b',
+  'cn-8662abe7b31277c2',
+  'cn-294892d926a099b1',
+  'cn-eb05e0e2c3858178',
+  'cn-228da9869d132d1c',
+  'cn-4608925f6f37c011',
+  'cn-f31b82d745f6036c',
+  'cn-5014762bda41f881',
+  'cn-e198010d37f04649',
+]);
+
+const reviewedCanonicalInstitutionNames = new Map([
+  ['cn-fd334bd375069320', 'Southern University of Science and Technology'],
+  ['cn-6e6aaf892c17a701', 'Nanchang Institute of Engineering'],
+  ['cn-5cd7c382c835dda0', 'Beijing Normal University Zhuhai Branch Campus'],
+  ['cn-d5e12e3100f1bfb3', 'Beijing Normal University, Zhuhai Campus'],
+  ['cn-a384f90b16d88cfa', 'China University of Geosciences (Wuhan)'],
+  ['cn-d65eedfa9c42cf79', 'College of Applied Science, Jiangxi University of Science and Technology'],
+]);
+
+const reviewedPreservedPreviousCanonicalNames = new Set(['cn-fd334bd375069320']);
+
+const reviewedForbiddenRegistryNames = new Map([
+  ['cn-6e6aaf892c17a701', new Set(['nanchang institute of technology'])],
+  ['cn-5cd7c382c835dda0', new Set(['beijing normal university zhuhai'])],
+  ['cn-d5e12e3100f1bfb3', new Set(['beijing normal university zhuhai'])],
+  ['cn-a384f90b16d88cfa', new Set(['china university of geosciences'])],
+  ['cn-d65eedfa9c42cf79', new Set(['gannan university of science and technology'])],
+]);
+
+const reviewedParserArtifactCorrections = new Map([
+  [')北方民族大学', { institutionNameZh: '北方民族大学', institutionOfficial: 'Beifang Minzu University (Northern Minzu University)' }],
+  [')对外经济贸易大学', { institutionNameZh: '对外经济贸易大学', institutionOfficial: 'University of International Business and Economics (UIBE)' }],
+  [')南方科技大学', { institutionNameZh: '南方科技大学', institutionOfficial: 'Southern University of Science and Technology (SUSTech)' }],
+  [')香港科技大学(广州)', { institutionNameZh: '香港科技大学(广州)', institutionOfficial: 'Hong Kong University of Science and Technology (Guangzhou)' }],
+  [')浙大宁波理工学院', { institutionNameZh: '浙大宁波理工学院', institutionOfficial: 'NingboTech University (Zhejiang University Ningbo Institute of Technology)' }],
+  ['浙江树人学院浙江树人大学', { institutionNameZh: '浙江树人学院', institutionOfficial: 'Zhejiang Shuren University' }],
 ]);
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -40,11 +97,86 @@ function json(value) {
   return `${JSON.stringify(value, null, 2)}\n`;
 }
 
-function applyReviewedInstitutionMigrations(requirements) {
-  return requirements.map((fact) => {
-    const institutionId = reviewedInstitutionIdMigrations.get(fact.institutionId);
-    return institutionId ? { ...fact, institutionId } : fact;
+function normalizedRegistrySearchName(value) {
+  return String(value ?? '')
+    .normalize('NFKC')
+    .toLocaleLowerCase('en-US')
+    .replace(/\p{P}+/gu, ' ')
+    .replace(/[\s\u3000]+/gu, ' ')
+    .trim();
+}
+
+function correctedReviewedParserArtifactFact(fact) {
+  const normalizedChineseName = normalizedChineseInstitutionName(fact.institutionNameZh);
+  const correction = reviewedParserArtifactCorrections.get(fact.institutionNameZh)
+    ?? [...reviewedParserArtifactCorrections].find(([artifactChineseName]) => (
+      normalizedChineseInstitutionName(artifactChineseName) === normalizedChineseName
+    ))?.[1];
+  return correction ? { ...fact, ...correction } : fact;
+}
+
+function canonicalReviewedInstitutionId(institutionId) {
+  let canonicalId = institutionId;
+  while (reviewedInstitutionIdMigrations.has(canonicalId)) {
+    canonicalId = reviewedInstitutionIdMigrations.get(canonicalId);
+  }
+  return canonicalId;
+}
+
+function reconcileReviewedInstitutionRegistry(inputInstitutions, inputRequirements) {
+  const institutions = inputInstitutions.map((institution) => ({
+    ...institution,
+    aliases: [...institution.aliases],
+  }));
+  const institutionById = new Map(institutions.map((institution) => [institution.id, institution]));
+
+  for (const [obsoleteId, canonicalId] of reviewedInstitutionIdMigrations) {
+    const obsolete = institutionById.get(obsoleteId);
+    const canonical = institutionById.get(canonicalId);
+    if (!obsolete || !canonical) continue;
+    if (reviewedHistoricalInstitutionIds.has(obsoleteId)) {
+      appendAlias(canonical, obsolete.nameZh);
+      appendAlias(canonical, obsolete.nameEn);
+      for (const alias of obsolete.aliases) appendAlias(canonical, alias);
+    }
+    institutionById.delete(obsoleteId);
+  }
+
+  for (const [institutionId, canonicalName] of reviewedCanonicalInstitutionNames) {
+    const institution = institutionById.get(institutionId);
+    if (!institution || institution.nameEn === canonicalName) continue;
+    const previousName = institution.nameEn;
+    institution.nameEn = canonicalName;
+    if (reviewedPreservedPreviousCanonicalNames.has(institutionId)) appendAlias(institution, previousName);
+  }
+
+  for (const institution of institutionById.values()) {
+    const forbiddenNames = reviewedForbiddenRegistryNames.get(institution.id) ?? new Set();
+    const retainedAliases = [];
+    const retainedNormalizedAliases = new Set();
+    for (const alias of institution.aliases) {
+      const normalized = normalizedRegistrySearchName(alias);
+      if (!normalized
+        || normalized === normalizedRegistrySearchName(institution.nameZh)
+        || normalized === normalizedRegistrySearchName(institution.nameEn)
+        || forbiddenNames.has(normalized)
+        || retainedNormalizedAliases.has(normalized)) continue;
+      retainedAliases.push(alias);
+      retainedNormalizedAliases.add(normalized);
+    }
+    institution.aliases = retainedAliases;
+  }
+
+  const requirements = inputRequirements.map((inputFact) => {
+    const fact = correctedReviewedParserArtifactFact(inputFact);
+    const institutionId = canonicalReviewedInstitutionId(fact.institutionId);
+    return institutionId === fact.institutionId ? fact : { ...fact, institutionId };
   });
+
+  return {
+    institutions: institutions.filter((institution) => institutionById.has(institution.id)),
+    requirements,
+  };
 }
 
 async function readJson(path) {
@@ -278,7 +410,11 @@ export function reconcileInstitution(rawFact, institutions) {
         ? findEnglishInstitutionMatches(rawFact.institutionOfficial, institutions)
           .filter((record) => record.id !== ChineseMatch.id)
         : [];
-      if (conflictingEnglishMatches.length === 0) appendAlias(ChineseMatch, rawFact.institutionOfficial);
+      const forbiddenRegistryNames = reviewedForbiddenRegistryNames.get(ChineseMatch.id) ?? new Set();
+      if (conflictingEnglishMatches.length === 0
+        && !forbiddenRegistryNames.has(normalizedRegistrySearchName(rawFact.institutionOfficial))) {
+        appendAlias(ChineseMatch, rawFact.institutionOfficial);
+      }
       return ChineseMatch;
     }
     if (officialName) {
@@ -457,6 +593,7 @@ async function extractRegisteredFacts(source, response, { institutions, now }) {
     return [];
   }
 
+  rawFacts = rawFacts.map(correctedReviewedParserArtifactFact);
   if (source.id === 'glasgow-china') rawFacts = repairGlasgowBilingualPdfNames(rawFacts, institutions);
 
   const rawFactsForSource = source.parser.dedupeExactRows
@@ -468,7 +605,22 @@ async function extractRegisteredFacts(source, response, { institutions, now }) {
     )))
     : rawFacts;
   const completedFacts = rawFactsForSource.map((fact) => completeRequirementFact(fact, source, institutions, now, contentHash));
-  return completedFacts.filter((fact, index) => index === completedFacts.findIndex((candidate) => candidate.id === fact.id));
+  const collidingFactIds = new Set(completedFacts
+    .filter((fact, index, facts) => facts.findIndex((candidate) => candidate.id === fact.id) !== index)
+    .map((fact) => fact.id));
+  const factsWithStableRowIds = completedFacts.map((fact) => {
+    if (!collidingFactIds.has(fact.id)) return fact;
+    const rowDiscriminator = [
+      fact.institutionOfficial,
+      fact.institutionNameZh ?? '',
+      fact.tierOfficial,
+      fact.scoreOfficial ?? '',
+    ].join('\u0000');
+    return { ...fact, id: requirementFactId(source.id, fact.institutionId, rowDiscriminator) };
+  });
+  return factsWithStableRowIds.filter((fact, index) => (
+    index === factsWithStableRowIds.findIndex((candidate) => candidate.id === fact.id)
+  ));
 }
 
 function fetchHealth(response) {
@@ -478,8 +630,11 @@ function fetchHealth(response) {
 export async function syncRegisteredSources(options = {}) {
   const paths = sourcePaths(options);
   const sources = options.sources ?? await readJson(paths.sourcesPath);
-  let institutions = options.institutions ?? await readJson(paths.institutionsPath);
-  let requirements = applyReviewedInstitutionMigrations(options.requirements ?? await readJson(paths.requirementsPath));
+  const loadedInstitutions = options.institutions ?? await readJson(paths.institutionsPath);
+  const loadedRequirements = options.requirements ?? await readJson(paths.requirementsPath);
+  const reviewedRegistry = reconcileReviewedInstitutionRegistry(loadedInstitutions, loadedRequirements);
+  let institutions = reviewedRegistry.institutions;
+  let requirements = reviewedRegistry.requirements;
   const status = { ...(options.status ?? await readJson(paths.statusPath)) };
   const anomalies = [];
   const now = options.now ?? new Date();
@@ -489,7 +644,7 @@ export async function syncRegisteredSources(options = {}) {
   const minimumGapMs = options.minimumGapMs ?? 600;
   const fetchTimeoutMs = options.fetchTimeoutMs ?? 12_000;
   let acceptedUpdate = false;
-  let acceptedInstitutionUpdate = false;
+  let acceptedInstitutionUpdate = JSON.stringify(institutions) !== JSON.stringify(loadedInstitutions);
 
   const orderedSources = sources
     .map((source, index) => ({ source, index }))

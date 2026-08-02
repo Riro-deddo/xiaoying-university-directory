@@ -370,6 +370,52 @@ describe('QS cohort and official source registry', () => {
     }
   });
 
+  it('limits full-registry normalized search conflicts to the two reviewed ambiguities', () => {
+    const recordIdsByName = new Map<string, Set<string>>();
+    for (const record of institutions) {
+      for (const name of [record.nameZh, record.nameEn, ...record.aliases]) {
+        const normalized = normalizeInstitutionName(name);
+        recordIdsByName.set(normalized, new Set([...(recordIdsByName.get(normalized) ?? []), record.id]));
+      }
+    }
+    const collisionKeys = [...recordIdsByName]
+      .filter(([, recordIds]) => recordIds.size > 1)
+      .map(([name]) => name)
+      .sort();
+    const registeredIds = new Set(institutions.map((record) => record.id));
+    const referencedIds = new Set(requirements.map((fact) => fact.institutionId));
+
+    expect(institutions).toHaveLength(2915);
+    expect(requirements).toHaveLength(5753);
+    expect(collisionKeys).toEqual(['taizhou university', 'wuyi university']);
+    expect(requirements.every((fact) => registeredIds.has(fact.institutionId))).toBe(true);
+    expect(institutions.every((record) => referencedIds.has(record.id))).toBe(true);
+  });
+
+  it('preserves every distinct historical source row whose identity was merged', () => {
+    const preservedRows = [
+      ['sheffield-china', 'cn-d65eedfa9c42cf79', 'Gannan University of Science and Technology', '赣南科技学院', 'China ranking list'],
+      ['sheffield-china', 'cn-798a43f1d58b93f6', 'Qingdao Film Academy', '青岛电影学院', 'China ranking list'],
+      ['sheffield-china', 'cn-e1081944b32c4a84', 'Qingdao University of Technology, Qindao College', '青岛理工大学琴岛学院', 'China ranking list'],
+      ['sheffield-china', 'cn-c54a8bf9427f90d1', 'Sichuan University Jincheng College', '四川大学锦城学院', 'China ranking list'],
+      ['southampton-china', 'cn-9e338bea93785dc4', 'Jiaxing University', '嘉兴大学', 'Tier B'],
+      ['southampton-china', 'cn-3eed51e9f008d2ea', 'Fuyang Normal University', '阜阳师范大学', 'Tier C'],
+      ['southampton-china', 'cn-13a3c963f474ff79', 'Guangdong Polytechnic Normal University', '广东技术师范大学', 'Tier C'],
+      ['southampton-china', 'cn-420d922c78eeff4e', 'Ningxia Normal University', '宁夏师范大学', 'Tier C'],
+      ['southampton-china', 'cn-8e869295f3c945de', 'Yili Normal University', '伊犁师范大学', 'Tier C'],
+    ];
+
+    for (const [sourceId, institutionId, institutionOfficial, institutionNameZh, tierOfficial] of preservedRows) {
+      expect(requirements).toContainEqual(expect.objectContaining({
+        sourceId,
+        institutionId,
+        institutionOfficial,
+        institutionNameZh,
+        tierOfficial,
+      }));
+    }
+  });
+
   it('links Southampton directly to its official tier list with a grouped bilingual parser', () => {
     const source = sources.find((item) => item.id === 'southampton-china');
 

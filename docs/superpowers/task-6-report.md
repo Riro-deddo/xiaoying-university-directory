@@ -38,3 +38,11 @@ Verification completed:
 - Historic parser fragments and carried names are removed instead of preserved as aliases. Canonical records now use the repaired Glasgow English names for Hunan Institute of Technology, Anshan Normal University, Harbin University, Hubei Engineering University, and Chaohu University.
 - Remaining reviewed English-name conflicts: `Taizhou University` and `Wuyi University` only. There are no one-word English registry entries or other cross-Chinese normalized-English conflicts among Glasgow-linked records.
 - Final verification: guarded sync accepted all 31 registered sources with zero anomalies; 234 tests passing across 19 files; Astro check/build 0 errors (one existing hint); source coverage unchanged.
+
+## Full registry identity reconciliation — 2026-08-02
+
+- Reviewed A/B migrations merged 16 duplicate or malformed records and rewrote every requirement reference to its canonical ID. Registry size changed from 2,931 to 2,915 with zero orphan records or missing fact references.
+- Reviewed C/D/E policies disambiguate Nanchang, both Beijing Normal Zhuhai identities, China University of Geosciences (Wuhan), and the two distinct Gannan institutions while preserving source-official fact text and Southampton Tier B/Tier C evidence.
+- The first refreshed output exposed nine distinct historical source rows that shared a canonical fact ID. They were not exact duplicates: four Sheffield rows and five Southampton rows had distinct official English or Chinese evidence. Stable row discriminators now retain all nine, restoring requirements and reverse-index counts from 5,744 to 5,753.
+- Full normalized registry collisions are now exactly `Taizhou University` and `Wuyi University`, the two reviewed ambiguities. Malformed leading-parenthesis, incomplete-English, and concatenated-Chinese registry names are absent.
+- Verification: 250 tests passing across 21 files; Astro check/build 0 errors (one existing hint); source coverage unchanged; guarded sync accepted all 31 sources with an empty anomaly report.

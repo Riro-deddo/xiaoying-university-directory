@@ -112,7 +112,13 @@ export function buildOfficialListDisplays(input: {
       panelsByKey.set(key, panel);
     }
 
-    const rowKey = [institution.id, fact.institutionOfficial, fact.tierOfficial, fact.scoreOfficial ?? ''].join('\u0000');
+    const rowKey = [
+      institution.id,
+      fact.institutionOfficial,
+      fact.institutionNameZh ?? institution.nameZh,
+      fact.tierOfficial,
+      fact.scoreOfficial ?? '',
+    ].join('\u0000');
     if (panel.rowKeys.has(rowKey)) {
       throw new Error(`Duplicate institution ${institution.id} in source ${source.id}`);
     }
@@ -120,7 +126,7 @@ export function buildOfficialListDisplays(input: {
     panel.extractedAt = fact.extractedAt > panel.extractedAt ? fact.extractedAt : panel.extractedAt;
     panel.rows.push({
       institutionId: institution.id,
-      nameZh: institution.nameZh,
+      nameZh: fact.institutionNameZh ?? institution.nameZh,
       nameEn: fact.institutionOfficial,
       tierOfficial: fact.tierOfficial,
       ...(fact.scoreOfficial ? { scoreOfficial: fact.scoreOfficial } : {}),

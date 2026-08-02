@@ -151,6 +151,19 @@ describe('official List presentation model', () => {
     })).toThrow(/duplicate institution/i);
   });
 
+  it('retains distinct official Chinese rows that resolve to one historical identity', () => {
+    const panel = buildOfficialListDisplays({
+      universities: [university(structuredSource.universityId, structuredSource)],
+      institutions: [beihang],
+      requirements: [
+        { ...fact('current-name', beihang.id, '2026-08-01T00:00:00.000Z'), institutionNameZh: '佛山大学' },
+        { ...fact('historical-name', beihang.id, '2026-08-01T00:00:00.000Z'), institutionNameZh: '佛山科学技术学院' },
+      ],
+    }).get(structuredSource.universityId)?.[0];
+
+    expect(panel?.rows.map((row) => row.nameZh).sort()).toEqual(['佛山大学', '佛山科学技术学院']);
+  });
+
   it('retains separate official score variants for the same institution', () => {
     const panel = buildOfficialListDisplays({
       universities: [university(structuredSource.universityId, structuredSource)],

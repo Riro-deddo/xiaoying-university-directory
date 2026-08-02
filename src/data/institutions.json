@@ -342,7 +342,9 @@
     "id": "university-of-international-business-and-economics-2a13872d",
     "nameZh": "对外经济贸易大学",
     "nameEn": "University of International Business and Economics",
-    "aliases": []
+    "aliases": [
+      "University of International Business and Economics (UIBE)"
+    ]
   },
   {
     "id": "harbin-institute-of-technology-7c521149",
@@ -570,9 +572,9 @@
     "nameEn": "Beijing Normal University - Hong Kong Baptist University United International College",
     "aliases": [
       "北京师范大学-香港浸会大学联合国际学院",
-      "Beijing Normal University–Hong Kong Baptist University United International College",
       "Beijing Normal University - Hong Kong Baptist University",
-      "BNU-HKBU, United International College"
+      "BNU-HKBU, United International College",
+      "Beijing Normal University–Hong Kong Baptist University United International College"
     ]
   },
   {
@@ -876,9 +878,10 @@
   {
     "id": "cn-fd334bd375069320",
     "nameZh": "南方科技大学",
-    "nameEn": "South University of Science and Technology (DFC)",
+    "nameEn": "Southern University of Science and Technology",
     "aliases": [
-      "Southern University of Science and Technology"
+      "South University of Science and Technology (DFC)",
+      "Southern University of Science and Technology (SUSTech)"
     ]
   },
   {
@@ -1395,12 +1398,6 @@
     ]
   },
   {
-    "id": "cn-0f8a1bf9dbc39920",
-    "nameZh": ")北方民族大学",
-    "nameEn": "Beifang Minzu University (Northern Minzu University",
-    "aliases": []
-  },
-  {
     "id": "cn-aa2141a95e775934",
     "nameZh": "北海艺术设计学院",
     "nameEn": "Beihai College of Art and Design",
@@ -1767,10 +1764,8 @@
   {
     "id": "cn-a384f90b16d88cfa",
     "nameZh": "中国地质大学(武汉)",
-    "nameEn": "China University of Geosciences",
-    "aliases": [
-      "China University of Geosciences (Wuhan)"
-    ]
+    "nameEn": "China University of Geosciences (Wuhan)",
+    "aliases": []
   },
   {
     "id": "cn-1400a07fe3616c8d",
@@ -2016,7 +2011,9 @@
     "id": "cn-d2d1c47bd0bdaac2",
     "nameZh": "佛山大学",
     "nameEn": "Foshan University",
-    "aliases": []
+    "aliases": [
+      "佛山科学技术学院"
+    ]
   },
   {
     "id": "cn-10b2073547ba6cb9",
@@ -2080,7 +2077,9 @@
     "id": "cn-3eed51e9f008d2ea",
     "nameZh": "阜阳师范大学",
     "nameEn": "Fuyang Normal University",
-    "aliases": []
+    "aliases": [
+      "阜阳师范学院"
+    ]
   },
   {
     "id": "cn-2fa75933781aae79",
@@ -2105,9 +2104,9 @@
   {
     "id": "cn-d65eedfa9c42cf79",
     "nameZh": "赣南科技学院",
-    "nameEn": "Gannan University of Science and Technology",
+    "nameEn": "College of Applied Science, Jiangxi University of Science and Technology",
     "aliases": [
-      "College of Applied Science, Jiangxi University of Science and Technology"
+      "江西理工大学应用科学学院"
     ]
   },
   {
@@ -2167,7 +2166,9 @@
     "id": "cn-13a3c963f474ff79",
     "nameZh": "广东技术师范大学",
     "nameEn": "Guangdong Polytechnic Normal University",
-    "aliases": []
+    "aliases": [
+      "广东技术师范学院"
+    ]
   },
   {
     "id": "cn-1004707bbc34e832",
@@ -2833,12 +2834,6 @@
     "aliases": []
   },
   {
-    "id": "cn-9c79fa3641a2c89f",
-    "nameZh": ")香港科技大学(广州)",
-    "nameEn": "Hong Kong University of Science and Technology (Guangzhou",
-    "aliases": []
-  },
-  {
     "id": "cn-5b92f659ec666013",
     "nameZh": "红河学院",
     "nameEn": "Honghe University",
@@ -3304,7 +3299,9 @@
     "id": "cn-9e338bea93785dc4",
     "nameZh": "嘉兴大学",
     "nameEn": "Jiaxing University",
-    "aliases": []
+    "aliases": [
+      "嘉兴学院"
+    ]
   },
   {
     "id": "cn-5f1f3bf01578f017",
@@ -3744,7 +3741,7 @@
   {
     "id": "cn-6e6aaf892c17a701",
     "nameZh": "南昌工程学院",
-    "nameEn": "Nanchang Institute of Technology",
+    "nameEn": "Nanchang Institute of Engineering",
     "aliases": []
   },
   {
@@ -3869,12 +3866,6 @@
     "id": "cn-561929b07cda1165",
     "nameZh": "宁波工程学院",
     "nameEn": "Ningbo University of Technology",
-    "aliases": []
-  },
-  {
-    "id": "cn-6df0ef9150bd1ff2",
-    "nameZh": ")浙大宁波理工学院",
-    "nameEn": "NingboTech University (Zhejiang University Ningbo Institute of Technology",
     "aliases": []
   },
   {
@@ -4035,7 +4026,8 @@
     "nameZh": "青岛电影学院",
     "nameEn": "Qingdao Film Academy",
     "aliases": [
-      "Beijing Film Academy Modern Creative Media College"
+      "Beijing Film Academy Modern Creative Media College",
+      "北京电影学院现代创意媒体学院"
     ]
   },
   {
@@ -4695,12 +4687,6 @@
     ]
   },
   {
-    "id": "cn-c3666f26ac904b46",
-    "nameZh": ")南方科技大学",
-    "nameEn": "Southern University of Science and Technology (SUSTech",
-    "aliases": []
-  },
-  {
     "id": "cn-7b675314194f87e8",
     "nameZh": "西南林业大学",
     "nameEn": "Southwest Forestry University",
@@ -4963,12 +4949,6 @@
     "aliases": []
   },
   {
-    "id": "cn-ac97c4410bc4bf72",
-    "nameZh": ")对外经济贸易大学",
-    "nameEn": "University of International Business and Economics (UIBE",
-    "aliases": []
-  },
-  {
     "id": "cn-bb3a66e826796ad3",
     "nameZh": "国际关系学院",
     "nameEn": "University of International Relations",
@@ -5016,7 +4996,9 @@
     "id": "cn-420d922c78eeff4e",
     "nameZh": "宁夏师范大学",
     "nameEn": "Ningxia Normal University",
-    "aliases": []
+    "aliases": [
+      "宁夏师范学院"
+    ]
   },
   {
     "id": "cn-51314af84be5fd25",
@@ -5520,7 +5502,9 @@
     "id": "cn-8e869295f3c945de",
     "nameZh": "伊犁师范大学",
     "nameEn": "Yili Normal University",
-    "aliases": []
+    "aliases": [
+      "伊犁师范学院"
+    ]
   },
   {
     "id": "cn-3f1f0df372ff21ba",
@@ -6353,12 +6337,6 @@
     "aliases": []
   },
   {
-    "id": "cn-675dc89119eb7546",
-    "nameZh": "北京电影学院现代创意媒体学院",
-    "nameEn": "Beijing Film Academy Modern Creative Media College",
-    "aliases": []
-  },
-  {
     "id": "cn-ed9b0a02736b58f2",
     "nameZh": "北京卫生职业学院",
     "nameEn": "Beijing Health School",
@@ -6421,7 +6399,7 @@
   {
     "id": "cn-5cd7c382c835dda0",
     "nameZh": "北京师范大学珠海分校",
-    "nameEn": "Beijing Normal University Zhuhai",
+    "nameEn": "Beijing Normal University Zhuhai Branch Campus",
     "aliases": []
   },
   {
@@ -7017,7 +6995,8 @@
     "nameZh": "成都锦城学院",
     "nameEn": "Chengdu Jincheng College",
     "aliases": [
-      "Sichuan University Jincheng College"
+      "Sichuan University Jincheng College",
+      "四川大学锦城学院"
     ]
   },
   {
@@ -7527,12 +7506,6 @@
     "aliases": []
   },
   {
-    "id": "cn-7d594ee83f0ce08b",
-    "nameZh": "江西理工大学应用科学学院",
-    "nameEn": "College of Applied Science, Jiangxi University of Science and Technology",
-    "aliases": []
-  },
-  {
     "id": "cn-7f260c1cb2e9a9b7",
     "nameZh": "湖北师范大学文理学院",
     "nameEn": "College of Arts and Science Hubei Normal University",
@@ -7932,12 +7905,6 @@
     "id": "cn-b894072b1a12ef6c",
     "nameZh": "佛山职业技术学院",
     "nameEn": "Foshan Polytechnic",
-    "aliases": []
-  },
-  {
-    "id": "cn-8662abe7b31277c2",
-    "nameZh": "佛山科学技术学院",
-    "nameEn": "Foshan University",
     "aliases": []
   },
   {
@@ -12845,7 +12812,9 @@
     "id": "cn-5e462a0463a6da6f",
     "nameZh": "浙大宁波理工学院",
     "nameEn": "NingboTech University",
-    "aliases": []
+    "aliases": [
+      "NingboTech University (Zhejiang University Ningbo Institute of Technology)"
+    ]
   },
   {
     "id": "cn-0f92b2f1b8923b46",
@@ -12947,7 +12916,9 @@
     "id": "cn-38fe392afb9e622f",
     "nameZh": "北方民族大学",
     "nameEn": "North Minzu University",
-    "aliases": []
+    "aliases": [
+      "Beifang Minzu University (Northern Minzu University)"
+    ]
   },
   {
     "id": "cn-c4c77ab33ebf80fc",
@@ -12972,8 +12943,7 @@
     "nameZh": "中国人民武装警察部队警官学院",
     "nameEn": "Officers College of PAP",
     "aliases": [
-      "Officers College, Chinese People's Armed Police",
-      "Officers College Chinese People's Armed Police"
+      "Officers College, Chinese People's Armed Police"
     ]
   },
   {
@@ -13221,7 +13191,9 @@
     "nameZh": "青岛城市学院",
     "nameEn": "Qingdao City University",
     "aliases": [
-      "Qingdao University of Technology Qindao College"
+      "Qingdao University of Technology Qindao College",
+      "青岛理工大学琴岛学院",
+      "Qingdao University of Technology, Qindao College"
     ]
   },
   {
@@ -13270,12 +13242,6 @@
     "id": "cn-07c219c5c45a3f9f",
     "nameZh": "青岛职业技术学院",
     "nameEn": "Qingdao Technical College",
-    "aliases": []
-  },
-  {
-    "id": "cn-f31b82d745f6036c",
-    "nameZh": "青岛理工大学琴岛学院",
-    "nameEn": "Qingdao University of Technology, Qindao College",
     "aliases": []
   },
   {
@@ -14890,12 +14856,6 @@
     "id": "cn-76d0a77887b02c4a",
     "nameZh": "四川托普信息技术职业学院",
     "nameEn": "Sichuan TOP IT Vocational Institute",
-    "aliases": []
-  },
-  {
-    "id": "cn-5014762bda41f881",
-    "nameZh": "四川大学锦城学院",
-    "nameEn": "Sichuan University Jincheng College",
     "aliases": []
   },
   {
@@ -17599,12 +17559,6 @@
     "aliases": []
   },
   {
-    "id": "cn-555a8af33ef74196",
-    "nameZh": "浙江树人学院浙江树人大学",
-    "nameEn": "Zhejiang Shuren University",
-    "aliases": []
-  },
-  {
     "id": "cn-a8f39140caf57066",
     "nameZh": "浙江经济职业技术学院",
     "nameEn": "Zhejiang Technical Institute of Economics",
@@ -18057,41 +18011,9 @@
     "aliases": []
   },
   {
-    "id": "cn-228da9869d132d1c",
-    "nameZh": "嘉兴学院",
-    "nameEn": "Jiaxing University",
-    "aliases": []
-  },
-  {
     "id": "cn-d5e12e3100f1bfb3",
     "nameZh": "北京师范大学珠海校区",
-    "nameEn": "Beijing Normal University, Zhuhai",
-    "aliases": [
-      "Beijing Normal University, Zhuhai Campus"
-    ]
-  },
-  {
-    "id": "cn-294892d926a099b1",
-    "nameZh": "阜阳师范学院",
-    "nameEn": "Fuyang Normal University",
-    "aliases": []
-  },
-  {
-    "id": "cn-eb05e0e2c3858178",
-    "nameZh": "广东技术师范学院",
-    "nameEn": "Guangdong Polytechnic Normal University",
-    "aliases": []
-  },
-  {
-    "id": "cn-4608925f6f37c011",
-    "nameZh": "宁夏师范学院",
-    "nameEn": "Ningxia Normal University",
-    "aliases": []
-  },
-  {
-    "id": "cn-e198010d37f04649",
-    "nameZh": "伊犁师范学院",
-    "nameEn": "Yili Normal University",
+    "nameEn": "Beijing Normal University, Zhuhai Campus",
     "aliases": []
   },
   {
