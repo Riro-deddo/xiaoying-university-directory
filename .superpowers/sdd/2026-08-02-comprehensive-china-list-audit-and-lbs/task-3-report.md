@@ -50,3 +50,10 @@ The live source check recorded 25 `ok` responses, five `unavailable` 403 respons
 - Green: `kcl-china` now points to the current China & Globalisation MSc requirements page, is scoped to `programme`, and identifies that the user must select China in the international-equivalency display. The summary records the displayed 80% prestigious-institution and 85% recognised-institution thresholds without generalising them to KCL or inventing a complete roster.
 - Focused suite: 55 tests passed across 3 files. Full suite: 187 tests passed across 19 files. `pnpm check:sources` checked 31 sources and the current KCL page returned HTTP 200. Astro check reported 0 errors, 0 warnings, and 0 hints.
 - The generated reverse-index timestamp refresh was regenerated back to the baseline and remains out of the fix-round commit.
+
+## Fix round 3 — KCL programme scope
+
+- Red: the KCL scope regression failed because the programme summary still mentioned specified competitive courses and UK ENIC / Project 211 / Double First Class criteria outside the source's China & Globalisation MSc selector evidence.
+- Green: the KCL summary now contains only the programme-scoped China selector evidence (80% prestigious institution, 85% recognised institution) and the no-complete-roster limitation. The regression rejects all removed out-of-scope phrases.
+- Focused suite: 55 tests passed across 3 files. Full suite: 187 tests passed across 19 files. Astro check reported 0 errors, 0 warnings, and 0 hints.
+- The generated reverse-index timestamp refresh was regenerated back to the baseline and remains out of the fix-round commit. The existing dynamic-verification-anchor observation was left unchanged as a minor follow-up outside Task 3 scope.

@@ -136,6 +136,9 @@ describe('QS cohort and official source registry', () => {
     expect(source?.institutionRule.summaryZh).toContain('85%');
     expect(source?.institutionRule.summaryZh).toContain('仅适用于中国与全球化理学硕士');
     expect(source?.institutionRule.summaryZh).toContain('完整名单未公开');
+    for (const outOfScopePhrase of ['指定课程', 'UK ENIC', 'Project 211', '双一流']) {
+      expect(source?.institutionRule.summaryZh).not.toContain(outOfScopePhrase);
+    }
     expect(source?.url).not.toContain('/study-legacy/');
   });
 
