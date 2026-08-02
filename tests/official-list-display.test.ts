@@ -151,6 +151,19 @@ describe('official List presentation model', () => {
     })).toThrow(/duplicate institution/i);
   });
 
+  it('retains separate official score variants for the same institution', () => {
+    const panel = buildOfficialListDisplays({
+      universities: [university(structuredSource.universityId, structuredSource)],
+      institutions: [beihang],
+      requirements: [
+        fact('first-score', beihang.id, '2026-08-01T00:00:00.000Z'),
+        { ...fact('second-score', beihang.id, '2026-08-01T00:00:00.000Z'), scoreOfficial: '80%' },
+      ],
+    }).get(structuredSource.universityId)?.[0];
+
+    expect(panel?.rows.map((row) => row.scoreOfficial)).toEqual(['80%', '85%']);
+  });
+
   it('carries grade-threshold meaning and exact scope into a folded panel', () => {
     const panel = buildOfficialListDisplays({
       universities: [university(structuredSource.universityId, structuredSource)],

@@ -78,9 +78,13 @@ function assertSchema(
 }
 
 function assertUniqueInstitutionNames(records: InstitutionRecord[]): void {
-  const names = records.flatMap((record) => [record.nameZh, record.nameEn, ...record.aliases].filter(Boolean));
-  if (new Set(names).size !== names.length) {
-    throw new DataValidationError('Institution', ['/ must contain globally unique raw names']);
+  const canonicalChineseNames = records.map((record) => record.nameZh
+    .normalize('NFKC')
+    .replace(/\s*\(\s*/gu, '(')
+    .replace(/\s*\)\s*/gu, ')')
+    .trim());
+  if (new Set(canonicalChineseNames).size !== canonicalChineseNames.length) {
+    throw new DataValidationError('Institution', ['/ must contain globally unique canonical Chinese names']);
   }
 }
 

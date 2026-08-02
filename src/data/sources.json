@@ -72,11 +72,16 @@
       }
     },
     "parser": {
-      "mode": "link-only",
+      "mode": "html-grouped-items",
+      "groups": [
+        { "selector": "#China > ul:nth-of-type(1)", "tierOfficial": "Group A" },
+        { "selector": "#China > ul:nth-of-type(2)", "tierOfficial": "Group B" }
+      ],
+      "itemSelector": "li",
       "guard": {
-        "minimumRecords": 0,
-        "maximumRecords": 1,
-        "maximumRemovalRatio": 0
+        "minimumRecords": 80,
+        "maximumRecords": 180,
+        "maximumRemovalRatio": 0.1
       }
     }
   },
@@ -132,8 +137,8 @@
       "caveatZh": "必须结合目标课程所属 Band 阅读，不能只看 Priority List。",
       "verification": {
         "reviewedAt": "2026-08-02",
-        "url": "https://edwebcontent.ed.ac.uk/sites/default/files/atoms/files/priority_list_of_chinese_universities.pdf",
-        "requiredText": ["Priority List of Chinese universities", "Band (A, B, C or D)", "80 or 85%", "recognised university"]
+        "url": "https://www.ed.ac.uk/studying/international/postgraduate-entry/asia/china",
+        "requiredText": ["Priority List", "minimum grades between 80-85%", "Band A", "recognised university"]
       }
     },
     "parser": {
@@ -266,11 +271,14 @@
       }
     },
     "parser": {
-      "mode": "link-only",
+      "mode": "html-table",
+      "rowSelector": ".table-filter tbody > tr",
+      "institutionColumn": 0,
+      "defaultTierOfficial": "Accepted Chinese universities",
       "guard": {
-        "minimumRecords": 0,
-        "maximumRecords": 1,
-        "maximumRemovalRatio": 0
+        "minimumRecords": 300,
+        "maximumRecords": 380,
+        "maximumRemovalRatio": 0.1
       }
     }
   },
@@ -321,11 +329,17 @@
       }
     },
     "parser": {
-      "mode": "link-only",
+      "mode": "html-table",
+      "tableIndex": 3,
+      "rowSelector": "tbody > tr",
+      "institutionColumn": 0,
+      "scoreColumn": 1,
+      "splitOnBreaks": true,
+      "defaultTierOfficial": "Postgraduate institution requirements",
       "guard": {
-        "minimumRecords": 0,
-        "maximumRecords": 1,
-        "maximumRemovalRatio": 0
+        "minimumRecords": 250,
+        "maximumRecords": 450,
+        "maximumRemovalRatio": 0.1
       }
     }
   },
@@ -402,11 +416,20 @@
       }
     },
     "parser": {
-      "mode": "link-only",
+      "mode": "pdf-text",
+      "headingPattern": "^University of Glasgow Accepted Chinese University List 2026$",
+      "rowPattern": "^(.+?)([\\u3400-\\u9FFF\\uF900-\\uFAFF（）()\\-–]+)\\s+(GPA\\s+\\d+(?:\\.\\d+)?|\\d+%)\\s+(GPA\\s+\\d+(?:\\.\\d+)?|\\d+%)\\s+([A-Z]+)$",
+      "institutionColumn": 0,
+      "nameZhColumn": 1,
+      "scoreColumns": [
+        { "label": "2:1", "column": 2 },
+        { "label": "2:2", "column": 3 }
+      ],
+      "tierColumn": 4,
       "guard": {
-        "minimumRecords": 0,
-        "maximumRecords": 1,
-        "maximumRemovalRatio": 0
+        "minimumRecords": 500,
+        "maximumRecords": 950,
+        "maximumRemovalRatio": 0.1
       }
     }
   },
@@ -431,11 +454,21 @@
       }
     },
     "parser": {
-      "mode": "link-only",
+      "mode": "html-table",
+      "rowSelector": "tbody > tr",
+      "institutionColumn": 0,
+      "nameZhColumn": 1,
+      "scoreColumns": [
+        { "label": "2:1", "column": 2 },
+        { "label": "2:2", "column": 3 }
+      ],
+      "defaultTierOfficial": "China ranking list",
+      "dedupeExactRows": true,
+      "allowMultipleFactsPerInstitution": true,
       "guard": {
-        "minimumRecords": 0,
-        "maximumRecords": 1,
-        "maximumRemovalRatio": 0
+        "minimumRecords": 2800,
+        "maximumRecords": 3200,
+        "maximumRemovalRatio": 0.1
       }
     }
   },
@@ -486,11 +519,17 @@
       }
     },
     "parser": {
-      "mode": "link-only",
+      "mode": "html-table",
+      "tableIndex": 0,
+      "rowSelector": "tbody > tr:nth-of-type(2), tbody > tr:nth-of-type(3)",
+      "institutionColumn": 1,
+      "tierColumn": 0,
+      "itemSelector": "p",
+      "institutionPattern": "^(?<institutionNameZh>[^,]+?)(?:,|\\s+)\\s*(?<institutionOfficial>[A-Z][^,]+)",
       "guard": {
-        "minimumRecords": 0,
-        "maximumRecords": 1,
-        "maximumRemovalRatio": 0
+        "minimumRecords": 150,
+        "maximumRecords": 220,
+        "maximumRemovalRatio": 0.1
       }
     }
   },
@@ -542,11 +581,18 @@
       }
     },
     "parser": {
-      "mode": "link-only",
+      "mode": "html-grouped-items",
+      "groups": [
+        { "selector": "section.accordion-item:nth-of-type(1)", "tierSelector": "button" },
+        { "selector": "section.accordion-item:nth-of-type(2)", "tierSelector": "button" },
+        { "selector": "section.accordion-item:nth-of-type(3)", "tierSelector": "button" }
+      ],
+      "itemSelector": ".copy ul > li",
+      "institutionPattern": "^(?<institutionNameZh>[^A-Z]+?)\\s*(?<institutionOfficial>[A-Z].+)$",
       "guard": {
-        "minimumRecords": 0,
-        "maximumRecords": 1,
-        "maximumRemovalRatio": 0
+        "minimumRecords": 500,
+        "maximumRecords": 1100,
+        "maximumRemovalRatio": 0.1
       }
     }
   },

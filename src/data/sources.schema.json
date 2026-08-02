@@ -77,6 +77,8 @@
           },
           "tableIndex": { "type": "integer", "minimum": 0 },
           "splitOnBreaks": { "type": "boolean" },
+          "dedupeExactRows": { "type": "boolean" },
+          "allowMultipleFactsPerInstitution": { "type": "boolean" },
           "institutionPattern": { "type": "string", "minLength": 1 },
           "itemSelector": { "type": "string", "minLength": 1 },
           "groups": {

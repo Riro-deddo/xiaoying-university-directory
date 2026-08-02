@@ -301,17 +301,17 @@ feat: reconcile bilingual official institutions
 - Consumes: registered HTML/PDF parsers from Tasks 4 and 5.
 - Produces: structured facts for Cambridge, Warwick, Bristol, Glasgow, Nottingham, Sheffield, Southampton, UCL, and Edinburgh.
 
-- [ ] **Step 1: Write failing source-presence and record-floor tests**
+- [x] **Step 1: Write failing source-presence and record-floor tests**
 
 Assert every public-list source is parser-enabled and has a conservative floor matching its official shape: Cambridge at least 80 rows, Warwick at least 250, Bristol at least 300, Glasgow at least 500, Nottingham taught list at least 150, Sheffield at least 2,800, Southampton at least 500, UCL 84, and Edinburgh 81.
 
-- [ ] **Step 2: Run catalog tests and verify failure**
+- [x] **Step 2: Run catalog tests and verify failure**
 
 Run: `pnpm vitest run tests/catalog.test.ts tests/requirements.test.ts tests/reverse-index.test.mjs`
 
 Expected: FAIL because seven sources are still link-only or have no generated facts.
 
-- [ ] **Step 3: Configure exact official parsers**
+- [x] **Step 3: Configure exact official parsers**
 
 Use:
 
@@ -325,19 +325,19 @@ Use:
 
 Each source must include reviewed rule text requirements and count/removal guards.
 
-- [ ] **Step 4: Run the guarded synchroniser against official sources**
+- [x] **Step 4: Run the guarded synchroniser against official sources**
 
 Run: `pnpm sync:sources && pnpm build:index`
 
 Expected: all nine public-list sources accepted; any provider-side block or mapping anomaly must retain previous facts and be resolved before publication rather than lowering a guard.
 
-- [ ] **Step 5: Run focused tests and inspect the coverage report**
+- [x] **Step 5: Run focused tests and inspect the coverage report**
 
 Run: `pnpm vitest run tests/catalog.test.ts tests/requirements.test.ts tests/reverse-index.test.mjs && node scripts/report-source-coverage.mjs`
 
 Expected: PASS, 29 directory institutions, 9 university-level public lists, and non-zero facts for every parser-enabled list source.
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```text
 data: add all reviewed public China lists

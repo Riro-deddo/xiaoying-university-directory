@@ -3,6 +3,7 @@ import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { decideSourceUpdate, reconcileInstitution, syncRegisteredSources } from '../scripts/sync-sources.mjs';
+import reviewedRegistry from '../src/data/institutions.json';
 
 const guard = {
   minimumRecords: 80,
@@ -165,6 +166,178 @@ describe('syncRegisteredSources', () => {
       .toThrow(/No registered institution/u);
   });
 
+  it('keeps distinct Chinese institutions apart when their official English names collide', () => {
+    const institutions = [];
+    const first = reconcileInstitution({ institutionOfficial: 'Taizhou University', institutionNameZh: 'Taizhou A' }, institutions);
+    institutions.push(first);
+    const second = reconcileInstitution({ institutionOfficial: 'Taizhou University', institutionNameZh: 'Taizhou B' }, institutions);
+    institutions.push(second);
+
+    expect(second.id).not.toBe(first.id);
+    expect(() => reconcileInstitution({ institutionOfficial: 'Taizhou University' }, institutions))
+      .toThrow(/Ambiguous English-only institution/u);
+  });
+
+  it('retains alternate English source spellings on the canonical Chinese institution', () => {
+    const institutions = [{
+      id: 'beihang',
+      nameZh: 'Beihang Chinese',
+      nameEn: 'Beihang University',
+      aliases: [],
+    }];
+
+    const resolved = reconcileInstitution({
+      institutionOfficial: 'Beihang University (formerly known as Beijing University of Aeronautics and Astronautics)',
+      institutionNameZh: 'Beihang Chinese',
+    }, institutions);
+
+    expect(resolved.id).toBe('beihang');
+    expect(resolved.aliases).toContain('Beihang University (formerly known as Beijing University of Aeronautics and Astronautics)');
+  });
+
+  it('does not add a bilingual source spelling as an alias when another Chinese institution already claims it', () => {
+    const correctChineseRecord = {
+      id: 'correct', nameZh: 'Correct Chinese', nameEn: 'Correct University', aliases: [],
+    };
+    const conflictingEnglishRecord = {
+      id: 'conflicting', nameZh: 'Different Chinese', nameEn: 'Conflicting University', aliases: [],
+    };
+    const institutions = [correctChineseRecord, conflictingEnglishRecord];
+
+    const resolved = reconcileInstitution({
+      institutionOfficial: 'Conflicting University',
+      institutionNameZh: 'Correct Chinese',
+    }, institutions);
+
+    expect(resolved).toBe(correctChineseRecord);
+    expect(correctChineseRecord.aliases).not.toContain('Conflicting University');
+    expect(reconcileInstitution({ institutionOfficial: 'Conflicting University' }, institutions))
+      .toBe(conflictingEnglishRecord);
+  });
+
+  it('uses an unambiguous normalized English lookup key without altering the official row text', () => {
+    const institutions = [{
+      id: 'beihang', nameZh: 'Beihang Chinese', nameEn: 'Beihang University', aliases: [],
+    }, {
+      id: 'mining', nameZh: 'Mining Chinese', nameEn: 'China University of Mining and Technology Beijing', aliases: [],
+    }, {
+      id: 'chemical', nameZh: 'Chemical Chinese', nameEn: 'Beijing University of Chemical Technology', aliases: [],
+    }, {
+      id: 'taizhou-a', nameZh: 'Taizhou A', nameEn: 'Taizhou University', aliases: [],
+    }, {
+      id: 'taizhou-b', nameZh: 'Taizhou B', nameEn: 'Taizhou University', aliases: [],
+    }];
+
+    expect(reconcileInstitution({ institutionOfficial: 'Beihang University (formerly known as Beijing University of Aeronautics and Astronautics)' }, institutions).id)
+      .toBe('beihang');
+    expect(reconcileInstitution({ institutionOfficial: 'China University of Mining & Technology (Beijing)' }, institutions).id)
+      .toBe('mining');
+    expect(reconcileInstitution({ institutionOfficial: 'Beijing University of Chemical Technology (80-84% for Chemical Engineering and Technology*)' }, institutions).id)
+      .toBe('chemical');
+    expect(() => reconcileInstitution({ institutionOfficial: 'Taizhou University' }, institutions))
+      .toThrow(/Ambiguous English-only institution/u);
+  });
+
+  it('resolves Cambridge, Bristol, and Warwick source spellings with deterministic lookup variants only', () => {
+    const institutions = [{
+      id: 'huazhong', nameZh: 'Huazhong Chinese', nameEn: 'Huazhong Normal University / Central China Normal University', aliases: [],
+    }, {
+      id: 'central-fine-arts', nameZh: 'Central Fine Arts Chinese', nameEn: 'Central Academy of Fine Arts', aliases: [],
+    }, {
+      id: 'ucass', nameZh: 'UCASS Chinese', nameEn: 'University of Chinese Academy of Social Sciences', aliases: [],
+    }];
+
+    expect(reconcileInstitution({ institutionOfficial: 'Huazhong Normal University' }, institutions).id).toBe('huazhong');
+    expect(reconcileInstitution({ institutionOfficial: 'China Central Academy of Fine Arts (Specialist institution: Programme limitations may apply)' }, institutions).id)
+      .toBe('central-fine-arts');
+    expect(reconcileInstitution({ institutionOfficial: 'University of Chinese Academy of Social Sciences (UCASS)' }, institutions).id)
+      .toBe('ucass');
+  });
+
+  it('rejects a China-prefix lookup when more than one registered institution would match', () => {
+    const institutions = [{
+      id: 'central-fine-arts', nameZh: 'Central Fine Arts Chinese', nameEn: 'Central Academy of Fine Arts', aliases: [],
+    }, {
+      id: 'china-central-fine-arts', nameZh: 'China Central Fine Arts Chinese', nameEn: 'China Central Academy of Fine Arts', aliases: [],
+    }];
+
+    expect(() => reconcileInstitution({ institutionOfficial: 'China Central Academy of Fine Arts' }, institutions))
+      .toThrow(/Ambiguous English-only institution/u);
+  });
+
+  it('reconciles every reviewed Bristol and Warwick row once while preserving its raw official spelling', () => {
+    const expectedIds = new Map([
+      ['Chinese University of Hong Kong, Shenzen', 'cn-4ca65817c8ab1919'],
+      ['Guangzhou Medical University', 'cn-992cbbacda23f7e8'],
+      ['Naval Medical University', 'cn-9f87dd4ea325c693'],
+      ["People's Liberation Army Information Engineering University", 'cn-d95f2b81c571f42a'],
+      ['Shanghai Ocean University', 'cn-cfc7b6e5ea305c78'],
+      ['Shanghai University of Sport (Specialist institution: Programme limitations may apply)', 'cn-b0c5ad9361839895'],
+      ['Shenzhen MSU-BIT', 'shenzhen-moscow-state-university-and-beijing-institute-of-technology-university-85730974'],
+      ['Sichuan Agriculture University', 'sichuan-agricultural-university-2e7fba53'],
+      ['Third Military Medical University', 'cn-b46c5842544c231d'],
+      ['Xizang University (Tibet University)', 'tibet-university-44adba65'],
+      ['Air Force Medical University of PLA (the Fourth Military Medical University)', 'cn-09f63fd100d867b1'],
+      ['China University of Petroleum (Beijing and Karamay campuses)', 'cn-7a4cca60fac91630'],
+      ['Army Medical University (the Third Military Medical University)', 'cn-b46c5842544c231d'],
+      ['Chengdu University of TCM', 'cn-0e85934d3cd50718'],
+      ['Eurasian International School of Henan University (for students enrolled from 2018 onwards*)', 'cn-3eaf09e6df3f834d'],
+      ['Fuzhou University, Ocean College', 'cn-b5768b8f60c9fc41'],
+      ['Harbin Medical University, Daqing (for Psychiatry major only*)', 'cn-5aef3969068d2b4a'],
+      ['Henan University International Business School (formerly International Education College/School of International Education, Henan University (for students enrolled from 2018 onwards*)', 'cn-b616fa31750e7226'],
+      ["Officers College Chinese People's Armed Police", 'cn-a409773bfcdfb4b9'],
+      ['PLA Army Engineering University', 'cn-9020ed9eafa38063'],
+      ['PLA Information Engineering University', 'cn-d95f2b81c571f42a'],
+      ['PLA Nanjing Political College', 'cn-851e93756d3aa17f'],
+      ['PLA Space Engineering University', 'cn-7933a994467dbd1c'],
+      ['Shanghai Ocean University (82-89% for Aquatic Product*)', 'cn-cfc7b6e5ea305c78'],
+      ['Shanghai University of Sport', 'cn-b0c5ad9361839895'],
+      ['Shanghai University of Traditional Chinese Medicine (82-89% for Traditional Chinese Medicine (TCM) or Chinese Pharmacy*)', 'cn-4cb8ebbd13c8f9a0'],
+      ['Hubei Academy of Fine Arts (for Arts Majors only*)', 'cn-ba0f44492e04e278'],
+      ['Shanghai University, SHU-UTS SILC Business School (Sydney Institute of Language and Commerce)', 'cn-a4dde856833c3aa7'],
+      ['Weifang Medical University', 'cn-c33b92447be76a83'],
+    ]);
+
+    for (const [officialName, expectedId] of expectedIds) {
+      const rawFact = { institutionOfficial: officialName };
+      expect(reconcileInstitution(rawFact, structuredClone(reviewedRegistry)).id).toBe(expectedId);
+      expect(rawFact.institutionOfficial).toBe(officialName);
+    }
+  });
+
+  it('maps every reviewed NUDT Chinese and English form to the pre-existing canonical record', () => {
+    const institutions = [{
+      id: 'national-university-of-defense-technology-471f1540',
+      nameZh: 'NUDT short Chinese',
+      nameEn: 'National University of Defense Technology **',
+      aliases: [
+        'NUDT formal Chinese',
+        'National University of Defense Technology',
+        'National University of Defence Technology',
+        'The PLA National University of Defense Technology',
+      ],
+    }];
+
+    for (const rawFact of [
+      { institutionOfficial: 'National University of Defense Technology' },
+      { institutionOfficial: 'National University of Defense Technology **' },
+      { institutionOfficial: 'National University of Defence Technology (also known as The PLA National University of Defense Technology)' },
+      { institutionOfficial: 'National University of Defense Technology', institutionNameZh: 'NUDT formal Chinese' },
+    ]) {
+      expect(reconcileInstitution(rawFact, institutions).id).toBe('national-university-of-defense-technology-471f1540');
+    }
+  });
+
+  it('resolves Bristol’s reviewed Zhuhai Campus spelling to the bilingual canonical record', () => {
+    const institutions = [{
+      id: 'cn-d5e12e3100f1bfb3', nameZh: 'Zhuhai Chinese', nameEn: 'Beijing Normal University, Zhuhai',
+      aliases: ['Beijing Normal University, Zhuhai Campus'],
+    }];
+
+    expect(reconcileInstitution({ institutionOfficial: 'Beijing Normal University, Zhuhai Campus' }, institutions).id)
+      .toBe('cn-d5e12e3100f1bfb3');
+  });
+
   it('commits a bilingual institution only when its guarded source update is accepted', async () => {
     const paths = await createFiles([]);
     const bilingualSource = {
@@ -191,6 +364,64 @@ describe('syncRegisteredSources', () => {
     expect(result.institutions).toEqual([]);
     expect(JSON.parse(await readFile(paths.institutionsPath, 'utf8'))).toEqual([]);
     expect(result.anomalies).toMatchObject([{ sourceId: 'glasgow-china', reason: 'below-minimum-records' }]);
+  });
+
+  it('explicitly deduplicates exact provider rows while retaining distinct official score rows', async () => {
+    const paths = await createFiles([]);
+    const provider = {
+      ...source,
+      id: 'sheffield-china',
+      parser: {
+        mode: 'html-table', rowSelector: 'tr', institutionColumn: 0, nameZhColumn: 1,
+        scoreColumns: [{ label: '2:1', column: 2 }, { label: '2:2', column: 3 }],
+        defaultTierOfficial: 'Ranking list', dedupeExactRows: true, allowMultipleFactsPerInstitution: true,
+        guard: { minimumRecords: 2, maximumRecords: 2, maximumRemovalRatio: 0 },
+      },
+    };
+    const html = '<table><tr><td>Guangdong Second Normal University</td><td>Guangdong Chinese</td><td>85%</td><td>80%</td></tr><tr><td>Guangdong Second Normal University</td><td>Guangdong Chinese</td><td>85%</td><td>80%</td></tr><tr><td>Guangdong University of Education</td><td>Guangdong Chinese</td><td>80%</td><td>75%</td></tr></table>';
+
+    const result = await syncRegisteredSources({
+      ...paths, sources: [provider], fetchImpl: vi.fn().mockResolvedValue(new Response(html, { status: 200 })),
+      now: new Date('2026-08-02T10:00:00Z'),
+    });
+
+    expect(result.anomalies).toEqual([]);
+    expect(result.institutions).toHaveLength(1);
+    expect(result.institutions[0].aliases).toContain('Guangdong University of Education');
+    expect(result.requirements).toHaveLength(2);
+    expect(new Set(result.requirements.map((fact) => fact.id)).size).toBe(2);
+    expect(new Set(result.requirements.map((fact) => fact.institutionId))).toEqual(new Set([result.institutions[0].id]));
+    expect(result.requirements.map((fact) => fact.scoreOfficial).sort()).toEqual(['2:1: 80%;2:2: 75%', '2:1: 85%;2:2: 80%']);
+  });
+
+  it('verifies registered PDF rule text from its text layer before extraction', async () => {
+    const paths = await createFiles([]);
+    const pdf = await readFile(new URL('./fixtures/sources/list-text-layer.pdf', import.meta.url));
+    const pdfSource = {
+      ...source,
+      url: 'https://www.example.ac.uk/list.pdf',
+      institutionRule: {
+        type: 'grade-threshold', summaryZh: 'PDF-backed rule.', listedMeaningZh: 'Listed.', unlistedMeaningZh: 'Unlisted.',
+        verification: { reviewedAt: '2026-08-02', url: 'https://www.example.ac.uk/china', requiredText: ['Priority List', 'Band A'] },
+      },
+      parser: {
+        mode: 'pdf-text', headingPattern: '^University \\| Tier$', rowPattern: '^(Example University) \\| (Group 1)$',
+        institutionColumn: 0, tierColumn: 1, guard: { minimumRecords: 1, maximumRecords: 1, maximumRemovalRatio: 0 },
+      },
+    };
+
+    const result = await syncRegisteredSources({
+      ...paths, sources: [pdfSource], institutions: [registeredInstitution],
+      fetchImpl: vi.fn().mockImplementation((url) => new Response(
+        url.endsWith('/china') ? '<p>Priority List: Band A</p>' : pdf,
+        { status: 200, headers: { 'content-type': url.endsWith('/china') ? 'text/html' : 'application/pdf' } },
+      )),
+      now: new Date('2026-08-02T10:00:00Z'),
+    });
+
+    expect(result.anomalies).toEqual([]);
+    expect(result.requirements).toHaveLength(1);
+    expect(result.requirements[0].contentHash).toMatch(/^(?!e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855$)[a-f0-9]{64}$/u);
   });
 
   it.each([

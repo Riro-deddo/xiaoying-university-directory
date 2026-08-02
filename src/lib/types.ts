@@ -58,6 +58,8 @@ export interface ParserConfig {
   scoreColumns?: ParserScoreColumn[];
   tableIndex?: number;
   splitOnBreaks?: boolean;
+  dedupeExactRows?: boolean;
+  allowMultipleFactsPerInstitution?: boolean;
   institutionPattern?: string;
   groups?: ParserGroup[];
   itemSelector?: string;

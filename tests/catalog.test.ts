@@ -109,7 +109,7 @@ describe('QS cohort and official source registry', () => {
       expect(source.institutionRule.summaryZh.trim()).toBeTruthy();
       expect(source.institutionRule.verification).toMatchObject({
         reviewedAt: '2026-08-02',
-        url: source.url,
+        url: expect.stringMatching(/^https:\/\//u),
       });
       expect(source.institutionRule.verification?.requiredText.length).toBeGreaterThan(1);
     }
@@ -142,27 +142,32 @@ describe('QS cohort and official source registry', () => {
     expect(source?.url).not.toContain('/study-legacy/');
   });
 
-  it('keeps all nine reviewed public lists as official university-level sources pending structured extraction', () => {
+  it('registers all nine reviewed public lists with guarded structured parsers', () => {
     const expectedSourceSemantics = [
-      ['cambridge-china', 'grade-threshold', 'link-only'],
+      ['cambridge-china', 'grade-threshold', 'html-grouped-items', 80],
       ['ucl-china', 'grade-threshold', 'html-table'],
       ['edinburgh-china', 'mixed', 'pdf-text'],
-      ['bristol-china', 'eligibility', 'link-only'],
-      ['warwick-china', 'eligibility', 'link-only'],
-      ['glasgow-china', 'eligibility', 'link-only'],
-      ['sheffield-china', 'grade-threshold', 'link-only'],
-      ['nottingham-china', 'grade-threshold', 'link-only'],
-      ['southampton-china', 'grade-threshold', 'link-only'],
+      ['bristol-china', 'eligibility', 'html-table', 300],
+      ['warwick-china', 'eligibility', 'html-table', 250],
+      ['glasgow-china', 'eligibility', 'pdf-text', 500],
+      ['sheffield-china', 'grade-threshold', 'html-table', 2800],
+      ['nottingham-china', 'grade-threshold', 'html-table', 150],
+      ['southampton-china', 'grade-threshold', 'html-grouped-items', 500],
     ] as const;
 
-    for (const [sourceId, ruleType, parserMode] of expectedSourceSemantics) {
+    for (const [sourceId, ruleType, parserMode, minimumRecords] of expectedSourceSemantics) {
       expect(sources.find((source) => source.id === sourceId)).toMatchObject({
         kind: 'official-list',
         scope: 'university',
         institutionRule: { type: ruleType },
         parser: { mode: parserMode },
       });
+      if (minimumRecords !== undefined) {
+        expect(sources.find((source) => source.id === sourceId)?.parser.guard.minimumRecords).toBe(minimumRecords);
+      }
     }
+    expect(sources.find((source) => source.id === 'ucl-china')?.parser.guard.minimumRecords).toBe(84);
+    expect(sources.find((source) => source.id === 'edinburgh-china')?.parser.guard.minimumRecords).toBe(81);
   });
 
   it('records Manchester as scoped institution-sensitive requirements without inventing a public roster', () => {
@@ -272,15 +277,25 @@ describe('QS cohort and official source registry', () => {
       const source = sourceById.get(fact.sourceId)!;
       expect(fact.scope).toBe(source.scope);
       expect(fact.scopeZh).toBe(source.scopeZh);
-      expect(fact.tierOfficial).toBe(source.parser.defaultTierOfficial);
+      expect(fact.tierOfficial.trim()).toBeTruthy();
+      if (!('tierColumn' in source.parser) && !('groups' in source.parser)) {
+        expect(fact.tierOfficial).toBe(source.parser.defaultTierOfficial);
+      }
       if (source.cycle) expect(fact.cycle).toBe(source.cycle);
     }
   });
 
-  it('keeps accepted parser counts and emits no facts for link-only sources', () => {
-    expect(requirements.filter((fact) => fact.sourceId === 'ucl-china')).toHaveLength(84);
-    expect(requirements.filter((fact) => fact.sourceId === 'edinburgh-china')).toHaveLength(81);
-    expect(requirements.filter((fact) => fact.sourceId === 'sheffield-china')).toHaveLength(0);
+  it('keeps accepted parser counts for every confirmed public list', () => {
+    const publicListSourceIds = [
+      'cambridge-china', 'warwick-china', 'bristol-china', 'glasgow-china',
+      'nottingham-china', 'sheffield-china', 'southampton-china', 'ucl-china', 'edinburgh-china',
+    ];
+    for (const sourceId of publicListSourceIds) {
+      const source = sources.find((item) => item.id === sourceId)!;
+      const count = requirements.filter((fact) => fact.sourceId === sourceId).length;
+      expect(count).toBeGreaterThanOrEqual(source.parser.guard.minimumRecords);
+      expect(count).toBeLessThanOrEqual(source.parser.guard.maximumRecords);
+    }
 
     const linkOnlyIds = new Set(sources
       .filter((source) => source.parser.mode === 'link-only')
@@ -288,13 +303,28 @@ describe('QS cohort and official source registry', () => {
     expect(requirements.every((fact) => !linkOnlyIds.has(fact.sourceId))).toBe(true);
   });
 
-  it('links Southampton directly to its official tier list without enabling incomplete matching', () => {
+  it('links Southampton directly to its official tier list with a grouped bilingual parser', () => {
     const source = sources.find((item) => item.id === 'southampton-china');
 
     expect(source?.url).toBe('https://www.southampton.ac.uk/international/entry-qualification-equivalencies/china/postgraduate-taught-tier-list');
     expect(source?.labelZh).toBe('中国院校 Tier 名单');
     expect(source?.cycle).toBe('2025/26');
-    expect(source?.parser.mode).toBe('link-only');
+    expect(source?.parser).toMatchObject({
+      mode: 'html-grouped-items',
+      itemSelector: '.copy ul > li',
+      guard: { minimumRecords: 500 },
+    });
+  });
+
+  it('keeps Edinburgh’s Priority List parser separate from its current China rule verification page', () => {
+    const source = sources.find((item) => item.id === 'edinburgh-china');
+
+    expect(source?.url).toBe('https://edwebcontent.ed.ac.uk/sites/default/files/atoms/files/priority_list_of_chinese_universities.pdf');
+    expect(source?.parser.mode).toBe('pdf-text');
+    expect(source?.institutionRule.verification).toMatchObject({
+      url: 'https://www.ed.ac.uk/studying/international/postgraduate-entry/asia/china',
+      requiredText: ['Priority List', 'minimum grades between 80-85%', 'Band A', 'recognised university'],
+    });
   });
 
   it('distinguishes eligibility, grade-threshold, mixed, and requirements-only sources', () => {
@@ -330,14 +360,14 @@ describe('QS cohort and official source registry', () => {
       ['Zhengzhou University**', 'Zhengzhou University'],
     ];
 
-    expect(institutions).toHaveLength(118);
+    expect(institutions.length).toBeGreaterThanOrEqual(118);
     for (const pair of variants) {
       const matches = pair.map((officialName) => institutions.find((institution) =>
         [institution.nameEn, ...institution.aliases].includes(officialName)));
       expect(matches[0]?.id).toBe(matches[1]?.id);
-      expect(new Set(requirements
+      expect([...new Set(requirements
         .filter((fact) => fact.institutionId === matches[0]?.id)
-        .map((fact) => fact.sourceId))).toEqual(new Set(['ucl-china', 'edinburgh-china']));
+        .map((fact) => fact.sourceId))]).toEqual(expect.arrayContaining(['ucl-china', 'edinburgh-china']));
     }
   });
 
