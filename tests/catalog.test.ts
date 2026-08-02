@@ -110,6 +110,22 @@ describe('QS cohort and official source registry', () => {
     expect(source?.parser.mode).toBe('link-only');
   });
 
+  it('distinguishes eligibility, grade-threshold, mixed, and requirements-only sources', () => {
+    const ruleType = (sourceId: string) => sources.find((source) => source.id === sourceId)?.institutionRule.type;
+
+    expect(ruleType('ucl-china')).toBe('grade-threshold');
+    expect(ruleType('edinburgh-china')).toBe('mixed');
+    expect(ruleType('southampton-china')).toBe('grade-threshold');
+    expect(ruleType('manchester-law-china')).toBe('none');
+  });
+
+  it('records safe listed and unlisted meanings for every source with institution rules', () => {
+    for (const source of sources.filter((item) => item.institutionRule.type !== 'none')) {
+      expect(source.institutionRule.listedMeaningZh?.trim()).toBeTruthy();
+      expect(source.institutionRule.unlistedMeaningZh?.trim()).toBeTruthy();
+    }
+  });
+
   it('canonicalizes cross-source English variants without losing exact official names', () => {
     const variants = [
       ['Beihang University (formerly Beijing University of Aeronautics & Astronautics)', 'Beihang University'],

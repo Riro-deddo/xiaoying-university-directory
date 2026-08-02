@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+import sources from '../src/data/sources.json';
 import {
   joinUniversityStatuses,
   loadUniversities,
@@ -26,6 +27,10 @@ const validSource: OfficialSourceConfig = {
   kind: 'china-requirements',
   scope: 'university',
   scopeZh: 'Official information for East Asia applicants',
+  institutionRule: {
+    type: 'none',
+    summaryZh: 'The source contains requirements but no institution list.',
+  },
   parser: {
     mode: 'link-only',
     guard: { minimumRecords: 0, maximumRecords: 1, maximumRemovalRatio: 0 },
@@ -53,6 +58,11 @@ describe('validateUniversities', () => {
 describe('validateOfficialSources', () => {
   it('accepts an explicitly configured official source', () => {
     expect(validateOfficialSources([validSource])).toEqual([validSource]);
+  });
+
+  it('requires human-reviewed institution rule metadata on every official source', () => {
+    expect(validateOfficialSources(sources)).toHaveLength(sources.length);
+    expect(sources.every((source) => source.institutionRule.summaryZh.trim().length > 0)).toBe(true);
   });
 
   it.each([

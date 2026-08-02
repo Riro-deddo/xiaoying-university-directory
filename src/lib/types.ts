@@ -9,6 +9,7 @@ export type SourceKind = 'official-list' | 'china-requirements' | 'faculty-page'
 export type SourceHealth = 'ok' | 'redirected' | 'changed' | 'temporary-error' | 'unavailable' | 'unchecked';
 export type SourceScope = 'university' | 'faculty' | 'programme';
 export type ParserMode = 'html-table' | 'html-list' | 'pdf-text' | 'link-only';
+export type InstitutionRuleType = 'eligibility' | 'grade-threshold' | 'mixed' | 'none';
 export type EvidenceState =
   | 'official-match'
   | 'faculty-match'
@@ -44,6 +45,14 @@ export interface ParserConfig {
   guard: ParserGuard;
 }
 
+export interface InstitutionRule {
+  type: InstitutionRuleType;
+  summaryZh: string;
+  listedMeaningZh?: string;
+  unlistedMeaningZh?: string;
+  caveatZh?: string;
+}
+
 export interface OfficialSourceConfig {
   id: string;
   universityId: string;
@@ -53,6 +62,7 @@ export interface OfficialSourceConfig {
   scope: SourceScope;
   scopeZh: string;
   cycle?: string;
+  institutionRule: InstitutionRule;
   parser: ParserConfig;
 }
 

@@ -4,7 +4,7 @@
   "items": {
     "type": "object",
     "additionalProperties": false,
-    "required": ["id", "universityId", "labelZh", "url", "kind", "scope", "scopeZh", "parser"],
+    "required": ["id", "universityId", "labelZh", "url", "kind", "scope", "scopeZh", "institutionRule", "parser"],
     "properties": {
       "id": { "type": "string", "minLength": 1, "pattern": "^[a-z0-9-]+$" },
       "universityId": { "type": "string", "minLength": 1, "pattern": "^[a-z0-9-]+$" },
@@ -14,6 +14,25 @@
       "scope": { "enum": ["university", "faculty", "programme"] },
       "scopeZh": { "type": "string", "minLength": 1, "pattern": "\\S" },
       "cycle": { "type": "string", "minLength": 1 },
+      "institutionRule": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["type", "summaryZh"],
+        "properties": {
+          "type": { "enum": ["eligibility", "grade-threshold", "mixed", "none"] },
+          "summaryZh": { "type": "string", "minLength": 1, "pattern": "\\S" },
+          "listedMeaningZh": { "type": "string", "minLength": 1, "pattern": "\\S" },
+          "unlistedMeaningZh": { "type": "string", "minLength": 1, "pattern": "\\S" },
+          "caveatZh": { "type": "string", "minLength": 1, "pattern": "\\S" }
+        },
+        "allOf": [
+          {
+            "if": { "properties": { "type": { "const": "none" } }, "required": ["type"] },
+            "then": {},
+            "else": { "required": ["listedMeaningZh", "unlistedMeaningZh"] }
+          }
+        ]
+      },
       "parser": {
         "type": "object",
         "additionalProperties": false,

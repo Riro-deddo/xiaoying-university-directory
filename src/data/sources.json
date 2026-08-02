@@ -7,6 +7,10 @@
     "kind": "china-requirements",
     "scope": "university",
     "scopeZh": "学校面向中国申请人的研究生学历要求",
+    "institutionRule": {
+      "type": "none",
+      "summaryZh": "学校面向中国申请人的研究生学历要求??????????????????????"
+    },
     "parser": {
       "mode": "link-only",
       "guard": {
@@ -24,6 +28,10 @@
     "kind": "china-requirements",
     "scope": "university",
     "scopeZh": "学校研究生国际学历要求中的中国章节",
+    "institutionRule": {
+      "type": "none",
+      "summaryZh": "学校研究生国际学历要求中的中国章节??????????????????????"
+    },
     "parser": {
       "mode": "link-only",
       "guard": {
@@ -41,6 +49,10 @@
     "kind": "china-requirements",
     "scope": "university",
     "scopeZh": "学校研究生入学要求及国际学历链接",
+    "institutionRule": {
+      "type": "none",
+      "summaryZh": "学校研究生入学要求及国际学历链接??????????????????????"
+    },
     "parser": {
       "mode": "link-only",
       "guard": {
@@ -59,6 +71,13 @@
     "scope": "university",
     "scopeZh": "学校面向中国申请人的研究生要求与院校表",
     "cycle": "2026/27",
+    "institutionRule": {
+      "type": "grade-threshold",
+      "summaryZh": "????????? UCL ????????????",
+      "listedMeaningZh": "??????????2:1 ?????? 85%?2:2 ?? 80%?",
+      "unlistedMeaningZh": "??????????????????????2:1 ??? 90%?2:2 ??? 85%?",
+      "caveatZh": "??????????????????????????????????"
+    },
     "parser": {
       "mode": "html-table",
       "rowSelector": "table[width=\"2458\"] tbody > tr",
@@ -82,6 +101,13 @@
     "kind": "official-list",
     "scope": "university",
     "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+    "institutionRule": {
+      "type": "mixed",
+      "summaryZh": "Priority List ???????????????? Band?",
+      "listedMeaningZh": "Band A/B ?? Priority List ???Band C ??????????????",
+      "unlistedMeaningZh": "?????????????????? Band?Band C/D ????????",
+      "caveatZh": "????????? Band???? Priority List?"
+    },
     "parser": {
       "mode": "pdf-text",
       "headingPattern": "^Priority List of Chinese universities",
@@ -103,6 +129,10 @@
     "kind": "china-requirements",
     "scope": "university",
     "scopeZh": "学校当前面向国际申请人的研究生授课型课程申请指南（非中国院校名单）",
+    "institutionRule": {
+      "type": "none",
+      "summaryZh": "学校当前面向国际申请人的研究生授课型课程申请指南（非中国院校名单）??????????????????????"
+    },
     "parser": {
       "mode": "link-only",
       "guard": {
@@ -120,6 +150,10 @@
     "kind": "faculty-page",
     "scope": "faculty",
     "scopeZh": "人文学院法学中国研究生要求",
+    "institutionRule": {
+      "type": "none",
+      "summaryZh": "?????????????????????????????"
+    },
     "parser": {
       "mode": "link-only",
       "guard": {
@@ -137,6 +171,10 @@
     "kind": "china-requirements",
     "scope": "university",
     "scopeZh": "学校面向中国申请人的研究生要求",
+    "institutionRule": {
+      "type": "none",
+      "summaryZh": "学校面向中国申请人的研究生要求??????????????????????"
+    },
     "parser": {
       "mode": "link-only",
       "guard": {
@@ -154,6 +192,10 @@
     "kind": "china-requirements",
     "scope": "university",
     "scopeZh": "学校研究生国际学历要求",
+    "institutionRule": {
+      "type": "none",
+      "summaryZh": "学校研究生国际学历要求??????????????????????"
+    },
     "parser": {
       "mode": "link-only",
       "guard": {
@@ -171,6 +213,10 @@
     "kind": "china-requirements",
     "scope": "university",
     "scopeZh": "学校国际学历要求中的中国章节",
+    "institutionRule": {
+      "type": "none",
+      "summaryZh": "学校国际学历要求中的中国章节??????????????????????"
+    },
     "parser": {
       "mode": "link-only",
       "guard": {
@@ -188,6 +234,10 @@
     "kind": "china-requirements",
     "scope": "university",
     "scopeZh": "学校中国研究生分组要求说明（未公开分组院校名册）",
+    "institutionRule": {
+      "type": "none",
+      "summaryZh": "学校中国研究生分组要求说明（未公开分组院校名册）??????????????????????"
+    },
     "parser": {
       "mode": "link-only",
       "guard": {
@@ -205,6 +255,10 @@
     "kind": "china-requirements",
     "scope": "university",
     "scopeZh": "学校面向中国申请人的研究生要求",
+    "institutionRule": {
+      "type": "none",
+      "summaryZh": "学校面向中国申请人的研究生要求??????????????????????"
+    },
     "parser": {
       "mode": "link-only",
       "guard": {
@@ -222,6 +276,10 @@
     "kind": "china-requirements",
     "scope": "university",
     "scopeZh": "学校面向中国申请人的国际学历要求",
+    "institutionRule": {
+      "type": "none",
+      "summaryZh": "学校面向中国申请人的国际学历要求??????????????????????"
+    },
     "parser": {
       "mode": "link-only",
       "guard": {
@@ -239,6 +297,10 @@
     "kind": "china-requirements",
     "scope": "university",
     "scopeZh": "学校中国研究生要求及院校查询链接",
+    "institutionRule": {
+      "type": "none",
+      "summaryZh": "学校中国研究生要求及院校查询链接??????????????????????"
+    },
     "parser": {
       "mode": "link-only",
       "guard": {
@@ -256,6 +318,10 @@
     "kind": "china-requirements",
     "scope": "university",
     "scopeZh": "学校面向中国申请人的研究生要求",
+    "institutionRule": {
+      "type": "none",
+      "summaryZh": "学校面向中国申请人的研究生要求??????????????????????"
+    },
     "parser": {
       "mode": "link-only",
       "guard": {
@@ -273,6 +339,10 @@
     "kind": "china-requirements",
     "scope": "university",
     "scopeZh": "学校面向中国申请人的研究生要求",
+    "institutionRule": {
+      "type": "none",
+      "summaryZh": "学校面向中国申请人的研究生要求??????????????????????"
+    },
     "parser": {
       "mode": "link-only",
       "guard": {
@@ -290,6 +360,10 @@
     "kind": "china-requirements",
     "scope": "university",
     "scopeZh": "学校面向中国申请人的研究生要求",
+    "institutionRule": {
+      "type": "none",
+      "summaryZh": "学校面向中国申请人的研究生要求??????????????????????"
+    },
     "parser": {
       "mode": "link-only",
       "guard": {
@@ -308,6 +382,13 @@
     "scope": "university",
     "scopeZh": "学校中国研究生要求及院校层级链接",
     "cycle": "2025/26",
+    "institutionRule": {
+      "type": "grade-threshold",
+      "summaryZh": "???????? Tier ??????????????",
+      "listedMeaningZh": "????????? Tier A?B?C?",
+      "unlistedMeaningZh": "??????????? Tier D ???????",
+      "caveatZh": "??????????????????????? Tier ??"
+    },
     "parser": {
       "mode": "link-only",
       "guard": {
@@ -325,6 +406,10 @@
     "kind": "china-requirements",
     "scope": "university",
     "scopeZh": "学校面向中国申请人的研究生要求",
+    "institutionRule": {
+      "type": "none",
+      "summaryZh": "学校面向中国申请人的研究生要求??????????????????????"
+    },
     "parser": {
       "mode": "link-only",
       "guard": {
@@ -342,6 +427,10 @@
     "kind": "china-requirements",
     "scope": "university",
     "scopeZh": "学校国际学历要求中的中国章节",
+    "institutionRule": {
+      "type": "none",
+      "summaryZh": "学校国际学历要求中的中国章节??????????????????????"
+    },
     "parser": {
       "mode": "link-only",
       "guard": {
@@ -359,6 +448,10 @@
     "kind": "china-requirements",
     "scope": "university",
     "scopeZh": "学校面向中国申请人的研究生要求",
+    "institutionRule": {
+      "type": "none",
+      "summaryZh": "学校面向中国申请人的研究生要求??????????????????????"
+    },
     "parser": {
       "mode": "link-only",
       "guard": {
@@ -376,6 +469,10 @@
     "kind": "china-requirements",
     "scope": "university",
     "scopeZh": "学校面向中国申请人的研究生要求",
+    "institutionRule": {
+      "type": "none",
+      "summaryZh": "学校面向中国申请人的研究生要求??????????????????????"
+    },
     "parser": {
       "mode": "link-only",
       "guard": {
@@ -393,6 +490,10 @@
     "kind": "china-requirements",
     "scope": "university",
     "scopeZh": "学校面向中国申请人的研究生要求",
+    "institutionRule": {
+      "type": "none",
+      "summaryZh": "学校面向中国申请人的研究生要求??????????????????????"
+    },
     "parser": {
       "mode": "link-only",
       "guard": {
@@ -410,6 +511,10 @@
     "kind": "china-requirements",
     "scope": "university",
     "scopeZh": "学校面向中国申请人的研究生要求",
+    "institutionRule": {
+      "type": "none",
+      "summaryZh": "学校面向中国申请人的研究生要求??????????????????????"
+    },
     "parser": {
       "mode": "link-only",
       "guard": {
@@ -428,6 +533,10 @@
     "scope": "university",
     "scopeZh": "学校中国研究生学历等值要求",
     "cycle": "2026",
+    "institutionRule": {
+      "type": "none",
+      "summaryZh": "学校中国研究生学历等值要求??????????????????????"
+    },
     "parser": {
       "mode": "link-only",
       "guard": {
@@ -445,6 +554,10 @@
     "kind": "china-requirements",
     "scope": "university",
     "scopeZh": "学校面向中国申请人的研究生要求",
+    "institutionRule": {
+      "type": "none",
+      "summaryZh": "学校面向中国申请人的研究生要求??????????????????????"
+    },
     "parser": {
       "mode": "link-only",
       "guard": {
@@ -462,6 +575,10 @@
     "kind": "china-requirements",
     "scope": "university",
     "scopeZh": "学校面向中国申请人的研究生要求",
+    "institutionRule": {
+      "type": "none",
+      "summaryZh": "学校面向中国申请人的研究生要求??????????????????????"
+    },
     "parser": {
       "mode": "link-only",
       "guard": {
@@ -479,6 +596,10 @@
     "kind": "china-requirements",
     "scope": "university",
     "scopeZh": "学校面向中国申请人的研究生要求",
+    "institutionRule": {
+      "type": "none",
+      "summaryZh": "学校面向中国申请人的研究生要求??????????????????????"
+    },
     "parser": {
       "mode": "link-only",
       "guard": {
