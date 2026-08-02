@@ -28,3 +28,11 @@
 ## Concerns
 
 No production source registry entries or generated facts were changed. This task adds generic registered extraction only; PDF extraction, institution reconciliation, source registration/sync, and UI work remain for later tasks.
+
+## Fix Round 1 — configured table-column bounds
+
+- **Review finding:** a missing configured `institutionColumn`, `institutionColumns` member, `tierColumn`, or singular `scoreColumn` could be silently omitted during table extraction.
+- **Red:** four new literal cases failed before the fix because each resolved instead of raising `PARSER_STRUCTURE`.
+- **Fix:** validate every explicitly configured table column before extracting a row. Nested matched rows are excluded when an enclosing matched row owns them, preserving the existing nested-table column regression coverage.
+- **Green:** focused extractor/data run — 2 files, 37 tests passed; full suite — 19 files, 201 tests passed; Astro check — 0 errors, 0 warnings, 0 hints.
+- **Generated data:** verification regenerated timestamp-only reverse-index data; it was restored and excluded from this change.

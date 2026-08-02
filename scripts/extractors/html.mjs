@@ -31,6 +31,21 @@ function requiredTextAt(cells, column, description) {
   return value;
 }
 
+function assertConfiguredTableColumns(cells, config) {
+  const institutionColumns = config.institutionColumns ?? [config.institutionColumn];
+  const configuredColumns = [
+    ...institutionColumns.map((column) => ({ column, description: 'institution' })),
+    { column: config.tierColumn, description: 'tier' },
+    { column: config.nameZhColumn, description: 'Chinese institution name' },
+    { column: config.scoreColumn, description: 'score' },
+    ...(config.scoreColumns ?? []).map(({ column }) => ({ column, description: 'score' })),
+  ].filter(({ column }) => Number.isInteger(column));
+
+  for (const { column, description } of configuredColumns) {
+    if (!cells[column]) throw new ParserStructureError(`Missing configured ${description} column ${column}`);
+  }
+}
+
 function textWithBreakBoundaries(element) {
   const copy = element.cloneNode(true);
   for (const breakElement of copy.querySelectorAll('br')) {
@@ -70,7 +85,10 @@ function institutionFactsInCell(cell, config) {
 
 function tableRows(document, config) {
   if (!config.rowSelector) return [];
-  if (!Number.isInteger(config.tableIndex)) return Array.from(document.querySelectorAll(config.rowSelector));
+  if (!Number.isInteger(config.tableIndex)) {
+    const rows = Array.from(document.querySelectorAll(config.rowSelector));
+    return rows.filter((row) => !rows.some((candidate) => candidate !== row && candidate.contains(row)));
+  }
 
   const table = document.querySelectorAll('table')[config.tableIndex];
   if (!table) throw new ParserStructureError(`Missing configured table index ${config.tableIndex}`);
@@ -83,10 +101,11 @@ function extractTableFacts(config, html) {
   return tableRows(document, config).flatMap((row) => {
     const cells = Array.from(row.children)
       .filter((element) => element.localName === 'th' || element.localName === 'td');
+    assertConfiguredTableColumns(cells, config);
     const columns = config.institutionColumns ?? [config.institutionColumn];
     return columns.flatMap((column) => {
       const institutionCell = cells[column];
-      if (!institutionCell) return [];
+      if (!institutionCell) throw new ParserStructureError(`Missing configured institution column ${column}`);
       const tierOfficial = textAt(cells, config.tierColumn);
       const institutionNameZh = Number.isInteger(config.nameZhColumn)
         ? requiredTextAt(cells, config.nameZhColumn, 'Chinese institution name')

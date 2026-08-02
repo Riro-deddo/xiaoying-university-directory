@@ -139,7 +139,11 @@ describe('extractHtmlFacts', () => {
   it.each([
     ['missing registered group', { mode: 'html-grouped-items', groups: [{ selector: '#missing', tierOfficial: 'Group A' }], itemSelector: 'li' }, groupedFixture],
     ['empty registered group', { mode: 'html-grouped-items', groups: [{ selector: '#China', tierOfficial: 'Group A' }], itemSelector: '.missing-item' }, groupedFixture],
-    ['missing registered table column', { mode: 'html-table', rowSelector: '#bristol tbody tr', institutionColumn: 0, nameZhColumn: 4 }, bilingualTableFixture],
+    ['missing institution column', { mode: 'html-table', rowSelector: '#bristol tbody tr', institutionColumn: 4 }, bilingualTableFixture],
+    ['missing tier column', { mode: 'html-table', rowSelector: '#bristol tbody tr', institutionColumn: 0, tierColumn: 4 }, bilingualTableFixture],
+    ['missing singular score column', { mode: 'html-table', rowSelector: '#bristol tbody tr', institutionColumn: 0, scoreColumn: 4 }, bilingualTableFixture],
+    ['missing one of multiple institution columns', { mode: 'html-table', rowSelector: '#bristol tbody tr', institutionColumns: [0, 4] }, bilingualTableFixture],
+    ['missing Chinese institution name column', { mode: 'html-table', rowSelector: '#bristol tbody tr', institutionColumn: 0, nameZhColumn: 4 }, bilingualTableFixture],
   ])('rejects %s with a parser-structure error', async (_label, config, fixture) => {
     await expect(extractHtmlFacts(config, fixture)).rejects.toMatchObject({ code: 'PARSER_STRUCTURE' });
   });
