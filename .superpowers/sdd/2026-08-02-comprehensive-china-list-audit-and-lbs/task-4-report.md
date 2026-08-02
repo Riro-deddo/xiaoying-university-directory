@@ -23,7 +23,7 @@
 
 ## Commit
 
-`pending`
+`7755488f8fb53c6e6b614b81465cb5fa4a148357` (`feat: extract grouped official institution lists`)
 
 ## Concerns
 
