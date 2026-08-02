@@ -71,6 +71,12 @@ describe('published methodology and contributor guidance', () => {
     expect(readme).toContain('不依赖付费 API');
   });
 
+  it('explains eligibility, grade-threshold, mixed, and faculty-scoped institution rules', () => {
+    for (const phrase of ['院校准入限制', '院校成绩分档', '混合规则', '名单外不一定不能申请', '仅适用于部分学院']) {
+      expect(`${methodology}${readme}`).toContain(phrase);
+    }
+  });
+
   it('documents the minimum safe source and alias contribution path', () => {
     for (const phrase of ['官方来源', '最小测试样本', '解析保护条件', '院校别名', 'pnpm test:run']) {
       expect(contributing).toContain(phrase);
