@@ -27,6 +27,7 @@ export function buildReverseIndex({ institutions, requirements, sources, statuse
 
     const entry = {
       institutionId: fact.institutionId,
+      institutionOfficial: fact.institutionOfficial,
       universityId: fact.universityId,
       evidenceState: positiveEvidenceState(fact),
       tierOfficial: fact.tierOfficial,

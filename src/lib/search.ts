@@ -5,6 +5,7 @@ import type { InstitutionRecord, RequirementFact, UniversityState, UniversityWit
 
 export interface ReverseIndexEntry {
   institutionId: string;
+  institutionOfficial: string;
   universityId: string;
   evidenceState: 'official-match' | 'faculty-match';
   tierOfficial: string;
@@ -20,6 +21,8 @@ export interface InstitutionEvidenceCard {
   evidence: EvidenceResult;
   sourceUrl?: string;
   sourceLabelZh?: string;
+  ruleSourceUrl?: string;
+  ruleReviewedAt?: string;
 }
 
 export type InstitutionEvidenceSearchResult =
@@ -74,6 +77,7 @@ function factFromIndex(entry: ReverseIndexEntry): RequirementFact {
   return {
     id: `${entry.institutionId}-${entry.universityId}-${entry.sourceId}`,
     institutionId: entry.institutionId,
+    institutionOfficial: entry.institutionOfficial,
     universityId: entry.universityId,
     sourceId: entry.sourceId,
     tierOfficial: entry.tierOfficial,
@@ -127,6 +131,10 @@ export function createInstitutionEvidenceSearch({
           evidence: selected.evidence,
           sourceUrl: selected.source?.url ?? university.officialDomain,
           sourceLabelZh: selected.source?.labelZh ?? '大学官网',
+          ...(selected.source?.institutionRule.verification ? {
+            ruleSourceUrl: selected.source.institutionRule.verification.url,
+            ruleReviewedAt: selected.source.institutionRule.verification.reviewedAt,
+          } : {}),
         };
       });
 

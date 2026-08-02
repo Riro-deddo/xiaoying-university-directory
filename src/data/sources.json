@@ -76,7 +76,12 @@
       "summaryZh": "中国本科院校会影响 UCL 的成绩门槛，不是能否申请的白名单。",
       "listedMeaningZh": "名单内院校通常要求：2:1 对应均分 85%，2:2 对应 80%。",
       "unlistedMeaningZh": "其他受中国教育部认可的院校仍可申请，通常要求：2:1 对应 90%，2:2 对应 85%。",
-      "caveatZh": "具体课程可能设更高要求，最终以课程页和学校最新说明为准。"
+      "caveatZh": "具体课程可能设更高要求，最终以课程页和学校最新说明为准。",
+      "verification": {
+        "reviewedAt": "2026-08-02",
+        "url": "https://www.ucl.ac.uk/prospective-students/international/china",
+        "requiredText": ["2:1", "2:2", "80%", "85%", "90%"]
+      }
     },
     "parser": {
       "mode": "html-table",
@@ -106,7 +111,12 @@
       "summaryZh": "Priority List 同时影响部分成绩分档和部分 Band 的申请资格。",
       "listedMeaningZh": "Band A/B 要求申请人来自 Priority List；Band C 对名单内院校采用较低成绩门槛。",
       "unlistedMeaningZh": "名单外不等于全部不能申请；Band C/D 仍可能接受符合条件的院校背景。",
-      "caveatZh": "必须结合目标课程所属 Band 阅读，不能只看 Priority List。"
+      "caveatZh": "必须结合目标课程所属 Band 阅读，不能只看 Priority List。",
+      "verification": {
+        "reviewedAt": "2026-08-02",
+        "url": "https://study.ed.ac.uk/postgraduate/applying/after/unsuccessful-applicants/china",
+        "requiredText": ["Priority List of Chinese universities", "Band (A, B, C or D)", "80 or 85%", "recognised university"]
+      }
     },
     "parser": {
       "mode": "pdf-text",
@@ -387,7 +397,12 @@
       "summaryZh": "中国院校所属 Tier 决定对应的最低成绩要求。",
       "listedMeaningZh": "官网名单将院校分为 Tier A、B、C。",
       "unlistedMeaningZh": "未出现在名单中的院校按 Tier D 评估，仍不代表自动拒绝。",
-      "caveatZh": "本站暂不复制完整名册，请通过官方链接核对当前 Tier 归属。"
+      "caveatZh": "本站暂不复制完整名册，请通过官方链接核对当前 Tier 归属。",
+      "verification": {
+        "reviewedAt": "2026-08-02",
+        "url": "https://www.southampton.ac.uk/international/entry-qualification-equivalencies/china",
+        "requiredText": ["Tier A", "Tier B", "Tier C", "Tier D"]
+      }
     },
     "parser": {
       "mode": "link-only",

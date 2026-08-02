@@ -22,6 +22,11 @@ const structuredSource: SourceWithStatus = {
     listedMeaningZh: '名单内使用较低成绩门槛。',
     unlistedMeaningZh: '名单外认可院校使用较高成绩门槛。',
     caveatZh: '具体课程可能要求更高。',
+    verification: {
+      reviewedAt: '2026-08-02',
+      url: 'https://www.ucl.ac.uk/prospective-students/international/china',
+      requiredText: ['85%', '90%'],
+    },
   },
   parser: {
     mode: 'html-list',
@@ -78,6 +83,7 @@ function fact(
     universityId: source.universityId,
     sourceId: source.id,
     institutionId,
+    institutionOfficial: `${institutionId} official source spelling`,
     tierOfficial: 'Group A',
     scoreOfficial: '85%',
     scope: source.scope,
@@ -102,6 +108,10 @@ describe('official List presentation model', () => {
     expect(displays.get(structuredSource.universityId)?.[0].rows.map((row) => row.nameZh)).toEqual([
       '北京大学',
       '北京航空航天大学',
+    ]);
+    expect(displays.get(structuredSource.universityId)?.[0].rows.map((row) => row.nameEn)).toEqual([
+      'peking-university official source spelling',
+      'beihang-university official source spelling',
     ]);
     expect(displays.get(structuredSource.universityId)?.[0]).toMatchObject({
       sourceId: 'ucl-china',
@@ -152,6 +162,8 @@ describe('official List presentation model', () => {
       ruleSummaryZh: structuredSource.institutionRule.summaryZh,
       listedMeaningZh: structuredSource.institutionRule.listedMeaningZh,
       unlistedMeaningZh: structuredSource.institutionRule.unlistedMeaningZh,
+      ruleReviewedAt: '2026-08-02',
+      ruleSourceUrl: 'https://www.ucl.ac.uk/prospective-students/international/china',
       scope: 'university',
     });
   });

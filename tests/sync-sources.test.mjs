@@ -18,6 +18,7 @@ const source = {
   url: 'https://www.example.ac.uk/china-list',
   scope: 'university',
   scopeZh: 'University-wide list',
+  institutionRule: { type: 'none', summaryZh: 'General requirements only.' },
   parser: { mode: 'html-table', guard },
 };
 
@@ -34,6 +35,7 @@ function facts(count, overrides = {}) {
     universityId: 'example-university',
     sourceId: 'example-source',
     institutionId: `institution-${index + 1}`,
+    institutionOfficial: `Example Institution ${index + 1}`,
     tierOfficial: 'Band A',
     scope: 'university',
     scopeZh: 'University-wide list',
@@ -90,6 +92,27 @@ describe('decideSourceUpdate', () => {
 
   it('rejects mass removal before the configured lower bound', () => {
     expect(decideSourceUpdate(facts(100), facts(20), guard))
+      .toEqual({ accepted: false, reason: 'removal-ratio-exceeded' });
+  });
+
+  it('rejects same-sized replacement and excessive identity churn', () => {
+    const fullReplacement = facts(100).map((fact, index) => ({
+      ...fact,
+      id: `replacement-fact-${index + 1}`,
+      institutionId: `replacement-institution-${index + 1}`,
+    }));
+    const partialReplacement = [
+      ...facts(88),
+      ...facts(12).map((fact, index) => ({
+        ...fact,
+        id: `replacement-fact-${index + 1}`,
+        institutionId: `replacement-institution-${index + 1}`,
+      })),
+    ];
+
+    expect(decideSourceUpdate(facts(100), fullReplacement, guard))
+      .toEqual({ accepted: false, reason: 'removal-ratio-exceeded' });
+    expect(decideSourceUpdate(facts(100), partialReplacement, guard))
       .toEqual({ accepted: false, reason: 'removal-ratio-exceeded' });
   });
 });
@@ -154,6 +177,60 @@ describe('syncRegisteredSources', () => {
     expect(result.anomalies).toMatchObject([
       { sourceId: 'example-source', reason: 'parser-error', parserCode: 'PARSER_EMPTY' },
     ]);
+  });
+
+  it('stops before extraction when reviewed institution-rule anchors move', async () => {
+    const previousRequirements = facts(100);
+    const paths = await createFiles(previousRequirements);
+    const extractFacts = vi.fn(async () => facts(102));
+    const ruleSource = {
+      ...source,
+      institutionRule: {
+        type: 'grade-threshold',
+        summaryZh: 'Institution background changes the grade threshold.',
+        listedMeaningZh: 'Listed threshold is 85%.',
+        unlistedMeaningZh: 'Unlisted threshold is 90%.',
+        verification: {
+          reviewedAt: '2026-08-02',
+          url: 'https://www.example.ac.uk/china-rule',
+          requiredText: ['listed threshold 85%', 'unlisted threshold 90%'],
+        },
+      },
+    };
+
+    const result = await syncRegisteredSources({
+      ...paths,
+      sources: [ruleSource],
+      fetchImpl: vi.fn().mockResolvedValue(new Response('<p>listed threshold 85%</p>', { status: 200 })),
+      extractFacts,
+      now: new Date('2026-08-02T10:00:00Z'),
+    });
+
+    expect(extractFacts).not.toHaveBeenCalled();
+    expect(result.requirements).toEqual(previousRequirements);
+    expect(result.status['example-source'].health).toBe('changed');
+    expect(result.anomalies).toMatchObject([{
+      reason: 'institution-rule-text-changed',
+      missingRequiredText: ['unlisted threshold 90%'],
+    }]);
+  });
+
+  it('bounds parser-enabled source requests with a timeout', async () => {
+    const paths = await createFiles(facts(100));
+    const fetchImpl = vi.fn((_url, init) => new Promise((_resolve, reject) => {
+      init.signal.addEventListener('abort', () => reject(new Error('aborted')));
+    }));
+
+    const result = await syncRegisteredSources({
+      ...paths,
+      sources: [source],
+      fetchImpl,
+      fetchTimeoutMs: 5,
+      now: new Date('2026-08-02T10:00:00Z'),
+    });
+
+    expect(result.status['example-source'].health).toBe('temporary-error');
+    expect(fetchImpl.mock.calls[0][1].signal).toBeInstanceOf(AbortSignal);
   });
 
   it('records a generic extraction rejection without replacing trusted facts', async () => {
@@ -280,6 +357,7 @@ describe('syncRegisteredSources', () => {
       universityId: 'example-university',
       sourceId: 'example-source',
       institutionId: 'example-institution',
+      institutionOfficial: 'Example University',
       scope: 'university',
       scopeZh: 'University-wide list',
       extractedAt: '2026-08-01T10:00:00.000Z',

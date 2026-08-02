@@ -28,6 +28,7 @@ const validRequirement: RequirementFact = {
   universityId: 'university-college-london',
   sourceId: 'ucl-china-requirements',
   institutionId: 'peking-university',
+  institutionOfficial: 'Peking University',
   tierOfficial: 'Group A',
   scope: 'university',
   scopeZh: '大学层级',
@@ -36,6 +37,11 @@ const validRequirement: RequirementFact = {
 };
 
 describe('normalized requirement contracts', () => {
+  it('requires every persisted fact to retain the source-specific institution spelling', () => {
+    const { institutionOfficial: _institutionOfficial, ...missingOfficialName } = validRequirement;
+    expect(validateRequirementData(missingOfficialName)).toBe(false);
+  });
+
   it('rejects facts without traceable scope, cycle, and source', () => {
     expect(validateRequirementData({
       id: 'bad', universityId: 'ucl', institutionId: 'peking-university',

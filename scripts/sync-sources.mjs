@@ -3,6 +3,7 @@ import { mkdir, readFile, rename, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import Ajv2020 from 'ajv/dist/2020.js';
+import { parseHTML } from 'linkedom';
 import { extractHtmlFacts } from './extractors/html.mjs';
 import { extractPdfFacts } from './extractors/pdf.mjs';
 import { normalizeExtractedFact } from './extractors/normalize.mjs';
@@ -34,6 +35,67 @@ async function writeJsonAtomically(path, value) {
 
 function defaultWait(milliseconds) {
   return new Promise((resolve) => setTimeout(resolve, milliseconds));
+}
+
+function fetchWithTimeout(fetchImpl, url, init, timeoutMs) {
+  return fetchImpl(url, { ...init, signal: AbortSignal.timeout(timeoutMs) });
+}
+
+function normalizeRuleText(value) {
+  return String(value ?? '').normalize('NFKC').replace(/\s+/gu, ' ').trim().toLocaleLowerCase('en-US');
+}
+
+async function verifyInstitutionRuleSource(source, fetchImpl, timeoutMs) {
+  const verification = source.institutionRule?.verification;
+  if (!verification) {
+    return { accepted: false, health: 'changed', reason: 'institution-rule-verification-missing' };
+  }
+
+  let response;
+  try {
+    response = await fetchWithTimeout(fetchImpl, verification.url, {
+      headers: { 'user-agent': 'Xiaoying-University-Directory/0.1 (+reviewed institution rule verification)' },
+      redirect: 'follow',
+    }, timeoutMs);
+  } catch (error) {
+    return {
+      accepted: false,
+      health: 'temporary-error',
+      reason: 'institution-rule-source-temporary-error',
+      error: error instanceof Error ? error.message : 'unknown error',
+    };
+  }
+
+  if (!response.ok) {
+    const health = fetchHealth(response);
+    return {
+      accepted: false,
+      health,
+      reason: health === 'temporary-error'
+        ? 'institution-rule-source-temporary-error'
+        : 'institution-rule-source-unavailable',
+      httpStatus: response.status,
+    };
+  }
+
+  const html = await response.text();
+  const { document } = parseHTML(html);
+  const pageText = normalizeRuleText(
+    document.body?.textContent
+    || document.documentElement?.textContent
+    || html.replace(/<[^>]*>/gu, ' '),
+  );
+  const missingRequiredText = verification.requiredText.filter((required) =>
+    !pageText.includes(normalizeRuleText(required)));
+  if (missingRequiredText.length > 0) {
+    return {
+      accepted: false,
+      health: 'changed',
+      reason: 'institution-rule-text-changed',
+      missingRequiredText,
+    };
+  }
+  return { accepted: true };
 }
 
 function sourcePaths(options) {
@@ -104,6 +166,7 @@ function completeRequirementFact(rawFact, source, institutions, now, contentHash
     universityId: source.universityId,
     sourceId: source.id,
     institutionId,
+    institutionOfficial: fact.institutionOfficial,
     tierOfficial: fact.tierOfficial,
     scope: source.scope,
     scopeZh: source.scopeZh,
@@ -149,11 +212,30 @@ export async function syncRegisteredSources(options = {}) {
   const extractFacts = options.extractFacts ?? extractRegisteredFacts;
   const wait = options.wait ?? defaultWait;
   const minimumGapMs = options.minimumGapMs ?? 600;
+  const fetchTimeoutMs = options.fetchTimeoutMs ?? 12_000;
   let acceptedUpdate = false;
 
   for (const [index, source] of sources.entries()) {
     if (index > 0) await wait(minimumGapMs);
     const previousStatus = status[source.id];
+
+    if (source.institutionRule?.type !== 'none') {
+      const ruleDecision = await verifyInstitutionRuleSource(source, fetchImpl, fetchTimeoutMs);
+      if (!ruleDecision.accepted) {
+        status[source.id] = sourceStatus(source, previousStatus, now, {
+          health: ruleDecision.health,
+          ...(ruleDecision.error ? { error: ruleDecision.error } : {}),
+          ...(ruleDecision.httpStatus ? { httpStatus: ruleDecision.httpStatus } : {}),
+        });
+        if (ruleDecision.health !== 'temporary-error') {
+          anomalies.push(anomaly(source, ruleDecision.reason, now, {
+            ...(ruleDecision.httpStatus ? { httpStatus: ruleDecision.httpStatus } : {}),
+            ...(ruleDecision.missingRequiredText ? { missingRequiredText: ruleDecision.missingRequiredText } : {}),
+          }));
+        }
+        continue;
+      }
+    }
 
     if (source.parser.mode === 'link-only') {
       status[source.id] = await checkSource(source, fetchImpl, previousStatus, typeof now === 'function' ? now() : now);
@@ -162,9 +244,10 @@ export async function syncRegisteredSources(options = {}) {
 
     let response;
     try {
-      response = await fetchImpl(source.url, {
+      response = await fetchWithTimeout(fetchImpl, source.url, {
         headers: { 'user-agent': 'Xiaoying-University-Directory/0.1 (+guarded official source synchronisation)' },
-      });
+        redirect: 'follow',
+      }, fetchTimeoutMs);
     } catch (error) {
       status[source.id] = sourceStatus(source, previousStatus, now, {
         health: 'temporary-error',

@@ -51,6 +51,11 @@ export interface InstitutionRule {
   listedMeaningZh?: string;
   unlistedMeaningZh?: string;
   caveatZh?: string;
+  verification?: {
+    reviewedAt: string;
+    url: string;
+    requiredText: string[];
+  };
 }
 
 export interface OfficialSourceConfig {
@@ -103,6 +108,7 @@ export interface RequirementFact {
   universityId: string;
   sourceId: string;
   institutionId: string;
+  institutionOfficial: string;
   tierOfficial: string;
   tierZh?: string;
   scoreOfficial?: string;

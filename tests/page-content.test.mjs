@@ -48,6 +48,8 @@ describe('dual-direction search page', () => {
     expect(page).toContain('仅适用于：');
     expect(page).toContain('官方分组/等级');
     expect(page).toContain('官网存在院校规则，但本站暂未完成安全结构化');
+    expect(page).toContain('规则人工核验：');
+    expect(page).toContain('查看规则说明来源');
     expect(page).not.toContain('查看已收录院校 List（');
     expect(page).not.toContain('不能申请');
     expect(styles).toContain('.official-rule-meaning');
@@ -75,6 +77,12 @@ describe('published methodology and contributor guidance', () => {
     for (const phrase of ['院校准入限制', '院校成绩分档', '混合规则', '名单外不一定不能申请', '仅适用于部分学院']) {
       expect(`${methodology}${readme}`).toContain(phrase);
     }
+  });
+
+  it('documents daily monitoring of manually reviewed rule meaning', () => {
+    expect(methodology).toContain('关键规则文字');
+    expect(readme).toContain('规则核验页');
+    expect(`${methodology}${readme}`).toContain('人工重新核验');
   });
 
   it('documents the minimum safe source and alias contribution path', () => {

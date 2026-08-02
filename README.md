@@ -28,12 +28,13 @@
 每天一次的 GitHub Actions 会按顺序完成：
 
 1. 用 Lychee 低频检查已登记的官方链接；
-2. 对明确启用解析的 HTML/PDF 来源进行自动提取；
-3. 检查数量范围、删除比例、重复项、来源归属和 JSON Schema；
-4. 异常时拒绝新结果、保留上一版可信数据，并创建或更新 GitHub Issue；
-5. 重建中国院校反向索引，运行完整测试和静态构建；
-6. 只提交通过保护条件的数据，再触发只读 CI；
-7. GitHub Pages 只发布该次 CI 实际验证过的同一提交。
+2. 检查人工登记的规则核验页及关键文字，发生变化时等待人工重新核验；
+3. 对明确启用解析的 HTML/PDF 来源进行自动提取；
+4. 检查数量范围、事实 ID 删除比例、重复项、来源归属和 JSON Schema；
+5. 异常时拒绝新结果、保留上一版可信数据，并创建或更新 GitHub Issue；
+6. 重建中国院校反向索引，运行完整测试和静态构建；
+7. 只提交通过保护条件的数据，再触发只读 CI；
+8. GitHub Pages 只发布该次 CI 实际验证过的同一提交。
 
 机器人使用仓库自带的 `GITHUB_TOKEN`，不需要个人令牌或付费服务。
 
@@ -66,7 +67,7 @@ pnpm sync:sources
 
 - `src/data/qs-2027-top-200-uk.json`：固定的 28 所大学范围；
 - `src/data/universities.json`：大学名称、排名、公开状态和来源关联；
-- `src/data/sources.json`：人工登记的官方入口、适用范围和解析保护条件；
+- `src/data/sources.json`：人工登记的官方入口、适用范围、规则核验页和解析保护条件；
 - `src/data/institutions.json`：中国本科院校规范名称与可核验别名；
 - `src/data/generated/requirements.json`：通过保护条件的官方名单事实；
 - `src/data/generated/reverse-index.json`：可复现生成的反向查询索引；

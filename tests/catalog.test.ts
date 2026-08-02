@@ -131,6 +131,9 @@ describe('QS cohort and official source registry', () => {
     for (const source of sources.filter((item) => item.institutionRule.type !== 'none')) {
       expect(source.institutionRule.listedMeaningZh?.trim()).toBeTruthy();
       expect(source.institutionRule.unlistedMeaningZh?.trim()).toBeTruthy();
+      expect(source.institutionRule.verification?.reviewedAt).toMatch(/^\d{4}-\d{2}-\d{2}$/u);
+      expect(source.institutionRule.verification?.url).toMatch(/^https:\/\//u);
+      expect(source.institutionRule.verification?.requiredText.length).toBeGreaterThan(1);
     }
   });
 
@@ -157,5 +160,14 @@ describe('QS cohort and official source registry', () => {
         .filter((fact) => fact.institutionId === matches[0]?.id)
         .map((fact) => fact.sourceId))).toEqual(new Set(['ucl-china', 'edinburgh-china']));
     }
+  });
+
+  it('preserves each source spelling after canonical institution matching', () => {
+    const beihangId = institutions.find((institution) => institution.nameZh === '北京航空航天大学')?.id;
+    const officialName = (sourceId: string) => requirements.find((fact) =>
+      fact.sourceId === sourceId && fact.institutionId === beihangId)?.institutionOfficial;
+
+    expect(officialName('ucl-china')).toBe('Beihang University (formerly Beijing University of Aeronautics & Astronautics)');
+    expect(officialName('edinburgh-china')).toBe('Beihang University');
   });
 });

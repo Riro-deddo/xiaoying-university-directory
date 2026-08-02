@@ -22,7 +22,9 @@ export function decideSourceUpdate(previousFacts, nextFacts, guard) {
   }
 
   if (previousFacts.length > 0) {
-    const removalRatio = (previousFacts.length - nextFacts.length) / previousFacts.length;
+    const nextIds = new Set(nextFacts.map((fact) => fact.id));
+    const removedCount = previousFacts.filter((fact) => !nextIds.has(fact.id)).length;
+    const removalRatio = removedCount / previousFacts.length;
     if (removalRatio > guard.maximumRemovalRatio) {
       return { accepted: false, reason: 'removal-ratio-exceeded' };
     }

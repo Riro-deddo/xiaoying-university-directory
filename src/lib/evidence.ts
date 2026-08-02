@@ -52,7 +52,10 @@ export function deriveEvidence(input: EvidenceInput): EvidenceResult {
   if (
     input.source?.kind === 'official-list' &&
     input.source.scope === 'university' &&
-    input.source.parser.mode !== 'link-only'
+    input.source.parser.mode !== 'link-only' &&
+    input.source.institutionRule.type !== 'none' &&
+    (health === 'ok' || health === 'redirected') &&
+    Boolean(input.status?.lastSuccessfulAt)
   ) {
     return { state: 'not-found-in-public-list', ...sourceMetadata(input) };
   }

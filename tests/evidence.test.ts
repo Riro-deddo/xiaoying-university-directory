@@ -21,6 +21,7 @@ const facultySource: OfficialSourceConfig = {
 };
 const universityFact: RequirementFact = {
   id: 'public-list-example', universityId: 'example-university', sourceId: 'public-list', institutionId: 'example-institution',
+  institutionOfficial: 'Example Institution',
   tierOfficial: 'Group A', scoreOfficial: '85%', scope: 'university', scopeZh: '学校层面', cycle: '2026/27',
   extractedAt: '2026-08-01T10:00:00.000Z', contentHash: 'hash',
 };
@@ -47,6 +48,25 @@ describe('deriveEvidence', () => {
     const result = deriveEvidence({ fact: undefined, source: universitySource, status: ok });
     expect(result).toMatchObject({ state: 'not-found-in-public-list', sourceId: 'public-list' });
     expect(result).not.toHaveProperty('eligibility');
+  });
+
+  it('keeps structured-list misses neutral until the source has a dated healthy check', () => {
+    expect(deriveEvidence({ source: universitySource }).state).toBe('no-public-list');
+    expect(deriveEvidence({
+      source: universitySource,
+      status: { sourceId: universitySource.id, health: 'unchecked' },
+    }).state).toBe('no-public-list');
+    expect(deriveEvidence({
+      source: universitySource,
+      status: { sourceId: universitySource.id, health: 'ok' },
+    }).state).toBe('no-public-list');
+  });
+
+  it('does not emit a structured negative for a requirements-only source', () => {
+    expect(deriveEvidence({
+      source: { ...universitySource, institutionRule: { type: 'none', summaryZh: '只有一般要求。' } },
+      status: ok,
+    }).state).toBe('no-public-list');
   });
 
   it('returns no-public-list when the available source is not a university-wide official list', () => {

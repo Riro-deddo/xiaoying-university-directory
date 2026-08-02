@@ -1,6 +1,7 @@
 [
   {
     "institutionId": "anhui-university-4d325618",
+    "institutionOfficial": "Anhui University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -10,6 +11,7 @@
   },
   {
     "institutionId": "beihang-university-formerly-beijing-university-of-aeronautics-astronautics-e1caae39",
+    "institutionOfficial": "Beihang University (formerly Beijing University of Aeronautics & Astronautics)",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -20,6 +22,7 @@
   },
   {
     "institutionId": "beihang-university-formerly-beijing-university-of-aeronautics-astronautics-e1caae39",
+    "institutionOfficial": "Beihang University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -29,6 +32,7 @@
   },
   {
     "institutionId": "beijing-foreign-studies-university-c44143af",
+    "institutionOfficial": "Beijing Foreign Studies University",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -39,6 +43,7 @@
   },
   {
     "institutionId": "beijing-foreign-studies-university-c44143af",
+    "institutionOfficial": "Beijing Foreign Studies University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -48,6 +53,7 @@
   },
   {
     "institutionId": "beijing-forestry-university-b3351c0d",
+    "institutionOfficial": "Beijing Forestry University",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -58,6 +64,7 @@
   },
   {
     "institutionId": "beijing-forestry-university-b3351c0d",
+    "institutionOfficial": "Beijing Forestry University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -67,6 +74,7 @@
   },
   {
     "institutionId": "beijing-institute-of-technology-9484ee28",
+    "institutionOfficial": "Beijing Institute of Technology",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -77,6 +85,7 @@
   },
   {
     "institutionId": "beijing-jiaotong-university-formerly-beifang-northern-jiaotong-university-6c628689",
+    "institutionOfficial": "Beijing Jiaotong University (formerly Beifang (Northern) Jiaotong University)",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -87,6 +96,7 @@
   },
   {
     "institutionId": "beijing-jiaotong-university-formerly-beifang-northern-jiaotong-university-6c628689",
+    "institutionOfficial": "Beijing Jiaotong University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -96,6 +106,7 @@
   },
   {
     "institutionId": "beijing-normal-university-hong-kong-baptist-university-united-international-college-6107eb6a",
+    "institutionOfficial": "Beijing Normal University - Hong Kong Baptist University United International College",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -105,6 +116,7 @@
   },
   {
     "institutionId": "beijing-normal-university-see-note-regarding-united-international-college-c88360f6",
+    "institutionOfficial": "Beijing Normal University (see note regarding United International College) *",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -115,6 +127,7 @@
   },
   {
     "institutionId": "beijing-normal-university-see-note-regarding-united-international-college-c88360f6",
+    "institutionOfficial": "Beijing Normal University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -124,6 +137,7 @@
   },
   {
     "institutionId": "beijing-sport-university-f9ccc13f",
+    "institutionOfficial": "Beijing Sport University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -133,6 +147,7 @@
   },
   {
     "institutionId": "beijing-university-of-chemical-technology-a79139e9",
+    "institutionOfficial": "Beijing University of Chemical Technology",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -143,6 +158,7 @@
   },
   {
     "institutionId": "beijing-university-of-chinese-medicine-70aac221",
+    "institutionOfficial": "Beijing University of Chinese Medicine",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -153,6 +169,7 @@
   },
   {
     "institutionId": "beijing-university-of-posts-and-telecommunications-63e3d04f",
+    "institutionOfficial": "Beijing University of Posts and Telecommunications",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -163,6 +180,7 @@
   },
   {
     "institutionId": "central-conservatory-of-music-2a7c01dd",
+    "institutionOfficial": "Central Conservatory of Music",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -173,6 +191,7 @@
   },
   {
     "institutionId": "central-south-university-3352f6a2",
+    "institutionOfficial": "Central South University",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -183,6 +202,7 @@
   },
   {
     "institutionId": "central-south-university-3352f6a2",
+    "institutionOfficial": "Central South University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -192,6 +212,7 @@
   },
   {
     "institutionId": "central-university-of-finance-and-economics-2259e13d",
+    "institutionOfficial": "Central University of Finance and Economics",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -202,6 +223,7 @@
   },
   {
     "institutionId": "chang-an-university-178fc794",
+    "institutionOfficial": "Chang'an University",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -212,6 +234,7 @@
   },
   {
     "institutionId": "chang-an-university-178fc794",
+    "institutionOfficial": "Chang'an University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -221,6 +244,7 @@
   },
   {
     "institutionId": "china-agricultural-university-7f24114a",
+    "institutionOfficial": "China Agricultural University",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -231,6 +255,7 @@
   },
   {
     "institutionId": "china-agricultural-university-7f24114a",
+    "institutionOfficial": "China Agricultural University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -240,6 +265,7 @@
   },
   {
     "institutionId": "china-pharmaceutical-university-03ca6012",
+    "institutionOfficial": "China Pharmaceutical University",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -250,6 +276,7 @@
   },
   {
     "institutionId": "china-pharmaceutical-university-03ca6012",
+    "institutionOfficial": "China Pharmaceutical University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -259,6 +286,7 @@
   },
   {
     "institutionId": "china-university-of-geosciences-beijing-and-wuhan-e49191e5",
+    "institutionOfficial": "China University of Geosciences, Beijing and Wuhan",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -269,6 +297,7 @@
   },
   {
     "institutionId": "china-university-of-mining-and-technology-xuzhou-beijing-df570a22",
+    "institutionOfficial": "China University of Mining and Technology – Xuzhou/Beijing",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -279,6 +308,7 @@
   },
   {
     "institutionId": "china-university-of-petroleum-beijing-and-east-china-campuses-12ce0907",
+    "institutionOfficial": "China University of Petroleum (Beijing and East China campuses)",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -289,6 +319,7 @@
   },
   {
     "institutionId": "china-university-of-political-science-and-law-2ee2c283",
+    "institutionOfficial": "China University of Political Science and Law",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -299,6 +330,7 @@
   },
   {
     "institutionId": "chinese-academy-of-sciences-733200f1",
+    "institutionOfficial": "Chinese Academy of Sciences",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -309,6 +341,7 @@
   },
   {
     "institutionId": "chongqing-university-3a110f6c",
+    "institutionOfficial": "Chongqing University",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -319,6 +352,7 @@
   },
   {
     "institutionId": "chongqing-university-3a110f6c",
+    "institutionOfficial": "Chongqing University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -328,6 +362,7 @@
   },
   {
     "institutionId": "communication-university-of-china-3a1bb185",
+    "institutionOfficial": "Communication University of China",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -338,6 +373,7 @@
   },
   {
     "institutionId": "dalian-maritime-university-8696305d",
+    "institutionOfficial": "Dalian Maritime University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -347,6 +383,7 @@
   },
   {
     "institutionId": "dalian-university-of-technology-d7cc67a0",
+    "institutionOfficial": "Dalian University of Technology",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -357,6 +394,7 @@
   },
   {
     "institutionId": "donghua-university-8fab8235",
+    "institutionOfficial": "Donghua University",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -367,6 +405,7 @@
   },
   {
     "institutionId": "donghua-university-8fab8235",
+    "institutionOfficial": "Donghua University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -376,6 +415,7 @@
   },
   {
     "institutionId": "east-china-normal-university-8ce642ca",
+    "institutionOfficial": "East China Normal University",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -386,6 +426,7 @@
   },
   {
     "institutionId": "east-china-normal-university-8ce642ca",
+    "institutionOfficial": "East China Normal University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -395,6 +436,7 @@
   },
   {
     "institutionId": "east-china-university-of-science-and-technology-77dcefa9",
+    "institutionOfficial": "East China University of Science and Technology",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -405,6 +447,7 @@
   },
   {
     "institutionId": "fudan-university-749651d4",
+    "institutionOfficial": "Fudan University",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -415,6 +458,7 @@
   },
   {
     "institutionId": "fudan-university-749651d4",
+    "institutionOfficial": "Fudan University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -424,6 +468,7 @@
   },
   {
     "institutionId": "fuzhou-university-e59f3da9",
+    "institutionOfficial": "Fuzhou University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -433,6 +478,7 @@
   },
   {
     "institutionId": "guangxi-university-cabb03f5",
+    "institutionOfficial": "Guangxi University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -442,6 +488,7 @@
   },
   {
     "institutionId": "guizhou-university-55c5778b",
+    "institutionOfficial": "Guizhou University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -451,6 +498,7 @@
   },
   {
     "institutionId": "hainan-university-70fc5cd1",
+    "institutionOfficial": "Hainan University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -460,6 +508,7 @@
   },
   {
     "institutionId": "harbin-engineering-university-a81a0bdd",
+    "institutionOfficial": "Harbin Engineering University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -469,6 +518,7 @@
   },
   {
     "institutionId": "harbin-institute-of-technology-7c521149",
+    "institutionOfficial": "Harbin Institute of Technology",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -479,6 +529,7 @@
   },
   {
     "institutionId": "hefei-university-of-technology-1c5fd4db",
+    "institutionOfficial": "Hefei University of Technology",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -489,6 +540,7 @@
   },
   {
     "institutionId": "hohai-university-8e8ac8be",
+    "institutionOfficial": "Hohai University",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -499,6 +551,7 @@
   },
   {
     "institutionId": "hohai-university-8e8ac8be",
+    "institutionOfficial": "Hohai University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -508,6 +561,7 @@
   },
   {
     "institutionId": "huazhong-agricultural-university-central-china-agricultural-university-5cb9ba1d",
+    "institutionOfficial": "Huazhong Agricultural University / Central China Agricultural University",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -518,6 +572,7 @@
   },
   {
     "institutionId": "huazhong-agricultural-university-central-china-agricultural-university-5cb9ba1d",
+    "institutionOfficial": "Huazhong Agricultural University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -527,6 +582,7 @@
   },
   {
     "institutionId": "huazhong-normal-university-central-china-normal-university-3a822b99",
+    "institutionOfficial": "Huazhong Normal University / Central China Normal University",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -537,6 +593,7 @@
   },
   {
     "institutionId": "huazhong-university-of-science-technology-97cee7bd",
+    "institutionOfficial": "Huazhong University of Science & Technology",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -547,6 +604,7 @@
   },
   {
     "institutionId": "hunan-normal-university-95554cb7",
+    "institutionOfficial": "Hunan Normal University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -556,6 +614,7 @@
   },
   {
     "institutionId": "hunan-university-75a3814e",
+    "institutionOfficial": "Hunan University",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -566,6 +625,7 @@
   },
   {
     "institutionId": "hunan-university-75a3814e",
+    "institutionOfficial": "Hunan University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -575,6 +635,7 @@
   },
   {
     "institutionId": "inner-mongolia-arts-university-05fa9653",
+    "institutionOfficial": "Inner Mongolia Arts University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -584,6 +645,7 @@
   },
   {
     "institutionId": "inner-mongolia-university-ffd71f0e",
+    "institutionOfficial": "Inner Mongolia University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -593,6 +655,7 @@
   },
   {
     "institutionId": "jiangnan-university-2654a04a",
+    "institutionOfficial": "Jiangnan University",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -603,6 +666,7 @@
   },
   {
     "institutionId": "jiangnan-university-2654a04a",
+    "institutionOfficial": "Jiangnan University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -612,6 +676,7 @@
   },
   {
     "institutionId": "jilin-university-3c8d9a5b",
+    "institutionOfficial": "Jilin University",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -622,6 +687,7 @@
   },
   {
     "institutionId": "jilin-university-3c8d9a5b",
+    "institutionOfficial": "Jilin University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -631,6 +697,7 @@
   },
   {
     "institutionId": "jinan-university-fdd34254",
+    "institutionOfficial": "Jinan University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -640,6 +707,7 @@
   },
   {
     "institutionId": "jingdezhen-ceramic-institute-f3db41ac",
+    "institutionOfficial": "Jingdezhen Ceramic Institute",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -649,6 +717,7 @@
   },
   {
     "institutionId": "lanzhou-university-52c21e54",
+    "institutionOfficial": "Lanzhou University",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -659,6 +728,7 @@
   },
   {
     "institutionId": "lanzhou-university-52c21e54",
+    "institutionOfficial": "Lanzhou University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -668,6 +738,7 @@
   },
   {
     "institutionId": "liaoning-university-80e8b162",
+    "institutionOfficial": "Liaoning University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -677,6 +748,7 @@
   },
   {
     "institutionId": "minzu-university-of-china-7bbdd5ab",
+    "institutionOfficial": "Minzu University of China",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -687,6 +759,7 @@
   },
   {
     "institutionId": "nanchang-university-3dc3ad6c",
+    "institutionOfficial": "Nanchang University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -696,6 +769,7 @@
   },
   {
     "institutionId": "nanhang-jincheng-college-independent-college-of-nanjing-university-of-aeronautics-and-astronautics-7e1b9462",
+    "institutionOfficial": "Nanhang Jincheng College (independent college of Nanjing University of Aeronautics and Astronautics) **",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -706,6 +780,7 @@
   },
   {
     "institutionId": "nanjing-agricultural-university-c39b4a83",
+    "institutionOfficial": "Nanjing Agricultural University",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -716,6 +791,7 @@
   },
   {
     "institutionId": "nanjing-agricultural-university-c39b4a83",
+    "institutionOfficial": "Nanjing Agricultural University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -725,6 +801,7 @@
   },
   {
     "institutionId": "nanjing-normal-university-4bbad3a8",
+    "institutionOfficial": "Nanjing Normal University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -734,6 +811,7 @@
   },
   {
     "institutionId": "nanjing-university-8fbdf4ba",
+    "institutionOfficial": "Nanjing University",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -744,6 +822,7 @@
   },
   {
     "institutionId": "nanjing-university-8fbdf4ba",
+    "institutionOfficial": "Nanjing University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -753,6 +832,7 @@
   },
   {
     "institutionId": "nanjing-university-of-science-and-technology-af39a57f",
+    "institutionOfficial": "Nanjing University of Science and Technology",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -763,6 +843,7 @@
   },
   {
     "institutionId": "nankai-university-fed7345f",
+    "institutionOfficial": "Nankai University",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -773,6 +854,7 @@
   },
   {
     "institutionId": "nankai-university-fed7345f",
+    "institutionOfficial": "Nankai University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -782,6 +864,7 @@
   },
   {
     "institutionId": "national-university-of-defense-technology-471f1540",
+    "institutionOfficial": "National University of Defense Technology **",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -792,6 +875,7 @@
   },
   {
     "institutionId": "ningxia-university-b5450df6",
+    "institutionOfficial": "Ningxia University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -801,6 +885,7 @@
   },
   {
     "institutionId": "north-china-electric-power-university-huabei-electric-power-university-68bcce4b",
+    "institutionOfficial": "North China Electric Power University / Huabei Electric Power University",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -811,6 +896,7 @@
   },
   {
     "institutionId": "north-china-electric-power-university-huabei-electric-power-university-68bcce4b",
+    "institutionOfficial": "North China Electric Power University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -820,6 +906,7 @@
   },
   {
     "institutionId": "northeast-agricultural-university-271d6328",
+    "institutionOfficial": "Northeast Agricultural University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -829,6 +916,7 @@
   },
   {
     "institutionId": "northeast-forestry-university-d79f64f5",
+    "institutionOfficial": "Northeast Forestry University",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -839,6 +927,7 @@
   },
   {
     "institutionId": "northeast-forestry-university-d79f64f5",
+    "institutionOfficial": "Northeast Forestry University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -848,6 +937,7 @@
   },
   {
     "institutionId": "northeast-normal-university-a77c4549",
+    "institutionOfficial": "Northeast Normal University",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -858,6 +948,7 @@
   },
   {
     "institutionId": "northeast-normal-university-a77c4549",
+    "institutionOfficial": "Northeast Normal University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -867,6 +958,7 @@
   },
   {
     "institutionId": "northeastern-university-677adfe6",
+    "institutionOfficial": "Northeastern University",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -877,6 +969,7 @@
   },
   {
     "institutionId": "northeastern-university-677adfe6",
+    "institutionOfficial": "Northeastern University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -886,6 +979,7 @@
   },
   {
     "institutionId": "northwest-university-2a8585db",
+    "institutionOfficial": "Northwest University",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -896,6 +990,7 @@
   },
   {
     "institutionId": "northwest-university-2a8585db",
+    "institutionOfficial": "Northwest University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -905,6 +1000,7 @@
   },
   {
     "institutionId": "northwestern-polytechnical-university-1e858b31",
+    "institutionOfficial": "Northwestern Polytechnical University",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -915,6 +1011,7 @@
   },
   {
     "institutionId": "northwestern-polytechnical-university-1e858b31",
+    "institutionOfficial": "Northwestern Polytechnical University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -924,6 +1021,7 @@
   },
   {
     "institutionId": "ocean-university-of-china-qingdao-ab3847cd",
+    "institutionOfficial": "Ocean University of China, Qingdao",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -934,6 +1032,7 @@
   },
   {
     "institutionId": "peking-university-4818c188",
+    "institutionOfficial": "Peking University",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -944,6 +1043,7 @@
   },
   {
     "institutionId": "peking-university-4818c188",
+    "institutionOfficial": "Peking University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -953,6 +1053,7 @@
   },
   {
     "institutionId": "qinghai-university-e7f8995a",
+    "institutionOfficial": "Qinghai University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -962,6 +1063,7 @@
   },
   {
     "institutionId": "renmin-university-of-china-9e74b938",
+    "institutionOfficial": "Renmin University of China",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -972,6 +1074,7 @@
   },
   {
     "institutionId": "shaanxi-normal-university-d6405edd",
+    "institutionOfficial": "Shaanxi Normal University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -981,6 +1084,7 @@
   },
   {
     "institutionId": "shandong-university-fd3a1051",
+    "institutionOfficial": "Shandong University",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -991,6 +1095,7 @@
   },
   {
     "institutionId": "shandong-university-fd3a1051",
+    "institutionOfficial": "Shandong University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -1000,6 +1105,7 @@
   },
   {
     "institutionId": "shanghai-2nd-medical-university-6a167102",
+    "institutionOfficial": "Shanghai (2nd) Medical University",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -1010,6 +1116,7 @@
   },
   {
     "institutionId": "shanghai-international-studies-university-b9e33065",
+    "institutionOfficial": "Shanghai International Studies University",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -1020,6 +1127,7 @@
   },
   {
     "institutionId": "shanghai-international-studies-university-b9e33065",
+    "institutionOfficial": "Shanghai International Studies University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -1029,6 +1137,7 @@
   },
   {
     "institutionId": "shanghai-jiaotong-university-95ef14bb",
+    "institutionOfficial": "Shanghai Jiaotong University",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -1039,6 +1148,7 @@
   },
   {
     "institutionId": "shanghai-jiaotong-university-95ef14bb",
+    "institutionOfficial": "Shanghai Jiao Tong University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -1048,6 +1158,7 @@
   },
   {
     "institutionId": "shanghai-university-b933744c",
+    "institutionOfficial": "Shanghai University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -1057,6 +1168,7 @@
   },
   {
     "institutionId": "shanghai-university-of-finance-and-economics-a5566168",
+    "institutionOfficial": "Shanghai University of Finance and Economics",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -1067,6 +1179,7 @@
   },
   {
     "institutionId": "shenzhen-moscow-state-university-and-beijing-institute-of-technology-university-85730974",
+    "institutionOfficial": "Shenzhen Moscow-State-University-and-Beijing-Institute-of-Technology University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -1076,6 +1189,7 @@
   },
   {
     "institutionId": "shenzhen-university-c29d3a31",
+    "institutionOfficial": "Shenzhen University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -1085,6 +1199,7 @@
   },
   {
     "institutionId": "shihezi-university-2f997caf",
+    "institutionOfficial": "Shihezi University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -1094,6 +1209,7 @@
   },
   {
     "institutionId": "sichuan-agricultural-university-2e7fba53",
+    "institutionOfficial": "Sichuan Agricultural University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -1103,6 +1219,7 @@
   },
   {
     "institutionId": "sichuan-fine-arts-institute-60415366",
+    "institutionOfficial": "Sichuan Fine Arts Institute",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -1112,6 +1229,7 @@
   },
   {
     "institutionId": "sichuan-university-2721d57b",
+    "institutionOfficial": "Sichuan University",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -1122,6 +1240,7 @@
   },
   {
     "institutionId": "sichuan-university-2721d57b",
+    "institutionOfficial": "Sichuan University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -1131,6 +1250,7 @@
   },
   {
     "institutionId": "south-china-normal-university-1646a6bc",
+    "institutionOfficial": "South China Normal University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -1140,6 +1260,7 @@
   },
   {
     "institutionId": "south-china-university-of-technology-09771dd9",
+    "institutionOfficial": "South China University of Technology",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -1150,6 +1271,7 @@
   },
   {
     "institutionId": "southeast-university-53eebce9",
+    "institutionOfficial": "Southeast University",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -1160,6 +1282,7 @@
   },
   {
     "institutionId": "southeast-university-53eebce9",
+    "institutionOfficial": "Southeast University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -1169,6 +1292,7 @@
   },
   {
     "institutionId": "southwest-jiaotong-university-9e83d9d0",
+    "institutionOfficial": "Southwest Jiaotong University",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -1179,6 +1303,7 @@
   },
   {
     "institutionId": "southwest-jiaotong-university-9e83d9d0",
+    "institutionOfficial": "Southwest Jiaotong University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -1188,6 +1313,7 @@
   },
   {
     "institutionId": "southwest-university-14772c4d",
+    "institutionOfficial": "Southwest University",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -1198,6 +1324,7 @@
   },
   {
     "institutionId": "southwest-university-14772c4d",
+    "institutionOfficial": "Southwest University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -1207,6 +1334,7 @@
   },
   {
     "institutionId": "southwestern-university-of-finance-and-economics-9e667ea4",
+    "institutionOfficial": "Southwestern University of Finance and Economics",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -1217,6 +1345,7 @@
   },
   {
     "institutionId": "sun-yat-sen-university-might-appear-as-zhongshan-university-d94644f6",
+    "institutionOfficial": "Sun Yat-Sen University (might appear as Zhongshan University)",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -1227,6 +1356,7 @@
   },
   {
     "institutionId": "sun-yat-sen-university-might-appear-as-zhongshan-university-d94644f6",
+    "institutionOfficial": "Sun Yat-Sen University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -1236,6 +1366,7 @@
   },
   {
     "institutionId": "suzhou-soochow-university-16c0f71b",
+    "institutionOfficial": "Suzhou (Soochow) University**",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -1246,6 +1377,7 @@
   },
   {
     "institutionId": "suzhou-soochow-university-16c0f71b",
+    "institutionOfficial": "Soochow University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -1255,6 +1387,7 @@
   },
   {
     "institutionId": "the-second-military-medical-university-55f6f4f4",
+    "institutionOfficial": "The Second Military Medical University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -1264,6 +1397,7 @@
   },
   {
     "institutionId": "tianjin-medical-university-65b3512e",
+    "institutionOfficial": "Tianjin Medical University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -1273,6 +1407,7 @@
   },
   {
     "institutionId": "tianjin-university-1c8bcb86",
+    "institutionOfficial": "Tianjin University",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -1283,6 +1418,7 @@
   },
   {
     "institutionId": "tianjin-university-1c8bcb86",
+    "institutionOfficial": "Tianjin University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -1292,6 +1428,7 @@
   },
   {
     "institutionId": "tibet-university-44adba65",
+    "institutionOfficial": "Tibet University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -1301,6 +1438,7 @@
   },
   {
     "institutionId": "tongji-university-a6533d2e",
+    "institutionOfficial": "Tongji University",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -1311,6 +1449,7 @@
   },
   {
     "institutionId": "tongji-university-a6533d2e",
+    "institutionOfficial": "Tongji University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -1320,6 +1459,7 @@
   },
   {
     "institutionId": "tsinghua-university-88293fa6",
+    "institutionOfficial": "Tsinghua University",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -1330,6 +1470,7 @@
   },
   {
     "institutionId": "tsinghua-university-88293fa6",
+    "institutionOfficial": "Tsinghua University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -1339,6 +1480,7 @@
   },
   {
     "institutionId": "university-of-electronic-science-and-technology-of-china-101301b5",
+    "institutionOfficial": "University of Electronic Science and Technology of China",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -1349,6 +1491,7 @@
   },
   {
     "institutionId": "university-of-international-business-and-economics-2a13872d",
+    "institutionOfficial": "University of International Business and Economics",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -1359,6 +1502,7 @@
   },
   {
     "institutionId": "university-of-science-and-technology-beijing-0c404289",
+    "institutionOfficial": "University of Science and Technology Beijing",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -1369,6 +1513,7 @@
   },
   {
     "institutionId": "university-of-science-and-technology-of-china-ustc-a638543a",
+    "institutionOfficial": "University of Science and Technology of China (USTC)",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -1379,6 +1524,7 @@
   },
   {
     "institutionId": "wuhan-university-102c49fc",
+    "institutionOfficial": "Wuhan University",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -1389,6 +1535,7 @@
   },
   {
     "institutionId": "wuhan-university-102c49fc",
+    "institutionOfficial": "Wuhan University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -1398,6 +1545,7 @@
   },
   {
     "institutionId": "wuhan-university-of-technology-85782e2d",
+    "institutionOfficial": "Wuhan University of Technology",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -1408,6 +1556,7 @@
   },
   {
     "institutionId": "xi-an-jiaotong-university-95c2779f",
+    "institutionOfficial": "Xi'an Jiaotong University",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -1418,6 +1567,7 @@
   },
   {
     "institutionId": "xiamen-university-5271b226",
+    "institutionOfficial": "Xiamen University",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -1428,6 +1578,7 @@
   },
   {
     "institutionId": "xiamen-university-5271b226",
+    "institutionOfficial": "Xiamen University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -1437,6 +1588,7 @@
   },
   {
     "institutionId": "xiangtan-university-cfb27bdb",
+    "institutionOfficial": "Xiangtan University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -1446,6 +1598,7 @@
   },
   {
     "institutionId": "xidian-university-also-known-as-xi-an-electronic-science-and-technology-university-14c4a29e",
+    "institutionOfficial": "Xidian University (also known as Xi'an Electronic Science and Technology University)**",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -1456,6 +1609,7 @@
   },
   {
     "institutionId": "xidian-university-also-known-as-xi-an-electronic-science-and-technology-university-14c4a29e",
+    "institutionOfficial": "Xidian University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -1465,6 +1619,7 @@
   },
   {
     "institutionId": "xinjiang-university-e1c08fa3",
+    "institutionOfficial": "Xinjiang University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -1474,6 +1629,7 @@
   },
   {
     "institutionId": "yanbian-university-61996de7",
+    "institutionOfficial": "Yanbian University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -1483,6 +1639,7 @@
   },
   {
     "institutionId": "yanshan-university-634a3bf5",
+    "institutionOfficial": "Yanshan University**",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -1493,6 +1650,7 @@
   },
   {
     "institutionId": "yunnan-university-d0bc6178",
+    "institutionOfficial": "Yunnan University",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -1503,6 +1661,7 @@
   },
   {
     "institutionId": "yunnan-university-d0bc6178",
+    "institutionOfficial": "Yunnan University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -1512,6 +1671,7 @@
   },
   {
     "institutionId": "zhejiang-university-41292b6f",
+    "institutionOfficial": "Zhejiang University",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -1522,6 +1682,7 @@
   },
   {
     "institutionId": "zhejiang-university-41292b6f",
+    "institutionOfficial": "Zhejiang University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -1531,6 +1692,7 @@
   },
   {
     "institutionId": "zhejiang-university-of-technology-86cf9f79",
+    "institutionOfficial": "Zhejiang University of Technology**",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -1541,6 +1703,7 @@
   },
   {
     "institutionId": "zhengzhou-university-ccf4b546",
+    "institutionOfficial": "Zhengzhou University**",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",
@@ -1551,6 +1714,7 @@
   },
   {
     "institutionId": "zhengzhou-university-ccf4b546",
+    "institutionOfficial": "Zhengzhou University",
     "universityId": "university-of-edinburgh",
     "evidenceState": "official-match",
     "tierOfficial": "Priority List of Chinese universities – October 2024",
@@ -1560,6 +1724,7 @@
   },
   {
     "institutionId": "zhongnan-university-of-economics-and-law-71156a7a",
+    "institutionOfficial": "Zhongnan University of Economics and Law",
     "universityId": "university-college-london",
     "evidenceState": "official-match",
     "tierOfficial": "Applicants from the list of universities below",

@@ -26,6 +26,8 @@ export interface OfficialListDisplayPanel {
   listedMeaningZh: string;
   unlistedMeaningZh: string;
   caveatZh?: string;
+  ruleReviewedAt: string;
+  ruleSourceUrl: string;
   scope: SourceScope;
   scopeZh: string;
   cycle?: string;
@@ -42,6 +44,7 @@ function assertDisplayableRule(source: SourceWithStatus): asserts source is Sour
     type: Exclude<InstitutionRuleType, 'none'>;
     listedMeaningZh: string;
     unlistedMeaningZh: string;
+    verification: { reviewedAt: string; url: string; requiredText: string[] };
   };
 } {
   if (source.institutionRule.type === 'none') {
@@ -49,6 +52,9 @@ function assertDisplayableRule(source: SourceWithStatus): asserts source is Sour
   }
   if (!source.institutionRule.listedMeaningZh || !source.institutionRule.unlistedMeaningZh) {
     throw new Error(`Source ${source.id} has incomplete institution rule meaning`);
+  }
+  if (!source.institutionRule.verification) {
+    throw new Error(`Source ${source.id} has no reviewed institution rule verification`);
   }
 }
 
@@ -94,6 +100,8 @@ export function buildOfficialListDisplays(input: {
         listedMeaningZh: source.institutionRule.listedMeaningZh,
         unlistedMeaningZh: source.institutionRule.unlistedMeaningZh,
         ...(source.institutionRule.caveatZh ? { caveatZh: source.institutionRule.caveatZh } : {}),
+        ruleReviewedAt: source.institutionRule.verification.reviewedAt,
+        ruleSourceUrl: source.institutionRule.verification.url,
         scope: source.scope,
         scopeZh: source.scopeZh,
         ...(source.cycle ? { cycle: source.cycle } : {}),
@@ -112,7 +120,7 @@ export function buildOfficialListDisplays(input: {
     panel.rows.push({
       institutionId: institution.id,
       nameZh: institution.nameZh,
-      nameEn: institution.nameEn,
+      nameEn: fact.institutionOfficial,
       tierOfficial: fact.tierOfficial,
       ...(fact.scoreOfficial ? { scoreOfficial: fact.scoreOfficial } : {}),
     });

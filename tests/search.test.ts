@@ -8,6 +8,11 @@ const gradeThresholdRule = {
   summaryZh: '院校决定成绩门槛。',
   listedMeaningZh: '名单内使用较低门槛。',
   unlistedMeaningZh: '名单外认可院校使用较高门槛。',
+  verification: {
+    reviewedAt: '2026-08-02',
+    url: 'https://example.test/rule-meaning',
+    requiredText: ['listed threshold', 'unlisted threshold'],
+  },
 };
 
 const records: UniversityWithStatus[] = [
@@ -67,8 +72,8 @@ describe('createInstitutionEvidenceSearch', () => {
       { ...records[1], sources: [{ id: 'ucl-list', universityId: 'ucl', labelZh: '官方名单', url: 'https://example.test/ucl', kind: 'official-list', scope: 'university', scopeZh: '学校范围', institutionRule: gradeThresholdRule, parser: { mode: 'html-list', selector: '.row', guard: { minimumRecords: 0, maximumRecords: 10, maximumRemovalRatio: 0 } }, status: { sourceId: 'ucl-list', health: 'changed' } }] },
     ],
     reverseIndex: [
-      { institutionId: 'peking', universityId: 'edinburgh', evidenceState: 'official-match', tierOfficial: 'Priority list', scopeZh: '学校范围', sourceId: 'edinburgh-list', lastSuccessfulAt: '2026-08-01T00:00:00.000Z', cycle: '2026/27' },
-      { institutionId: 'peking', universityId: 'imperial', evidenceState: 'faculty-match', tierOfficial: 'MBA list', scoreOfficial: '85%', scopeZh: '商学院', sourceId: 'imperial-faculty', lastSuccessfulAt: '2026-08-02T00:00:00.000Z' },
+      { institutionId: 'peking', institutionOfficial: 'Peking University', universityId: 'edinburgh', evidenceState: 'official-match', tierOfficial: 'Priority list', scopeZh: '学校范围', sourceId: 'edinburgh-list', lastSuccessfulAt: '2026-08-01T00:00:00.000Z', cycle: '2026/27' },
+      { institutionId: 'peking', institutionOfficial: 'Peking University', universityId: 'imperial', evidenceState: 'faculty-match', tierOfficial: 'MBA list', scoreOfficial: '85%', scopeZh: '商学院', sourceId: 'imperial-faculty', lastSuccessfulAt: '2026-08-02T00:00:00.000Z' },
     ],
   });
 
@@ -99,6 +104,10 @@ describe('createInstitutionEvidenceSearch', () => {
       ['edinburgh', 'official-match'],
     ]);
     expect(result.cards.find((card) => card.university.id === 'edinburgh')?.evidence.institutionRule?.type).toBe('mixed');
+    expect(result.cards.find((card) => card.university.id === 'edinburgh')).toMatchObject({
+      ruleSourceUrl: 'https://example.test/rule-meaning',
+      ruleReviewedAt: '2026-08-02',
+    });
   });
 
   it('returns no selection for empty and unknown searches', () => {

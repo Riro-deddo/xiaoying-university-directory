@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import { loadInstitutions, loadRequirements, loadUniversities } from '../lib/data';
 import { buildOfficialListDisplays } from '../lib/official-list-display';
+import { serializeJsonForHtml } from '../lib/html-json';
 import {
   directoryFilters,
   institutionRuleTypeCopy,
@@ -18,6 +19,7 @@ const universities = loadUniversities();
 const requirements = loadRequirements();
 const officialListsByUniversity = buildOfficialListDisplays({ universities, institutions, requirements });
 const searchData = { institutions, universities, reverseIndex };
+const searchDataJson = serializeJsonForHtml(searchData);
 const base = import.meta.env.BASE_URL;
 const homeUrl = withBase(base, '');
 const methodologyUrl = withBase(base, 'methodology/');
@@ -113,7 +115,9 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
                     <span>适用范围：{panel.scopeZh}</span>
                     {panel.cycle && <span>申请季：{panel.cycle}</span>}
                     <span>最近提取：{panel.extractedAt.slice(0, 10)}</span>
+                    <span>规则人工核验：{panel.ruleReviewedAt}</span>
                     <a href={panel.sourceUrl} target="_blank" rel="noopener noreferrer">查看大学官网原页</a>
+                    <a href={panel.ruleSourceUrl} target="_blank" rel="noopener noreferrer">查看规则说明来源</a>
                   </div>
                   <ol class="official-list-rows">
                     {panel.rows.map((row) => (
@@ -145,6 +149,12 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
                     <span>{source.institutionRule.summaryZh}</span>
                     <span>官网存在院校规则，但本站暂未完成安全结构化，本站暂不附表。</span>
                     {source.institutionRule.unlistedMeaningZh && <span>{source.institutionRule.unlistedMeaningZh}</span>}
+                    {source.institutionRule.verification && (
+                      <>
+                        <span>规则人工核验：{source.institutionRule.verification.reviewedAt}</span>
+                        <a href={source.institutionRule.verification.url} target="_blank" rel="noopener noreferrer">查看规则说明来源</a>
+                      </>
+                    )}
                   </div>
                 ))}
             </article>
@@ -168,7 +178,7 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
       <p>本站仅作官方信息导航，最终要求以大学官网及招生部门答复为准。</p>
     </footer>
 
-    <script is:inline id="directory-data" type="application/json" set:html={JSON.stringify(searchData)}></script>
+    <script is:inline id="directory-data" type="application/json" set:html={searchDataJson}></script>
     <script>
       import { createInstitutionEvidenceSearch, createUniversitySearch } from '../lib/search';
       import { evidenceCopyFor, sourceFreshnessCopy } from '../lib/presentation';
@@ -265,6 +275,7 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
           if (card.evidence.scoreOfficial) fields.append(evidenceField('官方分数', card.evidence.scoreOfficial));
           if (card.evidence.scopeZh) fields.append(evidenceField('适用范围', card.evidence.scopeZh));
           if (card.evidence.cycle) fields.append(evidenceField('周期', card.evidence.cycle));
+          if (card.ruleReviewedAt) fields.append(evidenceField('规则人工核验', card.ruleReviewedAt));
           fields.append(evidenceField('最近成功检查', sourceFreshnessCopy({ sourceId: card.evidence.sourceId ?? '', health: 'unchecked', lastSuccessfulAt: card.evidence.lastSuccessfulAt })));
           article.append(title, status, description, fields);
           if (card.sourceUrl) {
@@ -273,6 +284,13 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
             link.target = '_blank';
             link.rel = 'noopener noreferrer';
             article.append(link);
+          }
+          if (card.ruleSourceUrl && card.ruleSourceUrl !== card.sourceUrl) {
+            const ruleLink = makeElement('a', '查看规则说明来源');
+            ruleLink.href = card.ruleSourceUrl;
+            ruleLink.target = '_blank';
+            ruleLink.rel = 'noopener noreferrer';
+            article.append(ruleLink);
           }
           evidence?.append(article);
         });
