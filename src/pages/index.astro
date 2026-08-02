@@ -155,7 +155,7 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
     <script is:inline id="directory-data" type="application/json" set:html={JSON.stringify(searchData)}></script>
     <script>
       import { createInstitutionEvidenceSearch, createUniversitySearch } from '../lib/search';
-      import { evidenceStateCopy, sourceFreshnessCopy } from '../lib/presentation';
+      import { evidenceCopyFor, sourceFreshnessCopy } from '../lib/presentation';
       import type { UniversityState, UniversityWithStatus } from '../lib/types';
 
       const dataNode = document.querySelector<HTMLScriptElement>('#directory-data');
@@ -237,7 +237,7 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
         const heading = makeElement('h2', `${result.institution.nameZh}｜${result.institution.nameEn}`);
         evidence?.append(heading);
         result.cards.forEach((card) => {
-          const copy = evidenceStateCopy[card.evidence.state];
+          const copy = evidenceCopyFor(card.evidence);
           const article = makeElement('article');
           article.className = 'evidence-card';
           const title = makeElement('h3', `${card.university.nameZh}｜QS ${card.university.qs.rank}`);

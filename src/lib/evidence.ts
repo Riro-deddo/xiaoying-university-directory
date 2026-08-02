@@ -1,4 +1,4 @@
-import type { EvidenceState, OfficialSourceConfig, RequirementFact, SourceStatus } from './types';
+import type { EvidenceState, InstitutionRule, OfficialSourceConfig, RequirementFact, SourceStatus } from './types';
 
 export interface EvidenceInput {
   fact?: RequirementFact;
@@ -8,6 +8,7 @@ export interface EvidenceInput {
 
 export interface EvidenceResult {
   state: EvidenceState;
+  institutionRule?: InstitutionRule;
   sourceId?: string;
   tierOfficial?: string;
   scoreOfficial?: string;
@@ -22,6 +23,7 @@ function sourceMetadata(input: EvidenceInput): Omit<EvidenceResult, 'state'> {
   return {
     ...(sourceId ? { sourceId } : {}),
     ...(lastSuccessfulAt ? { lastSuccessfulAt } : {}),
+    ...(input.source?.institutionRule ? { institutionRule: input.source.institutionRule } : {}),
   };
 }
 

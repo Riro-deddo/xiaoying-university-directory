@@ -9,6 +9,12 @@ import type { OfficialSourceConfig, RequirementFact, SourceStatus } from '../src
 const universitySource: OfficialSourceConfig = {
   id: 'public-list', universityId: 'example-university', labelZh: '公开名单', url: 'https://example.test/list',
   kind: 'official-list', scope: 'university', scopeZh: '学校层面', parser: { mode: 'html-list', selector: '.row', defaultTierOfficial: 'A', guard: { minimumRecords: 0, maximumRecords: 10, maximumRemovalRatio: 0 } },
+  institutionRule: {
+    type: 'grade-threshold',
+    summaryZh: '院校决定成绩门槛。',
+    listedMeaningZh: '名单内使用门槛 A。',
+    unlistedMeaningZh: '名单外认可院校使用门槛 B。',
+  },
 };
 const facultySource: OfficialSourceConfig = {
   ...universitySource, id: 'faculty-list', kind: 'faculty-page', scope: 'faculty', scopeZh: '商学院',
@@ -58,6 +64,23 @@ describe('deriveEvidence', () => {
       state: 'no-public-list',
       sourceId: 'link-only-public-list',
     });
+  });
+
+  it('carries reviewed rule meaning into positive and negative structured evidence', () => {
+    const match = deriveEvidence({ fact: universityFact, source: universitySource, status: ok });
+    const miss = deriveEvidence({ source: universitySource, status: ok });
+
+    expect(match.institutionRule).toEqual(universitySource.institutionRule);
+    expect(miss.institutionRule).toEqual(universitySource.institutionRule);
+  });
+
+  it('keeps link-only rule sources neutral even when an unlisted meaning exists', () => {
+    const source: OfficialSourceConfig = {
+      ...universitySource,
+      parser: { mode: 'link-only', guard: { minimumRecords: 0, maximumRecords: 1, maximumRemovalRatio: 0 } },
+    };
+
+    expect(deriveEvidence({ source, status: ok }).state).toBe('no-public-list');
   });
 });
 

@@ -1,4 +1,5 @@
 import type { EvidenceState, InstitutionRuleType, SourceHealth, SourceStatus, UniversityState } from './types';
+import type { EvidenceResult } from './evidence';
 
 export const stateCopy: Record<UniversityState, { label: string; description: string }> = {
   'official-list': { label: '有中国院校规则', description: '已找到大学公开发布的中国院校准入、成绩分档或混合规则。' },
@@ -38,6 +39,31 @@ export const evidenceStateCopy: Record<EvidenceState, { label: string; descripti
   'source-changed': { label: '来源已变更', description: '官方来源内容疑似更新，需重新核验。' },
   'source-unavailable': { label: '来源暂不可用', description: '官方来源暂时无法访问或检查。' },
 };
+
+export function evidenceCopyFor(result: EvidenceResult): { label: string; description: string } {
+  const rule = result.institutionRule;
+  if (result.state === 'official-match' || result.state === 'faculty-match') {
+    if (rule?.type === 'eligibility') {
+      return { label: '在官方院校准入名单中找到', description: rule.listedMeaningZh ?? rule.summaryZh };
+    }
+    if (rule?.type === 'grade-threshold') {
+      return { label: '在官方院校成绩分档中找到', description: rule.listedMeaningZh ?? rule.summaryZh };
+    }
+    if (rule?.type === 'mixed') {
+      return { label: '在官方 Priority List 中找到', description: rule.listedMeaningZh ?? rule.summaryZh };
+    }
+  }
+  if (result.state === 'not-found-in-public-list' && rule?.type !== 'none' && rule?.unlistedMeaningZh) {
+    return { label: '结构化院校表中暂未找到', description: rule.unlistedMeaningZh };
+  }
+  if (result.state === 'no-public-list' && rule && rule.type !== 'none') {
+    return {
+      label: institutionRuleTypeCopy[rule.type].label,
+      description: '官网存在院校规则，但本站暂未完成安全结构化，暂不判断该院校所在分组。',
+    };
+  }
+  return evidenceStateCopy[result.state];
+}
 
 export const directoryFilters = [
   ['all', '全部'],

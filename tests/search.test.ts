@@ -3,6 +3,13 @@ import { createUniversitySearch } from '../src/lib/search';
 import { createInstitutionEvidenceSearch } from '../src/lib/search';
 import type { UniversityWithStatus } from '../src/lib/types';
 
+const gradeThresholdRule = {
+  type: 'grade-threshold' as const,
+  summaryZh: '院校决定成绩门槛。',
+  listedMeaningZh: '名单内使用较低门槛。',
+  unlistedMeaningZh: '名单外认可院校使用较高门槛。',
+};
+
 const records: UniversityWithStatus[] = [
   {
     id: 'imperial', nameZh: '帝国理工学院', nameEn: 'Imperial College London', aliases: ['ICL', '帝国理工'],
@@ -55,9 +62,9 @@ describe('createInstitutionEvidenceSearch', () => {
       { id: 'tsinghua', nameZh: '清华大学', nameEn: 'Tsinghua University', aliases: ['清华'] },
     ],
     universities: [
-      { ...records[2], sources: [{ id: 'edinburgh-list', universityId: 'edinburgh', labelZh: '官方名单', url: 'https://example.test/edinburgh', kind: 'official-list', scope: 'university', scopeZh: '学校范围', parser: { mode: 'html-list', selector: '.row', guard: { minimumRecords: 0, maximumRecords: 10, maximumRemovalRatio: 0 } }, status: { sourceId: 'edinburgh-list', health: 'ok', lastSuccessfulAt: '2026-08-01T00:00:00.000Z' } }] },
-      { ...records[0], sources: [{ id: 'imperial-faculty', universityId: 'imperial', labelZh: '学院名单', url: 'https://example.test/imperial', kind: 'faculty-page', scope: 'faculty', scopeZh: '商学院', parser: { mode: 'html-list', selector: '.row', guard: { minimumRecords: 0, maximumRecords: 10, maximumRemovalRatio: 0 } }, status: { sourceId: 'imperial-faculty', health: 'ok', lastSuccessfulAt: '2026-08-02T00:00:00.000Z' } }] },
-      { ...records[1], sources: [{ id: 'ucl-list', universityId: 'ucl', labelZh: '官方名单', url: 'https://example.test/ucl', kind: 'official-list', scope: 'university', scopeZh: '学校范围', parser: { mode: 'html-list', selector: '.row', guard: { minimumRecords: 0, maximumRecords: 10, maximumRemovalRatio: 0 } }, status: { sourceId: 'ucl-list', health: 'changed' } }] },
+      { ...records[2], sources: [{ id: 'edinburgh-list', universityId: 'edinburgh', labelZh: '官方名单', url: 'https://example.test/edinburgh', kind: 'official-list', scope: 'university', scopeZh: '学校范围', institutionRule: { ...gradeThresholdRule, type: 'mixed' }, parser: { mode: 'html-list', selector: '.row', guard: { minimumRecords: 0, maximumRecords: 10, maximumRemovalRatio: 0 } }, status: { sourceId: 'edinburgh-list', health: 'ok', lastSuccessfulAt: '2026-08-01T00:00:00.000Z' } }] },
+      { ...records[0], sources: [{ id: 'imperial-faculty', universityId: 'imperial', labelZh: '学院名单', url: 'https://example.test/imperial', kind: 'faculty-page', scope: 'faculty', scopeZh: '商学院', institutionRule: { ...gradeThresholdRule, type: 'eligibility' }, parser: { mode: 'html-list', selector: '.row', guard: { minimumRecords: 0, maximumRecords: 10, maximumRemovalRatio: 0 } }, status: { sourceId: 'imperial-faculty', health: 'ok', lastSuccessfulAt: '2026-08-02T00:00:00.000Z' } }] },
+      { ...records[1], sources: [{ id: 'ucl-list', universityId: 'ucl', labelZh: '官方名单', url: 'https://example.test/ucl', kind: 'official-list', scope: 'university', scopeZh: '学校范围', institutionRule: gradeThresholdRule, parser: { mode: 'html-list', selector: '.row', guard: { minimumRecords: 0, maximumRecords: 10, maximumRemovalRatio: 0 } }, status: { sourceId: 'ucl-list', health: 'changed' } }] },
     ],
     reverseIndex: [
       { institutionId: 'peking', universityId: 'edinburgh', evidenceState: 'official-match', tierOfficial: 'Priority list', scopeZh: '学校范围', sourceId: 'edinburgh-list', lastSuccessfulAt: '2026-08-01T00:00:00.000Z', cycle: '2026/27' },
@@ -91,6 +98,7 @@ describe('createInstitutionEvidenceSearch', () => {
       ['ucl', 'source-changed'],
       ['edinburgh', 'official-match'],
     ]);
+    expect(result.cards.find((card) => card.university.id === 'edinburgh')?.evidence.institutionRule?.type).toBe('mixed');
   });
 
   it('returns no selection for empty and unknown searches', () => {

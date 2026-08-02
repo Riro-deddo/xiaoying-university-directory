@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import {
   directoryFilters,
+  evidenceCopyFor,
   evidenceStateCopy,
   institutionRuleTypeCopy,
   officialPanelTitle,
@@ -8,6 +9,13 @@ import {
   stateCopy,
   sourceHealthCopy,
 } from '../src/lib/presentation';
+
+const gradeThresholdRule = {
+  type: 'grade-threshold' as const,
+  summaryZh: '院校决定成绩门槛。',
+  listedMeaningZh: '名单内使用较低门槛。',
+  unlistedMeaningZh: '名单外认可院校使用较高门槛。',
+};
 
 describe('stateCopy', () => {
   it('uses neutral language for unpublished information', () => {
@@ -79,5 +87,32 @@ describe('evidenceStateCopy', () => {
     expect(evidenceStateCopy['source-changed'].label).toBe('来源已变更');
     expect(evidenceStateCopy['source-unavailable'].label).toBe('来源暂不可用');
     expect(Object.values(evidenceStateCopy).flatMap((copy) => [copy.label, copy.description]).join('')).not.toMatch(/可以申请|不能申请|保底|冲刺/);
+  });
+
+  it('describes a grade-threshold match without calling it permission to apply', () => {
+    const copy = evidenceCopyFor({
+      state: 'official-match',
+      institutionRule: gradeThresholdRule,
+    });
+
+    expect(copy.label).toBe('在官方院校成绩分档中找到');
+    expect(copy.description).toBe(gradeThresholdRule.listedMeaningZh);
+    expect(`${copy.label}${copy.description}`).not.toMatch(/可以申请|不能申请/);
+  });
+
+  it('uses the reviewed unlisted meaning for a structured miss', () => {
+    const copy = evidenceCopyFor({
+      state: 'not-found-in-public-list',
+      institutionRule: gradeThresholdRule,
+    });
+
+    expect(copy.description).toBe(gradeThresholdRule.unlistedMeaningZh);
+  });
+
+  it('does not apply an unlisted conclusion to an unparsed source', () => {
+    const copy = evidenceCopyFor({ state: 'no-public-list', institutionRule: gradeThresholdRule });
+
+    expect(copy.description).toContain('暂未完成安全结构化');
+    expect(copy.description).not.toBe(gradeThresholdRule.unlistedMeaningZh);
   });
 });
