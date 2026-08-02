@@ -1,0 +1,736 @@
+[
+  {
+    "id": "beihang-university-formerly-beijing-university-of-aeronautics-astronautics-e1caae39",
+    "nameZh": "北京航空航天大学",
+    "nameEn": "Beihang University (formerly Beijing University of Aeronautics & Astronautics)",
+    "aliases": [
+      "Beihang University"
+    ]
+  },
+  {
+    "id": "north-china-electric-power-university-huabei-electric-power-university-68bcce4b",
+    "nameZh": "华北电力大学",
+    "nameEn": "North China Electric Power University / Huabei Electric Power University",
+    "aliases": [
+      "North China Electric Power University"
+    ]
+  },
+  {
+    "id": "beijing-foreign-studies-university-c44143af",
+    "nameZh": "北京外国语大学",
+    "nameEn": "Beijing Foreign Studies University",
+    "aliases": []
+  },
+  {
+    "id": "northeast-forestry-university-d79f64f5",
+    "nameZh": "东北林业大学",
+    "nameEn": "Northeast Forestry University",
+    "aliases": []
+  },
+  {
+    "id": "beijing-forestry-university-b3351c0d",
+    "nameZh": "北京林业大学",
+    "nameEn": "Beijing Forestry University",
+    "aliases": []
+  },
+  {
+    "id": "northeast-normal-university-a77c4549",
+    "nameZh": "东北师范大学",
+    "nameEn": "Northeast Normal University",
+    "aliases": []
+  },
+  {
+    "id": "beijing-institute-of-technology-9484ee28",
+    "nameZh": "北京理工大学",
+    "nameEn": "Beijing Institute of Technology",
+    "aliases": []
+  },
+  {
+    "id": "northeastern-university-677adfe6",
+    "nameZh": "东北大学",
+    "nameEn": "Northeastern University",
+    "aliases": []
+  },
+  {
+    "id": "beijing-jiaotong-university-formerly-beifang-northern-jiaotong-university-6c628689",
+    "nameZh": "北京交通大学",
+    "nameEn": "Beijing Jiaotong University (formerly Beifang (Northern) Jiaotong University)",
+    "aliases": [
+      "Beijing Jiaotong University"
+    ]
+  },
+  {
+    "id": "northwest-university-2a8585db",
+    "nameZh": "西北大学",
+    "nameEn": "Northwest University",
+    "aliases": []
+  },
+  {
+    "id": "beijing-normal-university-see-note-regarding-united-international-college-c88360f6",
+    "nameZh": "北京师范大学",
+    "nameEn": "Beijing Normal University (see note regarding United International College) *",
+    "aliases": [
+      "Beijing Normal University"
+    ]
+  },
+  {
+    "id": "northwestern-polytechnical-university-1e858b31",
+    "nameZh": "西北工业大学",
+    "nameEn": "Northwestern Polytechnical University",
+    "aliases": []
+  },
+  {
+    "id": "beijing-university-of-chemical-technology-a79139e9",
+    "nameZh": "北京化工大学",
+    "nameEn": "Beijing University of Chemical Technology",
+    "aliases": []
+  },
+  {
+    "id": "ocean-university-of-china-qingdao-ab3847cd",
+    "nameZh": "中国海洋大学",
+    "nameEn": "Ocean University of China, Qingdao",
+    "aliases": []
+  },
+  {
+    "id": "beijing-university-of-chinese-medicine-70aac221",
+    "nameZh": "北京中医药大学",
+    "nameEn": "Beijing University of Chinese Medicine",
+    "aliases": []
+  },
+  {
+    "id": "peking-university-4818c188",
+    "nameZh": "北京大学",
+    "nameEn": "Peking University",
+    "aliases": []
+  },
+  {
+    "id": "beijing-university-of-posts-and-telecommunications-63e3d04f",
+    "nameZh": "北京邮电大学",
+    "nameEn": "Beijing University of Posts and Telecommunications",
+    "aliases": []
+  },
+  {
+    "id": "renmin-university-of-china-9e74b938",
+    "nameZh": "中国人民大学",
+    "nameEn": "Renmin University of China",
+    "aliases": []
+  },
+  {
+    "id": "central-conservatory-of-music-2a7c01dd",
+    "nameZh": "中央音乐学院",
+    "nameEn": "Central Conservatory of Music",
+    "aliases": []
+  },
+  {
+    "id": "shandong-university-fd3a1051",
+    "nameZh": "山东大学",
+    "nameEn": "Shandong University",
+    "aliases": []
+  },
+  {
+    "id": "central-south-university-3352f6a2",
+    "nameZh": "中南大学",
+    "nameEn": "Central South University",
+    "aliases": []
+  },
+  {
+    "id": "shanghai-2nd-medical-university-6a167102",
+    "nameZh": "上海第二医科大学",
+    "nameEn": "Shanghai (2nd) Medical University",
+    "aliases": []
+  },
+  {
+    "id": "central-university-of-finance-and-economics-2259e13d",
+    "nameZh": "中央财经大学",
+    "nameEn": "Central University of Finance and Economics",
+    "aliases": []
+  },
+  {
+    "id": "shanghai-international-studies-university-b9e33065",
+    "nameZh": "上海外国语大学",
+    "nameEn": "Shanghai International Studies University",
+    "aliases": []
+  },
+  {
+    "id": "chang-an-university-178fc794",
+    "nameZh": "长安大学",
+    "nameEn": "Chang'an University",
+    "aliases": []
+  },
+  {
+    "id": "shanghai-jiaotong-university-95ef14bb",
+    "nameZh": "上海交通大学",
+    "nameEn": "Shanghai Jiaotong University",
+    "aliases": [
+      "Shanghai Jiao Tong University"
+    ]
+  },
+  {
+    "id": "china-agricultural-university-7f24114a",
+    "nameZh": "中国农业大学",
+    "nameEn": "China Agricultural University",
+    "aliases": []
+  },
+  {
+    "id": "shanghai-university-of-finance-and-economics-a5566168",
+    "nameZh": "上海财经大学",
+    "nameEn": "Shanghai University of Finance and Economics",
+    "aliases": []
+  },
+  {
+    "id": "china-pharmaceutical-university-03ca6012",
+    "nameZh": "中国药科大学",
+    "nameEn": "China Pharmaceutical University",
+    "aliases": []
+  },
+  {
+    "id": "sichuan-university-2721d57b",
+    "nameZh": "四川大学",
+    "nameEn": "Sichuan University",
+    "aliases": []
+  },
+  {
+    "id": "china-university-of-geosciences-beijing-and-wuhan-e49191e5",
+    "nameZh": "中国地质大学（北京）/中国地质大学（武汉）",
+    "nameEn": "China University of Geosciences, Beijing and Wuhan",
+    "aliases": []
+  },
+  {
+    "id": "south-china-university-of-technology-09771dd9",
+    "nameZh": "华南理工大学",
+    "nameEn": "South China University of Technology",
+    "aliases": []
+  },
+  {
+    "id": "china-university-of-mining-and-technology-xuzhou-beijing-df570a22",
+    "nameZh": "中国矿业大学/中国矿业大学（北京）",
+    "nameEn": "China University of Mining and Technology – Xuzhou/Beijing",
+    "aliases": []
+  },
+  {
+    "id": "southeast-university-53eebce9",
+    "nameZh": "东南大学",
+    "nameEn": "Southeast University",
+    "aliases": []
+  },
+  {
+    "id": "china-university-of-petroleum-beijing-and-east-china-campuses-12ce0907",
+    "nameZh": "中国石油大学（北京）/中国石油大学（华东）",
+    "nameEn": "China University of Petroleum (Beijing and East China campuses)",
+    "aliases": []
+  },
+  {
+    "id": "southwest-jiaotong-university-9e83d9d0",
+    "nameZh": "西南交通大学",
+    "nameEn": "Southwest Jiaotong University",
+    "aliases": []
+  },
+  {
+    "id": "china-university-of-political-science-and-law-2ee2c283",
+    "nameZh": "中国政法大学",
+    "nameEn": "China University of Political Science and Law",
+    "aliases": []
+  },
+  {
+    "id": "southwest-university-14772c4d",
+    "nameZh": "西南大学",
+    "nameEn": "Southwest University",
+    "aliases": []
+  },
+  {
+    "id": "chinese-academy-of-sciences-733200f1",
+    "nameZh": "中国科学院",
+    "nameEn": "Chinese Academy of Sciences",
+    "aliases": []
+  },
+  {
+    "id": "southwestern-university-of-finance-and-economics-9e667ea4",
+    "nameZh": "西南财经大学",
+    "nameEn": "Southwestern University of Finance and Economics",
+    "aliases": []
+  },
+  {
+    "id": "chongqing-university-3a110f6c",
+    "nameZh": "重庆大学",
+    "nameEn": "Chongqing University",
+    "aliases": []
+  },
+  {
+    "id": "sun-yat-sen-university-might-appear-as-zhongshan-university-d94644f6",
+    "nameZh": "中山大学",
+    "nameEn": "Sun Yat-Sen University (might appear as Zhongshan University)",
+    "aliases": [
+      "Sun Yat-Sen University"
+    ]
+  },
+  {
+    "id": "communication-university-of-china-3a1bb185",
+    "nameZh": "中国传媒大学",
+    "nameEn": "Communication University of China",
+    "aliases": []
+  },
+  {
+    "id": "suzhou-soochow-university-16c0f71b",
+    "nameZh": "苏州大学",
+    "nameEn": "Suzhou (Soochow) University**",
+    "aliases": [
+      "Soochow University"
+    ]
+  },
+  {
+    "id": "dalian-university-of-technology-d7cc67a0",
+    "nameZh": "大连理工大学",
+    "nameEn": "Dalian University of Technology",
+    "aliases": []
+  },
+  {
+    "id": "tianjin-university-1c8bcb86",
+    "nameZh": "天津大学",
+    "nameEn": "Tianjin University",
+    "aliases": []
+  },
+  {
+    "id": "donghua-university-8fab8235",
+    "nameZh": "东华大学",
+    "nameEn": "Donghua University",
+    "aliases": []
+  },
+  {
+    "id": "tongji-university-a6533d2e",
+    "nameZh": "同济大学",
+    "nameEn": "Tongji University",
+    "aliases": []
+  },
+  {
+    "id": "east-china-normal-university-8ce642ca",
+    "nameZh": "华东师范大学",
+    "nameEn": "East China Normal University",
+    "aliases": []
+  },
+  {
+    "id": "tsinghua-university-88293fa6",
+    "nameZh": "清华大学",
+    "nameEn": "Tsinghua University",
+    "aliases": []
+  },
+  {
+    "id": "east-china-university-of-science-and-technology-77dcefa9",
+    "nameZh": "华东理工大学",
+    "nameEn": "East China University of Science and Technology",
+    "aliases": []
+  },
+  {
+    "id": "university-of-electronic-science-and-technology-of-china-101301b5",
+    "nameZh": "电子科技大学",
+    "nameEn": "University of Electronic Science and Technology of China",
+    "aliases": []
+  },
+  {
+    "id": "fudan-university-749651d4",
+    "nameZh": "复旦大学",
+    "nameEn": "Fudan University",
+    "aliases": []
+  },
+  {
+    "id": "university-of-international-business-and-economics-2a13872d",
+    "nameZh": "对外经济贸易大学",
+    "nameEn": "University of International Business and Economics",
+    "aliases": []
+  },
+  {
+    "id": "harbin-institute-of-technology-7c521149",
+    "nameZh": "哈尔滨工业大学",
+    "nameEn": "Harbin Institute of Technology",
+    "aliases": []
+  },
+  {
+    "id": "university-of-science-and-technology-beijing-0c404289",
+    "nameZh": "北京科技大学",
+    "nameEn": "University of Science and Technology Beijing",
+    "aliases": []
+  },
+  {
+    "id": "hefei-university-of-technology-1c5fd4db",
+    "nameZh": "合肥工业大学",
+    "nameEn": "Hefei University of Technology",
+    "aliases": []
+  },
+  {
+    "id": "university-of-science-and-technology-of-china-ustc-a638543a",
+    "nameZh": "中国科学技术大学",
+    "nameEn": "University of Science and Technology of China (USTC)",
+    "aliases": []
+  },
+  {
+    "id": "hohai-university-8e8ac8be",
+    "nameZh": "河海大学",
+    "nameEn": "Hohai University",
+    "aliases": []
+  },
+  {
+    "id": "wuhan-university-102c49fc",
+    "nameZh": "武汉大学",
+    "nameEn": "Wuhan University",
+    "aliases": []
+  },
+  {
+    "id": "huazhong-agricultural-university-central-china-agricultural-university-5cb9ba1d",
+    "nameZh": "华中农业大学",
+    "nameEn": "Huazhong Agricultural University / Central China Agricultural University",
+    "aliases": [
+      "Huazhong Agricultural University"
+    ]
+  },
+  {
+    "id": "wuhan-university-of-technology-85782e2d",
+    "nameZh": "武汉理工大学",
+    "nameEn": "Wuhan University of Technology",
+    "aliases": []
+  },
+  {
+    "id": "huazhong-normal-university-central-china-normal-university-3a822b99",
+    "nameZh": "华中师范大学",
+    "nameEn": "Huazhong Normal University / Central China Normal University",
+    "aliases": []
+  },
+  {
+    "id": "xi-an-jiaotong-university-95c2779f",
+    "nameZh": "西安交通大学",
+    "nameEn": "Xi'an Jiaotong University",
+    "aliases": []
+  },
+  {
+    "id": "huazhong-university-of-science-technology-97cee7bd",
+    "nameZh": "华中科技大学",
+    "nameEn": "Huazhong University of Science & Technology",
+    "aliases": []
+  },
+  {
+    "id": "xiamen-university-5271b226",
+    "nameZh": "厦门大学",
+    "nameEn": "Xiamen University",
+    "aliases": []
+  },
+  {
+    "id": "hunan-university-75a3814e",
+    "nameZh": "湖南大学",
+    "nameEn": "Hunan University",
+    "aliases": []
+  },
+  {
+    "id": "xidian-university-also-known-as-xi-an-electronic-science-and-technology-university-14c4a29e",
+    "nameZh": "西安电子科技大学",
+    "nameEn": "Xidian University (also known as Xi'an Electronic Science and Technology University)**",
+    "aliases": [
+      "Xidian University"
+    ]
+  },
+  {
+    "id": "jiangnan-university-2654a04a",
+    "nameZh": "江南大学",
+    "nameEn": "Jiangnan University",
+    "aliases": []
+  },
+  {
+    "id": "yanshan-university-634a3bf5",
+    "nameZh": "燕山大学",
+    "nameEn": "Yanshan University**",
+    "aliases": []
+  },
+  {
+    "id": "jilin-university-3c8d9a5b",
+    "nameZh": "吉林大学",
+    "nameEn": "Jilin University",
+    "aliases": []
+  },
+  {
+    "id": "yunnan-university-d0bc6178",
+    "nameZh": "云南大学",
+    "nameEn": "Yunnan University",
+    "aliases": []
+  },
+  {
+    "id": "lanzhou-university-52c21e54",
+    "nameZh": "兰州大学",
+    "nameEn": "Lanzhou University",
+    "aliases": []
+  },
+  {
+    "id": "zhejiang-university-41292b6f",
+    "nameZh": "浙江大学",
+    "nameEn": "Zhejiang University",
+    "aliases": []
+  },
+  {
+    "id": "minzu-university-of-china-7bbdd5ab",
+    "nameZh": "中央民族大学",
+    "nameEn": "Minzu University of China",
+    "aliases": []
+  },
+  {
+    "id": "zhejiang-university-of-technology-86cf9f79",
+    "nameZh": "浙江工业大学",
+    "nameEn": "Zhejiang University of Technology**",
+    "aliases": []
+  },
+  {
+    "id": "nanhang-jincheng-college-independent-college-of-nanjing-university-of-aeronautics-and-astronautics-7e1b9462",
+    "nameZh": "南京航空航天大学金城学院",
+    "nameEn": "Nanhang Jincheng College (independent college of Nanjing University of Aeronautics and Astronautics) **",
+    "aliases": []
+  },
+  {
+    "id": "zhengzhou-university-ccf4b546",
+    "nameZh": "郑州大学",
+    "nameEn": "Zhengzhou University**",
+    "aliases": [
+      "Zhengzhou University"
+    ]
+  },
+  {
+    "id": "nanjing-agricultural-university-c39b4a83",
+    "nameZh": "南京农业大学",
+    "nameEn": "Nanjing Agricultural University",
+    "aliases": []
+  },
+  {
+    "id": "zhongnan-university-of-economics-and-law-71156a7a",
+    "nameZh": "中南财经政法大学",
+    "nameEn": "Zhongnan University of Economics and Law",
+    "aliases": []
+  },
+  {
+    "id": "nanjing-university-8fbdf4ba",
+    "nameZh": "南京大学",
+    "nameEn": "Nanjing University",
+    "aliases": []
+  },
+  {
+    "id": "nanjing-university-of-science-and-technology-af39a57f",
+    "nameZh": "南京理工大学",
+    "nameEn": "Nanjing University of Science and Technology",
+    "aliases": []
+  },
+  {
+    "id": "nankai-university-fed7345f",
+    "nameZh": "南开大学",
+    "nameEn": "Nankai University",
+    "aliases": []
+  },
+  {
+    "id": "national-university-of-defense-technology-471f1540",
+    "nameZh": "国防科技大学",
+    "nameEn": "National University of Defense Technology **",
+    "aliases": []
+  },
+  {
+    "id": "anhui-university-4d325618",
+    "nameZh": "安徽大学",
+    "nameEn": "Anhui University",
+    "aliases": []
+  },
+  {
+    "id": "beijing-normal-university-hong-kong-baptist-university-united-international-college-6107eb6a",
+    "nameZh": "北师香港浸会大学",
+    "nameEn": "Beijing Normal University - Hong Kong Baptist University United International College",
+    "aliases": [
+      "北京师范大学-香港浸会大学联合国际学院"
+    ]
+  },
+  {
+    "id": "beijing-sport-university-f9ccc13f",
+    "nameZh": "北京体育大学",
+    "nameEn": "Beijing Sport University",
+    "aliases": []
+  },
+  {
+    "id": "dalian-maritime-university-8696305d",
+    "nameZh": "大连海事大学",
+    "nameEn": "Dalian Maritime University",
+    "aliases": []
+  },
+  {
+    "id": "fuzhou-university-e59f3da9",
+    "nameZh": "福州大学",
+    "nameEn": "Fuzhou University",
+    "aliases": []
+  },
+  {
+    "id": "guangxi-university-cabb03f5",
+    "nameZh": "广西大学",
+    "nameEn": "Guangxi University",
+    "aliases": []
+  },
+  {
+    "id": "guizhou-university-55c5778b",
+    "nameZh": "贵州大学",
+    "nameEn": "Guizhou University",
+    "aliases": []
+  },
+  {
+    "id": "hainan-university-70fc5cd1",
+    "nameZh": "海南大学",
+    "nameEn": "Hainan University",
+    "aliases": []
+  },
+  {
+    "id": "harbin-engineering-university-a81a0bdd",
+    "nameZh": "哈尔滨工程大学",
+    "nameEn": "Harbin Engineering University",
+    "aliases": []
+  },
+  {
+    "id": "hunan-normal-university-95554cb7",
+    "nameZh": "湖南师范大学",
+    "nameEn": "Hunan Normal University",
+    "aliases": []
+  },
+  {
+    "id": "inner-mongolia-university-ffd71f0e",
+    "nameZh": "内蒙古大学",
+    "nameEn": "Inner Mongolia University",
+    "aliases": []
+  },
+  {
+    "id": "jinan-university-fdd34254",
+    "nameZh": "暨南大学",
+    "nameEn": "Jinan University",
+    "aliases": []
+  },
+  {
+    "id": "liaoning-university-80e8b162",
+    "nameZh": "辽宁大学",
+    "nameEn": "Liaoning University",
+    "aliases": []
+  },
+  {
+    "id": "nanchang-university-3dc3ad6c",
+    "nameZh": "南昌大学",
+    "nameEn": "Nanchang University",
+    "aliases": []
+  },
+  {
+    "id": "nanjing-normal-university-4bbad3a8",
+    "nameZh": "南京师范大学",
+    "nameEn": "Nanjing Normal University",
+    "aliases": []
+  },
+  {
+    "id": "ningxia-university-b5450df6",
+    "nameZh": "宁夏大学",
+    "nameEn": "Ningxia University",
+    "aliases": []
+  },
+  {
+    "id": "northeast-agricultural-university-271d6328",
+    "nameZh": "东北农业大学",
+    "nameEn": "Northeast Agricultural University",
+    "aliases": []
+  },
+  {
+    "id": "qinghai-university-e7f8995a",
+    "nameZh": "青海大学",
+    "nameEn": "Qinghai University",
+    "aliases": []
+  },
+  {
+    "id": "the-second-military-medical-university-55f6f4f4",
+    "nameZh": "海军军医大学",
+    "nameEn": "The Second Military Medical University",
+    "aliases": [
+      "第二军医大学"
+    ]
+  },
+  {
+    "id": "shaanxi-normal-university-d6405edd",
+    "nameZh": "陕西师范大学",
+    "nameEn": "Shaanxi Normal University",
+    "aliases": []
+  },
+  {
+    "id": "shanghai-university-b933744c",
+    "nameZh": "上海大学",
+    "nameEn": "Shanghai University",
+    "aliases": []
+  },
+  {
+    "id": "shenzhen-moscow-state-university-and-beijing-institute-of-technology-university-85730974",
+    "nameZh": "深圳北理莫斯科大学",
+    "nameEn": "Shenzhen Moscow-State-University-and-Beijing-Institute-of-Technology University",
+    "aliases": []
+  },
+  {
+    "id": "shenzhen-university-c29d3a31",
+    "nameZh": "深圳大学",
+    "nameEn": "Shenzhen University",
+    "aliases": []
+  },
+  {
+    "id": "shihezi-university-2f997caf",
+    "nameZh": "石河子大学",
+    "nameEn": "Shihezi University",
+    "aliases": []
+  },
+  {
+    "id": "sichuan-agricultural-university-2e7fba53",
+    "nameZh": "四川农业大学",
+    "nameEn": "Sichuan Agricultural University",
+    "aliases": []
+  },
+  {
+    "id": "south-china-normal-university-1646a6bc",
+    "nameZh": "华南师范大学",
+    "nameEn": "South China Normal University",
+    "aliases": []
+  },
+  {
+    "id": "tianjin-medical-university-65b3512e",
+    "nameZh": "天津医科大学",
+    "nameEn": "Tianjin Medical University",
+    "aliases": []
+  },
+  {
+    "id": "tibet-university-44adba65",
+    "nameZh": "西藏大学",
+    "nameEn": "Tibet University",
+    "aliases": []
+  },
+  {
+    "id": "xinjiang-university-e1c08fa3",
+    "nameZh": "新疆大学",
+    "nameEn": "Xinjiang University",
+    "aliases": []
+  },
+  {
+    "id": "yanbian-university-61996de7",
+    "nameZh": "延边大学",
+    "nameEn": "Yanbian University",
+    "aliases": []
+  },
+  {
+    "id": "xiangtan-university-cfb27bdb",
+    "nameZh": "湘潭大学",
+    "nameEn": "Xiangtan University",
+    "aliases": []
+  },
+  {
+    "id": "inner-mongolia-arts-university-05fa9653",
+    "nameZh": "内蒙古艺术学院",
+    "nameEn": "Inner Mongolia Arts University",
+    "aliases": []
+  },
+  {
+    "id": "jingdezhen-ceramic-institute-f3db41ac",
+    "nameZh": "景德镇陶瓷大学",
+    "nameEn": "Jingdezhen Ceramic Institute",
+    "aliases": [
+      "景德镇陶瓷学院"
+    ]
+  },
+  {
+    "id": "sichuan-fine-arts-institute-60415366",
+    "nameZh": "四川美术学院",
+    "nameEn": "Sichuan Fine Arts Institute",
+    "aliases": []
+  }
+]

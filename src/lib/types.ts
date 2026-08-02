@@ -7,14 +7,68 @@ export type UniversityState =
 
 export type SourceKind = 'official-list' | 'china-requirements' | 'faculty-page';
 export type SourceHealth = 'ok' | 'redirected' | 'changed' | 'temporary-error' | 'unavailable' | 'unchecked';
+export type SourceScope = 'university' | 'faculty' | 'programme';
+export type ParserMode = 'html-table' | 'html-list' | 'pdf-text' | 'link-only';
+export type InstitutionRuleType = 'eligibility' | 'grade-threshold' | 'mixed' | 'none';
+export type EvidenceState =
+  | 'official-match'
+  | 'faculty-match'
+  | 'not-found-in-public-list'
+  | 'no-public-list'
+  | 'source-changed'
+  | 'source-unavailable';
 
-export interface SourceLink {
+export interface QsCohortEntry {
   id: string;
+  nameEn: string;
+  rank: number;
+  edition: 2027;
+  country: 'United Kingdom';
+}
+
+export interface ParserGuard {
+  minimumRecords: number;
+  maximumRecords: number;
+  maximumRemovalRatio: number;
+}
+
+export interface ParserConfig {
+  mode: ParserMode;
+  selector?: string;
+  rowSelector?: string;
+  institutionColumn?: number;
+  tierColumn?: number;
+  defaultTierOfficial?: string;
+  scoreColumn?: number;
+  headingPattern?: string;
+  rowPattern?: string;
+  guard: ParserGuard;
+}
+
+export interface InstitutionRule {
+  type: InstitutionRuleType;
+  summaryZh: string;
+  listedMeaningZh?: string;
+  unlistedMeaningZh?: string;
+  caveatZh?: string;
+  verification?: {
+    reviewedAt: string;
+    url: string;
+    requiredText: string[];
+  };
+}
+
+export interface OfficialSourceConfig {
+  id: string;
+  universityId: string;
   labelZh: string;
   url: string;
   kind: SourceKind;
-  scopeZh?: string;
+  scope: SourceScope;
+  scopeZh: string;
   cycle?: string;
+  institutionRule: InstitutionRule;
+  parser: ParserConfig;
 }
 
 export interface University {
@@ -24,7 +78,8 @@ export interface University {
   aliases: string[];
   qs: { edition: 2027; rank: number };
   state: UniversityState;
-  sources: SourceLink[];
+  officialDomain: string;
+  sourceIds: string[];
   noteZh?: string;
 }
 
@@ -41,6 +96,29 @@ export interface SourceStatus {
   error?: string;
 }
 
+export interface InstitutionRecord {
+  id: string;
+  nameZh: string;
+  nameEn: string;
+  aliases: string[];
+}
+
+export interface RequirementFact {
+  id: string;
+  universityId: string;
+  sourceId: string;
+  institutionId: string;
+  institutionOfficial: string;
+  tierOfficial: string;
+  tierZh?: string;
+  scoreOfficial?: string;
+  scope: SourceScope;
+  scopeZh: string;
+  cycle?: string;
+  extractedAt: string;
+  contentHash: string;
+}
+
 export type StatusMap = Record<string, SourceStatus>;
-export type SourceWithStatus = SourceLink & { status?: SourceStatus };
-export type UniversityWithStatus = Omit<University, 'sources'> & { sources: SourceWithStatus[] };
+export type SourceWithStatus = OfficialSourceConfig & { status?: SourceStatus };
+export type UniversityWithStatus = Omit<University, 'sourceIds'> & { sources: SourceWithStatus[] };

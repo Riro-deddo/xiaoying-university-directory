@@ -5,6 +5,7 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
+  issues: write
 concurrency:
   group: daily-official-source-check
   cancel-in-progress: false
@@ -19,13 +20,69 @@ jobs:
           package-manager-cache: false
       - run: corepack enable
       - run: pnpm install --frozen-lockfile
-      - run: pnpm check:sources
+      - name: Check registered official links with Lychee
+        id: lychee
+        uses: lycheeverse/lychee-action@7da8ec1fc4e01b5a12062ac6c589c10a4ce70d67 # v2.0.0
+        with:
+          args: --config .lychee.toml src/data/sources.json
+          fail: false
+          jobSummary: true
+      - name: Run guarded official-source synchronization
+        run: pnpm sync:sources
+      - run: pnpm build:index
       - run: pnpm test:run
-      - name: Commit changed machine status only
+      - run: pnpm build
+      - name: Create or update one Issue per source anomaly
+        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
+        with:
+          retries: 3
+          script: |
+            const { existsSync, readFileSync } = require('node:fs');
+            const anomalyPath = `${process.env.GITHUB_WORKSPACE}/artifacts/source-anomalies.json`;
+            if (!existsSync(anomalyPath)) return;
+
+            const anomalies = JSON.parse(readFileSync(anomalyPath, 'utf8'));
+            if (!Array.isArray(anomalies) || anomalies.length === 0) return;
+
+            const rendererPath = `${process.env.GITHUB_WORKSPACE}/scripts/render-anomaly-issue.mjs`;
+            const { anomalyIssuePayload } = await import(rendererPath);
+            const openIssues = await github.paginate(github.rest.issues.listForRepo, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              per_page: 100,
+            });
+
+            for (const anomaly of anomalies) {
+              const payload = anomalyIssuePayload(anomaly);
+              const marker = `<!-- ${payload.key} -->`;
+              const existing = openIssues.find((issue) => !issue.pull_request && issue.body?.includes(marker));
+              if (existing) {
+                await github.rest.issues.update({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: existing.number,
+                  title: payload.title,
+                  body: payload.body,
+                });
+              } else {
+                await github.rest.issues.create({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  title: payload.title,
+                  body: payload.body,
+                });
+              }
+            }
+      - name: Commit accepted machine data only
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          if git diff --quiet -- src/data/status.json; then exit 0; fi
+          if git diff --quiet -- src/data/status.json src/data/generated/requirements.json src/data/generated/reverse-index.json; then exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/data/status.json
-          git commit -m "chore: refresh official source status"
+          git add src/data/status.json src/data/generated/requirements.json src/data/generated/reverse-index.json
+          git commit -m "chore: refresh guarded official-source data"
           git push
+          COMMITTED_SHA=$(git rev-parse HEAD)
+          gh api --method POST "repos/${GITHUB_REPOSITORY}/dispatches" -f event_type=guarded-source-update -f "client_payload[sha]=$COMMITTED_SHA"

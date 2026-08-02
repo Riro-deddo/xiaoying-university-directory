@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["id", "nameZh", "nameEn", "aliases"],
+    "properties": {
+      "id": { "type": "string", "minLength": 1, "pattern": "^[a-z0-9-]+$" },
+      "nameZh": { "type": "string", "minLength": 1, "pattern": "\\S" },
+      "nameEn": { "type": "string", "minLength": 1, "pattern": "\\S" },
+      "aliases": {
+        "type": "array",
+        "items": { "type": "string", "minLength": 1, "pattern": "\\S" },
+        "uniqueItems": true
+      }
+    }
+  }
+}
