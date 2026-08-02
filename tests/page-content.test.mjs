@@ -32,6 +32,14 @@ describe('dual-direction search page', () => {
     const search = readFileSync(resolve(root, 'src/lib/search.ts'), 'utf8');
     expect(`${page}${search}`).not.toMatch(/可以申请|不能申请|保底|冲刺/);
   });
+
+  it('renders collapsed official Lists without treating link-only sources as local Lists', () => {
+    expect(page).toContain('<details class="official-list-panel">');
+    expect(page).toContain('查看已收录院校 List（');
+    expect(page).toContain('官方分组/等级');
+    expect(page).toContain('官网名单暂未完成安全结构化，本站暂不附表');
+    expect(page).not.toContain('不能申请');
+  });
 });
 
 describe('published methodology and contributor guidance', () => {

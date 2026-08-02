@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
-import { loadInstitutions, loadUniversities } from '../lib/data';
+import { loadInstitutions, loadRequirements, loadUniversities } from '../lib/data';
+import { buildOfficialListDisplays } from '../lib/official-list-display';
 import {
   directoryFilters,
   sourceFreshnessCopy,
@@ -10,8 +11,11 @@ import {
 import { withBase } from '../lib/urls';
 import reverseIndex from '../data/generated/reverse-index.json';
 
+const institutions = loadInstitutions();
 const universities = loadUniversities();
-const searchData = { institutions: loadInstitutions(), universities, reverseIndex };
+const requirements = loadRequirements();
+const officialListsByUniversity = buildOfficialListDisplays({ universities, institutions, requirements });
+const searchData = { institutions, universities, reverseIndex };
 const base = import.meta.env.BASE_URL;
 const homeUrl = withBase(base, '');
 const methodologyUrl = withBase(base, 'methodology/');
@@ -91,6 +95,42 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
                     ))
                   : <span class="no-source">尚无已核验的公开入口</span>}
               </div>
+              {(officialListsByUniversity.get(university.id) ?? []).map((panel) => (
+                <details class="official-list-panel">
+                  <summary>查看已收录院校 List（{panel.rows.length} 所）</summary>
+                  <div class="official-list-meta">
+                    <span>{panel.sourceLabelZh}</span>
+                    <span>适用范围：{panel.scopeZh}</span>
+                    {panel.cycle && <span>申请季：{panel.cycle}</span>}
+                    <span>最近提取：{panel.extractedAt.slice(0, 10)}</span>
+                    <a href={panel.sourceUrl} target="_blank" rel="noopener noreferrer">查看大学官网原页</a>
+                  </div>
+                  <ol class="official-list-rows">
+                    {panel.rows.map((row) => (
+                      <li>
+                        <span class="official-list-name">
+                          <strong>{row.nameZh}</strong>
+                          <small>{row.nameEn}</small>
+                        </span>
+                        <span class="official-list-value">
+                          <small>官方分组/等级</small>
+                          {row.tierOfficial}
+                        </span>
+                        {row.scoreOfficial && (
+                          <span class="official-list-value">
+                            <small>官方分数</small>
+                            {row.scoreOfficial}
+                          </span>
+                        )}
+                      </li>
+                    ))}
+                  </ol>
+                </details>
+              ))}
+              {university.state === 'official-list'
+                && !(officialListsByUniversity.get(university.id)?.length)
+                && university.sources.some((source) => source.kind === 'official-list' && source.parser.mode === 'link-only')
+                && <p class="link-only-disclosure">官网名单暂未完成安全结构化，本站暂不附表</p>}
             </article>
           ))}
         </div>
