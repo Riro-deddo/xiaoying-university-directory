@@ -10,7 +10,7 @@ export type DirectoryCategory = 'qs-top-200' | 'specialist';
 export type SourceKind = 'official-list' | 'china-requirements' | 'faculty-page';
 export type SourceHealth = 'ok' | 'redirected' | 'changed' | 'temporary-error' | 'unavailable' | 'unchecked';
 export type SourceScope = 'university' | 'faculty' | 'programme';
-export type ParserMode = 'html-table' | 'html-list' | 'pdf-text' | 'link-only';
+export type ParserMode = 'html-table' | 'html-list' | 'html-grouped-items' | 'pdf-text' | 'link-only';
 export type InstitutionRuleType = 'eligibility' | 'grade-threshold' | 'mixed' | 'none';
 export type EvidenceState =
   | 'official-match'
@@ -34,14 +34,33 @@ export interface ParserGuard {
   maximumRemovalRatio: number;
 }
 
+export interface ParserGroup {
+  selector: string;
+  tierOfficial?: string;
+  tierSelector?: string;
+}
+
+export interface ParserScoreColumn {
+  label: string;
+  column: number;
+}
+
 export interface ParserConfig {
   mode: ParserMode;
   selector?: string;
   rowSelector?: string;
   institutionColumn?: number;
+  institutionColumns?: number[];
+  nameZhColumn?: number;
   tierColumn?: number;
   defaultTierOfficial?: string;
   scoreColumn?: number;
+  scoreColumns?: ParserScoreColumn[];
+  tableIndex?: number;
+  splitOnBreaks?: boolean;
+  institutionPattern?: string;
+  groups?: ParserGroup[];
+  itemSelector?: string;
   headingPattern?: string;
   rowPattern?: string;
   guard: ParserGuard;

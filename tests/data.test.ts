@@ -66,6 +66,33 @@ describe('validateOfficialSources', () => {
     expect(sources.every((source) => source.institutionRule.summaryZh.trim().length > 0)).toBe(true);
   });
 
+  it('accepts registered grouped and bilingual HTML parser fields', () => {
+    expect(validateOfficialSources([{
+      ...validSource,
+      parser: {
+        mode: 'html-grouped-items',
+        groups: [{ selector: '#China .group-a', tierOfficial: 'Group A' }],
+        itemSelector: 'li',
+        institutionPattern: '^(?<institutionOfficial>.+)$',
+        guard: validSource.parser.guard,
+      },
+    }, {
+      ...validSource,
+      id: 'imperial-bilingual-table',
+      parser: {
+        mode: 'html-table',
+        tableIndex: 0,
+        rowSelector: 'tbody tr',
+        institutionColumn: 0,
+        nameZhColumn: 1,
+        scoreColumns: [{ label: '2:1', column: 2 }, { label: '2:2', column: 3 }],
+        splitOnBreaks: true,
+        institutionPattern: '^(?<institutionOfficial>.+)$',
+        guard: validSource.parser.guard,
+      },
+    }])).toHaveLength(2);
+  });
+
   it.each([
     ['unknown field', { ...validSource, untracked: true }],
     ['non-HTTPS URL', { ...validSource, url: 'http://example.com/list' }],

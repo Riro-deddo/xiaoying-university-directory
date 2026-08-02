@@ -53,14 +53,50 @@
         "additionalProperties": false,
         "required": ["mode", "guard"],
         "properties": {
-          "mode": { "enum": ["html-table", "html-list", "pdf-text", "link-only"] },
+          "mode": { "enum": ["html-table", "html-list", "html-grouped-items", "pdf-text", "link-only"] },
           "selector": { "type": "string", "minLength": 1 },
           "rowSelector": { "type": "string", "minLength": 1 },
           "institutionColumn": { "type": "integer", "minimum": 0 },
           "institutionColumns": { "type": "array", "items": { "type": "integer", "minimum": 0 }, "minItems": 1, "uniqueItems": true },
+          "nameZhColumn": { "type": "integer", "minimum": 0 },
           "tierColumn": { "type": "integer", "minimum": 0 },
           "defaultTierOfficial": { "type": "string", "minLength": 1, "pattern": "\\S" },
           "scoreColumn": { "type": "integer", "minimum": 0 },
+          "scoreColumns": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["label", "column"],
+              "properties": {
+                "label": { "type": "string", "minLength": 1, "pattern": "\\S" },
+                "column": { "type": "integer", "minimum": 0 }
+              }
+            }
+          },
+          "tableIndex": { "type": "integer", "minimum": 0 },
+          "splitOnBreaks": { "type": "boolean" },
+          "institutionPattern": { "type": "string", "minLength": 1 },
+          "itemSelector": { "type": "string", "minLength": 1 },
+          "groups": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["selector"],
+              "properties": {
+                "selector": { "type": "string", "minLength": 1 },
+                "tierOfficial": { "type": "string", "minLength": 1, "pattern": "\\S" },
+                "tierSelector": { "type": "string", "minLength": 1 }
+              },
+              "anyOf": [
+                { "required": ["tierOfficial"] },
+                { "required": ["tierSelector"] }
+              ]
+            }
+          },
           "headingPattern": { "type": "string", "minLength": 1 },
           "rowPattern": { "type": "string", "minLength": 1 },
           "guard": {
@@ -82,6 +118,10 @@
           {
             "if": { "properties": { "mode": { "const": "html-list" } }, "required": ["mode"] },
             "then": { "required": ["selector", "defaultTierOfficial"] }
+          },
+          {
+            "if": { "properties": { "mode": { "const": "html-grouped-items" } }, "required": ["mode"] },
+            "then": { "required": ["groups", "itemSelector"] }
           }
         ]
       }
