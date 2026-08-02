@@ -43,3 +43,10 @@ The live source check recorded 25 `ok` responses, five `unavailable` 403 respons
 - Green: `kcl-china` now uses KCL's China-specific international requirements page, verifies the China, prestigious-university, other-recognised-university, and Project 211/Double First Class text, and remains `none` because KCL does not publish a complete KCL-owned university roster.
 - Focused suite: 55 tests passed across 3 files. Full suite: 187 tests passed across 19 files. `pnpm check:sources` checked 31 sources. Astro check reported 0 errors, 0 warnings, and 0 hints.
 - The live KCL source check completed successfully. The generated reverse-index timestamp refresh was regenerated back to the baseline and remains out of the fix-round commit.
+
+## Fix round 2 — KCL current 2026 programme evidence
+
+- Red: the KCL regression failed because the reviewed source still used the 2025 `study-legacy` URL and university-wide scope.
+- Green: `kcl-china` now points to the current China & Globalisation MSc requirements page, is scoped to `programme`, and identifies that the user must select China in the international-equivalency display. The summary records the displayed 80% prestigious-institution and 85% recognised-institution thresholds without generalising them to KCL or inventing a complete roster.
+- Focused suite: 55 tests passed across 3 files. Full suite: 187 tests passed across 19 files. `pnpm check:sources` checked 31 sources and the current KCL page returned HTTP 200. Astro check reported 0 errors, 0 warnings, and 0 hints.
+- The generated reverse-index timestamp refresh was regenerated back to the baseline and remains out of the fix-round commit.

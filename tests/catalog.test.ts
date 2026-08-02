@@ -115,25 +115,28 @@ describe('QS cohort and official source registry', () => {
     }
   });
 
-  it('uses KCL’s China-specific requirements page without inventing a university-owned roster', () => {
+  it('uses KCL’s current China & Globalisation MSc China-equivalency display without inventing a university-owned roster', () => {
     const source = sources.find((item) => item.id === 'kcl-china');
 
     expect(source).toMatchObject({
-      url: 'https://www.kcl.ac.uk/study-legacy/postgraduate/apply/entry-requirements/international',
-      labelZh: '中国研究生入学要求',
-      scope: 'university',
+      url: 'https://www.kcl.ac.uk/study/postgraduate-taught/courses/china-and-globalisation-msc/requirements',
+      labelZh: '中国与全球化理学硕士中国学历要求',
+      scope: 'programme',
       institutionRule: {
         type: 'none',
       },
     });
     expect(source?.institutionRule.verification?.requiredText).toEqual(expect.arrayContaining([
-      'China',
-      'Chinese Universities considered Prestigious',
-      'Other recognised Chinese universities',
+      'Equivalent International qualifications',
+      'China & Globalisation MSc',
+      'September 2026',
     ]));
-    expect(source?.institutionRule.summaryZh).toContain('名校');
-    expect(source?.institutionRule.summaryZh).toContain('其他受认可中国大学');
+    expect(source?.institutionRule.summaryZh).toContain('选择 China');
+    expect(source?.institutionRule.summaryZh).toContain('80%');
+    expect(source?.institutionRule.summaryZh).toContain('85%');
+    expect(source?.institutionRule.summaryZh).toContain('仅适用于中国与全球化理学硕士');
     expect(source?.institutionRule.summaryZh).toContain('完整名单未公开');
+    expect(source?.url).not.toContain('/study-legacy/');
   });
 
   it('keeps all nine reviewed public lists as official university-level sources pending structured extraction', () => {

@@ -152,18 +152,18 @@
   {
     "id": "kcl-china",
     "universityId": "kings-college-london",
-    "labelZh": "中国研究生入学要求",
-    "url": "https://www.kcl.ac.uk/study-legacy/postgraduate/apply/entry-requirements/international",
+    "labelZh": "中国与全球化理学硕士中国学历要求",
+    "url": "https://www.kcl.ac.uk/study/postgraduate-taught/courses/china-and-globalisation-msc/requirements",
     "kind": "china-requirements",
-    "scope": "university",
-    "scopeZh": "学校面向中国申请人的研究生国际学历要求；不同课程可适用不同门槛",
+    "scope": "programme",
+    "scopeZh": "中国与全球化理学硕士（2026 年 9 月入学）：在国际学历等值项中选择 China 后显示的要求",
     "institutionRule": {
       "type": "none",
-      "summaryZh": "伦敦国王学院将中国大学区分为“名校”和其他受认可中国大学，分别采用不同加权平均分；名校参照 UK ENIC 或 Project 211/双一流，但完整名单未公开。",
+      "summaryZh": "仅适用于中国与全球化理学硕士：在“Equivalent International qualifications”中选择 China 后，Prestigious Institution 为 80%，Recognised Institution 为 85%；竞争激烈的指定课程通常只向 UK ENIC 或 Project 211/双一流所界定的名校发放录取。该页面完整名单未公开。",
       "verification": {
         "reviewedAt": "2026-08-02",
-        "url": "https://www.kcl.ac.uk/study-legacy/postgraduate/apply/entry-requirements/international",
-        "requiredText": ["China", "Chinese Universities considered Prestigious", "Other recognised Chinese universities", "Project 211/Double First Class"]
+        "url": "https://www.kcl.ac.uk/study/postgraduate-taught/courses/china-and-globalisation-msc/requirements",
+        "requiredText": ["Equivalent International qualifications", "China & Globalisation MSc", "September 2026"]
       }
     },
     "parser": {
