@@ -154,8 +154,9 @@ export function createInstitutionEvidenceSearch({
   return {
     search(query: string): InstitutionEvidenceSearchResult {
       if (!normalizeQuery(query)) return { kind: 'empty', suggestions: [] };
-      const [exact] = institutionSearch.find(query);
-      if (exact) return select(exact.id);
+      const exact = institutionSearch.find(query);
+      if (exact.length === 1) return select(exact[0].id);
+      if (exact.length > 1) return { kind: 'suggestions', suggestions: exact };
       const suggestions = institutionSearch.suggest(query);
       return suggestions.length > 0 ? { kind: 'suggestions', suggestions } : { kind: 'unknown', suggestions: [] };
     },

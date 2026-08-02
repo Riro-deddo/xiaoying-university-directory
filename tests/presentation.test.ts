@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import {
+  directoryRankCopy,
   directoryFilters,
   evidenceCopyFor,
   evidenceStateCopy,
@@ -9,6 +10,7 @@ import {
   stateCopy,
   sourceHealthCopy,
 } from '../src/lib/presentation';
+import type { UniversityWithStatus } from '../src/lib/types';
 
 const gradeThresholdRule = {
   type: 'grade-threshold' as const,
@@ -38,6 +40,22 @@ describe('directoryFilters', () => {
   it('reuses the neutral state label in the public filter', () => {
     expect(directoryFilters.find(([value]) => value === 'not-public')?.[1])
       .toBe('未发现院校规则');
+  });
+});
+
+describe('directoryRankCopy', () => {
+  it('renders the specialist label without inventing a QS rank', () => {
+    const specialist: UniversityWithStatus = {
+      id: 'london-business-school',
+      nameZh: '伦敦商学院',
+      nameEn: 'London Business School',
+      aliases: ['LBS'],
+      directoryCategory: 'specialist',
+      state: 'not-public',
+      officialDomain: 'https://www.london.edu',
+      sources: [],
+    };
+    expect(directoryRankCopy(specialist)).toBe('专业院校');
   });
 });
 

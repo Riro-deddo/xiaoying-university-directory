@@ -39,9 +39,15 @@ describe('dual-direction search page', () => {
     expect(page).not.toContain('英国大学官方 List，一页查清');
   });
 
+  it('states the reviewed 28 plus one specialist scope and keeps the specialist rank-safe', () => {
+    expect(page).toContain('28 所 QS 2027 世界前 200 英国大学 + 1 所专业院校');
+    expect(page).toContain('directoryRankCopy(university)');
+    expect(page).not.toContain("university.qs?.rank ?? '—'");
+  });
+
   it('labels institution rules by meaning instead of treating every source as an eligibility List', () => {
-    expect(page).toContain('<details class="official-list-panel">');
-    expect(page).toContain('officialPanelTitle(panel.ruleType, panel.rows.length)');
+    expect(page).toContain('<details class="official-list-panel"');
+    expect(page).toContain('officialPanelTitle(panel.ruleType, panel.recordCount)');
     expect(page).toContain('panel.ruleSummaryZh');
     expect(page).toContain('panel.listedMeaningZh');
     expect(page).toContain('panel.unlistedMeaningZh');
@@ -57,19 +63,31 @@ describe('dual-direction search page', () => {
     expect(styles).toContain('.rule-type');
   });
 
+  it('defers list rows and reverse-index data until the relevant interaction', () => {
+    expect(page).toContain('data-list-url={panel.dataUrl}');
+    expect(page).toContain("fetch(panel.dataset.listUrl");
+    expect(page).toContain("fetch(data.reverseIndexUrl");
+    expect(page).not.toContain("import reverseIndex from '../data/generated/reverse-index.json'");
+    expect(page).not.toContain('panel.rows.map');
+  });
+
   it('keeps the reviewed Manchester and Exeter source copy safe for the later card rendering', () => {
     const manchesterSources = [
       'manchester-china',
       'manchester-computer-science-china',
       'manchester-law-china',
     ].map((id) => sources.find((source) => source.id === id));
-    const exeter = sources.find((source) => source.id === 'exeter-china');
-
     expect(manchesterSources.map((source) => source?.institutionRule.summaryZh).join(' '))
       .toContain('完整名单未公开');
     expect(manchesterSources.map((source) => source?.institutionRule.summaryZh).join(' '))
       .not.toMatch(/法学.*公开.*名单/u);
-    expect(exeter?.institutionRule.summaryZh).toContain('取消原有国内大学排名要求');
+    expect(sources.find((source) => source.id === 'exeter-china')?.institutionRule.summaryZh).toContain('取消原有国内大学排名要求');
+  });
+
+  it('renders reviewed rule-only detail before the official links', () => {
+    expect(page).toContain('本科院校会影响要求，完整名单未公开');
+    expect(sources.find((source) => source.id === 'exeter-china')?.institutionRule.summaryZh).toContain('取消原有国内大学排名要求');
+    expect(page.indexOf('university-rule-summary')).toBeLessThan(page.indexOf('source-actions'));
   });
 });
 

@@ -5,6 +5,7 @@ import { buildOfficialListDisplays } from '../lib/official-list-display';
 import { serializeJsonForHtml } from '../lib/html-json';
 import {
   directoryFilters,
+  directoryRankCopy,
   institutionRuleTypeCopy,
   officialPanelTitle,
   sourceFreshnessCopy,
@@ -12,15 +13,24 @@ import {
   stateCopy,
 } from '../lib/presentation';
 import { withBase } from '../lib/urls';
-import reverseIndex from '../data/generated/reverse-index.json';
 
 const institutions = loadInstitutions();
 const universities = loadUniversities();
 const requirements = loadRequirements();
 const officialListsByUniversity = buildOfficialListDisplays({ universities, institutions, requirements });
-const searchData = { institutions, universities, reverseIndex };
-const searchDataJson = serializeJsonForHtml(searchData);
 const base = import.meta.env.BASE_URL;
+const officialListPanelsByUniversity = new Map(
+  [...officialListsByUniversity.entries()].map(([universityId, panels]) => [
+    universityId,
+    panels.map(({ rows, ...panel }) => ({
+      ...panel,
+      recordCount: rows.length,
+      dataUrl: withBase(base, `generated/lists/${panel.sourceId}.json`),
+    })),
+  ]),
+);
+const searchData = { institutions, universities, reverseIndexUrl: withBase(base, 'generated/reverse-index.json') };
+const searchDataJson = serializeJsonForHtml(searchData);
 const homeUrl = withBase(base, '');
 const methodologyUrl = withBase(base, 'methodology/');
 const faviconUrl = withBase(base, 'favicon.svg');
@@ -46,6 +56,7 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
       <section class="intro" aria-labelledby="page-title">
         <h1 id="page-title">英国大学中国院校规则，一页查清</h1>
         <p>分清院校准入限制、成绩门槛分档与普通中国申请要求。</p>
+        <p class="directory-scope">28 所 QS 2027 世界前 200 英国大学 + 1 所专业院校</p>
 
         <div class="search-modes" role="group" aria-label="搜索方向">
           <button class="search-mode active" type="button" data-search-mode="uk-university" aria-pressed="true">查英国大学</button>
@@ -78,7 +89,7 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
                 <h2>{university.nameZh}</h2>
                 <p>{university.nameEn}</p>
               </div>
-              <div class="rank"><span class="mobile-label">QS 2027</span>{university.qs?.rank ?? '—'}</div>
+              <div class="rank"><span class="mobile-label">{university.directoryCategory === 'specialist' ? '目录类别' : 'QS 2027'}</span>{directoryRankCopy(university)}</div>
               <div class="state">
                 <span class:list={['status-dot', `status-${university.state}`]}></span>
                 <span title={stateCopy[university.state].description}>{stateCopy[university.state].label}</span>
@@ -87,6 +98,15 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
                 {university.sources.length > 0
                   ? university.sources.map((source) => <span>{source.scopeZh ?? source.labelZh}</span>)
                   : <span>{university.noteZh}</span>}
+              </div>
+              <div class="university-rule-summary">
+                {university.state === 'china-requirements' && <strong>本科院校会影响要求，完整名单未公开。</strong>}
+                {university.sources.map((source) => (
+                  <p>
+                    <span>{source.scopeZh}：</span>{source.institutionRule.summaryZh}
+                    {source.parser.mode === 'link-only' && source.institutionRule.type !== 'none' && ' 官网存在院校规则，但本站暂未完成安全结构化，暂不附表。'}
+                  </p>
+                ))}
               </div>
               <div class="source-actions">
                 {university.sources.length > 0
@@ -100,9 +120,9 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
                     ))
                   : <span class="no-source">尚无已核验的公开入口</span>}
               </div>
-              {(officialListsByUniversity.get(university.id) ?? []).map((panel) => (
-                <details class="official-list-panel">
-                  <summary>{officialPanelTitle(panel.ruleType, panel.rows.length)}</summary>
+              {(officialListPanelsByUniversity.get(university.id) ?? []).map((panel) => (
+                <details class="official-list-panel" data-list-url={panel.dataUrl} data-source-id={panel.sourceId} data-list-state="pending">
+                  <summary>{officialPanelTitle(panel.ruleType, panel.recordCount)}</summary>
                   <div class="official-rule-meaning">
                     <strong>{panel.ruleSummaryZh}</strong>
                     <p><span>名单内：</span>{panel.listedMeaningZh}</p>
@@ -119,44 +139,11 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
                     <a href={panel.sourceUrl} target="_blank" rel="noopener noreferrer">查看大学官网原页</a>
                     <a href={panel.ruleSourceUrl} target="_blank" rel="noopener noreferrer">查看规则说明来源</a>
                   </div>
-                  <ol class="official-list-rows">
-                    {panel.rows.map((row) => (
-                      <li>
-                        <span class="official-list-name">
-                          <strong>{row.nameZh}</strong>
-                          <small>{row.nameEn}</small>
-                        </span>
-                        <span class="official-list-value">
-                          <small>官方分组/等级</small>
-                          {row.tierOfficial}
-                        </span>
-                        {row.scoreOfficial && (
-                          <span class="official-list-value">
-                            <small>官方分数</small>
-                            {row.scoreOfficial}
-                          </span>
-                        )}
-                      </li>
-                    ))}
-                  </ol>
+                  <ol class="official-list-rows" hidden></ol>
+                  <p class="list-load-message" aria-live="polite" hidden></p>
+                  <button class="list-retry" type="button" hidden>重新加载名单</button>
                 </details>
               ))}
-              {university.sources.map((source) => source.parser.mode === 'link-only'
-                && source.institutionRule.type !== 'none'
-                && (
-                  <div class="link-only-disclosure">
-                    <strong>{institutionRuleTypeCopy[source.institutionRule.type].label}</strong>
-                    <span>{source.institutionRule.summaryZh}</span>
-                    <span>官网存在院校规则，但本站暂未完成安全结构化，本站暂不附表。</span>
-                    {source.institutionRule.unlistedMeaningZh && <span>{source.institutionRule.unlistedMeaningZh}</span>}
-                    {source.institutionRule.verification && (
-                      <>
-                        <span>规则人工核验：{source.institutionRule.verification.reviewedAt}</span>
-                        <a href={source.institutionRule.verification.url} target="_blank" rel="noopener noreferrer">查看规则说明来源</a>
-                      </>
-                    )}
-                  </div>
-                ))}
             </article>
           ))}
         </div>
@@ -181,19 +168,19 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
     <script is:inline id="directory-data" type="application/json" set:html={searchDataJson}></script>
     <script>
       import { createInstitutionEvidenceSearch, createUniversitySearch } from '../lib/search';
-      import { evidenceCopyFor, sourceFreshnessCopy } from '../lib/presentation';
+      import { directoryRankCopy, evidenceCopyFor, sourceFreshnessCopy } from '../lib/presentation';
       import type { UniversityState, UniversityWithStatus } from '../lib/types';
 
       const dataNode = document.querySelector<HTMLScriptElement>('#directory-data');
       const data = JSON.parse(dataNode?.textContent ?? '{}') as {
         institutions: Parameters<typeof createInstitutionEvidenceSearch>[0]['institutions'];
         universities: UniversityWithStatus[];
-        reverseIndex: Parameters<typeof createInstitutionEvidenceSearch>[0]['reverseIndex'];
+        reverseIndexUrl: string;
       };
       const directory = createUniversitySearch(data.universities ?? []);
-      const institutionDirectory = createInstitutionEvidenceSearch({
-        institutions: data.institutions ?? [], universities: data.universities ?? [], reverseIndex: data.reverseIndex ?? [],
-      });
+      let institutionDirectory: ReturnType<typeof createInstitutionEvidenceSearch> | undefined;
+      let reverseIndexLoading: Promise<void> | undefined;
+      let reverseIndexMessage = '';
       const input = document.querySelector<HTMLInputElement>('#university-search');
       const buttons = [...document.querySelectorAll<HTMLButtonElement>('.filter')];
       const modeButtons = [...document.querySelectorAll<HTMLButtonElement>('[data-search-mode]')];
@@ -210,6 +197,27 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
       const evidence = document.querySelector<HTMLElement>('#institution-evidence');
       let selected: UniversityState[] = [];
       let mode: 'uk-university' | 'chinese-institution' = 'uk-university';
+
+      async function loadInstitutionDirectory() {
+        if (institutionDirectory || reverseIndexLoading) return reverseIndexLoading;
+        reverseIndexMessage = '正在加载中国院校索引…';
+        reverseIndexLoading = fetch(data.reverseIndexUrl, { cache: 'force-cache' })
+          .then(async (response) => {
+            if (!response.ok) throw new Error(`Reverse index request failed: ${response.status}`);
+            const reverseIndex = await response.json();
+            if (!Array.isArray(reverseIndex)) throw new Error('Reverse index payload is invalid');
+            institutionDirectory = createInstitutionEvidenceSearch({
+              institutions: data.institutions ?? [], universities: data.universities ?? [], reverseIndex,
+            });
+            reverseIndexMessage = '';
+          })
+          .catch(() => {
+            reverseIndexMessage = '中国院校索引暂时无法加载，请稍后重试。';
+            institutionDirectory = undefined;
+          })
+          .finally(() => { reverseIndexLoading = undefined; update(); });
+        return reverseIndexLoading;
+      }
 
       function updateUniversityDirectory() {
         const matches = directory.search(input?.value ?? '', selected);
@@ -234,6 +242,12 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
       }
 
       function renderInstitutionResult() {
+        if (!institutionDirectory) {
+          chooser?.replaceChildren();
+          evidence?.replaceChildren();
+          if (institutionCount) institutionCount.textContent = reverseIndexMessage || '正在加载中国院校索引…';
+          return;
+        }
         const result = institutionDirectory.search(input?.value ?? '');
         chooser?.replaceChildren();
         evidence?.replaceChildren();
@@ -266,9 +280,7 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
           const copy = evidenceCopyFor(card.evidence);
           const article = makeElement('article');
           article.className = 'evidence-card';
-          const title = makeElement('h3', card.university.qs
-            ? `${card.university.nameZh}｜QS ${card.university.qs.rank}`
-            : card.university.nameZh);
+          const title = makeElement('h3', `${card.university.nameZh}｜${directoryRankCopy(card.university)}`);
           const status = makeElement('p', copy.label);
           status.className = 'evidence-state';
           const description = makeElement('p', copy.description);
@@ -318,6 +330,7 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
         if (ukDirectory) ukDirectory.hidden = chineseMode;
         if (institutionResults) institutionResults.hidden = !chineseMode;
         if (input) input.value = '';
+        if (chineseMode) void loadInstitutionDirectory();
         update();
       }
 
@@ -339,11 +352,63 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
       chooser?.addEventListener('click', (event) => {
         const button = (event.target as HTMLElement).closest<HTMLButtonElement>('[data-institution-id]');
         const institutionId = button?.dataset.institutionId;
-        if (!institutionId || !evidence || !institutionCount) return;
-        const result = institutionDirectory.select(institutionId);
+        const currentInstitutionDirectory = institutionDirectory;
+        if (!institutionId || !evidence || !institutionCount || !currentInstitutionDirectory) return;
+        const result = currentInstitutionDirectory.select(institutionId);
         if (result.kind !== 'selected') return;
         if (input) input.value = result.institution.nameZh;
         renderInstitutionResult();
+      });
+
+      function listValue(labelText: string, value: string) {
+        const wrapper = makeElement('span');
+        wrapper.className = 'official-list-value';
+        wrapper.append(makeElement('small', labelText), document.createTextNode(value));
+        return wrapper;
+      }
+
+      function renderOfficialListRows(rows: Array<{ nameZh: string; nameEn: string; tierOfficial: string; scoreOfficial?: string }>, target: HTMLOListElement) {
+        target.replaceChildren(...rows.map((row) => {
+          const item = makeElement('li');
+          const name = makeElement('span');
+          name.className = 'official-list-name';
+          name.append(makeElement('strong', row.nameZh), makeElement('small', row.nameEn));
+          item.append(name, listValue('官方分组/等级', row.tierOfficial));
+          if (row.scoreOfficial) item.append(listValue('官方分数', row.scoreOfficial));
+          return item;
+        }));
+        target.hidden = false;
+      }
+
+      async function loadOfficialList(panel: HTMLDetailsElement) {
+        if (panel.dataset.listState === 'complete' || panel.dataset.listState === 'loading') return;
+        const message = panel.querySelector<HTMLElement>('.list-load-message');
+        const retry = panel.querySelector<HTMLButtonElement>('.list-retry');
+        const rowsTarget = panel.querySelector<HTMLOListElement>('.official-list-rows');
+        if (!message || !retry || !rowsTarget || !panel.dataset.listUrl) return;
+        panel.dataset.listState = 'loading';
+        message.hidden = false;
+        message.textContent = '正在加载已核验的官方名单…';
+        retry.hidden = true;
+        try {
+          const response = await fetch(panel.dataset.listUrl, { cache: 'force-cache' });
+          if (!response.ok) throw new Error(`List request failed: ${response.status}`);
+          const payload = await response.json() as { sourceId?: string; rows?: Array<{ nameZh?: string; nameEn?: string; tierOfficial?: string; scoreOfficial?: string }> };
+          if (payload.sourceId !== panel.dataset.sourceId || !Array.isArray(payload.rows) || payload.rows.length === 0
+            || payload.rows.some((row) => !row.nameZh || !row.nameEn || !row.tierOfficial)) throw new Error('List payload is invalid');
+          renderOfficialListRows(payload.rows as Array<{ nameZh: string; nameEn: string; tierOfficial: string; scoreOfficial?: string }>, rowsTarget);
+          panel.dataset.listState = 'complete';
+          message.hidden = true;
+        } catch {
+          panel.dataset.listState = 'failed';
+          message.textContent = '名单暂时无法加载；请稍后重试，或直接查看大学官网原页。';
+          retry.hidden = false;
+        }
+      }
+
+      document.querySelectorAll<HTMLDetailsElement>('.official-list-panel').forEach((panel) => {
+        panel.addEventListener('toggle', () => { if (panel.open) void loadOfficialList(panel); });
+        panel.querySelector<HTMLButtonElement>('.list-retry')?.addEventListener('click', () => void loadOfficialList(panel));
       });
     </script>
   </body>

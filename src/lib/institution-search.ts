@@ -13,21 +13,15 @@ export function normalizeInstitutionName(name: string): string {
     .trim();
 }
 
-function aliasConflict(name: string): Error & { code: 'ALIAS_CONFLICT' } {
-  const error = new Error(`ALIAS_CONFLICT: ${name}`) as Error & { code: 'ALIAS_CONFLICT' };
-  error.code = 'ALIAS_CONFLICT';
-  return error;
-}
-
 export function createInstitutionSearch(records: InstitutionRecord[]) {
-  const byNormalizedName = new Map<string, InstitutionRecord>();
+  const byNormalizedName = new Map<string, InstitutionRecord[]>();
 
   for (const record of records) {
     for (const name of [record.nameZh, record.nameEn, ...record.aliases]) {
       const normalized = normalizeInstitutionName(name);
-      const existing = byNormalizedName.get(normalized);
-      if (existing && existing.id !== record.id) throw aliasConflict(normalized);
-      byNormalizedName.set(normalized, record);
+      const matches = byNormalizedName.get(normalized) ?? [];
+      if (!matches.some((candidate) => candidate.id === record.id)) matches.push(record);
+      byNormalizedName.set(normalized, matches);
     }
   }
 
@@ -43,8 +37,7 @@ export function createInstitutionSearch(records: InstitutionRecord[]) {
 
   return {
     find(query: string): InstitutionRecord[] {
-      const match = byNormalizedName.get(normalizeInstitutionName(query));
-      return match ? [match] : [];
+      return byNormalizedName.get(normalizeInstitutionName(query)) ?? [];
     },
     suggest(query: string, limit = 5): InstitutionRecord[] {
       const normalized = normalizeInstitutionName(query);

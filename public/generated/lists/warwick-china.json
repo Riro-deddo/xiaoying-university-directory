@@ -1,0 +1,2532 @@
+{
+  "sourceId": "warwick-china",
+  "rows": [
+    {
+      "institutionId": "cn-1d1486b581a88465",
+      "nameZh": "安徽财经大学",
+      "nameEn": "Anhui University of Finance and Economics",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "anhui-university-4d325618",
+      "nameZh": "安徽大学",
+      "nameEn": "Anhui University (82-89% for Law*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-2043930eefd771bc",
+      "nameZh": "安徽工业大学",
+      "nameEn": "Anhui University of Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-382e820fb9a6ba36",
+      "nameZh": "安徽农业大学",
+      "nameEn": "Anhui Agricultural University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-d7d7f0e25cde9a6a",
+      "nameZh": "安徽师范大学",
+      "nameEn": "Anhui Normal University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-429f7b11cb5e6238",
+      "nameZh": "安徽医科大学",
+      "nameEn": "Anhui Medical University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-50154ee2d7fbaa61",
+      "nameZh": "北方工业大学",
+      "nameEn": "North China University of Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "peking-university-4818c188",
+      "nameZh": "北京大学",
+      "nameEn": "Peking University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 85% For courses requiring a UK 2.1: Minimum 80-84% For courses requiring a UK 2:2: Minimum 75-79%"
+    },
+    {
+      "institutionId": "cn-a3e5c83b38c2c804",
+      "nameZh": "北京第二外国语学院",
+      "nameEn": "Beijing International Studies University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-a7acbd26b149f215",
+      "nameZh": "北京电影学院",
+      "nameEn": "Beijing Film Academy",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-5ea8a0d4eea5f9bd",
+      "nameZh": "北京工商大学",
+      "nameEn": "Beijing Technology and Business University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-8b2d05aeefd9334e",
+      "nameZh": "北京工业大学",
+      "nameEn": "Beijing University of Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "beihang-university-formerly-beijing-university-of-aeronautics-astronautics-e1caae39",
+      "nameZh": "北京航空航天大学",
+      "nameEn": "Beihang University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 85% For courses requiring a UK 2.1: Minimum 80-84% For courses requiring a UK 2:2: Minimum 75-79%"
+    },
+    {
+      "institutionId": "beijing-university-of-chemical-technology-a79139e9",
+      "nameZh": "北京化工大学",
+      "nameEn": "Beijing University of Chemical Technology (80-84% for Chemical Engineering and Technology*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "cn-504e65d7e2120679",
+      "nameZh": "北京建筑大学",
+      "nameEn": "Beijing University of Civil Engineering and Architecture",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "beijing-jiaotong-university-formerly-beifang-northern-jiaotong-university-6c628689",
+      "nameZh": "北京交通大学",
+      "nameEn": "Beijing Jiaotong University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "cn-c5f4db8f1656ce7d",
+      "nameZh": "北京警察学院",
+      "nameEn": "Beijing Police College",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "university-of-science-and-technology-beijing-0c404289",
+      "nameZh": "北京科技大学",
+      "nameEn": "University of Science and Technology Beijing",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 85% For courses requiring a UK 2.1: Minimum 80-84% For courses requiring a UK 2:2: Minimum 75-79%"
+    },
+    {
+      "institutionId": "beijing-institute-of-technology-9484ee28",
+      "nameZh": "北京理工大学",
+      "nameEn": "Beijing Institute of Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 85% For courses requiring a UK 2.1: Minimum 80-84% For courses requiring a UK 2:2: Minimum 75-79%"
+    },
+    {
+      "institutionId": "beijing-forestry-university-b3351c0d",
+      "nameZh": "北京林业大学",
+      "nameEn": "Beijing Forestry University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "beijing-normal-university-see-note-regarding-united-international-college-c88360f6",
+      "nameZh": "北京师范大学",
+      "nameEn": "Beijing Normal University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 85% For courses requiring a UK 2.1: Minimum 80-84% For courses requiring a UK 2:2: Minimum 75-79%"
+    },
+    {
+      "institutionId": "beijing-sport-university-f9ccc13f",
+      "nameZh": "北京体育大学",
+      "nameEn": "Beijing Sport University (*82-89% for Physical Education)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "beijing-foreign-studies-university-c44143af",
+      "nameZh": "北京外国语大学",
+      "nameEn": "Beijing Foreign Studies University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "cn-d527e4dd20986bb4",
+      "nameZh": "北京舞蹈学院",
+      "nameEn": "Beijing Dance Academy",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-ad64960823fd5f29",
+      "nameZh": "北京物资学院",
+      "nameEn": "Beijing Wuzi University (for Logistics and Supply Chain Management majors only*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-a1290c79e9017064",
+      "nameZh": "北京协和医学院",
+      "nameEn": "Peking Union Medical College",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "beijing-university-of-posts-and-telecommunications-63e3d04f",
+      "nameZh": "北京邮电大学",
+      "nameEn": "Beijing University of Posts and Telecommunications",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "cn-f20f28a40443ce88",
+      "nameZh": "北京语言大学",
+      "nameEn": "Beijing Language and Culture University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "beijing-university-of-chinese-medicine-70aac221",
+      "nameZh": "北京中医药大学",
+      "nameEn": "Beijing University of Chinese Medicine",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "cn-f4a5d69e8db917fb",
+      "nameZh": "渤海大学",
+      "nameEn": "Bohai University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-1768c9298c2b8b48",
+      "nameZh": "成都理工大学",
+      "nameEn": "Chengdu University of Technology (82-89% for Geology or related*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-0e85934d3cd50718",
+      "nameZh": "成都中医药大学",
+      "nameEn": "Chengdu University of TCM",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "chongqing-university-3a110f6c",
+      "nameZh": "重庆大学",
+      "nameEn": "Chongqing University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 85% For courses requiring a UK 2.1: Minimum 80-84% For courses requiring a UK 2:2: Minimum 75-79%"
+    },
+    {
+      "institutionId": "cn-01eb3042a9a199fa",
+      "nameZh": "重庆交通大学",
+      "nameEn": "Chongqing Jiaotong University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-7a43e77c26b41c78",
+      "nameZh": "重庆理工大学",
+      "nameEn": "Chongqing University of Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-4a16768912cfe717",
+      "nameZh": "重庆师范大学",
+      "nameEn": "Chongqing Normal University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-705e40192b046c91",
+      "nameZh": "重庆医科大学",
+      "nameEn": "Chongqing Medical University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-712c08164b9abd3f",
+      "nameZh": "重庆邮电大学",
+      "nameEn": "Chongqing University of Posts and Telecommunications",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-3b81d6cd241e8a5d",
+      "nameZh": "大连大学",
+      "nameEn": "Dalian University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "dalian-maritime-university-8696305d",
+      "nameZh": "大连海事大学",
+      "nameEn": "Dalian Maritime University (82-89% for Law*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "dalian-university-of-technology-d7cc67a0",
+      "nameZh": "大连理工大学",
+      "nameEn": "Dalian University of Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 85% For courses requiring a UK 2.1: Minimum 80-84% For courses requiring a UK 2:2: Minimum 75-79%"
+    },
+    {
+      "institutionId": "cn-59583c392cc9c72b",
+      "nameZh": "大连外国语大学",
+      "nameEn": "Dalian University of Foreign Languages (85-89% for Foreign Language and Literature Majors*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-c4d4f35bfb8ec5bc",
+      "nameZh": "大连医科大学",
+      "nameEn": "Dalian Medical University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-09f63fd100d867b1",
+      "nameZh": "第四军医大学",
+      "nameEn": "Air Force Medical University of PLA (the Fourth Military Medical University)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "university-of-electronic-science-and-technology-of-china-101301b5",
+      "nameZh": "电子科技大学",
+      "nameEn": "University of Electronic Science and Technology of China",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 85% For courses requiring a UK 2.1: Minimum 80-84% For courses requiring a UK 2:2: Minimum 75-79%"
+    },
+    {
+      "institutionId": "cn-087a0c6aa7f6d1ce",
+      "nameZh": "东北财经大学",
+      "nameEn": "Dongbei University of Finance and Economics",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "northeastern-university-677adfe6",
+      "nameZh": "东北大学",
+      "nameEn": "Northeastern University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 85% For courses requiring a UK 2.1: Minimum 80-84% For courses requiring a UK 2:2: Minimum 75-79%"
+    },
+    {
+      "institutionId": "cn-9e60fef4fb8e6d2f",
+      "nameZh": "东北大学秦皇岛分校",
+      "nameEn": "Northeastern University Qinhuangdao",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 85% For courses requiring a UK 2.1: Minimum 80-84% For courses requiring a UK 2:2: Minimum 75-79%"
+    },
+    {
+      "institutionId": "cn-414ed377bb3a1145",
+      "nameZh": "东北电力大学",
+      "nameEn": "Northeast Electric Power University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "northeast-forestry-university-d79f64f5",
+      "nameZh": "东北林业大学",
+      "nameEn": "Northeast Forestry University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "northeast-agricultural-university-271d6328",
+      "nameZh": "东北农业大学",
+      "nameEn": "Northeast Agricultural University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "northeast-normal-university-a77c4549",
+      "nameZh": "东北师范大学",
+      "nameEn": "Northeast Normal University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "cn-d5290d315c617d17",
+      "nameZh": "东北石油大学",
+      "nameEn": "Northeast Petroleum University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "donghua-university-8fab8235",
+      "nameZh": "东华大学",
+      "nameEn": "Donghua University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "southeast-university-53eebce9",
+      "nameZh": "东南大学",
+      "nameEn": "Southeast University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 85% For courses requiring a UK 2.1: Minimum 80-84% For courses requiring a UK 2:2: Minimum 75-79%"
+    },
+    {
+      "institutionId": "university-of-international-business-and-economics-2a13872d",
+      "nameZh": "对外经济贸易大学",
+      "nameEn": "University of International Business and Economics",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "cn-10b2073547ba6cb9",
+      "nameZh": "福建农林大学",
+      "nameEn": "Fujian Agriculture and Forestry University (85-89% for Agricultural Science Majors*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-a1b7307005e9b451",
+      "nameZh": "福建师范大学",
+      "nameEn": "Fujian Normal University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-8e01e19005e3a5c0",
+      "nameZh": "福建医科大学",
+      "nameEn": "Fujian Medical University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "fuzhou-university-e59f3da9",
+      "nameZh": "福州大学",
+      "nameEn": "Fuzhou University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "cn-b5768b8f60c9fc41",
+      "nameZh": "福州大学海洋学院",
+      "nameEn": "Fuzhou University, Ocean College",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "fudan-university-749651d4",
+      "nameZh": "复旦大学",
+      "nameEn": "Fudan University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 85% For courses requiring a UK 2.1: Minimum 80-84% For courses requiring a UK 2:2: Minimum 75-79%"
+    },
+    {
+      "institutionId": "cn-372c912dfa9426ea",
+      "nameZh": "甘肃农业大学",
+      "nameEn": "Gansu Agricultural University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-5f9bafc51a94a700",
+      "nameZh": "甘肃政法大学",
+      "nameEn": "Gansu University of Political Science and Law (for Law majors only*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-86892fe833b87a40",
+      "nameZh": "广东财经大学",
+      "nameEn": "Guangdong University of Finance & Economics (for Law majors only*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-ac16f2ad616b39ec",
+      "nameZh": "广东工业大学",
+      "nameEn": "Guangdong University of Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-00d6d1ad7d274f1f",
+      "nameZh": "广东外语外贸大学",
+      "nameEn": "Guangdong University of Foreign Studies (85-89% for Foreign Language and Literature Majors*) (82-89% for Law*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "guangxi-university-cabb03f5",
+      "nameZh": "广西大学",
+      "nameEn": "Guangxi University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-bc8b96deb93f137f",
+      "nameZh": "广西师范大学",
+      "nameEn": "Guangxi Normal University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-f3085725a3ce0a67",
+      "nameZh": "广西医科大学",
+      "nameEn": "Guangxi Medical University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-eee1085cd82ca50d",
+      "nameZh": "广州大学",
+      "nameEn": "Guangzhou University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-992cbbacda23f7e8",
+      "nameZh": "广州医科大学",
+      "nameEn": "Guangzhou Medical University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-6d432ce3999a0af3",
+      "nameZh": "广州中医药大学",
+      "nameEn": "Guangzhou University of Chinese Medicine",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-1947dfa0e8b68f34",
+      "nameZh": "贵州财经大学",
+      "nameEn": "Guizhou University of Finance and Economics",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "guizhou-university-55c5778b",
+      "nameZh": "贵州大学",
+      "nameEn": "Guizhou University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-2d19d4bcdda5a3dd",
+      "nameZh": "桂林电子科技大学",
+      "nameEn": "Guilin University of Electronic Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-c23dcbb92f0a2904",
+      "nameZh": "桂林理工大学",
+      "nameEn": "Guilin University of Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "national-university-of-defense-technology-471f1540",
+      "nameZh": "国防科技大学",
+      "nameEn": "National University of Defence Technology (also known as The PLA National University of Defense Technology)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 85% For courses requiring a UK 2.1: Minimum 80-84% For courses requiring a UK 2:2: Minimum 75-79%"
+    },
+    {
+      "institutionId": "cn-bb3a66e826796ad3",
+      "nameZh": "国际关系学院",
+      "nameEn": "University of International Relations",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "harbin-engineering-university-a81a0bdd",
+      "nameZh": "哈尔滨工程大学",
+      "nameEn": "Harbin Engineering University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "harbin-institute-of-technology-7c521149",
+      "nameZh": "哈尔滨工业大学",
+      "nameEn": "Harbin Institute of Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 85% For courses requiring a UK 2.1: Minimum 80-84% For courses requiring a UK 2:2: Minimum 75-79%"
+    },
+    {
+      "institutionId": "cn-0b9019282f16a2b0",
+      "nameZh": "哈尔滨理工大学",
+      "nameEn": "Harbin University of Science & Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-0aba8dfc8565e69b",
+      "nameZh": "哈尔滨师范大学",
+      "nameEn": "Harbin Normal University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-e76cc496cfbd7568",
+      "nameZh": "哈尔滨医科大学",
+      "nameEn": "Harbin Medical University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-5aef3969068d2b4a",
+      "nameZh": "哈尔滨医科大学大庆校区",
+      "nameEn": "Harbin Medical University, Daqing (for Psychiatry major only*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "the-second-military-medical-university-55f6f4f4",
+      "nameZh": "海军军医大学",
+      "nameEn": "Second Military Medical University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "hainan-university-70fc5cd1",
+      "nameZh": "海南大学",
+      "nameEn": "Hainan University (82-89% for Law*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-cfea119a4ce7c5c5",
+      "nameZh": "杭州电子科技大学",
+      "nameEn": "Hangzhou Dianzi University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-e650be5b793443ad",
+      "nameZh": "杭州师范大学",
+      "nameEn": "Hangzhou Normal University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "hefei-university-of-technology-1c5fd4db",
+      "nameZh": "合肥工业大学",
+      "nameEn": "Hefei University of Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "cn-5d15aaaec5fa8a03",
+      "nameZh": "河北大学",
+      "nameEn": "Hebei University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-64682565311f214c",
+      "nameZh": "河北工业大学",
+      "nameEn": "Hebei University of Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-f80ec1bd2c7a3041",
+      "nameZh": "河北经贸大学",
+      "nameEn": "Hebei University of Economics and Business",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-9840cbff81ffab6e",
+      "nameZh": "河北科技大学",
+      "nameEn": "Hebei University of Science and Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-165f88ee15a774a2",
+      "nameZh": "河北农业大学",
+      "nameEn": "Hebei Agricultural University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-80be5a11f4cc4c8f",
+      "nameZh": "河北师范大学",
+      "nameEn": "Hebei Normal University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-1b24cdcd701beb73",
+      "nameZh": "河北医科大学",
+      "nameEn": "Hebei Medical University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "hohai-university-8e8ac8be",
+      "nameZh": "河海大学",
+      "nameEn": "Hohai University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "cn-e72d1587de958af8",
+      "nameZh": "河南大学",
+      "nameEn": "Henan University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-b616fa31750e7226",
+      "nameZh": "河南大学国际商学院",
+      "nameEn": "Henan University International Business School (formerly International Education College/School of International Education, Henan University (for students enrolled from 2018 onwards*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-3eaf09e6df3f834d",
+      "nameZh": "河南大学欧亚国际学院",
+      "nameEn": "Eurasian International School of Henan University (for students enrolled from 2018 onwards*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-a97c983969d6ed21",
+      "nameZh": "河南工业大学",
+      "nameEn": "Henan University of Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-d12d3d6ed383bf45",
+      "nameZh": "河南科技大学",
+      "nameEn": "Henan University of Science and Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-bb5e6f350226b0fc",
+      "nameZh": "河南理工大学",
+      "nameEn": "Henan Polytechnic University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-8bc9b7bdb2de6c90",
+      "nameZh": "河南农业大学",
+      "nameEn": "Henan Agricultural University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-86f09a978d75478b",
+      "nameZh": "河南师范大学",
+      "nameEn": "Henan Normal University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-4f4d6eefafbd97be",
+      "nameZh": "黑龙江大学",
+      "nameEn": "Heilongjiang University (82-89% for Law*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-64d18705ddb32d93",
+      "nameZh": "黑龙江中医药大学",
+      "nameEn": "Heilongjiang University of Chinese Medicine",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-9dd73ee3d74691e1",
+      "nameZh": "湖北大学",
+      "nameEn": "Hubei University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-afda288a561281a7",
+      "nameZh": "湖北工业大学",
+      "nameEn": "Hubei University of Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-ba0f44492e04e278",
+      "nameZh": "湖北美术学院",
+      "nameEn": "Hubei Academy of Fine Arts (for Arts Majors only*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-6265f21a2342791d",
+      "nameZh": "湖北师范大学",
+      "nameEn": "Hubei Normal University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "hunan-university-75a3814e",
+      "nameZh": "湖南大学",
+      "nameEn": "Hunan University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 85% For courses requiring a UK 2.1: Minimum 80-84% For courses requiring a UK 2:2: Minimum 75-79%"
+    },
+    {
+      "institutionId": "cn-8558f718aace2096",
+      "nameZh": "湖南工业大学",
+      "nameEn": "Hunan University of Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-bf0c0215cfeeee40",
+      "nameZh": "湖南科技大学",
+      "nameEn": "Hunan University of Science and Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-e23c06c2ee76bf8d",
+      "nameZh": "湖南农业大学",
+      "nameEn": "Hunan Agricultural University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "hunan-normal-university-95554cb7",
+      "nameZh": "湖南师范大学",
+      "nameEn": "Hunan Normal University (82-89% for Law*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-6b49a491e0a262b0",
+      "nameZh": "湖南中医药大学",
+      "nameEn": "Hunan University of Chinese Medicine",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "north-china-electric-power-university-huabei-electric-power-university-68bcce4b",
+      "nameZh": "华北电力大学",
+      "nameEn": "North China Electric Power University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "cn-5b86ab909d4ce14d",
+      "nameZh": "华北理工大学",
+      "nameEn": "North China University of Science and Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-13829b04052ede09",
+      "nameZh": "华北水利水电大学",
+      "nameEn": "North China University of Water Resources and Electric Power",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-50cb0cc331a99912",
+      "nameZh": "华东交通大学",
+      "nameEn": "East China Jiaotong University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "east-china-university-of-science-and-technology-77dcefa9",
+      "nameZh": "华东理工大学",
+      "nameEn": "East China University of Science and Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 85% For courses requiring a UK 2.1: Minimum 80-84% For courses requiring a UK 2:2: Minimum 75-79%"
+    },
+    {
+      "institutionId": "east-china-normal-university-8ce642ca",
+      "nameZh": "华东师范大学",
+      "nameEn": "East China Normal University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 85% For courses requiring a UK 2.1: Minimum 80-84% For courses requiring a UK 2:2: Minimum 75-79%"
+    },
+    {
+      "institutionId": "cn-9846526cba397638",
+      "nameZh": "华东政法大学",
+      "nameEn": "East China University of Political Science and Law (80-84% for Law*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "south-china-university-of-technology-09771dd9",
+      "nameZh": "华南理工大学",
+      "nameEn": "South China University of Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 85% For courses requiring a UK 2.1: Minimum 80-84% For courses requiring a UK 2:2: Minimum 75-79%"
+    },
+    {
+      "institutionId": "cn-ce4376976a045805",
+      "nameZh": "华南农业大学",
+      "nameEn": "South China Agricultural University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "south-china-normal-university-1646a6bc",
+      "nameZh": "华南师范大学",
+      "nameEn": "South China Normal University (82-89% for Physics*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-9b9093b0fcf8077c",
+      "nameZh": "华侨大学",
+      "nameEn": "Huaqiao University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "huazhong-university-of-science-technology-97cee7bd",
+      "nameZh": "华中科技大学",
+      "nameEn": "Huazhong University of Science and Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 85% For courses requiring a UK 2.1: Minimum 80-84% For courses requiring a UK 2:2: Minimum 75-79%"
+    },
+    {
+      "institutionId": "huazhong-agricultural-university-central-china-agricultural-university-5cb9ba1d",
+      "nameZh": "华中农业大学",
+      "nameEn": "Huazhong Agricultural University (80-84% for Biology, Horticulture, Animal Husbandry, Veterinary Science, Agricultural and Forestry Economic Management*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "huazhong-normal-university-central-china-normal-university-3a822b99",
+      "nameZh": "华中师范大学",
+      "nameEn": "Central China Normal University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "jilin-university-3c8d9a5b",
+      "nameZh": "吉林大学",
+      "nameEn": "Jilin University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 85% For courses requiring a UK 2.1: Minimum 80-84% For courses requiring a UK 2:2: Minimum 75-79%"
+    },
+    {
+      "institutionId": "cn-2efe0a997948bd12",
+      "nameZh": "吉林农业大学",
+      "nameEn": "Jilin Agricultural University (for Food Science and Horticulture majors only*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-4541f8c66e145e3e",
+      "nameZh": "济南大学",
+      "nameEn": "University of Jinan",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "jinan-university-fdd34254",
+      "nameZh": "暨南大学",
+      "nameEn": "Jinan University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "cn-9bd8f9ee0aefc38b",
+      "nameZh": "江汉大学",
+      "nameEn": "Jianghan University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "jiangnan-university-2654a04a",
+      "nameZh": "江南大学",
+      "nameEn": "Jiangnan University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "cn-50c9e3325e63c27a",
+      "nameZh": "江苏大学",
+      "nameEn": "Jiangsu University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-5c631cae55147545",
+      "nameZh": "江苏科技大学",
+      "nameEn": "Jiangsu University of Science and Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-07ff00135a0aca65",
+      "nameZh": "江苏师范大学",
+      "nameEn": "Jiangsu Normal University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-5a524553988c78c7",
+      "nameZh": "江西财经大学",
+      "nameEn": "Jiangxi University of Finance and Economics (82-89% for Law*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-b8539627ef60c27e",
+      "nameZh": "江西师范大学",
+      "nameEn": "Jiangxi Normal University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-a0a9973888e82b86",
+      "nameZh": "锦州医科大学",
+      "nameEn": "Jinzhou Medical University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-6be7bdb4605d3904",
+      "nameZh": "昆明理工大学",
+      "nameEn": "Kunming University of Science and Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-cb0764078ed972e1",
+      "nameZh": "昆明医科大学",
+      "nameEn": "Kunming Medical University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "lanzhou-university-52c21e54",
+      "nameZh": "兰州大学",
+      "nameEn": "Lanzhou University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 85% For courses requiring a UK 2.1: Minimum 80-84% For courses requiring a UK 2:2: Minimum 75-79%"
+    },
+    {
+      "institutionId": "cn-a0b0d1852d094634",
+      "nameZh": "兰州交通大学",
+      "nameEn": "Lanzhou Jiaotong University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-4f5a5db7c89ae366",
+      "nameZh": "兰州理工大学",
+      "nameEn": "Lanzhou University of Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "liaoning-university-80e8b162",
+      "nameZh": "辽宁大学",
+      "nameEn": "Liaoning University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-bc1aaa68e31a06af",
+      "nameZh": "辽宁工程技术大学",
+      "nameEn": "Liaoning Technical University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-174414eafa37a726",
+      "nameZh": "辽宁师范大学",
+      "nameEn": "Liaoning Normal University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-213a1c878f4bfff2",
+      "nameZh": "辽宁中医药大学",
+      "nameEn": "Liaoning University of Traditional Chinese Medicine",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-2ecff76f8db922b1",
+      "nameZh": "聊城大学",
+      "nameEn": "Liaocheng University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "nanchang-university-3dc3ad6c",
+      "nameZh": "南昌大学",
+      "nameEn": "Nanchang University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "cn-e2a1f04ae5a5794a",
+      "nameZh": "南昌航空大学",
+      "nameEn": "Nanchang Hangkong University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-fd334bd375069320",
+      "nameZh": "南方科技大学",
+      "nameEn": "Southern University of Science and Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "cn-25d485384721b830",
+      "nameZh": "南方医科大学",
+      "nameEn": "Southern Medical University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-b2514758578ec733",
+      "nameZh": "南华大学",
+      "nameEn": "University of South China",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-cfd80442d89c0935",
+      "nameZh": "南京财经大学",
+      "nameEn": "Nanjing University of Finance and Economics",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "nanjing-university-8fbdf4ba",
+      "nameZh": "南京大学",
+      "nameEn": "Nanjing University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 85% For courses requiring a UK 2.1: Minimum 80-84% For courses requiring a UK 2:2: Minimum 75-79%"
+    },
+    {
+      "institutionId": "cn-66d2d094bcb5412d",
+      "nameZh": "南京工业大学",
+      "nameEn": "Nanjing Tech University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-455084ec13ada5a4",
+      "nameZh": "南京航空航天大学",
+      "nameEn": "Nanjing University of Aeronautics and Astronautics",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "nanjing-university-of-science-and-technology-af39a57f",
+      "nameZh": "南京理工大学",
+      "nameEn": "Nanjing University of Science and Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "cn-7fc8cb9cf80e2f0e",
+      "nameZh": "南京林业大学",
+      "nameEn": "Nanjing Forestry University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "nanjing-agricultural-university-c39b4a83",
+      "nameZh": "南京农业大学",
+      "nameEn": "Nanjing Agricultural University (80-84% for Crop Science, Agricultural Resources and Environment*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "cn-8626f600ce33bc20",
+      "nameZh": "南京审计大学",
+      "nameEn": "Nanjing Audit University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "nanjing-normal-university-4bbad3a8",
+      "nameZh": "南京师范大学",
+      "nameEn": "Nanjing Normal University (80-84% for Law*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-52596fb2bd34dd3f",
+      "nameZh": "南京信息工程大学",
+      "nameEn": "Nanjing University of Information Science and Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "cn-e0fc5173f5b0b813",
+      "nameZh": "南京医科大学",
+      "nameEn": "Nanjing Medical University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-c040f3f9fbaf2edd",
+      "nameZh": "南京艺术学院",
+      "nameEn": "Nanjing University of the Arts (85-89% for Arts or Fine Arts*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-98ded03fe5b061ca",
+      "nameZh": "南京邮电大学",
+      "nameEn": "Nanjing University of Posts and Telecommunications",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-0518fdd161b38fa4",
+      "nameZh": "南京中医药大学",
+      "nameEn": "Nanjing University of Chinese Medicine",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "nankai-university-fed7345f",
+      "nameZh": "南开大学",
+      "nameEn": "Nankai University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 85% For courses requiring a UK 2.1: Minimum 80-84% For courses requiring a UK 2:2: Minimum 75-79%"
+    },
+    {
+      "institutionId": "cn-2028b05d1de45079",
+      "nameZh": "南通大学",
+      "nameEn": "Nantong University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "inner-mongolia-university-ffd71f0e",
+      "nameZh": "内蒙古大学",
+      "nameEn": "Inner Mongolia University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-e17c2d50b106d2e1",
+      "nameZh": "内蒙古农业大学",
+      "nameEn": "Inner Mongolia Agricultural University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "inner-mongolia-arts-university-05fa9653",
+      "nameZh": "内蒙古艺术学院",
+      "nameEn": "Inner Mongolia Arts University (for Music and Dance related Majors only*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-3d37c7d0c88d7564",
+      "nameZh": "宁波大学",
+      "nameEn": "Ningbo University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "ningxia-university-b5450df6",
+      "nameZh": "宁夏大学",
+      "nameEn": "Ningxia University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-f029b5c4de40ffc9",
+      "nameZh": "宁夏医科大学",
+      "nameEn": "Ningxia Medical University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-2503de36c5364431",
+      "nameZh": "齐鲁工业大学",
+      "nameEn": "Qilu University of Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-cefdddc5afd82a02",
+      "nameZh": "青岛大学",
+      "nameEn": "Qingdao University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-2d18ecf9189ca65f",
+      "nameZh": "青岛科技大学",
+      "nameEn": "Qingdao University of Science and Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-e4372d68e6cf954b",
+      "nameZh": "青岛理工大学",
+      "nameEn": "Qingdao University of Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "qinghai-university-e7f8995a",
+      "nameZh": "青海大学",
+      "nameEn": "Qinghai University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-c864bc89aa62f740",
+      "nameZh": "青海民族大学",
+      "nameEn": "Qinghai Nationalities University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-4ccda4da248fdfdc",
+      "nameZh": "青海师范大学",
+      "nameEn": "Qinghai Normal University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "tsinghua-university-88293fa6",
+      "nameZh": "清华大学",
+      "nameEn": "Tsinghua University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 85% For courses requiring a UK 2.1: Minimum 80-84% For courses requiring a UK 2:2: Minimum 75-79%"
+    },
+    {
+      "institutionId": "cn-5c2642748d1d5e9b",
+      "nameZh": "曲阜师范大学",
+      "nameEn": "Qufu Normal University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-7b114301429acaad",
+      "nameZh": "三峡大学",
+      "nameEn": "China Three Gorges University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "xiamen-university-5271b226",
+      "nameZh": "厦门大学",
+      "nameEn": "Xiamen University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 85% For courses requiring a UK 2.1: Minimum 80-84% For courses requiring a UK 2:2: Minimum 75-79%"
+    },
+    {
+      "institutionId": "cn-7d878327ab4225d7",
+      "nameZh": "山东财经大学",
+      "nameEn": "Shandong University of Finance and Economics",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "shandong-university-fd3a1051",
+      "nameZh": "山东大学",
+      "nameEn": "Shandong University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 85% For courses requiring a UK 2.1: Minimum 80-84% For courses requiring a UK 2:2: Minimum 75-79%"
+    },
+    {
+      "institutionId": "cn-c33b92447be76a83",
+      "nameZh": "山东第二医科大学",
+      "nameEn": "Weifang Medical University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-7b1cf34f4c998443",
+      "nameZh": "山东建筑大学",
+      "nameEn": "Shandong Jianzhu University (for Architecture, Science and Technology majors only*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-11c7d41c24a0e8c6",
+      "nameZh": "山东科技大学",
+      "nameEn": "Shandong University of Science and Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-ec637cc1b188241d",
+      "nameZh": "山东理工大学",
+      "nameEn": "Shandong University of Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-82d9531d6a84e5f3",
+      "nameZh": "山东农业大学",
+      "nameEn": "Shandong Agricultural University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-631f59041ec1fc89",
+      "nameZh": "山东师范大学",
+      "nameEn": "Shandong Normal University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-20b304937d7795da",
+      "nameZh": "山东中医药大学",
+      "nameEn": "Shandong University of Traditional Chinese Medicine",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-de7ed595888bd6ad",
+      "nameZh": "山西财经大学",
+      "nameEn": "Shanxi University of Finance and Economics",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-6e7eaa04028d873e",
+      "nameZh": "山西大学",
+      "nameEn": "Shanxi University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-8e8d39b7e602465b",
+      "nameZh": "山西农业大学",
+      "nameEn": "Shanxi Agricultural University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-de7f00aea57752bd",
+      "nameZh": "山西师范大学",
+      "nameEn": "Shanxi Normal University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-57145af4454592bd",
+      "nameZh": "山西医科大学",
+      "nameEn": "Shanxi Medical University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-ad2aa00ff7e118af",
+      "nameZh": "陕西科技大学",
+      "nameEn": "Shaanxi University of Science and Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "shaanxi-normal-university-d6405edd",
+      "nameZh": "陕西师范大学",
+      "nameEn": "Shaanxi Normal University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "cn-f21387d39854a964",
+      "nameZh": "陕西中医药大学",
+      "nameEn": "Shaanxi University of Chinese Medicine",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-3248e9701268a380",
+      "nameZh": "汕头大学",
+      "nameEn": "Shantou University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "shanghai-university-of-finance-and-economics-a5566168",
+      "nameZh": "上海财经大学",
+      "nameEn": "Shanghai University of Finance and Economics",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "shanghai-university-b933744c",
+      "nameZh": "上海大学",
+      "nameEn": "Shanghai University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 85% For courses requiring a UK 2.1: Minimum 80-84% For courses requiring a UK 2:2: Minimum 75-79%"
+    },
+    {
+      "institutionId": "cn-a4dde856833c3aa7",
+      "nameZh": "上海大学悉尼工商学院",
+      "nameEn": "Shanghai University, SHU-UTS SILC Business School (Sydney Institute of Language and Commerce)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-b5644094c5e79432",
+      "nameZh": "上海对外经贸大学",
+      "nameEn": "Shanghai University of International Business and Economics",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-e65e4a6296230250",
+      "nameZh": "上海工程技术大学",
+      "nameEn": "Shanghai University of Engineering Science (for Engineering majors only*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-1d0ed119cebb0f32",
+      "nameZh": "上海海关学院",
+      "nameEn": "Shanghai Customs College",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-d10a95448b63a97c",
+      "nameZh": "上海海事大学",
+      "nameEn": "Shanghai Maritime University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-cfc7b6e5ea305c78",
+      "nameZh": "上海海洋大学",
+      "nameEn": "Shanghai Ocean University (82-89% for Aquatic Product*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "shanghai-jiaotong-university-95ef14bb",
+      "nameZh": "上海交通大学",
+      "nameEn": "Shanghai Jiao Tong University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 85% For courses requiring a UK 2.1: Minimum 80-84% For courses requiring a UK 2:2: Minimum 75-79%"
+    },
+    {
+      "institutionId": "cn-eb45aa61b7f92334",
+      "nameZh": "上海科技大学",
+      "nameEn": "ShanghaiTech University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "cn-d29a6543c8bb3bd9",
+      "nameZh": "上海理工大学",
+      "nameEn": "University of Shanghai for Science and Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-6c705e0f6bc8cb9c",
+      "nameZh": "上海师范大学",
+      "nameEn": "Shanghai Normal University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-b0c5ad9361839895",
+      "nameZh": "上海体育大学",
+      "nameEn": "Shanghai University of Sport",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "shanghai-international-studies-university-b9e33065",
+      "nameZh": "上海外国语大学",
+      "nameEn": "Shanghai International Studies University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "cn-e9bfa20de5215a34",
+      "nameZh": "上海戏剧学院",
+      "nameEn": "Shanghai Theatre Academy (85-89% for Drama or Film and Television Studies*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-76ab0dbb8e91e76a",
+      "nameZh": "上海音乐学院",
+      "nameEn": "Shanghai Conservatory of Music (82-89% for Music or Dance*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-8fbfa46ba68bb9cc",
+      "nameZh": "上海政法学院",
+      "nameEn": "Shanghai University of Political Science and Law (for Law majors only*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "cn-4cb8ebbd13c8f9a0",
+      "nameZh": "上海中医药大学",
+      "nameEn": "Shanghai University of Traditional Chinese Medicine (82-89% for Traditional Chinese Medicine (TCM) or Chinese Pharmacy*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "shenzhen-university-c29d3a31",
+      "nameZh": "深圳大学",
+      "nameEn": "Shenzhen University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-1852dc4a1e3466a0",
+      "nameZh": "沈阳大学",
+      "nameEn": "Shenyang University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-b9604c716fb30c4a",
+      "nameZh": "沈阳工业大学",
+      "nameEn": "Shenyang University of Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-15ce08ce64e818e8",
+      "nameZh": "沈阳航空航天大学",
+      "nameEn": "Shenyang Aerospace University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-cb2331af15da7eda",
+      "nameZh": "沈阳化工大学",
+      "nameEn": "Shenyang University of Chemical Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-4df8111109118a64",
+      "nameZh": "沈阳建筑大学",
+      "nameEn": "Shenyang Jianzhu University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-9f17441fdd3ac472",
+      "nameZh": "沈阳农业大学",
+      "nameEn": "Shenyang Agricultural University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-45f92ebdd67244ad",
+      "nameZh": "沈阳师范大学",
+      "nameEn": "Shenyang Normal University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-45770eb68fdbdd20",
+      "nameZh": "沈阳药科大学",
+      "nameEn": "Shenyang Pharmaceutical University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "shihezi-university-2f997caf",
+      "nameZh": "石河子大学",
+      "nameEn": "Shihezi University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-5ba2d0b9952e0330",
+      "nameZh": "石家庄铁道大学",
+      "nameEn": "Shijiazhuang Tiedao University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-2565770c56095da1",
+      "nameZh": "首都经济贸易大学",
+      "nameEn": "Capital University of Economics and Business",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-7ce88b3325679720",
+      "nameZh": "首都师范大学",
+      "nameEn": "Capital Normal University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-dad0ce2165227067",
+      "nameZh": "首都体育学院",
+      "nameEn": "Capital University of Physical Education and Sports",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-f4547609017e297d",
+      "nameZh": "首都医科大学",
+      "nameEn": "Capital Medical University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "sichuan-university-2721d57b",
+      "nameZh": "四川大学",
+      "nameEn": "Sichuan University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 85% For courses requiring a UK 2.1: Minimum 80-84% For courses requiring a UK 2:2: Minimum 75-79%"
+    },
+    {
+      "institutionId": "sichuan-fine-arts-institute-60415366",
+      "nameZh": "四川美术学院",
+      "nameEn": "Sichuan Fine Arts Institute (85-89% for Art Theories and Fine Art*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "sichuan-agricultural-university-2e7fba53",
+      "nameZh": "四川农业大学",
+      "nameEn": "Sichuan Agricultural University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-7ab7a137b3cddb15",
+      "nameZh": "四川师范大学",
+      "nameEn": "Sichuan Normal University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "suzhou-soochow-university-16c0f71b",
+      "nameZh": "苏州大学",
+      "nameEn": "Soochow University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "cn-3138f45f7d32ad1c",
+      "nameZh": "太原理工大学",
+      "nameEn": "Taiyuan University of Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-866b18aa83952ef9",
+      "nameZh": "天津财经大学",
+      "nameEn": "Tianjin University of Finance and Economics",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "tianjin-university-1c8bcb86",
+      "nameZh": "天津大学",
+      "nameEn": "Tianjin University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 85% For courses requiring a UK 2.1: Minimum 80-84% For courses requiring a UK 2:2: Minimum 75-79%"
+    },
+    {
+      "institutionId": "cn-a9a9f87f07b8162d",
+      "nameZh": "天津工业大学",
+      "nameEn": "Tiangong University (formerly Tianjin Polytechnic University)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-44181d7b54320498",
+      "nameZh": "天津科技大学",
+      "nameEn": "Tianjin University of Science and Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-9f67267b73bdaaa1",
+      "nameZh": "天津理工大学",
+      "nameEn": "Tianjin University of Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-2d6f3bcc703de246",
+      "nameZh": "天津商业大学",
+      "nameEn": "Tianjin University of Commerce",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-9992f1d0e6ea7b43",
+      "nameZh": "天津师范大学",
+      "nameEn": "Tianjin Normal University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-70aaae4034d7d81e",
+      "nameZh": "天津体育学院",
+      "nameEn": "Tianjin University of Sport",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-88b67394f3f00103",
+      "nameZh": "天津外国语大学",
+      "nameEn": "Tianjin Foreign Studies University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "tianjin-medical-university-65b3512e",
+      "nameZh": "天津医科大学",
+      "nameEn": "Tianjin Medical University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-16e111ac51e23b43",
+      "nameZh": "天津音乐学院",
+      "nameEn": "Tianjin Conservatory of Music",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-3646ec25e5e26c13",
+      "nameZh": "天津中医药大学",
+      "nameEn": "Tianjin University of Traditional Chinese Medicine (82-89% for Chinese Pharmacy*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "tongji-university-a6533d2e",
+      "nameZh": "同济大学",
+      "nameEn": "Tongji University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 85% For courses requiring a UK 2.1: Minimum 80-84% For courses requiring a UK 2:2: Minimum 75-79%"
+    },
+    {
+      "institutionId": "cn-df4afcf1001d1788",
+      "nameZh": "外交学院",
+      "nameEn": "China Foreign Affairs University (82-89% for PAIS related course*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-586b61d1f799c7c2",
+      "nameZh": "温州大学",
+      "nameEn": "Wenzhou University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-123f1a90e1196282",
+      "nameZh": "温州医科大学",
+      "nameEn": "Wenzhou Medical University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "wuhan-university-102c49fc",
+      "nameZh": "武汉大学",
+      "nameEn": "Wuhan University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 85% For courses requiring a UK 2.1: Minimum 80-84% For courses requiring a UK 2:2: Minimum 75-79%"
+    },
+    {
+      "institutionId": "cn-ad2473fd149df5dd",
+      "nameZh": "武汉工程大学",
+      "nameEn": "Wuhan Institute of Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-86f6965b9a3b5269",
+      "nameZh": "武汉科技大学",
+      "nameEn": "Wuhan University of Science and Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "wuhan-university-of-technology-85782e2d",
+      "nameZh": "武汉理工大学",
+      "nameEn": "Wuhan University of Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 85% For courses requiring a UK 2.1: Minimum 80-84% For courses requiring a UK 2:2: Minimum 75-79%"
+    },
+    {
+      "institutionId": "xidian-university-also-known-as-xi-an-electronic-science-and-technology-university-14c4a29e",
+      "nameZh": "西安电子科技大学",
+      "nameEn": "Xidian University (formerly Xi'an Electronic Science and Technology University)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 85% For courses requiring a UK 2.1: Minimum 80-84% For courses requiring a UK 2:2: Minimum 75-79%"
+    },
+    {
+      "institutionId": "cn-e157ba255dc83b03",
+      "nameZh": "西安工程大学",
+      "nameEn": "Xi'an Polytechnic University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-de989aba09911e4c",
+      "nameZh": "西安建筑科技大学",
+      "nameEn": "Xi'an University of Architecture and Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "xi-an-jiaotong-university-95c2779f",
+      "nameZh": "西安交通大学",
+      "nameEn": "Xi'an Jiaotong University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 85% For courses requiring a UK 2.1: Minimum 80-84% For courses requiring a UK 2:2: Minimum 75-79%"
+    },
+    {
+      "institutionId": "cn-c1a38cd93310b57a",
+      "nameZh": "西安科技大学",
+      "nameEn": "Xi'an University of Science and Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-0013ad2fd63e891f",
+      "nameZh": "西安理工大学",
+      "nameEn": "Xi'an University of Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-7f166b19f5f7b265",
+      "nameZh": "西安美术学院",
+      "nameEn": "Xi'an Academy of Fine Arts (85-89% for Art Theories and Fine Art*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-e7af3667c2186a37",
+      "nameZh": "西安石油大学",
+      "nameEn": "Xi'an Shiyou (Petroleum) University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-6efda8a5a04542f6",
+      "nameZh": "西安外国语大学",
+      "nameEn": "Xi'an International Studies University (85-89% for Foreign Language and Literature Majors*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-f7a27d752d951a4f",
+      "nameZh": "西安音乐学院",
+      "nameEn": "Xi'an Conservatory of Music",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "northwest-university-2a8585db",
+      "nameZh": "西北大学",
+      "nameEn": "Northwest University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "northwestern-polytechnical-university-1e858b31",
+      "nameZh": "西北工业大学",
+      "nameEn": "Northwestern Polytechnical University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 85% For courses requiring a UK 2.1: Minimum 80-84% For courses requiring a UK 2:2: Minimum 75-79%"
+    },
+    {
+      "institutionId": "cn-34b69de534cefc31",
+      "nameZh": "西北农林科技大学",
+      "nameEn": "Northwest A & F University (80-84% for Agronomy*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "cn-a02edfc06783b0c8",
+      "nameZh": "西北师范大学",
+      "nameEn": "Northwest Normal University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-e41047038b07ee3a",
+      "nameZh": "西北政法大学",
+      "nameEn": "Northwest University of Political Science and Law (80-84% for Law*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "tibet-university-44adba65",
+      "nameZh": "西藏大学",
+      "nameEn": "Tibet University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-a3846ffb3691ca80",
+      "nameZh": "西华师范大学",
+      "nameEn": "China West Normal University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "southwestern-university-of-finance-and-economics-9e667ea4",
+      "nameZh": "西南财经大学",
+      "nameEn": "Southwestern University of Finance and Economics",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "southwest-university-14772c4d",
+      "nameZh": "西南大学",
+      "nameEn": "Southwest University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "southwest-jiaotong-university-9e83d9d0",
+      "nameZh": "西南交通大学",
+      "nameEn": "Southwest Jiaotong University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "cn-c994aee33c22b253",
+      "nameZh": "西南科技大学",
+      "nameEn": "Southwest University of Science and Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-66ee34cc8d89fe4b",
+      "nameZh": "西南民族大学",
+      "nameEn": "Southwest Minzu University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-60ccec0d7e09389a",
+      "nameZh": "西南石油大学",
+      "nameEn": "Southwest Petroleum University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-93c2f8f9024ca6e3",
+      "nameZh": "西南政法大学",
+      "nameEn": "Southwest University of Political Science and Law (80-84% for Law*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "xiangtan-university-cfb27bdb",
+      "nameZh": "湘潭大学",
+      "nameEn": "Xiangtan University (82-89% for Law*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "xinjiang-university-e1c08fa3",
+      "nameZh": "新疆大学",
+      "nameEn": "Xinjiang University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-484060233a93bcb1",
+      "nameZh": "烟台大学",
+      "nameEn": "Yantai University (85-89% for Law*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "yanbian-university-61996de7",
+      "nameZh": "延边大学",
+      "nameEn": "Yanbian University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "yanshan-university-634a3bf5",
+      "nameZh": "燕山大学",
+      "nameEn": "Yanshan University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-8c9ed7b1b710f042",
+      "nameZh": "扬州大学",
+      "nameEn": "Yangzhou University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "yunnan-university-d0bc6178",
+      "nameZh": "云南大学",
+      "nameEn": "Yunnan University (82-89% for Ethnology or Ecology*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-d000bc6b9dc1384c",
+      "nameZh": "云南农业大学",
+      "nameEn": "Yunnan Agricultural University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-9be767e0dacaa70e",
+      "nameZh": "云南师范大学",
+      "nameEn": "Yunnan Normal University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "chang-an-university-178fc794",
+      "nameZh": "长安大学",
+      "nameEn": "Chang'an University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "cn-f02a3ad5db1280c7",
+      "nameZh": "长春理工大学",
+      "nameEn": "Changchun University of Science and Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-8a66964e4e53e9e4",
+      "nameZh": "长春中医药大学",
+      "nameEn": "Changchun University of Chinese Medicine",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-7c89575d4ee5a577",
+      "nameZh": "长江大学",
+      "nameEn": "Yangtze University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-b09053035d0e907b",
+      "nameZh": "长沙理工大学",
+      "nameEn": "Changsha University of Science and Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-dfba598c4bb8fb7a",
+      "nameZh": "浙江财经大学",
+      "nameEn": "Zhejiang University of Finance and Economics",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-cf383d91f1071701",
+      "nameZh": "浙江传媒学院",
+      "nameEn": "Communication University of Zhejiang (for Communication and related majors only*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "zhejiang-university-41292b6f",
+      "nameZh": "浙江大学",
+      "nameEn": "Zhejiang University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 85% For courses requiring a UK 2.1: Minimum 80-84% For courses requiring a UK 2:2: Minimum 75-79%"
+    },
+    {
+      "institutionId": "cn-e8a7da73db6d24a7",
+      "nameZh": "浙江工商大学",
+      "nameEn": "Zhejiang Gongshang University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "zhejiang-university-of-technology-86cf9f79",
+      "nameZh": "浙江工业大学",
+      "nameEn": "Zhejiang University of Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-5e73f7795951d0c3",
+      "nameZh": "浙江警察学院",
+      "nameEn": "Zhejiang Police College",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-23848683755c00bd",
+      "nameZh": "浙江理工大学",
+      "nameEn": "Zhejiang Sci-Tech University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-957d524fdb966b85",
+      "nameZh": "浙江农林大学",
+      "nameEn": "Zhejiang A&F University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-8149281acc873225",
+      "nameZh": "浙江师范大学",
+      "nameEn": "Zhejiang Normal University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-053c66b2b00eb7a1",
+      "nameZh": "浙江中医药大学",
+      "nameEn": "Zhejiang Chinese Medical University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "zhengzhou-university-ccf4b546",
+      "nameZh": "郑州大学",
+      "nameEn": "Zhengzhou University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "cn-53132dacf393404a",
+      "nameZh": "中北大学",
+      "nameEn": "North University of China",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "communication-university-of-china-3a1bb185",
+      "nameZh": "中国传媒大学",
+      "nameEn": "Communication University of China",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "cn-113e8c25245f1aff",
+      "nameZh": "中国地质大学(北京)",
+      "nameEn": "China University of Geosciences (Beijing)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "cn-a384f90b16d88cfa",
+      "nameZh": "中国地质大学(武汉)",
+      "nameEn": "China University of Geosciences (Wuhan) (80-84% for Geology, Geological Resources and Geological Engineering*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "ocean-university-of-china-qingdao-ab3847cd",
+      "nameZh": "中国海洋大学",
+      "nameEn": "Ocean University of China",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 85% For courses requiring a UK 2.1: Minimum 80-84% For courses requiring a UK 2:2: Minimum 75-79%"
+    },
+    {
+      "institutionId": "cn-19ba5b1e3bc7726e",
+      "nameZh": "中国计量大学",
+      "nameEn": "China Jiliang University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "university-of-science-and-technology-of-china-ustc-a638543a",
+      "nameZh": "中国科学技术大学",
+      "nameEn": "University of Science and Technology of China",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 85% For courses requiring a UK 2.1: Minimum 80-84% For courses requiring a UK 2:2: Minimum 75-79%"
+    },
+    {
+      "institutionId": "cn-ac0ae816716042b1",
+      "nameZh": "中国科学院大学",
+      "nameEn": "University of Chinese Academy of Sciences",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 85% For courses requiring a UK 2.1: Minimum 80-84% For courses requiring a UK 2:2: Minimum 75-79%"
+    },
+    {
+      "institutionId": "cn-e2aad34e0cff87f8",
+      "nameZh": "中国矿业大学",
+      "nameEn": "China University of Mining and Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "cn-308aebe85f79a4c4",
+      "nameZh": "中国矿业大学(北京)",
+      "nameEn": "China University of Mining & Technology (Beijing)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "cn-ba7d54c0d191038a",
+      "nameZh": "中国美术学院",
+      "nameEn": "China Academy of Art (82-89% for Fine Arts*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-17872a944588595e",
+      "nameZh": "中国民航大学",
+      "nameEn": "Civil Aviation University of China",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "china-agricultural-university-7f24114a",
+      "nameZh": "中国农业大学",
+      "nameEn": "China Agricultural University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 85% For courses requiring a UK 2.1: Minimum 80-84% For courses requiring a UK 2:2: Minimum 75-79%"
+    },
+    {
+      "institutionId": "cn-4f26bc120ac6f383",
+      "nameZh": "中国青年政治学院",
+      "nameEn": "China Youth University of Political Studies",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "renmin-university-of-china-9e74b938",
+      "nameZh": "中国人民大学",
+      "nameEn": "Renmin University of China",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 85% For courses requiring a UK 2.1: Minimum 80-84% For courses requiring a UK 2:2: Minimum 75-79%"
+    },
+    {
+      "institutionId": "cn-3b5a7566d0cf1963",
+      "nameZh": "中国人民公安大学",
+      "nameEn": "People's Public Security University of China (85-89% for Public Security*) (82-89% for Law*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-7933a994467dbd1c",
+      "nameZh": "中国人民解放军军事航天部队航天工程大学",
+      "nameEn": "PLA Space Engineering University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-9020ed9eafa38063",
+      "nameZh": "中国人民解放军陆军工程大学",
+      "nameEn": "PLA Army Engineering University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-b46c5842544c231d",
+      "nameZh": "中国人民解放军陆军军医大学(第三军医大学)",
+      "nameEn": "Army Medical University (the Third Military Medical University)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-851e93756d3aa17f",
+      "nameZh": "中国人民解放军南京政治学院",
+      "nameEn": "PLA Nanjing Political College",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-d95f2b81c571f42a",
+      "nameZh": "中国人民解放军网络空间部队信息工程大学",
+      "nameEn": "PLA Information Engineering University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-7f35b4332afe7ce8",
+      "nameZh": "中国人民陆军装甲兵学院",
+      "nameEn": "Army Academy of Armored Forces (also known as The PLA Army Armored Forces Academy)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-a409773bfcdfb4b9",
+      "nameZh": "中国人民武装警察部队警官学院",
+      "nameEn": "Officers College Chinese People's Armed Police",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-da6a725bc9bb1812",
+      "nameZh": "中国社会科学院大学",
+      "nameEn": "University of Chinese Academy of Social Sciences (UCASS)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 85% For courses requiring a UK 2.1: Minimum 80-84% For courses requiring a UK 2:2: Minimum 75-79%"
+    },
+    {
+      "institutionId": "cn-7a4cca60fac91630",
+      "nameZh": "中国石油大学（北京）克拉玛依校区",
+      "nameEn": "China University of Petroleum (Beijing and Karamay campuses)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "cn-1b0f29a5cf1afe4b",
+      "nameZh": "中国石油大学(华东)",
+      "nameEn": "China University of Petroleum (East China)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "cn-eef21eddc4b3bea2",
+      "nameZh": "中国戏曲学院",
+      "nameEn": "National Academy of Chinese Theatre Arts",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-85a91064368b0a4d",
+      "nameZh": "中国刑事警察学院",
+      "nameEn": "Criminal Investigation Police University of China",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "china-pharmaceutical-university-03ca6012",
+      "nameZh": "中国药科大学",
+      "nameEn": "China Pharmaceutical University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "cn-f4f9259040228368",
+      "nameZh": "中国医科大学",
+      "nameEn": "China Medical University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "cn-910531dbe8f40148",
+      "nameZh": "中国音乐学院",
+      "nameEn": "China Conservatory of Music",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "china-university-of-political-science-and-law-2ee2c283",
+      "nameZh": "中国政法大学",
+      "nameEn": "China University of Political Science and Law (80-84% for Law*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "zhongnan-university-of-economics-and-law-71156a7a",
+      "nameZh": "中南财经政法大学",
+      "nameEn": "Zhongnan University of Economics and Law (80-84% for Law*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "central-south-university-3352f6a2",
+      "nameZh": "中南大学",
+      "nameEn": "Central South University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 85% For courses requiring a UK 2.1: Minimum 80-84% For courses requiring a UK 2:2: Minimum 75-79%"
+    },
+    {
+      "institutionId": "cn-8d1d62253a3b1845",
+      "nameZh": "中南林业科技大学",
+      "nameEn": "Central South University of Forestry and Technology",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "cn-e31169eb60aa48af",
+      "nameZh": "中南民族大学",
+      "nameEn": "South-Central Minzu University (formerly South-Central University for Nationalities) (85-89% for Ethnology*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    },
+    {
+      "institutionId": "sun-yat-sen-university-might-appear-as-zhongshan-university-d94644f6",
+      "nameZh": "中山大学",
+      "nameEn": "Sun Yat-Sen University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 85% For courses requiring a UK 2.1: Minimum 80-84% For courses requiring a UK 2:2: Minimum 75-79%"
+    },
+    {
+      "institutionId": "central-university-of-finance-and-economics-2259e13d",
+      "nameZh": "中央财经大学",
+      "nameEn": "Central University of Finance and Economics",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "cn-c07c6b25fcd89856",
+      "nameZh": "中央美术学院",
+      "nameEn": "China Central Academy of Fine Arts (82-89% for Fine Arts or Design*)",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "minzu-university-of-china-7bbdd5ab",
+      "nameZh": "中央民族大学",
+      "nameEn": "Minzu University of China",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "cn-e8bb522d65cb9397",
+      "nameZh": "中央戏剧学院",
+      "nameEn": "The Central Academy of Drama",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 85-89% For courses requiring a UK 2:2: Minimum 80-84%"
+    },
+    {
+      "institutionId": "central-conservatory-of-music-2a7c01dd",
+      "nameZh": "中央音乐学院",
+      "nameEn": "Central Conservatory of Music",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "For courses requiring a UK First Class: Minimum 90% For courses requiring a UK 2.1: Minimum 82-89% For courses requiring a UK 2:2: Minimum 77-81%"
+    },
+    {
+      "institutionId": "cn-f8e04f1eb3b1e6aa",
+      "nameZh": "遵义医科大学",
+      "nameEn": "Zunyi Medical University",
+      "tierOfficial": "Postgraduate institution requirements",
+      "scoreOfficial": "Applicants with 88% or higher to be considered on an individual basis"
+    }
+  ]
+}

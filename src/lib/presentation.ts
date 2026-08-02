@@ -1,4 +1,4 @@
-import type { EvidenceState, InstitutionRuleType, SourceHealth, SourceStatus, UniversityState } from './types';
+import type { EvidenceState, InstitutionRuleType, SourceHealth, SourceStatus, UniversityState, UniversityWithStatus } from './types';
 import type { EvidenceResult } from './evidence';
 
 export const stateCopy: Record<UniversityState, { label: string; description: string }> = {
@@ -24,6 +24,10 @@ export const institutionRuleTypeCopy = {
   mixed: { label: '准入与成绩混合规则' },
   none: { label: '未发现院校名单' },
 } satisfies Record<InstitutionRuleType, { label: string }>;
+
+export function directoryRankCopy(university: UniversityWithStatus): string {
+  return university.directoryCategory === 'specialist' ? '专业院校' : `QS ${university.qs!.rank}`;
+}
 
 export function officialPanelTitle(type: Exclude<InstitutionRuleType, 'none'>, count: number): string {
   if (type === 'eligibility') return `查看官方院校准入名单（${count} 所）`;
