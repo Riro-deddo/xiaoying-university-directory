@@ -39,6 +39,21 @@ describe('extractHtmlFacts', () => {
     ]);
   });
 
+  it('does not let nested table cells shift registered indexed-table columns', async () => {
+    const facts = await extractHtmlFacts({
+      mode: 'html-table',
+      tableIndex: 1,
+      rowSelector: 'tbody > tr',
+      institutionColumn: 1,
+      tierColumn: 2,
+      scoreColumn: 3,
+    }, tableFixture);
+
+    expect(facts).toEqual([
+      { institutionOfficial: 'Example University', tierOfficial: 'Band B', scoreOfficial: '75%' },
+    ]);
+  });
+
   it('extracts direct entries from the registered list only', async () => {
     await expect(extractHtmlFacts({ mode: 'html-list', selector: '#official-list' }, listFixture))
       .resolves.toEqual([{ institutionOfficial: 'Example University' }]);

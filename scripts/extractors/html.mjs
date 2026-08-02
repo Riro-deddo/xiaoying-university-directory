@@ -83,16 +83,19 @@ function institutionFactsInCell(cell, config) {
   });
 }
 
+function outermostRows(rows) {
+  return rows.filter((row) => !rows.some((candidate) => candidate !== row && candidate.contains(row)));
+}
+
 function tableRows(document, config) {
   if (!config.rowSelector) return [];
   if (!Number.isInteger(config.tableIndex)) {
-    const rows = Array.from(document.querySelectorAll(config.rowSelector));
-    return rows.filter((row) => !rows.some((candidate) => candidate !== row && candidate.contains(row)));
+    return outermostRows(Array.from(document.querySelectorAll(config.rowSelector)));
   }
 
   const table = document.querySelectorAll('table')[config.tableIndex];
   if (!table) throw new ParserStructureError(`Missing configured table index ${config.tableIndex}`);
-  return Array.from(table.querySelectorAll(config.rowSelector));
+  return outermostRows(Array.from(table.querySelectorAll(config.rowSelector)));
 }
 
 function extractTableFacts(config, html) {

@@ -36,3 +36,11 @@ No production source registry entries or generated facts were changed. This task
 - **Fix:** validate every explicitly configured table column before extracting a row. Nested matched rows are excluded when an enclosing matched row owns them, preserving the existing nested-table column regression coverage.
 - **Green:** focused extractor/data run — 2 files, 37 tests passed; full suite — 19 files, 201 tests passed; Astro check — 0 errors, 0 warnings, 0 hints.
 - **Generated data:** verification regenerated timestamp-only reverse-index data; it was restored and excluded from this change.
+
+## Fix Round 2 — indexed nested-table rows
+
+- **Review finding:** `tableIndex` selected all descendant rows, including rows from nested tables, while the non-indexed path discarded nested matched rows.
+- **Red:** the indexed nested-table regression raised `PARSER_STRUCTURE` on the nested row before the fix.
+- **Fix:** apply one shared outermost-row filter to both indexed and non-indexed table selection.
+- **Green:** focused extractor/data run — 2 files, 38 tests passed; full suite — 19 files, 202 tests passed; Astro check — 0 errors, 0 warnings, 0 hints.
+- **Generated data:** the timestamp-only reverse-index update was restored and excluded.
