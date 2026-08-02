@@ -29,6 +29,7 @@ const validRequirement: RequirementFact = {
   sourceId: 'ucl-china-requirements',
   institutionId: 'peking-university',
   institutionOfficial: 'Peking University',
+  institutionNameZh: 'åŒ—äº¬å¤§å­¦',
   tierOfficial: 'Group A',
   scope: 'university',
   scopeZh: '大学层级',

@@ -1,4 +1,4 @@
-import { access, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
+import { access, mkdtemp, readFile, rename, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { afterEach, describe, expect, it, vi } from 'vitest';
@@ -45,6 +45,25 @@ function facts(count, overrides = {}) {
   }));
 }
 
+function recordsForFacts(requirements) {
+  return [...new Set(requirements.map((fact) => fact.institutionId))].map((id) => ({
+    id,
+    nameZh: `Chinese ${id}`,
+    nameEn: `English ${id}`,
+    aliases: [],
+  }));
+}
+
+function extractedFactsWithRegisteredInstitutions(count) {
+  return async (_source, _response, { institutions }) => {
+    const extracted = facts(count);
+    for (const record of recordsForFacts(extracted)) {
+      if (!institutions.some((institution) => institution.id === record.id)) institutions.push(record);
+    }
+    return extracted;
+  };
+}
+
 const temporaryDirectories = [];
 
 async function createFiles(requirements = facts(100), status = {}) {
@@ -57,7 +76,7 @@ async function createFiles(requirements = facts(100), status = {}) {
     anomaliesPath: join(directory, 'source-anomalies.json'),
   };
   await Promise.all([
-    writeFile(paths.institutionsPath, '[]\n'),
+    writeFile(paths.institutionsPath, `${JSON.stringify(recordsForFacts(requirements))}\n`),
     writeFile(paths.requirementsPath, `${JSON.stringify(requirements)}\n`),
     writeFile(paths.statusPath, `${JSON.stringify(status)}\n`),
     writeFile(paths.anomaliesPath, '[]\n'),
@@ -132,6 +151,9 @@ describe('syncRegisteredSources', () => {
     expect(reconcileInstitution({ institutionOfficial: 'Peking University', institutionNameZh: 'åŒ—äº¬å¤§å­¦' }, institutions))
       .toBe(existing);
     expect(reconcileInstitution({ institutionOfficial: 'Beida' }, institutions)).toBe(existing);
+    existing.aliases.push('åŒ—å¤§');
+    expect(reconcileInstitution({ institutionOfficial: 'Peking University (alias)', institutionNameZh: 'åŒ—å¤§' }, institutions))
+      .toBe(existing);
     expect(reconcileInstitution({ institutionOfficial: 'New University', institutionNameZh: 'æ–°å¤§å­¦' }, institutions))
       .toMatchObject({
         id: expect.stringMatching(/^cn-[a-f0-9]{16}$/u),
@@ -169,6 +191,75 @@ describe('syncRegisteredSources', () => {
     expect(result.institutions).toEqual([]);
     expect(JSON.parse(await readFile(paths.institutionsPath, 'utf8'))).toEqual([]);
     expect(result.anomalies).toMatchObject([{ sourceId: 'glasgow-china', reason: 'below-minimum-records' }]);
+  });
+
+  it.each([
+    {
+      name: 'violates the institution schema',
+      candidate: { id: 'invalid-institution', nameZh: ' ', nameEn: 'Invalid University', aliases: [] },
+    },
+    {
+      name: 'duplicates a registered raw institution name',
+      candidate: { id: 'duplicate-institution', nameZh: 'Example Institution', nameEn: 'Different University', aliases: [] },
+    },
+    {
+      name: 'leaves a requirement institution reference unregistered',
+      factInstitutionId: 'missing-institution',
+    },
+  ])('rejects a candidate registry that $name before persistence', async ({ candidate, factInstitutionId }) => {
+    const paths = await createFiles([]);
+    const configuredSource = {
+      ...source,
+      parser: { ...source.parser, guard: { minimumRecords: 1, maximumRecords: 1, maximumRemovalRatio: 0 } },
+    };
+    const result = await syncRegisteredSources({
+      ...paths,
+      sources: [configuredSource],
+      institutions: [registeredInstitution],
+      fetchImpl: vi.fn().mockResolvedValue(acceptedResponse()),
+      extractFacts: async (_source, _response, { institutions }) => {
+        if (candidate) institutions.push(candidate);
+        return facts(1, { institutionId: factInstitutionId ?? 'example-institution', institutionOfficial: 'Example University' });
+      },
+      now: new Date('2026-08-02T10:00:00Z'),
+    });
+
+    expect(result.requirements).toEqual([]);
+    expect(result.institutions).toEqual([registeredInstitution]);
+    expect(JSON.parse(await readFile(paths.requirementsPath, 'utf8'))).toEqual([]);
+    expect(result.anomalies).toMatchObject([{ reason: 'candidate-institution-validation-failed', retainedTrustedFacts: true }]);
+  });
+
+  it('rolls back the bilingual registry when requirements promotion fails', async () => {
+    const paths = await createFiles([]);
+    const bilingualSource = {
+      ...source,
+      id: 'glasgow-china',
+      parser: {
+        mode: 'html-table',
+        rowSelector: 'tr',
+        institutionColumn: 0,
+        nameZhColumn: 1,
+        tierColumn: 2,
+        guard: { minimumRecords: 1, maximumRecords: 1, maximumRemovalRatio: 0 },
+      },
+    };
+
+    await expect(syncRegisteredSources({
+      ...paths,
+      sources: [bilingualSource],
+      fetchImpl: vi.fn().mockResolvedValue(new Response('<table><tr><td>New University</td><td>æ–°å¤§å­¦</td><td>A</td></tr></table>', { status: 200 })),
+      renameFile: async (from, to) => {
+        if (to === paths.requirementsPath) throw new Error('requirements promotion failed');
+        return rename(from, to);
+      },
+      now: new Date('2026-08-02T10:00:00Z'),
+    })).rejects.toThrow('requirements promotion failed');
+
+    expect(JSON.parse(await readFile(paths.institutionsPath, 'utf8'))).toEqual([]);
+    expect(JSON.parse(await readFile(paths.requirementsPath, 'utf8'))).toEqual([]);
+    await expect(access(`${paths.institutionsPath}.next`)).rejects.toThrow();
+    await expect(access(`${paths.requirementsPath}.next`)).rejects.toThrow();
   });
 
   it('processes bilingual providers before earlier English-only sources and commits both accepted datasets', async () => {
@@ -399,7 +490,7 @@ describe('syncRegisteredSources', () => {
       ...paths,
       sources: [source],
       fetchImpl: vi.fn().mockResolvedValue(acceptedResponse()),
-      extractFacts: async () => facts(102),
+      extractFacts: extractedFactsWithRegisteredInstitutions(102),
       now: new Date('2026-08-01T10:00:00Z'),
     });
 
@@ -417,7 +508,7 @@ describe('syncRegisteredSources', () => {
       ...paths,
       sources: [source],
       fetchImpl: vi.fn().mockResolvedValue(acceptedResponse()),
-      extractFacts: async () => facts(102),
+      extractFacts: extractedFactsWithRegisteredInstitutions(102),
       now: new Date('2026-08-01T10:00:00Z'),
     });
 

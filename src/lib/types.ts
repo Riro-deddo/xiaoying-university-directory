@@ -131,6 +131,7 @@ export interface RequirementFact {
   sourceId: string;
   institutionId: string;
   institutionOfficial: string;
+  institutionNameZh?: string;
   tierOfficial: string;
   tierZh?: string;
   scoreOfficial?: string;

@@ -1,5 +1,5 @@
 import { createHash } from 'node:crypto';
-import { mkdir, readFile, rename, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, rename, rm, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import Ajv2020 from 'ajv/dist/2020.js';
@@ -21,7 +21,9 @@ const bilingualRegistryProviderIds = new Set([
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const requirementsSchema = JSON.parse(await readFile(join(root, 'src', 'data', 'requirements.schema.json'), 'utf8'));
+const institutionsSchema = JSON.parse(await readFile(join(root, 'src', 'data', 'institutions.schema.json'), 'utf8'));
 const validateRequirements = new Ajv2020({ allErrors: true }).compile(requirementsSchema);
+const validateInstitutions = new Ajv2020({ allErrors: true }).compile(institutionsSchema);
 
 const temporaryHttpStatuses = new Set([408, 425, 429, 500, 502, 503, 504]);
 
@@ -38,6 +40,37 @@ async function writeJsonAtomically(path, value) {
   await mkdir(dirname(path), { recursive: true });
   await writeFile(candidatePath, json(value), 'utf8');
   await rename(candidatePath, path);
+}
+
+async function writeRequirementsAndInstitutionsAtomically(paths, requirements, institutions, { renameFile = rename } = {}) {
+  const requirementsCandidatePath = `${paths.requirementsPath}.next`;
+  const institutionsCandidatePath = `${paths.institutionsPath}.next`;
+  const previousInstitutions = await readFile(paths.institutionsPath, 'utf8');
+  let institutionsPromoted = false;
+
+  try {
+    await Promise.all([
+      mkdir(dirname(paths.requirementsPath), { recursive: true }),
+      mkdir(dirname(paths.institutionsPath), { recursive: true }),
+    ]);
+    await Promise.all([
+      writeFile(requirementsCandidatePath, json(requirements), 'utf8'),
+      writeFile(institutionsCandidatePath, json(institutions), 'utf8'),
+    ]);
+    await renameFile(institutionsCandidatePath, paths.institutionsPath);
+    institutionsPromoted = true;
+    await renameFile(requirementsCandidatePath, paths.requirementsPath);
+  } catch (error) {
+    if (institutionsPromoted) {
+      await writeFile(institutionsCandidatePath, previousInstitutions, 'utf8');
+      await renameFile(institutionsCandidatePath, paths.institutionsPath);
+    }
+    await Promise.all([
+      rm(requirementsCandidatePath, { force: true }),
+      rm(institutionsCandidatePath, { force: true }),
+    ]);
+    throw error;
+  }
 }
 
 function defaultWait(milliseconds) {
@@ -168,11 +201,12 @@ export function reconcileInstitution(rawFact, institutions) {
   if (officialName) {
     const EnglishMatch = institutions.find((record) => normalizedInstitutionName(record.nameEn) === officialName);
     if (EnglishMatch) return EnglishMatch;
-
-    const aliasMatch = institutions.find((record) => record.aliases
-      .some((alias) => normalizedInstitutionName(alias) === officialName));
-    if (aliasMatch) return aliasMatch;
   }
+
+  const normalizedNames = [officialName, ChineseName].filter(Boolean);
+  const aliasMatch = institutions.find((record) => record.aliases
+    .some((alias) => normalizedNames.includes(normalizedInstitutionName(alias))));
+  if (aliasMatch) return aliasMatch;
 
   if (officialName && ChineseName) {
     const id = `cn-${createHash('sha256').update(`${ChineseName}\u0000${officialName}`).digest('hex').slice(0, 16)}`;
@@ -190,6 +224,27 @@ export function reconcileInstitution(rawFact, institutions) {
     'UNKNOWN_ENGLISH_ONLY_INSTITUTION',
     `No registered institution matches official source row: ${rawFact.institutionOfficial}`,
   );
+}
+
+function candidateInstitutionValidationErrors(institutions, requirements) {
+  const errors = [];
+  if (!validateInstitutions(institutions)) errors.push('institution-schema-validation-failed');
+
+  const institutionIds = institutions.map((institution) => institution?.id);
+  if (new Set(institutionIds).size !== institutionIds.length) errors.push('duplicate-institution-ids');
+
+  const rawNames = institutions.flatMap((institution) => [
+    institution?.nameZh,
+    institution?.nameEn,
+    ...(Array.isArray(institution?.aliases) ? institution.aliases : []),
+  ].filter(Boolean));
+  if (new Set(rawNames).size !== rawNames.length) errors.push('duplicate-institution-names');
+
+  const registeredIds = new Set(institutionIds);
+  if (requirements.some((fact) => !registeredIds.has(fact.institutionId))) {
+    errors.push('requirement-institution-reference-missing');
+  }
+  return errors;
 }
 
 function requirementFactId(sourceId, institutionId) {
@@ -335,6 +390,12 @@ export async function syncRegisteredSources(options = {}) {
       const afterSource = requirements.slice(firstSourceIndex === -1 ? requirements.length : firstSourceIndex)
         .filter((fact) => fact.sourceId !== source.id);
       const candidateRequirements = [...beforeSource, ...nextFacts, ...afterSource];
+      const candidateInstitutionErrors = candidateInstitutionValidationErrors(candidateInstitutions, candidateRequirements);
+      if (candidateInstitutionErrors.length > 0) {
+        status[source.id] = sourceStatus(source, previousStatus, now, { health: 'changed', finalUrl: response.url || source.url });
+        anomalies.push(anomaly(source, 'candidate-institution-validation-failed', now, { validationErrors: candidateInstitutionErrors }));
+        continue;
+      }
       if (new Set(candidateRequirements.map((fact) => fact.id)).size !== candidateRequirements.length) {
         status[source.id] = sourceStatus(source, previousStatus, now, { health: 'changed', finalUrl: response.url || source.url });
         anomalies.push(anomaly(source, 'duplicate-fact-ids', now));
@@ -381,8 +442,11 @@ export async function syncRegisteredSources(options = {}) {
     }
   }
 
-  if (acceptedUpdate) await writeJsonAtomically(paths.requirementsPath, requirements);
-  if (acceptedInstitutionUpdate) await writeJsonAtomically(paths.institutionsPath, institutions);
+  if (acceptedUpdate && acceptedInstitutionUpdate) {
+    await writeRequirementsAndInstitutionsAtomically(paths, requirements, institutions, options);
+  } else if (acceptedUpdate) {
+    await writeJsonAtomically(paths.requirementsPath, requirements);
+  }
   await writeJsonAtomically(paths.statusPath, status);
   await writeJsonAtomically(paths.anomaliesPath, anomalies);
   return { institutions, requirements, status, anomalies };
