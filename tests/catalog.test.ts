@@ -57,6 +57,117 @@ describe('QS cohort and official source registry', () => {
     });
   });
 
+  it.each([
+    ['official-list', [
+      'university-college-london',
+      'university-of-bristol',
+      'university-of-cambridge',
+      'university-of-edinburgh',
+      'university-of-glasgow',
+      'university-of-nottingham',
+      'university-of-sheffield',
+      'university-of-southampton',
+      'university-of-warwick',
+    ]],
+    ['china-requirements', [
+      'imperial-college-london',
+      'kings-college-london',
+      'lancaster-university',
+      'london-school-of-economics-and-political-science',
+      'newcastle-university',
+      'queen-mary-university-of-london',
+      'queens-university-belfast',
+      'university-of-birmingham',
+      'university-of-leeds',
+      'university-of-liverpool',
+      'university-of-manchester',
+      'university-of-oxford',
+      'university-of-reading',
+      'university-of-st-andrews',
+      'university-of-york',
+      'cardiff-university',
+    ]],
+    ['not-public', [
+      'durham-university',
+      'london-business-school',
+      'university-of-bath',
+      'university-of-exeter',
+    ]],
+  ])('assigns the reviewed %s state to exactly the approved universities', (state, expectedIds) => {
+    const actualIds = universities
+      .filter((university) => university.state === state)
+      .map((university) => university.id)
+      .sort();
+
+    expect(actualIds).toEqual([...expectedIds].sort());
+  });
+
+  it('registers reviewed link-only semantics for every China-rule source', () => {
+    for (const source of sources) {
+      expect(source.url).toMatch(/^https:\/\//u);
+      expect(source.scopeZh.trim()).toBeTruthy();
+      expect(source.institutionRule.summaryZh.trim()).toBeTruthy();
+      expect(source.institutionRule.verification).toMatchObject({
+        reviewedAt: '2026-08-02',
+        url: source.url,
+      });
+      expect(source.institutionRule.verification?.requiredText.length).toBeGreaterThan(1);
+    }
+  });
+
+  it('keeps all nine reviewed public lists as official university-level sources pending structured extraction', () => {
+    const expectedSourceSemantics = [
+      ['cambridge-china', 'grade-threshold', 'link-only'],
+      ['ucl-china', 'grade-threshold', 'html-table'],
+      ['edinburgh-china', 'mixed', 'pdf-text'],
+      ['bristol-china', 'eligibility', 'link-only'],
+      ['warwick-china', 'eligibility', 'link-only'],
+      ['glasgow-china', 'eligibility', 'link-only'],
+      ['sheffield-china', 'grade-threshold', 'link-only'],
+      ['nottingham-china', 'grade-threshold', 'link-only'],
+      ['southampton-china', 'grade-threshold', 'link-only'],
+    ] as const;
+
+    for (const [sourceId, ruleType, parserMode] of expectedSourceSemantics) {
+      expect(sources.find((source) => source.id === sourceId)).toMatchObject({
+        kind: 'official-list',
+        scope: 'university',
+        institutionRule: { type: ruleType },
+        parser: { mode: parserMode },
+      });
+    }
+  });
+
+  it('records Manchester as scoped institution-sensitive requirements without inventing a public roster', () => {
+    const sourceIds = [
+      'manchester-china',
+      'manchester-computer-science-china',
+      'manchester-law-china',
+    ];
+
+    expect(universities.find((university) => university.id === 'university-of-manchester')?.sourceIds).toEqual(sourceIds);
+    for (const sourceId of sourceIds) {
+      expect(sources.find((source) => source.id === sourceId)).toMatchObject({
+        parser: { mode: 'link-only' },
+        institutionRule: { type: 'none' },
+      });
+    }
+    expect(sources.find((source) => source.id === 'manchester-law-china')?.institutionRule.summaryZh)
+      .not.toMatch(/公开.*名单/u);
+  });
+
+  it('records Exeter’s current 2026 uniform rule instead of the historical ranking PDF', () => {
+    const source = sources.find((item) => item.id === 'exeter-china');
+
+    expect(source).toMatchObject({
+      kind: 'china-requirements',
+      scope: 'university',
+      institutionRule: { type: 'none' },
+    });
+    expect(source?.institutionRule.summaryZh).toMatch(/2026.*取消.*排名.*教育部.*75%.*70%/u);
+    expect(source?.url).not.toMatch(/\.pdf(?:$|\?)/u);
+  });
+
   it('references only explicitly registered official sources', () => {
     const sourceIds = new Set(sources.map((source) => source.id));
     expect(universities.flatMap((item) => item.sourceIds)

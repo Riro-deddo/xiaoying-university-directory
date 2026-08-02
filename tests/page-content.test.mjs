@@ -8,6 +8,7 @@ const methodology = readFileSync(resolve(root, 'src/pages/methodology.astro'), '
 const readme = readFileSync(resolve(root, 'README.md'), 'utf8');
 const contributing = readFileSync(resolve(root, 'CONTRIBUTING.md'), 'utf8');
 const styles = readFileSync(resolve(root, 'src/styles/global.css'), 'utf8');
+const sources = JSON.parse(readFileSync(resolve(root, 'src/data/sources.json'), 'utf8'));
 
 describe('dual-direction search page', () => {
   it('exposes both accessible mode tabs and preserves the UK directory controls', () => {
@@ -54,6 +55,21 @@ describe('dual-direction search page', () => {
     expect(page).not.toContain('不能申请');
     expect(styles).toContain('.official-rule-meaning');
     expect(styles).toContain('.rule-type');
+  });
+
+  it('keeps the reviewed Manchester and Exeter source copy safe for the later card rendering', () => {
+    const manchesterSources = [
+      'manchester-china',
+      'manchester-computer-science-china',
+      'manchester-law-china',
+    ].map((id) => sources.find((source) => source.id === id));
+    const exeter = sources.find((source) => source.id === 'exeter-china');
+
+    expect(manchesterSources.map((source) => source?.institutionRule.summaryZh).join(' '))
+      .toContain('完整名单未公开');
+    expect(manchesterSources.map((source) => source?.institutionRule.summaryZh).join(' '))
+      .not.toMatch(/法学.*公开.*名单/u);
+    expect(exeter?.institutionRule.summaryZh).toContain('取消原有国内大学排名要求');
   });
 });
 
