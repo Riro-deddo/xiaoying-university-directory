@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { loadUniversities } from '../lib/data';
+import { loadInstitutions, loadUniversities } from '../lib/data';
 import {
   directoryFilters,
   sourceFreshnessCopy,
@@ -8,8 +8,10 @@ import {
   stateCopy,
 } from '../lib/presentation';
 import { withBase } from '../lib/urls';
+import reverseIndex from '../data/generated/reverse-index.json';
 
 const universities = loadUniversities();
+const searchData = { institutions: loadInstitutions(), universities, reverseIndex };
 const base = import.meta.env.BASE_URL;
 const homeUrl = withBase(base, '');
 const methodologyUrl = withBase(base, 'methodology/');
@@ -37,20 +39,26 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
         <h1 id="page-title">英国大学官方 List，一页查清</h1>
         <p>集中查找英国大学面向中国本科背景发布的院校名单与申请要求。</p>
 
-        <label class="search-box">
-          <span class="sr-only">搜索大学</span>
-          <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m16 16 5 5"></path></svg>
-          <input id="university-search" type="search" placeholder="搜索大学中文名、英文名或简称" autocomplete="off" />
-        </label>
+        <div class="search-modes" role="group" aria-label="搜索方向">
+          <button class="search-mode active" type="button" data-search-mode="uk-university" aria-pressed="true">查英国大学</button>
+          <button class="search-mode" type="button" data-search-mode="chinese-institution" aria-pressed="false">查中国本科院校</button>
+        </div>
 
-        <div class="filters" aria-label="按公开信息状态筛选">
+        <label class="search-box">
+          <span id="search-label" class="sr-only">搜索英国大学</span>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m16 16 5 5"></path></svg>
+          <input id="university-search" type="search" placeholder="搜索大学中文名、英文名或简称" autocomplete="off" aria-describedby="search-help" />
+        </label>
+        <p id="search-help" class="search-help">按大学中文名、英文名或简称搜索，并可按公开信息状态筛选。</p>
+
+        <div id="directory-filters" class="filters" aria-label="按公开信息状态筛选">
           {directoryFilters.map(([value, label]) => (
             <button class:list={['filter', { active: value === 'all' }]} type="button" data-state={value} aria-pressed={value === 'all'}>{label}</button>
           ))}
         </div>
       </section>
 
-      <section class="directory" aria-labelledby="result-count">
+      <section id="uk-directory" class="directory" aria-labelledby="result-count">
         <p id="result-count" class="result-count" aria-live="polite">共 {universities.length} 所大学</p>
         <div class="list-head" aria-hidden="true">
           <span>大学</span><span>QS 2027 排名</span><span>公开状态</span><span>内容范围</span><span>官方来源与操作</span>
@@ -91,6 +99,12 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
           <p>可以尝试英文名或简称；具体要求请以大学官网及招生部门答复为准。</p>
         </div>
       </section>
+
+      <section id="institution-results" class="institution-results" aria-labelledby="institution-result-count" hidden>
+        <p id="institution-result-count" class="result-count" aria-live="polite">输入中国本科院校名称开始查询</p>
+        <div id="institution-chooser" class="institution-chooser" aria-live="polite"></div>
+        <div id="institution-evidence" class="institution-evidence"></div>
+      </section>
     </main>
 
     <footer>
@@ -98,27 +112,137 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
       <p>本站仅作官方信息导航，最终要求以大学官网及招生部门答复为准。</p>
     </footer>
 
-    <script is:inline id="directory-data" type="application/json" set:html={JSON.stringify(universities)}></script>
+    <script is:inline id="directory-data" type="application/json" set:html={JSON.stringify(searchData)}></script>
     <script>
-      import { createUniversitySearch } from '../lib/search';
+      import { createInstitutionEvidenceSearch, createUniversitySearch } from '../lib/search';
+      import { evidenceStateCopy, sourceFreshnessCopy } from '../lib/presentation';
       import type { UniversityState, UniversityWithStatus } from '../lib/types';
 
       const dataNode = document.querySelector<HTMLScriptElement>('#directory-data');
-      const records = JSON.parse(dataNode?.textContent ?? '[]') as UniversityWithStatus[];
-      const directory = createUniversitySearch(records);
+      const data = JSON.parse(dataNode?.textContent ?? '{}') as {
+        institutions: Parameters<typeof createInstitutionEvidenceSearch>[0]['institutions'];
+        universities: UniversityWithStatus[];
+        reverseIndex: Parameters<typeof createInstitutionEvidenceSearch>[0]['reverseIndex'];
+      };
+      const directory = createUniversitySearch(data.universities ?? []);
+      const institutionDirectory = createInstitutionEvidenceSearch({
+        institutions: data.institutions ?? [], universities: data.universities ?? [], reverseIndex: data.reverseIndex ?? [],
+      });
       const input = document.querySelector<HTMLInputElement>('#university-search');
       const buttons = [...document.querySelectorAll<HTMLButtonElement>('.filter')];
+      const modeButtons = [...document.querySelectorAll<HTMLButtonElement>('[data-search-mode]')];
       const rows = [...document.querySelectorAll<HTMLElement>('.university-row')];
       const count = document.querySelector<HTMLElement>('#result-count');
       const empty = document.querySelector<HTMLElement>('#empty-state');
+      const label = document.querySelector<HTMLElement>('#search-label');
+      const help = document.querySelector<HTMLElement>('#search-help');
+      const filters = document.querySelector<HTMLElement>('#directory-filters');
+      const ukDirectory = document.querySelector<HTMLElement>('#uk-directory');
+      const institutionResults = document.querySelector<HTMLElement>('#institution-results');
+      const institutionCount = document.querySelector<HTMLElement>('#institution-result-count');
+      const chooser = document.querySelector<HTMLElement>('#institution-chooser');
+      const evidence = document.querySelector<HTMLElement>('#institution-evidence');
       let selected: UniversityState[] = [];
+      let mode: 'uk-university' | 'chinese-institution' = 'uk-university';
 
-      function update() {
+      function updateUniversityDirectory() {
         const matches = directory.search(input?.value ?? '', selected);
         const visible = new Set(matches.map((item) => item.id));
         rows.forEach((row) => { row.hidden = !visible.has(row.dataset.id ?? ''); });
         if (count) count.textContent = `共 ${matches.length} 所大学`;
         if (empty) empty.hidden = matches.length !== 0;
+      }
+
+      function makeElement<K extends keyof HTMLElementTagNameMap>(tag: K, text?: string): HTMLElementTagNameMap[K] {
+        const element = document.createElement(tag);
+        if (text) element.textContent = text;
+        return element;
+      }
+
+      function evidenceField(labelText: string, value: string) {
+        const row = makeElement('div');
+        const fieldLabel = makeElement('dt', labelText);
+        const fieldValue = makeElement('dd', value);
+        row.append(fieldLabel, fieldValue);
+        return row;
+      }
+
+      function renderInstitutionResult() {
+        const result = institutionDirectory.search(input?.value ?? '');
+        chooser?.replaceChildren();
+        evidence?.replaceChildren();
+        if (result.kind === 'empty') {
+          if (institutionCount) institutionCount.textContent = '输入中国本科院校名称开始查询';
+          return;
+        }
+        if (result.kind === 'unknown') {
+          if (institutionCount) institutionCount.textContent = '未找到匹配的中国本科院校';
+          return;
+        }
+        if (result.kind === 'suggestions') {
+          if (institutionCount) institutionCount.textContent = `找到 ${result.suggestions.length} 个可能的院校，请选择一个规范名称`;
+          const title = makeElement('p', '请选择规范院校名称后查看 28 所英国大学的公开信息：');
+          chooser?.append(title);
+          result.suggestions.forEach((institution) => {
+            const button = makeElement('button', `${institution.nameZh}｜${institution.nameEn}`);
+            button.type = 'button';
+            button.className = 'institution-choice';
+            button.dataset.institutionId = institution.id;
+            chooser?.append(button);
+          });
+          return;
+        }
+
+        if (institutionCount) institutionCount.textContent = `${result.institution.nameZh}：${result.cards.length} 所英国大学的公开信息`;
+        const heading = makeElement('h2', `${result.institution.nameZh}｜${result.institution.nameEn}`);
+        evidence?.append(heading);
+        result.cards.forEach((card) => {
+          const copy = evidenceStateCopy[card.evidence.state];
+          const article = makeElement('article');
+          article.className = 'evidence-card';
+          const title = makeElement('h3', `${card.university.nameZh}｜QS ${card.university.qs.rank}`);
+          const status = makeElement('p', copy.label);
+          status.className = 'evidence-state';
+          const description = makeElement('p', copy.description);
+          const fields = makeElement('dl');
+          if (card.evidence.tierOfficial) fields.append(evidenceField('官方分组/等级', card.evidence.tierOfficial));
+          if (card.evidence.scoreOfficial) fields.append(evidenceField('官方分数', card.evidence.scoreOfficial));
+          if (card.evidence.scopeZh) fields.append(evidenceField('适用范围', card.evidence.scopeZh));
+          if (card.evidence.cycle) fields.append(evidenceField('周期', card.evidence.cycle));
+          fields.append(evidenceField('最近成功检查', sourceFreshnessCopy({ sourceId: card.evidence.sourceId ?? '', health: 'unchecked', lastSuccessfulAt: card.evidence.lastSuccessfulAt })));
+          article.append(title, status, description, fields);
+          if (card.sourceUrl) {
+            const link = makeElement('a', `官方来源：${card.sourceLabelZh ?? '查看来源'}`);
+            link.href = card.sourceUrl;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+            article.append(link);
+          }
+          evidence?.append(article);
+        });
+      }
+
+      function update() {
+        if (mode === 'uk-university') updateUniversityDirectory();
+        else renderInstitutionResult();
+      }
+
+      function setMode(nextMode: 'uk-university' | 'chinese-institution') {
+        mode = nextMode;
+        const chineseMode = mode === 'chinese-institution';
+        modeButtons.forEach((button) => {
+          const active = button.dataset.searchMode === mode;
+          button.classList.toggle('active', active);
+          button.setAttribute('aria-pressed', String(active));
+        });
+        if (label) label.textContent = chineseMode ? '搜索中国本科院校' : '搜索英国大学';
+        if (input) input.placeholder = chineseMode ? '搜索中国本科院校中文名、英文名或别名' : '搜索大学中文名、英文名或简称';
+        if (help) help.textContent = chineseMode ? '精确匹配会显示 28 所英国大学的公开信息；模糊结果仅供选择规范名称。' : '按大学中文名、英文名或简称搜索，并可按公开信息状态筛选。';
+        if (filters) filters.hidden = chineseMode;
+        if (ukDirectory) ukDirectory.hidden = chineseMode;
+        if (institutionResults) institutionResults.hidden = !chineseMode;
+        if (input) input.value = '';
+        update();
       }
 
       input?.addEventListener('input', update);
@@ -130,8 +254,21 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
           item.setAttribute('aria-pressed', String(active));
         });
         selected = value && value !== 'all' ? [value as UniversityState] : [];
-        update();
+        updateUniversityDirectory();
       }));
+      modeButtons.forEach((button) => button.addEventListener('click', () => {
+        const nextMode = button.dataset.searchMode;
+        if (nextMode === 'uk-university' || nextMode === 'chinese-institution') setMode(nextMode);
+      }));
+      chooser?.addEventListener('click', (event) => {
+        const button = (event.target as HTMLElement).closest<HTMLButtonElement>('[data-institution-id]');
+        const institutionId = button?.dataset.institutionId;
+        if (!institutionId || !evidence || !institutionCount) return;
+        const result = institutionDirectory.select(institutionId);
+        if (result.kind !== 'selected') return;
+        if (input) input.value = result.institution.nameZh;
+        renderInstitutionResult();
+      });
     </script>
   </body>
 </html>

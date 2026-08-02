@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import {
   directoryFilters,
+  evidenceStateCopy,
   sourceFreshnessCopy,
   stateCopy,
   sourceHealthCopy,
@@ -50,5 +51,16 @@ describe('sourceFreshnessCopy', () => {
 
   it('states when no check time is available', () => {
     expect(sourceFreshnessCopy()).toBe('尚无检查时间');
+  });
+});
+
+describe('evidenceStateCopy', () => {
+  it('keeps faculty scope and every non-eligibility evidence status distinct', () => {
+    expect(evidenceStateCopy['faculty-match'].label).toBe('院系/专业范围内找到');
+    expect(evidenceStateCopy['not-found-in-public-list'].label).toBe('公开 List 中暂未找到');
+    expect(evidenceStateCopy['no-public-list'].label).toBe('未发现公开 List');
+    expect(evidenceStateCopy['source-changed'].label).toBe('来源已变更');
+    expect(evidenceStateCopy['source-unavailable'].label).toBe('来源暂不可用');
+    expect(Object.values(evidenceStateCopy).flatMap((copy) => [copy.label, copy.description]).join('')).not.toMatch(/可以申请|不能申请|保底|冲刺/);
   });
 });
