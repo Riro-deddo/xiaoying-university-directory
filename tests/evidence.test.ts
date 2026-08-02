@@ -46,6 +46,19 @@ describe('deriveEvidence', () => {
   it('returns no-public-list when the available source is not a university-wide official list', () => {
     expect(deriveEvidence({ fact: undefined, source: facultySource, status: ok }).state).toBe('no-public-list');
   });
+
+  it('does not claim a link-only official-list source was checked against a parsed list', () => {
+    const linkOnlyPublicSource: OfficialSourceConfig = {
+      ...universitySource,
+      id: 'link-only-public-list',
+      parser: { mode: 'link-only', guard: { minimumRecords: 0, maximumRecords: 1, maximumRemovalRatio: 0 } },
+    };
+
+    expect(deriveEvidence({ fact: undefined, source: linkOnlyPublicSource, status: ok })).toMatchObject({
+      state: 'no-public-list',
+      sourceId: 'link-only-public-list',
+    });
+  });
 });
 
 describe('reverse index generation', () => {

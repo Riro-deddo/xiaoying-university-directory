@@ -47,7 +47,11 @@ export function deriveEvidence(input: EvidenceInput): EvidenceResult {
   if (input.fact?.scope === 'university') return factEvidence(input, 'official-match');
   if (input.fact) return factEvidence(input, 'faculty-match');
 
-  if (input.source?.kind === 'official-list' && input.source.scope === 'university') {
+  if (
+    input.source?.kind === 'official-list' &&
+    input.source.scope === 'university' &&
+    input.source.parser.mode !== 'link-only'
+  ) {
     return { state: 'not-found-in-public-list', ...sourceMetadata(input) };
   }
   return { state: 'no-public-list', ...sourceMetadata(input) };
