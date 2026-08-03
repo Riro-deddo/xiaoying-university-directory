@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 
-const dailyWorkflow = readFileSync('.github/workflows/daily-check.yml', 'utf8');
+const dailyWorkflow = readFileSync('.github/workflows/daily-check.yml', 'utf8').replace(/\r\n/g, '\n');
 const ciWorkflow = readFileSync('.github/workflows/ci.yml', 'utf8');
 const deployWorkflow = readFileSync('.github/workflows/deploy.yml', 'utf8');
 
@@ -58,6 +58,13 @@ describe('guarded daily source workflow', () => {
 });
 
 describe('Pages deployment workflow', () => {
+  it('accepts CI completion events without a branch name from repository dispatch', () => {
+    const workflowRunTrigger = deployWorkflow.match(/workflow_run:\r?\n([\s\S]*?)permissions:/)?.[1] ?? '';
+
+    expect(workflowRunTrigger).toContain('workflows: [CI]');
+    expect(workflowRunTrigger).not.toMatch(/^\s*branches:/m);
+  });
+
   it('checks out the exact revision that passed CI', () => {
     expect(deployWorkflow).toContain('ref: ${{ github.event.workflow_run.head_sha }}');
   });
