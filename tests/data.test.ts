@@ -1,20 +1,26 @@
 import { describe, expect, it } from 'vitest';
+import rankings from '../src/data/rankings.json';
 import sources from '../src/data/sources.json';
+import universitiesJson from '../src/data/universities.json';
 import {
+  DataValidationError,
   joinUniversityStatuses,
+  loadRankings,
   loadUniversities,
   validateOfficialSources,
   validateUniversities,
 } from '../src/lib/data';
 import type { OfficialSourceConfig, StatusMap, University } from '../src/lib/types';
 
+const universities: University[] = validateUniversities(universitiesJson);
+
 const validUniversity: University = {
   id: 'imperial',
   nameZh: 'Imperial',
   nameEn: 'Imperial College London',
   aliases: ['IC', 'ICL'],
-  directoryCategory: 'qs-top-200',
-  qs: { edition: 2027, rank: 2 },
+  directoryCategory: 'qs-directory',
+  qsDirectory: { firstEdition: 2027, verifiedEdition: 2027, current: true },
   state: 'official-list',
   officialDomain: 'https://www.imperial.ac.uk',
   sourceIds: ['imperial-china'],
@@ -151,8 +157,8 @@ describe('QS 2027 starter ranks', () => {
   it('matches the published QS 2027 positions', () => {
     const ranks = Object.fromEntries(
       loadUniversities()
-        .filter((university) => university.directoryCategory === 'qs-top-200')
-        .map((university) => [university.id, university.qs!.rank]),
+        .filter((university) => university.directoryCategory === 'qs-directory')
+        .map((university) => [university.id, university.rankings.qs!.sortRank]),
     );
 
     expect(ranks).toMatchObject({
@@ -164,15 +170,68 @@ describe('QS 2027 starter ranks', () => {
 });
 
 describe('explicit directory scope', () => {
-  it('includes 28 ranked universities and LBS as a specialist institution', () => {
+  it('includes 93 ranked universities and LBS as a specialist institution', () => {
     const universities = loadUniversities();
 
-    expect(universities.filter((item) => item.directoryCategory === 'qs-top-200')).toHaveLength(28);
+    expect(universities.filter((item) => item.directoryCategory === 'qs-directory')).toHaveLength(93);
     expect(universities.find((item) => item.id === 'london-business-school')).toMatchObject({
       directoryCategory: 'specialist',
       state: 'not-public',
     });
-    expect(universities.find((item) => item.id === 'london-business-school')).not.toHaveProperty('qs');
-    expect(new Set(universities.map((item) => item.id)).size).toBe(29);
+    expect(universities.find((item) => item.id === 'london-business-school')).not.toHaveProperty('rankings.qs');
+    expect(new Set(universities.map((item) => item.id)).size).toBe(94);
+  });
+});
+
+describe('current QS directory ranking coverage', () => {
+  const currentQsDirectoryMembers = universities.filter((university) =>
+    university.directoryCategory === 'qs-directory' && university.qsDirectory?.current,
+  );
+
+  it('gives every current QS-directory member exactly one ranked QS record at its verified edition', () => {
+    const dataset = loadRankings(rankings, universities);
+
+    expect(currentQsDirectoryMembers).toHaveLength(93);
+    for (const university of currentQsDirectoryMembers) {
+      const records = dataset.records.filter((record) =>
+        record.universityId === university.id
+        && record.provider === 'qs'
+        && record.edition === university.qsDirectory!.verifiedEdition,
+      );
+      expect(records).toHaveLength(1);
+      expect(records[0].placement).not.toMatch(/^(unranked|unverified)$/u);
+    }
+  });
+
+  it.each(currentQsDirectoryMembers)('rejects a missing verified QS record for $nameEn', (university) => {
+    const withoutMemberRecord = {
+      ...rankings,
+      records: rankings.records.filter((record) => record.universityId !== university.id),
+    };
+
+    expect(() => loadRankings(withoutMemberRecord, universities)).toThrow(DataValidationError);
+  });
+
+  it.each([
+    ['is registered only at a different edition', {
+      ...rankings,
+      releases: [...rankings.releases, { ...rankings.releases[0], edition: 2026 }],
+      records: rankings.records.map((record) => record.universityId === 'imperial-college-london'
+        ? { ...record, edition: 2026 }
+        : record),
+    }],
+    ['is unverified', {
+      ...rankings,
+      records: rankings.records.map((record) => record.universityId === 'imperial-college-london'
+        ? {
+          universityId: record.universityId,
+          provider: record.provider,
+          edition: record.edition,
+          placement: 'unverified' as const,
+        }
+        : record),
+    }],
+  ])('rejects a current QS-directory member whose verified record %s', (_label, dataset) => {
+    expect(() => loadRankings(dataset, universities)).toThrow(DataValidationError);
   });
 });

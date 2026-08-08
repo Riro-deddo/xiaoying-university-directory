@@ -3,7 +3,7 @@ import { compareDirectoryUniversities, createUniversitySearch } from '../src/lib
 import { createInstitutionEvidenceSearch, type ReverseIndexEntry } from '../src/lib/search';
 import { loadInstitutions, loadUniversities } from '../src/lib/data';
 import reverseIndex from '../src/data/generated/reverse-index.json';
-import type { UniversityWithStatus } from '../src/lib/types';
+import type { DirectoryCategory, RankingRecord, UniversityWithStatus } from '../src/lib/types';
 
 const gradeThresholdRule = {
   type: 'grade-threshold' as const,
@@ -20,20 +20,59 @@ const gradeThresholdRule = {
 const records: UniversityWithStatus[] = [
   {
     id: 'imperial', nameZh: '帝国理工学院', nameEn: 'Imperial College London', aliases: ['ICL', '帝国理工'],
-    directoryCategory: 'qs-top-200', qs: { edition: 2027, rank: 2 }, state: 'official-list', officialDomain: 'https://www.imperial.ac.uk', sources: [],
+    directoryCategory: 'qs-directory', qsDirectory: { firstEdition: 2027, verifiedEdition: 2027, current: true }, state: 'official-list', officialDomain: 'https://www.imperial.ac.uk', sources: [], rankings: { qs: { universityId: 'imperial', provider: 'qs', edition: 2027, placement: 'exact', displayRank: '2', sortRank: 2 } },
   },
   {
     id: 'ucl', nameZh: '伦敦大学学院', nameEn: 'University College London', aliases: ['UCL'],
-    directoryCategory: 'qs-top-200', qs: { edition: 2027, rank: 9 }, state: 'china-requirements', officialDomain: 'https://www.ucl.ac.uk', sources: [],
+    directoryCategory: 'qs-directory', qsDirectory: { firstEdition: 2027, verifiedEdition: 2027, current: true }, state: 'china-requirements', officialDomain: 'https://www.ucl.ac.uk', sources: [], rankings: { qs: { universityId: 'ucl', provider: 'qs', edition: 2027, placement: 'exact', displayRank: '9', sortRank: 9 } },
   },
   {
     id: 'edinburgh', nameZh: '爱丁堡大学', nameEn: 'The University of Edinburgh', aliases: ['爱大', 'Edinburgh'],
-    directoryCategory: 'qs-top-200', qs: { edition: 2027, rank: 27 }, state: 'faculty-only', officialDomain: 'https://www.ed.ac.uk', sources: [],
+    directoryCategory: 'qs-directory', qsDirectory: { firstEdition: 2027, verifiedEdition: 2027, current: true }, state: 'faculty-only', officialDomain: 'https://www.ed.ac.uk', sources: [], rankings: { qs: { universityId: 'edinburgh', provider: 'qs', edition: 2027, placement: 'exact', displayRank: '27', sortRank: 27 } },
   },
   {
     id: 'london-business-school', nameZh: 'London Business School', nameEn: 'London Business School', aliases: ['LBS'],
-    directoryCategory: 'specialist', state: 'not-public', officialDomain: 'https://www.london.edu', sources: [],
+    directoryCategory: 'specialist', state: 'not-public', officialDomain: 'https://www.london.edu', sources: [], rankings: {},
   },
+];
+
+function rankedUniversity(
+  id: string,
+  nameEn: string,
+  rankings: UniversityWithStatus['rankings'],
+  directoryCategory: DirectoryCategory = 'qs-directory',
+): UniversityWithStatus {
+  return {
+    id,
+    nameZh: nameEn,
+    nameEn,
+    aliases: [],
+    directoryCategory,
+    ...(directoryCategory === 'qs-directory'
+      ? { qsDirectory: { firstEdition: 2027, verifiedEdition: 2027, current: true } }
+      : { specialistRanking: { provider: 'qs', rankingName: 'QS WUR Ranking By Subject', subjectZh: '商业与管理', edition: 2026, displayRank: '9', sourceUrl: 'https://example.test/lbs' } }),
+    state: 'pending',
+    officialDomain: `https://${id}.example.test`,
+    sources: [],
+    rankings,
+  };
+}
+
+const ranking = (
+  universityId: string,
+  provider: RankingRecord['provider'],
+  placement: RankingRecord['placement'],
+  displayRank?: string,
+  sortRank?: number,
+): RankingRecord => ({ universityId, provider, edition: provider === 'qs' ? 2027 : 2026, placement, ...(displayRank ? { displayRank } : {}), ...(sortRank ? { sortRank } : {}) });
+
+const multiRankRecords = [
+  rankedUniversity('same-rank-b', 'Beta University', { qs: ranking('same-rank-b', 'qs', 'tied', '=42', 42), the: ranking('same-rank-b', 'the', 'band', '201–250', 201) }),
+  rankedUniversity('unverified', 'Unverified University', { qs: ranking('unverified', 'qs', 'exact', '100', 100), the: ranking('unverified', 'the', 'unverified') }),
+  rankedUniversity('same-rank-a', 'Alpha University', { qs: ranking('same-rank-a', 'qs', 'tied', '=42', 42), the: ranking('same-rank-a', 'the', 'band', '201–250', 201) }),
+  rankedUniversity('unranked', 'Unranked University', { qs: ranking('unranked', 'qs', 'exact', '90', 90), the: ranking('unranked', 'the', 'unranked') }),
+  rankedUniversity('exact', 'Exact University', { qs: ranking('exact', 'qs', 'exact', '50', 50), the: ranking('exact', 'the', 'exact', '88', 88) }),
+  rankedUniversity('london-business-school', 'London Business School', {}, 'specialist'),
 ];
 
 describe('createUniversitySearch', () => {
@@ -68,6 +107,36 @@ describe('createUniversitySearch', () => {
 
   it('returns an empty array when nothing is relevant', () => {
     expect(directory.search('完全不存在的学校', [])).toEqual([]);
+  });
+
+  it('supports QS, THE, and English-name sorting while keeping specialists last', () => {
+    const ranked = createUniversitySearch(multiRankRecords);
+
+    expect(ranked.search('', [], 'qs').map((item) => item.id)).toEqual([
+      'same-rank-a', 'same-rank-b', 'exact', 'unranked', 'unverified', 'london-business-school',
+    ]);
+    expect(ranked.search('', [], 'the').map((item) => item.id)).toEqual([
+      'exact', 'same-rank-a', 'same-rank-b', 'unranked', 'unverified', 'london-business-school',
+    ]);
+    expect(ranked.search('', [], 'name').map((item) => item.id)).toEqual([
+      'same-rank-a', 'same-rank-b', 'exact', 'unranked', 'unverified', 'london-business-school',
+    ]);
+  });
+
+  it('uses English name and ID as stable tie-breaks for a shared ranking', () => {
+    const tied = [
+      rankedUniversity('same-name-b', 'Same University', { qs: ranking('same-name-b', 'qs', 'tied', '=42', 42) }),
+      rankedUniversity('same-name-a', 'Same University', { qs: ranking('same-name-a', 'qs', 'tied', '=42', 42) }),
+    ];
+
+    expect(tied.sort((left, right) => compareDirectoryUniversities(left, right, 'qs')).map((item) => item.id))
+      .toEqual(['same-name-a', 'same-name-b']);
+  });
+
+  it('preserves exact bilingual search and state filters in a non-default sort mode', () => {
+    const ranked = createUniversitySearch(multiRankRecords);
+
+    expect(ranked.search('Exact University', ['pending'], 'the').map((item) => item.id)).toEqual(['exact']);
   });
 });
 
@@ -142,7 +211,7 @@ describe('production institution evidence search', () => {
     expect(result.kind).toBe('selected');
     if (result.kind !== 'selected') return;
     expect(result.institution.nameZh).toBe(nameZh);
-    expect(result.cards).toHaveLength(29);
+    expect(result.cards).toHaveLength(loadUniversities().length);
     expect(result.cards.some((card) => card.evidence.state === 'official-match' || card.evidence.state === 'faculty-match')).toBe(true);
   });
 });

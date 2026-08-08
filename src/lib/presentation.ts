@@ -1,4 +1,12 @@
-import type { EvidenceState, InstitutionRuleType, SourceHealth, SourceStatus, UniversityState, UniversityWithStatus } from './types';
+import type {
+  EvidenceState,
+  InstitutionRuleType,
+  RankingRecord,
+  SourceHealth,
+  SourceStatus,
+  UniversityState,
+  UniversityWithStatus,
+} from './types';
 import type { EvidenceResult } from './evidence';
 
 export const stateCopy: Record<UniversityState, { label: string; description: string }> = {
@@ -25,10 +33,16 @@ export const institutionRuleTypeCopy = {
   none: { label: '未发现院校名单' },
 } satisfies Record<InstitutionRuleType, { label: string }>;
 
-export const directoryScopeCopy = '28 所 QS 2027 世界前 200 英国大学 + 1 所专业院校';
+export const directoryScopeCopy = '93 所 QS 2027 英国院校 + 1 所特色院校';
+
+export function rankingCopy(record?: RankingRecord): string {
+  if (!record || record.placement === 'unverified') return '暂未核实';
+  if (record.placement === 'unranked') return '当期未上榜';
+  return record.displayRank!;
+}
 
 export function directoryRankCopy(university: UniversityWithStatus): string {
-  return university.directoryCategory === 'specialist' ? '专业院校' : `QS ${university.qs!.rank}`;
+  return university.directoryCategory === 'specialist' ? '专业院校' : `QS ${rankingCopy(university.rankings.qs)}`;
 }
 
 export function officialPanelTitle(type: Exclude<InstitutionRuleType, 'none'>, count: number): string {

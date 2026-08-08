@@ -7,7 +7,7 @@
     "required": ["universityId", "directoryCategory", "expectedState", "reviewDate", "finding"],
     "properties": {
       "universityId": { "type": "string", "minLength": 1, "pattern": "^[a-z0-9-]+$" },
-      "directoryCategory": { "enum": ["qs-top-200", "specialist"] },
+      "directoryCategory": { "enum": ["qs-directory", "specialist"] },
       "expectedState": { "enum": ["official-list", "china-requirements", "faculty-only", "not-public", "pending"] },
       "reviewDate": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
       "finding": { "type": "string", "minLength": 1, "pattern": "\\S" }

@@ -6,6 +6,18 @@ const ciWorkflow = readFileSync('.github/workflows/ci.yml', 'utf8');
 const deployWorkflow = readFileSync('.github/workflows/deploy.yml', 'utf8');
 
 const officialWorkflowText = [ciWorkflow, dailyWorkflow, deployWorkflow].join('\n');
+const dailySteps = (dailyWorkflow.split('\n    steps:\n')[1] ?? '')
+  .split(/(?=^      - )/mu)
+  .filter((step) => step.startsWith('      - '));
+
+function dailyStepContaining(fragment) {
+  return dailySteps.find((step) => step.includes(fragment));
+}
+
+function workflowRunScript(step) {
+  const runBlock = step?.match(/^        run: \|\n([\s\S]*)$/mu)?.[1] ?? '';
+  return runBlock.replace(/^          /gmu, '').trim();
+}
 
 const approvedOfficialActionPins = [
   ['actions/checkout', '3d3c42e5aac5ba805825da76410c181273ba90b1', 'v7.0.1', 3],
@@ -36,34 +48,48 @@ describe('guarded daily source workflow', () => {
     expect(deployWorkflow).not.toContain('issues: write');
   });
 
-  it('checks links, syncs safely, rebuilds the index, and verifies before committing', () => {
+  it('checks links and source review state, then verifies before committing', () => {
     const orderedSteps = [
       'lycheeverse/lychee-action',
-      'pnpm sync:sources',
-      'pnpm build:index',
+      'pnpm check:sources',
       'pnpm test:run',
       '- run: pnpm build\n',
       'git commit',
     ];
-    const positions = orderedSteps.map((step) => dailyWorkflow.indexOf(step));
+    const positions = orderedSteps.map((fragment) => dailySteps.findIndex((step) => step.includes(fragment)));
     expect(positions.every((position) => position >= 0)).toBe(true);
     expect(positions).toEqual([...positions].sort((a, b) => a - b));
   });
 
-  it('commits only status and accepted generated datasets', () => {
-    expect(dailyWorkflow).toContain('src/data/status.json');
-    expect(dailyWorkflow).toContain('src/data/institutions.json');
-    expect(dailyWorkflow).toContain('src/data/generated/requirements.json');
-    expect(dailyWorkflow).toContain('src/data/generated/reverse-index.json');
+  it('runs the exact status-only commit contract after semantic review state changes', () => {
+    const commitScript = workflowRunScript(dailyStepContaining('git commit'));
+    expect(commitScript).toBe([
+      'if git diff --quiet -- src/data/status.json; then exit 0; fi',
+      'git config user.name "github-actions[bot]"',
+      'git config user.email "41898282+github-actions[bot]@users.noreply.github.com"',
+      'git add src/data/status.json',
+      'git commit -m "chore: refresh official-source review status"',
+      'git push',
+      'COMMITTED_SHA=$(git rev-parse HEAD)',
+      'gh api --method POST "repos/${GITHUB_REPOSITORY}/dispatches" -f event_type=guarded-source-update -f "client_payload[sha]=$COMMITTED_SHA"',
+    ].join('\n'));
+  });
+
+  it('never accepts source facts or touches generated and annual-ranking datasets', () => {
+    expect(dailyWorkflow).not.toContain('pnpm sync:sources');
+    expect(dailyWorkflow).not.toContain('src/data/institutions.json');
+    expect(dailyWorkflow).not.toContain('src/data/generated/requirements.json');
+    expect(dailyWorkflow).not.toContain('src/data/generated/reverse-index.json');
+    expect(dailyWorkflow).not.toContain('src/data/rankings.json');
     expect(dailyWorkflow).not.toMatch(/git add\s+\.|git add\s+-A/);
   });
 
-  it('commits the institution registry whenever guarded sync can change it', () => {
-    const diffGuard = dailyWorkflow.match(/if git diff --quiet -- ([^;]+);/)?.[1] ?? '';
-    const gitAdd = dailyWorkflow.match(/^\s*git add (.+)$/m)?.[1] ?? '';
-
-    expect(diffGuard).toContain('src/data/institutions.json');
-    expect(gitAdd).toContain('src/data/institutions.json');
+  it('renders issue candidates from the complete daily audit artifact', () => {
+    const issueStep = dailyStepContaining('Create or update one Issue per source anomaly');
+    expect(issueStep).toContain('artifacts/source-audit.json');
+    expect(issueStep).toContain("Object.values(audit)");
+    expect(issueStep).toContain("['changed', 'temporary-error', 'unavailable'].includes(status.health)");
+    expect(issueStep).not.toContain('source-anomalies.json');
   });
 
   it('keeps CI read-only and checks reverse-index consistency', () => {

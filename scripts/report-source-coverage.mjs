@@ -21,7 +21,7 @@ export function evaluateCoverage({ cohort, universities, sources, audit }) {
   const expectedDirectoryIds = new Set([...cohortIds, 'london-business-school']);
   const universityIds = universities.map((item) => item.id);
   const rankedUniversityIds = universities
-    .filter((item) => item.directoryCategory === 'qs-top-200')
+    .filter((item) => item.directoryCategory === 'qs-directory')
     .map((item) => item.id);
   const specialistUniversityIds = universities
     .filter((item) => item.directoryCategory === 'specialist')
@@ -115,7 +115,7 @@ export function evaluateCoverage({ cohort, universities, sources, audit }) {
     failures,
     counts: {
       cohortUniversities: cohortIds.size,
-      qsUniversities: auditRows.filter((item) => item.directoryCategory === 'qs-top-200').length,
+      qsUniversities: auditRows.filter((item) => item.directoryCategory === 'qs-directory').length,
       specialistUniversities: auditRows.filter((item) => item.directoryCategory === 'specialist').length,
       fullPublicLists: auditCount('official-list'),
       ruleOnlyUniversities: auditCount('china-requirements'),

@@ -1,0 +1,4668 @@
+[
+  {
+    "id": "imperial-college-london",
+    "nameZh": "帝国理工学院",
+    "nameEn": "Imperial College London",
+    "aliases": [
+      "Imperial"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "china-requirements",
+    "officialDomain": "https://www.imperial.ac.uk",
+    "sources": [
+      {
+        "id": "imperial-china",
+        "universityId": "imperial-college-london",
+        "labelZh": "中国研究生入学要求",
+        "url": "https://www.imperial.ac.uk/study/apply/postgraduate-doctoral/application-process/entry-requirements/accepted-qualifications/",
+        "kind": "china-requirements",
+        "scope": "university",
+        "scopeZh": "学校面向中国申请人的研究生学历要求",
+        "institutionRule": {
+          "type": "none",
+          "summaryZh": "帝国理工的中国研究生要求会参考本科院校背景，但未公开完整的中国院校名称名单。",
+          "verification": {
+            "reviewedAt": "2026-08-02",
+            "url": "https://www.imperial.ac.uk/study/apply/postgraduate-doctoral/application-process/entry-requirements/accepted-qualifications/",
+            "requiredText": [
+              "China",
+              "institution"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "link-only",
+          "guard": {
+            "minimumRecords": 0,
+            "maximumRecords": 1,
+            "maximumRemovalRatio": 0
+          }
+        },
+        "status": {
+          "sourceId": "imperial-china",
+          "checkedAt": "2026-08-04T06:04:21.219Z",
+          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.imperial.ac.uk/study/apply/postgraduate-doctoral/application-process/entry-requirements/accepted-qualifications/",
+          "health": "ok"
+        }
+      }
+    ],
+    "rankings": {
+      "qs": {
+        "universityId": "imperial-college-london",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "tied",
+        "displayRank": "=2",
+        "sortRank": 2
+      },
+      "the": {
+        "universityId": "imperial-college-london",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "exact",
+        "displayRank": "8",
+        "sortRank": 8
+      }
+    }
+  },
+  {
+    "id": "university-of-oxford",
+    "nameZh": "牛津大学",
+    "nameEn": "University of Oxford",
+    "aliases": [
+      "Oxford"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "china-requirements",
+    "officialDomain": "https://www.ox.ac.uk",
+    "sources": [
+      {
+        "id": "oxford-china",
+        "universityId": "university-of-oxford",
+        "labelZh": "中国研究生国际学历要求",
+        "url": "https://www.ox.ac.uk/admissions/graduate/international-applicants/international-qualifiations?source=applicationguide",
+        "kind": "china-requirements",
+        "scope": "university",
+        "scopeZh": "学校研究生国际学历要求中的中国章节",
+        "institutionRule": {
+          "type": "none",
+          "summaryZh": "牛津的中国研究生学历要求区分本科院校背景，但未公开完整的中国院校名称名单。",
+          "verification": {
+            "reviewedAt": "2026-08-02",
+            "url": "https://www.ox.ac.uk/admissions/graduate/international-applicants/international-qualifiations?source=applicationguide",
+            "requiredText": [
+              "China",
+              "university"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "link-only",
+          "guard": {
+            "minimumRecords": 0,
+            "maximumRecords": 1,
+            "maximumRemovalRatio": 0
+          }
+        },
+        "status": {
+          "sourceId": "oxford-china",
+          "checkedAt": "2026-08-04T06:04:21.219Z",
+          "httpStatus": 403,
+          "finalUrl": "https://www.ox.ac.uk/admissions/graduate/international-applicants/international-qualifiations?source=applicationguide",
+          "health": "unavailable"
+        }
+      }
+    ],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-oxford",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "exact",
+        "displayRank": "4",
+        "sortRank": 4
+      },
+      "the": {
+        "universityId": "university-of-oxford",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "exact",
+        "displayRank": "1",
+        "sortRank": 1
+      }
+    }
+  },
+  {
+    "id": "university-of-cambridge",
+    "nameZh": "剑桥大学",
+    "nameEn": "University of Cambridge",
+    "aliases": [
+      "Cambridge"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "official-list",
+    "officialDomain": "https://www.postgraduate.study.cam.ac.uk",
+    "sources": [
+      {
+        "id": "cambridge-china",
+        "universityId": "university-of-cambridge",
+        "labelZh": "研究生国际学历要求",
+        "url": "https://www.postgraduate.study.cam.ac.uk/apply/before/international-qualifications",
+        "kind": "official-list",
+        "scope": "university",
+        "scopeZh": "学校面向中国申请人的研究生国际学历要求及 Group A/B 院校分组",
+        "institutionRule": {
+          "type": "grade-threshold",
+          "summaryZh": "剑桥按中国本科院校的 Group A 或 Group B 分组对应不同的最低成绩要求，而非统一白名单。",
+          "listedMeaningZh": "页面列出的 Group A/B 院校分别对应其官方成绩门槛。",
+          "unlistedMeaningZh": "未列入 Group A/B 不代表页面作出统一录取结论；请按官方国际学历说明及目标课程核对。",
+          "caveatZh": "具体课程可设更高或额外要求。",
+          "verification": {
+            "reviewedAt": "2026-08-02",
+            "url": "https://www.postgraduate.study.cam.ac.uk/apply/before/international-qualifications",
+            "requiredText": [
+              "China",
+              "Group A",
+              "Group B"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "html-grouped-items",
+          "groups": [
+            {
+              "selector": "#China > ul:nth-of-type(1)",
+              "tierOfficial": "Group A"
+            },
+            {
+              "selector": "#China > ul:nth-of-type(2)",
+              "tierOfficial": "Group B"
+            }
+          ],
+          "itemSelector": "li",
+          "guard": {
+            "minimumRecords": 80,
+            "maximumRecords": 180,
+            "maximumRemovalRatio": 0.1
+          }
+        },
+        "status": {
+          "sourceId": "cambridge-china",
+          "checkedAt": "2026-08-04T06:04:21.219Z",
+          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "health": "ok",
+          "finalUrl": "https://www.postgraduate.study.cam.ac.uk/apply/before/international-qualifications"
+        }
+      }
+    ],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-cambridge",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "exact",
+        "displayRank": "6",
+        "sortRank": 6
+      },
+      "the": {
+        "universityId": "university-of-cambridge",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "tied",
+        "displayRank": "=3",
+        "sortRank": 3
+      }
+    }
+  },
+  {
+    "id": "university-college-london",
+    "nameZh": "伦敦大学学院",
+    "nameEn": "UCL",
+    "aliases": [
+      "University College London"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "official-list",
+    "officialDomain": "https://www.ucl.ac.uk",
+    "sources": [
+      {
+        "id": "ucl-china",
+        "universityId": "university-college-london",
+        "labelZh": "中国研究生入学要求",
+        "url": "https://www.ucl.ac.uk/prospective-students/international/china",
+        "kind": "official-list",
+        "scope": "university",
+        "scopeZh": "学校面向中国申请人的研究生要求与院校表",
+        "cycle": "2026/27",
+        "institutionRule": {
+          "type": "grade-threshold",
+          "summaryZh": "中国本科院校会影响 UCL 的成绩门槛，不是能否申请的白名单。",
+          "listedMeaningZh": "名单内院校通常要求：2:1 对应均分 85%，2:2 对应 80%。",
+          "unlistedMeaningZh": "其他受中国教育部认可的院校仍可申请，通常要求：2:1 对应 90%，2:2 对应 85%。",
+          "caveatZh": "具体课程可能设更高要求，最终以课程页和学校最新说明为准。",
+          "verification": {
+            "reviewedAt": "2026-08-02",
+            "url": "https://www.ucl.ac.uk/prospective-students/international/china",
+            "requiredText": [
+              "2:1",
+              "2:2",
+              "80%",
+              "85%",
+              "90%"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "html-table",
+          "rowSelector": "table[width=\"2458\"] tbody > tr",
+          "institutionColumns": [
+            0,
+            1
+          ],
+          "defaultTierOfficial": "Applicants from the list of universities below",
+          "guard": {
+            "minimumRecords": 84,
+            "maximumRecords": 92,
+            "maximumRemovalRatio": 0.05
+          }
+        },
+        "status": {
+          "sourceId": "ucl-china",
+          "checkedAt": "2026-08-04T06:04:21.219Z",
+          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "health": "ok",
+          "finalUrl": "https://www.ucl.ac.uk/prospective-students/international/china"
+        }
+      }
+    ],
+    "rankings": {
+      "qs": {
+        "universityId": "university-college-london",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "tied",
+        "displayRank": "=8",
+        "sortRank": 8
+      },
+      "the": {
+        "universityId": "university-college-london",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "exact",
+        "displayRank": "22",
+        "sortRank": 22
+      }
+    }
+  },
+  {
+    "id": "university-of-edinburgh",
+    "nameZh": "爱丁堡大学",
+    "nameEn": "The University of Edinburgh",
+    "aliases": [
+      "Edinburgh"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "official-list",
+    "officialDomain": "https://ed.ac.uk",
+    "sources": [
+      {
+        "id": "edinburgh-china",
+        "universityId": "university-of-edinburgh",
+        "labelZh": "中国研究生入学要求",
+        "url": "https://edwebcontent.ed.ac.uk/sites/default/files/atoms/files/priority_list_of_chinese_universities.pdf",
+        "kind": "official-list",
+        "scope": "university",
+        "scopeZh": "学校面向中国申请人的研究生要求与优先院校表链接",
+        "institutionRule": {
+          "type": "mixed",
+          "summaryZh": "Priority List 同时影响部分成绩分档和部分 Band 的申请资格。",
+          "listedMeaningZh": "Band A/B 要求申请人来自 Priority List；Band C 对名单内院校采用较低成绩门槛。",
+          "unlistedMeaningZh": "名单外不等于全部不能申请；Band C/D 仍可能接受符合条件的院校背景。",
+          "caveatZh": "必须结合目标课程所属 Band 阅读，不能只看 Priority List。",
+          "verification": {
+            "reviewedAt": "2026-08-02",
+            "url": "https://www.ed.ac.uk/studying/international/postgraduate-entry/asia/china",
+            "requiredText": [
+              "Priority List",
+              "minimum grades between 80-85%",
+              "Band A",
+              "recognised university"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "pdf-text",
+          "headingPattern": "^Priority List of Chinese universities",
+          "rowPattern": "^([A-Z][A-Za-z' -]+(?:University|Academy|College|Institute|School|Conservatory))$",
+          "institutionColumn": 0,
+          "defaultTierOfficial": "Priority List of Chinese universities – October 2024",
+          "guard": {
+            "minimumRecords": 81,
+            "maximumRecords": 89,
+            "maximumRemovalRatio": 0.05
+          }
+        },
+        "status": {
+          "sourceId": "edinburgh-china",
+          "checkedAt": "2026-08-04T06:04:21.219Z",
+          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "health": "ok",
+          "finalUrl": "https://edwebcontent.ed.ac.uk/sites/default/files/atoms/files/priority_list_of_chinese_universities.pdf"
+        }
+      }
+    ],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-edinburgh",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "exact",
+        "displayRank": "35",
+        "sortRank": 35
+      },
+      "the": {
+        "universityId": "university-of-edinburgh",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "exact",
+        "displayRank": "29",
+        "sortRank": 29
+      }
+    }
+  },
+  {
+    "id": "kings-college-london",
+    "nameZh": "伦敦国王学院",
+    "nameEn": "King's College London",
+    "aliases": [
+      "King's"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "china-requirements",
+    "officialDomain": "https://www.kcl.ac.uk",
+    "sources": [
+      {
+        "id": "kcl-china",
+        "universityId": "kings-college-london",
+        "labelZh": "中国与全球化理学硕士中国学历要求",
+        "url": "https://www.kcl.ac.uk/study/postgraduate-taught/courses/china-and-globalisation-msc/requirements",
+        "kind": "china-requirements",
+        "scope": "programme",
+        "scopeZh": "中国与全球化理学硕士（2026 年 9 月入学）：在国际学历等值项中选择 China 后显示的要求",
+        "institutionRule": {
+          "type": "none",
+          "summaryZh": "仅适用于中国与全球化理学硕士：在“Equivalent International qualifications”中选择 China 后，Prestigious Institution 为 80%，Recognised Institution 为 85%。该页面完整名单未公开。",
+          "verification": {
+            "reviewedAt": "2026-08-02",
+            "url": "https://www.kcl.ac.uk/study/postgraduate-taught/courses/china-and-globalisation-msc/requirements",
+            "requiredText": [
+              "Equivalent International qualifications",
+              "China & Globalisation MSc",
+              "September 2026"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "link-only",
+          "guard": {
+            "minimumRecords": 0,
+            "maximumRecords": 1,
+            "maximumRemovalRatio": 0
+          }
+        },
+        "status": {
+          "sourceId": "kcl-china",
+          "checkedAt": "2026-08-04T06:04:21.219Z",
+          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.kcl.ac.uk/study/postgraduate-taught/courses/china-and-globalisation-msc/requirements",
+          "health": "changed",
+          "etag": "W/\"5c068-yRCPkFiZmY3tQtupnX5qXT/aS6w\""
+        }
+      }
+    ],
+    "rankings": {
+      "qs": {
+        "universityId": "kings-college-london",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "exact",
+        "displayRank": "37",
+        "sortRank": 37
+      },
+      "the": {
+        "universityId": "kings-college-london",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "exact",
+        "displayRank": "38",
+        "sortRank": 38
+      }
+    }
+  },
+  {
+    "id": "university-of-manchester",
+    "nameZh": "曼彻斯特大学",
+    "nameEn": "The University of Manchester",
+    "aliases": [
+      "Manchester"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "china-requirements",
+    "officialDomain": "https://manchester.ac.uk",
+    "sources": [
+      {
+        "id": "manchester-china",
+        "universityId": "university-of-manchester",
+        "labelZh": "中国大陆研究生入学要求",
+        "url": "https://www.manchester.ac.uk/study/international/country-specific-information/china-mainland/",
+        "kind": "china-requirements",
+        "scope": "university",
+        "scopeZh": "学校面向中国大陆申请人的研究生入学要求",
+        "institutionRule": {
+          "type": "none",
+          "summaryZh": "曼彻斯特大学中国要求说明本科院校背景会影响要求，但完整名单未公开。",
+          "verification": {
+            "reviewedAt": "2026-08-02",
+            "url": "https://www.manchester.ac.uk/study/international/country-specific-information/china-mainland/",
+            "requiredText": [
+              "China",
+              "entry requirements"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "link-only",
+          "guard": {
+            "minimumRecords": 0,
+            "maximumRecords": 1,
+            "maximumRemovalRatio": 0
+          }
+        },
+        "status": {
+          "sourceId": "manchester-china",
+          "checkedAt": "2026-08-04T06:04:21.219Z",
+          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.manchester.ac.uk/study/international/country-specific-information/china-mainland/",
+          "health": "ok"
+        }
+      },
+      {
+        "id": "manchester-computer-science-china",
+        "universityId": "university-of-manchester",
+        "labelZh": "计算机科学硕士中国入学要求",
+        "url": "https://www.manchester.ac.uk/study/masters/courses/list/21575/msc-cyber-security/",
+        "kind": "faculty-page",
+        "scope": "programme",
+        "scopeZh": "计算机科学硕士课程（2026 入学）",
+        "institutionRule": {
+          "type": "none",
+          "summaryZh": "计算机科学硕士页面说明中国四年制学士学位须来自 well ranked institution；完整名单未公开。",
+          "verification": {
+            "reviewedAt": "2026-08-02",
+            "url": "https://www.manchester.ac.uk/study/masters/courses/list/21575/msc-cyber-security/",
+            "requiredText": [
+              "China",
+              "well ranked institution",
+              "87%"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "link-only",
+          "guard": {
+            "minimumRecords": 0,
+            "maximumRecords": 1,
+            "maximumRemovalRatio": 0
+          }
+        },
+        "status": {
+          "sourceId": "manchester-computer-science-china",
+          "checkedAt": "2026-08-04T06:04:21.219Z",
+          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.manchester.ac.uk/study/masters/courses/list/21575/msc-cyber-security/",
+          "health": "ok"
+        }
+      },
+      {
+        "id": "manchester-law-china",
+        "universityId": "university-of-manchester",
+        "labelZh": "法学院中国研究生入学要求",
+        "url": "https://www.humanities.manchester.ac.uk/law/study/international-students/country-specific-information/china/",
+        "kind": "faculty-page",
+        "scope": "faculty",
+        "scopeZh": "人文学院法学中国研究生要求",
+        "institutionRule": {
+          "type": "none",
+          "summaryZh": "法学院中国要求以 well-ranked institution 为条件之一；完整名单未公开。",
+          "verification": {
+            "reviewedAt": "2026-08-02",
+            "url": "https://www.humanities.manchester.ac.uk/law/study/international-students/country-specific-information/china/",
+            "requiredText": [
+              "China",
+              "well-ranked institution",
+              "Master's entry requirements"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "link-only",
+          "guard": {
+            "minimumRecords": 0,
+            "maximumRecords": 1,
+            "maximumRemovalRatio": 0
+          }
+        },
+        "status": {
+          "sourceId": "manchester-law-china",
+          "checkedAt": "2026-08-04T06:04:21.219Z",
+          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.humanities.manchester.ac.uk/law/study/international-students/country-specific-information/china/",
+          "health": "ok"
+        }
+      }
+    ],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-manchester",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "tied",
+        "displayRank": "=40",
+        "sortRank": 40
+      },
+      "the": {
+        "universityId": "university-of-manchester",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "exact",
+        "displayRank": "56",
+        "sortRank": 56
+      }
+    }
+  },
+  {
+    "id": "university-of-bristol",
+    "nameZh": "布里斯托大学",
+    "nameEn": "University of Bristol",
+    "aliases": [
+      "Bristol"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "official-list",
+    "officialDomain": "https://www.bristol.ac.uk",
+    "sources": [
+      {
+        "id": "bristol-china",
+        "universityId": "university-of-bristol",
+        "labelZh": "中国研究生入学要求",
+        "url": "https://www.bristol.ac.uk/international/countries/china/accepted-universities-in-china/",
+        "kind": "official-list",
+        "scope": "university",
+        "scopeZh": "学校公布的中国可接受本科院校名单；个别课程仍有额外限制",
+        "institutionRule": {
+          "type": "eligibility",
+          "summaryZh": "布里斯托公布可接受的中国本科院校名单，课程限制仍须以目标课程页面为准。",
+          "listedMeaningZh": "列出的院校属于该官方页面公布的可接受中国院校范围。",
+          "unlistedMeaningZh": "未列出不应在本站被解读为个案申请结果；应直接向学校确认课程适用性。",
+          "caveatZh": "名单并不替代目标课程的具体入学要求。",
+          "verification": {
+            "reviewedAt": "2026-08-02",
+            "url": "https://www.bristol.ac.uk/international/countries/china/accepted-universities-in-china/",
+            "requiredText": [
+              "Accepted universities",
+              "China"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "html-table",
+          "rowSelector": ".table-filter tbody > tr",
+          "institutionColumn": 0,
+          "defaultTierOfficial": "Accepted Chinese universities",
+          "guard": {
+            "minimumRecords": 300,
+            "maximumRecords": 380,
+            "maximumRemovalRatio": 0.1
+          }
+        },
+        "status": {
+          "sourceId": "bristol-china",
+          "checkedAt": "2026-08-04T06:04:21.219Z",
+          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "health": "ok",
+          "finalUrl": "https://www.bristol.ac.uk/international/countries/china/accepted-universities-in-china/"
+        }
+      }
+    ],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-bristol",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "exact",
+        "displayRank": "57",
+        "sortRank": 57
+      },
+      "the": {
+        "universityId": "university-of-bristol",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "tied",
+        "displayRank": "=80",
+        "sortRank": 80
+      }
+    }
+  },
+  {
+    "id": "london-school-of-economics-and-political-science",
+    "nameZh": "伦敦政治经济学院",
+    "nameEn": "The London School of Economics and Political Science (LSE)",
+    "aliases": [
+      "LSE"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "china-requirements",
+    "officialDomain": "https://www.lse.ac.uk",
+    "sources": [
+      {
+        "id": "lse-china",
+        "universityId": "london-school-of-economics-and-political-science",
+        "labelZh": "研究生国际学历要求",
+        "url": "https://www.lse.ac.uk/study-at-lse/international-students/china",
+        "kind": "china-requirements",
+        "scope": "university",
+        "scopeZh": "学校研究生国际学历要求",
+        "institutionRule": {
+          "type": "none",
+          "summaryZh": "LSE 的中国研究生学历要求会参考本科院校背景，但未公开完整的中国院校名称名单。",
+          "verification": {
+            "reviewedAt": "2026-08-02",
+            "url": "https://www.lse.ac.uk/study-at-lse/international-students/china",
+            "requiredText": [
+              "China",
+              "Graduate entry requirements"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "link-only",
+          "guard": {
+            "minimumRecords": 0,
+            "maximumRecords": 1,
+            "maximumRemovalRatio": 0
+          }
+        },
+        "status": {
+          "sourceId": "lse-china",
+          "checkedAt": "2026-08-04T06:04:21.219Z",
+          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.lse.ac.uk/study-at-lse/international-students/china",
+          "health": "changed",
+          "etag": "W/\"53cd0-rgxXlw+k2kus7Kk/gD+uBM7dn3Q\""
+        }
+      }
+    ],
+    "rankings": {
+      "qs": {
+        "universityId": "london-school-of-economics-and-political-science",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "exact",
+        "displayRank": "62",
+        "sortRank": 62
+      },
+      "the": {
+        "universityId": "london-school-of-economics-and-political-science",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "exact",
+        "displayRank": "52",
+        "sortRank": 52
+      }
+    }
+  },
+  {
+    "id": "university-of-warwick",
+    "nameZh": "华威大学",
+    "nameEn": "University of Warwick",
+    "aliases": [
+      "Warwick"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "official-list",
+    "officialDomain": "https://warwick.ac.uk",
+    "sources": [
+      {
+        "id": "warwick-china",
+        "universityId": "university-of-warwick",
+        "labelZh": "中国研究生入学要求",
+        "url": "https://warwick.ac.uk/study/international/countryinformation/eastasia/china/china-entry-requirements/",
+        "kind": "official-list",
+        "scope": "university",
+        "scopeZh": "学校面向中国申请人的研究生院校名单及课程相关要求",
+        "institutionRule": {
+          "type": "eligibility",
+          "summaryZh": "华威说明只考虑其官方页面列出的中国大学，且不同课程可能有不同要求。",
+          "listedMeaningZh": "列出的中国大学是该页面所述会被考虑的院校。",
+          "unlistedMeaningZh": "未列出的院校不应被本站当作符合该名单条件；请向学校核对课程要求。",
+          "caveatZh": "课程和学院可另设要求。",
+          "verification": {
+            "reviewedAt": "2026-08-02",
+            "url": "https://warwick.ac.uk/study/international/countryinformation/eastasia/china/china-entry-requirements/",
+            "requiredText": [
+              "China",
+              "only consider",
+              "universities"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "html-table",
+          "tableIndex": 3,
+          "rowSelector": "tbody > tr",
+          "institutionColumn": 0,
+          "scoreColumn": 1,
+          "splitOnBreaks": true,
+          "defaultTierOfficial": "Postgraduate institution requirements",
+          "guard": {
+            "minimumRecords": 250,
+            "maximumRecords": 450,
+            "maximumRemovalRatio": 0.1
+          }
+        },
+        "status": {
+          "sourceId": "warwick-china",
+          "checkedAt": "2026-08-04T06:04:21.219Z",
+          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "health": "ok",
+          "finalUrl": "https://warwick.ac.uk/study/international/countryinformation/eastasia/china/china-entry-requirements/"
+        }
+      }
+    ],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-warwick",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "tied",
+        "displayRank": "=68",
+        "sortRank": 68
+      },
+      "the": {
+        "universityId": "university-of-warwick",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "tied",
+        "displayRank": "=122",
+        "sortRank": 122
+      }
+    }
+  },
+  {
+    "id": "university-of-birmingham",
+    "nameZh": "伯明翰大学",
+    "nameEn": "University of Birmingham",
+    "aliases": [
+      "Birmingham"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "china-requirements",
+    "officialDomain": "https://www.birmingham.ac.uk",
+    "sources": [
+      {
+        "id": "birmingham-china",
+        "universityId": "university-of-birmingham",
+        "labelZh": "中国研究生入学要求",
+        "url": "https://www.birmingham.ac.uk/study/international/country/china",
+        "kind": "china-requirements",
+        "scope": "university",
+        "scopeZh": "学校中国研究生分组要求说明（未公开分组院校名册）",
+        "institutionRule": {
+          "type": "none",
+          "summaryZh": "伯明翰的中国要求使用院校背景分组，但未公开完整的中国院校名称名单。",
+          "verification": {
+            "reviewedAt": "2026-08-02",
+            "url": "https://www.birmingham.ac.uk/study/international/country/china",
+            "requiredText": [
+              "China",
+              "postgraduate"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "link-only",
+          "guard": {
+            "minimumRecords": 0,
+            "maximumRecords": 1,
+            "maximumRemovalRatio": 0
+          }
+        },
+        "status": {
+          "sourceId": "birmingham-china",
+          "checkedAt": "2026-08-04T06:04:21.219Z",
+          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.birmingham.ac.uk/study/international/country/china",
+          "health": "ok"
+        }
+      }
+    ],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-birmingham",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "tied",
+        "displayRank": "=68",
+        "sortRank": 68
+      },
+      "the": {
+        "universityId": "university-of-birmingham",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "tied",
+        "displayRank": "=98",
+        "sortRank": 98
+      }
+    }
+  },
+  {
+    "id": "university-of-leeds",
+    "nameZh": "利兹大学",
+    "nameEn": "University of Leeds",
+    "aliases": [
+      "Leeds"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "china-requirements",
+    "officialDomain": "https://www.leeds.ac.uk",
+    "sources": [
+      {
+        "id": "leeds-china",
+        "universityId": "university-of-leeds",
+        "labelZh": "中国研究生入学要求",
+        "url": "https://www.leeds.ac.uk/dir-record/profiles/21834/china",
+        "kind": "china-requirements",
+        "scope": "university",
+        "scopeZh": "学校面向中国申请人的研究生要求",
+        "institutionRule": {
+          "type": "none",
+          "summaryZh": "利兹说明不同学院可采用不同的本科院校标准；未发现可作为当前全校结论的完整名单，旧申请季学院 PDF 仅作历史资料。",
+          "verification": {
+            "reviewedAt": "2026-08-02",
+            "url": "https://www.leeds.ac.uk/dir-record/profiles/21834/china",
+            "requiredText": [
+              "China",
+              "postgraduate"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "link-only",
+          "guard": {
+            "minimumRecords": 0,
+            "maximumRecords": 1,
+            "maximumRemovalRatio": 0
+          }
+        },
+        "status": {
+          "sourceId": "leeds-china",
+          "checkedAt": "2026-08-04T06:04:21.219Z",
+          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.leeds.ac.uk/dir-record/profiles/21834/china",
+          "health": "ok"
+        }
+      }
+    ],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-leeds",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "tied",
+        "displayRank": "=77",
+        "sortRank": 77
+      },
+      "the": {
+        "universityId": "university-of-leeds",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "exact",
+        "displayRank": "118",
+        "sortRank": 118
+      }
+    }
+  },
+  {
+    "id": "university-of-glasgow",
+    "nameZh": "格拉斯哥大学",
+    "nameEn": "University of Glasgow",
+    "aliases": [
+      "Glasgow"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "official-list",
+    "officialDomain": "https://www.gla.ac.uk",
+    "sources": [
+      {
+        "id": "glasgow-china",
+        "universityId": "university-of-glasgow",
+        "labelZh": "中国研究生入学要求",
+        "url": "https://www.gla.ac.uk/media/Media_1221495_smxx.pdf",
+        "kind": "official-list",
+        "scope": "university",
+        "scopeZh": "学校 2026 中国研究生申请可接受院校及 2:1/2:2 成绩要求",
+        "institutionRule": {
+          "type": "eligibility",
+          "summaryZh": "格拉斯哥 2026 官方 PDF 说明只考虑名单中的中国大学，并同时列出相应成绩要求。",
+          "listedMeaningZh": "名单中的中国大学适用 PDF 所列 2:1/2:2 成绩要求。",
+          "unlistedMeaningZh": "未列入该 PDF 的院校不应由本站推断为符合该名单。",
+          "caveatZh": "请同时核对目标课程的具体要求。",
+          "verification": {
+            "reviewedAt": "2026-08-02",
+            "url": "https://www.gla.ac.uk/media/Media_1221495_smxx.pdf",
+            "requiredText": [
+              "China",
+              "2:1",
+              "2:2"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "pdf-text",
+          "headingPattern": "^University of Glasgow Accepted Chinese University List 2026$",
+          "rowPattern": "^(.+?)([\\u3400-\\u9FFF\\uF900-\\uFAFF（）()\\-–]+)\\s+(GPA\\s+\\d+(?:\\.\\d+)?|\\d+%)\\s+(GPA\\s+\\d+(?:\\.\\d+)?|\\d+%)\\s+([A-Z]+)$",
+          "institutionColumn": 0,
+          "nameZhColumn": 1,
+          "scoreColumns": [
+            {
+              "label": "2:1",
+              "column": 2
+            },
+            {
+              "label": "2:2",
+              "column": 3
+            }
+          ],
+          "tierColumn": 4,
+          "guard": {
+            "minimumRecords": 500,
+            "maximumRecords": 950,
+            "maximumRemovalRatio": 0.1
+          }
+        },
+        "status": {
+          "sourceId": "glasgow-china",
+          "checkedAt": "2026-08-04T06:04:21.219Z",
+          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "health": "ok",
+          "finalUrl": "https://www.gla.ac.uk/media/Media_1221495_smxx.pdf"
+        }
+      }
+    ],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-glasgow",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "exact",
+        "displayRank": "80",
+        "sortRank": 80
+      },
+      "the": {
+        "universityId": "university-of-glasgow",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "exact",
+        "displayRank": "84",
+        "sortRank": 84
+      }
+    }
+  },
+  {
+    "id": "university-of-sheffield",
+    "nameZh": "谢菲尔德大学",
+    "nameEn": "The University of Sheffield",
+    "aliases": [
+      "Sheffield"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "official-list",
+    "officialDomain": "https://sheffield.ac.uk",
+    "sources": [
+      {
+        "id": "sheffield-china",
+        "universityId": "university-of-sheffield",
+        "labelZh": "中国研究生入学要求",
+        "url": "https://sheffield.ac.uk/international/entry-requirements/china/ranking-list",
+        "kind": "official-list",
+        "scope": "university",
+        "scopeZh": "学校面向中国申请人的双语院校查询表及 2:1/2:2 成绩门槛",
+        "institutionRule": {
+          "type": "grade-threshold",
+          "summaryZh": "谢菲尔德公开中英文院校查询表；院校分组对应 2:1 和 2:2 的成绩门槛。",
+          "listedMeaningZh": "查询表中的院校适用该行公布的 2:1/2:2 成绩门槛。",
+          "unlistedMeaningZh": "未在表中找到不应被本站解读为录取结论；请直接核对学校最新要求。",
+          "caveatZh": "目标课程可有额外或更高要求。",
+          "verification": {
+            "reviewedAt": "2026-08-02",
+            "url": "https://sheffield.ac.uk/international/entry-requirements/china/ranking-list",
+            "requiredText": [
+              "China",
+              "2:1",
+              "2:2"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "html-table",
+          "rowSelector": "tbody > tr",
+          "institutionColumn": 0,
+          "nameZhColumn": 1,
+          "scoreColumns": [
+            {
+              "label": "2:1",
+              "column": 2
+            },
+            {
+              "label": "2:2",
+              "column": 3
+            }
+          ],
+          "defaultTierOfficial": "China ranking list",
+          "dedupeExactRows": true,
+          "allowMultipleFactsPerInstitution": true,
+          "guard": {
+            "minimumRecords": 2800,
+            "maximumRecords": 3200,
+            "maximumRemovalRatio": 0.1
+          }
+        },
+        "status": {
+          "sourceId": "sheffield-china",
+          "checkedAt": "2026-08-04T06:04:21.219Z",
+          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "health": "ok",
+          "finalUrl": "https://sheffield.ac.uk/international/entry-requirements/china/ranking-list"
+        }
+      }
+    ],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-sheffield",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "tied",
+        "displayRank": "=82",
+        "sortRank": 82
+      },
+      "the": {
+        "universityId": "university-of-sheffield",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "tied",
+        "displayRank": "=108",
+        "sortRank": 108
+      }
+    }
+  },
+  {
+    "id": "durham-university",
+    "nameZh": "杜伦大学",
+    "nameEn": "Durham University",
+    "aliases": [
+      "Durham"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "not-public",
+    "officialDomain": "https://www.durham.ac.uk",
+    "sources": [
+      {
+        "id": "durham-china",
+        "universityId": "durham-university",
+        "labelZh": "中国研究生入学要求",
+        "url": "https://www.durham.ac.uk/study/international/your-country/china/",
+        "kind": "china-requirements",
+        "scope": "university",
+        "scopeZh": "学校面向中国申请人的研究生要求",
+        "institutionRule": {
+          "type": "none",
+          "summaryZh": "杜伦的中国研究生要求页面存在，但本轮未发现当前公开的选择性中国本科院校名单或明确分档表。",
+          "verification": {
+            "reviewedAt": "2026-08-02",
+            "url": "https://www.durham.ac.uk/study/international/your-country/china/",
+            "requiredText": [
+              "China",
+              "postgraduate"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "link-only",
+          "guard": {
+            "minimumRecords": 0,
+            "maximumRecords": 1,
+            "maximumRemovalRatio": 0
+          }
+        },
+        "status": {
+          "sourceId": "durham-china",
+          "checkedAt": "2026-08-04T06:04:21.219Z",
+          "httpStatus": 403,
+          "finalUrl": "https://www.durham.ac.uk/study/international/your-country/china/",
+          "health": "unavailable"
+        }
+      }
+    ],
+    "rankings": {
+      "qs": {
+        "universityId": "durham-university",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "exact",
+        "displayRank": "85",
+        "sortRank": 85
+      },
+      "the": {
+        "universityId": "durham-university",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "exact",
+        "displayRank": "175",
+        "sortRank": 175
+      }
+    }
+  },
+  {
+    "id": "university-of-nottingham",
+    "nameZh": "诺丁汉大学",
+    "nameEn": "University of Nottingham",
+    "aliases": [
+      "Nottingham"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "official-list",
+    "officialDomain": "https://www.nottingham.ac.uk",
+    "sources": [
+      {
+        "id": "nottingham-china",
+        "universityId": "university-of-nottingham",
+        "labelZh": "中国研究生入学要求",
+        "url": "https://www.nottingham.ac.uk/studywithus/international-applicants/country-info/countryinformation/china-institution-list.aspx",
+        "kind": "official-list",
+        "scope": "university",
+        "scopeZh": "学校授课型硕士的中国 Tier 1/Tier 2 双语院校表；法学院另有要求",
+        "institutionRule": {
+          "type": "grade-threshold",
+          "summaryZh": "诺丁汉公布 Tier 1/Tier 2 中英文院校表，对应成绩要求；法学院规则另行适用。",
+          "listedMeaningZh": "Tier 1/Tier 2 表中院校适用对应的官方成绩门槛。",
+          "unlistedMeaningZh": "未列出不应被本站外推为课程结果，尤其不适用于法学院另行要求。",
+          "caveatZh": "此来源范围为授课型硕士，法学院另有要求。",
+          "verification": {
+            "reviewedAt": "2026-08-02",
+            "url": "https://www.nottingham.ac.uk/studywithus/international-applicants/country-info/countryinformation/china-institution-list.aspx",
+            "requiredText": [
+              "Tier 1",
+              "Tier 2",
+              "China"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "html-table",
+          "tableIndex": 0,
+          "rowSelector": "tbody > tr:nth-of-type(2), tbody > tr:nth-of-type(3)",
+          "institutionColumn": 1,
+          "tierColumn": 0,
+          "itemSelector": "p",
+          "institutionPattern": "^(?<institutionNameZh>[^,]+?)(?:,|\\s+)\\s*(?<institutionOfficial>[A-Z][^,]+)",
+          "guard": {
+            "minimumRecords": 150,
+            "maximumRecords": 220,
+            "maximumRemovalRatio": 0.1
+          }
+        },
+        "status": {
+          "sourceId": "nottingham-china",
+          "checkedAt": "2026-08-04T06:04:21.219Z",
+          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "health": "ok",
+          "finalUrl": "https://www.nottingham.ac.uk/studywithus/international-applicants/country-info/countryinformation/china-institution-list.aspx"
+        }
+      }
+    ],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-nottingham",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "tied",
+        "displayRank": "=97",
+        "sortRank": 97
+      },
+      "the": {
+        "universityId": "university-of-nottingham",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "tied",
+        "displayRank": "=145",
+        "sortRank": 145
+      }
+    }
+  },
+  {
+    "id": "queen-mary-university-of-london",
+    "nameZh": "伦敦玛丽女王大学",
+    "nameEn": "Queen Mary University of London",
+    "aliases": [
+      "QMUL"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "china-requirements",
+    "officialDomain": "https://www.qmul.ac.uk",
+    "sources": [
+      {
+        "id": "qmul-china",
+        "universityId": "queen-mary-university-of-london",
+        "labelZh": "中国研究生入学要求",
+        "url": "https://www.qmul.ac.uk/international-students/regions/east-asia/entry-requirements/mainland-china/",
+        "kind": "china-requirements",
+        "scope": "university",
+        "scopeZh": "学校面向中国申请人的研究生要求",
+        "institutionRule": {
+          "type": "none",
+          "summaryZh": "玛丽女王大学的中国研究生要求会参考本科院校背景，但未公开完整的中国院校名称名单。",
+          "verification": {
+            "reviewedAt": "2026-08-02",
+            "url": "https://www.qmul.ac.uk/international-students/regions/east-asia/entry-requirements/mainland-china/",
+            "requiredText": [
+              "China",
+              "postgraduate"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "link-only",
+          "guard": {
+            "minimumRecords": 0,
+            "maximumRecords": 1,
+            "maximumRemovalRatio": 0
+          }
+        },
+        "status": {
+          "sourceId": "qmul-china",
+          "checkedAt": "2026-08-04T06:04:21.219Z",
+          "httpStatus": 403,
+          "finalUrl": "https://www.qmul.ac.uk/international-students/regions/east-asia/entry-requirements/mainland-china/",
+          "health": "unavailable"
+        }
+      }
+    ],
+    "rankings": {
+      "qs": {
+        "universityId": "queen-mary-university-of-london",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "exact",
+        "displayRank": "103",
+        "sortRank": 103
+      },
+      "the": {
+        "universityId": "queen-mary-university-of-london",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "tied",
+        "displayRank": "=134",
+        "sortRank": 134
+      }
+    }
+  },
+  {
+    "id": "university-of-southampton",
+    "nameZh": "南安普顿大学",
+    "nameEn": "University of Southampton",
+    "aliases": [
+      "Southampton"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "official-list",
+    "officialDomain": "https://www.southampton.ac.uk",
+    "sources": [
+      {
+        "id": "southampton-china",
+        "universityId": "university-of-southampton",
+        "labelZh": "中国院校 Tier 名单",
+        "url": "https://www.southampton.ac.uk/international/entry-qualification-equivalencies/china/postgraduate-taught-tier-list",
+        "kind": "official-list",
+        "scope": "university",
+        "scopeZh": "学校中国研究生要求及院校层级链接",
+        "cycle": "2025/26",
+        "institutionRule": {
+          "type": "grade-threshold",
+          "summaryZh": "中国院校所属 Tier 决定对应的最低成绩要求。",
+          "listedMeaningZh": "官网名单将院校分为 Tier A、B、C。",
+          "unlistedMeaningZh": "未出现在名单中的院校按 Tier D 评估，仍不代表自动拒绝。",
+          "caveatZh": "本站展示最近一次成功提取的院校与分档记录；院校名称或 Tier 可能更新，最终请以大学官网当前页面为准。",
+          "verification": {
+            "reviewedAt": "2026-08-02",
+            "url": "https://www.southampton.ac.uk/international/entry-qualification-equivalencies/china/postgraduate-taught-tier-list",
+            "requiredText": [
+              "Tier A",
+              "Tier B",
+              "Tier C",
+              "Tier D"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "html-grouped-items",
+          "groups": [
+            {
+              "selector": "section.accordion-item:nth-of-type(1)",
+              "tierSelector": "button"
+            },
+            {
+              "selector": "section.accordion-item:nth-of-type(2)",
+              "tierSelector": "button"
+            },
+            {
+              "selector": "section.accordion-item:nth-of-type(3)",
+              "tierSelector": "button"
+            }
+          ],
+          "itemSelector": ".copy ul > li",
+          "institutionPattern": "^(?<institutionNameZh>[^A-Z]+?)\\s*(?<institutionOfficial>[A-Z].+)$",
+          "guard": {
+            "minimumRecords": 500,
+            "maximumRecords": 1100,
+            "maximumRemovalRatio": 0.1
+          }
+        },
+        "status": {
+          "sourceId": "southampton-china",
+          "checkedAt": "2026-08-04T06:04:21.219Z",
+          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "health": "ok",
+          "finalUrl": "https://www.southampton.ac.uk/international/entry-qualification-equivalencies/china/postgraduate-taught-tier-list"
+        }
+      }
+    ],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-southampton",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "tied",
+        "displayRank": "=111",
+        "sortRank": 111
+      },
+      "the": {
+        "universityId": "university-of-southampton",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "exact",
+        "displayRank": "129",
+        "sortRank": 129
+      }
+    }
+  },
+  {
+    "id": "university-of-st-andrews",
+    "nameZh": "圣安德鲁斯大学",
+    "nameEn": "University of St Andrews",
+    "aliases": [
+      "St Andrews"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "china-requirements",
+    "officialDomain": "https://www.st-andrews.ac.uk",
+    "sources": [
+      {
+        "id": "st-andrews-china",
+        "universityId": "university-of-st-andrews",
+        "labelZh": "中国研究生入学要求",
+        "url": "https://www.st-andrews.ac.uk/subjects/entry/china/",
+        "kind": "china-requirements",
+        "scope": "university",
+        "scopeZh": "学校面向中国申请人的研究生要求",
+        "institutionRule": {
+          "type": "none",
+          "summaryZh": "圣安德鲁斯的中国研究生学历要求会参考本科院校背景，但未公开完整的中国院校名称名单。",
+          "verification": {
+            "reviewedAt": "2026-08-02",
+            "url": "https://www.st-andrews.ac.uk/subjects/entry/china/",
+            "requiredText": [
+              "China",
+              "Postgraduate"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "link-only",
+          "guard": {
+            "minimumRecords": 0,
+            "maximumRecords": 1,
+            "maximumRemovalRatio": 0
+          }
+        },
+        "status": {
+          "sourceId": "st-andrews-china",
+          "checkedAt": "2026-08-04T06:04:21.219Z",
+          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.st-andrews.ac.uk/subjects/entry/china/",
+          "health": "ok"
+        }
+      }
+    ],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-st-andrews",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "tied",
+        "displayRank": "=115",
+        "sortRank": 115
+      },
+      "the": {
+        "universityId": "university-of-st-andrews",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "tied",
+        "displayRank": "=162",
+        "sortRank": 162
+      }
+    }
+  },
+  {
+    "id": "university-of-bath",
+    "nameZh": "巴斯大学",
+    "nameEn": "University of Bath",
+    "aliases": [
+      "Bath"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "not-public",
+    "officialDomain": "https://www.bath.ac.uk",
+    "sources": [
+      {
+        "id": "bath-china",
+        "universityId": "university-of-bath",
+        "labelZh": "中国研究生入学要求",
+        "url": "https://www.bath.ac.uk/corporate-information/entry-requirements-for-international-students/",
+        "kind": "china-requirements",
+        "scope": "university",
+        "scopeZh": "学校国际学历要求中的中国章节",
+        "institutionRule": {
+          "type": "none",
+          "summaryZh": "巴斯的国际学历要求页面存在，但本轮未发现当前公开的选择性中国本科院校名单；课程要求仍以课程页为准。",
+          "verification": {
+            "reviewedAt": "2026-08-02",
+            "url": "https://www.bath.ac.uk/corporate-information/entry-requirements-for-international-students/",
+            "requiredText": [
+              "international",
+              "entry requirements"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "link-only",
+          "guard": {
+            "minimumRecords": 0,
+            "maximumRecords": 1,
+            "maximumRemovalRatio": 0
+          }
+        },
+        "status": {
+          "sourceId": "bath-china",
+          "checkedAt": "2026-08-04T06:04:21.219Z",
+          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.bath.ac.uk/corporate-information/entry-requirements-for-international-students/",
+          "health": "ok"
+        }
+      }
+    ],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-bath",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "exact",
+        "displayRank": "125",
+        "sortRank": 125
+      },
+      "the": {
+        "universityId": "university-of-bath",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "251–300",
+        "sortRank": 251
+      }
+    }
+  },
+  {
+    "id": "university-of-exeter",
+    "nameZh": "埃克塞特大学",
+    "nameEn": "University of Exeter",
+    "aliases": [
+      "Exeter"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "not-public",
+    "officialDomain": "https://www.exeter.ac.uk",
+    "sources": [
+      {
+        "id": "exeter-china",
+        "universityId": "university-of-exeter",
+        "labelZh": "中国研究生入学要求",
+        "url": "https://www.exeter.ac.uk/international-students/china/",
+        "kind": "china-requirements",
+        "scope": "university",
+        "scopeZh": "学校面向中国申请人的研究生要求",
+        "institutionRule": {
+          "type": "none",
+          "summaryZh": "2026 年埃克塞特已取消原有国内大学排名要求，接受所有中国教育部认可的学士学位院校，并统一采用 75%（2:1）/70%（2:2）门槛。",
+          "verification": {
+            "reviewedAt": "2026-08-02",
+            "url": "https://www.exeter.ac.uk/international-students/china/",
+            "requiredText": [
+              "China",
+              "75%",
+              "70%"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "link-only",
+          "guard": {
+            "minimumRecords": 0,
+            "maximumRecords": 1,
+            "maximumRemovalRatio": 0
+          }
+        },
+        "status": {
+          "sourceId": "exeter-china",
+          "checkedAt": "2026-08-04T06:04:21.219Z",
+          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "httpStatus": 304,
+          "finalUrl": "https://www.exeter.ac.uk/international-students/china/",
+          "health": "ok",
+          "lastModified": "Tue, 28 Jul 2026 00:00:00 GMT"
+        }
+      }
+    ],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-exeter",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "exact",
+        "displayRank": "136",
+        "sortRank": 136
+      },
+      "the": {
+        "universityId": "university-of-exeter",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "tied",
+        "displayRank": "=170",
+        "sortRank": 170
+      }
+    }
+  },
+  {
+    "id": "university-of-liverpool",
+    "nameZh": "利物浦大学",
+    "nameEn": "University of Liverpool",
+    "aliases": [
+      "Liverpool"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "china-requirements",
+    "officialDomain": "https://www.liverpool.ac.uk",
+    "sources": [
+      {
+        "id": "liverpool-china",
+        "universityId": "university-of-liverpool",
+        "labelZh": "中国研究生入学要求",
+        "url": "https://www.liverpool.ac.uk/international/countries/chinamainland.php",
+        "kind": "china-requirements",
+        "scope": "university",
+        "scopeZh": "学校面向中国申请人的研究生要求",
+        "institutionRule": {
+          "type": "none",
+          "summaryZh": "利物浦的中国研究生要求会参考本科院校背景，但未公开完整的中国院校名称名单。",
+          "verification": {
+            "reviewedAt": "2026-08-02",
+            "url": "https://www.liverpool.ac.uk/international/countries/chinamainland.php",
+            "requiredText": [
+              "China",
+              "postgraduate"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "link-only",
+          "guard": {
+            "minimumRecords": 0,
+            "maximumRecords": 1,
+            "maximumRemovalRatio": 0
+          }
+        },
+        "status": {
+          "sourceId": "liverpool-china",
+          "checkedAt": "2026-08-04T06:04:21.219Z",
+          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.liverpool.ac.uk/international/countries/chinamainland.php",
+          "health": "ok"
+        }
+      }
+    ],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-liverpool",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "exact",
+        "displayRank": "139",
+        "sortRank": 139
+      },
+      "the": {
+        "universityId": "university-of-liverpool",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "exact",
+        "displayRank": "143",
+        "sortRank": 143
+      }
+    }
+  },
+  {
+    "id": "newcastle-university",
+    "nameZh": "纽卡斯尔大学",
+    "nameEn": "Newcastle University",
+    "aliases": [
+      "Newcastle"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "china-requirements",
+    "officialDomain": "https://www.ncl.ac.uk",
+    "sources": [
+      {
+        "id": "newcastle-china",
+        "universityId": "newcastle-university",
+        "labelZh": "中国研究生入学要求",
+        "url": "https://www.ncl.ac.uk/international/country/china/",
+        "kind": "china-requirements",
+        "scope": "university",
+        "scopeZh": "学校面向中国申请人的研究生要求",
+        "institutionRule": {
+          "type": "none",
+          "summaryZh": "纽卡斯尔的中国研究生要求会参考本科院校背景，但未公开完整的中国院校名称名单。",
+          "verification": {
+            "reviewedAt": "2026-08-02",
+            "url": "https://www.ncl.ac.uk/international/country/china/",
+            "requiredText": [
+              "China",
+              "postgraduate"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "link-only",
+          "guard": {
+            "minimumRecords": 0,
+            "maximumRecords": 1,
+            "maximumRemovalRatio": 0
+          }
+        },
+        "status": {
+          "sourceId": "newcastle-china",
+          "checkedAt": "2026-08-04T06:04:21.219Z",
+          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.ncl.ac.uk/international/country/china/",
+          "health": "ok",
+          "etag": "\"1dd10-6575ce6c1aadb-gzip\"",
+          "lastModified": "Fri, 24 Jul 2026 15:19:40 GMT"
+        }
+      }
+    ],
+    "rankings": {
+      "qs": {
+        "universityId": "newcastle-university",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "exact",
+        "displayRank": "149",
+        "sortRank": 149
+      },
+      "the": {
+        "universityId": "newcastle-university",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "exact",
+        "displayRank": "144",
+        "sortRank": 144
+      }
+    }
+  },
+  {
+    "id": "university-of-york",
+    "nameZh": "约克大学",
+    "nameEn": "University of York",
+    "aliases": [
+      "York"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "china-requirements",
+    "officialDomain": "https://www.york.ac.uk",
+    "sources": [
+      {
+        "id": "york-china",
+        "universityId": "university-of-york",
+        "labelZh": "中国研究生入学要求",
+        "url": "https://www.york.ac.uk/study/international/your-country/china/",
+        "kind": "china-requirements",
+        "scope": "university",
+        "scopeZh": "学校面向中国申请人的研究生要求",
+        "institutionRule": {
+          "type": "none",
+          "summaryZh": "约克的中国研究生要求会参考本科院校背景，但未公开完整的中国院校名称名单。",
+          "verification": {
+            "reviewedAt": "2026-08-02",
+            "url": "https://www.york.ac.uk/study/international/your-country/china/",
+            "requiredText": [
+              "China",
+              "postgraduate"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "link-only",
+          "guard": {
+            "minimumRecords": 0,
+            "maximumRecords": 1,
+            "maximumRemovalRatio": 0
+          }
+        },
+        "status": {
+          "sourceId": "york-china",
+          "checkedAt": "2026-08-04T06:04:21.219Z",
+          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.york.ac.uk/study/international/your-country/china/",
+          "health": "changed",
+          "etag": "\"130a7-6582ca72c0cb7-gzip\"",
+          "lastModified": "Mon, 03 Aug 2026 23:11:06 GMT"
+        }
+      }
+    ],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-york",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "tied",
+        "displayRank": "=158",
+        "sortRank": 158
+      },
+      "the": {
+        "universityId": "university-of-york",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "tied",
+        "displayRank": "=154",
+        "sortRank": 154
+      }
+    }
+  },
+  {
+    "id": "lancaster-university",
+    "nameZh": "兰卡斯特大学",
+    "nameEn": "Lancaster University",
+    "aliases": [
+      "Lancaster"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "china-requirements",
+    "officialDomain": "https://www.lancaster.ac.uk",
+    "sources": [
+      {
+        "id": "lancaster-china",
+        "universityId": "lancaster-university",
+        "labelZh": "中国研究生入学要求",
+        "url": "https://www.lancaster.ac.uk/study/entry-requirements/postgraduate-qualifications/?country=China",
+        "kind": "china-requirements",
+        "scope": "university",
+        "scopeZh": "学校中国研究生学历等值要求",
+        "cycle": "2026",
+        "institutionRule": {
+          "type": "none",
+          "summaryZh": "兰卡斯特的中国研究生学历要求会参考本科院校背景，但未公开完整的中国院校名称名单。",
+          "verification": {
+            "reviewedAt": "2026-08-02",
+            "url": "https://www.lancaster.ac.uk/study/entry-requirements/postgraduate-qualifications/?country=China",
+            "requiredText": [
+              "China",
+              "postgraduate"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "link-only",
+          "guard": {
+            "minimumRecords": 0,
+            "maximumRecords": 1,
+            "maximumRemovalRatio": 0
+          }
+        },
+        "status": {
+          "sourceId": "lancaster-china",
+          "checkedAt": "2026-08-04T06:04:21.219Z",
+          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.lancaster.ac.uk/study/entry-requirements/postgraduate-qualifications/?country=China",
+          "health": "ok"
+        }
+      }
+    ],
+    "rankings": {
+      "qs": {
+        "universityId": "lancaster-university",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "exact",
+        "displayRank": "164",
+        "sortRank": 164
+      },
+      "the": {
+        "universityId": "lancaster-university",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "tied",
+        "displayRank": "=184",
+        "sortRank": 184
+      }
+    }
+  },
+  {
+    "id": "queens-university-belfast",
+    "nameZh": "贝尔法斯特女王大学",
+    "nameEn": "Queen's University Belfast",
+    "aliases": [
+      "QUB"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "china-requirements",
+    "officialDomain": "https://www.qub.ac.uk",
+    "sources": [
+      {
+        "id": "qub-china",
+        "universityId": "queens-university-belfast",
+        "labelZh": "中国研究生入学要求",
+        "url": "https://www.qub.ac.uk/Study/international-students/your-country/china/",
+        "kind": "china-requirements",
+        "scope": "university",
+        "scopeZh": "学校面向中国申请人的研究生要求",
+        "institutionRule": {
+          "type": "none",
+          "summaryZh": "贝尔法斯特女王大学的中国研究生要求会参考本科院校背景，但未公开完整的中国院校名称名单。",
+          "verification": {
+            "reviewedAt": "2026-08-02",
+            "url": "https://www.qub.ac.uk/Study/international-students/your-country/china/",
+            "requiredText": [
+              "China",
+              "postgraduate"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "link-only",
+          "guard": {
+            "minimumRecords": 0,
+            "maximumRecords": 1,
+            "maximumRemovalRatio": 0
+          }
+        },
+        "status": {
+          "sourceId": "qub-china",
+          "checkedAt": "2026-08-04T06:04:21.219Z",
+          "httpStatus": 403,
+          "finalUrl": "https://www.qub.ac.uk/Study/international-students/your-country/china/",
+          "health": "unavailable"
+        }
+      }
+    ],
+    "rankings": {
+      "qs": {
+        "universityId": "queens-university-belfast",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "tied",
+        "displayRank": "=174",
+        "sortRank": 174
+      },
+      "the": {
+        "universityId": "queens-university-belfast",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "tied",
+        "displayRank": "=198",
+        "sortRank": 198
+      }
+    }
+  },
+  {
+    "id": "cardiff-university",
+    "nameZh": "卡迪夫大学",
+    "nameEn": "Cardiff University",
+    "aliases": [
+      "Cardiff"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "china-requirements",
+    "officialDomain": "https://www.cardiff.ac.uk",
+    "sources": [
+      {
+        "id": "cardiff-china",
+        "universityId": "cardiff-university",
+        "labelZh": "中国研究生入学要求",
+        "url": "https://www.cardiff.ac.uk/study/international/your-country/asia/china/entry-requirements",
+        "kind": "china-requirements",
+        "scope": "university",
+        "scopeZh": "学校面向中国申请人的研究生要求",
+        "institutionRule": {
+          "type": "none",
+          "summaryZh": "卡迪夫的中国研究生要求会参考本科院校背景，但未公开完整的中国院校名称名单。",
+          "verification": {
+            "reviewedAt": "2026-08-02",
+            "url": "https://www.cardiff.ac.uk/study/international/your-country/asia/china/entry-requirements",
+            "requiredText": [
+              "China",
+              "postgraduate"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "link-only",
+          "guard": {
+            "minimumRecords": 0,
+            "maximumRecords": 1,
+            "maximumRemovalRatio": 0
+          }
+        },
+        "status": {
+          "sourceId": "cardiff-china",
+          "checkedAt": "2026-08-04T06:04:21.219Z",
+          "httpStatus": 403,
+          "finalUrl": "https://www.cardiff.ac.uk/study/international/your-country/asia/china/entry-requirements",
+          "health": "unavailable"
+        }
+      }
+    ],
+    "rankings": {
+      "qs": {
+        "universityId": "cardiff-university",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "tied",
+        "displayRank": "=179",
+        "sortRank": 179
+      },
+      "the": {
+        "universityId": "cardiff-university",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "201–250",
+        "sortRank": 201
+      }
+    }
+  },
+  {
+    "id": "university-of-reading",
+    "nameZh": "雷丁大学",
+    "nameEn": "University of Reading",
+    "aliases": [
+      "Reading"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "china-requirements",
+    "officialDomain": "https://www.reading.ac.uk",
+    "sources": [
+      {
+        "id": "reading-china",
+        "universityId": "university-of-reading",
+        "labelZh": "中国研究生入学要求",
+        "url": "https://www.reading.ac.uk/ready-to-study/international-and-eu/country-specific-information/country-specific-china",
+        "kind": "china-requirements",
+        "scope": "university",
+        "scopeZh": "学校面向中国申请人的研究生要求",
+        "institutionRule": {
+          "type": "none",
+          "summaryZh": "雷丁的中国研究生要求会参考本科院校背景，但未公开完整的中国院校名称名单。",
+          "verification": {
+            "reviewedAt": "2026-08-02",
+            "url": "https://www.reading.ac.uk/ready-to-study/international-and-eu/country-specific-information/country-specific-china",
+            "requiredText": [
+              "China",
+              "postgraduate"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "link-only",
+          "guard": {
+            "minimumRecords": 0,
+            "maximumRecords": 1,
+            "maximumRemovalRatio": 0
+          }
+        },
+        "status": {
+          "sourceId": "reading-china",
+          "checkedAt": "2026-08-04T06:04:21.219Z",
+          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.reading.ac.uk/ready-to-study/international-and-eu/country-specific-information/country-specific-china",
+          "health": "ok"
+        }
+      }
+    ],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-reading",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "tied",
+        "displayRank": "=196",
+        "sortRank": 196
+      },
+      "the": {
+        "universityId": "university-of-reading",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "201–250",
+        "sortRank": 201
+      }
+    }
+  },
+  {
+    "id": "london-business-school",
+    "nameZh": "伦敦商学院",
+    "nameEn": "London Business School",
+    "aliases": [
+      "LBS",
+      "London Business School"
+    ],
+    "directoryCategory": "specialist",
+    "specialistRanking": {
+      "provider": "qs",
+      "rankingName": "QS WUR Ranking By Subject",
+      "subjectZh": "商业与管理",
+      "edition": 2026,
+      "displayRank": "9",
+      "sourceUrl": "https://www.topuniversities.com/universities/london-business-school"
+    },
+    "state": "not-public",
+    "officialDomain": "https://www.london.edu",
+    "sources": [
+      {
+        "id": "lbs-mim-entry",
+        "universityId": "london-business-school",
+        "labelZh": "LBS 管理学硕士申请要求",
+        "url": "https://www.london.edu/masters-degrees/masters-in-management/apply",
+        "kind": "china-requirements",
+        "scope": "programme",
+        "scopeZh": "LBS Masters in Management（管理学硕士）",
+        "institutionRule": {
+          "type": "none",
+          "summaryZh": "官网公开了管理学硕士的一般学位、成绩与申请要求；本轮未发现针对中国本科院校的公开名单。",
+          "verification": {
+            "reviewedAt": "2026-08-02",
+            "url": "https://www.london.edu/masters-degrees/masters-in-management/apply",
+            "requiredText": [
+              "Masters in Management",
+              "How to apply"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "link-only",
+          "guard": {
+            "minimumRecords": 0,
+            "maximumRecords": 1,
+            "maximumRemovalRatio": 0
+          }
+        },
+        "status": {
+          "sourceId": "lbs-mim-entry",
+          "checkedAt": "2026-08-04T06:04:21.219Z",
+          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.london.edu/masters-degrees/masters-in-management/apply",
+          "health": "ok",
+          "etag": "W/\"2ta3n9cfwkc44c-df\""
+        }
+      }
+    ],
+    "rankings": {}
+  },
+  {
+    "id": "loughborough-university",
+    "nameZh": "拉夫堡大学",
+    "nameEn": "Loughborough University",
+    "aliases": [
+      "Loughborough"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.lboro.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "loughborough-university",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "exact",
+        "displayRank": "203",
+        "sortRank": 203
+      },
+      "the": {
+        "universityId": "loughborough-university",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "301–350",
+        "sortRank": 301
+      }
+    }
+  },
+  {
+    "id": "university-of-strathclyde",
+    "nameZh": "斯特拉思克莱德大学",
+    "nameEn": "University of Strathclyde",
+    "aliases": [
+      "Strathclyde"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.strath.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-strathclyde",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "tied",
+        "displayRank": "=230",
+        "sortRank": 230
+      },
+      "the": {
+        "universityId": "university-of-strathclyde",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "351–400",
+        "sortRank": 351
+      }
+    }
+  },
+  {
+    "id": "university-of-surrey",
+    "nameZh": "萨里大学",
+    "nameEn": "University of Surrey",
+    "aliases": [
+      "Surrey"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.surrey.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-surrey",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "tied",
+        "displayRank": "=246",
+        "sortRank": 246
+      },
+      "the": {
+        "universityId": "university-of-surrey",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "201–250",
+        "sortRank": 201
+      }
+    }
+  },
+  {
+    "id": "university-of-sussex",
+    "nameZh": "萨塞克斯大学",
+    "nameEn": "University of Sussex",
+    "aliases": [
+      "Sussex"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.sussex.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-sussex",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "tied",
+        "displayRank": "=273",
+        "sortRank": 273
+      },
+      "the": {
+        "universityId": "university-of-sussex",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "201–250",
+        "sortRank": 201
+      }
+    }
+  },
+  {
+    "id": "university-of-aberdeen",
+    "nameZh": "阿伯丁大学",
+    "nameEn": "University of Aberdeen",
+    "aliases": [
+      "Aberdeen"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.abdn.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-aberdeen",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "exact",
+        "displayRank": "288",
+        "sortRank": 288
+      },
+      "the": {
+        "universityId": "university-of-aberdeen",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "201–250",
+        "sortRank": 201
+      }
+    }
+  },
+  {
+    "id": "university-of-leicester",
+    "nameZh": "莱斯特大学",
+    "nameEn": "University of Leicester",
+    "aliases": [
+      "Leicester"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://le.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-leicester",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "tied",
+        "displayRank": "=314",
+        "sortRank": 314
+      },
+      "the": {
+        "universityId": "university-of-leicester",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "tied",
+        "displayRank": "=192",
+        "sortRank": 192
+      }
+    }
+  },
+  {
+    "id": "swansea-university",
+    "nameZh": "斯旺西大学",
+    "nameEn": "Swansea University",
+    "aliases": [
+      "Swansea"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.swansea.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "swansea-university",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "tied",
+        "displayRank": "=322",
+        "sortRank": 322
+      },
+      "the": {
+        "universityId": "swansea-university",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "301–350",
+        "sortRank": 301
+      }
+    }
+  },
+  {
+    "id": "heriot-watt-university",
+    "nameZh": "赫瑞-瓦特大学",
+    "nameEn": "Heriot-Watt University",
+    "aliases": [
+      "Heriot-Watt",
+      "Heriot Watt",
+      "赫瑞瓦特大学"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.hw.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "heriot-watt-university",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "exact",
+        "displayRank": "325",
+        "sortRank": 325
+      },
+      "the": {
+        "universityId": "heriot-watt-university",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "401–500",
+        "sortRank": 401
+      }
+    }
+  },
+  {
+    "id": "brunel-university-of-london",
+    "nameZh": "伦敦布鲁内尔大学",
+    "nameEn": "Brunel University of London",
+    "aliases": [
+      "Brunel",
+      "Brunel University London"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.brunel.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "brunel-university-of-london",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "exact",
+        "displayRank": "353",
+        "sortRank": 353
+      },
+      "the": {
+        "universityId": "brunel-university-of-london",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "401–500",
+        "sortRank": 401
+      }
+    }
+  },
+  {
+    "id": "birkbeck-university-of-london",
+    "nameZh": "伦敦大学伯贝克学院",
+    "nameEn": "Birkbeck, University of London",
+    "aliases": [
+      "Birkbeck"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.bbk.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "birkbeck-university-of-london",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "tied",
+        "displayRank": "=354",
+        "sortRank": 354
+      },
+      "the": {
+        "universityId": "birkbeck-university-of-london",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "301–350",
+        "sortRank": 301
+      }
+    }
+  },
+  {
+    "id": "city-st-georges-university-of-london",
+    "nameZh": "伦敦大学城市圣乔治学院",
+    "nameEn": "City St George's, University of London",
+    "aliases": [
+      "City St George's",
+      "City, University of London",
+      "St George's, University of London"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.citystgeorges.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "city-st-georges-university-of-london",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "tied",
+        "displayRank": "=361",
+        "sortRank": 361
+      },
+      "the": {
+        "universityId": "city-st-georges-university-of-london",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "301–350",
+        "sortRank": 301
+      }
+    }
+  },
+  {
+    "id": "university-of-east-anglia",
+    "nameZh": "东安格利亚大学",
+    "nameEn": "University of East Anglia",
+    "aliases": [
+      "UEA",
+      "University of East Anglia (UEA)"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.uea.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-east-anglia",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "tied",
+        "displayRank": "=381",
+        "sortRank": 381
+      },
+      "the": {
+        "universityId": "university-of-east-anglia",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "251–300",
+        "sortRank": 251
+      }
+    }
+  },
+  {
+    "id": "oxford-brookes-university",
+    "nameZh": "牛津布鲁克斯大学",
+    "nameEn": "Oxford Brookes University",
+    "aliases": [
+      "Oxford Brookes"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.brookes.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "oxford-brookes-university",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "tied",
+        "displayRank": "=411",
+        "sortRank": 411
+      },
+      "the": {
+        "universityId": "oxford-brookes-university",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "801–1000",
+        "sortRank": 801
+      }
+    }
+  },
+  {
+    "id": "university-of-kent",
+    "nameZh": "肯特大学",
+    "nameEn": "University of Kent",
+    "aliases": [
+      "Kent"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.kent.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-kent",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "exact",
+        "displayRank": "415",
+        "sortRank": 415
+      },
+      "the": {
+        "universityId": "university-of-kent",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "401–500",
+        "sortRank": 401
+      }
+    }
+  },
+  {
+    "id": "aston-university",
+    "nameZh": "阿斯顿大学",
+    "nameEn": "Aston University",
+    "aliases": [
+      "Aston"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.aston.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "aston-university",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "tied",
+        "displayRank": "=416",
+        "sortRank": 416
+      },
+      "the": {
+        "universityId": "aston-university",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "401–500",
+        "sortRank": 401
+      }
+    }
+  },
+  {
+    "id": "university-of-essex",
+    "nameZh": "埃塞克斯大学",
+    "nameEn": "University of Essex",
+    "aliases": [
+      "Essex",
+      "Essex, University of"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.essex.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-essex",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "tied",
+        "displayRank": "=438",
+        "sortRank": 438
+      },
+      "the": {
+        "universityId": "university-of-essex",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "301–350",
+        "sortRank": 301
+      }
+    }
+  },
+  {
+    "id": "university-of-dundee",
+    "nameZh": "邓迪大学",
+    "nameEn": "University of Dundee",
+    "aliases": [
+      "Dundee"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.dundee.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-dundee",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "tied",
+        "displayRank": "=447",
+        "sortRank": 447
+      },
+      "the": {
+        "universityId": "university-of-dundee",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "301–350",
+        "sortRank": 301
+      }
+    }
+  },
+  {
+    "id": "soas-university-of-london",
+    "nameZh": "伦敦大学亚非学院",
+    "nameEn": "SOAS University of London",
+    "aliases": [
+      "SOAS",
+      "School of Oriental and African Studies"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.soas.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "soas-university-of-london",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "tied",
+        "displayRank": "=458",
+        "sortRank": 458
+      },
+      "the": {
+        "universityId": "soas-university-of-london",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "401–500",
+        "sortRank": 401
+      }
+    }
+  },
+  {
+    "id": "royal-holloway-university-of-london",
+    "nameZh": "伦敦大学皇家霍洛威学院",
+    "nameEn": "Royal Holloway, University of London",
+    "aliases": [
+      "Royal Holloway",
+      "RHUL"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.royalholloway.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "royal-holloway-university-of-london",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "tied",
+        "displayRank": "=485",
+        "sortRank": 485
+      },
+      "the": {
+        "universityId": "royal-holloway-university-of-london",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "401–500",
+        "sortRank": 401
+      }
+    }
+  },
+  {
+    "id": "university-of-bradford",
+    "nameZh": "布拉德福德大学",
+    "nameEn": "University of Bradford",
+    "aliases": [
+      "Bradford"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.bradford.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-bradford",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "tied",
+        "displayRank": "=497",
+        "sortRank": 497
+      },
+      "the": {
+        "universityId": "university-of-bradford",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "501–600",
+        "sortRank": 501
+      }
+    }
+  },
+  {
+    "id": "university-of-huddersfield",
+    "nameZh": "哈德斯菲尔德大学",
+    "nameEn": "University of Huddersfield",
+    "aliases": [
+      "Huddersfield"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.hud.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-huddersfield",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "tied",
+        "displayRank": "=521",
+        "sortRank": 521
+      },
+      "the": {
+        "universityId": "university-of-huddersfield",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "501–600",
+        "sortRank": 501
+      }
+    }
+  },
+  {
+    "id": "northumbria-university",
+    "nameZh": "诺森比亚大学",
+    "nameEn": "Northumbria University",
+    "aliases": [
+      "Northumbria",
+      "Northumbria University at Newcastle"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.northumbria.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "northumbria-university",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "tied",
+        "displayRank": "=528",
+        "sortRank": 528
+      },
+      "the": {
+        "universityId": "northumbria-university",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "401–500",
+        "sortRank": 401
+      }
+    }
+  },
+  {
+    "id": "university-of-stirling",
+    "nameZh": "斯特灵大学",
+    "nameEn": "University of Stirling",
+    "aliases": [
+      "Stirling"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.stir.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-stirling",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "tied",
+        "displayRank": "=560",
+        "sortRank": 560
+      },
+      "the": {
+        "universityId": "university-of-stirling",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "501–600",
+        "sortRank": 501
+      }
+    }
+  },
+  {
+    "id": "bangor-university",
+    "nameZh": "班戈大学",
+    "nameEn": "Bangor University",
+    "aliases": [
+      "Bangor"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.bangor.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "bangor-university",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "tied",
+        "displayRank": "=567",
+        "sortRank": 567
+      },
+      "the": {
+        "universityId": "bangor-university",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "501–600",
+        "sortRank": 501
+      }
+    }
+  },
+  {
+    "id": "university-of-hull",
+    "nameZh": "赫尔大学",
+    "nameEn": "University of Hull",
+    "aliases": [
+      "Hull"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.hull.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-hull",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "tied",
+        "displayRank": "=575",
+        "sortRank": 575
+      },
+      "the": {
+        "universityId": "university-of-hull",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "501–600",
+        "sortRank": 501
+      }
+    }
+  },
+  {
+    "id": "coventry-university",
+    "nameZh": "考文垂大学",
+    "nameEn": "Coventry University",
+    "aliases": [
+      "Coventry"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.coventry.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "coventry-university",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "tied",
+        "displayRank": "=581",
+        "sortRank": 581
+      },
+      "the": {
+        "universityId": "coventry-university",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "601–800",
+        "sortRank": 601
+      }
+    }
+  },
+  {
+    "id": "ulster-university",
+    "nameZh": "阿尔斯特大学",
+    "nameEn": "Ulster University",
+    "aliases": [
+      "Ulster"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.ulster.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "ulster-university",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "tied",
+        "displayRank": "=595",
+        "sortRank": 595
+      },
+      "the": {
+        "universityId": "ulster-university",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "601–800",
+        "sortRank": 601
+      }
+    }
+  },
+  {
+    "id": "manchester-metropolitan-university",
+    "nameZh": "曼彻斯特城市大学",
+    "nameEn": "Manchester Metropolitan University",
+    "aliases": [
+      "Manchester Met",
+      "MMU"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.mmu.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "manchester-metropolitan-university",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "tied",
+        "displayRank": "=600",
+        "sortRank": 600
+      },
+      "the": {
+        "universityId": "manchester-metropolitan-university",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "601–800",
+        "sortRank": 601
+      }
+    }
+  },
+  {
+    "id": "nottingham-trent-university",
+    "nameZh": "诺丁汉特伦特大学",
+    "nameEn": "Nottingham Trent University",
+    "aliases": [
+      "Nottingham Trent",
+      "NTU"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.ntu.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "nottingham-trent-university",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "tied",
+        "displayRank": "=639",
+        "sortRank": 639
+      },
+      "the": {
+        "universityId": "nottingham-trent-university",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "601–800",
+        "sortRank": 601
+      }
+    }
+  },
+  {
+    "id": "university-of-portsmouth",
+    "nameZh": "朴茨茅斯大学",
+    "nameEn": "University of Portsmouth",
+    "aliases": [
+      "Portsmouth"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.port.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-portsmouth",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "tied",
+        "displayRank": "=662",
+        "sortRank": 662
+      },
+      "the": {
+        "universityId": "university-of-portsmouth",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "401–500",
+        "sortRank": 401
+      }
+    }
+  },
+  {
+    "id": "kingston-university-london",
+    "nameZh": "金斯顿大学",
+    "nameEn": "Kingston University",
+    "aliases": [
+      "Kingston",
+      "Kingston University, London"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.kingston.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "kingston-university-london",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "tied",
+        "displayRank": "=686",
+        "sortRank": 686
+      },
+      "the": {
+        "universityId": "kingston-university-london",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "801–1000",
+        "sortRank": 801
+      }
+    }
+  },
+  {
+    "id": "university-of-plymouth",
+    "nameZh": "普利茅斯大学",
+    "nameEn": "University of Plymouth",
+    "aliases": [
+      "Plymouth"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.plymouth.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-plymouth",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "tied",
+        "displayRank": "=691",
+        "sortRank": 691
+      },
+      "the": {
+        "universityId": "university-of-plymouth",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "501–600",
+        "sortRank": 501
+      }
+    }
+  },
+  {
+    "id": "goldsmiths-university-of-london",
+    "nameZh": "伦敦大学金史密斯学院",
+    "nameEn": "Goldsmiths, University of London",
+    "aliases": [
+      "Goldsmiths"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.gold.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "goldsmiths-university-of-london",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "band",
+        "displayRank": "701-710",
+        "sortRank": 701
+      },
+      "the": {
+        "universityId": "goldsmiths-university-of-london",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "501–600",
+        "sortRank": 501
+      }
+    }
+  },
+  {
+    "id": "university-of-the-west-of-england",
+    "nameZh": "西英格兰大学",
+    "nameEn": "University of the West of England",
+    "aliases": [
+      "UWE Bristol",
+      "UWE Bristol (University of the West of England)"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.uwe.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-the-west-of-england",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "band",
+        "displayRank": "761-770",
+        "sortRank": 761
+      },
+      "the": {
+        "universityId": "university-of-the-west-of-england",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "601–800",
+        "sortRank": 601
+      }
+    }
+  },
+  {
+    "id": "university-of-greenwich",
+    "nameZh": "格林威治大学",
+    "nameEn": "University of Greenwich",
+    "aliases": [
+      "Greenwich"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.greenwich.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-greenwich",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "band",
+        "displayRank": "791-800",
+        "sortRank": 791
+      },
+      "the": {
+        "universityId": "university-of-greenwich",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "601–800",
+        "sortRank": 601
+      }
+    }
+  },
+  {
+    "id": "aberystwyth-university",
+    "nameZh": "亚伯大学",
+    "nameEn": "Aberystwyth University",
+    "aliases": [
+      "Aberystwyth",
+      "阿伯里斯特维斯大学"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.aber.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "aberystwyth-university",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "band",
+        "displayRank": "801-850",
+        "sortRank": 801
+      },
+      "the": {
+        "universityId": "aberystwyth-university",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "601–800",
+        "sortRank": 601
+      }
+    }
+  },
+  {
+    "id": "bournemouth-university",
+    "nameZh": "伯恩茅斯大学",
+    "nameEn": "Bournemouth University",
+    "aliases": [
+      "Bournemouth"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.bournemouth.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "bournemouth-university",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "band",
+        "displayRank": "801-850",
+        "sortRank": 801
+      },
+      "the": {
+        "universityId": "bournemouth-university",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "401–500",
+        "sortRank": 401
+      }
+    }
+  },
+  {
+    "id": "edinburgh-napier-university",
+    "nameZh": "爱丁堡龙比亚大学",
+    "nameEn": "Edinburgh Napier University",
+    "aliases": [
+      "Edinburgh Napier",
+      "Napier"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.napier.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "edinburgh-napier-university",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "band",
+        "displayRank": "801-850",
+        "sortRank": 801
+      },
+      "the": {
+        "universityId": "edinburgh-napier-university",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "601–800",
+        "sortRank": 601
+      }
+    }
+  },
+  {
+    "id": "keele-university",
+    "nameZh": "基尔大学",
+    "nameEn": "Keele University",
+    "aliases": [
+      "Keele"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.keele.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "keele-university",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "band",
+        "displayRank": "801-850",
+        "sortRank": 801
+      },
+      "the": {
+        "universityId": "keele-university",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "501–600",
+        "sortRank": 501
+      }
+    }
+  },
+  {
+    "id": "de-montfort-university",
+    "nameZh": "德蒙福特大学",
+    "nameEn": "De Montfort University",
+    "aliases": [
+      "De Montfort",
+      "DMU"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.dmu.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "de-montfort-university",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "band",
+        "displayRank": "851-900",
+        "sortRank": 851
+      },
+      "the": {
+        "universityId": "de-montfort-university",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "601–800",
+        "sortRank": 601
+      }
+    }
+  },
+  {
+    "id": "liverpool-john-moores-university",
+    "nameZh": "利物浦约翰摩尔大学",
+    "nameEn": "Liverpool John Moores University",
+    "aliases": [
+      "Liverpool John Moores",
+      "LJMU"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.ljmu.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "liverpool-john-moores-university",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "band",
+        "displayRank": "851-900",
+        "sortRank": 851
+      },
+      "the": {
+        "universityId": "liverpool-john-moores-university",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "501–600",
+        "sortRank": 501
+      }
+    }
+  },
+  {
+    "id": "university-of-hertfordshire",
+    "nameZh": "赫特福德大学",
+    "nameEn": "University of Hertfordshire",
+    "aliases": [
+      "Hertfordshire"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.herts.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-hertfordshire",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "band",
+        "displayRank": "851-900",
+        "sortRank": 851
+      },
+      "the": {
+        "universityId": "university-of-hertfordshire",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "601–800",
+        "sortRank": 601
+      }
+    }
+  },
+  {
+    "id": "university-of-lincoln",
+    "nameZh": "林肯大学",
+    "nameEn": "University of Lincoln",
+    "aliases": [
+      "Lincoln"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.lincoln.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-lincoln",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "band",
+        "displayRank": "851-900",
+        "sortRank": 851
+      },
+      "the": {
+        "universityId": "university-of-lincoln",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "601–800",
+        "sortRank": 601
+      }
+    }
+  },
+  {
+    "id": "university-of-the-arts-london",
+    "nameZh": "伦敦艺术大学",
+    "nameEn": "University of the Arts London",
+    "aliases": [
+      "UAL",
+      "University of Arts London"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.arts.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-the-arts-london",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "band",
+        "displayRank": "851-900",
+        "sortRank": 851
+      },
+      "the": {
+        "universityId": "university-of-the-arts-london",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "1501+",
+        "sortRank": 1501
+      }
+    }
+  },
+  {
+    "id": "university-of-westminster",
+    "nameZh": "威斯敏斯特大学",
+    "nameEn": "University of Westminster",
+    "aliases": [
+      "Westminster"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.westminster.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-westminster",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "band",
+        "displayRank": "851-900",
+        "sortRank": 851
+      },
+      "the": {
+        "universityId": "university-of-westminster",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "801–1000",
+        "sortRank": 801
+      }
+    }
+  },
+  {
+    "id": "london-south-bank-university",
+    "nameZh": "伦敦南岸大学",
+    "nameEn": "London South Bank University",
+    "aliases": [
+      "LSBU"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.lsbu.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "london-south-bank-university",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "band",
+        "displayRank": "901-950",
+        "sortRank": 901
+      },
+      "the": {
+        "universityId": "london-south-bank-university",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "601–800",
+        "sortRank": 601
+      }
+    }
+  },
+  {
+    "id": "middlesex-university",
+    "nameZh": "密德萨斯大学",
+    "nameEn": "Middlesex University",
+    "aliases": [
+      "Middlesex"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.mdx.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "middlesex-university",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "band",
+        "displayRank": "901-950",
+        "sortRank": 901
+      },
+      "the": {
+        "universityId": "middlesex-university",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "501–600",
+        "sortRank": 501
+      }
+    }
+  },
+  {
+    "id": "university-of-brighton",
+    "nameZh": "布莱顿大学",
+    "nameEn": "University of Brighton",
+    "aliases": [
+      "Brighton"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.brighton.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-brighton",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "band",
+        "displayRank": "901-950",
+        "sortRank": 901
+      },
+      "the": {
+        "universityId": "university-of-brighton",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "601–800",
+        "sortRank": 601
+      }
+    }
+  },
+  {
+    "id": "anglia-ruskin-university",
+    "nameZh": "安格利亚鲁斯金大学",
+    "nameEn": "Anglia Ruskin University",
+    "aliases": [
+      "ARU"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.aru.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "anglia-ruskin-university",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "band",
+        "displayRank": "1001-1200",
+        "sortRank": 1001
+      },
+      "the": {
+        "universityId": "anglia-ruskin-university",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "601–800",
+        "sortRank": 601
+      }
+    }
+  },
+  {
+    "id": "birmingham-city-university",
+    "nameZh": "伯明翰城市大学",
+    "nameEn": "Birmingham City University",
+    "aliases": [
+      "BCU"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.bcu.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "birmingham-city-university",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "band",
+        "displayRank": "1001-1200",
+        "sortRank": 1001
+      },
+      "the": {
+        "universityId": "birmingham-city-university",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "801–1000",
+        "sortRank": 801
+      }
+    }
+  },
+  {
+    "id": "glasgow-caledonian-university",
+    "nameZh": "格拉斯哥卡利多尼亚大学",
+    "nameEn": "Glasgow Caledonian University",
+    "aliases": [
+      "GCU"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.gcu.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "glasgow-caledonian-university",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "band",
+        "displayRank": "1001-1200",
+        "sortRank": 1001
+      },
+      "the": {
+        "universityId": "glasgow-caledonian-university",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "801–1000",
+        "sortRank": 801
+      }
+    }
+  },
+  {
+    "id": "leeds-beckett-university",
+    "nameZh": "利兹贝克特大学",
+    "nameEn": "Leeds Beckett University",
+    "aliases": [
+      "Leeds Beckett"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.leedsbeckett.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "leeds-beckett-university",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "band",
+        "displayRank": "1001-1200",
+        "sortRank": 1001
+      },
+      "the": {
+        "universityId": "leeds-beckett-university",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "801–1000",
+        "sortRank": 801
+      }
+    }
+  },
+  {
+    "id": "london-metropolitan-university",
+    "nameZh": "伦敦都市大学",
+    "nameEn": "London Metropolitan University",
+    "aliases": [
+      "London Met",
+      "伦敦大都会大学"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.londonmet.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "london-metropolitan-university",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "band",
+        "displayRank": "1001-1200",
+        "sortRank": 1001
+      },
+      "the": {
+        "universityId": "london-metropolitan-university",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "601–800",
+        "sortRank": 601
+      }
+    }
+  },
+  {
+    "id": "robert-gordon-university",
+    "nameZh": "罗伯特戈登大学",
+    "nameEn": "Robert Gordon University",
+    "aliases": [
+      "RGU"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.rgu.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "robert-gordon-university",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "band",
+        "displayRank": "1001-1200",
+        "sortRank": 1001
+      },
+      "the": {
+        "universityId": "robert-gordon-university",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "801–1000",
+        "sortRank": 801
+      }
+    }
+  },
+  {
+    "id": "sheffield-hallam-university",
+    "nameZh": "谢菲尔德哈勒姆大学",
+    "nameEn": "Sheffield Hallam University",
+    "aliases": [
+      "Sheffield Hallam",
+      "SHU"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.shu.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "sheffield-hallam-university",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "band",
+        "displayRank": "1001-1200",
+        "sortRank": 1001
+      },
+      "the": {
+        "universityId": "sheffield-hallam-university",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "801–1000",
+        "sortRank": 801
+      }
+    }
+  },
+  {
+    "id": "university-of-east-london",
+    "nameZh": "东伦敦大学",
+    "nameEn": "University of East London",
+    "aliases": [
+      "UEL"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.uel.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-east-london",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "band",
+        "displayRank": "1001-1200",
+        "sortRank": 1001
+      },
+      "the": {
+        "universityId": "university-of-east-london",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "1001–1200",
+        "sortRank": 1001
+      }
+    }
+  },
+  {
+    "id": "university-of-lancashire",
+    "nameZh": "兰开夏大学",
+    "nameEn": "University of Lancashire",
+    "aliases": [
+      "University of Central Lancashire",
+      "UCLan",
+      "中央兰开夏大学"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.lancashire.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-lancashire",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "band",
+        "displayRank": "1001-1200",
+        "sortRank": 1001
+      },
+      "the": {
+        "universityId": "university-of-lancashire",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "1001–1200",
+        "sortRank": 1001
+      }
+    }
+  },
+  {
+    "id": "university-of-roehampton",
+    "nameZh": "罗汉普顿大学",
+    "nameEn": "University of Roehampton",
+    "aliases": [
+      "Roehampton",
+      "University of Roehampton, London"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.roehampton.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-roehampton",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "band",
+        "displayRank": "1001-1200",
+        "sortRank": 1001
+      },
+      "the": {
+        "universityId": "university-of-roehampton",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "801–1000",
+        "sortRank": 801
+      }
+    }
+  },
+  {
+    "id": "university-of-salford",
+    "nameZh": "索尔福德大学",
+    "nameEn": "University of Salford",
+    "aliases": [
+      "Salford"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.salford.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-salford",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "band",
+        "displayRank": "1001-1200",
+        "sortRank": 1001
+      },
+      "the": {
+        "universityId": "university-of-salford",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "801–1000",
+        "sortRank": 801
+      }
+    }
+  },
+  {
+    "id": "university-of-wolverhampton",
+    "nameZh": "伍尔弗汉普顿大学",
+    "nameEn": "University of Wolverhampton",
+    "aliases": [
+      "Wolverhampton"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.wlv.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-wolverhampton",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "band",
+        "displayRank": "1001-1200",
+        "sortRank": 1001
+      },
+      "the": {
+        "universityId": "university-of-wolverhampton",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "801–1000",
+        "sortRank": 801
+      }
+    }
+  },
+  {
+    "id": "queen-margaret-university-edinburgh",
+    "nameZh": "爱丁堡玛格丽特女王大学",
+    "nameEn": "Queen Margaret University, Edinburgh",
+    "aliases": [
+      "Queen Margaret University",
+      "QMU",
+      "玛格丽特女王大学"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.qmu.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "queen-margaret-university-edinburgh",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "band",
+        "displayRank": "1201-1400",
+        "sortRank": 1201
+      },
+      "the": {
+        "universityId": "queen-margaret-university-edinburgh",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "unranked"
+      }
+    }
+  },
+  {
+    "id": "university-of-northampton",
+    "nameZh": "北安普顿大学",
+    "nameEn": "University of Northampton",
+    "aliases": [
+      "Northampton",
+      "The University of Northampton"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.northampton.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-northampton",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "band",
+        "displayRank": "1201-1400",
+        "sortRank": 1201
+      },
+      "the": {
+        "universityId": "university-of-northampton",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "1501+",
+        "sortRank": 1501
+      }
+    }
+  },
+  {
+    "id": "university-of-derby",
+    "nameZh": "德比大学",
+    "nameEn": "University of Derby",
+    "aliases": [
+      "Derby"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.derby.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-derby",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "band",
+        "displayRank": "1201-1400",
+        "sortRank": 1201
+      },
+      "the": {
+        "universityId": "university-of-derby",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "601–800",
+        "sortRank": 601
+      }
+    }
+  },
+  {
+    "id": "university-of-south-wales",
+    "nameZh": "南威尔士大学",
+    "nameEn": "University of South Wales",
+    "aliases": [
+      "USW"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.southwales.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "university-of-south-wales",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "band",
+        "displayRank": "1201-1400",
+        "sortRank": 1201
+      },
+      "the": {
+        "universityId": "university-of-south-wales",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "1201–1500",
+        "sortRank": 1201
+      }
+    }
+  },
+  {
+    "id": "canterbury-christ-church-university",
+    "nameZh": "坎特伯雷基督教会大学",
+    "nameEn": "Canterbury Christ Church University",
+    "aliases": [
+      "CCCU"
+    ],
+    "directoryCategory": "qs-directory",
+    "qsDirectory": {
+      "firstEdition": 2027,
+      "verifiedEdition": 2027,
+      "current": true
+    },
+    "state": "pending",
+    "officialDomain": "https://www.canterbury.ac.uk",
+    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "sources": [],
+    "rankings": {
+      "qs": {
+        "universityId": "canterbury-christ-church-university",
+        "provider": "qs",
+        "edition": 2027,
+        "placement": "band",
+        "displayRank": "1401+",
+        "sortRank": 1401
+      },
+      "the": {
+        "universityId": "canterbury-christ-church-university",
+        "provider": "the",
+        "edition": 2026,
+        "placement": "band",
+        "displayRank": "1201–1500",
+        "sortRank": 1201
+      }
+    }
+  }
+]

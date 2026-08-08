@@ -5,7 +5,7 @@ import sources from '../src/data/sources.json';
 import institutions from '../src/data/institutions.json';
 import requirements from '../src/data/generated/requirements.json';
 import audit from '../src/data/china-rule-audit.json';
-import { loadChinaRuleAudit } from '../src/lib/data';
+import { loadChinaRuleAudit, loadUniversities } from '../src/lib/data';
 import { normalizeInstitutionName } from '../src/lib/institution-search';
 
 describe('QS cohort and official source registry', () => {
@@ -17,26 +17,29 @@ describe('QS cohort and official source registry', () => {
     expect(new Set(cohort.universities.map((item) => item.id)).size).toBe(cohort.universities.length);
   });
 
-  it('does not contain universities outside the frozen cohort', () => {
+  it('keeps every frozen top-200 university in the complete current QS directory', () => {
     const cohortIds = new Set(cohort.universities.map((item) => item.id));
-    const rankedUniversities = universities.filter((item) => item.directoryCategory === 'qs-top-200');
-    expect(rankedUniversities.every((item) => cohortIds.has(item.id))).toBe(true);
+    const rankedUniversityIds = new Set(universities
+      .filter((item) => item.directoryCategory === 'qs-directory')
+      .map((item) => item.id));
+    expect([...cohortIds].every((id) => rankedUniversityIds.has(id))).toBe(true);
   });
 
-  it('covers every frozen cohort university exactly once without pending records', () => {
+  it('adds 65 neutral pending records without changing the reviewed cohort states', () => {
     const cohortIds = [...cohort.universities.map((item) => item.id)].sort();
-    const publicIds = universities
-      .filter((item) => item.directoryCategory === 'qs-top-200')
+    const reviewedIds = universities
+      .filter((item) => item.directoryCategory === 'qs-directory' && item.state !== 'pending')
       .map((item) => item.id)
       .sort();
 
-    expect(publicIds).toEqual(cohortIds);
-    expect(universities.every((item) => item.state !== 'pending')).toBe(true);
+    expect(reviewedIds).toEqual(cohortIds);
+    expect(universities.filter((item) => item.state === 'pending')).toHaveLength(65);
   });
 
-  it('loads a reviewed 29-school China rule audit with the binding classifications', () => {
+  it('preserves the 29 reviewed China-rule findings in the complete audit', () => {
     expect(loadChinaRuleAudit()).toEqual(audit);
-    expect(audit).toHaveLength(29);
+    expect(audit).toHaveLength(94);
+    expect(audit.filter((row) => row.expectedState !== 'pending')).toHaveLength(29);
     expect(audit.filter((row) => row.expectedState === 'official-list').map((row) => row.universityId).sort()).toEqual([
       'university-college-london',
       'university-of-bristol',
@@ -50,12 +53,29 @@ describe('QS cohort and official source registry', () => {
     ].sort());
     expect(audit.find((row) => row.universityId === 'university-of-manchester')).toMatchObject({
       expectedState: 'china-requirements',
-      directoryCategory: 'qs-top-200',
+      directoryCategory: 'qs-directory',
     });
     expect(audit.find((row) => row.universityId === 'university-of-exeter')).toMatchObject({
       expectedState: 'not-public',
       finding: expect.stringMatching(/2026.*removed.*ranking.*all.*Ministry of Education.*uniform/i),
     });
+  });
+
+  it('gives every university exactly one matching China-rule audit row', () => {
+    const loadedUniversities = loadUniversities();
+    const auditRowsByUniversity = new Map<string, typeof audit>();
+    for (const row of audit) {
+      auditRowsByUniversity.set(row.universityId, [...(auditRowsByUniversity.get(row.universityId) ?? []), row]);
+    }
+
+    expect(audit).toHaveLength(loadedUniversities.length);
+    for (const university of loadedUniversities) {
+      expect(auditRowsByUniversity.get(university.id)).toHaveLength(1);
+      expect(auditRowsByUniversity.get(university.id)?.[0]).toMatchObject({
+        directoryCategory: university.directoryCategory,
+        expectedState: university.state,
+      });
+    }
   });
 
   it.each([
@@ -218,12 +238,12 @@ describe('QS cohort and official source registry', () => {
     });
   });
 
-  it('gives every university an official-domain source', () => {
+  it('uses HTTPS official domains and keeps every registered source on its university domain', () => {
     const universityById = new Map(universities.map((university) => [university.id, university]));
     const sourceById = new Map(sources.map((source) => [source.id, source]));
 
     for (const university of universities) {
-      expect(university.sourceIds.length).toBeGreaterThan(0);
+      expect(university.officialDomain).toMatch(/^https:\/\//u);
       for (const sourceId of university.sourceIds) {
         const source = sourceById.get(sourceId);
         expect(source?.universityId).toBe(university.id);

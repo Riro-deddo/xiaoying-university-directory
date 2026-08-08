@@ -6,11 +6,12 @@ import {
   evidenceStateCopy,
   institutionRuleTypeCopy,
   officialPanelTitle,
+  rankingCopy,
   sourceFreshnessCopy,
   stateCopy,
   sourceHealthCopy,
 } from '../src/lib/presentation';
-import type { UniversityWithStatus } from '../src/lib/types';
+import type { RankingRecord, UniversityWithStatus } from '../src/lib/types';
 
 const gradeThresholdRule = {
   type: 'grade-threshold' as const,
@@ -54,8 +55,26 @@ describe('directoryRankCopy', () => {
       state: 'not-public',
       officialDomain: 'https://www.london.edu',
       sources: [],
+      rankings: {},
     };
     expect(directoryRankCopy(specialist)).toBe('专业院校');
+  });
+});
+
+describe('rankingCopy', () => {
+  it.each([
+    [{ placement: 'exact', displayRank: '88', sortRank: 88 }, '88'],
+    [{ placement: 'tied', displayRank: '=42', sortRank: 42 }, '=42'],
+    [{ placement: 'band', displayRank: '201–250', sortRank: 201 }, '201–250'],
+    [{ placement: 'unranked' }, '当期未上榜'],
+    [{ placement: 'unverified' }, '暂未核实'],
+  ])('renders %o as %s without inferring application eligibility', (record, expected) => {
+    expect(rankingCopy({ universityId: 'example', provider: 'the', edition: 2026, ...record } as RankingRecord))
+      .toBe(expected);
+  });
+
+  it('treats an absent ranking as unverified rather than unranked', () => {
+    expect(rankingCopy()).toBe('暂未核实');
   });
 });
 
