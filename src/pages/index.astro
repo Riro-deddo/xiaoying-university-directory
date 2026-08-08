@@ -106,15 +106,17 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
                 <p>{university.nameEn}</p>
                 {university.directoryCategory === 'specialist' && <span class="specialist-label">特色院校</span>}
               </div>
-              <div class="rank rank-qs">
-                <span class="mobile-label">QS 2027</span>
-                <span class="sr-only">QS 2027 综合排名：</span>
-                {university.directoryCategory === 'specialist' ? '—' : rankingCopy(university.rankings.qs)}
-              </div>
-              <div class="rank rank-the">
-                <span class="mobile-label">THE 2026</span>
-                <span class="sr-only">THE 2026 综合排名：</span>
-                {university.directoryCategory === 'specialist' ? '—' : rankingCopy(university.rankings.the)}
+              <div class="ranking-pills">
+                <div class="rank rank-qs">
+                  <span class="mobile-label">QS 2027</span>
+                  <span class="sr-only">QS 2027 综合排名：</span>
+                  {university.directoryCategory === 'specialist' ? '—' : rankingCopy(university.rankings.qs)}
+                </div>
+                <div class="rank rank-the">
+                  <span class="mobile-label">THE 2026</span>
+                  <span class="sr-only">THE 2026 综合排名：</span>
+                  {university.directoryCategory === 'specialist' ? '—' : rankingCopy(university.rankings.the)}
+                </div>
               </div>
               <div class="state">
                 <span class:list={['status-dot', `status-${university.state}`]}></span>
