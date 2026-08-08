@@ -28,9 +28,8 @@ jobs:
           args: --config .lychee.toml src/data/sources.json
           fail: false
           jobSummary: true
-      - name: Run guarded official-source synchronization
-        run: pnpm sync:sources
-      - run: pnpm build:index
+      - name: Check official-source review state
+        run: pnpm check:sources
       - run: pnpm test:run
       - run: pnpm build
       - name: Create or update one Issue per source anomaly
@@ -39,11 +38,26 @@ jobs:
           retries: 3
           script: |
             const { existsSync, readFileSync } = require('node:fs');
-            const anomalyPath = `${process.env.GITHUB_WORKSPACE}/artifacts/source-anomalies.json`;
-            if (!existsSync(anomalyPath)) return;
+            const auditPath = `${process.env.GITHUB_WORKSPACE}/artifacts/source-audit.json`;
+            if (!existsSync(auditPath)) return;
 
-            const anomalies = JSON.parse(readFileSync(anomalyPath, 'utf8'));
-            if (!Array.isArray(anomalies) || anomalies.length === 0) return;
+            const audit = JSON.parse(readFileSync(auditPath, 'utf8'));
+            const sources = JSON.parse(readFileSync(`${process.env.GITHUB_WORKSPACE}/src/data/sources.json`, 'utf8'));
+            const sourceById = new Map(sources.map((source) => [source.id, source]));
+            const anomalies = Object.values(audit)
+              .filter((status) => ['changed', 'temporary-error', 'unavailable'].includes(status.health))
+              .map((status) => {
+                const source = sourceById.get(status.sourceId);
+                return {
+                  sourceId: status.sourceId,
+                  universityId: source.universityId,
+                  sourceUrl: source.url,
+                  reason: `source-${status.health}`,
+                  detectedAt: status.checkedAt,
+                  retainedTrustedFacts: true,
+                };
+              });
+            if (anomalies.length === 0) return;
 
             const rendererPath = `${process.env.GITHUB_WORKSPACE}/scripts/render-anomaly-issue.mjs`;
             const { anomalyIssuePayload } = await import(rendererPath);
@@ -75,15 +89,15 @@ jobs:
                 });
               }
             }
-      - name: Commit accepted machine data only
+      - name: Commit source review state only
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if git diff --quiet -- src/data/status.json src/data/institutions.json src/data/generated/requirements.json src/data/generated/reverse-index.json; then exit 0; fi
+          if git diff --quiet -- src/data/status.json; then exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/data/status.json src/data/institutions.json src/data/generated/requirements.json src/data/generated/reverse-index.json
-          git commit -m "chore: refresh guarded official-source data"
+          git add src/data/status.json
+          git commit -m "chore: refresh official-source review status"
           git push
           COMMITTED_SHA=$(git rev-parse HEAD)
           gh api --method POST "repos/${GITHUB_REPOSITORY}/dispatches" -f event_type=guarded-source-update -f "client_payload[sha]=$COMMITTED_SHA"

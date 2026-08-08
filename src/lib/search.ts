@@ -1,7 +1,13 @@
 import Fuse from 'fuse.js';
 import { deriveEvidence, type EvidenceResult } from './evidence';
 import { createInstitutionSearch } from './institution-search';
-import type { InstitutionRecord, RequirementFact, UniversityState, UniversityWithStatus } from './types';
+import type {
+  DirectorySort,
+  InstitutionRecord,
+  RequirementFact,
+  UniversityState,
+  UniversityWithStatus,
+} from './types';
 
 export interface ReverseIndexEntry {
   institutionId: string;
@@ -35,19 +41,46 @@ function normalizeQuery(query: string): string {
   return query.normalize('NFKC').trim().replace(/\s+/g, ' ');
 }
 
-export function compareDirectoryUniversities(left: UniversityWithStatus, right: UniversityWithStatus): number {
-  if (left.directoryCategory !== right.directoryCategory) {
-    return left.directoryCategory === 'qs-top-200' ? -1 : 1;
-  }
-  if (left.directoryCategory === 'qs-top-200' && right.directoryCategory === 'qs-top-200') {
-    return left.qs!.rank - right.qs!.rank;
-  }
+function compareByName(left: UniversityWithStatus, right: UniversityWithStatus): number {
+  return left.nameEn.localeCompare(right.nameEn, 'en') || left.id.localeCompare(right.id, 'en');
+}
+
+function rankingBucket(record?: UniversityWithStatus['rankings']['qs']): number {
+  if (!record || record.placement === 'unverified') return 2;
+  if (record.placement === 'unranked') return 1;
   return 0;
 }
 
+export function compareDirectoryUniversities(
+  left: UniversityWithStatus,
+  right: UniversityWithStatus,
+  sortBy: DirectorySort = 'qs',
+): number {
+  const leftSpecialist = left.directoryCategory === 'specialist';
+  const rightSpecialist = right.directoryCategory === 'specialist';
+  if (leftSpecialist || rightSpecialist) {
+    if (leftSpecialist !== rightSpecialist) return leftSpecialist ? 1 : -1;
+    return compareByName(left, right);
+  }
+
+  if (sortBy === 'name') return compareByName(left, right);
+
+  const leftRanking = left.rankings[sortBy];
+  const rightRanking = right.rankings[sortBy];
+  const bucketDifference = rankingBucket(leftRanking) - rankingBucket(rightRanking);
+  if (bucketDifference !== 0) return bucketDifference;
+
+  if (rankingBucket(leftRanking) === 0) {
+    const rankDifference = (leftRanking?.sortRank ?? Number.MAX_SAFE_INTEGER)
+      - (rightRanking?.sortRank ?? Number.MAX_SAFE_INTEGER);
+    if (rankDifference !== 0) return rankDifference;
+  }
+
+  return compareByName(left, right);
+}
+
 export function createUniversitySearch(records: UniversityWithStatus[]) {
-  const ranked = [...records].sort(compareDirectoryUniversities);
-  const fuse = new Fuse(ranked, {
+  const fuse = new Fuse(records, {
     threshold: 0.34,
     ignoreLocation: true,
     keys: [
@@ -58,16 +91,17 @@ export function createUniversitySearch(records: UniversityWithStatus[]) {
   });
 
   return {
-    search(query: string, states: UniversityState[]): UniversityWithStatus[] {
+    search(query: string, states: UniversityState[], sortBy: DirectorySort = 'qs'): UniversityWithStatus[] {
       const normalized = normalizeQuery(query);
-      const exact = ranked.filter((record) =>
+      const exact = records.filter((record) =>
         [record.nameZh, record.nameEn, ...record.aliases]
           .some((value) => normalizeQuery(value).toLocaleLowerCase() === normalized.toLocaleLowerCase()),
       );
-      const matches = normalized ? (exact.length > 0 ? exact : fuse.search(normalized).map(({ item }) => item)) : ranked;
-      if (states.length === 0) return matches;
+      const matches = normalized ? (exact.length > 0 ? exact : fuse.search(normalized).map(({ item }) => item)) : records;
+      const sorted = [...matches].sort((left, right) => compareDirectoryUniversities(left, right, sortBy));
+      if (states.length === 0) return sorted;
       const allowed = new Set(states);
-      return matches.filter((record) => allowed.has(record.state));
+      return sorted.filter((record) => allowed.has(record.state));
     },
   };
 }

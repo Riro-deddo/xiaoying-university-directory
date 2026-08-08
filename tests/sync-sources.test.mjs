@@ -2,6 +2,7 @@ import { access, mkdtemp, readFile, rename, rm, writeFile } from 'node:fs/promis
 import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { afterEach, describe, expect, it, vi } from 'vitest';
+import { checkSource } from '../scripts/source-checker.mjs';
 import { decideSourceUpdate, reconcileInstitution, repairGlasgowBilingualPdfNames, syncRegisteredSources } from '../scripts/sync-sources.mjs';
 import reviewedRegistry from '../src/data/institutions.json';
 import reviewedRequirements from '../src/data/generated/requirements.json';
@@ -29,6 +30,28 @@ const registeredInstitution = {
   nameZh: 'Example Institution',
   nameEn: 'Example University',
   aliases: [],
+};
+
+const monitoringBaseline = {
+  sourceId: 'example-source',
+  health: 'changed',
+  checkedAt: '2026-08-07T03:17:00.000Z',
+  lastSuccessfulAt: '2026-08-06T03:17:00.000Z',
+  httpStatus: 200,
+  finalUrl: 'https://www.example.ac.uk/reviewed-china-list',
+  etag: 'reviewed-etag',
+  lastModified: 'Fri, 07 Aug 2026 03:17:00 GMT',
+  contentHash: 'accepted-content-hash',
+  observedContentHash: 'pending-observed-hash',
+  consecutiveFailures: 2,
+  lastAttemptError: 'previous daily timeout',
+};
+
+const staleAttemptBaseline = {
+  ...monitoringBaseline,
+  httpStatus: 503,
+  error: 'stale reviewed sync error',
+  lastAttemptError: 'stale daily timeout',
 };
 
 function facts(count, overrides = {}) {
@@ -141,6 +164,308 @@ describe('decideSourceUpdate', () => {
 });
 
 describe('syncRegisteredSources', () => {
+  it('replaces stale attempt metadata after successful parser acceptance', async () => {
+    const paths = await createFiles(facts(100), { 'example-source': staleAttemptBaseline });
+    const result = await syncRegisteredSources({
+      ...paths,
+      sources: [source],
+      fetchImpl: vi.fn().mockResolvedValue(new Response('<table></table>', {
+        status: 200,
+        headers: {
+          'content-type': 'text/html',
+          etag: 'accepted-etag',
+          'last-modified': 'Sat, 08 Aug 2026 03:17:00 GMT',
+        },
+      })),
+      extractFacts: extractedFactsWithRegisteredInstitutions(100),
+      now: new Date('2026-08-08T03:17:00.000Z'),
+    });
+
+    expect(result.status['example-source']).toMatchObject({
+      health: 'ok',
+      httpStatus: 200,
+      contentHash: 'fixture-hash',
+      etag: 'accepted-etag',
+      lastModified: 'Sat, 08 Aug 2026 03:17:00 GMT',
+      consecutiveFailures: 0,
+    });
+    expect(result.status['example-source']).not.toHaveProperty('observedContentHash');
+    expect(result.status['example-source']).not.toHaveProperty('error');
+    expect(result.status['example-source']).not.toHaveProperty('lastAttemptError');
+  });
+
+  it('replaces stale attempt metadata after successful link-only acceptance', async () => {
+    const linkOnlySource = { ...source, parser: { mode: 'link-only', guard } };
+    const observedContentHash = '09a2c69280f088a29865714ff27fd0c5c32e07b145f51f8f538155357ac7bf92';
+    const paths = await createFiles(facts(100), {
+      'example-source': {
+        ...staleAttemptBaseline,
+        observedContentHash,
+      },
+    });
+    const result = await syncRegisteredSources({
+      ...paths,
+      sources: [linkOnlySource],
+      fetchImpl: vi.fn().mockImplementation(() => new Response('<table></table>', {
+        status: 200,
+        headers: { 'content-type': 'text/html', etag: 'accepted-link-etag' },
+      })),
+      now: new Date('2026-08-08T03:17:00.000Z'),
+    });
+
+    expect(result.status['example-source']).toMatchObject({
+      health: 'ok',
+      httpStatus: 200,
+      contentHash: observedContentHash,
+      etag: 'accepted-link-etag',
+      consecutiveFailures: 0,
+    });
+    expect(result.status['example-source']).not.toHaveProperty('observedContentHash');
+    expect(result.status['example-source']).not.toHaveProperty('error');
+    expect(result.status['example-source']).not.toHaveProperty('lastAttemptError');
+  });
+
+  it('uses current response metadata after guard rejection without losing baselines', async () => {
+    const paths = await createFiles(facts(100), { 'example-source': staleAttemptBaseline });
+    const result = await syncRegisteredSources({
+      ...paths,
+      sources: [source],
+      fetchImpl: vi.fn().mockResolvedValue(new Response('<table></table>', {
+        status: 200,
+        headers: { 'content-type': 'text/html', etag: 'unaccepted-etag' },
+      })),
+      extractFacts: async () => facts(20),
+      now: new Date('2026-08-08T03:17:00.000Z'),
+    });
+
+    expect(result.status['example-source']).toMatchObject({
+      health: 'changed',
+      httpStatus: 200,
+      finalUrl: source.url,
+      contentHash: staleAttemptBaseline.contentHash,
+      observedContentHash: staleAttemptBaseline.observedContentHash,
+      etag: staleAttemptBaseline.etag,
+      lastModified: staleAttemptBaseline.lastModified,
+      consecutiveFailures: staleAttemptBaseline.consecutiveFailures,
+    });
+    expect(result.status['example-source']).not.toHaveProperty('error');
+    expect(result.status['example-source']).not.toHaveProperty('lastAttemptError');
+    expect(result.anomalies).toMatchObject([{ reason: 'removal-ratio-exceeded' }]);
+  });
+
+  it('clears stale response metadata after a network failure while preserving baselines', async () => {
+    const paths = await createFiles(facts(100), { 'example-source': staleAttemptBaseline });
+    const result = await syncRegisteredSources({
+      ...paths,
+      sources: [source],
+      fetchImpl: vi.fn().mockRejectedValue(new TypeError('current network failure')),
+      now: new Date('2026-08-08T03:17:00.000Z'),
+    });
+
+    expect(result.status['example-source']).toMatchObject({
+      health: 'temporary-error',
+      error: 'current network failure',
+      finalUrl: staleAttemptBaseline.finalUrl,
+      contentHash: staleAttemptBaseline.contentHash,
+      observedContentHash: staleAttemptBaseline.observedContentHash,
+      etag: staleAttemptBaseline.etag,
+      lastModified: staleAttemptBaseline.lastModified,
+      consecutiveFailures: staleAttemptBaseline.consecutiveFailures,
+    });
+    expect(result.status['example-source']).not.toHaveProperty('httpStatus');
+    expect(result.status['example-source']).not.toHaveProperty('lastAttemptError');
+  });
+
+  it.each([
+    {
+      name: 'source fetch failure',
+      run: (paths) => syncRegisteredSources({
+        ...paths,
+        sources: [source],
+        fetchImpl: vi.fn().mockRejectedValue(new TypeError('network unavailable')),
+        now: new Date('2026-08-08T03:17:00.000Z'),
+      }),
+    },
+    {
+      name: 'rule verification failure',
+      run: (paths) => syncRegisteredSources({
+        ...paths,
+        sources: [{
+          ...source,
+          institutionRule: {
+            type: 'grade-threshold',
+            summaryZh: 'Reviewed rule.',
+            verification: {
+              reviewedAt: '2026-08-07',
+              url: 'https://www.example.ac.uk/reviewed-rule',
+              requiredText: ['reviewed threshold'],
+            },
+          },
+        }],
+        fetchImpl: vi.fn().mockResolvedValue(new Response(null, { status: 503 })),
+        now: new Date('2026-08-08T03:17:00.000Z'),
+      }),
+    },
+    {
+      name: 'guard rejection',
+      run: (paths) => syncRegisteredSources({
+        ...paths,
+        sources: [source],
+        fetchImpl: vi.fn().mockResolvedValue(acceptedResponse()),
+        extractFacts: async () => facts(20),
+        now: new Date('2026-08-08T03:17:00.000Z'),
+      }),
+    },
+    {
+      name: 'parser failure',
+      run: (paths) => syncRegisteredSources({
+        ...paths,
+        sources: [source],
+        fetchImpl: vi.fn().mockResolvedValue(acceptedResponse()),
+        extractFacts: async () => { throw Object.assign(new Error('registered heading missing'), { code: 'PARSER_EMPTY' }); },
+        now: new Date('2026-08-08T03:17:00.000Z'),
+      }),
+    },
+  ])('preserves monitoring baselines and trusted facts after $name', async ({ run }) => {
+    const trustedRequirements = facts(100);
+    const paths = await createFiles(trustedRequirements, { 'example-source': monitoringBaseline });
+    const previousRequirementsFile = await readFile(paths.requirementsPath, 'utf8');
+    const previousInstitutionsFile = await readFile(paths.institutionsPath, 'utf8');
+
+    const result = await run(paths);
+
+    expect(result.status['example-source']).toMatchObject({
+      contentHash: monitoringBaseline.contentHash,
+      observedContentHash: monitoringBaseline.observedContentHash,
+      etag: monitoringBaseline.etag,
+      lastModified: monitoringBaseline.lastModified,
+      consecutiveFailures: monitoringBaseline.consecutiveFailures,
+      lastSuccessfulAt: monitoringBaseline.lastSuccessfulAt,
+    });
+    expect(result.status['example-source']).not.toHaveProperty('lastAttemptError');
+    expect(result.requirements).toEqual(trustedRequirements);
+    expect(await readFile(paths.requirementsPath, 'utf8')).toBe(previousRequirementsFile);
+    expect(await readFile(paths.institutionsPath, 'utf8')).toBe(previousInstitutionsFile);
+  });
+
+  it.each([
+    { name: 'ordinary HTML', withBom: false },
+    { name: 'UTF-8 BOM HTML', withBom: true },
+  ])('uses the same reviewed and daily content hash for $name', async ({ withBom }) => {
+    const html = '<ul id="official-list"><li>Example University</li></ul>';
+    const encoded = new TextEncoder().encode(html);
+    const body = withBom ? new Uint8Array([0xef, 0xbb, 0xbf, ...encoded]) : encoded;
+    const htmlSource = {
+      ...source,
+      parser: {
+        mode: 'html-list',
+        selector: '#official-list',
+        defaultTierOfficial: 'Reviewed list',
+        guard: { minimumRecords: 1, maximumRecords: 1, maximumRemovalRatio: 0 },
+      },
+    };
+    const responseForBody = () => new Response(body, { status: 200, headers: { 'content-type': 'text/html' } });
+    const paths = await createFiles([]);
+    const reviewed = await syncRegisteredSources({
+      ...paths,
+      sources: [htmlSource],
+      institutions: [registeredInstitution],
+      fetchImpl: vi.fn().mockImplementation(responseForBody),
+      now: new Date('2026-08-08T03:17:00.000Z'),
+    });
+
+    const daily = await checkSource(htmlSource, vi.fn().mockImplementation(responseForBody), reviewed.status['example-source'], new Date('2026-08-09T03:17:00.000Z'));
+
+    expect(reviewed.requirements[0].contentHash).toBe('742963d842e6d5b12297a67d5644628585702192e474e15bb83c47796860307d');
+    expect(daily).toMatchObject({
+      health: 'ok',
+      contentHash: reviewed.requirements[0].contentHash,
+    });
+    expect(daily).not.toHaveProperty('observedContentHash');
+  });
+
+  it('accepts a reviewed observed hash only after guarded synchronization succeeds', async () => {
+    const paths = await createFiles(facts(100), {
+      'example-source': {
+        sourceId: 'example-source',
+        health: 'changed',
+        contentHash: 'accepted-before-review',
+        observedContentHash: 'fixture-hash',
+        consecutiveFailures: 2,
+      },
+    });
+
+    const result = await syncRegisteredSources({
+      ...paths,
+      sources: [source],
+      fetchImpl: vi.fn().mockResolvedValue(acceptedResponse()),
+      extractFacts: extractedFactsWithRegisteredInstitutions(100),
+      now: new Date('2026-08-08T03:17:00.000Z'),
+    });
+
+    expect(result.status['example-source']).toMatchObject({
+      health: 'ok',
+      contentHash: 'fixture-hash',
+      consecutiveFailures: 0,
+    });
+    expect(result.status['example-source']).not.toHaveProperty('observedContentHash');
+  });
+
+  it('accepts a reviewed observation for a link-only source', async () => {
+    const linkOnlySource = { ...source, parser: { mode: 'link-only', guard } };
+    const observedContentHash = '09a2c69280f088a29865714ff27fd0c5c32e07b145f51f8f538155357ac7bf92';
+    const paths = await createFiles(facts(100), {
+      'example-source': {
+        sourceId: 'example-source',
+        health: 'changed',
+        contentHash: 'accepted-before-review',
+        observedContentHash,
+        consecutiveFailures: 0,
+      },
+    });
+
+    const result = await syncRegisteredSources({
+      ...paths,
+      sources: [linkOnlySource],
+      fetchImpl: vi.fn().mockResolvedValue(acceptedResponse()),
+      now: new Date('2026-08-08T03:17:00.000Z'),
+    });
+
+    expect(result.status['example-source']).toMatchObject({
+      health: 'ok',
+      contentHash: observedContentHash,
+      consecutiveFailures: 0,
+    });
+    expect(result.status['example-source']).not.toHaveProperty('observedContentHash');
+  });
+
+  it('is the only path that clears a legacy changed link after capturing its first observation', async () => {
+    const linkOnlySource = { ...source, parser: { mode: 'link-only', guard } };
+    const observedContentHash = '09a2c69280f088a29865714ff27fd0c5c32e07b145f51f8f538155357ac7bf92';
+    const paths = await createFiles(facts(100), {
+      'example-source': {
+        sourceId: 'example-source',
+        health: 'changed',
+        etag: 'legacy-etag',
+        consecutiveFailures: 0,
+      },
+    });
+
+    const result = await syncRegisteredSources({
+      ...paths,
+      sources: [linkOnlySource],
+      fetchImpl: vi.fn().mockImplementation(acceptedResponse),
+      now: new Date('2026-08-08T03:17:00.000Z'),
+    });
+
+    expect(result.status['example-source']).toMatchObject({
+      health: 'ok',
+      contentHash: observedContentHash,
+      consecutiveFailures: 0,
+    });
+    expect(result.status['example-source']).not.toHaveProperty('observedContentHash');
+  });
+
   it('reconciles every reviewed search identity before source refresh and remains idempotent', async () => {
     const paths = await createFiles([]);
     const obsoleteIds = [

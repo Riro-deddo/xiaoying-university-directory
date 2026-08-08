@@ -7,6 +7,7 @@ import { parseHTML } from 'linkedom';
 import { extractHtmlFacts } from './extractors/html.mjs';
 import { extractPdfFacts, extractPdfText } from './extractors/pdf.mjs';
 import { normalizeExtractedFact } from './extractors/normalize.mjs';
+import { readAndHashSourceContent } from './source-content-hash.mjs';
 import { checkSource } from './source-checker.mjs';
 import { decideSourceUpdate } from './update-guard.mjs';
 
@@ -282,6 +283,7 @@ async function verifyInstitutionRuleSource(source, fetchImpl, timeoutMs) {
         ? 'institution-rule-source-temporary-error'
         : 'institution-rule-source-unavailable',
       httpStatus: response.status,
+      finalUrl: response.url || verification.url,
     };
   }
 
@@ -308,6 +310,8 @@ async function verifyInstitutionRuleSource(source, fetchImpl, timeoutMs) {
       accepted: false,
       health: 'changed',
       reason: 'institution-rule-text-changed',
+      httpStatus: response.status,
+      finalUrl: response.url || verification.url,
       missingRequiredText,
     };
   }
@@ -329,12 +333,21 @@ function timestamp(now) {
 }
 
 function sourceStatus(source, previous, now, patch) {
-  return {
+  const next = {
     sourceId: source.id,
     checkedAt: timestamp(now),
     lastSuccessfulAt: previous?.lastSuccessfulAt,
+    etag: previous?.etag,
+    lastModified: previous?.lastModified,
+    contentHash: previous?.contentHash,
+    observedContentHash: previous?.observedContentHash,
+    consecutiveFailures: previous?.consecutiveFailures,
     ...patch,
   };
+  for (const [key, value] of Object.entries(next)) {
+    if (value === undefined) delete next[key];
+  }
+  return next;
 }
 
 function anomaly(source, reason, now, details = {}) {
@@ -602,15 +615,13 @@ export function repairGlasgowBilingualPdfNames(rawFacts, institutions) {
 
 async function extractRegisteredFacts(source, response, { institutions, now }) {
   let rawFacts;
-  let contentHash;
+  const expectedKind = source.parser.mode === 'pdf-text' ? 'pdf' : 'html';
+  const sourceContent = await readAndHashSourceContent(response, response.url || source.url, expectedKind);
+  const { contentHash } = sourceContent;
   if (['html-table', 'html-list', 'html-grouped-items'].includes(source.parser.mode)) {
-    const html = await response.text();
-    rawFacts = await extractHtmlFacts(source.parser, html);
-    contentHash = createHash('sha256').update(html).digest('hex');
+    rawFacts = await extractHtmlFacts(source.parser, sourceContent.text);
   } else if (source.parser.mode === 'pdf-text') {
-    const bytes = new Uint8Array(await response.arrayBuffer());
-    contentHash = createHash('sha256').update(bytes).digest('hex');
-    rawFacts = await extractPdfFacts(source.parser, bytes);
+    rawFacts = await extractPdfFacts(source.parser, sourceContent.bytes);
   } else {
     return [];
   }
@@ -706,8 +717,9 @@ export async function syncRegisteredSources(options = {}) {
       if (!ruleDecision.accepted) {
         status[source.id] = sourceStatus(source, previousStatus, now, {
           health: ruleDecision.health,
-          ...(ruleDecision.error ? { error: ruleDecision.error } : {}),
-          ...(ruleDecision.httpStatus ? { httpStatus: ruleDecision.httpStatus } : {}),
+          error: ruleDecision.error,
+          httpStatus: ruleDecision.httpStatus,
+          finalUrl: ruleDecision.finalUrl ?? previousStatus?.finalUrl,
         });
         if (ruleDecision.health !== 'temporary-error') {
           anomalies.push(anomaly(source, ruleDecision.reason, now, {
@@ -721,7 +733,18 @@ export async function syncRegisteredSources(options = {}) {
     }
 
     if (source.parser.mode === 'link-only') {
-      status[source.id] = await checkSource(source, fetchImpl, previousStatus, typeof now === 'function' ? now() : now);
+      const checked = await checkSource(source, fetchImpl, previousStatus, typeof now === 'function' ? now() : now);
+      if (checked.health === 'changed' && checked.observedContentHash) {
+        const { observedContentHash, ...accepted } = checked;
+        status[source.id] = {
+          ...accepted,
+          health: checked.finalUrl && checked.finalUrl !== source.url ? 'redirected' : 'ok',
+          contentHash: observedContentHash,
+          consecutiveFailures: 0,
+        };
+      } else {
+        status[source.id] = checked;
+      }
       continue;
     }
 
@@ -735,6 +758,7 @@ export async function syncRegisteredSources(options = {}) {
       status[source.id] = sourceStatus(source, previousStatus, now, {
         health: 'temporary-error',
         error: error instanceof Error ? error.message : 'unknown error',
+        finalUrl: previousStatus?.finalUrl,
       });
       continue;
     }
@@ -756,7 +780,11 @@ export async function syncRegisteredSources(options = {}) {
       const previousFacts = requirements.filter((fact) => fact.sourceId === source.id);
       const decision = decideSourceUpdate(previousFacts, nextFacts, guard);
       if (!decision.accepted) {
-        status[source.id] = sourceStatus(source, previousStatus, now, { health: 'changed', finalUrl: response.url || source.url });
+        status[source.id] = sourceStatus(source, previousStatus, now, {
+          health: 'changed',
+          httpStatus: response.status,
+          finalUrl: response.url || source.url,
+        });
         anomalies.push(anomaly(source, decision.reason, now));
         continue;
       }
@@ -769,17 +797,29 @@ export async function syncRegisteredSources(options = {}) {
       const candidateRequirements = [...beforeSource, ...nextFacts, ...afterSource];
       const candidateInstitutionErrors = candidateInstitutionValidationErrors(candidateInstitutions, candidateRequirements);
       if (candidateInstitutionErrors.length > 0) {
-        status[source.id] = sourceStatus(source, previousStatus, now, { health: 'changed', finalUrl: response.url || source.url });
+        status[source.id] = sourceStatus(source, previousStatus, now, {
+          health: 'changed',
+          httpStatus: response.status,
+          finalUrl: response.url || source.url,
+        });
         anomalies.push(anomaly(source, 'candidate-institution-validation-failed', now, { validationErrors: candidateInstitutionErrors }));
         continue;
       }
       if (new Set(candidateRequirements.map((fact) => fact.id)).size !== candidateRequirements.length) {
-        status[source.id] = sourceStatus(source, previousStatus, now, { health: 'changed', finalUrl: response.url || source.url });
+        status[source.id] = sourceStatus(source, previousStatus, now, {
+          health: 'changed',
+          httpStatus: response.status,
+          finalUrl: response.url || source.url,
+        });
         anomalies.push(anomaly(source, 'duplicate-fact-ids', now));
         continue;
       }
       if (!validateRequirements(candidateRequirements)) {
-        status[source.id] = sourceStatus(source, previousStatus, now, { health: 'changed', finalUrl: response.url || source.url });
+        status[source.id] = sourceStatus(source, previousStatus, now, {
+          health: 'changed',
+          httpStatus: response.status,
+          finalUrl: response.url || source.url,
+        });
         anomalies.push(anomaly(source, 'candidate-validation-failed', now, { validationErrors: validateRequirements.errors }));
         continue;
       }
@@ -790,14 +830,24 @@ export async function syncRegisteredSources(options = {}) {
       acceptedUpdate = true;
       status[source.id] = sourceStatus(source, previousStatus, now, {
         health: response.redirected ? 'redirected' : 'ok',
+        httpStatus: response.status,
         finalUrl: response.url || source.url,
         lastSuccessfulAt: timestamp(now),
+        etag: response.headers.get('etag') ?? undefined,
+        lastModified: response.headers.get('last-modified') ?? undefined,
+        contentHash: nextFacts[0]?.contentHash ?? previousStatus?.contentHash,
+        observedContentHash: undefined,
+        consecutiveFailures: 0,
+        lastAttemptError: undefined,
+        error: undefined,
       });
     } catch (error) {
       const parserCode = error && typeof error === 'object' ? error.code : undefined;
       if (parserCode === 'UNKNOWN_ENGLISH_ONLY_INSTITUTION' || parserCode === 'AMBIGUOUS_ENGLISH_ONLY_INSTITUTION') {
         status[source.id] = sourceStatus(source, previousStatus, now, {
           health: 'changed',
+          httpStatus: response.status,
+          finalUrl: response.url || source.url,
           error: error instanceof Error ? error.message : 'unknown institution',
         });
         anomalies.push(anomaly(source, parserCode === 'AMBIGUOUS_ENGLISH_ONLY_INSTITUTION'
@@ -808,6 +858,8 @@ export async function syncRegisteredSources(options = {}) {
       if (typeof parserCode === 'string' && /^(PARSER|PDF)_/u.test(parserCode)) {
         status[source.id] = sourceStatus(source, previousStatus, now, {
           health: 'changed',
+          httpStatus: response.status,
+          finalUrl: response.url || source.url,
           error: error instanceof Error ? error.message : 'parser error',
         });
         anomalies.push(anomaly(source, 'parser-error', now, { parserCode }));
@@ -815,6 +867,8 @@ export async function syncRegisteredSources(options = {}) {
       }
       status[source.id] = sourceStatus(source, previousStatus, now, {
         health: 'changed',
+        httpStatus: response.status,
+        finalUrl: response.url || source.url,
         error: error instanceof Error ? error.message : 'unknown error',
       });
       anomalies.push(anomaly(source, 'extraction-error', now));

@@ -5,7 +5,49 @@ export type UniversityState =
   | 'not-public'
   | 'pending';
 
-export type DirectoryCategory = 'qs-top-200' | 'specialist';
+export type DirectoryCategory = 'qs-directory' | 'specialist';
+export type RankingProvider = 'qs' | 'the';
+export type RankingPlacement = 'exact' | 'tied' | 'band' | 'unranked' | 'unverified';
+export type DirectorySort = 'qs' | 'the' | 'name';
+
+export interface RankingRelease {
+  provider: RankingProvider;
+  rankingName: string;
+  edition: number;
+  country: 'United Kingdom';
+  sourceUrl: string;
+  attribution: string;
+  verifiedAt: string;
+}
+
+export interface RankingRecord {
+  universityId: string;
+  provider: RankingProvider;
+  edition: number;
+  placement: RankingPlacement;
+  displayRank?: string;
+  sortRank?: number;
+}
+
+export interface RankingDataset {
+  releases: RankingRelease[];
+  records: RankingRecord[];
+}
+
+export interface SpecialistRankingReference {
+  provider: 'qs';
+  rankingName: 'QS WUR Ranking By Subject';
+  subjectZh: '商业与管理';
+  edition: 2026;
+  displayRank: '9';
+  sourceUrl: string;
+}
+
+export interface QsDirectoryMembership {
+  firstEdition: number;
+  verifiedEdition: number;
+  current: boolean;
+}
 
 export type SourceKind = 'official-list' | 'china-requirements' | 'faculty-page';
 export type SourceHealth = 'ok' | 'redirected' | 'changed' | 'temporary-error' | 'unavailable' | 'unchecked';
@@ -100,7 +142,8 @@ export interface University {
   nameEn: string;
   aliases: string[];
   directoryCategory: DirectoryCategory;
-  qs?: { edition: 2027; rank: number };
+  qsDirectory?: QsDirectoryMembership;
+  specialistRanking?: SpecialistRankingReference;
   state: UniversityState;
   officialDomain: string;
   sourceIds: string[];
@@ -117,6 +160,9 @@ export interface SourceStatus {
   etag?: string;
   lastModified?: string;
   contentHash?: string;
+  observedContentHash?: string;
+  consecutiveFailures?: number;
+  lastAttemptError?: string;
   error?: string;
 }
 
@@ -146,4 +192,7 @@ export interface RequirementFact {
 
 export type StatusMap = Record<string, SourceStatus>;
 export type SourceWithStatus = OfficialSourceConfig & { status?: SourceStatus };
-export type UniversityWithStatus = Omit<University, 'sourceIds'> & { sources: SourceWithStatus[] };
+export type UniversityWithStatus = Omit<University, 'sourceIds'> & {
+  sources: SourceWithStatus[];
+  rankings: Partial<Record<RankingProvider, RankingRecord>>;
+};

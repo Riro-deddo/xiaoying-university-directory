@@ -51,11 +51,12 @@ function university(id: string, source: SourceWithStatus): UniversityWithStatus 
     nameZh: id,
     nameEn: id,
     aliases: [],
-    directoryCategory: 'qs-top-200',
-    qs: { edition: 2027, rank: 1 },
+    directoryCategory: 'qs-directory',
+    qsDirectory: { firstEdition: 2027, verifiedEdition: 2027, current: true },
     state: 'official-list',
     officialDomain: 'https://example.edu',
     sources: [source],
+    rankings: {},
   };
 }
 

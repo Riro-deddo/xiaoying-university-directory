@@ -46,3 +46,9 @@ Verification completed:
 - Stable row discriminators retain reviewed historical/current Chinese rows and different tier/score evidence, while alternate English spellings for the same Chinese row and rule deduplicate. The current output contains 5,754 facts, including Southampton's official Tier B and Tier C rows for 珠海科技学院.
 - Full normalized registry collisions are now exactly `Taizhou University` and `Wuyi University`, the two reviewed ambiguities. Malformed leading-parenthesis, incomplete-English, and concatenated-Chinese registry names are absent.
 - Verification: 250 tests passing across 21 files; Astro check/build 0 errors (one existing hint); source coverage unchanged; guarded sync accepted all 31 sources with an empty anomaly report.
+
+## Task 6 public documentation correction — 2026-08-08
+
+- Daily GitHub review is documented as requesting registered links and recording page-content changes or access failures only. Such observations enter review; the daily workflow neither extracts nor accepts China-rule data.
+- Annual ranking releases are documented as a separate manual update of `src/data/rankings.json`, provenance, tests, and build. `pnpm sync:sources` is reserved for the reviewed acceptance and parsing of changed university China-rule sources.
+- Verification: page-content tests 24 passing; full suite 424 passing across 26 files; Astro check/build 0 errors (one existing hint); generated build drift restored.

@@ -2,21 +2,22 @@
 import '../styles/global.css';
 import { loadInstitutions, loadRequirements, loadUniversities } from '../lib/data';
 import { buildOfficialListDisplays } from '../lib/official-list-display';
+import { sortInitialDirectoryUniversities } from '../lib/directory-dom';
 import { serializeJsonForHtml } from '../lib/html-json';
 import {
   directoryFilters,
-  directoryRankCopy,
   directoryScopeCopy,
   institutionRuleTypeCopy,
   officialPanelTitle,
   sourceFreshnessCopy,
   sourceHealthCopy,
   stateCopy,
+  rankingCopy,
 } from '../lib/presentation';
 import { withBase } from '../lib/urls';
 
 const institutions = loadInstitutions();
-const universities = loadUniversities();
+const universities = sortInitialDirectoryUniversities(loadUniversities());
 const requirements = loadRequirements();
 const officialListsByUniversity = buildOfficialListDisplays({ universities, institutions, requirements });
 const base = import.meta.env.BASE_URL;
@@ -32,6 +33,7 @@ const officialListPanelsByUniversity = new Map(
 );
 const searchData = {
   universities,
+  universityDirectoryUrl: withBase(base, 'generated/universities.json'),
   institutionRegistryUrl: withBase(base, 'generated/institutions.json'),
   reverseIndexUrl: withBase(base, 'generated/reverse-index.json'),
 };
@@ -62,6 +64,7 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
         <h1 id="page-title">英国大学中国院校规则，一页查清</h1>
         <p>分清院校准入限制、成绩门槛分档与普通中国申请要求。</p>
         <p class="directory-scope">{directoryScopeCopy}</p>
+        <p class="ranking-reference">目录采用 QS 2027，THE 2026 作为补充；排名仅作院校信息参考。</p>
 
         <div class="search-modes" role="group" aria-label="搜索方向">
           <button class="search-mode active" type="button" data-search-mode="uk-university" aria-pressed="true">查英国大学</button>
@@ -71,7 +74,7 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
         <label class="search-box">
           <span id="search-label" class="sr-only">搜索英国大学</span>
           <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m16 16 5 5"></path></svg>
-          <input id="university-search" type="search" placeholder="搜索大学中文名、英文名或简称" autocomplete="off" aria-describedby="search-help" />
+          <input id="institution-search" type="search" placeholder="搜索大学中文名、英文名或简称" autocomplete="off" aria-describedby="search-help" />
         </label>
         <p id="search-help" class="search-help">按大学中文名、英文名或简称搜索，并可按公开信息状态筛选。</p>
 
@@ -80,12 +83,20 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
             <button class:list={['filter', { active: value === 'all' }]} type="button" data-state={value} aria-pressed={value === 'all'}>{label}</button>
           ))}
         </div>
+        <div id="directory-sort" class="sort-controls" aria-label="院校排序方式">
+          <span>排序</span>
+          {(['qs', 'the', 'name'] as const).map((value) => (
+            <button type="button" class:list={['sort-button', { active: value === 'qs' }]} data-sort={value} aria-pressed={value === 'qs'}>
+              {value === 'qs' ? 'QS' : value === 'the' ? 'THE' : '院校名称'}
+            </button>
+          ))}
+        </div>
       </section>
 
       <section id="uk-directory" class="directory" aria-labelledby="result-count">
         <p id="result-count" class="result-count" aria-live="polite">共 {universities.length} 所大学</p>
         <div class="list-head" aria-hidden="true">
-          <span>大学</span><span>QS 2027 排名</span><span>公开状态</span><span>内容范围</span><span>官方来源与操作</span>
+          <span>大学</span><span>QS 2027</span><span>THE 2026</span><span>中国规则状态</span><span>范围</span><span>来源 / 操作</span>
         </div>
         <div id="university-list" class="university-list">
           {universities.map((university) => (
@@ -93,12 +104,29 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
               <div class="university-name">
                 <h2>{university.nameZh}</h2>
                 <p>{university.nameEn}</p>
+                {university.directoryCategory === 'specialist' && <span class="specialist-label">特色院校</span>}
               </div>
-              <div class="rank"><span class="mobile-label">{university.directoryCategory === 'specialist' ? '目录类别' : 'QS 2027'}</span>{directoryRankCopy(university)}</div>
+              <div class="rank rank-qs">
+                <span class="mobile-label">QS 2027</span>
+                <span class="sr-only">QS 2027 综合排名：</span>
+                {university.directoryCategory === 'specialist' ? '—' : rankingCopy(university.rankings.qs)}
+              </div>
+              <div class="rank rank-the">
+                <span class="mobile-label">THE 2026</span>
+                <span class="sr-only">THE 2026 综合排名：</span>
+                {university.directoryCategory === 'specialist' ? '—' : rankingCopy(university.rankings.the)}
+              </div>
               <div class="state">
                 <span class:list={['status-dot', `status-${university.state}`]}></span>
                 <span title={stateCopy[university.state].description}>{stateCopy[university.state].label}</span>
               </div>
+              {university.specialistRanking && (
+                <div class="specialist-detail">
+                  <a href={university.specialistRanking.sourceUrl} target="_blank" rel="noopener noreferrer">
+                    QS 2026 商业与管理全球第 9 · 专门商学院，不参与综合大学排序
+                  </a>
+                </div>
+              )}
               <div class="scope">
                 {university.sources.length > 0
                   ? university.sources.map((source) => <span>{source.scopeZh ?? source.labelZh}</span>)
@@ -173,14 +201,16 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
 
     <script is:inline id="directory-data" type="application/json" set:html={searchDataJson}></script>
     <script>
+      import { applyDirectoryRows, bindDirectorySortButtons } from '../lib/directory-dom';
       import { createInstitutionEvidenceSearch, createUniversitySearch, type ReverseIndexEntry } from '../lib/search';
       import { fetchInstitutionSearchData } from '../lib/lazy-institution-data';
       import { directoryRankCopy, directoryScopeCopy, evidenceCopyFor, sourceFreshnessCopy } from '../lib/presentation';
-      import type { InstitutionRecord, UniversityState, UniversityWithStatus } from '../lib/types';
+      import type { DirectorySort, InstitutionRecord, UniversityState, UniversityWithStatus } from '../lib/types';
 
       const dataNode = document.querySelector<HTMLScriptElement>('#directory-data');
       const data = JSON.parse(dataNode?.textContent ?? '{}') as {
         universities: UniversityWithStatus[];
+        universityDirectoryUrl: string;
         institutionRegistryUrl: string;
         reverseIndexUrl: string;
       };
@@ -189,15 +219,19 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
       let reverseIndexLoading: Promise<void> | undefined;
       let reverseIndexMessage = '';
       let reverseIndexFailed = false;
-      const input = document.querySelector<HTMLInputElement>('#university-search');
+      const input = document.querySelector<HTMLInputElement>('#institution-search');
       const buttons = [...document.querySelectorAll<HTMLButtonElement>('.filter')];
+      const sortButtons = [...document.querySelectorAll<HTMLButtonElement>('.sort-button')];
       const modeButtons = [...document.querySelectorAll<HTMLButtonElement>('[data-search-mode]')];
       const rows = [...document.querySelectorAll<HTMLElement>('.university-row')];
+      const rowsById = new Map(rows.flatMap((row) => row.dataset.id ? [[row.dataset.id, row] as const] : []));
+      const list = document.querySelector<HTMLElement>('#university-list');
       const count = document.querySelector<HTMLElement>('#result-count');
       const empty = document.querySelector<HTMLElement>('#empty-state');
       const label = document.querySelector<HTMLElement>('#search-label');
       const help = document.querySelector<HTMLElement>('#search-help');
       const filters = document.querySelector<HTMLElement>('#directory-filters');
+      const sortControls = document.querySelector<HTMLElement>('#directory-sort');
       const ukDirectory = document.querySelector<HTMLElement>('#uk-directory');
       const institutionResults = document.querySelector<HTMLElement>('#institution-results');
       const institutionCount = document.querySelector<HTMLElement>('#institution-result-count');
@@ -205,21 +239,30 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
       const chooser = document.querySelector<HTMLElement>('#institution-chooser');
       const evidence = document.querySelector<HTMLElement>('#institution-evidence');
       let selected: UniversityState[] = [];
+      let selectedSort: DirectorySort = 'qs';
       let mode: 'uk-university' | 'chinese-institution' = 'uk-university';
 
       async function loadInstitutionDirectory() {
         if (institutionDirectory || reverseIndexLoading) return reverseIndexLoading;
         reverseIndexMessage = '正在加载中国院校查询数据…';
         reverseIndexFailed = false;
-        reverseIndexLoading = fetchInstitutionSearchData(
-          (url) => fetch(url, { cache: 'force-cache' }),
-          data.institutionRegistryUrl,
-          data.reverseIndexUrl,
-        )
-          .then(({ institutions, reverseIndex }) => {
+        reverseIndexLoading = Promise.all([
+          fetchInstitutionSearchData(
+            (url) => fetch(url, { cache: 'force-cache' }),
+            data.institutionRegistryUrl,
+            data.reverseIndexUrl,
+          ),
+          fetch(data.universityDirectoryUrl, { cache: 'force-cache' }).then(async (response) => {
+            if (!response.ok) throw new Error('University directory request failed');
+            const payload = await response.json();
+            if (!Array.isArray(payload)) throw new Error('University directory payload is invalid');
+            return payload as UniversityWithStatus[];
+          }),
+        ])
+          .then(([{ institutions, reverseIndex }, publicUniversities]) => {
             institutionDirectory = createInstitutionEvidenceSearch({
               institutions: institutions as InstitutionRecord[],
-              universities: data.universities ?? [],
+              universities: publicUniversities,
               reverseIndex: reverseIndex as ReverseIndexEntry[],
             });
             reverseIndexMessage = '';
@@ -234,9 +277,8 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
       }
 
       function updateUniversityDirectory() {
-        const matches = directory.search(input?.value ?? '', selected);
-        const visible = new Set(matches.map((item) => item.id));
-        rows.forEach((row) => { row.hidden = !visible.has(row.dataset.id ?? ''); });
+        const matches = directory.search(input?.value ?? '', selected, selectedSort);
+        applyDirectoryRows(list, rowsById, matches);
         if (count) count.textContent = `共 ${matches.length} 所大学`;
         if (empty) empty.hidden = matches.length !== 0;
       }
@@ -343,6 +385,7 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
         if (input) input.placeholder = chineseMode ? '搜索中国本科院校中文名、英文名或别名' : '搜索大学中文名、英文名或简称';
         if (help) help.textContent = chineseMode ? `精确匹配会显示 ${directoryScopeCopy}的公开信息；模糊结果仅供选择规范名称。` : '按大学中文名、英文名或简称搜索，并可按公开信息状态筛选。';
         if (filters) filters.hidden = chineseMode;
+        if (sortControls) sortControls.hidden = chineseMode;
         if (ukDirectory) ukDirectory.hidden = chineseMode;
         if (institutionResults) institutionResults.hidden = !chineseMode;
         if (input) input.value = '';
@@ -361,6 +404,10 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
         selected = value && value !== 'all' ? [value as UniversityState] : [];
         updateUniversityDirectory();
       }));
+      bindDirectorySortButtons(sortButtons, (sortBy) => {
+        selectedSort = sortBy;
+        updateUniversityDirectory();
+      });
       modeButtons.forEach((button) => button.addEventListener('click', () => {
         const nextMode = button.dataset.searchMode;
         if (nextMode === 'uk-university' || nextMode === 'chinese-institution') setMode(nextMode);

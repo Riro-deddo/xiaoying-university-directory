@@ -6,6 +6,8 @@ import institutionsJson from '../data/institutions.json';
 import institutionsSchema from '../data/institutions.schema.json';
 import requirementsJson from '../data/generated/requirements.json';
 import requirementsSchema from '../data/requirements.schema.json';
+import rankingsJson from '../data/rankings.json';
+import rankingsSchema from '../data/rankings.schema.json';
 import sourcesJson from '../data/sources.json';
 import sourcesSchema from '../data/sources.schema.json';
 import statusesJson from '../data/status.json';
@@ -16,6 +18,8 @@ import type {
   DirectoryCategory,
   OfficialSourceConfig,
   RequirementFact,
+  RankingDataset,
+  RankingRecord,
   StatusMap,
   University,
   UniversityState,
@@ -36,6 +40,7 @@ const validateSourceSchema = ajv.compile(sourcesSchema);
 const validateInstitutionSchema = ajv.compile(institutionsSchema);
 const validateRequirementSchema = ajv.compile(requirementsSchema);
 const validateChinaRuleAuditSchema = ajv.compile(chinaRuleAuditSchema);
+const validateRankingSchema = ajv.compile(rankingsSchema);
 
 export class DataValidationError extends Error {
   constructor(
@@ -114,6 +119,74 @@ export function validateInstitutionData(input: unknown): boolean {
 
 export function validateRequirementData(input: unknown): boolean {
   return validateRequirementSchema(input) as boolean;
+}
+
+export function validateRankings(
+  input: unknown,
+  universities: University[] = validateUniversities(universitiesJson),
+): RankingDataset {
+  assertSchema(validateRankingSchema(input), validateRankingSchema.errors, 'Ranking');
+
+  const dataset = input as RankingDataset;
+  const releaseKeys = new Map<string, number[]>();
+  dataset.releases.forEach((release, index) => {
+    const key = `${release.provider}:${release.edition}`;
+    releaseKeys.set(key, [...(releaseKeys.get(key) ?? []), index]);
+  });
+  const duplicateReleases = [...releaseKeys.values()]
+    .filter((indexes) => indexes.length > 1)
+    .flatMap((indexes) => indexes.map((index) => `/${index} duplicate ranking release`));
+  if (duplicateReleases.length > 0) throw new DataValidationError('Ranking', duplicateReleases);
+
+  const recordKeys = new Map<string, number[]>();
+  dataset.records.forEach((record, index) => {
+    const key = `${record.universityId}:${record.provider}:${record.edition}`;
+    recordKeys.set(key, [...(recordKeys.get(key) ?? []), index]);
+  });
+  const duplicateRecords = [...recordKeys.values()]
+    .filter((indexes) => indexes.length > 1)
+    .flatMap((indexes) => indexes.map((index) => `/${index} duplicate ranking record`));
+  if (duplicateRecords.length > 0) throw new DataValidationError('Ranking', duplicateRecords);
+
+  const registeredReleases = new Set(releaseKeys.keys());
+  const registeredUniversities = new Set(universities.map((university) => university.id));
+  dataset.records.forEach((record, index) => {
+    if (!registeredReleases.has(`${record.provider}:${record.edition}`)) {
+      throw new DataValidationError('Ranking', [`/${index} references an unregistered release`]);
+    }
+    if (!registeredUniversities.has(record.universityId)) {
+      throw new DataValidationError('Ranking', [`/${index}/universityId references an unregistered university`]);
+    }
+  });
+
+  for (const university of universities) {
+    if (university.directoryCategory !== 'qs-directory' || !university.qsDirectory?.current) continue;
+
+    const verifiedQsRecords = dataset.records.filter((record) =>
+      record.universityId === university.id
+      && record.provider === 'qs'
+      && record.edition === university.qsDirectory!.verifiedEdition,
+    );
+    if (verifiedQsRecords.length !== 1) {
+      throw new DataValidationError('Ranking', [
+        `/${university.id}/qsDirectory requires exactly one QS record at verified edition ${university.qsDirectory.verifiedEdition}`,
+      ]);
+    }
+    if (verifiedQsRecords[0].placement === 'unranked' || verifiedQsRecords[0].placement === 'unverified') {
+      throw new DataValidationError('Ranking', [
+        `/${university.id}/qsDirectory requires a ranked QS record at verified edition ${university.qsDirectory.verifiedEdition}`,
+      ]);
+    }
+  }
+
+  return dataset;
+}
+
+export function loadRankings(
+  input: unknown = rankingsJson,
+  universities: University[] = validateUniversities(universitiesJson),
+): RankingDataset {
+  return validateRankings(input, universities);
 }
 
 export function loadChinaRuleAudit(input: unknown = chinaRuleAuditJson): ChinaRuleAuditRow[] {
@@ -200,11 +273,34 @@ export function joinUniversityStatuses(
       }
       return { ...source, status: statuses[source.id] };
     }),
+    rankings: {},
+  }));
+}
+
+export function joinUniversityRankings(
+  universities: UniversityWithStatus[],
+  dataset: RankingDataset,
+): UniversityWithStatus[] {
+  const rankingsByUniversity = new Map<string, Partial<Record<RankingRecord['provider'], RankingRecord>>>();
+
+  for (const record of dataset.records) {
+    const rankings = rankingsByUniversity.get(record.universityId) ?? {};
+    const existing = rankings[record.provider];
+    if (!existing || record.edition > existing.edition) rankings[record.provider] = { ...record };
+    rankingsByUniversity.set(record.universityId, rankings);
+  }
+
+  return universities.map((university) => ({
+    ...university,
+    rankings: { ...rankingsByUniversity.get(university.id) },
   }));
 }
 
 export function loadUniversities(): UniversityWithStatus[] {
   const universities = validateUniversities(universitiesJson);
   const sources = validateOfficialSources(sourcesJson);
-  return joinUniversityStatuses(universities, sources, statusesJson as StatusMap);
+  return joinUniversityRankings(
+    joinUniversityStatuses(universities, sources, statusesJson as StatusMap),
+    loadRankings(undefined, universities),
+  );
 }

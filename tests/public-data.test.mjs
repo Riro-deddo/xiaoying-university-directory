@@ -23,6 +23,44 @@ const source = {
 };
 
 describe('public lazy-data build', () => {
+  it('writes joined university records with current ranks and no standalone ranking dataset', async () => {
+    const outputDir = await mkdtemp(join(tmpdir(), 'xiaoying-public-universities-'));
+    const universities = [
+      {
+        id: 'university-of-oxford', nameZh: '牛津大学', nameEn: 'University of Oxford', aliases: ['Oxford'],
+        directoryCategory: 'qs-directory', qsDirectory: { firstEdition: 2027, verifiedEdition: 2027, current: true },
+        state: 'pending', officialDomain: 'https://www.ox.ac.uk', sourceIds: [],
+      },
+      {
+        id: 'london-business-school', nameZh: '伦敦商学院', nameEn: 'London Business School', aliases: ['LBS'],
+        directoryCategory: 'specialist', state: 'not-public', officialDomain: 'https://www.london.edu', sourceIds: [],
+        specialistRanking: {
+          provider: 'qs', rankingName: 'QS WUR Ranking By Subject', subjectZh: '商业与管理', edition: 2026,
+          displayRank: '9', sourceUrl: 'https://www.topuniversities.com/universities/london-business-school',
+        },
+      },
+    ];
+    const rankings = {
+      releases: [],
+      records: [
+        { universityId: 'university-of-oxford', provider: 'qs', edition: 2027, placement: 'exact', displayRank: '4', sortRank: 4 },
+        { universityId: 'university-of-oxford', provider: 'the', edition: 2026, placement: 'exact', displayRank: '1', sortRank: 1 },
+      ],
+    };
+
+    await buildPublicData({ outputDir, universities, rankings, institutions: [], requirements: [], sources: [], statuses: {} });
+
+    const records = JSON.parse(await readFile(join(outputDir, 'universities.json'), 'utf8'));
+    expect(records.find((record) => record.id === 'university-of-oxford')).toMatchObject({
+      rankings: { qs: { edition: 2027, displayRank: '4' }, the: { edition: 2026, displayRank: '1' } },
+    });
+    expect(records.find((record) => record.id === 'london-business-school')).toMatchObject({
+      specialistRanking: { subjectZh: '商业与管理', displayRank: '9' },
+      rankings: {},
+    });
+    expect(await readdir(outputDir)).not.toContain('rankings.json');
+  });
+
   it('writes one structured list file per parser-enabled source and a separate reverse index', async () => {
     const outputDir = await mkdtemp(join(tmpdir(), 'xiaoying-public-data-'));
     const result = await buildPublicData({

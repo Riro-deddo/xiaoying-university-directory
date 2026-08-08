@@ -10,10 +10,10 @@ import audit from '../src/data/china-rule-audit.json';
 import { evaluateCoverage } from '../scripts/report-source-coverage.mjs';
 
 describe('source coverage report', () => {
-  it('covers the fixed 28 QS universities and LBS with one reviewed audit row each', () => {
-    expect(audit).toHaveLength(29);
-    expect(new Set(audit.map((row) => row.universityId)).size).toBe(29);
-    expect(audit.filter((row) => row.directoryCategory === 'qs-top-200')).toHaveLength(28);
+  it('covers 93 QS universities and LBS with one audit row each', () => {
+    expect(audit).toHaveLength(94);
+    expect(new Set(audit.map((row) => row.universityId)).size).toBe(94);
+    expect(audit.filter((row) => row.directoryCategory === 'qs-directory')).toHaveLength(93);
     expect(audit.filter((row) => row.directoryCategory === 'specialist').map((row) => row.universityId))
       .toEqual(['london-business-school']);
   });
@@ -120,7 +120,7 @@ describe('source coverage report', () => {
 
   it('reports reviewed scope and state counts from the audit matrix', () => {
     expect(evaluateCoverage({ cohort, universities, sources, audit }).counts).toMatchObject({
-      qsUniversities: 28,
+      qsUniversities: 93,
       specialistUniversities: 1,
       fullPublicLists: 9,
       ruleOnlyUniversities: 16,
