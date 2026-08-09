@@ -311,9 +311,108 @@
     "health": "unchecked",
     "consecutiveFailures": 0
   },
+  "loughborough-china-institution-lookup": {
+    "sourceId": "loughborough-china-institution-lookup",
+    "health": "unchecked",
+    "consecutiveFailures": 0
+  },
+  "strathclyde-china-entry": {
+    "sourceId": "strathclyde-china-entry",
+    "health": "unchecked",
+    "consecutiveFailures": 0
+  },
+  "surrey-china-entry": {
+    "sourceId": "surrey-china-entry",
+    "health": "unchecked",
+    "consecutiveFailures": 0
+  },
+  "sussex-china-entry": {
+    "sourceId": "sussex-china-entry",
+    "health": "unchecked",
+    "consecutiveFailures": 0
+  },
+  "leicester-china-entry": {
+    "sourceId": "leicester-china-entry",
+    "health": "unchecked",
+    "consecutiveFailures": 0
+  },
+  "swansea-china-pgt-entry": {
+    "sourceId": "swansea-china-pgt-entry",
+    "health": "unchecked",
+    "consecutiveFailures": 0
+  },
+  "heriot-watt-china-pgt-entry": {
+    "sourceId": "heriot-watt-china-pgt-entry",
+    "health": "unchecked",
+    "consecutiveFailures": 0
+  },
+  "brunel-china-entry": {
+    "sourceId": "brunel-china-entry",
+    "health": "unchecked",
+    "consecutiveFailures": 0
+  },
+  "birkbeck-china-entry": {
+    "sourceId": "birkbeck-china-entry",
+    "health": "unchecked",
+    "consecutiveFailures": 0
+  },
+  "city-st-georges-international-commercial-law-china": {
+    "sourceId": "city-st-georges-international-commercial-law-china",
+    "health": "unchecked",
+    "consecutiveFailures": 0
+  },
+  "oxford-brookes-china-entry": {
+    "sourceId": "oxford-brookes-china-entry",
+    "health": "unchecked",
+    "consecutiveFailures": 0
+  },
   "lstm-postgraduate-entry": {
     "sourceId": "lstm-postgraduate-entry",
     "health": "unchecked",
     "consecutiveFailures": 0
-  }
+  },
+  "kent-china-requirements": {"sourceId":"kent-china-requirements","health":"unchecked","consecutiveFailures":0},
+  "aston-china-requirements": {"sourceId":"aston-china-requirements","health":"unchecked","consecutiveFailures":0},
+  "essex-china-requirements": {"sourceId":"essex-china-requirements","health":"unchecked","consecutiveFailures":0},
+  "dundee-china-requirements": {"sourceId":"dundee-china-requirements","health":"unchecked","consecutiveFailures":0},
+  "dundee-international-business-management-china-requirements": {"sourceId":"dundee-international-business-management-china-requirements","health":"unchecked","consecutiveFailures":0},
+  "soas-china-requirements": {"sourceId":"soas-china-requirements","health":"unchecked","consecutiveFailures":0},
+  "royal-holloway-china-requirements": {"sourceId":"royal-holloway-china-requirements","health":"unchecked","consecutiveFailures":0},
+  "bradford-china-requirements": {"sourceId":"bradford-china-requirements","health":"unchecked","consecutiveFailures":0},
+  "huddersfield-china-requirements": {"sourceId":"huddersfield-china-requirements","health":"unchecked","consecutiveFailures":0},
+  "northumbria-china-requirements": {"sourceId":"northumbria-china-requirements","health":"unchecked","consecutiveFailures":0},
+  "stirling-china-requirements": {"sourceId":"stirling-china-requirements","health":"unchecked","consecutiveFailures":0},
+  "bangor-china-requirements": {"sourceId":"bangor-china-requirements","health":"unchecked","consecutiveFailures":0},
+  "hull-china-requirements": {"sourceId":"hull-china-requirements","health":"unchecked","consecutiveFailures":0},
+  "coventry-china-requirements": {"sourceId":"coventry-china-requirements","health":"unchecked","consecutiveFailures":0},
+  "ulster-china-requirements": {"sourceId":"ulster-china-requirements","health":"unchecked","consecutiveFailures":0},
+  "manchester-metropolitan-china-requirements": {"sourceId":"manchester-metropolitan-china-requirements","health":"unchecked","consecutiveFailures":0},
+  "nottingham-trent-china-requirements": {"sourceId":"nottingham-trent-china-requirements","health":"unchecked","consecutiveFailures":0},
+  "portsmouth-china-requirements": {"sourceId":"portsmouth-china-requirements","health":"unchecked","consecutiveFailures":0},
+  "kingston-china-requirements": {"sourceId":"kingston-china-requirements","health":"unchecked","consecutiveFailures":0},
+  "plymouth-china-requirements": {"sourceId":"plymouth-china-requirements","health":"unchecked","consecutiveFailures":0},
+  "goldsmiths-china-requirements": {"sourceId":"goldsmiths-china-requirements","health":"unchecked","consecutiveFailures":0},
+  "uwe-china-requirements": {"sourceId":"uwe-china-requirements","health":"unchecked","consecutiveFailures":0},
+  "greenwich-china-requirements": {"sourceId":"greenwich-china-requirements","health":"unchecked","consecutiveFailures":0},
+  "aberystwyth-china-requirements": {"sourceId":"aberystwyth-china-requirements","health":"unchecked","consecutiveFailures":0},
+  "bournemouth-china-requirements": {"sourceId":"bournemouth-china-requirements","health":"unchecked","consecutiveFailures":0},
+  "edinburgh-napier-china-requirements": {"sourceId":"edinburgh-napier-china-requirements","health":"unchecked","consecutiveFailures":0},
+  "keele-china-requirements": {"sourceId":"keele-china-requirements","health":"unchecked","consecutiveFailures":0},
+  "dmu-china-requirements": {"sourceId":"dmu-china-requirements","health":"unchecked","consecutiveFailures":0},
+  "ljmu-china-requirements": {"sourceId":"ljmu-china-requirements","health":"unchecked","consecutiveFailures":0},
+  "hertfordshire-china-requirements": {"sourceId":"hertfordshire-china-requirements","health":"unchecked","consecutiveFailures":0},
+  "lincoln-china-requirements": {"sourceId":"lincoln-china-requirements","health":"unchecked","consecutiveFailures":0},
+  "westminster-china-requirements": {"sourceId":"westminster-china-requirements","health":"unchecked","consecutiveFailures":0},
+  "lsbu-china-requirements": {"sourceId":"lsbu-china-requirements","health":"unchecked","consecutiveFailures":0},
+  "middlesex-china-requirements": {"sourceId":"middlesex-china-requirements","health":"unchecked","consecutiveFailures":0},
+  "brighton-china-requirements": {"sourceId":"brighton-china-requirements","health":"unchecked","consecutiveFailures":0},
+  "aru-china-requirements": {"sourceId":"aru-china-requirements","health":"unchecked","consecutiveFailures":0},
+  "bcu-china-requirements": {"sourceId":"bcu-china-requirements","health":"unchecked","consecutiveFailures":0},
+  "gcu-china-requirements": {"sourceId":"gcu-china-requirements","health":"unchecked","consecutiveFailures":0},
+  "leeds-beckett-china-requirements": {"sourceId":"leeds-beckett-china-requirements","health":"unchecked","consecutiveFailures":0},
+  "rgu-china-requirements": {"sourceId":"rgu-china-requirements","health":"unchecked","consecutiveFailures":0},
+  "shu-china-entry-requirements": {"sourceId":"shu-china-entry-requirements","health":"unchecked","consecutiveFailures":0},
+  "lancashire-china-requirements": {"sourceId":"lancashire-china-requirements","health":"unchecked","consecutiveFailures":0},
+  "derby-mainland-china-international-entry": {"sourceId":"derby-mainland-china-international-entry","health":"unchecked","consecutiveFailures":0},
+  "cccu-china-requirements": {"sourceId":"cccu-china-requirements","health":"unchecked","consecutiveFailures":0}
 }

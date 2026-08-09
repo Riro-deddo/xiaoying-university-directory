@@ -77,7 +77,7 @@ describe('normalized requirement contracts', () => {
 
   it('persists trusted facts for each parser-enabled university-level public list', () => {
     const publicSources = sourceRecords.filter((source) =>
-      source.kind === 'official-list' && source.scope === 'university');
+      source.kind === 'official-list' && source.scope === 'university' && source.parser.mode !== 'link-only');
 
     expect(publicSources).toHaveLength(9);
     for (const source of publicSources) {
@@ -85,6 +85,14 @@ describe('normalized requirement contracts', () => {
       expect(requirementRecords.filter((fact) => fact.sourceId === source.id).length)
         .toBeGreaterThanOrEqual(source.parser.guard.minimumRecords);
     }
+
+    const loughboroughLookup = sourceRecords.find((source) => source.id === 'loughborough-china-institution-lookup');
+    expect(loughboroughLookup).toMatchObject({
+      kind: 'official-list',
+      scope: 'university',
+      parser: { mode: 'link-only', guard: { minimumRecords: 0, maximumRecords: 0 } },
+    });
+    expect(requirementRecords.filter((fact) => fact.sourceId === loughboroughLookup?.id)).toEqual([]);
   });
 
   it('loads schema-valid generated official-list datasets', () => {

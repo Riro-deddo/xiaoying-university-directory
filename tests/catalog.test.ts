@@ -5,9 +5,16 @@ import sources from '../src/data/sources.json';
 import institutions from '../src/data/institutions.json';
 import requirements from '../src/data/generated/requirements.json';
 import audit from '../src/data/china-rule-audit.json';
+import baseline from './fixtures/pending-china-audit-baseline.json';
 import statuses from '../src/data/status.json';
 import { loadChinaRuleAudit, loadUniversities } from '../src/lib/data';
 import { normalizeInstitutionName } from '../src/lib/institution-search';
+
+const officialBaseHost = (url: string) => new URL(url).hostname.replace(/^www\./u, '');
+const sha256 = async (value: unknown) => Array.from(new Uint8Array(await crypto.subtle.digest(
+  'SHA-256',
+  new TextEncoder().encode(JSON.stringify(value)),
+)), (byte) => byte.toString(16).padStart(2, '0')).join('');
 
 describe('QS cohort and official source registry', () => {
   it('freezes only the official QS 2027 UK top-200 cohort', () => {
@@ -26,22 +33,48 @@ describe('QS cohort and official source registry', () => {
     expect([...cohortIds].every((id) => rankedUniversityIds.has(id))).toBe(true);
   });
 
-  it('adds 65 neutral pending records without changing the reviewed cohort states', () => {
+  it('records the reviewed first four China-rule batches while retaining the remaining pending cohort', () => {
     const cohortIds = [...cohort.universities.map((item) => item.id)].sort();
+    const batchReviewedIds = [
+      'loughborough-university', 'university-of-strathclyde', 'university-of-surrey', 'university-of-sussex',
+      'university-of-leicester', 'swansea-university', 'heriot-watt-university', 'brunel-university-of-london',
+      'birkbeck-university-of-london', 'city-st-georges-university-of-london', 'oxford-brookes-university',
+      'university-of-kent', 'aston-university', 'university-of-essex', 'university-of-dundee',
+      'soas-university-of-london', 'royal-holloway-university-of-london', 'university-of-bradford',
+      'university-of-huddersfield', 'northumbria-university', 'university-of-stirling', 'bangor-university',
+      'university-of-hull', 'coventry-university',
+      'ulster-university', 'manchester-metropolitan-university', 'nottingham-trent-university',
+      'university-of-portsmouth', 'kingston-university-london', 'university-of-plymouth',
+      'goldsmiths-university-of-london', 'university-of-the-west-of-england', 'university-of-greenwich',
+      'aberystwyth-university', 'bournemouth-university', 'edinburgh-napier-university', 'keele-university',
+      'de-montfort-university', 'liverpool-john-moores-university', 'university-of-hertfordshire',
+      'university-of-lincoln', 'university-of-westminster', 'london-south-bank-university',
+      'middlesex-university', 'university-of-brighton', 'anglia-ruskin-university',
+      'birmingham-city-university', 'glasgow-caledonian-university', 'leeds-beckett-university',
+      'robert-gordon-university', 'sheffield-hallam-university', 'university-of-lancashire',
+      'university-of-derby', 'canterbury-christ-church-university',
+    ];
     const reviewedIds = universities
       .filter((item) => item.directoryCategory === 'qs-directory' && item.state !== 'pending')
       .map((item) => item.id)
       .sort();
 
-    expect(reviewedIds).toEqual(cohortIds);
-    expect(universities.filter((item) => item.state === 'pending')).toHaveLength(65);
+    expect(reviewedIds).toEqual([...cohortIds, ...batchReviewedIds].sort());
+    expect(universities.filter((item) => item.state === 'pending')).toHaveLength(11);
   });
 
-  it('preserves the 31 reviewed China-rule findings in the complete audit', () => {
+  it('preserves the reviewed China-rule findings and records their lifecycle', () => {
     expect(loadChinaRuleAudit()).toEqual(audit);
     expect(audit).toHaveLength(101);
-    expect(audit.filter((row) => row.expectedState !== 'pending')).toHaveLength(36);
+    expect(audit.filter((row) => row.expectedState !== 'pending')).toHaveLength(90);
+    expect(audit.filter((row) => row.reviewStatus === 'reviewed')).toHaveLength(90);
+    expect(audit.filter((row) => row.reviewStatus === 'blocked')).toHaveLength(11);
+    expect(audit.filter((row) => row.reviewStatus === 'unreviewed')).toHaveLength(0);
+    expect(audit.filter((row) => baseline.nonTargetAuditRows.some((baselineRow) => baselineRow.universityId === row.universityId))
+      .map(({ reviewStatus: _reviewStatus, ...row }) => row))
+      .toEqual(baseline.nonTargetAuditRows);
     expect(audit.filter((row) => row.expectedState === 'official-list').map((row) => row.universityId).sort()).toEqual([
+      'loughborough-university',
       'university-college-london',
       'university-of-bristol',
       'university-of-cambridge',
@@ -79,8 +112,38 @@ describe('QS cohort and official source registry', () => {
     }
   });
 
+  it('preserves the pending-source baseline and generated requirements digest', async () => {
+    const batchReviewedIds = new Set([
+      'loughborough-university', 'university-of-strathclyde', 'university-of-surrey', 'university-of-sussex',
+      'university-of-leicester', 'swansea-university', 'heriot-watt-university', 'brunel-university-of-london',
+      'birkbeck-university-of-london', 'city-st-georges-university-of-london', 'oxford-brookes-university',
+      'university-of-kent', 'aston-university', 'university-of-essex', 'university-of-dundee',
+      'soas-university-of-london', 'royal-holloway-university-of-london', 'university-of-bradford',
+      'university-of-huddersfield', 'northumbria-university', 'university-of-stirling', 'bangor-university',
+      'university-of-hull', 'coventry-university',
+      'ulster-university', 'manchester-metropolitan-university', 'nottingham-trent-university',
+      'university-of-portsmouth', 'kingston-university-london', 'university-of-plymouth',
+      'goldsmiths-university-of-london', 'university-of-the-west-of-england', 'university-of-greenwich',
+      'aberystwyth-university', 'bournemouth-university', 'edinburgh-napier-university', 'keele-university',
+      'de-montfort-university', 'liverpool-john-moores-university', 'university-of-hertfordshire',
+      'university-of-lincoln', 'university-of-westminster', 'london-south-bank-university',
+      'middlesex-university', 'university-of-brighton', 'anglia-ruskin-university',
+      'birmingham-city-university', 'glasgow-caledonian-university', 'leeds-beckett-university',
+      'robert-gordon-university', 'sheffield-hallam-university', 'university-of-lancashire',
+      'university-of-derby', 'canterbury-christ-church-university',
+    ]);
+    expect(universities.filter((university) => university.state === 'pending').map((university) => university.id))
+      .toEqual(baseline.pendingUniversityIds.filter((id) => !batchReviewedIds.has(id)));
+    const preExistingSourceIds = new Set(baseline.sourceConfigs.map((source) => source.id));
+    expect(sources.filter((source) => preExistingSourceIds.has(source.id))).toEqual(baseline.sourceConfigs);
+    const baselineRequirements = requirements.filter((fact) => preExistingSourceIds.has(fact.sourceId));
+    expect(baselineRequirements).toHaveLength(baseline.reviewedRequirementCount);
+    expect(await sha256(baselineRequirements)).toBe(baseline.requirementsSha256);
+  });
+
   it.each([
     ['official-list', [
+      'loughborough-university',
       'university-college-london',
       'university-of-bristol',
       'university-of-cambridge',
@@ -92,25 +155,78 @@ describe('QS cohort and official source registry', () => {
       'university-of-warwick',
     ]],
     ['china-requirements', [
+      'birkbeck-university-of-london',
+      'brunel-university-of-london',
+      'city-st-georges-university-of-london',
       'cranfield-university',
+      'heriot-watt-university',
       'imperial-college-london',
       'kings-college-london',
       'lancaster-university',
       'london-school-of-economics-and-political-science',
       'london-school-of-hygiene-and-tropical-medicine',
       'royal-college-of-music',
+      'swansea-university',
       'newcastle-university',
+      'oxford-brookes-university',
       'queen-mary-university-of-london',
       'queens-university-belfast',
       'university-of-birmingham',
       'university-of-leeds',
+      'university-of-leicester',
       'university-of-liverpool',
       'university-of-manchester',
       'university-of-oxford',
       'university-of-reading',
       'university-of-st-andrews',
+      'university-of-strathclyde',
+      'university-of-surrey',
+      'university-of-sussex',
       'university-of-york',
       'cardiff-university',
+      'university-of-kent',
+      'aston-university',
+      'university-of-essex',
+      'university-of-dundee',
+      'soas-university-of-london',
+      'royal-holloway-university-of-london',
+      'university-of-bradford',
+      'university-of-huddersfield',
+      'northumbria-university',
+      'university-of-stirling',
+      'bangor-university',
+      'university-of-hull',
+      'coventry-university',
+      'ulster-university',
+      'manchester-metropolitan-university',
+      'nottingham-trent-university',
+      'university-of-portsmouth',
+      'kingston-university-london',
+      'university-of-plymouth',
+      'goldsmiths-university-of-london',
+      'university-of-the-west-of-england',
+      'university-of-greenwich',
+      'aberystwyth-university',
+      'bournemouth-university',
+      'edinburgh-napier-university',
+      'keele-university',
+      'de-montfort-university',
+      'liverpool-john-moores-university',
+      'university-of-hertfordshire',
+      'university-of-lincoln',
+      'university-of-westminster',
+      'london-south-bank-university',
+      'middlesex-university',
+      'university-of-brighton',
+      'anglia-ruskin-university',
+      'birmingham-city-university',
+      'glasgow-caledonian-university',
+      'leeds-beckett-university',
+      'robert-gordon-university',
+      'sheffield-hallam-university',
+      'university-of-lancashire',
+      'university-of-derby',
+      'canterbury-christ-church-university',
     ]],
     ['not-public', [
       'durham-university',
@@ -140,6 +256,35 @@ describe('QS cohort and official source registry', () => {
       'rcm-china-entry',
       'icr-msc-oncology-entry',
       'lstm-postgraduate-entry',
+      'loughborough-china-institution-lookup',
+      'strathclyde-china-entry',
+      'surrey-china-entry',
+      'sussex-china-entry',
+      'leicester-china-entry',
+      'swansea-china-pgt-entry',
+      'heriot-watt-china-pgt-entry',
+      'brunel-china-entry',
+      'birkbeck-china-entry',
+      'city-st-georges-international-commercial-law-china',
+      'oxford-brookes-china-entry',
+      'kent-china-requirements', 'aston-china-requirements', 'essex-china-requirements',
+      'dundee-china-requirements', 'soas-china-requirements', 'royal-holloway-china-requirements',
+      'dundee-international-business-management-china-requirements',
+      'bradford-china-requirements', 'huddersfield-china-requirements', 'northumbria-china-requirements',
+      'stirling-china-requirements', 'bangor-china-requirements', 'hull-china-requirements',
+      'coventry-china-requirements',
+      'ulster-china-requirements', 'manchester-metropolitan-china-requirements',
+      'nottingham-trent-china-requirements', 'portsmouth-china-requirements',
+      'kingston-china-requirements', 'plymouth-china-requirements',
+      'goldsmiths-china-requirements', 'uwe-china-requirements', 'greenwich-china-requirements',
+      'aberystwyth-china-requirements', 'bournemouth-china-requirements',
+      'edinburgh-napier-china-requirements', 'keele-china-requirements',
+      'dmu-china-requirements', 'ljmu-china-requirements', 'hertfordshire-china-requirements',
+      'lincoln-china-requirements', 'westminster-china-requirements', 'lsbu-china-requirements',
+      'middlesex-china-requirements', 'brighton-china-requirements', 'aru-china-requirements',
+      'bcu-china-requirements', 'gcu-china-requirements', 'leeds-beckett-china-requirements',
+      'rgu-china-requirements', 'shu-china-entry-requirements', 'lancashire-china-requirements',
+      'derby-mainland-china-international-entry', 'cccu-china-requirements',
     ]);
     for (const source of sources) {
       expect(source.url).toMatch(/^https:\/\//u);
@@ -296,9 +441,12 @@ describe('QS cohort and official source registry', () => {
       for (const sourceId of university.sourceIds) {
         const source = sourceById.get(sourceId);
         expect(source?.universityId).toBe(university.id);
-        const sourceHost = new URL(source!.url).hostname;
-        const officialHost = new URL(universityById.get(university.id)!.officialDomain).hostname;
-        expect(sourceHost === officialHost || sourceHost.endsWith(`.${officialHost}`)).toBe(true);
+        const sourceHost = officialBaseHost(source!.url);
+        const officialHost = officialBaseHost(universityById.get(university.id)!.officialDomain);
+        const approvedFirstPartyAlias = university.id === 'university-of-greenwich'
+          && sourceHost === 'gre.ac.uk'
+          && officialHost === 'greenwich.ac.uk';
+        expect(sourceHost === officialHost || sourceHost.endsWith(`.${officialHost}`) || approvedFirstPartyAlias).toBe(true);
       }
     }
   });

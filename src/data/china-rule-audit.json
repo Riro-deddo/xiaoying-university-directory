@@ -1,103 +1,810 @@
 [
-  {"universityId":"imperial-college-london","directoryCategory":"qs-directory","expectedState":"china-requirements","reviewDate":"2026-08-02","finding":"China undergraduate institution background affects the published postgraduate requirements; no complete public university roster was found."},
-  {"universityId":"university-of-oxford","directoryCategory":"qs-directory","expectedState":"china-requirements","reviewDate":"2026-08-02","finding":"China-specific entry requirements distinguish undergraduate institution background, but no complete public university roster was found."},
-  {"universityId":"university-of-cambridge","directoryCategory":"qs-directory","expectedState":"official-list","reviewDate":"2026-08-02","finding":"The university publishes Group A and Group B Chinese university lists with corresponding grade thresholds."},
-  {"universityId":"university-college-london","directoryCategory":"qs-directory","expectedState":"official-list","reviewDate":"2026-08-02","finding":"The university publishes Chinese institution bands that affect grade thresholds; an unlisted recognised institution may still apply under the higher threshold."},
-  {"universityId":"university-of-edinburgh","directoryCategory":"qs-directory","expectedState":"official-list","reviewDate":"2026-08-02","finding":"The university publishes a Priority List and course bands that jointly determine requirements."},
-  {"universityId":"kings-college-london","directoryCategory":"qs-directory","expectedState":"china-requirements","reviewDate":"2026-08-02","finding":"China undergraduate institution background affects requirements, but no complete public university roster was found."},
-  {"universityId":"university-of-manchester","directoryCategory":"qs-directory","expectedState":"china-requirements","reviewDate":"2026-08-02","finding":"University, computer-science, and law pages say undergraduate institution quality affects requirements; no current complete public roster was found."},
-  {"universityId":"university-of-bristol","directoryCategory":"qs-directory","expectedState":"official-list","reviewDate":"2026-08-02","finding":"The university publishes accepted Chinese universities, with course restrictions that remain applicable."},
-  {"universityId":"london-school-of-economics-and-political-science","directoryCategory":"qs-directory","expectedState":"china-requirements","reviewDate":"2026-08-02","finding":"China undergraduate institution background affects requirements, but no complete public university roster was found."},
-  {"universityId":"university-of-warwick","directoryCategory":"qs-directory","expectedState":"official-list","reviewDate":"2026-08-02","finding":"The university states that it considers only universities on its published list, with course-specific requirements."},
-  {"universityId":"university-of-birmingham","directoryCategory":"qs-directory","expectedState":"china-requirements","reviewDate":"2026-08-02","finding":"China requirements use institution-sensitive groupings, but no complete public university roster was found."},
-  {"universityId":"university-of-leeds","directoryCategory":"qs-directory","expectedState":"china-requirements","reviewDate":"2026-08-02","finding":"The university says schools use different institution standards; no current university-wide complete roster was found."},
-  {"universityId":"university-of-glasgow","directoryCategory":"qs-directory","expectedState":"official-list","reviewDate":"2026-08-02","finding":"The university publishes a Chinese university PDF specifying eligible institutions and grade requirements."},
-  {"universityId":"university-of-sheffield","directoryCategory":"qs-directory","expectedState":"official-list","reviewDate":"2026-08-02","finding":"The university publishes a bilingual Chinese institution lookup table with 2:1 and 2:2 grade thresholds."},
-  {"universityId":"durham-university","directoryCategory":"qs-directory","expectedState":"not-public","reviewDate":"2026-08-02","finding":"No current complete public Chinese university list or explicit institution-tier table was found in this review."},
-  {"universityId":"university-of-nottingham","directoryCategory":"qs-directory","expectedState":"official-list","reviewDate":"2026-08-02","finding":"The university publishes bilingual Tier 1 and Tier 2 institution lists; the law school has separate requirements."},
-  {"universityId":"queen-mary-university-of-london","directoryCategory":"qs-directory","expectedState":"china-requirements","reviewDate":"2026-08-02","finding":"China undergraduate institution background affects requirements, but no complete public university roster was found."},
-  {"universityId":"university-of-southampton","directoryCategory":"qs-directory","expectedState":"official-list","reviewDate":"2026-08-02","finding":"The university publishes a tier list that determines the corresponding grade threshold."},
-  {"universityId":"university-of-st-andrews","directoryCategory":"qs-directory","expectedState":"china-requirements","reviewDate":"2026-08-02","finding":"China undergraduate institution background affects requirements, but no complete public university roster was found."},
-  {"universityId":"university-of-bath","directoryCategory":"qs-directory","expectedState":"not-public","reviewDate":"2026-08-02","finding":"No current complete public Chinese university list was found; programme requirements remain on their course pages."},
-  {"universityId":"university-of-exeter","directoryCategory":"qs-directory","expectedState":"not-public","reviewDate":"2026-08-02","finding":"The current 2026 rule removed the old institution-ranking requirement, accepts all Chinese Ministry of Education recognised bachelor's institutions, and uses uniform grade thresholds."},
-  {"universityId":"university-of-liverpool","directoryCategory":"qs-directory","expectedState":"china-requirements","reviewDate":"2026-08-02","finding":"China undergraduate institution background affects requirements, but no complete public university roster was found."},
-  {"universityId":"newcastle-university","directoryCategory":"qs-directory","expectedState":"china-requirements","reviewDate":"2026-08-02","finding":"China undergraduate institution background affects requirements, but no complete public university roster was found."},
-  {"universityId":"university-of-york","directoryCategory":"qs-directory","expectedState":"china-requirements","reviewDate":"2026-08-02","finding":"China undergraduate institution background affects requirements, but no complete public university roster was found."},
-  {"universityId":"lancaster-university","directoryCategory":"qs-directory","expectedState":"china-requirements","reviewDate":"2026-08-02","finding":"China undergraduate institution background affects requirements, but no complete public university roster was found."},
-  {"universityId":"queens-university-belfast","directoryCategory":"qs-directory","expectedState":"china-requirements","reviewDate":"2026-08-02","finding":"China undergraduate institution background affects requirements, but no complete public university roster was found."},
-  {"universityId":"cardiff-university","directoryCategory":"qs-directory","expectedState":"china-requirements","reviewDate":"2026-08-02","finding":"China undergraduate institution background affects requirements, but no complete public university roster was found."},
-  {"universityId":"university-of-reading","directoryCategory":"qs-directory","expectedState":"china-requirements","reviewDate":"2026-08-02","finding":"China undergraduate institution background affects requirements, but no complete public university roster was found."},
-  {"universityId":"london-business-school","directoryCategory":"specialist","expectedState":"not-public","reviewDate":"2026-08-02","finding":"No public Chinese undergraduate institution list was found; the reviewed evidence is the Masters in Management application requirements."},
-  {"universityId":"loughborough-university","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"university-of-strathclyde","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"university-of-surrey","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"university-of-sussex","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"university-of-aberdeen","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"university-of-leicester","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"swansea-university","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"heriot-watt-university","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"brunel-university-of-london","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"birkbeck-university-of-london","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"city-st-georges-university-of-london","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"university-of-east-anglia","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"oxford-brookes-university","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"university-of-kent","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"aston-university","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"university-of-essex","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"university-of-dundee","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"soas-university-of-london","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"royal-holloway-university-of-london","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"university-of-bradford","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"university-of-huddersfield","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"northumbria-university","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"university-of-stirling","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"bangor-university","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"university-of-hull","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"coventry-university","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"ulster-university","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"manchester-metropolitan-university","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"nottingham-trent-university","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"university-of-portsmouth","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"kingston-university-london","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"university-of-plymouth","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"goldsmiths-university-of-london","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"university-of-the-west-of-england","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"university-of-greenwich","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"aberystwyth-university","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"bournemouth-university","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"edinburgh-napier-university","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"keele-university","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"de-montfort-university","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"liverpool-john-moores-university","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"university-of-hertfordshire","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"university-of-lincoln","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"university-of-the-arts-london","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"university-of-westminster","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"london-south-bank-university","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"middlesex-university","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"university-of-brighton","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"anglia-ruskin-university","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"birmingham-city-university","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"glasgow-caledonian-university","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"leeds-beckett-university","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"london-metropolitan-university","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"robert-gordon-university","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"sheffield-hallam-university","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"university-of-east-london","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"university-of-lancashire","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"university-of-roehampton","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"university-of-salford","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"university-of-wolverhampton","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"queen-margaret-university-edinburgh","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"university-of-northampton","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"university-of-derby","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"university-of-south-wales","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"canterbury-christ-church-university","directoryCategory":"qs-directory","expectedState":"pending","reviewDate":"2026-08-08","finding":"China-specific institution rules have not yet been reviewed against an official university or faculty source."},
-  {"universityId":"london-school-of-hygiene-and-tropical-medicine","directoryCategory":"specialist","expectedState":"china-requirements","reviewDate":"2026-08-09","finding":"The official China page publishes postgraduate grade equivalencies, but no complete public Chinese undergraduate institution roster was found."},
-  {"universityId":"cranfield-university","directoryCategory":"specialist","expectedState":"china-requirements","reviewDate":"2026-08-09","finding":"The official China page publishes postgraduate academic requirements, but no complete public Chinese undergraduate institution roster was found."},
-  {"universityId":"royal-college-of-art","directoryCategory":"specialist","expectedState":"not-public","reviewDate":"2026-08-09","finding":"The reviewed postgraduate application page is not a complete public Chinese undergraduate institution roster."},
-  {"universityId":"royal-veterinary-college","directoryCategory":"specialist","expectedState":"not-public","reviewDate":"2026-08-09","finding":"The reviewed international application page is not a complete public Chinese undergraduate institution roster."},
-  {"universityId":"royal-college-of-music","directoryCategory":"specialist","expectedState":"china-requirements","reviewDate":"2026-08-09","finding":"The official China page provides application guidance but not a complete public Chinese undergraduate institution roster."},
-  {"universityId":"institute-of-cancer-research-london","directoryCategory":"specialist","expectedState":"not-public","reviewDate":"2026-08-09","finding":"The reviewed MSc Oncology page covers a narrow clinical programme and is not a complete public Chinese undergraduate institution roster."},
-  {"universityId":"liverpool-school-of-tropical-medicine","directoryCategory":"specialist","expectedState":"not-public","reviewDate":"2026-08-09","finding":"The reviewed postgraduate study entry is not a complete public Chinese undergraduate institution roster."}
+  {
+    "universityId": "imperial-college-london",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-02",
+    "finding": "China undergraduate institution background affects the published postgraduate requirements; no complete public university roster was found.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "university-of-oxford",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-02",
+    "finding": "China-specific entry requirements distinguish undergraduate institution background, but no complete public university roster was found.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "university-of-cambridge",
+    "directoryCategory": "qs-directory",
+    "expectedState": "official-list",
+    "reviewDate": "2026-08-02",
+    "finding": "The university publishes Group A and Group B Chinese university lists with corresponding grade thresholds.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "university-college-london",
+    "directoryCategory": "qs-directory",
+    "expectedState": "official-list",
+    "reviewDate": "2026-08-02",
+    "finding": "The university publishes Chinese institution bands that affect grade thresholds; an unlisted recognised institution may still apply under the higher threshold.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "university-of-edinburgh",
+    "directoryCategory": "qs-directory",
+    "expectedState": "official-list",
+    "reviewDate": "2026-08-02",
+    "finding": "The university publishes a Priority List and course bands that jointly determine requirements.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "kings-college-london",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-02",
+    "finding": "China undergraduate institution background affects requirements, but no complete public university roster was found.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "university-of-manchester",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-02",
+    "finding": "University, computer-science, and law pages say undergraduate institution quality affects requirements; no current complete public roster was found.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "university-of-bristol",
+    "directoryCategory": "qs-directory",
+    "expectedState": "official-list",
+    "reviewDate": "2026-08-02",
+    "finding": "The university publishes accepted Chinese universities, with course restrictions that remain applicable.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "london-school-of-economics-and-political-science",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-02",
+    "finding": "China undergraduate institution background affects requirements, but no complete public university roster was found.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "university-of-warwick",
+    "directoryCategory": "qs-directory",
+    "expectedState": "official-list",
+    "reviewDate": "2026-08-02",
+    "finding": "The university states that it considers only universities on its published list, with course-specific requirements.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "university-of-birmingham",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-02",
+    "finding": "China requirements use institution-sensitive groupings, but no complete public university roster was found.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "university-of-leeds",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-02",
+    "finding": "The university says schools use different institution standards; no current university-wide complete roster was found.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "university-of-glasgow",
+    "directoryCategory": "qs-directory",
+    "expectedState": "official-list",
+    "reviewDate": "2026-08-02",
+    "finding": "The university publishes a Chinese university PDF specifying eligible institutions and grade requirements.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "university-of-sheffield",
+    "directoryCategory": "qs-directory",
+    "expectedState": "official-list",
+    "reviewDate": "2026-08-02",
+    "finding": "The university publishes a bilingual Chinese institution lookup table with 2:1 and 2:2 grade thresholds.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "durham-university",
+    "directoryCategory": "qs-directory",
+    "expectedState": "not-public",
+    "reviewDate": "2026-08-02",
+    "finding": "No current complete public Chinese university list or explicit institution-tier table was found in this review.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "university-of-nottingham",
+    "directoryCategory": "qs-directory",
+    "expectedState": "official-list",
+    "reviewDate": "2026-08-02",
+    "finding": "The university publishes bilingual Tier 1 and Tier 2 institution lists; the law school has separate requirements.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "queen-mary-university-of-london",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-02",
+    "finding": "China undergraduate institution background affects requirements, but no complete public university roster was found.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "university-of-southampton",
+    "directoryCategory": "qs-directory",
+    "expectedState": "official-list",
+    "reviewDate": "2026-08-02",
+    "finding": "The university publishes a tier list that determines the corresponding grade threshold.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "university-of-st-andrews",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-02",
+    "finding": "China undergraduate institution background affects requirements, but no complete public university roster was found.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "university-of-bath",
+    "directoryCategory": "qs-directory",
+    "expectedState": "not-public",
+    "reviewDate": "2026-08-02",
+    "finding": "No current complete public Chinese university list was found; programme requirements remain on their course pages.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "university-of-exeter",
+    "directoryCategory": "qs-directory",
+    "expectedState": "not-public",
+    "reviewDate": "2026-08-02",
+    "finding": "The current 2026 rule removed the old institution-ranking requirement, accepts all Chinese Ministry of Education recognised bachelor's institutions, and uses uniform grade thresholds.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "university-of-liverpool",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-02",
+    "finding": "China undergraduate institution background affects requirements, but no complete public university roster was found.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "newcastle-university",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-02",
+    "finding": "China undergraduate institution background affects requirements, but no complete public university roster was found.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "university-of-york",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-02",
+    "finding": "China undergraduate institution background affects requirements, but no complete public university roster was found.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "lancaster-university",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-02",
+    "finding": "China undergraduate institution background affects requirements, but no complete public university roster was found.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "queens-university-belfast",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-02",
+    "finding": "China undergraduate institution background affects requirements, but no complete public university roster was found.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "cardiff-university",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-02",
+    "finding": "China undergraduate institution background affects requirements, but no complete public university roster was found.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "university-of-reading",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-02",
+    "finding": "China undergraduate institution background affects requirements, but no complete public university roster was found.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "london-business-school",
+    "directoryCategory": "specialist",
+    "expectedState": "not-public",
+    "reviewDate": "2026-08-02",
+    "finding": "No public Chinese undergraduate institution list was found; the reviewed evidence is the Masters in Management application requirements.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "loughborough-university",
+    "directoryCategory": "qs-directory",
+    "expectedState": "official-list",
+    "reviewDate": "2026-08-09",
+    "finding": "The university-wide official China page confirms an institution lookup with tier and equivalent-grade results; a complete structured roster is not recorded.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "university-of-strathclyde",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official China requirements distinguish 211/985 institutions from other Chinese universities but do not publish a member roster.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "university-of-surrey",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official China page gives general degree equivalencies for any Chinese university and no institution roster.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "university-of-sussex",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official China page says Project 211/985 informs offer levels but does not publish a member roster.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "university-of-aberdeen",
+    "directoryCategory": "qs-directory",
+    "expectedState": "pending",
+    "reviewDate": "2026-08-09",
+    "finding": "The only specific official item located is a dated internal 2024 recommendation, not a current applicant-facing China entry rule or roster.",
+    "reviewStatus": "blocked"
+  },
+  {
+    "universityId": "university-of-leicester",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official China page distinguishes prestigious and other Chinese universities for grades but does not publish the combined group members.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "swansea-university",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official postgraduate page distinguishes Double World Class and other universities but publishes no member roster.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "heriot-watt-university",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official Chinese postgraduate page differentiates ShanghaiRanking China University Ranking bands but publishes no university-name roster.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "brunel-university-of-london",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official China page gives general Chinese-degree equivalencies and no institution-background roster.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "birkbeck-university-of-london",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official China page gives category-based grades for Chinese universities but no member roster.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "city-st-georges-university-of-london",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official International Commercial Law LLM page gives China equivalencies depending on the awarding institution; it is programme-scoped and has no roster.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "university-of-east-anglia",
+    "directoryCategory": "qs-directory",
+    "expectedState": "pending",
+    "reviewDate": "2026-08-09",
+    "finding": "No current primary UEA China-entry page or PDF with two verifiable anchors was located; third-party results were not used.",
+    "reviewStatus": "blocked"
+  },
+  {
+    "universityId": "oxford-brookes-university",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official China equivalency page gives general bachelor-degree marks and no Chinese institution roster.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "university-of-kent",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official China page publishes qualification and percentage equivalencies, but no corresponding Chinese institution roster.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "aston-university",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official China page gives course- and institution-dependent grades, but no Aston-owned Chinese institution roster.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "university-of-essex",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official China page gives ARWU-band grade ranges, but no membership roster for either band.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "university-of-dundee",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official China gateway provides selectors, while the International Business and Management MSc example is programme-scoped; neither publishes a Chinese institution roster.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "soas-university-of-london",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official China page gives C9/Double First grade guidance, but no complete Chinese institution roster.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "royal-holloway-university-of-london",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official China page gives programme- and graduating-university-dependent grades, but no public institution list.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "university-of-bradford",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official China page maps qualifications to grade guidance, but has no Chinese institution roster.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "university-of-huddersfield",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official Huddersfield London page gives China qualification requirements, but no Chinese institution roster.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "northumbria-university",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The university-hosted China International Guide PDF gives grade thresholds, but no Chinese institution roster.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "university-of-stirling",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official international-entry page gives 211/985 and other-university grade thresholds, but no roster.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "bangor-university",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official China page gives 211 and non-211 grade thresholds, but no complete institution list.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "university-of-hull",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official China page is a sparse entry-requirements gateway, with no Chinese institution roster or published percentage table.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "coventry-university",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official China-parameterised page gives detailed qualification grades, but no Chinese institution roster.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "ulster-university",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official China page gives qualification and grade guidance but no complete Chinese-institution roster.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "manchester-metropolitan-university",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The directly verified official China page calls its study-level requirements guidance and says applications are considered individually; it publishes no Chinese-institution roster.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "nottingham-trent-university",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official China page maps qualifications and grades to study levels but publishes no named Chinese-institution roster.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "university-of-portsmouth",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official China page provides qualification, GPA, and course-dependent guidance but no Chinese-institution roster.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "kingston-university-london",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official country selector references external ECCTIS classifications but publishes no Kingston-owned Chinese-institution membership roster.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "university-of-plymouth",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official China guide uses ranked and prestigious labels for grade guidance but does not define a public membership roster.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "goldsmiths-university-of-london",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official China guide provides general education guidance and points to course pages, not a Chinese-institution roster.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "university-of-the-west-of-england",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official China page provides qualification thresholds; academic-agreement wording does not publish an admissions membership roster.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "university-of-greenwich",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official China page provides school, Gaokao, bachelor-degree, and GPA thresholds but no Chinese-institution roster.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "aberystwyth-university",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official China page gives different averages for undefined Prestigious and National Universities categories, not a deterministic membership roster.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "bournemouth-university",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official China page applies 985/211 and other-university grade guidance but does not publish a Bournemouth-owned membership roster.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "edinburgh-napier-university",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official China page provides secondary-school, Gaokao, and recognised-institution bachelor thresholds but no Chinese-institution roster.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "keele-university",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official China page maps school and Gaokao grades to undergraduate course bands but publishes no Chinese-institution roster.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "de-montfort-university",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official China section publishes qualification and grade requirements but no Chinese-institution roster or group membership.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "liverpool-john-moores-university",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official China page sets qualification thresholds, including a recognised institution requirement, but publishes no Chinese-institution list.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "university-of-hertfordshire",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official China page gives qualification thresholds through taught postgraduate level and says applications are assessed individually; it has no Chinese university roster.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "university-of-lincoln",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official China page maps four-year Bachelor grades to UK classifications and names recognised institutions without publishing a Chinese-institution roster.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "university-of-the-arts-london",
+    "directoryCategory": "qs-directory",
+    "expectedState": "pending",
+    "reviewDate": "2026-08-09",
+    "finding": "Current first-party international application guidance directs applicants to course-specific entry requirements but publishes no China-specific academic requirement or Chinese-institution rule; this is insufficient to classify a public or non-public list.",
+    "reviewStatus": "blocked"
+  },
+  {
+    "universityId": "university-of-westminster",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official China page uses 211/985/top-national and non-211/985 grade thresholds but publishes no membership roster for either grouping.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "london-south-bank-university",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official China page gives qualification guidance and individual assessment, including a four-year Chinese Bachelor for taught postgraduate entry, but no roster.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "middlesex-university",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The current official China page publishes undergraduate qualification thresholds and links to further guidance but no Chinese university roster or institution-dependent rule.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "university-of-brighton",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official China page gives postgraduate academic equivalencies subject to admissions assessment and publishes no institution roster.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "anglia-ruskin-university",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official regional page uses recognised Chinese university and Prestigious/Regular/Private labels for qualification thresholds but gives no membership roster.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "birmingham-city-university",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official China page requires a minimum final degree average for postgraduate applicants and contains neither a roster nor an institution category.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "glasgow-caledonian-university",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official China page differentiates Tier One (985/211) and Tier Two/Three grade thresholds without publishing their institutional membership roster.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "leeds-beckett-university",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official China page gives postgraduate Bachelor degree percentage thresholds and publishes no institution roster or institution-dependent category.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "london-metropolitan-university",
+    "directoryCategory": "qs-directory",
+    "expectedState": "pending",
+    "reviewDate": "2026-08-09",
+    "finding": "The former first-party deployment URL failed DNS resolution in the browser; the current canonical China page contains an empty academic-entry-requirements anchor rather than verifiable China academic thresholds or an institution roster.",
+    "reviewStatus": "blocked"
+  },
+  {
+    "universityId": "robert-gordon-university",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "Current first-party China guidance gives qualification and grade thresholds, including recognised 211/985 wording, but no deterministic Chinese-institution roster.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "sheffield-hallam-university",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "Current first-party China entry requirements give Chinese qualification and normal average guidance but no Chinese-institution roster.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "university-of-east-london",
+    "directoryCategory": "qs-directory",
+    "expectedState": "pending",
+    "reviewDate": "2026-08-09",
+    "finding": "Current first-party East Asia and general entry pages expose no China academic threshold or deterministic Chinese-institution roster.",
+    "reviewStatus": "blocked"
+  },
+  {
+    "universityId": "university-of-lancashire",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "Current first-party China guidance gives academic thresholds and course-dependent caveats but no Chinese-institution roster.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "university-of-roehampton",
+    "directoryCategory": "qs-directory",
+    "expectedState": "pending",
+    "reviewDate": "2026-08-09",
+    "finding": "The current China page is promotional; its linked first-party entry-requirements page contains no China academic threshold or Chinese-institution roster.",
+    "reviewStatus": "blocked"
+  },
+  {
+    "universityId": "university-of-salford",
+    "directoryCategory": "qs-directory",
+    "expectedState": "pending",
+    "reviewDate": "2026-08-09",
+    "finding": "The current China page is promotional and exposes no verifiable China academic threshold or Chinese-institution roster.",
+    "reviewStatus": "blocked"
+  },
+  {
+    "universityId": "university-of-wolverhampton",
+    "directoryCategory": "qs-directory",
+    "expectedState": "pending",
+    "reviewDate": "2026-08-09",
+    "finding": "The first-party International Study Centre Pre-Master’s programme/pathway PDF now returns 404 in the browser, so no China rule can be verified or generalised to university-wide direct entry.",
+    "reviewStatus": "blocked"
+  },
+  {
+    "universityId": "queen-margaret-university-edinburgh",
+    "directoryCategory": "qs-directory",
+    "expectedState": "pending",
+    "reviewDate": "2026-08-09",
+    "finding": "The current China page supplies promotional information and entry-requirements navigation but no visible China academic threshold or Chinese-institution roster.",
+    "reviewStatus": "blocked"
+  },
+  {
+    "universityId": "university-of-northampton",
+    "directoryCategory": "qs-directory",
+    "expectedState": "pending",
+    "reviewDate": "2026-08-09",
+    "finding": "The current regional page includes China but displays English-language and promotional guidance, not a China academic threshold or Chinese-institution roster.",
+    "reviewStatus": "blocked"
+  },
+  {
+    "universityId": "university-of-derby",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "Current first-party international qualifications guidance contains Mainland China academic thresholds but no institution grouping or roster.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "university-of-south-wales",
+    "directoryCategory": "qs-directory",
+    "expectedState": "pending",
+    "reviewDate": "2026-08-09",
+    "finding": "The current China page is promotional and its entry-requirements link is self-referential; no China academic threshold or Chinese-institution roster is visible.",
+    "reviewStatus": "blocked"
+  },
+  {
+    "universityId": "canterbury-christ-church-university",
+    "directoryCategory": "qs-directory",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "Current first-party China guidance gives qualification and grade thresholds, including 211 wording, but no deterministic Chinese-institution roster.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "london-school-of-hygiene-and-tropical-medicine",
+    "directoryCategory": "specialist",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official China page publishes postgraduate grade equivalencies, but no complete public Chinese undergraduate institution roster was found.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "cranfield-university",
+    "directoryCategory": "specialist",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official China page publishes postgraduate academic requirements, but no complete public Chinese undergraduate institution roster was found.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "royal-college-of-art",
+    "directoryCategory": "specialist",
+    "expectedState": "not-public",
+    "reviewDate": "2026-08-09",
+    "finding": "The reviewed postgraduate application page is not a complete public Chinese undergraduate institution roster.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "royal-veterinary-college",
+    "directoryCategory": "specialist",
+    "expectedState": "not-public",
+    "reviewDate": "2026-08-09",
+    "finding": "The reviewed international application page is not a complete public Chinese undergraduate institution roster.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "royal-college-of-music",
+    "directoryCategory": "specialist",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-09",
+    "finding": "The official China page provides application guidance but not a complete public Chinese undergraduate institution roster.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "institute-of-cancer-research-london",
+    "directoryCategory": "specialist",
+    "expectedState": "not-public",
+    "reviewDate": "2026-08-09",
+    "finding": "The reviewed MSc Oncology page covers a narrow clinical programme and is not a complete public Chinese undergraduate institution roster.",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "universityId": "liverpool-school-of-tropical-medicine",
+    "directoryCategory": "specialist",
+    "expectedState": "not-public",
+    "reviewDate": "2026-08-09",
+    "finding": "The reviewed postgraduate study entry is not a complete public Chinese undergraduate institution roster.",
+    "reviewStatus": "reviewed"
+  }
 ]
