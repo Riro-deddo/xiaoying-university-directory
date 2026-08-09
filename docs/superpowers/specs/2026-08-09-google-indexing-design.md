@@ -8,11 +8,12 @@
 
 ## 方案
 
-1. 由 Astro 生成 `sitemap-index.xml` 或 `sitemap-0.xml`，列出首页和方法说明页。
-2. 在 `public/robots.txt` 中允许公开搜索引擎抓取，并声明 sitemap 的正式地址。
-3. 首页和方法说明页分别输出绝对 canonical 地址，避免带 `?v=` 的分享链接被视为独立页面。
-4. 保留现有中文页面标题和 description；本次不增加关键词堆砌、独立排名页面或结构化院校详情页。
-5. 增加自动化契约测试，检查 robots、sitemap 和两个 canonical 地址；运行完整测试与生产构建。
+1. 由 Astro 生成 `sitemap.xml`，列出首页和方法说明页。
+2. 首页和方法说明页分别输出绝对 canonical 地址，避免带 `?v=` 的分享链接被视为独立页面。
+3. 保留现有中文页面标题和 description；本次不增加关键词堆砌、独立排名页面或结构化院校详情页。
+4. 增加自动化契约测试，检查 sitemap 和两个 canonical 地址；运行完整测试与生产构建。
+
+本项目是 GitHub Pages 子目录站点。Google 只接受域名根目录的 `robots.txt`，而项目无法在本仓库写入 `https://riro-deddo.github.io/robots.txt`；子目录中的同名文件无效。未提供 robots 文件默认即允许抓取，因此本次不生成误导性的项目级 `robots.txt`，改由 Search Console 直接提交 sitemap。
 
 ## 边界
 
@@ -29,6 +30,6 @@
 
 - 生产构建成功。
 - 正式页面包含正确的绝对 canonical。
-- 正式站点可访问 robots 与 sitemap。
+- 正式站点可访问 sitemap。
 - 完整自动化测试通过。
 - 现有界面与院校数据没有任务相关变化。
