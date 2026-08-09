@@ -138,9 +138,9 @@ describe('complete UK ranking directory', () => {
   const universities = loadUniversities();
   const rankingData = loadRankings();
 
-  it('contains the 93-school QS 2027 UK directory plus LBS', () => {
+  it('contains the 93-school QS 2027 UK directory plus eight specialists', () => {
     expect(universities.filter((item) => item.directoryCategory === 'qs-directory')).toHaveLength(93);
-    expect(universities).toHaveLength(94);
+    expect(universities).toHaveLength(101);
   });
 
   it('makes the 93 ranked QS records and current main directory the same set', () => {
@@ -176,7 +176,7 @@ describe('complete UK ranking directory', () => {
     const lbs = universities.find((item) => item.id === 'london-business-school');
 
     expect(lbs?.rankings).toEqual({});
-    expect(lbs?.specialistRanking).toMatchObject({ edition: 2026, displayRank: '9' });
+    expect(lbs?.strengthEvidence).toMatchObject({ edition: 2026, placement: 'exact', displayRank: '9' });
     expect(rankingData.records.some((item) => item.universityId === 'london-business-school')).toBe(false);
   });
 

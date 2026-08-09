@@ -13,6 +13,7 @@ import {
   sourceHealthCopy,
   stateCopy,
   rankingCopy,
+  strengthEvidenceCopy,
 } from '../lib/presentation';
 import { withBase } from '../lib/urls';
 
@@ -122,10 +123,10 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
                 <span class:list={['status-dot', `status-${university.state}`]}></span>
                 <span title={stateCopy[university.state].description}>{stateCopy[university.state].label}</span>
               </div>
-              {university.specialistRanking && (
+              {university.strengthEvidence && (
                 <div class="specialist-detail">
-                  <a href={university.specialistRanking.sourceUrl} target="_blank" rel="noopener noreferrer">
-                    QS 2026 商业与管理全球第 9 · 专门商学院，不参与综合大学排序
+                  <a href={university.strengthEvidence.sourceUrl} target="_blank" rel="noopener noreferrer">
+                    {strengthEvidenceCopy(university.strengthEvidence)}
                   </a>
                 </div>
               )}
@@ -135,7 +136,7 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
                   : <span>{university.noteZh}</span>}
               </div>
               <div class="university-rule-summary">
-                {university.state === 'china-requirements' && <strong>本科院校会影响要求，完整名单未公开。</strong>}
+                {university.state === 'china-requirements' && <strong>已找到中国申请要求，完整院校名单未公开。</strong>}
                 {university.sources.map((source) => (
                   <p>
                     <span>{source.scopeZh}：</span>{source.institutionRule.summaryZh}

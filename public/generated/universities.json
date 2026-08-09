@@ -45,11 +45,12 @@
         },
         "status": {
           "sourceId": "imperial-china",
-          "checkedAt": "2026-08-04T06:04:21.219Z",
-          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "checkedAt": "2026-08-08T04:21:00.620Z",
+          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
           "httpStatus": 200,
           "finalUrl": "https://www.imperial.ac.uk/study/apply/postgraduate-doctoral/application-process/entry-requirements/accepted-qualifications/",
-          "health": "ok"
+          "health": "ok",
+          "consecutiveFailures": 0
         }
       }
     ],
@@ -118,10 +119,11 @@
         },
         "status": {
           "sourceId": "oxford-china",
-          "checkedAt": "2026-08-04T06:04:21.219Z",
+          "checkedAt": "2026-08-08T04:21:00.620Z",
           "httpStatus": 403,
           "finalUrl": "https://www.ox.ac.uk/admissions/graduate/international-applicants/international-qualifiations?source=applicationguide",
-          "health": "unavailable"
+          "health": "unavailable",
+          "consecutiveFailures": 3
         }
       }
     ],
@@ -205,10 +207,12 @@
         },
         "status": {
           "sourceId": "cambridge-china",
-          "checkedAt": "2026-08-04T06:04:21.219Z",
-          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "checkedAt": "2026-08-08T04:21:00.620Z",
+          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
           "health": "ok",
-          "finalUrl": "https://www.postgraduate.study.cam.ac.uk/apply/before/international-qualifications"
+          "finalUrl": "https://www.postgraduate.study.cam.ac.uk/apply/before/international-qualifications",
+          "consecutiveFailures": 0,
+          "contentHash": "90ad411083808e80f707bb67f2cb1cf9f4c5ac884b6e3cdfe926b359a09a1bf5"
         }
       }
     ],
@@ -290,10 +294,12 @@
         },
         "status": {
           "sourceId": "ucl-china",
-          "checkedAt": "2026-08-04T06:04:21.219Z",
-          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "checkedAt": "2026-08-08T04:21:00.620Z",
+          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
           "health": "ok",
-          "finalUrl": "https://www.ucl.ac.uk/prospective-students/international/china"
+          "finalUrl": "https://www.ucl.ac.uk/prospective-students/international/china",
+          "consecutiveFailures": 0,
+          "contentHash": "b65a203e86dc1a150a3e3f4dce5131cc23c3db92adb6a4b9ed9e0fecf99cb643"
         }
       }
     ],
@@ -371,10 +377,12 @@
         },
         "status": {
           "sourceId": "edinburgh-china",
-          "checkedAt": "2026-08-04T06:04:21.219Z",
-          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "checkedAt": "2026-08-08T04:21:00.620Z",
+          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
           "health": "ok",
-          "finalUrl": "https://edwebcontent.ed.ac.uk/sites/default/files/atoms/files/priority_list_of_chinese_universities.pdf"
+          "finalUrl": "https://edwebcontent.ed.ac.uk/sites/default/files/atoms/files/priority_list_of_chinese_universities.pdf",
+          "consecutiveFailures": 0,
+          "contentHash": "d89ccc58ecedaf9685656b4304ae4c79adbb32f6699cba9dc3fa947c70f573d2"
         }
       }
     ],
@@ -444,12 +452,13 @@
         },
         "status": {
           "sourceId": "kcl-china",
-          "checkedAt": "2026-08-04T06:04:21.219Z",
-          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "checkedAt": "2026-08-08T04:21:00.620Z",
+          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
           "httpStatus": 200,
           "finalUrl": "https://www.kcl.ac.uk/study/postgraduate-taught/courses/china-and-globalisation-msc/requirements",
           "health": "changed",
-          "etag": "W/\"5c068-yRCPkFiZmY3tQtupnX5qXT/aS6w\""
+          "etag": "W/\"5c079-2vGHvYlPk2r8TjyN0WsVS9hzVjk\"",
+          "consecutiveFailures": 0
         }
       }
     ],
@@ -518,11 +527,12 @@
         },
         "status": {
           "sourceId": "manchester-china",
-          "checkedAt": "2026-08-04T06:04:21.219Z",
-          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "checkedAt": "2026-08-08T04:21:00.620Z",
+          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
           "httpStatus": 200,
           "finalUrl": "https://www.manchester.ac.uk/study/international/country-specific-information/china-mainland/",
-          "health": "ok"
+          "health": "ok",
+          "consecutiveFailures": 0
         }
       },
       {
@@ -556,11 +566,12 @@
         },
         "status": {
           "sourceId": "manchester-computer-science-china",
-          "checkedAt": "2026-08-04T06:04:21.219Z",
-          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "checkedAt": "2026-08-08T04:21:00.620Z",
+          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
           "httpStatus": 200,
           "finalUrl": "https://www.manchester.ac.uk/study/masters/courses/list/21575/msc-cyber-security/",
-          "health": "ok"
+          "health": "ok",
+          "consecutiveFailures": 0
         }
       },
       {
@@ -594,11 +605,12 @@
         },
         "status": {
           "sourceId": "manchester-law-china",
-          "checkedAt": "2026-08-04T06:04:21.219Z",
-          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "checkedAt": "2026-08-08T04:21:00.620Z",
+          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
           "httpStatus": 200,
           "finalUrl": "https://www.humanities.manchester.ac.uk/law/study/international-students/country-specific-information/china/",
-          "health": "ok"
+          "health": "ok",
+          "consecutiveFailures": 0
         }
       }
     ],
@@ -673,10 +685,12 @@
         },
         "status": {
           "sourceId": "bristol-china",
-          "checkedAt": "2026-08-04T06:04:21.219Z",
-          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "checkedAt": "2026-08-08T04:21:00.620Z",
+          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
           "health": "ok",
-          "finalUrl": "https://www.bristol.ac.uk/international/countries/china/accepted-universities-in-china/"
+          "finalUrl": "https://www.bristol.ac.uk/international/countries/china/accepted-universities-in-china/",
+          "consecutiveFailures": 0,
+          "contentHash": "91d956a10e104aaecbf9801728390b438faba6a45608c4ee8576d84981d10b2e"
         }
       }
     ],
@@ -745,12 +759,13 @@
         },
         "status": {
           "sourceId": "lse-china",
-          "checkedAt": "2026-08-04T06:04:21.219Z",
-          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "checkedAt": "2026-08-08T04:21:00.620Z",
+          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
           "httpStatus": 200,
           "finalUrl": "https://www.lse.ac.uk/study-at-lse/international-students/china",
           "health": "changed",
-          "etag": "W/\"53cd0-rgxXlw+k2kus7Kk/gD+uBM7dn3Q\""
+          "etag": "W/\"53d10-waw4fDUBvK+1Vl0B8afx2FxjoXU\"",
+          "consecutiveFailures": 0
         }
       }
     ],
@@ -829,10 +844,12 @@
         },
         "status": {
           "sourceId": "warwick-china",
-          "checkedAt": "2026-08-04T06:04:21.219Z",
-          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "checkedAt": "2026-08-08T04:21:00.620Z",
+          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
           "health": "ok",
-          "finalUrl": "https://warwick.ac.uk/study/international/countryinformation/eastasia/china/china-entry-requirements/"
+          "finalUrl": "https://warwick.ac.uk/study/international/countryinformation/eastasia/china/china-entry-requirements/",
+          "consecutiveFailures": 0,
+          "contentHash": "0654d595dd02a08bee9807bc164ae4d321f5ea9d649aa62ebb575cb8e2c08592"
         }
       }
     ],
@@ -901,11 +918,12 @@
         },
         "status": {
           "sourceId": "birmingham-china",
-          "checkedAt": "2026-08-04T06:04:21.219Z",
-          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "checkedAt": "2026-08-08T04:21:00.620Z",
+          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
           "httpStatus": 200,
           "finalUrl": "https://www.birmingham.ac.uk/study/international/country/china",
-          "health": "ok"
+          "health": "ok",
+          "consecutiveFailures": 0
         }
       }
     ],
@@ -974,11 +992,12 @@
         },
         "status": {
           "sourceId": "leeds-china",
-          "checkedAt": "2026-08-04T06:04:21.219Z",
-          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "checkedAt": "2026-08-08T04:21:00.620Z",
+          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
           "httpStatus": 200,
           "finalUrl": "https://www.leeds.ac.uk/dir-record/profiles/21834/china",
-          "health": "ok"
+          "health": "ok",
+          "consecutiveFailures": 0
         }
       }
     ],
@@ -1066,10 +1085,12 @@
         },
         "status": {
           "sourceId": "glasgow-china",
-          "checkedAt": "2026-08-04T06:04:21.219Z",
-          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "checkedAt": "2026-08-08T04:21:00.620Z",
+          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
           "health": "ok",
-          "finalUrl": "https://www.gla.ac.uk/media/Media_1221495_smxx.pdf"
+          "finalUrl": "https://www.gla.ac.uk/media/Media_1221495_smxx.pdf",
+          "consecutiveFailures": 0,
+          "contentHash": "129c7f7e8c924142b5e67ad97a0d5ccd3b3d25066cabe4a47a20c79f29eb82af"
         }
       }
     ],
@@ -1158,10 +1179,12 @@
         },
         "status": {
           "sourceId": "sheffield-china",
-          "checkedAt": "2026-08-04T06:04:21.219Z",
-          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "checkedAt": "2026-08-08T04:21:00.620Z",
+          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
           "health": "ok",
-          "finalUrl": "https://sheffield.ac.uk/international/entry-requirements/china/ranking-list"
+          "finalUrl": "https://sheffield.ac.uk/international/entry-requirements/china/ranking-list",
+          "consecutiveFailures": 0,
+          "contentHash": "72a8a230f02aaca44280b36f95022b756ed7e7847c09b5592cdfa3a616e2b83c"
         }
       }
     ],
@@ -1230,10 +1253,11 @@
         },
         "status": {
           "sourceId": "durham-china",
-          "checkedAt": "2026-08-04T06:04:21.219Z",
+          "checkedAt": "2026-08-08T04:21:00.620Z",
           "httpStatus": 403,
           "finalUrl": "https://www.durham.ac.uk/study/international/your-country/china/",
-          "health": "unavailable"
+          "health": "unavailable",
+          "consecutiveFailures": 3
         }
       }
     ],
@@ -1312,10 +1336,12 @@
         },
         "status": {
           "sourceId": "nottingham-china",
-          "checkedAt": "2026-08-04T06:04:21.219Z",
-          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "checkedAt": "2026-08-08T04:21:00.620Z",
+          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
           "health": "ok",
-          "finalUrl": "https://www.nottingham.ac.uk/studywithus/international-applicants/country-info/countryinformation/china-institution-list.aspx"
+          "finalUrl": "https://www.nottingham.ac.uk/studywithus/international-applicants/country-info/countryinformation/china-institution-list.aspx",
+          "consecutiveFailures": 0,
+          "contentHash": "4c39554afa7d9d6c592c82effa60b4e41deb6c1bebb0785b6f083222095d05a7"
         }
       }
     ],
@@ -1384,10 +1410,11 @@
         },
         "status": {
           "sourceId": "qmul-china",
-          "checkedAt": "2026-08-04T06:04:21.219Z",
+          "checkedAt": "2026-08-08T04:21:00.620Z",
           "httpStatus": 403,
           "finalUrl": "https://www.qmul.ac.uk/international-students/regions/east-asia/entry-requirements/mainland-china/",
-          "health": "unavailable"
+          "health": "unavailable",
+          "consecutiveFailures": 3
         }
       }
     ],
@@ -1478,10 +1505,12 @@
         },
         "status": {
           "sourceId": "southampton-china",
-          "checkedAt": "2026-08-04T06:04:21.219Z",
-          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "checkedAt": "2026-08-08T04:21:00.620Z",
+          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
           "health": "ok",
-          "finalUrl": "https://www.southampton.ac.uk/international/entry-qualification-equivalencies/china/postgraduate-taught-tier-list"
+          "finalUrl": "https://www.southampton.ac.uk/international/entry-qualification-equivalencies/china/postgraduate-taught-tier-list",
+          "consecutiveFailures": 0,
+          "contentHash": "7d4863b4e9280af44e286eb72c7e57075444faaca0a6729da98385b04310ca0d"
         }
       }
     ],
@@ -1550,11 +1579,12 @@
         },
         "status": {
           "sourceId": "st-andrews-china",
-          "checkedAt": "2026-08-04T06:04:21.219Z",
-          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "checkedAt": "2026-08-08T04:21:00.620Z",
+          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
           "httpStatus": 200,
           "finalUrl": "https://www.st-andrews.ac.uk/subjects/entry/china/",
-          "health": "ok"
+          "health": "ok",
+          "consecutiveFailures": 0
         }
       }
     ],
@@ -1623,11 +1653,12 @@
         },
         "status": {
           "sourceId": "bath-china",
-          "checkedAt": "2026-08-04T06:04:21.219Z",
-          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "checkedAt": "2026-08-08T04:21:00.620Z",
+          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
           "httpStatus": 200,
           "finalUrl": "https://www.bath.ac.uk/corporate-information/entry-requirements-for-international-students/",
-          "health": "ok"
+          "health": "ok",
+          "consecutiveFailures": 0
         }
       }
     ],
@@ -1697,12 +1728,13 @@
         },
         "status": {
           "sourceId": "exeter-china",
-          "checkedAt": "2026-08-04T06:04:21.219Z",
-          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "checkedAt": "2026-08-08T04:21:00.620Z",
+          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
           "httpStatus": 304,
           "finalUrl": "https://www.exeter.ac.uk/international-students/china/",
           "health": "ok",
-          "lastModified": "Tue, 28 Jul 2026 00:00:00 GMT"
+          "lastModified": "Tue, 28 Jul 2026 00:00:00 GMT",
+          "consecutiveFailures": 0
         }
       }
     ],
@@ -1771,11 +1803,12 @@
         },
         "status": {
           "sourceId": "liverpool-china",
-          "checkedAt": "2026-08-04T06:04:21.219Z",
-          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "checkedAt": "2026-08-08T04:21:00.620Z",
+          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
           "httpStatus": 200,
           "finalUrl": "https://www.liverpool.ac.uk/international/countries/chinamainland.php",
-          "health": "ok"
+          "health": "ok",
+          "consecutiveFailures": 0
         }
       }
     ],
@@ -1844,13 +1877,14 @@
         },
         "status": {
           "sourceId": "newcastle-china",
-          "checkedAt": "2026-08-04T06:04:21.219Z",
-          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "checkedAt": "2026-08-08T04:21:00.620Z",
+          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
           "httpStatus": 200,
           "finalUrl": "https://www.ncl.ac.uk/international/country/china/",
-          "health": "ok",
-          "etag": "\"1dd10-6575ce6c1aadb-gzip\"",
-          "lastModified": "Fri, 24 Jul 2026 15:19:40 GMT"
+          "health": "changed",
+          "etag": "\"1dd11-6587705d0ef0a-gzip\"",
+          "lastModified": "Fri, 07 Aug 2026 15:54:42 GMT",
+          "consecutiveFailures": 0
         }
       }
     ],
@@ -1919,13 +1953,14 @@
         },
         "status": {
           "sourceId": "york-china",
-          "checkedAt": "2026-08-04T06:04:21.219Z",
-          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
-          "httpStatus": 200,
+          "checkedAt": "2026-08-08T04:21:00.620Z",
+          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
+          "httpStatus": 304,
           "finalUrl": "https://www.york.ac.uk/study/international/your-country/china/",
-          "health": "changed",
-          "etag": "\"130a7-6582ca72c0cb7-gzip\"",
-          "lastModified": "Mon, 03 Aug 2026 23:11:06 GMT"
+          "health": "ok",
+          "etag": "\"131be-658690381f4bf-gzip\"",
+          "lastModified": "Thu, 06 Aug 2026 23:11:53 GMT",
+          "consecutiveFailures": 0
         }
       }
     ],
@@ -1995,11 +2030,12 @@
         },
         "status": {
           "sourceId": "lancaster-china",
-          "checkedAt": "2026-08-04T06:04:21.219Z",
-          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "checkedAt": "2026-08-08T04:21:00.620Z",
+          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
           "httpStatus": 200,
           "finalUrl": "https://www.lancaster.ac.uk/study/entry-requirements/postgraduate-qualifications/?country=China",
-          "health": "ok"
+          "health": "ok",
+          "consecutiveFailures": 0
         }
       }
     ],
@@ -2068,10 +2104,11 @@
         },
         "status": {
           "sourceId": "qub-china",
-          "checkedAt": "2026-08-04T06:04:21.219Z",
+          "checkedAt": "2026-08-08T04:21:00.620Z",
           "httpStatus": 403,
           "finalUrl": "https://www.qub.ac.uk/Study/international-students/your-country/china/",
-          "health": "unavailable"
+          "health": "unavailable",
+          "consecutiveFailures": 3
         }
       }
     ],
@@ -2140,10 +2177,11 @@
         },
         "status": {
           "sourceId": "cardiff-china",
-          "checkedAt": "2026-08-04T06:04:21.219Z",
+          "checkedAt": "2026-08-08T04:21:00.620Z",
           "httpStatus": 403,
           "finalUrl": "https://www.cardiff.ac.uk/study/international/your-country/asia/china/entry-requirements",
-          "health": "unavailable"
+          "health": "unavailable",
+          "consecutiveFailures": 3
         }
       }
     ],
@@ -2212,11 +2250,12 @@
         },
         "status": {
           "sourceId": "reading-china",
-          "checkedAt": "2026-08-04T06:04:21.219Z",
-          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "checkedAt": "2026-08-08T04:21:00.620Z",
+          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
           "httpStatus": 200,
           "finalUrl": "https://www.reading.ac.uk/ready-to-study/international-and-eu/country-specific-information/country-specific-china",
-          "health": "ok"
+          "health": "ok",
+          "consecutiveFailures": 0
         }
       }
     ],
@@ -2240,6 +2279,67 @@
     }
   },
   {
+    "id": "cranfield-university",
+    "nameZh": "克兰菲尔德大学",
+    "nameEn": "Cranfield University",
+    "aliases": [
+      "Cranfield",
+      "克兰菲尔德"
+    ],
+    "directoryCategory": "specialist",
+    "strengthEvidence": {
+      "kind": "subject-ranking",
+      "provider": "qs",
+      "rankingName": "QS World University Rankings by Subject",
+      "subjectZh": "机械、航空与制造工程",
+      "edition": 2026,
+      "placement": "exact",
+      "displayRank": "55",
+      "sourceUrl": "https://www.cranfield.ac.uk/som/press/cranfield-amongst-the-best-in-the-world-in-latest-qs-subject-rankings",
+      "noteZh": "航空航天与应用工程特色院校，不参与综合大学排序"
+    },
+    "state": "china-requirements",
+    "officialDomain": "https://www.cranfield.ac.uk",
+    "sources": [
+      {
+        "id": "cranfield-china-entry",
+        "universityId": "cranfield-university",
+        "labelZh": "中国研究生入学要求",
+        "url": "https://www.cranfield.ac.uk/china",
+        "kind": "china-requirements",
+        "scope": "university",
+        "scopeZh": "学校面向中国申请人的研究生学历要求",
+        "institutionRule": {
+          "type": "none",
+          "summaryZh": "大多数课程最低要求相当于英国 2:2，部分课程要求 2:1；具体国际学历等值与附加条件以国际要求和课程页为准；未发现完整公开的中国本科院校名称名单。",
+          "verification": {
+            "reviewedAt": "2026-08-09",
+            "url": "https://www.cranfield.ac.uk/china",
+            "requiredText": [
+              "Academic requirements",
+              "2:2",
+              "2:1"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "link-only",
+          "guard": {
+            "minimumRecords": 0,
+            "maximumRecords": 1,
+            "maximumRemovalRatio": 0
+          }
+        },
+        "status": {
+          "sourceId": "cranfield-china-entry",
+          "health": "unchecked",
+          "consecutiveFailures": 0
+        }
+      }
+    ],
+    "rankings": {}
+  },
+  {
     "id": "london-business-school",
     "nameZh": "伦敦商学院",
     "nameEn": "London Business School",
@@ -2248,13 +2348,16 @@
       "London Business School"
     ],
     "directoryCategory": "specialist",
-    "specialistRanking": {
+    "strengthEvidence": {
+      "kind": "subject-ranking",
       "provider": "qs",
       "rankingName": "QS WUR Ranking By Subject",
       "subjectZh": "商业与管理",
       "edition": 2026,
+      "placement": "exact",
       "displayRank": "9",
-      "sourceUrl": "https://www.topuniversities.com/universities/london-business-school"
+      "sourceUrl": "https://www.topuniversities.com/universities/london-business-school",
+      "noteZh": "专门商学院，不参与综合大学排序"
     },
     "state": "not-public",
     "officialDomain": "https://www.london.edu",
@@ -2289,12 +2392,372 @@
         },
         "status": {
           "sourceId": "lbs-mim-entry",
-          "checkedAt": "2026-08-04T06:04:21.219Z",
-          "lastSuccessfulAt": "2026-08-04T06:04:21.219Z",
+          "checkedAt": "2026-08-08T04:21:00.620Z",
+          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
           "httpStatus": 200,
           "finalUrl": "https://www.london.edu/masters-degrees/masters-in-management/apply",
-          "health": "ok",
-          "etag": "W/\"2ta3n9cfwkc44c-df\""
+          "health": "changed",
+          "etag": "W/\"z8ieoc9pl3c3oa-df\"",
+          "consecutiveFailures": 0
+        }
+      }
+    ],
+    "rankings": {}
+  },
+  {
+    "id": "london-school-of-hygiene-and-tropical-medicine",
+    "nameZh": "伦敦卫生与热带医学院",
+    "nameEn": "London School of Hygiene & Tropical Medicine",
+    "aliases": [
+      "LSHTM",
+      "伦敦卫生与热带医学学院",
+      "London School of Hygiene and Tropical Medicine"
+    ],
+    "directoryCategory": "specialist",
+    "strengthEvidence": {
+      "kind": "subject-ranking",
+      "provider": "shanghai",
+      "rankingName": "ShanghaiRanking Global Ranking of Academic Subjects",
+      "subjectZh": "公共卫生",
+      "edition": 2025,
+      "placement": "exact",
+      "displayRank": "3",
+      "sourceUrl": "https://www.shanghairanking.com/universities/london-school-of-hygiene-tropical-medicine",
+      "noteZh": "公共卫生领域专业院校，不参与综合大学排序"
+    },
+    "state": "china-requirements",
+    "officialDomain": "https://www.lshtm.ac.uk",
+    "sources": [
+      {
+        "id": "lshtm-china-entry",
+        "universityId": "london-school-of-hygiene-and-tropical-medicine",
+        "labelZh": "中国申请者入学要求",
+        "url": "https://www.lshtm.ac.uk/study/international/country-region-information/china",
+        "kind": "china-requirements",
+        "scope": "university",
+        "scopeZh": "学校面向中国申请人的研究生学历等值要求",
+        "institutionRule": {
+          "type": "none",
+          "summaryZh": "英国 2:2 通常对应本科均分 80% 或 CGPA 3.0；英国 2:1 通常对应本科均分 85%。部分课程还会要求特定学历、工作经验或评估，最终以课程页为准；未发现完整公开的中国本科院校名称名单。",
+          "verification": {
+            "reviewedAt": "2026-08-09",
+            "url": "https://www.lshtm.ac.uk/study/international/country-region-information/china",
+            "requiredText": [
+              "Entry requirements",
+              "80%",
+              "85%"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "link-only",
+          "guard": {
+            "minimumRecords": 0,
+            "maximumRecords": 1,
+            "maximumRemovalRatio": 0
+          }
+        },
+        "status": {
+          "sourceId": "lshtm-china-entry",
+          "health": "unchecked",
+          "consecutiveFailures": 0
+        }
+      }
+    ],
+    "rankings": {}
+  },
+  {
+    "id": "royal-college-of-art",
+    "nameZh": "皇家艺术学院",
+    "nameEn": "Royal College of Art",
+    "aliases": [
+      "RCA"
+    ],
+    "directoryCategory": "specialist",
+    "strengthEvidence": {
+      "kind": "subject-ranking",
+      "provider": "qs",
+      "rankingName": "QS World University Rankings by Subject",
+      "subjectZh": "艺术与设计",
+      "edition": 2026,
+      "placement": "exact",
+      "displayRank": "1",
+      "sourceUrl": "https://www.rca.ac.uk/news-and-events/news/royal-college-of-art-celebrates-12th-consecutive-year-as-the-worlds-leading-university-for-art-and-design/",
+      "noteZh": "艺术与设计专业院校，不参与综合大学排序"
+    },
+    "state": "not-public",
+    "officialDomain": "https://www.rca.ac.uk",
+    "sources": [
+      {
+        "id": "rca-postgraduate-entry",
+        "universityId": "royal-college-of-art",
+        "labelZh": "RCA 研究生课程申请入口",
+        "url": "https://www.rca.ac.uk/study/apply-to-study/",
+        "kind": "china-requirements",
+        "scope": "university",
+        "scopeZh": "学校研究生课程申请入口",
+        "institutionRule": {
+          "type": "none",
+          "summaryZh": "申请要求按课程页核对，通常涉及学术背景、作品集和英语要求；未发现完整公开的中国本科院校名称名单。",
+          "verification": {
+            "reviewedAt": "2026-08-09",
+            "url": "https://www.rca.ac.uk/study/apply-to-study/",
+            "requiredText": [
+              "Apply to study",
+              "Application"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "link-only",
+          "guard": {
+            "minimumRecords": 0,
+            "maximumRecords": 1,
+            "maximumRemovalRatio": 0
+          }
+        },
+        "status": {
+          "sourceId": "rca-postgraduate-entry",
+          "health": "unchecked",
+          "consecutiveFailures": 0
+        }
+      }
+    ],
+    "rankings": {}
+  },
+  {
+    "id": "royal-veterinary-college",
+    "nameZh": "皇家兽医学院",
+    "nameEn": "Royal Veterinary College",
+    "aliases": [
+      "RVC"
+    ],
+    "directoryCategory": "specialist",
+    "strengthEvidence": {
+      "kind": "subject-ranking",
+      "provider": "qs",
+      "rankingName": "QS World University Rankings by Subject",
+      "subjectZh": "兽医学",
+      "edition": 2026,
+      "placement": "exact",
+      "displayRank": "1",
+      "sourceUrl": "https://www.rvc.ac.uk/news-and-events/rvc-news/the-rvc-tops-global-rankings-once-again",
+      "noteZh": "兽医学专业院校，不参与综合大学排序"
+    },
+    "state": "not-public",
+    "officialDomain": "https://www.rvc.ac.uk",
+    "sources": [
+      {
+        "id": "rvc-international-entry",
+        "universityId": "royal-veterinary-college",
+        "labelZh": "RVC 国际学生申请入口",
+        "url": "https://www.rvc.ac.uk/study/international-students/how-to-apply",
+        "kind": "china-requirements",
+        "scope": "university",
+        "scopeZh": "学校面向国际学生的申请入口",
+        "institutionRule": {
+          "type": "none",
+          "summaryZh": "学术资格和其他条件按具体研究生课程页核对；未发现完整公开的中国本科院校名称名单。",
+          "verification": {
+            "reviewedAt": "2026-08-09",
+            "url": "https://www.rvc.ac.uk/study/international-students/how-to-apply",
+            "requiredText": [
+              "How to apply",
+              "International students"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "link-only",
+          "guard": {
+            "minimumRecords": 0,
+            "maximumRecords": 1,
+            "maximumRemovalRatio": 0
+          }
+        },
+        "status": {
+          "sourceId": "rvc-international-entry",
+          "health": "unchecked",
+          "consecutiveFailures": 0
+        }
+      }
+    ],
+    "rankings": {}
+  },
+  {
+    "id": "royal-college-of-music",
+    "nameZh": "皇家音乐学院",
+    "nameEn": "Royal College of Music",
+    "aliases": [
+      "RCM"
+    ],
+    "directoryCategory": "specialist",
+    "strengthEvidence": {
+      "kind": "subject-ranking",
+      "provider": "qs",
+      "rankingName": "QS World University Rankings by Subject",
+      "subjectZh": "音乐与表演艺术",
+      "edition": 2026,
+      "placement": "exact",
+      "displayRank": "2",
+      "sourceUrl": "https://www.rcm.ac.uk/about/news/all/2026-03-26qsrankings2026.aspx",
+      "noteZh": "音乐与表演艺术专业院校，不参与综合大学排序"
+    },
+    "state": "china-requirements",
+    "officialDomain": "https://www.rcm.ac.uk",
+    "sources": [
+      {
+        "id": "rcm-china-entry",
+        "universityId": "royal-college-of-music",
+        "labelZh": "RCM 中国学生申请说明",
+        "url": "https://www.rcm.ac.uk/international/china/",
+        "kind": "china-requirements",
+        "scope": "university",
+        "scopeZh": "学校面向中国学生的申请说明",
+        "institutionRule": {
+          "type": "none",
+          "summaryZh": "中国学生按课程要求准备申请，并通过 UCAS Conservatoires 完成相应流程；作品集、试演或面试要求因课程而异。该页面不是中国本科院校准入名单。",
+          "verification": {
+            "reviewedAt": "2026-08-09",
+            "url": "https://www.rcm.ac.uk/international/china/",
+            "requiredText": [
+              "China",
+              "UCAS Conservatoires"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "link-only",
+          "guard": {
+            "minimumRecords": 0,
+            "maximumRecords": 1,
+            "maximumRemovalRatio": 0
+          }
+        },
+        "status": {
+          "sourceId": "rcm-china-entry",
+          "health": "unchecked",
+          "consecutiveFailures": 0
+        }
+      }
+    ],
+    "rankings": {}
+  },
+  {
+    "id": "institute-of-cancer-research-london",
+    "nameZh": "伦敦癌症研究院",
+    "nameEn": "The Institute of Cancer Research, London",
+    "aliases": [
+      "ICR",
+      "Institute of Cancer Research"
+    ],
+    "directoryCategory": "specialist",
+    "strengthEvidence": {
+      "kind": "research-assessment",
+      "provider": "ref",
+      "rankingName": "Research Excellence Framework 2021",
+      "subjectZh": "生物科学",
+      "edition": 2021,
+      "placement": "derived-national-exact",
+      "displayRank": "1",
+      "sourceUrl": "https://www.icr.ac.uk/about-us/icr-news/detail/icr-rated-second-in-uk-among-all-higher-education-institutions-in-ref-2021-analysis",
+      "noteZh": "癌症研究专业院校，不参与综合大学排序；该依据不是全球学科榜"
+    },
+    "state": "not-public",
+    "officialDomain": "https://www.icr.ac.uk",
+    "sources": [
+      {
+        "id": "icr-msc-oncology-entry",
+        "universityId": "institute-of-cancer-research-london",
+        "labelZh": "ICR 肿瘤学硕士申请要求",
+        "url": "https://www.icr.ac.uk/study-and-careers/opportunities-for-clinicians/msc-in-oncology",
+        "kind": "china-requirements",
+        "scope": "programme",
+        "scopeZh": "MSc Oncology（肿瘤学理学硕士，在职临床课程）",
+        "institutionRule": {
+          "type": "none",
+          "summaryZh": "该授课型项目是范围非常狭窄的在职临床课程，通常要求医学学位、至少两年临床经验、英国 GMC 注册和在英临床岗位；它不是面向普通国际学生的通用授课型硕士申请入口。",
+          "verification": {
+            "reviewedAt": "2026-08-09",
+            "url": "https://www.icr.ac.uk/study-and-careers/opportunities-for-clinicians/msc-in-oncology",
+            "requiredText": [
+              "MSc in Oncology",
+              "GMC",
+              "clinical"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "link-only",
+          "guard": {
+            "minimumRecords": 0,
+            "maximumRecords": 1,
+            "maximumRemovalRatio": 0
+          }
+        },
+        "status": {
+          "sourceId": "icr-msc-oncology-entry",
+          "health": "unchecked",
+          "consecutiveFailures": 0
+        }
+      }
+    ],
+    "rankings": {}
+  },
+  {
+    "id": "liverpool-school-of-tropical-medicine",
+    "nameZh": "利物浦热带医学院",
+    "nameEn": "Liverpool School of Tropical Medicine",
+    "aliases": [
+      "LSTM"
+    ],
+    "directoryCategory": "specialist",
+    "strengthEvidence": {
+      "kind": "subject-ranking",
+      "provider": "shanghai",
+      "rankingName": "ShanghaiRanking Global Ranking of Academic Subjects",
+      "subjectZh": "公共卫生",
+      "edition": 2025,
+      "placement": "band",
+      "displayRank": "76–100",
+      "sourceUrl": "https://www.shanghairanking.com/universities/liverpool-school-of-tropical-medicine",
+      "noteZh": "热带医学与公共卫生专业院校，不参与综合大学排序"
+    },
+    "state": "not-public",
+    "officialDomain": "https://lstmed.ac.uk",
+    "sources": [
+      {
+        "id": "lstm-postgraduate-entry",
+        "universityId": "liverpool-school-of-tropical-medicine",
+        "labelZh": "LSTM 研究生课程申请入口",
+        "url": "https://lstmed.ac.uk/study/",
+        "kind": "china-requirements",
+        "scope": "university",
+        "scopeZh": "学校研究生课程申请入口",
+        "institutionRule": {
+          "type": "none",
+          "summaryZh": "研究生入学要求按具体课程页面核对；未发现完整公开的中国本科院校名称名单。",
+          "verification": {
+            "reviewedAt": "2026-08-09",
+            "url": "https://lstmed.ac.uk/study/",
+            "requiredText": [
+              "Study",
+              "Postgraduate"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "link-only",
+          "guard": {
+            "minimumRecords": 0,
+            "maximumRecords": 1,
+            "maximumRemovalRatio": 0
+          }
+        },
+        "status": {
+          "sourceId": "lstm-postgraduate-entry",
+          "health": "unchecked",
+          "consecutiveFailures": 0
         }
       }
     ],
@@ -3879,6 +4342,17 @@
       "firstEdition": 2027,
       "verifiedEdition": 2027,
       "current": true
+    },
+    "strengthEvidence": {
+      "kind": "subject-ranking",
+      "provider": "qs",
+      "rankingName": "QS World University Rankings by Subject",
+      "subjectZh": "艺术与设计",
+      "edition": 2026,
+      "placement": "exact",
+      "displayRank": "2",
+      "sourceUrl": "https://www.arts.ac.uk/about-ual/press-office/stories/qs-world-rankings-2026",
+      "noteZh": "艺术与设计强势院校，仍参与 QS/THE 综合大学排序"
     },
     "state": "pending",
     "officialDomain": "https://www.arts.ac.uk",

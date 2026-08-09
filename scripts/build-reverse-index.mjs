@@ -1,5 +1,6 @@
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
-import { dirname, join } from 'node:path';
+import { randomUUID } from 'node:crypto';
+import { mkdir, readFile, rename, rm, writeFile } from 'node:fs/promises';
+import { basename, dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -45,6 +46,25 @@ export function buildReverseIndex({ institutions, requirements, sources, statuse
   );
 }
 
+export async function writeJsonAtomically(target, value) {
+  await mkdir(dirname(target), { recursive: true });
+  const serialized = `${JSON.stringify(value, null, 2)}\n`;
+  const current = await readFile(target, 'utf8').catch((error) => {
+    if (error.code === 'ENOENT') return undefined;
+    throw error;
+  });
+  if (current === serialized) return false;
+
+  const temporary = join(dirname(target), `.${basename(target)}.${process.pid}.${randomUUID()}.tmp`);
+  try {
+    await writeFile(temporary, serialized, 'utf8');
+    await rename(temporary, target);
+    return true;
+  } finally {
+    await rm(temporary, { force: true });
+  }
+}
+
 export async function writeReverseIndex() {
   const dataPath = (...parts) => join(root, 'src', 'data', ...parts);
   const [institutions, requirements, sources, statuses] = await Promise.all([
@@ -55,8 +75,7 @@ export async function writeReverseIndex() {
   ]);
   const index = buildReverseIndex({ institutions, requirements, sources, statuses });
   const target = dataPath('generated', 'reverse-index.json');
-  await mkdir(dirname(target), { recursive: true });
-  await writeFile(target, `${JSON.stringify(index, null, 2)}\n`, 'utf8');
+  await writeJsonAtomically(target, index);
   return index;
 }
 

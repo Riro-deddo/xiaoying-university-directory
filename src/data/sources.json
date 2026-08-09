@@ -882,5 +882,152 @@
         "maximumRemovalRatio": 0
       }
     }
+  },
+  {
+    "id": "lshtm-china-entry",
+    "universityId": "london-school-of-hygiene-and-tropical-medicine",
+    "labelZh": "中国申请者入学要求",
+    "url": "https://www.lshtm.ac.uk/study/international/country-region-information/china",
+    "kind": "china-requirements",
+    "scope": "university",
+    "scopeZh": "学校面向中国申请人的研究生学历等值要求",
+    "institutionRule": {
+      "type": "none",
+      "summaryZh": "英国 2:2 通常对应本科均分 80% 或 CGPA 3.0；英国 2:1 通常对应本科均分 85%。部分课程还会要求特定学历、工作经验或评估，最终以课程页为准；未发现完整公开的中国本科院校名称名单。",
+      "verification": {
+        "reviewedAt": "2026-08-09",
+        "url": "https://www.lshtm.ac.uk/study/international/country-region-information/china",
+        "requiredText": ["Entry requirements", "80%", "85%"]
+      }
+    },
+    "parser": {
+      "mode": "link-only",
+      "guard": {
+        "minimumRecords": 0,
+        "maximumRecords": 1,
+        "maximumRemovalRatio": 0
+      }
+    }
+  },
+  {
+    "id": "cranfield-china-entry",
+    "universityId": "cranfield-university",
+    "labelZh": "中国研究生入学要求",
+    "url": "https://www.cranfield.ac.uk/china",
+    "kind": "china-requirements",
+    "scope": "university",
+    "scopeZh": "学校面向中国申请人的研究生学历要求",
+    "institutionRule": {
+      "type": "none",
+      "summaryZh": "大多数课程最低要求相当于英国 2:2，部分课程要求 2:1；具体国际学历等值与附加条件以国际要求和课程页为准；未发现完整公开的中国本科院校名称名单。",
+      "verification": {
+        "reviewedAt": "2026-08-09",
+        "url": "https://www.cranfield.ac.uk/china",
+        "requiredText": ["Academic requirements", "2:2", "2:1"]
+      }
+    },
+    "parser": {
+      "mode": "link-only",
+      "guard": {
+        "minimumRecords": 0,
+        "maximumRecords": 1,
+        "maximumRemovalRatio": 0
+      }
+    }
+  },
+  {
+    "id": "rca-postgraduate-entry",
+    "universityId": "royal-college-of-art",
+    "labelZh": "RCA 研究生课程申请入口",
+    "url": "https://www.rca.ac.uk/study/apply-to-study/",
+    "kind": "china-requirements",
+    "scope": "university",
+    "scopeZh": "学校研究生课程申请入口",
+    "institutionRule": {
+      "type": "none",
+      "summaryZh": "申请要求按课程页核对，通常涉及学术背景、作品集和英语要求；未发现完整公开的中国本科院校名称名单。",
+      "verification": {
+        "reviewedAt": "2026-08-09",
+        "url": "https://www.rca.ac.uk/study/apply-to-study/",
+        "requiredText": ["Apply to study", "Application"]
+      }
+    },
+    "parser": {"mode":"link-only","guard":{"minimumRecords":0,"maximumRecords":1,"maximumRemovalRatio":0}}
+  },
+  {
+    "id": "rvc-international-entry",
+    "universityId": "royal-veterinary-college",
+    "labelZh": "RVC 国际学生申请入口",
+    "url": "https://www.rvc.ac.uk/study/international-students/how-to-apply",
+    "kind": "china-requirements",
+    "scope": "university",
+    "scopeZh": "学校面向国际学生的申请入口",
+    "institutionRule": {
+      "type": "none",
+      "summaryZh": "学术资格和其他条件按具体研究生课程页核对；未发现完整公开的中国本科院校名称名单。",
+      "verification": {
+        "reviewedAt": "2026-08-09",
+        "url": "https://www.rvc.ac.uk/study/international-students/how-to-apply",
+        "requiredText": ["How to apply", "International students"]
+      }
+    },
+    "parser": {"mode":"link-only","guard":{"minimumRecords":0,"maximumRecords":1,"maximumRemovalRatio":0}}
+  },
+  {
+    "id": "rcm-china-entry",
+    "universityId": "royal-college-of-music",
+    "labelZh": "RCM 中国学生申请说明",
+    "url": "https://www.rcm.ac.uk/international/china/",
+    "kind": "china-requirements",
+    "scope": "university",
+    "scopeZh": "学校面向中国学生的申请说明",
+    "institutionRule": {
+      "type": "none",
+      "summaryZh": "中国学生按课程要求准备申请，并通过 UCAS Conservatoires 完成相应流程；作品集、试演或面试要求因课程而异。该页面不是中国本科院校准入名单。",
+      "verification": {
+        "reviewedAt": "2026-08-09",
+        "url": "https://www.rcm.ac.uk/international/china/",
+        "requiredText": ["China", "UCAS Conservatoires"]
+      }
+    },
+    "parser": {"mode":"link-only","guard":{"minimumRecords":0,"maximumRecords":1,"maximumRemovalRatio":0}}
+  },
+  {
+    "id": "icr-msc-oncology-entry",
+    "universityId": "institute-of-cancer-research-london",
+    "labelZh": "ICR 肿瘤学硕士申请要求",
+    "url": "https://www.icr.ac.uk/study-and-careers/opportunities-for-clinicians/msc-in-oncology",
+    "kind": "china-requirements",
+    "scope": "programme",
+    "scopeZh": "MSc Oncology（肿瘤学理学硕士，在职临床课程）",
+    "institutionRule": {
+      "type": "none",
+      "summaryZh": "该授课型项目是范围非常狭窄的在职临床课程，通常要求医学学位、至少两年临床经验、英国 GMC 注册和在英临床岗位；它不是面向普通国际学生的通用授课型硕士申请入口。",
+      "verification": {
+        "reviewedAt": "2026-08-09",
+        "url": "https://www.icr.ac.uk/study-and-careers/opportunities-for-clinicians/msc-in-oncology",
+        "requiredText": ["MSc in Oncology", "GMC", "clinical"]
+      }
+    },
+    "parser": {"mode":"link-only","guard":{"minimumRecords":0,"maximumRecords":1,"maximumRemovalRatio":0}}
+  },
+  {
+    "id": "lstm-postgraduate-entry",
+    "universityId": "liverpool-school-of-tropical-medicine",
+    "labelZh": "LSTM 研究生课程申请入口",
+    "url": "https://lstmed.ac.uk/study/",
+    "kind": "china-requirements",
+    "scope": "university",
+    "scopeZh": "学校研究生课程申请入口",
+    "institutionRule": {
+      "type": "none",
+      "summaryZh": "研究生入学要求按具体课程页面核对；未发现完整公开的中国本科院校名称名单。",
+      "verification": {
+        "reviewedAt": "2026-08-09",
+        "url": "https://lstmed.ac.uk/study/",
+        "requiredText": ["Study", "Postgraduate"]
+      }
+    },
+    "parser": {"mode":"link-only","guard":{"minimumRecords":0,"maximumRecords":1,"maximumRemovalRatio":0}}
   }
 ]
