@@ -2,9 +2,11 @@
 import '../styles/global.css';
 import '../styles/methodology.css';
 import { withBase } from '../lib/urls';
+import { publicUrl } from '../lib/seo';
 
 const base = import.meta.env.BASE_URL;
 const homeUrl = withBase(base, '');
+const canonicalUrl = publicUrl('methodology/');
 const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directory/issues/new';
 ---
 <!doctype html>
@@ -12,6 +14,7 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <link rel="canonical" href={canonicalUrl} />
     <title>数据方法｜小英高校百科</title>
   </head>
   <body>

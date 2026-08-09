@@ -16,6 +16,7 @@ import {
   strengthEvidenceCopy,
 } from '../lib/presentation';
 import { withBase } from '../lib/urls';
+import { publicUrl } from '../lib/seo';
 
 const institutions = loadInstitutions();
 const universities = sortInitialDirectoryUniversities(loadUniversities());
@@ -42,6 +43,7 @@ const searchDataJson = serializeJsonForHtml(searchData);
 const homeUrl = withBase(base, '');
 const methodologyUrl = withBase(base, 'methodology/');
 const faviconUrl = withBase(base, 'favicon.svg');
+const canonicalUrl = publicUrl();
 const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directory/issues/new';
 ---
 
@@ -51,6 +53,7 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content="集中查找英国大学面向中国本科背景发布的院校准入、成绩分档与申请要求。" />
+    <link rel="canonical" href={canonicalUrl} />
     <link rel="icon" type="image/svg+xml" href={faviconUrl} />
     <title>小英高校百科｜英国大学中国院校规则导航</title>
   </head>
