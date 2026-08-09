@@ -37,14 +37,23 @@ function ids(rows: Element[]): string[] {
 }
 
 describe('directory DOM ordering', () => {
-  it('uses the QS comparator for the stable initial render and keeps LBS last', () => {
+  it('uses the QS comparator for the stable initial render and keeps approved specialists last', () => {
     const initial = sortInitialDirectoryUniversities(universities);
     const expected = directory.search('', [], 'qs');
 
     expect(initial.map((university) => university.id)).toEqual(expected.map((university) => university.id));
-    expect(initial).toHaveLength(94);
-    expect(new Set(initial.map((university) => university.id)).size).toBe(94);
-    expect(initial.at(-1)?.id).toBe('london-business-school');
+    expect(initial).toHaveLength(101);
+    expect(new Set(initial.map((university) => university.id)).size).toBe(101);
+    expect(initial.slice(-8).map((university) => university.id)).toEqual([
+      'cranfield-university',
+      'liverpool-school-of-tropical-medicine',
+      'london-business-school',
+      'london-school-of-hygiene-and-tropical-medicine',
+      'royal-college-of-art',
+      'royal-college-of-music',
+      'royal-veterinary-college',
+      'institute-of-cancer-research-london',
+    ]);
     expect(universities.map((university) => university.id)).not.toEqual(initial.map((university) => university.id));
   });
 
@@ -56,8 +65,8 @@ describe('directory DOM ordering', () => {
 
     const rendered = [...dom.list.querySelectorAll('article')];
     expect(ids(rendered)).toEqual(matches.map((university) => university.id));
-    expect(rendered).toHaveLength(94);
-    expect(new Set(ids(rendered)).size).toBe(94);
+    expect(rendered).toHaveLength(101);
+    expect(new Set(ids(rendered)).size).toBe(101);
   });
 
   it('applies search, state filter, and sort to both visible membership and DOM order', () => {
@@ -71,9 +80,9 @@ describe('directory DOM ordering', () => {
     const hidden = rendered.filter((row) => row.hidden);
     expect(ids(visible)).toEqual(matches.map((university) => university.id));
     expect(ids(visible)).toEqual(['london-business-school']);
-    expect(hidden).toHaveLength(93);
-    expect(rendered).toHaveLength(94);
-    expect(new Set(ids(rendered)).size).toBe(94);
+    expect(hidden).toHaveLength(100);
+    expect(rendered).toHaveLength(101);
+    expect(new Set(ids(rendered)).size).toBe(101);
   });
 
   it('keeps sort aria state mutually exclusive and dispatches the clicked sort', () => {

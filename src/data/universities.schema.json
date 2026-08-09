@@ -21,17 +21,20 @@
           "current": { "type": "boolean" }
         }
       },
-      "specialistRanking": {
+      "strengthEvidence": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["provider", "rankingName", "subjectZh", "edition", "displayRank", "sourceUrl"],
+        "required": ["kind", "provider", "rankingName", "subjectZh", "edition", "placement", "displayRank", "sourceUrl", "noteZh"],
         "properties": {
-          "provider": { "const": "qs" },
-          "rankingName": { "const": "QS WUR Ranking By Subject" },
-          "subjectZh": { "const": "商业与管理" },
-          "edition": { "const": 2026 },
-          "displayRank": { "const": "9" },
-          "sourceUrl": { "type": "string", "pattern": "^https://" }
+          "kind": { "enum": ["subject-ranking", "research-assessment"] },
+          "provider": { "enum": ["qs", "shanghai", "ref"] },
+          "rankingName": { "type": "string", "minLength": 1 },
+          "subjectZh": { "type": "string", "minLength": 1 },
+          "edition": { "type": "integer", "minimum": 1 },
+          "placement": { "enum": ["exact", "band", "derived-national-exact"] },
+          "displayRank": { "type": "string", "minLength": 1 },
+          "sourceUrl": { "type": "string", "pattern": "^https://" },
+          "noteZh": { "type": "string", "minLength": 1 }
         }
       },
       "state": { "enum": ["official-list", "china-requirements", "faculty-only", "not-public", "pending"] },
@@ -42,7 +45,7 @@
     "allOf": [
       {
         "if": { "properties": { "directoryCategory": { "const": "qs-directory" } }, "required": ["directoryCategory"] },
-        "then": { "required": ["qsDirectory"], "not": { "required": ["specialistRanking"] } },
+        "then": { "required": ["qsDirectory"] },
         "else": { "not": { "required": ["qsDirectory"] } }
       }
     ]

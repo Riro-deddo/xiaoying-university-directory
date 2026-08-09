@@ -23,6 +23,38 @@ const source = {
 };
 
 describe('public lazy-data build', () => {
+  it('ships all 101 universities with eight specialists and nine universal strength references', async () => {
+    const records = JSON.parse(await readFile(join(process.cwd(), 'public', 'generated', 'universities.json'), 'utf8'));
+
+    expect(records).toHaveLength(101);
+    expect(new Set(records.map((record) => record.id))).toHaveLength(101);
+    expect(records.every((record) => !('specialistRanking' in record))).toBe(true);
+    const specialists = records.filter((record) => record.directoryCategory === 'specialist');
+    expect(specialists).toHaveLength(8);
+    expect(specialists.every((record) => Object.keys(record.rankings).length === 0)).toBe(true);
+    expect(records.filter((record) => record.strengthEvidence)).toHaveLength(9);
+    expect(records.find((record) => record.id === 'london-school-of-hygiene-and-tropical-medicine')).toMatchObject({
+      strengthEvidence: { provider: 'shanghai', placement: 'exact', displayRank: '3' },
+      rankings: {},
+    });
+    expect(records.find((record) => record.id === 'cranfield-university')).toMatchObject({
+      strengthEvidence: { provider: 'qs', placement: 'exact', displayRank: '55' },
+      rankings: {},
+    });
+    expect(records.find((record) => record.id === 'university-of-the-arts-london')).toMatchObject({
+      strengthEvidence: { provider: 'qs', subjectZh: '艺术与设计', displayRank: '2' },
+      rankings: { qs: {}, the: {} },
+    });
+    expect(records.find((record) => record.id === 'institute-of-cancer-research-london')).toMatchObject({
+      strengthEvidence: { provider: 'ref', placement: 'derived-national-exact', displayRank: '1' },
+      rankings: {},
+    });
+    expect(records.find((record) => record.id === 'liverpool-school-of-tropical-medicine')).toMatchObject({
+      strengthEvidence: { provider: 'shanghai', placement: 'band', displayRank: '76–100' },
+      rankings: {},
+    });
+  });
+
   it('writes joined university records with current ranks and no standalone ranking dataset', async () => {
     const outputDir = await mkdtemp(join(tmpdir(), 'xiaoying-public-universities-'));
     const universities = [
@@ -34,9 +66,11 @@ describe('public lazy-data build', () => {
       {
         id: 'london-business-school', nameZh: '伦敦商学院', nameEn: 'London Business School', aliases: ['LBS'],
         directoryCategory: 'specialist', state: 'not-public', officialDomain: 'https://www.london.edu', sourceIds: [],
-        specialistRanking: {
-          provider: 'qs', rankingName: 'QS WUR Ranking By Subject', subjectZh: '商业与管理', edition: 2026,
-          displayRank: '9', sourceUrl: 'https://www.topuniversities.com/universities/london-business-school',
+        strengthEvidence: {
+          kind: 'subject-ranking', provider: 'qs', rankingName: 'QS WUR Ranking By Subject',
+          subjectZh: '商业与管理', edition: 2026, placement: 'exact', displayRank: '9',
+          sourceUrl: 'https://www.topuniversities.com/universities/london-business-school',
+          noteZh: '专门商学院，不参与综合大学排序',
         },
       },
     ];
@@ -55,7 +89,7 @@ describe('public lazy-data build', () => {
       rankings: { qs: { edition: 2027, displayRank: '4' }, the: { edition: 2026, displayRank: '1' } },
     });
     expect(records.find((record) => record.id === 'london-business-school')).toMatchObject({
-      specialistRanking: { subjectZh: '商业与管理', displayRank: '9' },
+      strengthEvidence: { subjectZh: '商业与管理', displayRank: '9' },
       rankings: {},
     });
     expect(await readdir(outputDir)).not.toContain('rankings.json');

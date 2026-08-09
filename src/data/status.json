@@ -280,5 +280,40 @@
     "health": "changed",
     "etag": "W/\"z8ieoc9pl3c3oa-df\"",
     "consecutiveFailures": 0
+  },
+  "lshtm-china-entry": {
+    "sourceId": "lshtm-china-entry",
+    "health": "unchecked",
+    "consecutiveFailures": 0
+  },
+  "cranfield-china-entry": {
+    "sourceId": "cranfield-china-entry",
+    "health": "unchecked",
+    "consecutiveFailures": 0
+  },
+  "rca-postgraduate-entry": {
+    "sourceId": "rca-postgraduate-entry",
+    "health": "unchecked",
+    "consecutiveFailures": 0
+  },
+  "rvc-international-entry": {
+    "sourceId": "rvc-international-entry",
+    "health": "unchecked",
+    "consecutiveFailures": 0
+  },
+  "rcm-china-entry": {
+    "sourceId": "rcm-china-entry",
+    "health": "unchecked",
+    "consecutiveFailures": 0
+  },
+  "icr-msc-oncology-entry": {
+    "sourceId": "icr-msc-oncology-entry",
+    "health": "unchecked",
+    "consecutiveFailures": 0
+  },
+  "lstm-postgraduate-entry": {
+    "sourceId": "lstm-postgraduate-entry",
+    "health": "unchecked",
+    "consecutiveFailures": 0
   }
 }

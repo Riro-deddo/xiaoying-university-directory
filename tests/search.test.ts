@@ -35,6 +35,7 @@ const records: UniversityWithStatus[] = [
     directoryCategory: 'specialist', state: 'not-public', officialDomain: 'https://www.london.edu', sources: [], rankings: {},
   },
 ];
+const fullDirectory = createUniversitySearch(loadUniversities());
 
 function rankedUniversity(
   id: string,
@@ -50,7 +51,7 @@ function rankedUniversity(
     directoryCategory,
     ...(directoryCategory === 'qs-directory'
       ? { qsDirectory: { firstEdition: 2027, verifiedEdition: 2027, current: true } }
-      : { specialistRanking: { provider: 'qs', rankingName: 'QS WUR Ranking By Subject', subjectZh: '商业与管理', edition: 2026, displayRank: '9', sourceUrl: 'https://example.test/lbs' } }),
+      : { strengthEvidence: { kind: 'subject-ranking', provider: 'qs', rankingName: 'QS WUR Ranking By Subject', subjectZh: '商业与管理', edition: 2026, placement: 'exact', displayRank: '9', sourceUrl: 'https://example.test/lbs', noteZh: '专门院校，不参与综合大学排序' } }),
     state: 'pending',
     officialDomain: `https://${id}.example.test`,
     sources: [],
@@ -107,6 +108,20 @@ describe('createUniversitySearch', () => {
 
   it('returns an empty array when nothing is relevant', () => {
     expect(directory.search('完全不存在的学校', [])).toEqual([]);
+  });
+
+  it.each([
+    ['LSHTM', 'london-school-of-hygiene-and-tropical-medicine'],
+    ['伦敦卫生与热带医学学院', 'london-school-of-hygiene-and-tropical-medicine'],
+    ['Cranfield', 'cranfield-university'],
+    ['克兰菲尔德', 'cranfield-university'],
+    ['RCA', 'royal-college-of-art'],
+    ['皇家兽医学院', 'royal-veterinary-college'],
+    ['RCM', 'royal-college-of-music'],
+    ['ICR', 'institute-of-cancer-research-london'],
+    ['LSTM', 'liverpool-school-of-tropical-medicine'],
+  ])('finds the specialist alias %s as %s', (query, expectedId) => {
+    expect(fullDirectory.search(query, []).map((item) => item.id)).toEqual([expectedId]);
   });
 
   it('supports QS, THE, and English-name sorting while keeping specialists last', () => {

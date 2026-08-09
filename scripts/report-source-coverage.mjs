@@ -18,7 +18,17 @@ function sourceIsOfficial(source, university) {
 
 export function evaluateCoverage({ cohort, universities, sources, audit }) {
   const cohortIds = new Set(cohort.universities.map((item) => item.id));
-  const expectedDirectoryIds = new Set([...cohortIds, 'london-business-school']);
+  const approvedSpecialistIds = [
+    'cranfield-university',
+    'institute-of-cancer-research-london',
+    'liverpool-school-of-tropical-medicine',
+    'london-business-school',
+    'london-school-of-hygiene-and-tropical-medicine',
+    'royal-college-of-art',
+    'royal-college-of-music',
+    'royal-veterinary-college',
+  ];
+  const expectedDirectoryIds = new Set([...cohortIds, ...approvedSpecialistIds]);
   const universityIds = universities.map((item) => item.id);
   const rankedUniversityIds = universities
     .filter((item) => item.directoryCategory === 'qs-directory')
@@ -35,11 +45,11 @@ export function evaluateCoverage({ cohort, universities, sources, audit }) {
   if (
     rankedUniversityIds.length !== cohortIds.size
     || rankedUniversityIds.some((id) => !cohortIds.has(id))
-    || specialistUniversityIds.length !== 1
-    || specialistUniversityIds[0] !== 'london-business-school'
+    || specialistUniversityIds.length !== approvedSpecialistIds.length
+    || specialistUniversityIds.sort().some((id, index) => id !== approvedSpecialistIds[index])
     || new Set(universityIds).size !== universityIds.length
   ) {
-    failures.push('directory scope must equal the QS cohort plus London Business School');
+    failures.push('directory scope must equal the QS cohort plus the approved specialist institutions');
   }
   if (new Set(sourceIds).size !== sourceIds.length) failures.push('duplicate source IDs');
 

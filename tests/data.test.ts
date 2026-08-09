@@ -170,16 +170,86 @@ describe('QS 2027 starter ranks', () => {
 });
 
 describe('explicit directory scope', () => {
-  it('includes 93 ranked universities and LBS as a specialist institution', () => {
+  it('includes 93 ranked universities and exactly eight approved specialist institutions', () => {
     const universities = loadUniversities();
+    const specialistIds = universities
+      .filter((item) => item.directoryCategory === 'specialist')
+      .map((item) => item.id)
+      .sort();
 
     expect(universities.filter((item) => item.directoryCategory === 'qs-directory')).toHaveLength(93);
+    expect(specialistIds).toEqual([
+      'cranfield-university',
+      'institute-of-cancer-research-london',
+      'liverpool-school-of-tropical-medicine',
+      'london-business-school',
+      'london-school-of-hygiene-and-tropical-medicine',
+      'royal-college-of-art',
+      'royal-college-of-music',
+      'royal-veterinary-college',
+    ]);
     expect(universities.find((item) => item.id === 'london-business-school')).toMatchObject({
       directoryCategory: 'specialist',
       state: 'not-public',
     });
+    expect(universities.every((item) => !('specialistRanking' in item))).toBe(true);
+    expect(universities.find((item) => item.id === 'london-business-school')?.strengthEvidence)
+      .toMatchObject({
+        provider: 'qs',
+        placement: 'exact',
+        subjectZh: '商业与管理',
+        edition: 2026,
+        displayRank: '9',
+        noteZh: '专门商学院，不参与综合大学排序',
+    });
     expect(universities.find((item) => item.id === 'london-business-school')).not.toHaveProperty('rankings.qs');
-    expect(new Set(universities.map((item) => item.id)).size).toBe(94);
+    expect(universities.find((item) => item.id === 'london-school-of-hygiene-and-tropical-medicine'))
+      .toMatchObject({
+        nameZh: '伦敦卫生与热带医学院',
+        directoryCategory: 'specialist',
+        state: 'china-requirements',
+        sourceIds: ['lshtm-china-entry'],
+        strengthEvidence: { provider: 'shanghai', placement: 'exact', subjectZh: '公共卫生', edition: 2025, displayRank: '3' },
+      });
+    expect(universities.find((item) => item.id === 'cranfield-university'))
+      .toMatchObject({
+        nameZh: '克兰菲尔德大学',
+        directoryCategory: 'specialist',
+        state: 'china-requirements',
+        sourceIds: ['cranfield-china-entry'],
+        strengthEvidence: { provider: 'qs', placement: 'exact', subjectZh: '机械、航空与制造工程', edition: 2026, displayRank: '55' },
+      });
+    expect(universities.find((item) => item.id === 'university-of-the-arts-london'))
+      .toMatchObject({
+        directoryCategory: 'qs-directory',
+        strengthEvidence: {
+          provider: 'qs',
+          placement: 'exact',
+          subjectZh: '艺术与设计',
+          displayRank: '2',
+        },
+      });
+    expect(universities.find((item) => item.id === 'royal-college-of-art')).toMatchObject({
+      nameZh: '皇家艺术学院', aliases: ['RCA'], state: 'not-public',
+      strengthEvidence: { provider: 'qs', placement: 'exact', subjectZh: '艺术与设计', displayRank: '1' },
+    });
+    expect(universities.find((item) => item.id === 'royal-veterinary-college')).toMatchObject({
+      nameZh: '皇家兽医学院', aliases: ['RVC'], state: 'not-public',
+      strengthEvidence: { provider: 'qs', placement: 'exact', subjectZh: '兽医学', displayRank: '1' },
+    });
+    expect(universities.find((item) => item.id === 'royal-college-of-music')).toMatchObject({
+      nameZh: '皇家音乐学院', aliases: ['RCM'], state: 'china-requirements',
+      strengthEvidence: { provider: 'qs', placement: 'exact', subjectZh: '音乐与表演艺术', displayRank: '2' },
+    });
+    expect(universities.find((item) => item.id === 'institute-of-cancer-research-london')).toMatchObject({
+      nameZh: '伦敦癌症研究院', aliases: ['ICR', 'Institute of Cancer Research'], state: 'not-public',
+      strengthEvidence: { provider: 'ref', placement: 'derived-national-exact', subjectZh: '生物科学', displayRank: '1' },
+    });
+    expect(universities.find((item) => item.id === 'liverpool-school-of-tropical-medicine')).toMatchObject({
+      nameZh: '利物浦热带医学院', aliases: ['LSTM'], state: 'not-public',
+      strengthEvidence: { provider: 'shanghai', placement: 'band', subjectZh: '公共卫生', displayRank: '76–100' },
+    });
+    expect(new Set(universities.map((item) => item.id)).size).toBe(101);
   });
 });
 

@@ -10,12 +10,21 @@ import audit from '../src/data/china-rule-audit.json';
 import { evaluateCoverage } from '../scripts/report-source-coverage.mjs';
 
 describe('source coverage report', () => {
-  it('covers 93 QS universities and LBS with one audit row each', () => {
-    expect(audit).toHaveLength(94);
-    expect(new Set(audit.map((row) => row.universityId)).size).toBe(94);
+  it('covers 93 QS universities and eight approved specialists with one audit row each', () => {
+    expect(audit).toHaveLength(101);
+    expect(new Set(audit.map((row) => row.universityId)).size).toBe(101);
     expect(audit.filter((row) => row.directoryCategory === 'qs-directory')).toHaveLength(93);
-    expect(audit.filter((row) => row.directoryCategory === 'specialist').map((row) => row.universityId))
-      .toEqual(['london-business-school']);
+    expect(audit.filter((row) => row.directoryCategory === 'specialist').map((row) => row.universityId).sort())
+      .toEqual([
+        'cranfield-university',
+        'institute-of-cancer-research-london',
+        'liverpool-school-of-tropical-medicine',
+        'london-business-school',
+        'london-school-of-hygiene-and-tropical-medicine',
+        'royal-college-of-art',
+        'royal-college-of-music',
+        'royal-veterinary-college',
+      ]);
   });
 
   it('rejects an audit row whose reviewed state or directory category differs from the catalog', () => {
@@ -46,7 +55,7 @@ describe('source coverage report', () => {
       audit,
     });
 
-    expect(result.failures).toContain('directory scope must equal the QS cohort plus London Business School');
+    expect(result.failures).toContain('directory scope must equal the QS cohort plus the approved specialist institutions');
   });
 
   it.each([
@@ -121,10 +130,10 @@ describe('source coverage report', () => {
   it('reports reviewed scope and state counts from the audit matrix', () => {
     expect(evaluateCoverage({ cohort, universities, sources, audit }).counts).toMatchObject({
       qsUniversities: 93,
-      specialistUniversities: 1,
+      specialistUniversities: 8,
       fullPublicLists: 9,
-      ruleOnlyUniversities: 16,
-      noPublicListRecords: 4,
+      ruleOnlyUniversities: 19,
+      noPublicListRecords: 8,
     });
   });
 });

@@ -34,13 +34,16 @@ export interface RankingDataset {
   records: RankingRecord[];
 }
 
-export interface SpecialistRankingReference {
-  provider: 'qs';
-  rankingName: 'QS WUR Ranking By Subject';
-  subjectZh: '商业与管理';
-  edition: 2026;
-  displayRank: '9';
+export interface StrengthEvidence {
+  kind: 'subject-ranking' | 'research-assessment';
+  provider: 'qs' | 'shanghai' | 'ref';
+  rankingName: string;
+  subjectZh: string;
+  edition: number;
+  placement: 'exact' | 'band' | 'derived-national-exact';
+  displayRank: string;
   sourceUrl: string;
+  noteZh: string;
 }
 
 export interface QsDirectoryMembership {
@@ -143,7 +146,7 @@ export interface University {
   aliases: string[];
   directoryCategory: DirectoryCategory;
   qsDirectory?: QsDirectoryMembership;
-  specialistRanking?: SpecialistRankingReference;
+  strengthEvidence?: StrengthEvidence;
   state: UniversityState;
   officialDomain: string;
   sourceIds: string[];

@@ -2,6 +2,7 @@ import type {
   EvidenceState,
   InstitutionRuleType,
   RankingRecord,
+  StrengthEvidence,
   SourceHealth,
   SourceStatus,
   UniversityState,
@@ -33,7 +34,7 @@ export const institutionRuleTypeCopy = {
   none: { label: '未发现院校名单' },
 } satisfies Record<InstitutionRuleType, { label: string }>;
 
-export const directoryScopeCopy = '93 所 QS 2027 英国院校 + 1 所特色院校';
+export const directoryScopeCopy = '93 所 QS 2027 英国院校 + 8 所特色院校';
 
 export function rankingCopy(record?: RankingRecord): string {
   if (!record || record.placement === 'unverified') return '暂未核实';
@@ -43,6 +44,16 @@ export function rankingCopy(record?: RankingRecord): string {
 
 export function directoryRankCopy(university: UniversityWithStatus): string {
   return university.directoryCategory === 'specialist' ? '专业院校' : `QS ${rankingCopy(university.rankings.qs)}`;
+}
+
+export function strengthEvidenceCopy(reference: StrengthEvidence): string {
+  const provider = reference.provider === 'qs' ? 'QS' : reference.provider === 'shanghai' ? '软科' : 'REF';
+  const headline = reference.placement === 'band'
+    ? `${provider} ${reference.edition} ${reference.subjectZh}全球 ${reference.displayRank}`
+    : reference.placement === 'derived-national-exact'
+      ? `${provider} ${reference.edition} 结果加权分析：${reference.subjectZh}英国第 ${reference.displayRank}`
+      : `${provider} ${reference.edition} ${reference.subjectZh}全球第 ${reference.displayRank}`;
+  return `${headline} · ${reference.noteZh}`;
 }
 
 export function officialPanelTitle(type: Exclude<InstitutionRuleType, 'none'>, count: number): string {

@@ -49,19 +49,22 @@ export function inspectInitialHtml(html, registryNames, options = {}) {
   };
 }
 
+export function inspectProductionInitialHtml(html, registryNames) {
+  return inspectInitialHtml(html, registryNames, {
+    expectedDirectoryCount: 101,
+    expectedFirstIds: ['imperial-college-london', 'university-of-oxford', 'university-of-cambridge'],
+    expectedLastId: 'institute-of-cancer-research-london',
+  });
+}
+
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const [html, institutions] = await Promise.all([
     readFile(join(root, 'dist', 'index.html'), 'utf8'),
     readFile(join(root, 'src', 'data', 'institutions.json'), 'utf8').then(JSON.parse),
   ]);
-  const result = inspectInitialHtml(
+  const result = inspectProductionInitialHtml(
     html,
     [institutions[0]?.nameZh, institutions.at(-1)?.nameZh].filter(Boolean),
-    {
-      expectedDirectoryCount: 94,
-      expectedFirstIds: ['imperial-college-london', 'university-of-oxford', 'university-of-cambridge'],
-      expectedLastId: 'london-business-school',
-    },
   );
   console.log(`Initial HTML guard passed: ${result.listPanelMetadata} list panels and ${result.universityRows} unique QS-sorted rows, no inline institution registry or reverse index.`);
 }

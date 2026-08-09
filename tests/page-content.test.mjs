@@ -47,10 +47,12 @@ describe('dual-direction search page', () => {
     }
   });
 
-  it('keeps LBS out of overall ranks and links its approved specialist reference', () => {
+  it('keeps specialists out of overall ranks and renders every strength reference from data', () => {
     expect(page).toContain("university.directoryCategory === 'specialist' ? '—'");
-    expect(page).toContain('QS 2026 商业与管理全球第 9 · 专门商学院，不参与综合大学排序');
-    expect(page).toContain('university.specialistRanking.sourceUrl');
+    expect(page).toContain('strengthEvidenceCopy(university.strengthEvidence)');
+    expect(page).not.toContain('QS 2026 商业与管理全球第 9 · 专门商学院');
+    expect(page).toContain('university.strengthEvidence.sourceUrl');
+    expect(page).not.toContain("university.id === 'university-of-the-arts-london'");
     expect(page).toContain('特色院校');
   });
 
@@ -82,9 +84,17 @@ describe('dual-direction search page', () => {
     expect(page).not.toContain('英国大学官方 List，一页查清');
   });
 
-  it('states the complete QS directory plus one specialist scope and keeps the specialist rank-safe', () => {
+  it('does not claim every general China requirement is an undergraduate institution restriction', () => {
+    expect(page).toContain('已找到中国申请要求，完整院校名单未公开。');
+    expect(page).not.toContain('本科院校会影响要求，完整名单未公开。');
+  });
+
+  it('states the complete QS directory plus eight specialist institutions and explains each evidence type', () => {
     expect(page).toContain('{directoryScopeCopy}');
-    expect(presentation).toContain("directoryScopeCopy = '93 所 QS 2027 英国院校 + 1 所特色院校'");
+    expect(presentation).toContain("directoryScopeCopy = '93 所 QS 2027 英国院校 + 8 所特色院校'");
+    for (const phrase of ['学科精确名次', '排名区间', 'REF 2021 结果加权分析', '不是全球学科榜', '不参与排序']) {
+      expect(methodology).toContain(phrase);
+    }
     expect(page).toContain('rankingCopy(university.rankings.qs)');
     expect(page).toContain('rankingCopy(university.rankings.the)');
     expect(page).not.toContain("university.qs?.rank ?? '—'");
@@ -134,7 +144,7 @@ describe('dual-direction search page', () => {
 
   it('uses the complete QS directory scope in all reverse-search copy', () => {
     expect(page).toContain('directoryScopeCopy');
-    expect(presentation).toContain("directoryScopeCopy = '93 所 QS 2027 英国院校 + 1 所特色院校'");
+    expect(presentation).toContain("directoryScopeCopy = '93 所 QS 2027 英国院校 + 8 所特色院校'");
     expect(page).not.toContain('查看 28 所英国大学的公开信息');
     expect(page).not.toContain('28 所英国大学的公开信息');
   });
@@ -153,7 +163,7 @@ describe('dual-direction search page', () => {
   });
 
   it('renders reviewed rule-only detail before the official links', () => {
-    expect(page).toContain('本科院校会影响要求，完整名单未公开');
+    expect(page).toContain('已找到中国申请要求，完整院校名单未公开');
     expect(sources.find((source) => source.id === 'exeter-china')?.institutionRule.summaryZh).toContain('取消原有国内大学排名要求');
     expect(page.indexOf('university-rule-summary')).toBeLessThan(page.indexOf('source-actions'));
   });
@@ -171,8 +181,8 @@ describe('published methodology and contributor guidance', () => {
       '不等于规则已经由人工改写',
       '排名只作信息参考，不决定申请资格',
       '学校、学院、具体项目官网与招生部门',
-      'QS 2026 商业与管理第 9',
-      '不是综合大学排名',
+      'QS 2026 商业与管理全球第 9',
+      '不是 QS/THE 综合大学排名',
       '不调用付费 API',
       '不自动改写已接受的中国规则摘要',
       '待审核',

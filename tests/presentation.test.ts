@@ -7,6 +7,7 @@ import {
   institutionRuleTypeCopy,
   officialPanelTitle,
   rankingCopy,
+  strengthEvidenceCopy,
   sourceFreshnessCopy,
   stateCopy,
   sourceHealthCopy,
@@ -58,6 +59,50 @@ describe('directoryRankCopy', () => {
       rankings: {},
     };
     expect(directoryRankCopy(specialist)).toBe('专业院校');
+  });
+});
+
+describe('strengthEvidenceCopy', () => {
+  it('renders an exact global subject rank', () => {
+    expect(strengthEvidenceCopy({
+      kind: 'subject-ranking',
+      provider: 'qs',
+      rankingName: 'QS World University Rankings by Subject',
+      subjectZh: '艺术与设计',
+      edition: 2026,
+      placement: 'exact',
+      displayRank: '1',
+      sourceUrl: 'https://example.test/rca',
+      noteZh: '专业院校，不参与综合大学排序',
+    })).toBe('QS 2026 艺术与设计全球第 1 · 专业院校，不参与综合大学排序');
+  });
+
+  it('renders a global band without inventing an ordinal', () => {
+    expect(strengthEvidenceCopy({
+      kind: 'subject-ranking',
+      provider: 'shanghai',
+      rankingName: 'ShanghaiRanking Global Ranking of Academic Subjects',
+      subjectZh: '公共卫生',
+      edition: 2025,
+      placement: 'band',
+      displayRank: '76–100',
+      sourceUrl: 'https://example.test/lstm',
+      noteZh: '专业院校，不参与综合大学排序',
+    })).toBe('软科 2025 公共卫生全球 76–100 · 专业院校，不参与综合大学排序');
+  });
+
+  it('labels a derived REF result as a UK analysis rather than a global ranking', () => {
+    expect(strengthEvidenceCopy({
+      kind: 'research-assessment',
+      provider: 'ref',
+      rankingName: 'Research Excellence Framework 2021',
+      subjectZh: '生物科学',
+      edition: 2021,
+      placement: 'derived-national-exact',
+      displayRank: '1',
+      sourceUrl: 'https://example.test/icr',
+      noteZh: '不是全球学科榜',
+    })).toBe('REF 2021 结果加权分析：生物科学英国第 1 · 不是全球学科榜');
   });
 });
 

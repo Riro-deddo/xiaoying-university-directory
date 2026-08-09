@@ -5,6 +5,7 @@ import sources from '../src/data/sources.json';
 import institutions from '../src/data/institutions.json';
 import requirements from '../src/data/generated/requirements.json';
 import audit from '../src/data/china-rule-audit.json';
+import statuses from '../src/data/status.json';
 import { loadChinaRuleAudit, loadUniversities } from '../src/lib/data';
 import { normalizeInstitutionName } from '../src/lib/institution-search';
 
@@ -36,10 +37,10 @@ describe('QS cohort and official source registry', () => {
     expect(universities.filter((item) => item.state === 'pending')).toHaveLength(65);
   });
 
-  it('preserves the 29 reviewed China-rule findings in the complete audit', () => {
+  it('preserves the 31 reviewed China-rule findings in the complete audit', () => {
     expect(loadChinaRuleAudit()).toEqual(audit);
-    expect(audit).toHaveLength(94);
-    expect(audit.filter((row) => row.expectedState !== 'pending')).toHaveLength(29);
+    expect(audit).toHaveLength(101);
+    expect(audit.filter((row) => row.expectedState !== 'pending')).toHaveLength(36);
     expect(audit.filter((row) => row.expectedState === 'official-list').map((row) => row.universityId).sort()).toEqual([
       'university-college-london',
       'university-of-bristol',
@@ -91,10 +92,13 @@ describe('QS cohort and official source registry', () => {
       'university-of-warwick',
     ]],
     ['china-requirements', [
+      'cranfield-university',
       'imperial-college-london',
       'kings-college-london',
       'lancaster-university',
       'london-school-of-economics-and-political-science',
+      'london-school-of-hygiene-and-tropical-medicine',
+      'royal-college-of-music',
       'newcastle-university',
       'queen-mary-university-of-london',
       'queens-university-belfast',
@@ -110,7 +114,11 @@ describe('QS cohort and official source registry', () => {
     ]],
     ['not-public', [
       'durham-university',
+      'institute-of-cancer-research-london',
+      'liverpool-school-of-tropical-medicine',
       'london-business-school',
+      'royal-college-of-art',
+      'royal-veterinary-college',
       'university-of-bath',
       'university-of-exeter',
     ]],
@@ -124,12 +132,21 @@ describe('QS cohort and official source registry', () => {
   });
 
   it('registers reviewed link-only semantics for every China-rule source', () => {
+    const newlyReviewedSources = new Set([
+      'cranfield-china-entry',
+      'lshtm-china-entry',
+      'rca-postgraduate-entry',
+      'rvc-international-entry',
+      'rcm-china-entry',
+      'icr-msc-oncology-entry',
+      'lstm-postgraduate-entry',
+    ]);
     for (const source of sources) {
       expect(source.url).toMatch(/^https:\/\//u);
       expect(source.scopeZh.trim()).toBeTruthy();
       expect(source.institutionRule.summaryZh.trim()).toBeTruthy();
       expect(source.institutionRule.verification).toMatchObject({
-        reviewedAt: '2026-08-02',
+        reviewedAt: newlyReviewedSources.has(source.id) ? '2026-08-09' : '2026-08-02',
         url: expect.stringMatching(/^https:\/\//u),
       });
       expect(source.institutionRule.verification?.requiredText.length).toBeGreaterThan(1);
@@ -236,6 +253,38 @@ describe('QS cohort and official source registry', () => {
         verification: { reviewedAt: '2026-08-02' },
       },
     });
+  });
+
+  it.each([
+    ['lshtm-china-entry', 'london-school-of-hygiene-and-tropical-medicine', 'https://www.lshtm.ac.uk/study/international/country-region-information/china', 'university'],
+    ['cranfield-china-entry', 'cranfield-university', 'https://www.cranfield.ac.uk/china', 'university'],
+    ['rca-postgraduate-entry', 'royal-college-of-art', 'https://www.rca.ac.uk/study/apply-to-study/', 'university'],
+    ['rvc-international-entry', 'royal-veterinary-college', 'https://www.rvc.ac.uk/study/international-students/how-to-apply', 'university'],
+    ['rcm-china-entry', 'royal-college-of-music', 'https://www.rcm.ac.uk/international/china/', 'university'],
+    ['icr-msc-oncology-entry', 'institute-of-cancer-research-london', 'https://www.icr.ac.uk/study-and-careers/opportunities-for-clinicians/msc-in-oncology', 'programme'],
+    ['lstm-postgraduate-entry', 'liverpool-school-of-tropical-medicine', 'https://lstmed.ac.uk/study/', 'university'],
+  ])('registers reviewed specialist source %s', (sourceId, universityId, url, scope) => {
+    const university = universities.find((item) => item.id === universityId);
+    expect(university).toBeDefined();
+    expect(university?.sourceIds).toContain(sourceId);
+    expect(sources.find((item) => item.id === sourceId)).toMatchObject({
+      universityId,
+      url,
+      kind: 'china-requirements',
+      scope,
+      institutionRule: { type: 'none', verification: { reviewedAt: '2026-08-09' } },
+      parser: { mode: 'link-only' },
+    });
+    expect((statuses as Record<string, unknown>)[sourceId])
+      .toEqual({ sourceId, health: 'unchecked', consecutiveFailures: 0 });
+    expect(requirements.some((fact) => fact.sourceId === sourceId)).toBe(false);
+  });
+
+  it('keeps the ICR application summary within its narrow clinical programme scope', () => {
+    const summary = sources.find((source) => source.id === 'icr-msc-oncology-entry')?.institutionRule.summaryZh ?? '';
+    for (const phrase of ['医学学位', '两年临床经验', 'GMC', '在英临床岗位', '不是面向普通国际学生']) {
+      expect(summary).toContain(phrase);
+    }
   });
 
   it('uses HTTPS official domains and keeps every registered source on its university domain', () => {
