@@ -56,6 +56,13 @@ describe('dual-direction search page', () => {
     expect(page).toContain('特色院校');
   });
 
+  it('separates the desktop specialist label from its detail panel without changing mobile spacing', () => {
+    const desktopRule = styles.match(/\.specialist-detail\{([^}]*)\}/)?.[1] ?? '';
+    expect(desktopRule).toContain('margin-top:10px');
+    expect(desktopRule).not.toMatch(/margin-top:-/);
+    expect(styles).toMatch(/@media\(max-width:800px\)\{[\s\S]*?\.specialist-detail\{[^}]*margin:0/);
+  });
+
   it('exposes both accessible mode tabs and preserves the UK directory controls', () => {
     expect(page).toContain('data-search-mode="uk-university"');
     expect(page).toContain('查英国大学');

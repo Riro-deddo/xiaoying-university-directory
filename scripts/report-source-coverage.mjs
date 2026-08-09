@@ -6,18 +6,31 @@ import chinaRuleAuditSchema from '../src/data/china-rule-audit.schema.json' with
 
 const validateChinaRuleAudit = new Ajv2020({ allErrors: true }).compile(chinaRuleAuditSchema);
 
+const firstPartySourceDomainAliases = new Map([
+  ['university-of-greenwich', new Set(['gre.ac.uk'])],
+]);
+
 function sourceIsOfficial(source, university) {
   try {
-    const sourceHost = new URL(source.url).hostname;
-    const officialHost = new URL(university.officialDomain).hostname;
-    return sourceHost === officialHost || sourceHost.endsWith(`.${officialHost}`);
+    const sourceHost = new URL(source.url).hostname.replace(/^www\./u, '');
+    const officialHost = new URL(university.officialDomain).hostname.replace(/^www\./u, '');
+    return sourceHost === officialHost
+      || sourceHost.endsWith(`.${officialHost}`)
+      || firstPartySourceDomainAliases.get(university.id)?.has(sourceHost) === true;
   } catch {
     return false;
   }
 }
 
-export function evaluateCoverage({ cohort, universities, sources, audit }) {
+export function evaluateCoverage({ cohort, rankings, universities, sources, audit }) {
+  if (!rankings || !Array.isArray(rankings.records)) {
+    throw new TypeError('rankings are required for source coverage');
+  }
+
   const cohortIds = new Set(cohort.universities.map((item) => item.id));
+  const currentQsDirectoryIds = new Set(rankings.records
+    .filter((record) => record.provider === 'qs' && record.edition === cohort.edition)
+    .map((record) => record.universityId));
   const approvedSpecialistIds = [
     'cranfield-university',
     'institute-of-cancer-research-london',
@@ -28,7 +41,7 @@ export function evaluateCoverage({ cohort, universities, sources, audit }) {
     'royal-college-of-music',
     'royal-veterinary-college',
   ];
-  const expectedDirectoryIds = new Set([...cohortIds, ...approvedSpecialistIds]);
+  const expectedDirectoryIds = new Set([...currentQsDirectoryIds, ...approvedSpecialistIds]);
   const universityIds = universities.map((item) => item.id);
   const rankedUniversityIds = universities
     .filter((item) => item.directoryCategory === 'qs-directory')
@@ -41,10 +54,11 @@ export function evaluateCoverage({ cohort, universities, sources, audit }) {
   const failures = [];
   const auditIsValid = validateChinaRuleAudit(audit);
   const auditRows = auditIsValid ? audit : [];
+  const auditRowsByUniversityId = new Map();
 
   if (
-    rankedUniversityIds.length !== cohortIds.size
-    || rankedUniversityIds.some((id) => !cohortIds.has(id))
+    rankedUniversityIds.length !== currentQsDirectoryIds.size
+    || rankedUniversityIds.some((id) => !currentQsDirectoryIds.has(id))
     || specialistUniversityIds.length !== approvedSpecialistIds.length
     || specialistUniversityIds.sort().some((id, index) => id !== approvedSpecialistIds[index])
     || new Set(universityIds).size !== universityIds.length
@@ -59,7 +73,6 @@ export function evaluateCoverage({ cohort, universities, sources, audit }) {
     failures.push(`China rule audit data validation failed: ${validateChinaRuleAudit.errors?.map((error) =>
       `${error.instancePath || '/'} ${error.message ?? error.keyword}`).join('; ')}`);
   } else {
-    const auditRowsByUniversityId = new Map();
     for (const row of auditRows) {
       const rows = auditRowsByUniversityId.get(row.universityId) ?? [];
       rows.push(row);
@@ -88,12 +101,38 @@ export function evaluateCoverage({ cohort, universities, sources, audit }) {
       if (university.state !== row.expectedState) {
         failures.push(`audit state mismatch: ${row.universityId}`);
       }
+      if (row.reviewStatus === 'blocked'
+        && (row.expectedState !== 'pending' || university.state !== 'pending')) {
+        failures.push(`blocked audit row must remain pending: ${row.universityId}`);
+      } else if (row.reviewStatus !== 'reviewed'
+        && (row.expectedState !== 'pending' || university.state !== 'pending')) {
+        failures.push(`non-pending audit row must be reviewed: ${row.universityId}`);
+      } else if (row.reviewStatus === 'reviewed' && university.state === 'pending') {
+        failures.push(`reviewed audit row cannot remain pending: ${row.universityId}`);
+      }
     }
   }
 
   for (const university of universities) {
-    if (university.state === 'pending') failures.push(`pending university: ${university.id}`);
-    if (!university.sourceIds.length) failures.push(`missing source: ${university.id}`);
+    const auditRow = auditRowsByUniversityId?.get(university.id)?.[0];
+    const isBlockedPendingTarget = university.state === 'pending'
+      && auditRow?.reviewStatus === 'blocked'
+      && auditRow.finding.trim();
+    const isUnreviewedPendingTarget = university.state === 'pending' && auditRow?.reviewStatus === 'unreviewed';
+    const isReviewedPendingTarget = university.state === 'pending' && auditRow?.reviewStatus === 'reviewed';
+
+    if (auditIsValid) {
+      if (isUnreviewedPendingTarget) failures.push(`unreviewed audit target: ${university.id}`);
+      else if (university.state === 'pending' && !isBlockedPendingTarget && !isReviewedPendingTarget) {
+        failures.push(`pending university: ${university.id}`);
+      }
+      if (!university.sourceIds.length
+        && !isUnreviewedPendingTarget
+        && !isBlockedPendingTarget
+        && !isReviewedPendingTarget) {
+        failures.push(`missing source: ${university.id}`);
+      }
+    }
     for (const sourceId of university.sourceIds) {
       const source = sourceById.get(sourceId);
       if (!source) {
@@ -122,7 +161,7 @@ export function evaluateCoverage({ cohort, universities, sources, audit }) {
 
   const auditCount = (state) => auditRows.filter((item) => item.expectedState === state).length;
   return {
-    failures,
+    failures: [...new Set(failures)],
     counts: {
       cohortUniversities: cohortIds.size,
       qsUniversities: auditRows.filter((item) => item.directoryCategory === 'qs-directory').length,
@@ -139,13 +178,14 @@ export function evaluateCoverage({ cohort, universities, sources, audit }) {
 async function main() {
   const root = join(dirname(fileURLToPath(import.meta.url)), '..');
   const dataRoot = process.env.SOURCE_COVERAGE_DATA_ROOT ?? join(root, 'src', 'data');
-  const [cohort, universities, sources, audit] = await Promise.all([
+  const [cohort, rankings, universities, sources, audit] = await Promise.all([
     readFile(join(dataRoot, 'qs-2027-top-200-uk.json'), 'utf8').then(JSON.parse),
+    readFile(join(dataRoot, 'rankings.json'), 'utf8').then(JSON.parse),
     readFile(join(dataRoot, 'universities.json'), 'utf8').then(JSON.parse),
     readFile(join(dataRoot, 'sources.json'), 'utf8').then(JSON.parse),
     readFile(join(dataRoot, 'china-rule-audit.json'), 'utf8').then(JSON.parse),
   ]);
-  const { counts, failures } = evaluateCoverage({ cohort, universities, sources, audit });
+  const { counts, failures } = evaluateCoverage({ cohort, rankings, universities, sources, audit });
   console.log(`Cohort universities: ${counts.cohortUniversities}`);
   console.log(`QS universities: ${counts.qsUniversities}`);
   console.log(`Specialist universities: ${counts.specialistUniversities}`);

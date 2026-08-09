@@ -23,6 +23,62 @@ const source = {
 };
 
 describe('public lazy-data build', () => {
+  it('keeps every public university row joined to the current catalog state, note, and sources', async () => {
+    const root = process.cwd();
+    const readJson = async (...parts) => JSON.parse(await readFile(join(root, ...parts), 'utf8'));
+    const [catalog, sourceRecords, statuses, publicRecords] = await Promise.all([
+      readJson('src', 'data', 'universities.json'),
+      readJson('src', 'data', 'sources.json'),
+      readJson('src', 'data', 'status.json'),
+      readJson('public', 'generated', 'universities.json'),
+    ]);
+    const publicById = new Map(publicRecords.map((record) => [record.id, record]));
+    const sourceById = new Map(sourceRecords.map((source) => [source.id, source]));
+
+    expect(publicRecords.map((record) => record.id)).toEqual(catalog.map((university) => university.id));
+    for (const university of catalog) {
+      const publicRecord = publicById.get(university.id);
+      expect(publicRecord?.id, university.id).toBe(university.id);
+      expect(publicRecord?.state, university.id).toBe(university.state);
+      expect(publicRecord?.noteZh, university.id).toBe(university.noteZh);
+      expect(publicRecord?.sources, university.id).toEqual(university.sourceIds.map((sourceId) => ({
+        ...sourceById.get(sourceId),
+        status: statuses[sourceId],
+      })));
+    }
+  });
+
+  it('publishes reviewed and blocked representative rows with their current catalog metadata', async () => {
+    const root = process.cwd();
+    const readJson = async (...parts) => JSON.parse(await readFile(join(root, ...parts), 'utf8'));
+    const [catalog, sourceRecords, statuses, publicRecords] = await Promise.all([
+      readJson('src', 'data', 'universities.json'),
+      readJson('src', 'data', 'sources.json'),
+      readJson('src', 'data', 'status.json'),
+      readJson('public', 'generated', 'universities.json'),
+    ]);
+    const catalogById = new Map(catalog.map((university) => [university.id, university]));
+    const publicById = new Map(publicRecords.map((record) => [record.id, record]));
+    const sourceById = new Map(sourceRecords.map((source) => [source.id, source]));
+
+    for (const id of [
+      'loughborough-university',
+      'university-of-kent',
+      'university-of-the-arts-london',
+      'canterbury-christ-church-university',
+      'london-metropolitan-university',
+    ]) {
+      const university = catalogById.get(id);
+      const publicRecord = publicById.get(id);
+      expect(publicRecord?.state, id).toBe(university?.state);
+      expect(publicRecord?.noteZh, id).toBe(university?.noteZh);
+      expect(publicRecord?.sources, id).toEqual(university?.sourceIds.map((sourceId) => ({
+        ...sourceById.get(sourceId),
+        status: statuses[sourceId],
+      })));
+    }
+  });
+
   it('ships all 101 universities with eight specialists and nine universal strength references', async () => {
     const records = JSON.parse(await readFile(join(process.cwd(), 'public', 'generated', 'universities.json'), 'utf8'));
 

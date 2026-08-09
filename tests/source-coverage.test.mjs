@@ -4,12 +4,60 @@ import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { spawnSync } from 'node:child_process';
 import cohort from '../src/data/qs-2027-top-200-uk.json';
+import rankings from '../src/data/rankings.json';
 import universities from '../src/data/universities.json';
 import sources from '../src/data/sources.json';
 import audit from '../src/data/china-rule-audit.json';
+import baseline from './fixtures/pending-china-audit-baseline.json';
 import { evaluateCoverage } from '../scripts/report-source-coverage.mjs';
 
+const batchReviewedIds = new Set([
+  'loughborough-university', 'university-of-strathclyde', 'university-of-surrey', 'university-of-sussex',
+  'university-of-leicester', 'swansea-university', 'heriot-watt-university', 'brunel-university-of-london',
+  'birkbeck-university-of-london', 'city-st-georges-university-of-london', 'oxford-brookes-university',
+  'university-of-kent', 'aston-university', 'university-of-essex', 'university-of-dundee',
+  'soas-university-of-london', 'royal-holloway-university-of-london', 'university-of-bradford',
+  'university-of-huddersfield', 'northumbria-university', 'university-of-stirling', 'bangor-university',
+  'university-of-hull', 'coventry-university',
+  'ulster-university', 'manchester-metropolitan-university', 'nottingham-trent-university',
+  'university-of-portsmouth', 'kingston-university-london', 'university-of-plymouth',
+  'goldsmiths-university-of-london', 'university-of-the-west-of-england', 'university-of-greenwich',
+  'aberystwyth-university', 'bournemouth-university', 'edinburgh-napier-university', 'keele-university',
+  'de-montfort-university', 'liverpool-john-moores-university', 'university-of-hertfordshire',
+  'university-of-lincoln', 'university-of-westminster', 'london-south-bank-university',
+  'middlesex-university', 'university-of-brighton', 'anglia-ruskin-university',
+  'birmingham-city-university', 'glasgow-caledonian-university', 'leeds-beckett-university',
+  'robert-gordon-university', 'sheffield-hallam-university', 'university-of-lancashire',
+  'university-of-derby', 'canterbury-christ-church-university',
+]);
+
 describe('source coverage report', () => {
+  it('covers the real complete directory from authoritative current ranking metadata', () => {
+    expect(evaluateCoverage({ cohort, rankings, universities, sources, audit }).failures).toEqual([]);
+  });
+
+  it('requires authoritative current ranking metadata instead of falling back to the legacy discovery cohort', () => {
+    expect(() => evaluateCoverage({ cohort, universities, sources, audit }))
+      .toThrow('rankings are required for source coverage');
+  });
+
+  it('exits successfully for the real complete directory data root', () => {
+    const result = spawnSync(process.execPath, ['scripts/report-source-coverage.mjs'], {
+      cwd: process.cwd(), encoding: 'utf8',
+    });
+    expect(result.status).toBe(0);
+    expect(result.stderr).toBe('');
+    expect(result.stdout.trim().split(/\r?\n/u)).toEqual([
+      'Cohort universities: 28',
+      'QS universities: 93',
+      'Specialist universities: 8',
+      'Full public lists: 10',
+      'Rule-only universities: 72',
+      'No-public-list records: 8',
+      'Parser-enabled sources: 9',
+      'Link-only sources: 84',
+    ]);
+  });
   it('covers 93 QS universities and eight approved specialists with one audit row each', () => {
     expect(audit).toHaveLength(101);
     expect(new Set(audit.map((row) => row.universityId)).size).toBe(101);
@@ -27,22 +75,155 @@ describe('source coverage report', () => {
       ]);
   });
 
+  it('preserves the feature-start baseline while recording the first four reviewed batches', () => {
+    expect(baseline.pendingUniversityIds).toHaveLength(65);
+    expect(universities.filter((university) => university.state === 'pending').map((university) => university.id))
+      .toEqual(baseline.pendingUniversityIds.filter((id) => !batchReviewedIds.has(id)));
+    expect(baseline.nonTargetAuditRows).toHaveLength(36);
+    const preExistingSourceIds = new Set(baseline.sourceConfigs.map((source) => source.id));
+    expect(sources.filter((source) => preExistingSourceIds.has(source.id))).toEqual(baseline.sourceConfigs);
+    expect(baseline.reviewedRequirementCount).toBe(5754);
+    expect(baseline.requirementsSha256).toBe('f932710580077d2bf84c0fccffc239e4ed9c3cba4fdb807c6a58ad2b1c802f00');
+  });
+
+  it('marks every audit row with the required review lifecycle status', () => {
+    expect(audit.filter((row) => row.reviewStatus === 'reviewed')).toHaveLength(90);
+    expect(audit.filter((row) => row.reviewStatus === 'blocked')).toHaveLength(11);
+    expect(audit.filter((row) => row.reviewStatus === 'unreviewed')).toHaveLength(0);
+    expect(audit.filter((row) => baseline.nonTargetAuditRows.some((baselineRow) => baselineRow.universityId === row.universityId))
+      .map((row) => row.universityId)).toEqual(baseline.nonTargetAuditRows.map((row) => row.universityId));
+    expect(audit.filter((row) => row.reviewStatus === 'unreviewed').map((row) => row.universityId)).toEqual([]);
+  });
+
+  it('rejects an audit lifecycle status outside the supported enum', () => {
+    const alteredAudit = audit.map((row) => ({ ...row, reviewStatus: row.universityId === 'loughborough-university' ? 'skipped' : row.reviewStatus }));
+    const result = evaluateCoverage({ cohort, rankings, universities, sources, audit: alteredAudit });
+
+    expect(result.failures).toEqual([
+      expect.stringMatching(/^China rule audit data validation failed:/u),
+    ]);
+  });
+
+  it('accepts the completed audit with no unreviewed targets', () => {
+    const result = evaluateCoverage({ cohort, rankings, universities, sources, audit });
+
+    expect(result.failures).toEqual([]);
+  });
+
+  it('accepts official sibling subdomains after normalizing a www root domain', () => {
+    const result = evaluateCoverage({ cohort, rankings, universities, sources, audit });
+
+    expect(result.failures).toEqual([]);
+  });
+
+  it('accepts Greenwich\'s explicitly reviewed first-party gre.ac.uk China page without changing the catalog domain', () => {
+    const result = evaluateCoverage({ cohort, rankings, universities, sources, audit });
+
+    expect(result.failures).toEqual([]);
+  });
+
+  it.each([
+    'https://gre.ac.uk.evil.test/international/countries/china',
+    'https://evil.gre.ac.uk/international/countries/china',
+  ])('rejects a Greenwich lookalike alias: %s', (url) => {
+    const result = evaluateCoverage({
+      cohort,
+      rankings,
+      universities,
+      sources: sources.map((source) => source.id === 'greenwich-china-requirements' ? { ...source, url } : source),
+      audit,
+    });
+
+    expect(result.failures).toEqual(['unregistered source domain: greenwich-china-requirements']);
+  });
+
+  it('does not permit Greenwich\'s first-party alias to be reused by another university', () => {
+    const result = evaluateCoverage({
+      cohort,
+      rankings,
+      universities,
+      sources: sources.map((source) => source.id === 'greenwich-china-requirements'
+        ? { ...source, universityId: 'university-of-the-west-of-england' }
+        : source),
+      audit,
+    });
+
+    expect(result.failures).toEqual([
+      'source belongs to another university: greenwich-china-requirements',
+      'unreferenced source: greenwich-china-requirements',
+      'unregistered source domain: greenwich-china-requirements',
+    ]);
+  });
+
+  it.each([
+    'https://hud.ac.uk.evil.test/how-to-apply/entry-requirements',
+    'https://evil-hud.ac.uk/how-to-apply/entry-requirements',
+  ])('rejects a lookalike sibling domain: %s', (url) => {
+    const result = evaluateCoverage({
+      cohort,
+      rankings,
+      universities,
+      sources: sources.map((source) => source.id === 'huddersfield-china-requirements' ? { ...source, url } : source),
+      audit,
+    });
+
+    expect(result.failures).toEqual(['unregistered source domain: huddersfield-china-requirements']);
+  });
+
+  it('allows a blocked pending target with a finding to remain source-free', () => {
+    const university = universities.find((item) => item.id === 'london-metropolitan-university');
+    const auditRow = audit.find((row) => row.universityId === university.id);
+
+    expect(university).toMatchObject({ state: 'pending', sourceIds: [] });
+    expect(auditRow).toMatchObject({ expectedState: 'pending', reviewStatus: 'blocked' });
+    expect(auditRow.finding).not.toBe('');
+    expect(sources.some((source) => source.universityId === university.id)).toBe(false);
+    expect(evaluateCoverage({ cohort, rankings, universities, sources, audit }).failures).toEqual([]);
+  });
+
+  it('rejects a blocked lifecycle on an official-list catalog record', () => {
+    const alteredAudit = audit.map((row) => row.universityId === 'loughborough-university'
+      ? { ...row, reviewStatus: 'blocked' }
+      : row);
+
+    expect(evaluateCoverage({ cohort, rankings, universities, sources, audit: alteredAudit }).failures)
+      .toEqual(['blocked audit row must remain pending: loughborough-university']);
+  });
+
+  it('requires every non-pending audit row to be reviewed', () => {
+    const alteredAudit = audit.map((row) => row.universityId === 'loughborough-university'
+      ? { ...row, reviewStatus: 'unreviewed' }
+      : row);
+
+    expect(evaluateCoverage({ cohort, rankings, universities, sources, audit: alteredAudit }).failures)
+      .toEqual(['non-pending audit row must be reviewed: loughborough-university']);
+  });
+
+  it('rejects a reviewed lifecycle on a pending catalog record', () => {
+    const alteredAudit = audit.map((row) => row.universityId === 'london-metropolitan-university'
+      ? { ...row, reviewStatus: 'reviewed' }
+      : row);
+
+    expect(evaluateCoverage({ cohort, rankings, universities, sources, audit: alteredAudit }).failures)
+      .toEqual(['reviewed audit row cannot remain pending: london-metropolitan-university']);
+  });
+
   it('rejects an audit row whose reviewed state or directory category differs from the catalog', () => {
     const alteredAudit = audit.map((row) => row.universityId === 'university-college-london'
       ? { ...row, expectedState: 'not-public' }
       : row);
-    const result = evaluateCoverage({ cohort, universities, sources, audit: alteredAudit });
+    const result = evaluateCoverage({ cohort, rankings, universities, sources, audit: alteredAudit });
 
-    expect(result.failures).toContain('audit state mismatch: university-college-london');
+    expect(result.failures).toEqual(['audit state mismatch: university-college-london']);
   });
 
   it('rejects an audit row whose reviewed directory category differs from the catalog', () => {
     const alteredAudit = audit.map((row) => row.universityId === 'university-college-london'
       ? { ...row, directoryCategory: 'specialist' }
       : row);
-    const result = evaluateCoverage({ cohort, universities, sources, audit: alteredAudit });
+    const result = evaluateCoverage({ cohort, rankings, universities, sources, audit: alteredAudit });
 
-    expect(result.failures).toContain('audit directory category mismatch: university-college-london');
+    expect(result.failures).toEqual(['audit directory category mismatch: university-college-london']);
   });
 
   it('rejects an unapproved specialist even when it has an official linked source', () => {
@@ -50,24 +231,35 @@ describe('source coverage report', () => {
     const lbsSource = sources.find((item) => item.id === 'lbs-mim-entry');
     const result = evaluateCoverage({
       cohort,
+      rankings,
       universities: [...universities, { ...lbs, id: 'unapproved-specialist', sourceIds: ['unapproved-specialist-source'] }],
       sources: [...sources, { ...lbsSource, id: 'unapproved-specialist-source', universityId: 'unapproved-specialist' }],
       audit,
     });
 
-    expect(result.failures).toContain('directory scope must equal the QS cohort plus the approved specialist institutions');
+    expect(result.failures).toEqual(['directory scope must equal the QS cohort plus the approved specialist institutions']);
   });
 
   it.each([
-    ['missing university', { universities: universities.slice(1) }],
-    ['missing source', { sources: sources.slice(1) }],
-    ['duplicate source ID', { sources: [...sources, sources[0]] }],
-    ['unregistered source domain', { sources: [{ ...sources[0], url: 'https://untrusted.example/china' }, ...sources.slice(1)] }],
-    ['orphan source', { sources: [...sources, { ...sources[0], id: 'orphan-source', universityId: 'not-in-cohort' }] }],
-    ['unreferenced source', { sources: [...sources, { ...sources[0], id: 'unreferenced-source' }] }],
-  ])('reports %s as an integrity failure', (_label, override) => {
-    const result = evaluateCoverage({ cohort, universities, sources, audit, ...override });
-    expect(result.failures.length).toBeGreaterThan(0);
+    ['missing university', { universities: universities.slice(1) }, [
+      'directory scope must equal the QS cohort plus the approved specialist institutions',
+      'audit university is unregistered: imperial-college-london',
+      'source university is unregistered: imperial-china',
+    ]],
+    ['missing source', { sources: sources.slice(1) }, ['unregistered source: imperial-college-london/imperial-china']],
+    ['duplicate source ID', { sources: [...sources, sources[0]] }, ['duplicate source IDs']],
+    ['unregistered source domain', { sources: [{ ...sources[0], url: 'https://untrusted.example/china' }, ...sources.slice(1)] }, [
+      'unregistered source domain: imperial-china',
+    ]],
+    ['orphan source', { sources: [...sources, { ...sources[0], id: 'orphan-source', universityId: 'not-in-cohort' }] }, [
+      'source university is unregistered: orphan-source',
+    ]],
+    ['unreferenced source', { sources: [...sources, { ...sources[0], id: 'unreferenced-source' }] }, [
+      'unreferenced source: unreferenced-source',
+    ]],
+  ])('reports %s as an integrity failure', (_label, override, expectedFailures) => {
+    const result = evaluateCoverage({ cohort, rankings, universities, sources, audit, ...override });
+    expect(result.failures).toEqual(expectedFailures);
   });
 
   it.each([
@@ -123,16 +315,19 @@ describe('source coverage report', () => {
     ['missing audit row', audit.slice(1), 'audit rows must cover every directory university exactly once'],
     ['duplicate audit row', [...audit, audit[0]], 'duplicate audit row: imperial-college-london'],
   ])('reports %s as an integrity failure', (_label, alteredAudit, expectedFailure) => {
-    const result = evaluateCoverage({ cohort, universities, sources, audit: alteredAudit });
-    expect(result.failures).toContain(expectedFailure);
+    const result = evaluateCoverage({ cohort, rankings, universities, sources, audit: alteredAudit });
+    const expectedFailures = _label === 'duplicate audit row'
+      ? [expectedFailure, 'audit rows must cover every directory university exactly once']
+      : [expectedFailure];
+    expect(result.failures).toEqual(expectedFailures);
   });
 
   it('reports reviewed scope and state counts from the audit matrix', () => {
-    expect(evaluateCoverage({ cohort, universities, sources, audit }).counts).toMatchObject({
+    expect(evaluateCoverage({ cohort, rankings, universities, sources, audit }).counts).toMatchObject({
       qsUniversities: 93,
       specialistUniversities: 8,
-      fullPublicLists: 9,
-      ruleOnlyUniversities: 19,
+      fullPublicLists: 10,
+      ruleOnlyUniversities: 72,
       noPublicListRecords: 8,
     });
   });
