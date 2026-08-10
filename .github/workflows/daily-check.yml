@@ -30,6 +30,7 @@ jobs:
           jobSummary: true
       - name: Check official-source review state
         run: pnpm check:sources
+      - run: pnpm build:public
       - run: pnpm test:run
       - run: pnpm build
       - name: Create or update one Issue per source anomaly

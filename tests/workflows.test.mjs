@@ -52,6 +52,7 @@ describe('guarded daily source workflow', () => {
     const orderedSteps = [
       'lycheeverse/lychee-action',
       'pnpm check:sources',
+      'pnpm build:public',
       'pnpm test:run',
       '- run: pnpm build\n',
       'git commit',
@@ -94,8 +95,15 @@ describe('guarded daily source workflow', () => {
 
   it('keeps CI read-only and checks reverse-index consistency', () => {
     expect(ciWorkflow).toContain('contents: read');
-    expect(ciWorkflow).toContain('pnpm build:index');
-    expect(ciWorkflow).toContain('git diff --exit-code -- src/data/generated/reverse-index.json');
+    const orderedSteps = [
+      'pnpm build:index',
+      'git diff --exit-code -- src/data/generated/reverse-index.json',
+      'pnpm build:public',
+      'pnpm test:run',
+    ];
+    const positions = orderedSteps.map((fragment) => ciWorkflow.indexOf(fragment));
+    expect(positions.every((position) => position >= 0)).toBe(true);
+    expect(positions).toEqual([...positions].sort((a, b) => a - b));
   });
 
   it('dispatches CI for the exact bot-authored revision after the guarded push', () => {

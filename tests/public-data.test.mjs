@@ -151,6 +151,48 @@ describe('public lazy-data build', () => {
     expect(await readdir(outputDir)).not.toContain('rankings.json');
   });
 
+  it('publishes a source successful-check date on its joined university record', async () => {
+    const outputDir = await mkdtemp(join(tmpdir(), 'xiaoying-public-source-status-'));
+    const lastSuccessfulAt = '2026-08-10T03:17:00.000Z';
+    const statuses = {
+      'example-china': { sourceId: 'example-china', health: 'ok', lastSuccessfulAt, consecutiveFailures: 0 },
+    };
+    const universities = [{
+      id: 'example-university',
+      nameZh: 'Example University',
+      nameEn: 'Example University',
+      aliases: [],
+      directoryCategory: 'qs-directory',
+      qsDirectory: { firstEdition: 2027, verifiedEdition: 2027, current: true },
+      state: 'pending',
+      officialDomain: 'https://example.edu',
+      sourceIds: ['example-china'],
+    }];
+    const sources = [{
+      id: 'example-china',
+      universityId: 'example-university',
+      labelZh: 'Example source',
+      url: 'https://example.edu/china',
+      kind: 'official-page',
+      scope: 'university',
+      scopeZh: 'Whole university',
+      parser: { mode: 'link-only' },
+    }];
+
+    await buildPublicData({
+      outputDir,
+      universities,
+      rankings: { releases: [], records: [] },
+      institutions: [],
+      requirements: [],
+      sources,
+      statuses,
+    });
+
+    const [record] = JSON.parse(await readFile(join(outputDir, 'universities.json'), 'utf8'));
+    expect(record.sources[0].status.lastSuccessfulAt).toBe(lastSuccessfulAt);
+  });
+
   it('writes one structured list file per parser-enabled source and a separate reverse index', async () => {
     const outputDir = await mkdtemp(join(tmpdir(), 'xiaoying-public-data-'));
     const result = await buildPublicData({

@@ -22,5 +22,6 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm build:index
       - run: git diff --exit-code -- src/data/generated/reverse-index.json
+      - run: pnpm build:public
       - run: pnpm test:run
       - run: pnpm build
