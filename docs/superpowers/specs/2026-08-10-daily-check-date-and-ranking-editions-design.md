@@ -11,7 +11,7 @@ Add a separate, review-gated monitor for new QS and THE annual editions. The mon
 - The existing directory layout and source rows do not change.
 - A source that responds successfully today displays today as `最近成功检查` after the daily deployment.
 - A source that fails today retains its previous successful date and may display its existing health warning; a failed request must never be presented as a success.
-- Daily checks do not modify university lists, grade requirements, Chinese summaries, institution identities, rankings, or accepted source facts.
+- Daily checks may update operational metadata such as the successful-check date and health state, but they do not directly overwrite university lists, grade requirements, Chinese summaries, institution identities, rankings, or accepted source facts. When official application content changes, the source enters review; confirmed changes are then published through the reviewed synchronization path.
 - QS and THE remain on the currently reviewed editions until a separate reviewed ranking update is merged.
 
 ## Current failure
@@ -32,6 +32,14 @@ In addition, `scripts/check-sources.mjs` currently excludes `lastSuccessfulAt` f
 `lastSuccessfulAt` becomes a persisted operational change. A successful request updates it even when the source body hash is unchanged. The full attempt may continue to record `checkedAt`, validators, final URL, observed hash, health, and failure counters according to the existing source-checker rules.
 
 The accepted `contentHash` remains protected. A daily observation may update `observedContentHash`, but only the existing reviewed synchronization path may promote an observation to the accepted baseline or change extracted facts.
+
+### Official-page change flow
+
+1. If the official page is successfully reached and its reviewed content is unchanged, update `lastSuccessfulAt` and deploy the new date.
+2. If the observed content differs from the accepted baseline, keep the last accepted university list, requirement, and Chinese summary visible, mark the source as changed, and create or update its review Issue.
+3. The review record must identify the source URL, detection time, and observed fingerprint so the change can be checked without searching for the affected source again.
+4. After the change is confirmed, the existing reviewed synchronization path may update the accepted hash, extracted facts, Chinese summary, and content-review date. The next normal build publishes those confirmed changes.
+5. A detected content change is a review event, not a workflow failure; it must not block other successful sources from receiving their new successful-check date.
 
 ### Test boundary
 
