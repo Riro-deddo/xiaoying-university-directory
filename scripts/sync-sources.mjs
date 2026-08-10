@@ -733,7 +733,8 @@ export async function syncRegisteredSources(options = {}) {
     }
 
     if (source.parser.mode === 'link-only') {
-      const checked = await checkSource(source, fetchImpl, previousStatus, typeof now === 'function' ? now() : now);
+      const checkedAttempt = await checkSource(source, fetchImpl, previousStatus, typeof now === 'function' ? now() : now);
+      const { attemptObservedContentHash: _attemptObservedContentHash, ...checked } = checkedAttempt;
       if (checked.health === 'changed' && checked.observedContentHash) {
         const { observedContentHash, ...accepted } = checked;
         status[source.id] = {

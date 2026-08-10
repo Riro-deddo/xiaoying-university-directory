@@ -7,7 +7,7 @@ function validateAnomaly(anomaly) {
   if (!sourceIdPattern.test(anomaly.universityId ?? '')) throw new TypeError('universityId must be a safe stable identifier');
   if (!sourceIdPattern.test(anomaly.reason ?? '')) throw new TypeError('reason must be a safe stable identifier');
   if (anomaly.retainedTrustedFacts !== true) throw new TypeError('retainedTrustedFacts must be true');
-  for (const fingerprint of ['acceptedContentHash', 'observedContentHash']) {
+  for (const fingerprint of ['acceptedContentHash', 'attemptObservedContentHash']) {
     if (anomaly[fingerprint] !== undefined && (typeof anomaly[fingerprint] !== 'string' || !contentHashPattern.test(anomaly[fingerprint]))) {
       throw new TypeError(`${fingerprint} must be a lowercase SHA-256 hash`);
     }
@@ -37,7 +37,7 @@ export function renderAnomalyIssue(anomaly) {
 | 异常原因 | \`${anomaly.reason}\` |
 | 检测时间 | ${anomaly.detectedAt ?? '未记录'} |
 | 已接受内容指纹 | \`${anomaly.acceptedContentHash ?? '未建立'}\` |
-| 本次观察指纹 | ${anomaly.observedContentHash ? `\`${anomaly.observedContentHash}\`` : '本次未捕获'} |
+| 本次观察指纹 | ${anomaly.attemptObservedContentHash ? `\`${anomaly.attemptObservedContentHash}\`` : '本次未捕获'} |
 
 本次自动更新已拒绝异常提取结果，上一版可信数据已保留。
 

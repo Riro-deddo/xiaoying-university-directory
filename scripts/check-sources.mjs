@@ -28,6 +28,11 @@ function hasSemanticChange(previous, attempt, source) {
   return JSON.stringify(semanticState(previous, source)) !== JSON.stringify(semanticState(attempt, source));
 }
 
+function persistedStatus(attempt) {
+  const { attemptObservedContentHash: _attemptObservedContentHash, ...status } = attempt;
+  return status;
+}
+
 async function writeJsonAtomically(path, value) {
   const candidatePath = `${path}.next`;
   await mkdir(dirname(path), { recursive: true });
@@ -53,8 +58,9 @@ export async function runSourceChecks(options = {}) {
     const now = typeof options.now === 'function' ? options.now() : (options.now ?? new Date());
     const attempt = await checkSource(source, fetchImpl, previous[source.id], now);
     attempts[source.id] = attempt;
-    next[source.id] = hasSemanticChange(previous[source.id], attempt, source)
-      ? attempt
+    const candidate = persistedStatus(attempt);
+    next[source.id] = hasSemanticChange(previous[source.id], candidate, source)
+      ? candidate
       : previous[source.id];
   }
 

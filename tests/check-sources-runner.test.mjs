@@ -6,6 +6,7 @@ import { describe, expect, it, vi } from 'vitest';
 import { runSourceChecks } from '../scripts/check-sources.mjs';
 
 const acceptedRequirementsHash = '073161e41bae112ec5f0bfbaf37abef49c5126b3292fd7a167cefe4a5ddf2c0c';
+const observedRequirementsHash = 'c41057ea19a882bf56861a2807edaab496db5baf9042189c59c0db39f2b27fe0';
 
 describe('check-sources command', () => {
   it('writes every attempt to an audit artifact and persists a successful check date', async () => {
@@ -106,6 +107,65 @@ describe('check-sources command', () => {
       expect(second.status['source-1'].lastSuccessfulAt).toBe('2026-08-10T03:17:00.000Z');
       const persisted = JSON.parse(await readFile(join(temporaryRoot, 'src', 'data', 'status.json'), 'utf8'));
       expect(persisted['source-1'].lastSuccessfulAt).toBe('2026-08-10T03:17:00.000Z');
+    } finally {
+      await rm(temporaryRoot, { recursive: true, force: true });
+    }
+  });
+
+  it('separates each attempt fingerprint from a persisted pending observation', async () => {
+    const temporaryRoot = await mkdtemp(join(tmpdir(), 'xiaoying-source-attempt-fingerprint-'));
+    const source = { id: 'source-1', url: 'https://www.example.ac.uk/china' };
+    const initialStatus = {
+      'source-1': {
+        sourceId: 'source-1',
+        health: 'ok',
+        contentHash: acceptedRequirementsHash,
+        consecutiveFailures: 0,
+      },
+    };
+
+    try {
+      const changed = await runSourceChecks({
+        root: temporaryRoot,
+        sources: [source],
+        previous: initialStatus,
+        fetchImpl: vi.fn().mockResolvedValue(new Response('<html>new official requirements</html>', {
+          status: 200,
+          headers: { 'content-type': 'text/html' },
+        })),
+        now: new Date('2026-08-09T03:17:00.000Z'),
+        minimumGapMs: 0,
+      });
+      const changedAudit = JSON.parse(await readFile(join(temporaryRoot, 'artifacts', 'source-audit.json'), 'utf8'));
+
+      expect(changedAudit['source-1']).toMatchObject({
+        health: 'changed',
+        observedContentHash: observedRequirementsHash,
+        attemptObservedContentHash: observedRequirementsHash,
+      });
+      expect(changed.status['source-1']).toMatchObject({
+        health: 'changed',
+        observedContentHash: observedRequirementsHash,
+      });
+      expect(changed.status['source-1']).not.toHaveProperty('attemptObservedContentHash');
+
+      const failed = await runSourceChecks({
+        root: temporaryRoot,
+        sources: [source],
+        previous: { 'source-1': { ...changed.status['source-1'], consecutiveFailures: 2 } },
+        fetchImpl: vi.fn().mockResolvedValue(new Response('unavailable', { status: 503 })),
+        now: new Date('2026-08-10T03:17:00.000Z'),
+        minimumGapMs: 0,
+      });
+      const failedAudit = JSON.parse(await readFile(join(temporaryRoot, 'artifacts', 'source-audit.json'), 'utf8'));
+
+      expect(failedAudit['source-1']).toMatchObject({
+        health: 'temporary-error',
+        observedContentHash: observedRequirementsHash,
+      });
+      expect(failedAudit['source-1']).not.toHaveProperty('attemptObservedContentHash');
+      expect(failed.status['source-1']).toMatchObject({ observedContentHash: observedRequirementsHash });
+      expect(failed.status['source-1']).not.toHaveProperty('attemptObservedContentHash');
     } finally {
       await rm(temporaryRoot, { recursive: true, force: true });
     }

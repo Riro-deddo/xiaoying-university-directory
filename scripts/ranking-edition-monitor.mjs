@@ -23,12 +23,23 @@ const patterns = {
   the: /\b(?:THE\s+)?World University Rankings?\s*[:\-–—]?\s*(20\d{2})\b/giu,
 };
 
+const providerSpecificPatterns = {
+  qs: [],
+  the: [
+    /\bBest universities in the UK\s+(20\d{2})\s*[-\u2013\u2014]\s*University Rankings\b/giu,
+  ],
+};
+
 export function detectRankingEdition(html, provider) {
   if (typeof html !== 'string') throw new TypeError('html must be a string');
   if (!Object.hasOwn(patterns, provider)) throw new TypeError(`Unsupported ranking provider: ${provider}`);
 
   const signals = extractTitleAndHeadingSignals(html);
-  const editions = new Set([...signals.matchAll(patterns[provider])].map((match) => Number(match[1])));
+  const matches = [
+    ...signals.matchAll(patterns[provider]),
+    ...providerSpecificPatterns[provider].flatMap((pattern) => [...signals.matchAll(pattern)]),
+  ];
+  const editions = new Set(matches.map((match) => Number(match[1])));
   return editions.size === 1 ? editions.values().next().value : undefined;
 }
 

@@ -228,24 +228,25 @@ describe('guarded daily source workflow', () => {
     expect(issueStep).not.toContain('source-anomalies.json');
   });
 
-  it('passes accepted and observed content fingerprints to daily Issue candidates', () => {
+  it('passes accepted and current-attempt content fingerprints to daily Issue candidates', () => {
     const issueStep = dailyStepContaining('Create or update one Issue per source anomaly');
 
     expect(issueStep).toContain('acceptedContentHash: status.contentHash');
-    expect(issueStep).toContain('observedContentHash: status.observedContentHash');
+    expect(issueStep).toContain('attemptObservedContentHash: status.attemptObservedContentHash');
+    expect(issueStep).not.toContain('observedContentHash: status.observedContentHash');
   });
 
   it('keeps CI read-only and checks reverse-index consistency', () => {
     expect(ciWorkflow).toContain('contents: read');
     const orderedSteps = [
-      'pnpm build:index',
-      'git diff --exit-code -- src/data/generated/reverse-index.json',
+      'pnpm check:index',
       'pnpm build:public',
       'pnpm test:run',
     ];
     const positions = orderedSteps.map((fragment) => ciWorkflow.indexOf(fragment));
     expect(positions.every((position) => position >= 0)).toBe(true);
     expect(positions).toEqual([...positions].sort((a, b) => a - b));
+    expect(ciWorkflow).not.toContain('git diff --exit-code -- src/data/generated/reverse-index.json');
   });
 
   it('dispatches CI for the exact bot-authored revision after the guarded push', () => {

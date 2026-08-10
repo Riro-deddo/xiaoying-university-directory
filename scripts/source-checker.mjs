@@ -4,7 +4,12 @@ const timeoutMs = 12_000;
 const countedUnavailableStatuses = new Set([403, 404]);
 
 function base(source, previous, now) {
-  const { error: _legacyError, lastAttemptError: _lastAttemptError, ...retained } = previous ?? {};
+  const {
+    error: _legacyError,
+    lastAttemptError: _lastAttemptError,
+    attemptObservedContentHash: _attemptObservedContentHash,
+    ...retained
+  } = previous ?? {};
   return { ...retained, sourceId: source.id, checkedAt: now.toISOString() };
 }
 
@@ -66,6 +71,7 @@ function successfulAttempt(source, previous, now, result, contentHash) {
   } else {
     delete next.observedContentHash;
   }
+  if (contentHash) next.attemptObservedContentHash = contentHash;
   return next;
 }
 

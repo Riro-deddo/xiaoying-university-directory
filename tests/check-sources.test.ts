@@ -73,9 +73,27 @@ describe('checkSource', () => {
       health: 'changed',
       contentHash: acceptedRequirementsHash,
       observedContentHash: observedRequirementsHash,
+      attemptObservedContentHash: observedRequirementsHash,
       lastSuccessfulAt: now1.toISOString(),
       consecutiveFailures: 0,
     });
+  });
+
+  it('preserves a pending observed hash without claiming a new fingerprint on a failed attempt', async () => {
+    const changed = await checkSource(source, changedResponse(), okPrevious(), now1);
+    const previous = {
+      ...changed,
+      consecutiveFailures: 2,
+    };
+
+    const result = await checkSource(source, failingFetch(503), previous, now3);
+
+    expect(result).toMatchObject({
+      health: 'temporary-error',
+      observedContentHash: observedRequirementsHash,
+      consecutiveFailures: 3,
+    });
+    expect(result).not.toHaveProperty('attemptObservedContentHash');
   });
 
   it('keeps exposing an identical observed change until reviewed sync accepts it', async () => {

@@ -35,6 +35,32 @@ describe('detectRankingEdition', () => {
     expect(detectRankingEdition('<h1>World University Rankings 2026</h1>', 'the')).toBe(2026);
   });
 
+  it('detects current and newer THE UK editions from the configured official page title format', () => {
+    expect(detectRankingEdition(
+      '<title>Best universities in the UK 2026 - University Rankings</title>',
+      'the',
+    )).toBe(2026);
+    expect(detectRankingEdition(
+      '<h1>Best universities in the UK 2027 - University Rankings</h1>',
+      'the',
+    )).toBe(2027);
+  });
+
+  it('rejects ambiguous and unrelated THE UK page-level signals', () => {
+    expect(detectRankingEdition([
+      '<title>Best universities in the UK 2026 - University Rankings</title>',
+      '<h1>Best universities in the UK 2027 - University Rankings</h1>',
+    ].join(''), 'the')).toBeUndefined();
+    expect(detectRankingEdition(
+      '<title>Best universities in France 2027 - University Rankings</title>',
+      'the',
+    )).toBeUndefined();
+    expect(detectRankingEdition(
+      '<p>Best universities in the UK 2028 - University Rankings</p>',
+      'the',
+    )).toBeUndefined();
+  });
+
   it('returns undefined when trusted page-level signals conflict', () => {
     expect(detectRankingEdition(
       '<title>QS World University Rankings 2027</title><h1>QS World University Rankings 2028</h1>',
