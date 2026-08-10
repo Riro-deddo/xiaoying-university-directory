@@ -12,7 +12,19 @@ export function expectUnacceptedLinkOnlyStatus(value: unknown, sourceId: string)
   expect(allowedHealth.has(status.health)).toBe(true);
   expect(status.consecutiveFailures ?? 0).toBeGreaterThanOrEqual(0);
   expect(status).not.toHaveProperty('contentHash');
-  if (status.checkedAt) expect(Number.isNaN(Date.parse(status.checkedAt))).toBe(false);
-  if (status.lastSuccessfulAt) expect(Number.isNaN(Date.parse(status.lastSuccessfulAt))).toBe(false);
-  if (status.observedContentHash) expect(status.observedContentHash).toMatch(sha256);
+  if (Object.hasOwn(status, 'checkedAt')) {
+    expect(status.checkedAt).not.toBeNull();
+    expect(typeof status.checkedAt).toBe('string');
+    expect(Number.isNaN(Date.parse(status.checkedAt as string))).toBe(false);
+  }
+  if (Object.hasOwn(status, 'lastSuccessfulAt')) {
+    expect(status.lastSuccessfulAt).not.toBeNull();
+    expect(typeof status.lastSuccessfulAt).toBe('string');
+    expect(Number.isNaN(Date.parse(status.lastSuccessfulAt as string))).toBe(false);
+  }
+  if (Object.hasOwn(status, 'observedContentHash')) {
+    expect(status.observedContentHash).not.toBeNull();
+    expect(typeof status.observedContentHash).toBe('string');
+    expect(status.observedContentHash as string).toMatch(sha256);
+  }
 }

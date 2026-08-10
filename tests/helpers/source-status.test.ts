@@ -21,5 +21,17 @@ describe('expectUnacceptedLinkOnlyStatus', () => {
     expect(() => expectUnacceptedLinkOnlyStatus({
       sourceId: 'example-source', health: 'ok', contentHash: 'b'.repeat(64),
     }, 'example-source')).toThrow();
+    expect(() => expectUnacceptedLinkOnlyStatus({
+      sourceId: 'example-source', health: 'ok', checkedAt: '',
+    }, 'example-source')).toThrow();
+    expect(() => expectUnacceptedLinkOnlyStatus({
+      sourceId: 'example-source', health: 'ok', lastSuccessfulAt: 'not-an-iso-timestamp',
+    }, 'example-source')).toThrow();
+    expect(() => expectUnacceptedLinkOnlyStatus({
+      sourceId: 'example-source', health: 'ok', observedContentHash: '',
+    }, 'example-source')).toThrow();
+    expect(() => expectUnacceptedLinkOnlyStatus({
+      sourceId: 'example-source', health: 'ok', observedContentHash: 'not-a-sha256',
+    }, 'example-source')).toThrow();
   });
 });
