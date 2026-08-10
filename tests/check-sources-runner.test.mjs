@@ -1,40 +1,17 @@
-import { execFile } from 'node:child_process';
 import { existsSync } from 'node:fs';
-import { copyFile, mkdir, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
-import { createServer } from 'node:http';
+import { mkdtemp, readFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { promisify } from 'node:util';
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
+import { runSourceChecks } from '../scripts/check-sources.mjs';
 
-const execFileAsync = promisify(execFile);
 const acceptedRequirementsHash = '073161e41bae112ec5f0bfbaf37abef49c5126b3292fd7a167cefe4a5ddf2c0c';
 
 describe('check-sources command', () => {
-  it('writes every attempt to an audit artifact without persisting timestamp-only status changes', async () => {
+  it('writes every attempt to an audit artifact and persists a successful check date', async () => {
     const temporaryRoot = await mkdtemp(join(tmpdir(), 'xiaoying-source-audit-'));
-    const server = createServer((request, response) => {
-      if (request.method === 'HEAD') {
-        response.writeHead(405).end();
-        return;
-      }
-      response.writeHead(200, { 'content-type': 'text/html' });
-      response.end('<html>official requirements</html>');
-    });
-    await new Promise((resolve) => server.listen(0, '127.0.0.1', resolve));
 
     try {
-      const address = server.address();
-      if (!address || typeof address === 'string') throw new Error('test server did not expose a TCP address');
-      const url = `http://127.0.0.1:${address.port}/china`;
-      const scriptsDirectory = join(temporaryRoot, 'scripts');
-      const dataDirectory = join(temporaryRoot, 'src', 'data');
-      await mkdir(scriptsDirectory, { recursive: true });
-      await mkdir(dataDirectory, { recursive: true });
-      await copyFile('scripts/check-sources.mjs', join(scriptsDirectory, 'check-sources.mjs'));
-      await copyFile('scripts/source-checker.mjs', join(scriptsDirectory, 'source-checker.mjs'));
-      await copyFile('scripts/source-content-hash.mjs', join(scriptsDirectory, 'source-content-hash.mjs'));
-      await writeFile(join(dataDirectory, 'sources.json'), `${JSON.stringify([{ id: 'source-1', url }], null, 2)}\n`);
       const previousStatus = {
         'source-1': {
           sourceId: 'source-1',
@@ -42,16 +19,29 @@ describe('check-sources command', () => {
           checkedAt: '2026-08-07T03:17:00.000Z',
           lastSuccessfulAt: '2026-08-07T03:17:00.000Z',
           httpStatus: 200,
-          finalUrl: url,
+          finalUrl: 'https://www.example.ac.uk/china',
           contentHash: acceptedRequirementsHash,
           consecutiveFailures: 0,
         },
       };
-      const previousStatusText = `${JSON.stringify(previousStatus, null, 2)}\n`;
-      const statusPath = join(dataDirectory, 'status.json');
-      await writeFile(statusPath, previousStatusText);
+      const result = await runSourceChecks({
+        root: temporaryRoot,
+        sources: [{ id: 'source-1', url: 'https://www.example.ac.uk/china' }],
+        previous: previousStatus,
+        fetchImpl: vi.fn().mockImplementation(() => new Response(
+          '<html>official requirements</html>',
+          { status: 200, headers: { 'content-type': 'text/html' } },
+        )),
+        now: new Date('2026-08-10T03:17:00.000Z'),
+        minimumGapMs: 0,
+      });
 
-      await execFileAsync(process.execPath, [join(scriptsDirectory, 'check-sources.mjs')]);
+      expect(result.statusChanged).toBe(true);
+      expect(result.status['source-1']).toMatchObject({
+        health: 'ok',
+        contentHash: acceptedRequirementsHash,
+        lastSuccessfulAt: '2026-08-10T03:17:00.000Z',
+      });
 
       const auditPath = join(temporaryRoot, 'artifacts', 'source-audit.json');
       expect(existsSync(auditPath)).toBe(true);
@@ -62,70 +52,61 @@ describe('check-sources command', () => {
         contentHash: acceptedRequirementsHash,
         consecutiveFailures: 0,
       });
-      expect(audit['source-1'].checkedAt).not.toBe(previousStatus['source-1'].checkedAt);
-      expect(await readFile(statusPath, 'utf8')).toBe(previousStatusText);
+      expect(audit['source-1'].lastSuccessfulAt).toBe('2026-08-10T03:17:00.000Z');
+      const persisted = JSON.parse(await readFile(join(temporaryRoot, 'src', 'data', 'status.json'), 'utf8'));
+      expect(persisted['source-1'].lastSuccessfulAt).toBe('2026-08-10T03:17:00.000Z');
     } finally {
-      server.close();
       await rm(temporaryRoot, { recursive: true, force: true });
     }
   });
 
-  it('does not rewrite tracked status when an observed-only 200 is followed by 304', async () => {
+  it('persists a fresh successful date when an observed-only 200 is followed by 304', async () => {
     const temporaryRoot = await mkdtemp(join(tmpdir(), 'xiaoying-source-observation-'));
-    let respondNotModified = false;
-    const server = createServer((request, response) => {
-      if (respondNotModified) {
-        response.writeHead(304).end();
-        return;
-      }
-      if (request.method === 'HEAD') {
-        response.writeHead(405).end();
-        return;
-      }
-      response.writeHead(200, { 'content-type': 'text/html', etag: 'observed-etag' });
-      response.end('<html>official requirements</html>');
-    });
-    await new Promise((resolve) => server.listen(0, '127.0.0.1', resolve));
 
     try {
-      const address = server.address();
-      if (!address || typeof address === 'string') throw new Error('test server did not expose a TCP address');
-      const url = `http://127.0.0.1:${address.port}/china`;
-      const scriptsDirectory = join(temporaryRoot, 'scripts');
-      const dataDirectory = join(temporaryRoot, 'src', 'data');
-      await mkdir(scriptsDirectory, { recursive: true });
-      await mkdir(dataDirectory, { recursive: true });
-      await copyFile('scripts/check-sources.mjs', join(scriptsDirectory, 'check-sources.mjs'));
-      await copyFile('scripts/source-checker.mjs', join(scriptsDirectory, 'source-checker.mjs'));
-      await copyFile('scripts/source-content-hash.mjs', join(scriptsDirectory, 'source-content-hash.mjs'));
-      await writeFile(join(dataDirectory, 'sources.json'), `${JSON.stringify([{ id: 'source-1', url }], null, 2)}\n`);
-      const statusPath = join(dataDirectory, 'status.json');
-      await writeFile(statusPath, `${JSON.stringify({
+      const initialStatus = {
         'source-1': {
           sourceId: 'source-1',
           health: 'ok',
           checkedAt: '2026-08-07T03:17:00.000Z',
-          finalUrl: url,
+          finalUrl: 'https://www.example.ac.uk/china',
           consecutiveFailures: 0,
         },
-      }, null, 2)}\n`);
+      };
 
-      await execFileAsync(process.execPath, [join(scriptsDirectory, 'check-sources.mjs')]);
-      const statusAfter200 = await readFile(statusPath, 'utf8');
-      const observed = JSON.parse(statusAfter200)['source-1'];
-      expect(observed).toMatchObject({
+      const first = await runSourceChecks({
+        root: temporaryRoot,
+        sources: [{ id: 'source-1', url: 'https://www.example.ac.uk/china' }],
+        previous: initialStatus,
+        fetchImpl: vi.fn().mockImplementation(() => new Response(
+          '<html>official requirements</html>',
+          { status: 200, headers: { 'content-type': 'text/html', etag: 'observed-etag' } },
+        )),
+        now: new Date('2026-08-09T03:17:00.000Z'),
+        minimumGapMs: 0,
+      });
+      expect(first.status['source-1']).toMatchObject({
         health: 'ok',
         observedContentHash: acceptedRequirementsHash,
         etag: 'observed-etag',
         consecutiveFailures: 0,
+        lastSuccessfulAt: '2026-08-09T03:17:00.000Z',
       });
 
-      respondNotModified = true;
-      await execFileAsync(process.execPath, [join(scriptsDirectory, 'check-sources.mjs')]);
+      const second = await runSourceChecks({
+        root: temporaryRoot,
+        sources: [{ id: 'source-1', url: 'https://www.example.ac.uk/china' }],
+        previous: first.status,
+        fetchImpl: vi.fn().mockResolvedValue(new Response(null, { status: 304 })),
+        now: new Date('2026-08-10T03:17:00.000Z'),
+        minimumGapMs: 0,
+      });
 
-      expect(await readFile(statusPath, 'utf8')).toBe(statusAfter200);
+      expect(second.statusChanged).toBe(true);
+      expect(second.status['source-1'].lastSuccessfulAt).toBe('2026-08-10T03:17:00.000Z');
+      const persisted = JSON.parse(await readFile(join(temporaryRoot, 'src', 'data', 'status.json'), 'utf8'));
+      expect(persisted['source-1'].lastSuccessfulAt).toBe('2026-08-10T03:17:00.000Z');
     } finally {
-      server.close();
       await rm(temporaryRoot, { recursive: true, force: true });
     }
   });

@@ -73,6 +73,7 @@ describe('checkSource', () => {
       health: 'changed',
       contentHash: acceptedRequirementsHash,
       observedContentHash: observedRequirementsHash,
+      lastSuccessfulAt: now1.toISOString(),
       consecutiveFailures: 0,
     });
   });
@@ -126,6 +127,7 @@ describe('checkSource', () => {
       consecutiveFailures: 0,
       etag: previous.etag,
       lastModified: previous.lastModified,
+      lastSuccessfulAt: now1.toISOString(),
     });
   });
 

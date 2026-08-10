@@ -20,6 +20,7 @@ function semanticState(status, source) {
     health: status?.health,
     redirectDestination: redirectDestination(status, source),
     consecutiveFailures: status?.consecutiveFailures ?? 0,
+    lastSuccessfulAt: status?.lastSuccessfulAt,
   };
 }
 
