@@ -1,4 +1,5 @@
 const sourceIdPattern = /^[a-z0-9][a-z0-9._-]*$/u;
+const contentHashPattern = /^[a-f0-9]{64}$/u;
 
 function validateAnomaly(anomaly) {
   if (!anomaly || typeof anomaly !== 'object') throw new TypeError('anomaly must be an object');
@@ -6,6 +7,11 @@ function validateAnomaly(anomaly) {
   if (!sourceIdPattern.test(anomaly.universityId ?? '')) throw new TypeError('universityId must be a safe stable identifier');
   if (!sourceIdPattern.test(anomaly.reason ?? '')) throw new TypeError('reason must be a safe stable identifier');
   if (anomaly.retainedTrustedFacts !== true) throw new TypeError('retainedTrustedFacts must be true');
+  for (const fingerprint of ['acceptedContentHash', 'attemptObservedContentHash']) {
+    if (anomaly[fingerprint] !== undefined && (typeof anomaly[fingerprint] !== 'string' || !contentHashPattern.test(anomaly[fingerprint]))) {
+      throw new TypeError(`${fingerprint} must be a lowercase SHA-256 hash`);
+    }
+  }
 
   let sourceUrl;
   try {
@@ -30,6 +36,8 @@ export function renderAnomalyIssue(anomaly) {
 | 官方页面 | ${anomaly.sourceUrl} |
 | 异常原因 | \`${anomaly.reason}\` |
 | 检测时间 | ${anomaly.detectedAt ?? '未记录'} |
+| 已接受内容指纹 | \`${anomaly.acceptedContentHash ?? '未建立'}\` |
+| 本次观察指纹 | ${anomaly.attemptObservedContentHash ? `\`${anomaly.attemptObservedContentHash}\`` : '本次未捕获'} |
 
 本次自动更新已拒绝异常提取结果，上一版可信数据已保留。
 

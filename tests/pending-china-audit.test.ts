@@ -6,6 +6,7 @@ import institutions from '../src/data/institutions.json';
 import requirements from '../src/data/generated/requirements.json';
 import statuses from '../src/data/status.json';
 import baseline from './fixtures/pending-china-audit-baseline.json';
+import { expectUnacceptedLinkOnlyStatus } from './helpers/source-status';
 
 const sha256 = async (value: unknown) => Array.from(new Uint8Array(await crypto.subtle.digest(
   'SHA-256',
@@ -249,13 +250,9 @@ describe('second pending China-rule audit batch', () => {
     ]);
   });
 
-  it('starts every second-batch source unchecked without an invented content hash', () => {
+  it('keeps every source lifecycle-compatible without an accepted hash', () => {
     for (const [, sourceId] of batch2SourceManifest) {
-      expect(statuses[sourceId]).toEqual({
-        sourceId,
-        health: 'unchecked',
-        consecutiveFailures: 0,
-      });
+      expectUnacceptedLinkOnlyStatus(statuses[sourceId], sourceId);
     }
   });
 
@@ -363,13 +360,9 @@ describe('third pending China-rule audit batch', () => {
     }
   });
 
-  it('starts every third-batch source unchecked with no accepted or observed content hash', () => {
+  it('keeps every source lifecycle-compatible without an accepted hash', () => {
     for (const [, sourceId] of batch3SourceManifest) {
-      expect(statuses[sourceId]).toEqual({
-        sourceId,
-        health: 'unchecked',
-        consecutiveFailures: 0,
-      });
+      expectUnacceptedLinkOnlyStatus(statuses[sourceId], sourceId);
     }
   });
 
@@ -495,9 +488,9 @@ describe('fourth pending China-rule audit batch', () => {
     }
   });
 
-  it('starts every reviewed source unchecked without accepted or observed hashes', () => {
+  it('keeps every source lifecycle-compatible without an accepted hash', () => {
     for (const [, sourceId] of batch4SourceManifest) {
-      expect(statuses[sourceId]).toEqual({ sourceId, health: 'unchecked', consecutiveFailures: 0 });
+      expectUnacceptedLinkOnlyStatus(statuses[sourceId], sourceId);
     }
     expect(statuses).not.toHaveProperty('ual-china-requirements');
   });
@@ -589,7 +582,7 @@ describe('final pending China-rule audit batch', () => {
       });
       expect([source?.scopeZh, source?.institutionRule.summaryZh, source?.institutionRule.caveatZh]
         .every((value) => value?.trim()), sourceId).toBe(true);
-      expect(statuses[sourceId], sourceId).toEqual({ sourceId, health: 'unchecked', consecutiveFailures: 0 });
+      expectUnacceptedLinkOnlyStatus(statuses[sourceId], sourceId);
       expect(requirements.some((fact) => fact.sourceId === sourceId), sourceId).toBe(false);
     }
   });

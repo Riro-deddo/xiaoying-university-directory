@@ -3,4 +3,5 @@ dist/
 .astro/
 work-dev-*.log
 src/data/status.json.next
+artifacts/ranking-edition-audit.json*
 .worktrees/

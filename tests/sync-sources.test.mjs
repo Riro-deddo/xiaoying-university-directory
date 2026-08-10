@@ -437,6 +437,7 @@ describe('syncRegisteredSources', () => {
       consecutiveFailures: 0,
     });
     expect(result.status['example-source']).not.toHaveProperty('observedContentHash');
+    expect(result.status['example-source']).not.toHaveProperty('attemptObservedContentHash');
   });
 
   it('is the only path that clears a legacy changed link after capturing its first observation', async () => {
@@ -464,6 +465,7 @@ describe('syncRegisteredSources', () => {
       consecutiveFailures: 0,
     });
     expect(result.status['example-source']).not.toHaveProperty('observedContentHash');
+    expect(result.status['example-source']).not.toHaveProperty('attemptObservedContentHash');
   });
 
   it('reconciles every reviewed search identity before source refresh and remains idempotent', async () => {

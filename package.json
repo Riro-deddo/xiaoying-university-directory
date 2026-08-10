@@ -10,6 +10,8 @@
   "scripts": {
     "dev": "cross-env ASTRO_TELEMETRY_DISABLED=1 astro dev",
     "build:index": "node scripts/build-reverse-index.mjs",
+    "check:index": "node scripts/check-reverse-index.mjs",
+    "build:public": "node scripts/build-public-data.mjs",
     "prebuild": "pnpm build:index && node scripts/build-public-data.mjs",
     "build": "cross-env ASTRO_TELEMETRY_DISABLED=1 astro check && cross-env ASTRO_TELEMETRY_DISABLED=1 astro build",
     "postbuild": "node scripts/check-initial-html.mjs && node scripts/check-seo-artifacts.mjs",
@@ -17,7 +19,8 @@
     "test:run": "vitest run",
     "check:data": "vitest run tests/data.test.ts",
     "sync:sources": "node scripts/sync-sources.mjs",
-    "check:sources": "node scripts/check-sources.mjs"
+    "check:sources": "node scripts/check-sources.mjs",
+    "monitor:ranking-editions": "node scripts/check-ranking-editions.mjs"
   },
   "dependencies": {
     "@mozilla/readability": "^0.6.0",

@@ -10,6 +10,7 @@ import institutions from '../src/data/institutions.json';
 import sources from '../src/data/sources.json';
 import statuses from '../src/data/status.json';
 import { buildReverseIndex, writeJsonAtomically } from '../scripts/build-reverse-index.mjs';
+import { assertReverseIndexFactsMatch } from '../scripts/check-reverse-index.mjs';
 
 const root = process.cwd();
 const indexPath = resolve(root, 'src/data/generated/reverse-index.json');
@@ -58,5 +59,33 @@ describe('build-reverse-index', () => {
     ]);
 
     expect(index.some((entry) => newUniversityIds.has(entry.universityId))).toBe(false);
+  });
+
+  it('accepts a status-only successful-date projection while rejecting immutable reverse-index drift', () => {
+    const previousStatuses = structuredClone(statuses);
+    const advancedStatuses = structuredClone(statuses);
+    const sourceId = requirements[0].sourceId;
+    previousStatuses[sourceId] = {
+      ...previousStatuses[sourceId],
+      lastSuccessfulAt: '2026-08-09T03:17:00.000Z',
+    };
+    advancedStatuses[sourceId] = {
+      ...advancedStatuses[sourceId],
+      lastSuccessfulAt: '2026-08-10T03:17:00.000Z',
+    };
+    const tracked = buildReverseIndex({ institutions, requirements, sources, statuses: previousStatuses });
+    const expectedAfterDailyStatusCommit = buildReverseIndex({
+      institutions,
+      requirements,
+      sources,
+      statuses: advancedStatuses,
+    });
+
+    expect(() => assertReverseIndexFactsMatch(tracked, expectedAfterDailyStatusCommit)).not.toThrow();
+
+    const alteredFacts = structuredClone(tracked);
+    alteredFacts[0].tierOfficial = `${alteredFacts[0].tierOfficial} altered`;
+    expect(() => assertReverseIndexFactsMatch(alteredFacts, expectedAfterDailyStatusCommit))
+      .toThrow(/immutable reverse-index facts/u);
   });
 });
