@@ -1,4 +1,8 @@
 import { readFileSync } from 'node:fs';
+import { mkdir, mkdtemp, rm, writeFile } from 'node:fs/promises';
+import { createRequire } from 'node:module';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 
 const dailyWorkflow = readFileSync('.github/workflows/daily-check.yml', 'utf8').replace(/\r\n/g, '\n');
@@ -7,6 +11,9 @@ const deployWorkflow = readFileSync('.github/workflows/deploy.yml', 'utf8');
 const rankingEditionWorkflow = readFileSync('.github/workflows/ranking-edition-check.yml', 'utf8').replace(/\r\n/g, '\n');
 
 const officialWorkflowText = [ciWorkflow, dailyWorkflow, deployWorkflow, rankingEditionWorkflow].join('\n');
+const rankingSteps = (rankingEditionWorkflow.split('\n    steps:\n')[1] ?? '')
+  .split(/(?=^      - )/mu)
+  .filter((step) => step.startsWith('      - '));
 const dailySteps = (dailyWorkflow.split('\n    steps:\n')[1] ?? '')
   .split(/(?=^      - )/mu)
   .filter((step) => step.startsWith('      - '));
@@ -19,6 +26,15 @@ function workflowRunScript(step) {
   const runBlock = step?.match(/^        run: \|\n([\s\S]*)$/mu)?.[1] ?? '';
   return runBlock.replace(/^          /gmu, '').trim();
 }
+
+function workflowGithubScript(step) {
+  const scriptBlock = step?.match(/^          script: \|\n([\s\S]*)$/mu)?.[1] ?? '';
+  return scriptBlock.replace(/^            /gmu, '').trim();
+}
+
+const rankingIssueScript = workflowGithubScript(
+  rankingSteps.find((step) => step.includes('Create or update one Issue per new ranking edition')),
+);
 
 const approvedOfficialActionPins = [
   ['actions/checkout', '3d3c42e5aac5ba805825da76410c181273ba90b1', 'v7.0.1', 4],
@@ -43,6 +59,16 @@ describe('official GitHub Action pins', () => {
 });
 
 describe('weekly ranking edition review workflow', () => {
+  it('serializes schedule and manual runs in one stable concurrency group', () => {
+    const concurrencyBlock = rankingEditionWorkflow.match(/^concurrency:\n([\s\S]*?)^jobs:/mu)?.[1] ?? '';
+
+    expect(concurrencyBlock).toBe([
+      '  group: ranking-edition-review-check',
+      '  cancel-in-progress: false',
+      '',
+    ].join('\n'));
+  });
+
   it('runs weekly and manually with only the permissions needed to upsert Issues', () => {
     expect(rankingEditionWorkflow).toContain("cron: '41 4 * * 1'");
     expect(rankingEditionWorkflow).toContain('workflow_dispatch:');
@@ -63,6 +89,82 @@ describe('weekly ranking edition review workflow', () => {
     expect(rankingEditionWorkflow).toContain('github.rest.issues.listForRepo');
     expect(rankingEditionWorkflow).toContain('github.rest.issues.update');
     expect(rankingEditionWorkflow).toContain('github.rest.issues.create');
+  });
+
+  it('deduplicates audit candidates by payload key and keeps its marker index current', () => {
+    expect(rankingIssueScript).toContain('const payloadByKey = new Map();');
+    expect(rankingIssueScript).toContain('payloadByKey.set(payload.key, payload);');
+    expect(rankingIssueScript).toContain('const issueByMarker = new Map(');
+    expect(rankingIssueScript).toContain('issueByMarker.set(marker, updated);');
+    expect(rankingIssueScript).toContain('issueByMarker.set(marker, created);');
+  });
+
+  it('creates only one Issue when the audit repeats a provider and edition', async () => {
+    const root = await mkdtemp(join(tmpdir(), 'xiaoying-ranking-workflow-'));
+    const createCalls = [];
+    const updateCalls = [];
+    const duplicate = {
+      provider: 'qs',
+      reviewedEdition: 2027,
+      detectedEdition: 2028,
+      status: 'new-edition',
+      checkedAt: '2026-08-10T12:34:56.000Z',
+    };
+
+    try {
+      await mkdir(join(root, 'artifacts'), { recursive: true });
+      await writeFile(join(root, 'artifacts', 'ranking-edition-audit.json'), JSON.stringify({
+        checkedAt: duplicate.checkedAt,
+        results: [
+          { ...duplicate, sourceUrl: 'https://www.topuniversities.com/first' },
+          { ...duplicate, sourceUrl: 'https://www.topuniversities.com/second' },
+          { ...duplicate, status: 'current', sourceUrl: 'https://www.topuniversities.com/current' },
+        ],
+      }), 'utf8');
+
+      const github = {
+        paginate: async () => [],
+        rest: {
+          issues: {
+            listForRepo() {},
+            create: async (input) => {
+              createCalls.push(input);
+              return { data: { number: 101, title: input.title, body: input.body } };
+            },
+            update: async (input) => {
+              updateCalls.push(input);
+              return { data: { number: input.issue_number, title: input.title, body: input.body } };
+            },
+          },
+        },
+      };
+      const executableScript = rankingIssueScript.replace(
+        "const { rankingEditionIssuePayload } = await import(rendererPath);",
+        'const { rankingEditionIssuePayload } = renderer;',
+      );
+      const execute = Object.getPrototypeOf(async function () {}).constructor(
+        'require',
+        'process',
+        'github',
+        'context',
+        'renderer',
+        executableScript,
+      );
+
+      await execute(
+        createRequire(import.meta.url),
+        { env: { GITHUB_WORKSPACE: root } },
+        github,
+        { repo: { owner: 'example', repo: 'directory' } },
+        await import('../scripts/render-ranking-edition-issue.mjs'),
+      );
+
+      expect(createCalls).toHaveLength(1);
+      expect(createCalls[0].body).toContain('https://www.topuniversities.com/second');
+      expect(updateCalls).toHaveLength(0);
+    } finally {
+      await rm(root, { recursive: true, force: true });
+    }
   });
 
   it('has no ranking-data, repository, Pages, or deployment mutation path', () => {

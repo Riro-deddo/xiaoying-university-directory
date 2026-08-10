@@ -4,6 +4,9 @@ on:
     - cron: '41 4 * * 1'
   workflow_dispatch:
 permissions: {}
+concurrency:
+  group: ranking-edition-review-check
+  cancel-in-progress: false
 jobs:
   check:
     permissions:
@@ -32,31 +35,44 @@ jobs:
 
             const rendererPath = `${process.env.GITHUB_WORKSPACE}/scripts/render-ranking-edition-issue.mjs`;
             const { rankingEditionIssuePayload } = await import(rendererPath);
+            const payloadByKey = new Map();
+            for (const candidate of candidates) {
+              const payload = rankingEditionIssuePayload(candidate);
+              payloadByKey.set(payload.key, payload);
+            }
             const openIssues = await github.paginate(github.rest.issues.listForRepo, {
               owner: context.repo.owner,
               repo: context.repo.repo,
               state: 'open',
               per_page: 100,
             });
+            const markerPattern = /<!-- ranking-edition:[a-z0-9]+:\d+ -->/u;
+            const issueByMarker = new Map(
+              openIssues
+                .filter((issue) => !issue.pull_request)
+                .map((issue) => [issue.body?.match(markerPattern)?.[0], issue])
+                .filter(([marker]) => marker),
+            );
 
-            for (const candidate of candidates) {
-              const payload = rankingEditionIssuePayload(candidate);
+            for (const payload of payloadByKey.values()) {
               const marker = `<!-- ${payload.key} -->`;
-              const existing = openIssues.find((issue) => !issue.pull_request && issue.body?.includes(marker));
+              const existing = issueByMarker.get(marker);
               if (existing) {
-                await github.rest.issues.update({
+                const { data: updated } = await github.rest.issues.update({
                   owner: context.repo.owner,
                   repo: context.repo.repo,
                   issue_number: existing.number,
                   title: payload.title,
                   body: payload.body,
                 });
+                issueByMarker.set(marker, updated);
               } else {
-                await github.rest.issues.create({
+                const { data: created } = await github.rest.issues.create({
                   owner: context.repo.owner,
                   repo: context.repo.repo,
                   title: payload.title,
                   body: payload.body,
                 });
+                issueByMarker.set(marker, created);
               }
             }
