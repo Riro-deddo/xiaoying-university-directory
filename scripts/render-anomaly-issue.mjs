@@ -8,7 +8,7 @@ function validateAnomaly(anomaly) {
   if (!sourceIdPattern.test(anomaly.reason ?? '')) throw new TypeError('reason must be a safe stable identifier');
   if (anomaly.retainedTrustedFacts !== true) throw new TypeError('retainedTrustedFacts must be true');
   for (const fingerprint of ['acceptedContentHash', 'observedContentHash']) {
-    if (anomaly[fingerprint] !== undefined && !contentHashPattern.test(anomaly[fingerprint])) {
+    if (anomaly[fingerprint] !== undefined && (typeof anomaly[fingerprint] !== 'string' || !contentHashPattern.test(anomaly[fingerprint]))) {
       throw new TypeError(`${fingerprint} must be a lowercase SHA-256 hash`);
     }
   }

@@ -59,4 +59,16 @@ describe('source anomaly Issue renderer', () => {
     expect(() => renderAnomalyIssue({ ...changed, observedContentHash: 'not-a-hash' }))
       .toThrow(/observedContentHash/u);
   });
+
+  it('rejects non-string supplied content fingerprints', () => {
+    const changed = {
+      ...anomaly,
+      reason: 'source-changed',
+    };
+
+    expect(() => renderAnomalyIssue({ ...changed, acceptedContentHash: ['a'.repeat(64)] }))
+      .toThrow(/acceptedContentHash/u);
+    expect(() => renderAnomalyIssue({ ...changed, observedContentHash: ['b'.repeat(64)] }))
+      .toThrow(/observedContentHash/u);
+  });
 });
