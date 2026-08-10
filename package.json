@@ -18,7 +18,8 @@
     "test:run": "vitest run",
     "check:data": "vitest run tests/data.test.ts",
     "sync:sources": "node scripts/sync-sources.mjs",
-    "check:sources": "node scripts/check-sources.mjs"
+    "check:sources": "node scripts/check-sources.mjs",
+    "monitor:ranking-editions": "node scripts/check-ranking-editions.mjs"
   },
   "dependencies": {
     "@mozilla/readability": "^0.6.0",
