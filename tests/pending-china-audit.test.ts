@@ -35,10 +35,7 @@ const batch1Ids = [
   'oxford-brookes-university',
 ] as const;
 
-const reviewedIds = batch1Ids.filter((id) => ![
-  'university-of-aberdeen',
-  'university-of-east-anglia',
-].includes(id));
+const reviewedIds = batch1Ids;
 
 const reviewedSourceManifest = [
   ['loughborough-university', 'loughborough-china-institution-lookup', 'https://www.lboro.ac.uk/study/postgraduate/entry-requirements-china/', 'official-list', 'university', 'grade-threshold', ['Find your institution', 'Search for a University (e.g. Anhui or 安徽)', 'Tier | First class (70%) | Mid 2:1 (65%) | 2:1 (60%)']],
@@ -69,7 +66,9 @@ describe('first pending China-rule audit batch', () => {
       expect(university, id).toBeDefined();
       expect(auditRow, id).toBeDefined();
       expect(auditRow?.reviewStatus, id).not.toBe('unreviewed');
-      expect(auditRow?.reviewDate, id).toBe('2026-08-09');
+      expect(auditRow?.reviewDate, id).toBe([
+        'university-of-aberdeen', 'university-of-east-anglia',
+      ].includes(id) ? '2026-08-10' : '2026-08-09');
       expect(auditRow?.finding, id).not.toContain('have not yet been reviewed');
       expect(auditRow?.expectedState, id).toBe(university?.state);
 
@@ -94,7 +93,9 @@ describe('first pending China-rule audit batch', () => {
         expect(source, sourceId).toBeDefined();
         expect(source?.universityId, sourceId).toBe(id);
         expect(source?.url, sourceId).toMatch(/^https:\/\//u);
-        expect(source?.institutionRule.verification?.reviewedAt, sourceId).toBe('2026-08-09');
+        expect(source?.institutionRule.verification?.reviewedAt, sourceId).toBe([
+          'university-of-aberdeen', 'university-of-east-anglia',
+        ].includes(id) ? '2026-08-10' : '2026-08-09');
         expect(source?.institutionRule.verification?.requiredText.length, sourceId).toBeGreaterThanOrEqual(2);
         expect(source?.parser).toMatchObject({
           mode: 'link-only',
@@ -127,11 +128,7 @@ describe('first pending China-rule audit batch', () => {
 
   it('uses the approved state distribution and scope', () => {
     expect(universityById.get('loughborough-university')?.state).toBe('official-list');
-    expect(reviewedIds.filter((id) => universityById.get(id)?.state === 'china-requirements')).toHaveLength(10);
-    for (const id of ['university-of-aberdeen', 'university-of-east-anglia']) {
-      expect(universityById.get(id)?.state).toBe('pending');
-      expect(auditById.get(id)?.reviewStatus).toBe('blocked');
-    }
+    expect(reviewedIds.filter((id) => universityById.get(id)?.state === 'china-requirements')).toHaveLength(12);
     expect(sourceById.get('city-st-georges-international-commercial-law-china')?.scope).toBe('programme');
   });
 
@@ -456,9 +453,9 @@ describe('fourth pending China-rule audit batch', () => {
       universityId: 'university-of-the-arts-london',
       directoryCategory: 'qs-directory',
       expectedState: 'pending',
-      reviewDate: '2026-08-09',
+      reviewDate: '2026-08-10',
       reviewStatus: 'blocked',
-      finding: 'Current first-party international application guidance directs applicants to course-specific entry requirements but publishes no China-specific academic requirement or Chinese-institution rule; this is insufficient to classify a public or non-public list.',
+      finding: 'Current admissions policy and postgraduate application guidance defer to course pages and publish no current China-specific academic or institution rule; the public 2023–24 scholarship equivalency PDF is historical and is not current admissions evidence.',
     });
   });
 
@@ -550,17 +547,21 @@ describe('final pending China-rule audit batch', () => {
   it('reviews the exact final thirteen-school cohort from current first-party evidence', () => {
     expect(batch5Ids).toHaveLength(13);
     expect(new Set(batch5Ids).size).toBe(13);
-    const blockedIds = [
-      'london-metropolitan-university', 'university-of-east-london', 'university-of-roehampton',
-      'university-of-salford', 'university-of-wolverhampton', 'queen-margaret-university-edinburgh',
-      'university-of-northampton', 'university-of-south-wales',
+    const blockedIds = ['university-of-east-london'];
+    const recheckedIds = [
+      'london-metropolitan-university', 'university-of-roehampton', 'university-of-salford',
+      'university-of-wolverhampton', 'queen-margaret-university-edinburgh', 'university-of-northampton',
+      'university-of-south-wales',
     ];
     for (const id of batch5Ids) {
       const university = universityById.get(id);
       const row = auditById.get(id);
       if (blockedIds.includes(id)) {
         expect(university, id).toMatchObject({ state: 'pending', sourceIds: [] });
-        expect(row, id).toMatchObject({ expectedState: 'pending', reviewStatus: 'blocked', reviewDate: '2026-08-09' });
+        expect(row, id).toMatchObject({ expectedState: 'pending', reviewStatus: 'blocked', reviewDate: '2026-08-10' });
+      } else if (recheckedIds.includes(id)) {
+        expect(university?.state, id).toBe('china-requirements');
+        expect(row, id).toMatchObject({ expectedState: 'china-requirements', reviewStatus: 'reviewed', reviewDate: '2026-08-10' });
       } else {
         expect(university?.state, id).toBe('china-requirements');
         expect(row, id).toMatchObject({ expectedState: 'china-requirements', reviewStatus: 'reviewed', reviewDate: '2026-08-09' });
@@ -593,11 +594,11 @@ describe('final pending China-rule audit batch', () => {
     }
   });
 
-  it('records Wolverhampton’s failed Pre-Master’s pathway PDF without generalising it to university-wide entry', () => {
+  it('records Wolverhampton’s current China page without generalising its category labels to a roster', () => {
     const university = universityById.get('university-of-wolverhampton');
-    expect(university).toMatchObject({ state: 'pending', sourceIds: [] });
+    expect(university).toMatchObject({ state: 'china-requirements', sourceIds: ['wolverhampton-china-requirements'] });
     expect(auditById.get('university-of-wolverhampton')).toMatchObject({
-      reviewStatus: 'blocked', finding: expect.stringMatching(/Pre-Master|pathway|programme/i),
+      reviewStatus: 'reviewed', finding: expect.stringMatching(/elite|double-rated/i),
     });
   });
 
@@ -605,5 +606,47 @@ describe('final pending China-rule audit batch', () => {
     expect(allPendingAuditBatchIds).toHaveLength(65);
     expect(new Set(allPendingAuditBatchIds).size).toBe(65);
     expect([...allPendingAuditBatchIds].sort()).toEqual([...baseline.pendingUniversityIds].sort());
+  });
+});
+
+describe('2026-08-10 pending-school recheck', () => {
+  const universityById = new Map(universities.map((university) => [university.id, university]));
+  const auditById = new Map(audit.map((row) => [row.universityId, row]));
+  const sourceById = new Map(sources.map((source) => [source.id, source]));
+  const recheckedSources = [
+    { universityId: 'university-of-aberdeen', sourceId: 'aberdeen-china-entry-requirements', url: 'https://www.abdn.ac.uk/study/international/country-territory/china/entry/', requiredText: ['Postgraduate Studies', '65% equates to a 2.2', '60% equates to a 3rd'], scopeZh: '学校中国国别页的本科和研究生入学要求', summaryZh: '页面提供中国学历和研究生成绩等效指引，未公开院校分组或院校名录。', caveatZh: '页面说明仅作一般指引，课程可能另有要求。' },
+    { universityId: 'university-of-east-anglia', sourceId: 'uea-china-country-requirements', url: 'https://www.uea.ac.uk/study/international-students/country-map/china', requiredText: ['Bachelor Degree from a recognised institution', 'UK 2:1', '75%', 'UK 2:2', '70%'], scopeZh: '学校中国国别页的本科和研究生入学要求', summaryZh: '页面要求学士学位来自认可院校，并说明具体门槛会随课程和本科院校变化；未公开认可范围或院校名录。', caveatZh: '具体要求须结合课程并向招生部门确认，不能从认可院校措辞推断成员。' },
+    { universityId: 'london-metropolitan-university', sourceId: 'london-metropolitan-china-requirements', url: 'https://www.londonmet.ac.uk/international/applying/countries/students-from-china/', requiredText: ['high-ranking Chinese institution', '70% or above', 'three-year Diploma', '80% or above'], scopeZh: '学校中国国别页的本科和研究生入学要求', summaryZh: '页面对高排名中国院校的四年制学士和三年制文凭给出门槛，但未定义或公开相关院校成员。', caveatZh: '“高排名院校”无法从本页确定，课程特定要求仍可能适用。' },
+    { universityId: 'university-of-roehampton', sourceId: 'roehampton-china-requirements', url: 'https://www.roehampton.ac.uk/student-support/international-students/countries/china/', requiredText: ['70% or GPA 2.8', '60% or GPA 2.4', 'Project 211'], scopeZh: '学校中国国别页的硕士和 MBA 入学指引', summaryZh: '页面对认可中国大学和 Project 211 大学给出不同成绩门槛，但未公开院校成员名录。', caveatZh: '要求为一般指引且申请逐案评估，Project 211 不能被本站扩展为校方名单。' },
+    { universityId: 'university-of-salford', sourceId: 'salford-china-requirements', url: 'https://www.salford.ac.uk/international/your-country-or-region/salford-and-china', requiredText: ['bachelor’s degree from a reputable Chinese university', 'GPA of 2.4/4.0 or 60%'], scopeZh: '学校中国国别页的研究生入学指引', summaryZh: '页面要求学士学位来自信誉良好的中国大学并给出成绩门槛，但未定义或公开院校范围。', caveatZh: '“信誉良好”由学校招生部门判断，具体课程可能要求更高。' },
+    { universityId: 'university-of-wolverhampton', sourceId: 'wolverhampton-china-requirements', url: 'https://www.wlv.ac.uk/international/your-country/china/', requiredText: ['four-year degree from an accredited university or college', 'elite universities', '70%', '65%', '80%', '75%'], scopeZh: '学校中国国别页的本科和研究生入学指引', summaryZh: '页面按普通认可院校与精英或双评级院校给出不同研究生成绩门槛，但未公开类别成员。', caveatZh: '精英或双评级院校没有可核验名单，页面仅为指导且课程要求可能不同。' },
+    { universityId: 'queen-margaret-university-edinburgh', sourceId: 'qmu-china-requirements', url: 'https://www.qmu.ac.uk/study-here/international-students/information-for-your-country/china', requiredText: ['good Bachelor’s degree from a recognised university', 'minimum score of 70%', 'Grade B', 'GPA 3.0'], scopeZh: '学校中国国别页的研究生入学要求', summaryZh: '页面要求认可大学的良好学士学位并给出最低成绩，未公开认可院校名录。', caveatZh: '认可范围由学校判断，课程页面可能有更高或附加条件。' },
+    { universityId: 'university-of-northampton', sourceId: 'northampton-china-entry-requirements', url: 'https://www.northampton.ac.uk/international/your-country/east-asia-and-south-east-asia/', requiredText: ['a Bachelor’s degree from a Chinese university', 'successful completion of a recognised pre-Master’s'], scopeZh: '学校东亚地区页中的中国本科和研究生学历指引', summaryZh: '页面说明中国大学学士学位或认可硕士预科可用于研究生申请，未公开院校分组或成绩换算表。', caveatZh: '具体成绩和课程条件须查课程页或向学校确认。' },
+    { universityId: 'university-of-south-wales', sourceId: 'usw-china-entry-requirements', url: 'https://www.southwales.ac.uk/international/your-country/china/', requiredText: ['Bachelor degree from a recognized Chinese university', 'postgraduate taught study', 'Masters degree from a recognised Chinese university', 'PhD'], scopeZh: '学校中国国别页的授课型研究生和博士学历要求', summaryZh: '页面要求相应学位来自认可中国大学，但没有公开认可范围、成绩换算或院校名录。', caveatZh: '认可资格及课程附加条件由学校判断，不能从页面推断院校成员。' },
+  ] as const;
+  const stillBlockedIds = ['university-of-the-arts-london', 'university-of-east-london'] as const;
+
+  it('records the rechecked university, audit, source, status, and zero-fact evidence contracts', () => {
+    expect(recheckedSources).toHaveLength(9);
+    for (const item of recheckedSources) {
+      expect(universityById.get(item.universityId)).toMatchObject({ state: 'china-requirements', sourceIds: [item.sourceId] });
+      expect(auditById.get(item.universityId)).toMatchObject({ expectedState: 'china-requirements', reviewStatus: 'reviewed', reviewDate: '2026-08-10' });
+      expect(sourceById.get(item.sourceId)).toMatchObject({
+        id: item.sourceId, universityId: item.universityId, url: item.url, kind: 'china-requirements', scope: 'university', scopeZh: item.scopeZh,
+        institutionRule: { type: 'none', summaryZh: item.summaryZh, caveatZh: item.caveatZh, verification: { reviewedAt: '2026-08-10', url: item.url, requiredText: item.requiredText } },
+        parser: { mode: 'link-only', guard: { minimumRecords: 0, maximumRecords: 0, maximumRemovalRatio: 0 } },
+      });
+      expectUnacceptedLinkOnlyStatus(statuses[item.sourceId], item.sourceId);
+      expect(requirements.some((fact) => fact.sourceId === item.sourceId)).toBe(false);
+    }
+  });
+
+  it('keeps the two current-evidence blocks pending and explicitly rechecked', () => {
+    for (const id of stillBlockedIds) {
+      expect(universityById.get(id)).toMatchObject({ state: 'pending', sourceIds: [] });
+      expect(universityById.get(id)?.noteZh).toMatch(/已核查|当前公开招生政策/u);
+      expect(universityById.get(id)?.noteZh).not.toMatch(/尚待核查|尚未开始/u);
+      expect(auditById.get(id)).toMatchObject({ expectedState: 'pending', reviewStatus: 'blocked', reviewDate: '2026-08-10' });
+    }
   });
 });

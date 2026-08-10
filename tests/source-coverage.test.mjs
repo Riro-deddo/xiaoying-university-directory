@@ -29,6 +29,9 @@ const batchReviewedIds = new Set([
   'birmingham-city-university', 'glasgow-caledonian-university', 'leeds-beckett-university',
   'robert-gordon-university', 'sheffield-hallam-university', 'university-of-lancashire',
   'university-of-derby', 'canterbury-christ-church-university',
+  'university-of-aberdeen', 'university-of-east-anglia', 'london-metropolitan-university',
+  'university-of-roehampton', 'university-of-salford', 'university-of-wolverhampton',
+  'queen-margaret-university-edinburgh', 'university-of-northampton', 'university-of-south-wales',
 ]);
 
 describe('source coverage report', () => {
@@ -52,10 +55,10 @@ describe('source coverage report', () => {
       'QS universities: 93',
       'Specialist universities: 8',
       'Full public lists: 10',
-      'Rule-only universities: 72',
+      'Rule-only universities: 81',
       'No-public-list records: 8',
       'Parser-enabled sources: 9',
-      'Link-only sources: 84',
+      'Link-only sources: 93',
     ]);
   });
   it('covers 93 QS universities and eight approved specialists with one audit row each', () => {
@@ -87,8 +90,8 @@ describe('source coverage report', () => {
   });
 
   it('marks every audit row with the required review lifecycle status', () => {
-    expect(audit.filter((row) => row.reviewStatus === 'reviewed')).toHaveLength(90);
-    expect(audit.filter((row) => row.reviewStatus === 'blocked')).toHaveLength(11);
+    expect(audit.filter((row) => row.reviewStatus === 'reviewed')).toHaveLength(99);
+    expect(audit.filter((row) => row.reviewStatus === 'blocked')).toHaveLength(2);
     expect(audit.filter((row) => row.reviewStatus === 'unreviewed')).toHaveLength(0);
     expect(audit.filter((row) => baseline.nonTargetAuditRows.some((baselineRow) => baselineRow.universityId === row.universityId))
       .map((row) => row.universityId)).toEqual(baseline.nonTargetAuditRows.map((row) => row.universityId));
@@ -171,7 +174,7 @@ describe('source coverage report', () => {
   });
 
   it('allows a blocked pending target with a finding to remain source-free', () => {
-    const university = universities.find((item) => item.id === 'london-metropolitan-university');
+    const university = universities.find((item) => item.id === 'university-of-the-arts-london');
     const auditRow = audit.find((row) => row.universityId === university.id);
 
     expect(university).toMatchObject({ state: 'pending', sourceIds: [] });
@@ -200,12 +203,12 @@ describe('source coverage report', () => {
   });
 
   it('rejects a reviewed lifecycle on a pending catalog record', () => {
-    const alteredAudit = audit.map((row) => row.universityId === 'london-metropolitan-university'
+    const alteredAudit = audit.map((row) => row.universityId === 'university-of-the-arts-london'
       ? { ...row, reviewStatus: 'reviewed' }
       : row);
 
     expect(evaluateCoverage({ cohort, rankings, universities, sources, audit: alteredAudit }).failures)
-      .toEqual(['reviewed audit row cannot remain pending: london-metropolitan-university']);
+      .toEqual(['reviewed audit row cannot remain pending: university-of-the-arts-london']);
   });
 
   it('rejects an audit row whose reviewed state or directory category differs from the catalog', () => {
@@ -327,7 +330,7 @@ describe('source coverage report', () => {
       qsUniversities: 93,
       specialistUniversities: 8,
       fullPublicLists: 10,
-      ruleOnlyUniversities: 72,
+      ruleOnlyUniversities: 81,
       noPublicListRecords: 8,
     });
   });
