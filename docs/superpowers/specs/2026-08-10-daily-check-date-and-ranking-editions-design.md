@@ -36,7 +36,7 @@ The accepted `contentHash` remains protected. A daily observation may update `ob
 ### Official-page change flow
 
 1. If the official page is successfully reached and its reviewed content is unchanged, update `lastSuccessfulAt` and deploy the new date.
-2. If the observed content differs from the accepted baseline, keep the last accepted university list, requirement, and Chinese summary visible, mark the source as changed, and create or update its review Issue.
+2. If the page is reached successfully but the observed content differs from the accepted baseline, update `lastSuccessfulAt`, keep the last accepted university list, requirement, and Chinese summary visible, mark the source as changed, and create or update its review Issue.
 3. The review record must identify the source URL, detection time, and observed fingerprint so the change can be checked without searching for the affected source again.
 4. After the change is confirmed, the existing reviewed synchronization path may update the accepted hash, extracted facts, Chinese summary, and content-review date. The next normal build publishes those confirmed changes.
 5. A detected content change is a review event, not a workflow failure; it must not block other successful sources from receiving their new successful-check date.
