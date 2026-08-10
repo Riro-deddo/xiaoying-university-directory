@@ -9,6 +9,7 @@ import baseline from './fixtures/pending-china-audit-baseline.json';
 import statuses from '../src/data/status.json';
 import { loadChinaRuleAudit, loadUniversities } from '../src/lib/data';
 import { normalizeInstitutionName } from '../src/lib/institution-search';
+import { expectUnacceptedLinkOnlyStatus } from './helpers/source-status';
 
 const officialBaseHost = (url: string) => new URL(url).hostname.replace(/^www\./u, '');
 const sha256 = async (value: unknown) => Array.from(new Uint8Array(await crypto.subtle.digest(
@@ -420,8 +421,7 @@ describe('QS cohort and official source registry', () => {
       institutionRule: { type: 'none', verification: { reviewedAt: '2026-08-09' } },
       parser: { mode: 'link-only' },
     });
-    expect((statuses as Record<string, unknown>)[sourceId])
-      .toEqual({ sourceId, health: 'unchecked', consecutiveFailures: 0 });
+    expectUnacceptedLinkOnlyStatus((statuses as Record<string, unknown>)[sourceId], sourceId);
     expect(requirements.some((fact) => fact.sourceId === sourceId)).toBe(false);
   });
 
