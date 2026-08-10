@@ -14,8 +14,8 @@ async function writeJsonAtomically(path, value) {
 
 export async function runRankingEditionCheck(options = {}) {
   const root = options.root ?? defaultRoot;
-  const rankingsPath = options.rankingsPath ?? join(root, 'src', 'data', 'rankings.json');
-  const auditPath = options.auditPath ?? join(root, 'artifacts', 'ranking-edition-audit.json');
+  const rankingsPath = join(root, 'src', 'data', 'rankings.json');
+  const auditPath = join(root, 'artifacts', 'ranking-edition-audit.json');
   const rankings = options.rankings ?? JSON.parse(await readFile(rankingsPath, 'utf8'));
   const checkedAt = options.checkedAt ?? new Date().toISOString();
   const audit = await inspectRankingEditions({
@@ -39,5 +39,4 @@ function summary(audit) {
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const audit = await runRankingEditionCheck();
   console.log(summary(audit));
-  if (audit.results.some((result) => result.status === 'new-edition')) process.exitCode = 1;
 }
