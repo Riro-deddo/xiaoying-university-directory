@@ -31,4 +31,32 @@ describe('source anomaly Issue renderer', () => {
   it('rejects malformed source identifiers before rendering an Issue marker', () => {
     expect(() => renderAnomalyIssue({ ...anomaly, sourceId: 'bad --> marker' })).toThrow(/sourceId/);
   });
+
+  it('renders accepted and observed fingerprints for a changed source', () => {
+    const changed = {
+      ...anomaly,
+      reason: 'source-changed',
+      acceptedContentHash: 'a'.repeat(64),
+      observedContentHash: 'b'.repeat(64),
+    };
+
+    expect(renderAnomalyIssue(changed)).toContain('`' + 'a'.repeat(64) + '`');
+    expect(renderAnomalyIssue(changed)).toContain('`' + 'b'.repeat(64) + '`');
+    expect(renderAnomalyIssue({ ...changed, observedContentHash: undefined }))
+      .toContain('本次未捕获');
+  });
+
+  it('rejects malformed supplied content fingerprints', () => {
+    const changed = {
+      ...anomaly,
+      reason: 'source-changed',
+      acceptedContentHash: 'a'.repeat(64),
+      observedContentHash: 'b'.repeat(64),
+    };
+
+    expect(() => renderAnomalyIssue({ ...changed, acceptedContentHash: 'not-a-hash' }))
+      .toThrow(/acceptedContentHash/u);
+    expect(() => renderAnomalyIssue({ ...changed, observedContentHash: 'not-a-hash' }))
+      .toThrow(/observedContentHash/u);
+  });
 });

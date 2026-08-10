@@ -55,6 +55,8 @@ jobs:
                   sourceUrl: source.url,
                   reason: `source-${status.health}`,
                   detectedAt: status.checkedAt,
+                  acceptedContentHash: status.contentHash,
+                  observedContentHash: status.observedContentHash,
                   retainedTrustedFacts: true,
                 };
               });

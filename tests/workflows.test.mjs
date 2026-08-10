@@ -93,6 +93,13 @@ describe('guarded daily source workflow', () => {
     expect(issueStep).not.toContain('source-anomalies.json');
   });
 
+  it('passes accepted and observed content fingerprints to daily Issue candidates', () => {
+    const issueStep = dailyStepContaining('Create or update one Issue per source anomaly');
+
+    expect(issueStep).toContain('acceptedContentHash: status.contentHash');
+    expect(issueStep).toContain('observedContentHash: status.observedContentHash');
+  });
+
   it('keeps CI read-only and checks reverse-index consistency', () => {
     expect(ciWorkflow).toContain('contents: read');
     const orderedSteps = [
