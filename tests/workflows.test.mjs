@@ -4,8 +4,9 @@ import { describe, expect, it } from 'vitest';
 const dailyWorkflow = readFileSync('.github/workflows/daily-check.yml', 'utf8').replace(/\r\n/g, '\n');
 const ciWorkflow = readFileSync('.github/workflows/ci.yml', 'utf8');
 const deployWorkflow = readFileSync('.github/workflows/deploy.yml', 'utf8');
+const rankingEditionWorkflow = readFileSync('.github/workflows/ranking-edition-check.yml', 'utf8').replace(/\r\n/g, '\n');
 
-const officialWorkflowText = [ciWorkflow, dailyWorkflow, deployWorkflow].join('\n');
+const officialWorkflowText = [ciWorkflow, dailyWorkflow, deployWorkflow, rankingEditionWorkflow].join('\n');
 const dailySteps = (dailyWorkflow.split('\n    steps:\n')[1] ?? '')
   .split(/(?=^      - )/mu)
   .filter((step) => step.startsWith('      - '));
@@ -20,9 +21,9 @@ function workflowRunScript(step) {
 }
 
 const approvedOfficialActionPins = [
-  ['actions/checkout', '3d3c42e5aac5ba805825da76410c181273ba90b1', 'v7.0.1', 3],
-  ['actions/setup-node', '820762786026740c76f36085b0efc47a31fe5020', 'v7.0.0', 3],
-  ['actions/github-script', '3a2844b7e9c422d3c10d287c895573f7108da1b3', 'v9.0.0', 1],
+  ['actions/checkout', '3d3c42e5aac5ba805825da76410c181273ba90b1', 'v7.0.1', 4],
+  ['actions/setup-node', '820762786026740c76f36085b0efc47a31fe5020', 'v7.0.0', 4],
+  ['actions/github-script', '3a2844b7e9c422d3c10d287c895573f7108da1b3', 'v9.0.0', 2],
   ['actions/configure-pages', '45bfe0192ca1faeb007ade9deae92b16b8254a0d', 'v6.0.0', 2],
   ['actions/upload-pages-artifact', 'fc324d3547104276b827a68afc52ff2a11cc49c9', 'v5.0.0', 2],
   ['actions/deploy-pages', 'cd2ce8fcbc39b97be8ca5fce6e763baed58fa128', 'v5.0.0', 2],
@@ -32,12 +33,44 @@ describe('official GitHub Action pins', () => {
   it('uses only the approved Node 24-compatible official releases', () => {
     const officialUses = [...officialWorkflowText.matchAll(/uses:\s+(actions\/[^@\s]+)@([0-9a-f]{40})\s+#\s+(\S+)/g)];
 
-    expect(officialUses).toHaveLength(13);
+    expect(officialUses).toHaveLength(16);
     for (const [name, sha, version, count] of approvedOfficialActionPins) {
       const matches = officialUses.filter((match) => match[1] === name && match[2] === sha && match[3] === version);
       expect(matches, `${name}@${sha} # ${version}`).toHaveLength(count);
     }
-    expect(officialWorkflowText.match(/node-version:\s*22/g)).toHaveLength(3);
+    expect(officialWorkflowText.match(/node-version:\s*22/g)).toHaveLength(4);
+  });
+});
+
+describe('weekly ranking edition review workflow', () => {
+  it('runs weekly and manually with only the permissions needed to upsert Issues', () => {
+    expect(rankingEditionWorkflow).toContain("cron: '41 4 * * 1'");
+    expect(rankingEditionWorkflow).toContain('workflow_dispatch:');
+    expect(rankingEditionWorkflow).toMatch(/^permissions: \{\}$/mu);
+    expect(rankingEditionWorkflow).toMatch(/^      contents: read$/mu);
+    expect(rankingEditionWorkflow).toMatch(/^      issues: write$/mu);
+    expect(rankingEditionWorkflow).not.toContain('contents: write');
+    expect(rankingEditionWorkflow).not.toContain('pages: write');
+    expect(rankingEditionWorkflow).not.toContain('id-token: write');
+  });
+
+  it('monitors the fixed audit and upserts only unambiguous newer editions by stable marker', () => {
+    expect(rankingEditionWorkflow).toContain('pnpm monitor:ranking-editions');
+    expect(rankingEditionWorkflow).toContain('artifacts/ranking-edition-audit.json');
+    expect(rankingEditionWorkflow).toContain("status === 'new-edition'");
+    expect(rankingEditionWorkflow).toContain('render-ranking-edition-issue.mjs');
+    expect(rankingEditionWorkflow).toContain('<!-- ${payload.key} -->');
+    expect(rankingEditionWorkflow).toContain('github.rest.issues.listForRepo');
+    expect(rankingEditionWorkflow).toContain('github.rest.issues.update');
+    expect(rankingEditionWorkflow).toContain('github.rest.issues.create');
+  });
+
+  it('has no ranking-data, repository, Pages, or deployment mutation path', () => {
+    expect(rankingEditionWorkflow).not.toContain('src/data/rankings.json');
+    expect(rankingEditionWorkflow).not.toMatch(/\bgit\s+(?:add|commit|push)\b/u);
+    expect(rankingEditionWorkflow).not.toContain('upload-pages-artifact');
+    expect(rankingEditionWorkflow).not.toContain('deploy-pages');
+    expect(rankingEditionWorkflow).not.toMatch(/\bdeploy\b/iu);
   });
 });
 

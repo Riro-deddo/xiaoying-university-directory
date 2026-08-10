@@ -1,0 +1,62 @@
+name: Ranking edition review check
+on:
+  schedule:
+    - cron: '41 4 * * 1'
+  workflow_dispatch:
+permissions: {}
+jobs:
+  check:
+    permissions:
+      contents: read
+      issues: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 22
+          package-manager-cache: false
+      - run: corepack enable
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm monitor:ranking-editions
+      - name: Create or update one Issue per new ranking edition
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+        with:
+          retries: 3
+          script: |
+            const { readFileSync } = require('node:fs');
+            const auditPath = `${process.env.GITHUB_WORKSPACE}/artifacts/ranking-edition-audit.json`;
+            const audit = JSON.parse(readFileSync(auditPath, 'utf8'));
+            const candidates = audit.results.filter((result) => result.status === 'new-edition');
+            if (candidates.length === 0) return;
+
+            const rendererPath = `${process.env.GITHUB_WORKSPACE}/scripts/render-ranking-edition-issue.mjs`;
+            const { rankingEditionIssuePayload } = await import(rendererPath);
+            const openIssues = await github.paginate(github.rest.issues.listForRepo, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              per_page: 100,
+            });
+
+            for (const candidate of candidates) {
+              const payload = rankingEditionIssuePayload(candidate);
+              const marker = `<!-- ${payload.key} -->`;
+              const existing = openIssues.find((issue) => !issue.pull_request && issue.body?.includes(marker));
+              if (existing) {
+                await github.rest.issues.update({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: existing.number,
+                  title: payload.title,
+                  body: payload.body,
+                });
+              } else {
+                await github.rest.issues.create({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  title: payload.title,
+                  body: payload.body,
+                });
+              }
+            }
