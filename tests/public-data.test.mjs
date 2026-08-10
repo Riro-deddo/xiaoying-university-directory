@@ -46,6 +46,32 @@ describe('public lazy-data build', () => {
         status: statuses[sourceId],
       })));
     }
+
+    expect(publicRecords.filter((record) => record.state === 'china-requirements')).toHaveLength(81);
+    expect(publicRecords.filter((record) => record.state === 'pending').map((record) => record.id).sort())
+      .toEqual(['university-of-east-london', 'university-of-the-arts-london']);
+
+    for (const id of [
+      'university-of-aberdeen',
+      'university-of-east-anglia',
+      'london-metropolitan-university',
+      'university-of-roehampton',
+      'university-of-salford',
+      'university-of-wolverhampton',
+      'queen-margaret-university-edinburgh',
+      'university-of-northampton',
+      'university-of-south-wales',
+    ]) {
+      const record = publicRecords.find((item) => item.id === id);
+      expect(record?.state, id).toBe('china-requirements');
+      expect(record?.sources, id).toHaveLength(1);
+      expect(record?.sources[0]).toMatchObject({
+        kind: 'china-requirements',
+        institutionRule: { type: 'none' },
+        parser: { mode: 'link-only' },
+        status: { health: 'unchecked', consecutiveFailures: 0 },
+      });
+    }
   });
 
   it('publishes reviewed and blocked representative rows with their current catalog metadata', async () => {

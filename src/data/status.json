@@ -414,5 +414,14 @@
   "shu-china-entry-requirements": {"sourceId":"shu-china-entry-requirements","health":"unchecked","consecutiveFailures":0},
   "lancashire-china-requirements": {"sourceId":"lancashire-china-requirements","health":"unchecked","consecutiveFailures":0},
   "derby-mainland-china-international-entry": {"sourceId":"derby-mainland-china-international-entry","health":"unchecked","consecutiveFailures":0},
-  "cccu-china-requirements": {"sourceId":"cccu-china-requirements","health":"unchecked","consecutiveFailures":0}
+  "cccu-china-requirements": {"sourceId":"cccu-china-requirements","health":"unchecked","consecutiveFailures":0},
+  "aberdeen-china-entry-requirements": {"sourceId":"aberdeen-china-entry-requirements","health":"unchecked","consecutiveFailures":0},
+  "uea-china-country-requirements": {"sourceId":"uea-china-country-requirements","health":"unchecked","consecutiveFailures":0},
+  "london-metropolitan-china-requirements": {"sourceId":"london-metropolitan-china-requirements","health":"unchecked","consecutiveFailures":0},
+  "roehampton-china-requirements": {"sourceId":"roehampton-china-requirements","health":"unchecked","consecutiveFailures":0},
+  "salford-china-requirements": {"sourceId":"salford-china-requirements","health":"unchecked","consecutiveFailures":0},
+  "wolverhampton-china-requirements": {"sourceId":"wolverhampton-china-requirements","health":"unchecked","consecutiveFailures":0},
+  "qmu-china-requirements": {"sourceId":"qmu-china-requirements","health":"unchecked","consecutiveFailures":0},
+  "northampton-china-entry-requirements": {"sourceId":"northampton-china-entry-requirements","health":"unchecked","consecutiveFailures":0},
+  "usw-china-entry-requirements": {"sourceId":"usw-china-entry-requirements","health":"unchecked","consecutiveFailures":0}
 }

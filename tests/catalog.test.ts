@@ -34,7 +34,7 @@ describe('QS cohort and official source registry', () => {
     expect([...cohortIds].every((id) => rankedUniversityIds.has(id))).toBe(true);
   });
 
-  it('records the reviewed first four China-rule batches while retaining the remaining pending cohort', () => {
+  it('records the reviewed China-rule batches while retaining only the two blocked universities', () => {
     const cohortIds = [...cohort.universities.map((item) => item.id)].sort();
     const batchReviewedIds = [
       'loughborough-university', 'university-of-strathclyde', 'university-of-surrey', 'university-of-sussex',
@@ -54,6 +54,9 @@ describe('QS cohort and official source registry', () => {
       'birmingham-city-university', 'glasgow-caledonian-university', 'leeds-beckett-university',
       'robert-gordon-university', 'sheffield-hallam-university', 'university-of-lancashire',
       'university-of-derby', 'canterbury-christ-church-university',
+      'university-of-aberdeen', 'university-of-east-anglia', 'london-metropolitan-university',
+      'university-of-roehampton', 'university-of-salford', 'university-of-wolverhampton',
+      'queen-margaret-university-edinburgh', 'university-of-northampton', 'university-of-south-wales',
     ];
     const reviewedIds = universities
       .filter((item) => item.directoryCategory === 'qs-directory' && item.state !== 'pending')
@@ -61,15 +64,18 @@ describe('QS cohort and official source registry', () => {
       .sort();
 
     expect(reviewedIds).toEqual([...cohortIds, ...batchReviewedIds].sort());
-    expect(universities.filter((item) => item.state === 'pending')).toHaveLength(11);
+    expect(universities.filter((item) => item.state === 'pending').map((item) => item.id).sort()).toEqual([
+      'university-of-east-london',
+      'university-of-the-arts-london',
+    ]);
   });
 
   it('preserves the reviewed China-rule findings and records their lifecycle', () => {
     expect(loadChinaRuleAudit()).toEqual(audit);
     expect(audit).toHaveLength(101);
-    expect(audit.filter((row) => row.expectedState !== 'pending')).toHaveLength(90);
-    expect(audit.filter((row) => row.reviewStatus === 'reviewed')).toHaveLength(90);
-    expect(audit.filter((row) => row.reviewStatus === 'blocked')).toHaveLength(11);
+    expect(audit.filter((row) => row.expectedState !== 'pending')).toHaveLength(99);
+    expect(audit.filter((row) => row.reviewStatus === 'reviewed')).toHaveLength(99);
+    expect(audit.filter((row) => row.reviewStatus === 'blocked')).toHaveLength(2);
     expect(audit.filter((row) => row.reviewStatus === 'unreviewed')).toHaveLength(0);
     expect(audit.filter((row) => baseline.nonTargetAuditRows.some((baselineRow) => baselineRow.universityId === row.universityId))
       .map(({ reviewStatus: _reviewStatus, ...row }) => row))
@@ -132,6 +138,9 @@ describe('QS cohort and official source registry', () => {
       'birmingham-city-university', 'glasgow-caledonian-university', 'leeds-beckett-university',
       'robert-gordon-university', 'sheffield-hallam-university', 'university-of-lancashire',
       'university-of-derby', 'canterbury-christ-church-university',
+      'university-of-aberdeen', 'university-of-east-anglia', 'london-metropolitan-university',
+      'university-of-roehampton', 'university-of-salford', 'university-of-wolverhampton',
+      'queen-margaret-university-edinburgh', 'university-of-northampton', 'university-of-south-wales',
     ]);
     expect(universities.filter((university) => university.state === 'pending').map((university) => university.id))
       .toEqual(baseline.pendingUniversityIds.filter((id) => !batchReviewedIds.has(id)));
@@ -228,6 +237,15 @@ describe('QS cohort and official source registry', () => {
       'university-of-lancashire',
       'university-of-derby',
       'canterbury-christ-church-university',
+      'university-of-aberdeen',
+      'university-of-east-anglia',
+      'london-metropolitan-university',
+      'university-of-roehampton',
+      'university-of-salford',
+      'university-of-wolverhampton',
+      'queen-margaret-university-edinburgh',
+      'university-of-northampton',
+      'university-of-south-wales',
     ]],
     ['not-public', [
       'durham-university',
@@ -249,6 +267,17 @@ describe('QS cohort and official source registry', () => {
   });
 
   it('registers reviewed link-only semantics for every China-rule source', () => {
+    const recheckedSources = new Set([
+      'aberdeen-china-entry-requirements',
+      'uea-china-country-requirements',
+      'london-metropolitan-china-requirements',
+      'roehampton-china-requirements',
+      'salford-china-requirements',
+      'wolverhampton-china-requirements',
+      'qmu-china-requirements',
+      'northampton-china-entry-requirements',
+      'usw-china-entry-requirements',
+    ]);
     const newlyReviewedSources = new Set([
       'cranfield-china-entry',
       'lshtm-china-entry',
@@ -292,7 +321,9 @@ describe('QS cohort and official source registry', () => {
       expect(source.scopeZh.trim()).toBeTruthy();
       expect(source.institutionRule.summaryZh.trim()).toBeTruthy();
       expect(source.institutionRule.verification).toMatchObject({
-        reviewedAt: newlyReviewedSources.has(source.id) ? '2026-08-09' : '2026-08-02',
+        reviewedAt: recheckedSources.has(source.id)
+          ? '2026-08-10'
+          : newlyReviewedSources.has(source.id) ? '2026-08-09' : '2026-08-02',
         url: expect.stringMatching(/^https:\/\//u),
       });
       expect(source.institutionRule.verification?.requiredText.length).toBeGreaterThan(1);

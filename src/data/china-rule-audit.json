@@ -266,10 +266,10 @@
   {
     "universityId": "university-of-aberdeen",
     "directoryCategory": "qs-directory",
-    "expectedState": "pending",
-    "reviewDate": "2026-08-09",
-    "finding": "The only specific official item located is a dated internal 2024 recommendation, not a current applicant-facing China entry rule or roster.",
-    "reviewStatus": "blocked"
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-10",
+    "finding": "The current applicant-facing China page publishes postgraduate percentage equivalencies but no institution grouping or named roster.",
+    "reviewStatus": "reviewed"
   },
   {
     "universityId": "university-of-leicester",
@@ -322,10 +322,10 @@
   {
     "universityId": "university-of-east-anglia",
     "directoryCategory": "qs-directory",
-    "expectedState": "pending",
-    "reviewDate": "2026-08-09",
-    "finding": "No current primary UEA China-entry page or PDF with two verifiable anchors was located; third-party results were not used.",
-    "reviewStatus": "blocked"
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-10",
+    "finding": "The current China page requires a recognised institution and says the exact threshold varies by previous university and course, but publishes no recognition roster.",
+    "reviewStatus": "reviewed"
   },
   {
     "universityId": "oxford-brookes-university",
@@ -579,8 +579,8 @@
     "universityId": "university-of-the-arts-london",
     "directoryCategory": "qs-directory",
     "expectedState": "pending",
-    "reviewDate": "2026-08-09",
-    "finding": "Current first-party international application guidance directs applicants to course-specific entry requirements but publishes no China-specific academic requirement or Chinese-institution rule; this is insufficient to classify a public or non-public list.",
+    "reviewDate": "2026-08-10",
+    "finding": "Current admissions policy and postgraduate application guidance defer to course pages and publish no current China-specific academic or institution rule; the public 2023–24 scholarship equivalency PDF is historical and is not current admissions evidence.",
     "reviewStatus": "blocked"
   },
   {
@@ -650,10 +650,10 @@
   {
     "universityId": "london-metropolitan-university",
     "directoryCategory": "qs-directory",
-    "expectedState": "pending",
-    "reviewDate": "2026-08-09",
-    "finding": "The former first-party deployment URL failed DNS resolution in the browser; the current canonical China page contains an empty academic-entry-requirements anchor rather than verifiable China academic thresholds or an institution roster.",
-    "reviewStatus": "blocked"
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-10",
+    "finding": "The current China page applies thresholds to high-ranking Chinese institutions but neither defines nor lists those institutions.",
+    "reviewStatus": "reviewed"
   },
   {
     "universityId": "robert-gordon-university",
@@ -675,8 +675,8 @@
     "universityId": "university-of-east-london",
     "directoryCategory": "qs-directory",
     "expectedState": "pending",
-    "reviewDate": "2026-08-09",
-    "finding": "Current first-party East Asia and general entry pages expose no China academic threshold or deterministic Chinese-institution roster.",
+    "reviewDate": "2026-08-10",
+    "finding": "Current regional, international-entry, postgraduate-application and representative course pages publish only generic overseas-equivalent requirements and no mainland-China academic conversion or institution rule.",
     "reviewStatus": "blocked"
   },
   {
@@ -690,42 +690,42 @@
   {
     "universityId": "university-of-roehampton",
     "directoryCategory": "qs-directory",
-    "expectedState": "pending",
-    "reviewDate": "2026-08-09",
-    "finding": "The current China page is promotional; its linked first-party entry-requirements page contains no China academic threshold or Chinese-institution roster.",
-    "reviewStatus": "blocked"
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-10",
+    "finding": "The current China page applies different Master’s thresholds to recognised Chinese universities and Project 211 universities but publishes no member roster.",
+    "reviewStatus": "reviewed"
   },
   {
     "universityId": "university-of-salford",
     "directoryCategory": "qs-directory",
-    "expectedState": "pending",
-    "reviewDate": "2026-08-09",
-    "finding": "The current China page is promotional and exposes no verifiable China academic threshold or Chinese-institution roster.",
-    "reviewStatus": "blocked"
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-10",
+    "finding": "The current China page requires a degree from a reputable Chinese university and gives a minimum result, but does not define reputable institutions.",
+    "reviewStatus": "reviewed"
   },
   {
     "universityId": "university-of-wolverhampton",
     "directoryCategory": "qs-directory",
-    "expectedState": "pending",
-    "reviewDate": "2026-08-09",
-    "finding": "The first-party International Study Centre Pre-Master’s programme/pathway PDF now returns 404 in the browser, so no China rule can be verified or generalised to university-wide direct entry.",
-    "reviewStatus": "blocked"
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-10",
+    "finding": "The current China page differentiates recognised institutions from elite or double-rated universities but publishes no category membership.",
+    "reviewStatus": "reviewed"
   },
   {
     "universityId": "queen-margaret-university-edinburgh",
     "directoryCategory": "qs-directory",
-    "expectedState": "pending",
-    "reviewDate": "2026-08-09",
-    "finding": "The current China page supplies promotional information and entry-requirements navigation but no visible China academic threshold or Chinese-institution roster.",
-    "reviewStatus": "blocked"
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-10",
+    "finding": "The current China page requires a good bachelor’s degree from a recognised university with a published minimum result but no university roster.",
+    "reviewStatus": "reviewed"
   },
   {
     "universityId": "university-of-northampton",
     "directoryCategory": "qs-directory",
-    "expectedState": "pending",
-    "reviewDate": "2026-08-09",
-    "finding": "The current regional page includes China but displays English-language and promotional guidance, not a China academic threshold or Chinese-institution roster.",
-    "reviewStatus": "blocked"
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-10",
+    "finding": "The current regional China entry section accepts a Chinese university bachelor’s degree or recognised pre-Master’s and delegates exact grades to course requirements; it publishes no institution grouping.",
+    "reviewStatus": "reviewed"
   },
   {
     "universityId": "university-of-derby",
@@ -738,10 +738,10 @@
   {
     "universityId": "university-of-south-wales",
     "directoryCategory": "qs-directory",
-    "expectedState": "pending",
-    "reviewDate": "2026-08-09",
-    "finding": "The current China page is promotional and its entry-requirements link is self-referential; no China academic threshold or Chinese-institution roster is visible.",
-    "reviewStatus": "blocked"
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-10",
+    "finding": "The current China page requires the relevant degree from a recognised Chinese university for postgraduate taught or PhD study but publishes no recognition roster.",
+    "reviewStatus": "reviewed"
   },
   {
     "universityId": "canterbury-christ-church-university",

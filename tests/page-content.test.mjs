@@ -177,6 +177,13 @@ describe('dual-direction search page', () => {
 });
 
 describe('published methodology and contributor guidance', () => {
+  it('defines pending evidence as unavailable public verification rather than unreviewed', () => {
+    expect(methodology).toContain('<dt>官网暂无可核验规则</dt>');
+    expect(methodology).toContain('已核查当前公开官网');
+    expect(methodology).toContain('不代表学校没有内部规则');
+    expect(methodology).not.toContain('<dt>待确认</dt>');
+  });
+
   it('explains ranking scope, date meanings, and the non-destructive review boundary in plain Chinese', () => {
     for (const phrase of [
       'QS 2027 中出现的全部英国院校（93 所）',
