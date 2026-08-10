@@ -3072,10 +3072,47 @@
       "verifiedEdition": 2027,
       "current": true
     },
-    "state": "pending",
+    "state": "china-requirements",
     "officialDomain": "https://www.abdn.ac.uk",
-    "noteZh": "仅找到 2024 年内部建议文件，尚无当前面向申请人的中国入学规则来源。",
-    "sources": [],
+    "noteZh": "页面提供中国学历和研究生成绩等效指引，未公开院校分组或院校名录。",
+    "sources": [
+      {
+        "id": "aberdeen-china-entry-requirements",
+        "universityId": "university-of-aberdeen",
+        "labelZh": "中国学生入学要求",
+        "url": "https://www.abdn.ac.uk/study/international/country-territory/china/entry/",
+        "kind": "china-requirements",
+        "scope": "university",
+        "scopeZh": "学校中国国别页的本科和研究生入学要求",
+        "institutionRule": {
+          "type": "none",
+          "summaryZh": "页面提供中国学历和研究生成绩等效指引，未公开院校分组或院校名录。",
+          "caveatZh": "页面说明仅作一般指引，课程可能另有要求。",
+          "verification": {
+            "reviewedAt": "2026-08-10",
+            "url": "https://www.abdn.ac.uk/study/international/country-territory/china/entry/",
+            "requiredText": [
+              "Postgraduate Studies",
+              "65% equates to a 2.2",
+              "60% equates to a 3rd"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "link-only",
+          "guard": {
+            "minimumRecords": 0,
+            "maximumRecords": 0,
+            "maximumRemovalRatio": 0
+          }
+        },
+        "status": {
+          "sourceId": "aberdeen-china-entry-requirements",
+          "health": "unchecked",
+          "consecutiveFailures": 0
+        }
+      }
+    ],
     "rankings": {
       "qs": {
         "universityId": "university-of-aberdeen",
@@ -3566,10 +3603,49 @@
       "verifiedEdition": 2027,
       "current": true
     },
-    "state": "pending",
+    "state": "china-requirements",
     "officialDomain": "https://www.uea.ac.uk",
-    "noteZh": "尚未找到具备可核验页面锚点的当前官方中国入学要求来源。",
-    "sources": [],
+    "noteZh": "页面要求学士学位来自认可院校，并说明具体门槛会随课程和本科院校变化；未公开认可范围或院校名录。",
+    "sources": [
+      {
+        "id": "uea-china-country-requirements",
+        "universityId": "university-of-east-anglia",
+        "labelZh": "中国学生入学要求",
+        "url": "https://www.uea.ac.uk/study/international-students/country-map/china",
+        "kind": "china-requirements",
+        "scope": "university",
+        "scopeZh": "学校中国国别页的本科和研究生入学要求",
+        "institutionRule": {
+          "type": "none",
+          "summaryZh": "页面要求学士学位来自认可院校，并说明具体门槛会随课程和本科院校变化；未公开认可范围或院校名录。",
+          "caveatZh": "具体要求须结合课程并向招生部门确认，不能从认可院校措辞推断成员。",
+          "verification": {
+            "reviewedAt": "2026-08-10",
+            "url": "https://www.uea.ac.uk/study/international-students/country-map/china",
+            "requiredText": [
+              "Bachelor Degree from a recognised institution",
+              "UK 2:1",
+              "75%",
+              "UK 2:2",
+              "70%"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "link-only",
+          "guard": {
+            "minimumRecords": 0,
+            "maximumRecords": 0,
+            "maximumRemovalRatio": 0
+          }
+        },
+        "status": {
+          "sourceId": "uea-china-country-requirements",
+          "health": "unchecked",
+          "consecutiveFailures": 0
+        }
+      }
+    ],
     "rankings": {
       "qs": {
         "universityId": "university-of-east-anglia",
@@ -5929,7 +6005,7 @@
     },
     "state": "pending",
     "officialDomain": "https://www.arts.ac.uk",
-    "noteZh": "当前官方国际申请页仅指向各课程的具体入学要求，未发现中国学历要求或中国院校规则；因此保持待定且不推断存在非公开名录。",
+    "noteZh": "当前公开招生政策和申请页要求以课程页面为准，未找到可核验的当前中国学历或院校规则；不代表学校没有内部评估标准。",
     "sources": [],
     "rankings": {
       "qs": {
@@ -6555,10 +6631,48 @@
       "verifiedEdition": 2027,
       "current": true
     },
-    "state": "pending",
+    "state": "china-requirements",
     "officialDomain": "https://www.londonmet.ac.uk",
-    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
-    "sources": [],
+    "noteZh": "页面对高排名中国院校的四年制学士和三年制文凭给出门槛，但未定义或公开相关院校成员。",
+    "sources": [
+      {
+        "id": "london-metropolitan-china-requirements",
+        "universityId": "london-metropolitan-university",
+        "labelZh": "中国学生入学要求",
+        "url": "https://www.londonmet.ac.uk/international/applying/countries/students-from-china/",
+        "kind": "china-requirements",
+        "scope": "university",
+        "scopeZh": "学校中国国别页的本科和研究生入学要求",
+        "institutionRule": {
+          "type": "none",
+          "summaryZh": "页面对高排名中国院校的四年制学士和三年制文凭给出门槛，但未定义或公开相关院校成员。",
+          "caveatZh": "“高排名院校”无法从本页确定，课程特定要求仍可能适用。",
+          "verification": {
+            "reviewedAt": "2026-08-10",
+            "url": "https://www.londonmet.ac.uk/international/applying/countries/students-from-china/",
+            "requiredText": [
+              "high-ranking Chinese institution",
+              "70% or above",
+              "three-year Diploma",
+              "80% or above"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "link-only",
+          "guard": {
+            "minimumRecords": 0,
+            "maximumRecords": 0,
+            "maximumRemovalRatio": 0
+          }
+        },
+        "status": {
+          "sourceId": "london-metropolitan-china-requirements",
+          "health": "unchecked",
+          "consecutiveFailures": 0
+        }
+      }
+    ],
     "rankings": {
       "qs": {
         "universityId": "london-metropolitan-university",
@@ -6741,7 +6855,7 @@
     },
     "state": "pending",
     "officialDomain": "https://www.uel.ac.uk",
-    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
+    "noteZh": "已核查当前地区、国际申请和课程要求页面，未找到可核验的中国大陆学历换算或院校规则；不代表学校没有内部评估标准。",
     "sources": [],
     "rankings": {
       "qs": {
@@ -6852,10 +6966,47 @@
       "verifiedEdition": 2027,
       "current": true
     },
-    "state": "pending",
+    "state": "china-requirements",
     "officialDomain": "https://www.roehampton.ac.uk",
-    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
-    "sources": [],
+    "noteZh": "页面对认可中国大学和 Project 211 大学给出不同成绩门槛，但未公开院校成员名录。",
+    "sources": [
+      {
+        "id": "roehampton-china-requirements",
+        "universityId": "university-of-roehampton",
+        "labelZh": "中国学生入学要求",
+        "url": "https://www.roehampton.ac.uk/student-support/international-students/countries/china/",
+        "kind": "china-requirements",
+        "scope": "university",
+        "scopeZh": "学校中国国别页的硕士和 MBA 入学指引",
+        "institutionRule": {
+          "type": "none",
+          "summaryZh": "页面对认可中国大学和 Project 211 大学给出不同成绩门槛，但未公开院校成员名录。",
+          "caveatZh": "要求为一般指引且申请逐案评估，Project 211 不能被本站扩展为校方名单。",
+          "verification": {
+            "reviewedAt": "2026-08-10",
+            "url": "https://www.roehampton.ac.uk/student-support/international-students/countries/china/",
+            "requiredText": [
+              "70% or GPA 2.8",
+              "60% or GPA 2.4",
+              "Project 211"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "link-only",
+          "guard": {
+            "minimumRecords": 0,
+            "maximumRecords": 0,
+            "maximumRemovalRatio": 0
+          }
+        },
+        "status": {
+          "sourceId": "roehampton-china-requirements",
+          "health": "unchecked",
+          "consecutiveFailures": 0
+        }
+      }
+    ],
     "rankings": {
       "qs": {
         "universityId": "university-of-roehampton",
@@ -6888,10 +7039,46 @@
       "verifiedEdition": 2027,
       "current": true
     },
-    "state": "pending",
+    "state": "china-requirements",
     "officialDomain": "https://www.salford.ac.uk",
-    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
-    "sources": [],
+    "noteZh": "页面要求学士学位来自信誉良好的中国大学并给出成绩门槛，但未定义或公开院校范围。",
+    "sources": [
+      {
+        "id": "salford-china-requirements",
+        "universityId": "university-of-salford",
+        "labelZh": "中国学生入学要求",
+        "url": "https://www.salford.ac.uk/international/your-country-or-region/salford-and-china",
+        "kind": "china-requirements",
+        "scope": "university",
+        "scopeZh": "学校中国国别页的研究生入学指引",
+        "institutionRule": {
+          "type": "none",
+          "summaryZh": "页面要求学士学位来自信誉良好的中国大学并给出成绩门槛，但未定义或公开院校范围。",
+          "caveatZh": "“信誉良好”由学校招生部门判断，具体课程可能要求更高。",
+          "verification": {
+            "reviewedAt": "2026-08-10",
+            "url": "https://www.salford.ac.uk/international/your-country-or-region/salford-and-china",
+            "requiredText": [
+              "bachelor’s degree from a reputable Chinese university",
+              "GPA of 2.4/4.0 or 60%"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "link-only",
+          "guard": {
+            "minimumRecords": 0,
+            "maximumRecords": 0,
+            "maximumRemovalRatio": 0
+          }
+        },
+        "status": {
+          "sourceId": "salford-china-requirements",
+          "health": "unchecked",
+          "consecutiveFailures": 0
+        }
+      }
+    ],
     "rankings": {
       "qs": {
         "universityId": "university-of-salford",
@@ -6924,10 +7111,50 @@
       "verifiedEdition": 2027,
       "current": true
     },
-    "state": "pending",
+    "state": "china-requirements",
     "officialDomain": "https://www.wlv.ac.uk",
-    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
-    "sources": [],
+    "noteZh": "页面按普通认可院校与精英或双评级院校给出不同研究生成绩门槛，但未公开类别成员。",
+    "sources": [
+      {
+        "id": "wolverhampton-china-requirements",
+        "universityId": "university-of-wolverhampton",
+        "labelZh": "中国学生入学要求",
+        "url": "https://www.wlv.ac.uk/international/your-country/china/",
+        "kind": "china-requirements",
+        "scope": "university",
+        "scopeZh": "学校中国国别页的本科和研究生入学指引",
+        "institutionRule": {
+          "type": "none",
+          "summaryZh": "页面按普通认可院校与精英或双评级院校给出不同研究生成绩门槛，但未公开类别成员。",
+          "caveatZh": "精英或双评级院校没有可核验名单，页面仅为指导且课程要求可能不同。",
+          "verification": {
+            "reviewedAt": "2026-08-10",
+            "url": "https://www.wlv.ac.uk/international/your-country/china/",
+            "requiredText": [
+              "four-year degree from an accredited university or college",
+              "elite universities",
+              "70%",
+              "65%",
+              "80%",
+              "75%"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "link-only",
+          "guard": {
+            "minimumRecords": 0,
+            "maximumRecords": 0,
+            "maximumRemovalRatio": 0
+          }
+        },
+        "status": {
+          "sourceId": "wolverhampton-china-requirements",
+          "health": "unchecked",
+          "consecutiveFailures": 0
+        }
+      }
+    ],
     "rankings": {
       "qs": {
         "universityId": "university-of-wolverhampton",
@@ -6962,10 +7189,48 @@
       "verifiedEdition": 2027,
       "current": true
     },
-    "state": "pending",
+    "state": "china-requirements",
     "officialDomain": "https://www.qmu.ac.uk",
-    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
-    "sources": [],
+    "noteZh": "页面要求认可大学的良好学士学位并给出最低成绩，未公开认可院校名录。",
+    "sources": [
+      {
+        "id": "qmu-china-requirements",
+        "universityId": "queen-margaret-university-edinburgh",
+        "labelZh": "中国学生入学要求",
+        "url": "https://www.qmu.ac.uk/study-here/international-students/information-for-your-country/china",
+        "kind": "china-requirements",
+        "scope": "university",
+        "scopeZh": "学校中国国别页的研究生入学要求",
+        "institutionRule": {
+          "type": "none",
+          "summaryZh": "页面要求认可大学的良好学士学位并给出最低成绩，未公开认可院校名录。",
+          "caveatZh": "认可范围由学校判断，课程页面可能有更高或附加条件。",
+          "verification": {
+            "reviewedAt": "2026-08-10",
+            "url": "https://www.qmu.ac.uk/study-here/international-students/information-for-your-country/china",
+            "requiredText": [
+              "good Bachelor’s degree from a recognised university",
+              "minimum score of 70%",
+              "Grade B",
+              "GPA 3.0"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "link-only",
+          "guard": {
+            "minimumRecords": 0,
+            "maximumRecords": 0,
+            "maximumRemovalRatio": 0
+          }
+        },
+        "status": {
+          "sourceId": "qmu-china-requirements",
+          "health": "unchecked",
+          "consecutiveFailures": 0
+        }
+      }
+    ],
     "rankings": {
       "qs": {
         "universityId": "queen-margaret-university-edinburgh",
@@ -6997,10 +7262,46 @@
       "verifiedEdition": 2027,
       "current": true
     },
-    "state": "pending",
+    "state": "china-requirements",
     "officialDomain": "https://www.northampton.ac.uk",
-    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
-    "sources": [],
+    "noteZh": "页面说明中国大学学士学位或认可硕士预科可用于研究生申请，未公开院校分组或成绩换算表。",
+    "sources": [
+      {
+        "id": "northampton-china-entry-requirements",
+        "universityId": "university-of-northampton",
+        "labelZh": "中国学生入学要求",
+        "url": "https://www.northampton.ac.uk/international/your-country/east-asia-and-south-east-asia/",
+        "kind": "china-requirements",
+        "scope": "university",
+        "scopeZh": "学校东亚地区页中的中国本科和研究生学历指引",
+        "institutionRule": {
+          "type": "none",
+          "summaryZh": "页面说明中国大学学士学位或认可硕士预科可用于研究生申请，未公开院校分组或成绩换算表。",
+          "caveatZh": "具体成绩和课程条件须查课程页或向学校确认。",
+          "verification": {
+            "reviewedAt": "2026-08-10",
+            "url": "https://www.northampton.ac.uk/international/your-country/east-asia-and-south-east-asia/",
+            "requiredText": [
+              "a Bachelor’s degree from a Chinese university",
+              "successful completion of a recognised pre-Master’s"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "link-only",
+          "guard": {
+            "minimumRecords": 0,
+            "maximumRecords": 0,
+            "maximumRemovalRatio": 0
+          }
+        },
+        "status": {
+          "sourceId": "northampton-china-entry-requirements",
+          "health": "unchecked",
+          "consecutiveFailures": 0
+        }
+      }
+    ],
     "rankings": {
       "qs": {
         "universityId": "university-of-northampton",
@@ -7108,10 +7409,48 @@
       "verifiedEdition": 2027,
       "current": true
     },
-    "state": "pending",
+    "state": "china-requirements",
     "officialDomain": "https://www.southwales.ac.uk",
-    "noteZh": "中国院校相关规则尚待核查官方大学或院系来源。",
-    "sources": [],
+    "noteZh": "页面要求相应学位来自认可中国大学，但没有公开认可范围、成绩换算或院校名录。",
+    "sources": [
+      {
+        "id": "usw-china-entry-requirements",
+        "universityId": "university-of-south-wales",
+        "labelZh": "中国学生入学要求",
+        "url": "https://www.southwales.ac.uk/international/your-country/china/",
+        "kind": "china-requirements",
+        "scope": "university",
+        "scopeZh": "学校中国国别页的授课型研究生和博士学历要求",
+        "institutionRule": {
+          "type": "none",
+          "summaryZh": "页面要求相应学位来自认可中国大学，但没有公开认可范围、成绩换算或院校名录。",
+          "caveatZh": "认可资格及课程附加条件由学校判断，不能从页面推断院校成员。",
+          "verification": {
+            "reviewedAt": "2026-08-10",
+            "url": "https://www.southwales.ac.uk/international/your-country/china/",
+            "requiredText": [
+              "Bachelor degree from a recognized Chinese university",
+              "postgraduate taught study",
+              "Masters degree from a recognised Chinese university",
+              "PhD"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "link-only",
+          "guard": {
+            "minimumRecords": 0,
+            "maximumRecords": 0,
+            "maximumRemovalRatio": 0
+          }
+        },
+        "status": {
+          "sourceId": "usw-china-entry-requirements",
+          "health": "unchecked",
+          "consecutiveFailures": 0
+        }
+      }
+    ],
     "rankings": {
       "qs": {
         "universityId": "university-of-south-wales",
