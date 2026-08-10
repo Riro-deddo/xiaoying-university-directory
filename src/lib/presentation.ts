@@ -15,7 +15,10 @@ export const stateCopy: Record<UniversityState, { label: string; description: st
   'china-requirements': { label: '中国申请要求', description: '已找到面向中国申请者的官方要求，未确认完整院校 List。' },
   'faculty-only': { label: '部分学院公开', description: '公开信息只适用于部分学院、专业或课程。' },
   'not-public': { label: '未发现院校规则', description: '暂未发现公开的中国院校规则，不代表学校不接受申请。' },
-  pending: { label: '待确认', description: '官方来源仍在核验中，不代表学校不接受申请。' },
+  pending: {
+    label: '官网暂无可核验规则',
+    description: '已核查当前公开官网，但信息不足以确认中国学历或院校限制；不代表学校没有内部规则，也不代表不能申请。',
+  },
 };
 
 export const sourceHealthCopy: Record<SourceHealth, string> = {

@@ -24,7 +24,10 @@ const gradeThresholdRule = {
 describe('stateCopy', () => {
   it('uses neutral language for unpublished information', () => {
     expect(stateCopy['not-public'].label).toBe('未发现院校规则');
-    expect(stateCopy.pending.description).toContain('不代表学校不接受申请');
+    expect(stateCopy.pending).toEqual({
+      label: '官网暂无可核验规则',
+      description: '已核查当前公开官网，但信息不足以确认中国学历或院校限制；不代表学校没有内部规则，也不代表不能申请。',
+    });
   });
 
   it('labels the public state as institution rules rather than one kind of List', () => {
@@ -42,6 +45,7 @@ describe('directoryFilters', () => {
   it('reuses the neutral state label in the public filter', () => {
     expect(directoryFilters.find(([value]) => value === 'not-public')?.[1])
       .toBe('未发现院校规则');
+    expect(directoryFilters).toContainEqual(['pending', '官网暂无可核验规则']);
   });
 });
 
