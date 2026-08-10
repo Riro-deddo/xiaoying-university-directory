@@ -67,6 +67,7 @@ describe('public lazy-data build', () => {
       expect(record?.sources, id).toHaveLength(1);
       expect(record?.sources[0]).toMatchObject({
         kind: 'china-requirements',
+        institutionRule: { type: 'none' },
         parser: { mode: 'link-only' },
         status: { health: 'unchecked', consecutiveFailures: 0 },
       });
