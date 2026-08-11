@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import mastersCourseDirectories from '../src/data/masters-course-directories.json';
 import rankings from '../src/data/rankings.json';
 import sources from '../src/data/sources.json';
+import statusesJson from '../src/data/status.json';
 import universitiesJson from '../src/data/universities.json';
 import {
   DataValidationError,
@@ -20,6 +21,7 @@ import type {
 } from '../src/lib/types';
 
 const universities: University[] = validateUniversities(universitiesJson);
+const statuses = statusesJson as StatusMap;
 
 const validUniversity: University = {
   id: 'imperial',
@@ -262,8 +264,9 @@ describe('explicit directory scope', () => {
       'university-of-greenwich',
       'royal-college-of-art',
     ]) {
+      const directory = directoriesByUniversity.get(universityId)!;
       expect(loaded.find((university) => university.id === universityId)?.mastersCourse)
-        .toEqual({ ...directoriesByUniversity.get(universityId), status: undefined });
+        .toEqual({ ...directory, status: statuses[directory.id] });
     }
   });
 
