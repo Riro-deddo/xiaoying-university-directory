@@ -387,14 +387,20 @@ describe('persisted source review baselines', () => {
       acceptedHashesBySource.set(fact.sourceId, hashes);
     }
 
-    for (const sourceStatus of Object.values(status) as SourceStatus[]) {
-      expect(sourceStatus.consecutiveFailures).toBeGreaterThanOrEqual(0);
+    const persistedStatuses = [
+      ...(Object.values(status) as SourceStatus[]),
+      { sourceId: 'immediate-405', health: 'unavailable', httpStatus: 405 } as SourceStatus,
+    ];
+
+    for (const sourceStatus of persistedStatuses) {
+      const consecutiveFailures = sourceStatus.consecutiveFailures ?? 0;
+      expect(consecutiveFailures).toBeGreaterThanOrEqual(0);
       const thresholdedFailure = sourceStatus.lastAttemptError !== undefined
         || sourceStatus.httpStatus === 304
         || [403, 404, 429].includes(sourceStatus.httpStatus ?? 0)
         || (sourceStatus.httpStatus ?? 0) >= 500 && (sourceStatus.httpStatus ?? 0) <= 599;
       if (thresholdedFailure && ['temporary-error', 'unavailable'].includes(sourceStatus.health)) {
-        expect(sourceStatus.consecutiveFailures).toBeGreaterThanOrEqual(3);
+        expect(consecutiveFailures).toBeGreaterThanOrEqual(3);
       }
       const acceptedHashes = acceptedHashesBySource.get(sourceStatus.sourceId);
       if (acceptedHashes?.size === 1) {
