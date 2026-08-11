@@ -1,4 +1,5 @@
 import { readAndHashSourceContent } from './source-content-hash.mjs';
+import { missingRequiredText } from './source-identity.mjs';
 
 const timeoutMs = 12_000;
 const countedUnavailableStatuses = new Set([403, 404]);
@@ -8,9 +9,22 @@ function base(source, previous, now) {
     error: _legacyError,
     lastAttemptError: _lastAttemptError,
     attemptObservedContentHash: _attemptObservedContentHash,
+    missingRequiredText: _missingRequiredText,
     ...retained
   } = previous ?? {};
   return { ...retained, sourceId: source.id, checkedAt: now.toISOString() };
+}
+
+function withoutIdentityFingerprints(status) {
+  const {
+    contentHash: _contentHash,
+    observedContentHash: _observedContentHash,
+    attemptObservedContentHash: _attemptObservedContentHash,
+    etag: _etag,
+    lastModified: _lastModified,
+    ...identityStatus
+  } = status;
+  return identityStatus;
 }
 
 function isCountedTemporaryStatus(status) {
@@ -75,33 +89,73 @@ function successfulAttempt(source, previous, now, result, contentHash) {
   return next;
 }
 
+function successfulPageIdentityAttempt(source, previous, now, result, missing) {
+  const next = withoutIdentityFingerprints({
+    ...base(source, previous, now),
+    health: missing.length > 0 ? 'changed' : (result.redirected ? 'redirected' : 'ok'),
+    lastSuccessfulAt: now.toISOString(),
+    httpStatus: result.status,
+    finalUrl: result.url || source.url,
+    consecutiveFailures: 0,
+  });
+  if (missing.length > 0) next.missingRequiredText = missing;
+  return next;
+}
+
 export async function checkSource(source, fetchImpl = fetch, previous, now = new Date()) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), timeoutMs);
+  const pageIdentity = source.monitorMode === 'page-identity';
   const headers = { 'user-agent': 'Xiaoying-University-Directory/0.1 (+public educational link checker)' };
-  if (previous?.contentHash || previous?.observedContentHash) {
+  if (!pageIdentity && (previous?.contentHash || previous?.observedContentHash)) {
     if (previous?.etag) headers['if-none-match'] = previous.etag;
     if (previous?.lastModified) headers['if-modified-since'] = previous.lastModified;
   }
 
   try {
-    let result = await fetchImpl(source.url, { method: 'HEAD', redirect: 'follow', signal: controller.signal, headers });
-    if ([405, 501].includes(result.status)) {
+    let result;
+    if (pageIdentity) {
       result = await fetchImpl(source.url, { method: 'GET', redirect: 'follow', signal: controller.signal, headers });
-    } else if (result.ok && result.status !== 304) {
-      result = await fetchImpl(source.url, { method: 'GET', redirect: 'follow', signal: controller.signal, headers });
+    } else {
+      result = await fetchImpl(source.url, { method: 'HEAD', redirect: 'follow', signal: controller.signal, headers });
+      if ([405, 501].includes(result.status)) {
+        result = await fetchImpl(source.url, { method: 'GET', redirect: 'follow', signal: controller.signal, headers });
+      } else if (result.ok && result.status !== 304) {
+        result = await fetchImpl(source.url, { method: 'GET', redirect: 'follow', signal: controller.signal, headers });
+      }
     }
     const common = { ...base(source, previous, now), httpStatus: result.status, finalUrl: result.url || source.url };
     if (result.status === 304) {
+      if (pageIdentity) {
+        return withoutIdentityFingerprints(
+          failedAttempt(source, previous, now, common, 'temporary-error'),
+        );
+      }
       return successfulAttempt(source, previous, now, result, undefined);
     }
     if (countedUnavailableStatuses.has(result.status)) {
-      return failedAttempt(source, previous, now, common, 'unavailable');
+      const failed = failedAttempt(source, previous, now, common, 'unavailable');
+      return pageIdentity ? withoutIdentityFingerprints(failed) : failed;
     }
     if (isCountedTemporaryStatus(result.status)) {
-      return failedAttempt(source, previous, now, common, 'temporary-error');
+      const failed = failedAttempt(source, previous, now, common, 'temporary-error');
+      return pageIdentity ? withoutIdentityFingerprints(failed) : failed;
     }
-    if (!result.ok) return { ...common, health: 'unavailable' };
+    if (!result.ok) {
+      const unavailable = { ...common, health: 'unavailable' };
+      return pageIdentity ? withoutIdentityFingerprints(unavailable) : unavailable;
+    }
+
+    if (pageIdentity) {
+      const html = await result.text();
+      return successfulPageIdentityAttempt(
+        source,
+        previous,
+        now,
+        result,
+        missingRequiredText(html, source.requiredText),
+      );
+    }
 
     let contentHash;
     if (result.body) {
@@ -110,7 +164,8 @@ export async function checkSource(source, fetchImpl = fetch, previous, now = new
     return successfulAttempt(source, previous, now, result, contentHash);
   } catch (error) {
     const lastAttemptError = error instanceof Error ? error.message : 'unknown error';
-    return failedAttempt(source, previous, now, { lastAttemptError }, 'temporary-error');
+    const failed = failedAttempt(source, previous, now, { lastAttemptError }, 'temporary-error');
+    return source.monitorMode === 'page-identity' ? withoutIdentityFingerprints(failed) : failed;
   } finally {
     clearTimeout(timer);
   }

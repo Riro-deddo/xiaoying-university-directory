@@ -4,6 +4,8 @@ import chinaRuleAuditJson from '../data/china-rule-audit.json';
 import chinaRuleAuditSchema from '../data/china-rule-audit.schema.json';
 import institutionsJson from '../data/institutions.json';
 import institutionsSchema from '../data/institutions.schema.json';
+import mastersCourseDirectoriesJson from '../data/masters-course-directories.json';
+import mastersCourseDirectoriesSchema from '../data/masters-course-directories.schema.json';
 import requirementsJson from '../data/generated/requirements.json';
 import requirementsSchema from '../data/requirements.schema.json';
 import rankingsJson from '../data/rankings.json';
@@ -16,12 +18,14 @@ import universitiesSchema from '../data/universities.schema.json';
 import type {
   InstitutionRecord,
   DirectoryCategory,
+  MastersCourseDirectory,
   OfficialSourceConfig,
   RequirementFact,
   RankingDataset,
   RankingRecord,
   StatusMap,
   University,
+  UniversityDirectoryRecord,
   UniversityState,
   UniversityWithStatus,
 } from './types';
@@ -38,9 +42,14 @@ const ajv = new Ajv2020({ allErrors: true });
 const validateUniversitySchema = ajv.compile(universitiesSchema);
 const validateSourceSchema = ajv.compile(sourcesSchema);
 const validateInstitutionSchema = ajv.compile(institutionsSchema);
+const validateMastersCourseDirectorySchema = ajv.compile(mastersCourseDirectoriesSchema);
 const validateRequirementSchema = ajv.compile(requirementsSchema);
 const validateChinaRuleAuditSchema = ajv.compile(chinaRuleAuditSchema);
 const validateRankingSchema = ajv.compile(rankingsSchema);
+
+const firstPartyCourseDirectoryDomainAliases = new Map<string, ReadonlySet<string>>([
+  ['university-of-greenwich', new Set(['gre.ac.uk'])],
+]);
 
 export class DataValidationError extends Error {
   constructor(
@@ -111,6 +120,63 @@ export function validateOfficialSources(input: unknown): OfficialSourceConfig[] 
   const records = input as OfficialSourceConfig[];
   assertUniqueIds(records, 'Official source registry');
   return records;
+}
+
+export function validateMastersCourseDirectories(
+  input: unknown,
+  universities: University[] = validateUniversities(universitiesJson),
+): MastersCourseDirectory[] {
+  assertSchema(
+    validateMastersCourseDirectorySchema(input),
+    validateMastersCourseDirectorySchema.errors,
+    'Masters course directory schema',
+  );
+
+  const records = input as MastersCourseDirectory[];
+  assertUniqueIds(records, 'Masters course directory');
+  const universitiesById = new Map(universities.map((university) => [university.id, university]));
+
+  records.forEach((record, index) => {
+    const university = universitiesById.get(record.universityId);
+    if (!university) {
+      throw new DataValidationError('Masters course directory', [
+        `/${index}/universityId references an unregistered university`,
+      ]);
+    }
+    if (record.id !== `masters-${record.universityId}`) {
+      throw new DataValidationError('Masters course directory', [
+        `/${index}/id must be derived from universityId`,
+      ]);
+    }
+
+    let courseHost: string;
+    let officialHost: string;
+    try {
+      courseHost = new URL(record.url).hostname.toLowerCase().replace(/^www\./u, '');
+      officialHost = new URL(university.officialDomain).hostname.toLowerCase().replace(/^www\./u, '');
+    } catch {
+      throw new DataValidationError('Masters course directory', [
+        `/${index}/url must be a valid HTTPS URL`,
+      ]);
+    }
+    const approvedFirstPartyAlias = firstPartyCourseDirectoryDomainAliases
+      .get(record.universityId)?.has(courseHost) === true;
+    if (courseHost !== officialHost
+      && !courseHost.endsWith(`.${officialHost}`)
+      && !approvedFirstPartyAlias) {
+      throw new DataValidationError('Masters course directory', [
+        `/${index}/url must use the university official domain`,
+      ]);
+    }
+  });
+
+  return records;
+}
+
+export function loadMastersCourseDirectories(
+  input: unknown = mastersCourseDirectoriesJson,
+): MastersCourseDirectory[] {
+  return validateMastersCourseDirectories(input);
 }
 
 export function validateInstitutionData(input: unknown): boolean {
@@ -296,11 +362,44 @@ export function joinUniversityRankings(
   }));
 }
 
-export function loadUniversities(): UniversityWithStatus[] {
+export function joinMastersCourseDirectories(
+  universities: UniversityWithStatus[],
+  directories: MastersCourseDirectory[],
+  statuses: StatusMap,
+): UniversityDirectoryRecord[] {
+  const universityIds = new Set(universities.map((university) => university.id));
+  const directoryByUniversityId = new Map<string, MastersCourseDirectory>();
+
+  for (const directory of directories) {
+    if (directoryByUniversityId.has(directory.universityId)) {
+      throw new Error(`Duplicate masters course directory for university ${directory.universityId}`);
+    }
+    if (!universityIds.has(directory.universityId)) {
+      throw new Error(`Extra masters course directory for university ${directory.universityId}`);
+    }
+    directoryByUniversityId.set(directory.universityId, directory);
+  }
+
+  return universities.map((university) => {
+    const directory = directoryByUniversityId.get(university.id);
+    if (!directory) throw new Error(`Missing masters course directory for university ${university.id}`);
+    return {
+      ...university,
+      mastersCourse: { ...directory, status: statuses[directory.id] },
+    };
+  });
+}
+
+export function loadUniversities(): UniversityDirectoryRecord[] {
   const universities = validateUniversities(universitiesJson);
   const sources = validateOfficialSources(sourcesJson);
-  return joinUniversityRankings(
-    joinUniversityStatuses(universities, sources, statusesJson as StatusMap),
-    loadRankings(undefined, universities),
+  const statuses = statusesJson as StatusMap;
+  return joinMastersCourseDirectories(
+    joinUniversityRankings(
+      joinUniversityStatuses(universities, sources, statuses),
+      loadRankings(undefined, universities),
+    ),
+    loadMastersCourseDirectories(),
+    statuses,
   );
 }

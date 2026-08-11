@@ -25,4 +25,12 @@ describe('mobile ranking layout', () => {
     expect(styles).toContain('.ranking-pills{grid-row:3;justify-content:flex-start}');
     expect(styles).toContain('.specialist-detail{grid-row:4}');
   });
+
+  it('keeps source bundles in the existing full-width mobile action area without overflow', () => {
+    expect(styles).toContain('.china-source-bundle,.masters-course-action{min-width:0;max-width:100%}');
+    expect(styles).toContain('.china-source-bundle-list{display:flex;flex-direction:column}');
+    expect(styles).toContain('.china-source-bundle summary{overflow-wrap:anywhere}');
+    expect(styles).toMatch(/@media\(max-width:800px\)\{[\s\S]*?\.source-actions,\.china-source-bundle,\.masters-course-action\{[^}]*width:100%/);
+    expect(styles).toMatch(/@media\(max-width:430px\)\{[\s\S]*?\.source-actions a,\.china-source-bundle summary\{[^}]*overflow-wrap:anywhere/);
+  });
 });

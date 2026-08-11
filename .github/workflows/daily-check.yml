@@ -25,7 +25,7 @@ jobs:
         id: lychee
         uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
         with:
-          args: --config .lychee.toml src/data/sources.json
+          args: --config .lychee.toml src/data/sources.json src/data/masters-course-directories.json
           fail: false
           jobSummary: true
       - name: Check official-source review state
@@ -38,60 +38,13 @@ jobs:
         with:
           retries: 3
           script: |
-            const { existsSync, readFileSync } = require('node:fs');
-            const auditPath = `${process.env.GITHUB_WORKSPACE}/artifacts/source-audit.json`;
-            if (!existsSync(auditPath)) return;
-
-            const audit = JSON.parse(readFileSync(auditPath, 'utf8'));
-            const sources = JSON.parse(readFileSync(`${process.env.GITHUB_WORKSPACE}/src/data/sources.json`, 'utf8'));
-            const sourceById = new Map(sources.map((source) => [source.id, source]));
-            const anomalies = Object.values(audit)
-              .filter((status) => ['changed', 'temporary-error', 'unavailable'].includes(status.health))
-              .map((status) => {
-                const source = sourceById.get(status.sourceId);
-                return {
-                  sourceId: status.sourceId,
-                  universityId: source.universityId,
-                  sourceUrl: source.url,
-                  reason: `source-${status.health}`,
-                  detectedAt: status.checkedAt,
-                  acceptedContentHash: status.contentHash,
-                  attemptObservedContentHash: status.attemptObservedContentHash,
-                  retainedTrustedFacts: true,
-                };
-              });
-            if (anomalies.length === 0) return;
-
-            const rendererPath = `${process.env.GITHUB_WORKSPACE}/scripts/render-anomaly-issue.mjs`;
-            const { anomalyIssuePayload } = await import(rendererPath);
-            const openIssues = await github.paginate(github.rest.issues.listForRepo, {
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              state: 'open',
-              per_page: 100,
+            const upsertPath = `${process.env.GITHUB_WORKSPACE}/scripts/upsert-source-anomaly-issues.mjs`;
+            const { upsertSourceAnomalyIssues } = await import(upsertPath);
+            await upsertSourceAnomalyIssues({
+              workspace: process.env.GITHUB_WORKSPACE,
+              github,
+              context,
             });
-
-            for (const anomaly of anomalies) {
-              const payload = anomalyIssuePayload(anomaly);
-              const marker = `<!-- ${payload.key} -->`;
-              const existing = openIssues.find((issue) => !issue.pull_request && issue.body?.includes(marker));
-              if (existing) {
-                await github.rest.issues.update({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  issue_number: existing.number,
-                  title: payload.title,
-                  body: payload.body,
-                });
-              } else {
-                await github.rest.issues.create({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  title: payload.title,
-                  body: payload.body,
-                });
-              }
-            }
       - name: Commit source review state only
         env:
           GH_TOKEN: ${{ github.token }}

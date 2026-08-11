@@ -73,4 +73,25 @@ describe('source anomaly Issue renderer', () => {
     expect(() => renderAnomalyIssue({ ...changed, attemptObservedContentHash: ['b'.repeat(64)] }))
       .toThrow(/attemptObservedContentHash/u);
   });
+
+  it('clearly identifies a masters course page identity anomaly', () => {
+    const pageIdentityAnomaly = {
+      sourceId: 'masters-ucl',
+      universityId: 'ucl',
+      sourceUrl: 'https://www.ucl.ac.uk/prospective-students/graduate/taught-degrees',
+      reason: 'source-changed',
+      detectedAt: '2026-08-11T03:17:00.000Z',
+      monitorMode: 'page-identity',
+      missingRequiredText: ['Postgraduate courses'],
+      retainedTrustedFacts: true,
+    };
+
+    const payload = anomalyIssuePayload(pageIdentityAnomaly);
+    expect(payload.key).toBe('source-anomaly:masters-ucl');
+    expect(payload.title).toBe('[课程入口异常] masters-ucl');
+    expect(payload.body).toContain('硕士课程入口身份异常');
+    expect(payload.body).toContain('Postgraduate courses');
+    expect(payload.body).toContain('上一版公开状态已保留');
+    expect(payload.body).not.toContain('内容指纹');
+  });
 });

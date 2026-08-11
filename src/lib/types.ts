@@ -169,6 +169,20 @@ export interface SourceStatus {
   error?: string;
 }
 
+export interface MastersCourseDirectory {
+  id: string;
+  universityId: string;
+  labelZh: '查看全部硕士课程';
+  url: string;
+  pageTitle: string;
+  reviewedAt: string;
+  requiredText: string[];
+  monitorMode: 'page-identity';
+}
+
+export type MastersCourseDirectoryWithStatus =
+  MastersCourseDirectory & { status?: SourceStatus };
+
 export interface InstitutionRecord {
   id: string;
   nameZh: string;
@@ -198,4 +212,8 @@ export type SourceWithStatus = OfficialSourceConfig & { status?: SourceStatus };
 export type UniversityWithStatus = Omit<University, 'sourceIds'> & {
   sources: SourceWithStatus[];
   rankings: Partial<Record<RankingProvider, RankingRecord>>;
+};
+
+export type UniversityDirectoryRecord = UniversityWithStatus & {
+  mastersCourse: MastersCourseDirectoryWithStatus;
 };

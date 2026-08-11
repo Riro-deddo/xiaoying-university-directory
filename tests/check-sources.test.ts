@@ -17,6 +17,13 @@ const now2 = new Date('2026-08-09T03:17:00.000Z');
 const now3 = new Date('2026-08-10T03:17:00.000Z');
 const acceptedRequirementsHash = '073161e41bae112ec5f0bfbaf37abef49c5126b3292fd7a167cefe4a5ddf2c0c';
 const observedRequirementsHash = 'c41057ea19a882bf56861a2807edaab496db5baf9042189c59c0db39f2b27fe0';
+const pageIdentitySource = {
+  id: 'masters-university-of-manchester',
+  universityId: 'university-of-manchester',
+  url: 'https://www.manchester.ac.uk/study/masters/courses/list/',
+  monitorMode: 'page-identity',
+  requiredText: ['Postgraduate', 'courses'],
+} as const;
 
 const okPrevious = (): SourceStatus => ({
   sourceId: source.id,
@@ -26,6 +33,117 @@ const okPrevious = (): SourceStatus => ({
 });
 
 describe('checkSource', () => {
+  it('GETs page identity content without creating a content fingerprint', async () => {
+    const fetchImpl = vi.fn().mockResolvedValue(new Response('<h1>Postgraduate courses</h1>', {
+      status: 200,
+      headers: { 'content-type': 'text/html', etag: 'dynamic-page-v2' },
+    }));
+
+    const result = await checkSource(pageIdentitySource, fetchImpl, undefined, now1);
+
+    expect(fetchImpl).toHaveBeenCalledTimes(1);
+    expect(fetchImpl).toHaveBeenCalledWith(pageIdentitySource.url, expect.objectContaining({ method: 'GET' }));
+    expect(result).toMatchObject({
+      health: 'ok',
+      httpStatus: 200,
+      lastSuccessfulAt: now1.toISOString(),
+      consecutiveFailures: 0,
+    });
+    expect(result).not.toHaveProperty('contentHash');
+    expect(result).not.toHaveProperty('observedContentHash');
+    expect(result).not.toHaveProperty('attemptObservedContentHash');
+  });
+
+  it('reports missing page identity anchors immediately without hashing dynamic content', async () => {
+    const result = await checkSource(
+      pageIdentitySource,
+      vi.fn().mockResolvedValue(new Response('<h1>Postgraduate study</h1>', { status: 200 })),
+      { sourceId: pageIdentitySource.id, health: 'ok', consecutiveFailures: 0 },
+      now1,
+    );
+
+    expect(result).toMatchObject({
+      health: 'changed',
+      missingRequiredText: ['courses'],
+      lastSuccessfulAt: now1.toISOString(),
+      consecutiveFailures: 0,
+    });
+    expect(result).not.toHaveProperty('contentHash');
+    expect(result).not.toHaveProperty('observedContentHash');
+  });
+
+  it('clears an old page identity change and failure metadata when reviewed anchors succeed', async () => {
+    const previous = {
+      sourceId: pageIdentitySource.id,
+      health: 'changed',
+      checkedAt: now1.toISOString(),
+      lastSuccessfulAt: now1.toISOString(),
+      missingRequiredText: ['Course finder'],
+      consecutiveFailures: 2,
+      lastAttemptError: 'temporary block',
+    };
+
+    const result = await checkSource(
+      { ...pageIdentitySource, requiredText: ['Postgraduate courses'] },
+      vi.fn().mockResolvedValue(new Response('<h1>Postgraduate courses</h1>', { status: 200 })),
+      previous,
+      now2,
+    );
+
+    expect(result).toMatchObject({
+      health: 'ok',
+      checkedAt: now2.toISOString(),
+      lastSuccessfulAt: now2.toISOString(),
+      consecutiveFailures: 0,
+    });
+    expect(result).not.toHaveProperty('missingRequiredText');
+    expect(result).not.toHaveProperty('lastAttemptError');
+  });
+
+  it('does not condition page identity GETs or accept a bodyless 304 as success', async () => {
+    const fetchImpl = vi.fn().mockResolvedValue(new Response(null, { status: 304 }));
+    const previous = {
+      sourceId: pageIdentitySource.id,
+      health: 'ok',
+      etag: 'legacy-etag',
+      contentHash: acceptedRequirementsHash,
+      observedContentHash: observedRequirementsHash,
+      consecutiveFailures: 0,
+    };
+
+    const result = await checkSource(pageIdentitySource, fetchImpl, previous, now1);
+
+    expect(fetchImpl).toHaveBeenCalledWith(pageIdentitySource.url, expect.objectContaining({ method: 'GET' }));
+    const request = fetchImpl.mock.calls[0][1];
+    expect(request.headers).not.toHaveProperty('if-none-match');
+    expect(request.headers).not.toHaveProperty('if-modified-since');
+    expect(result).toMatchObject({ health: 'ok', httpStatus: 304, consecutiveFailures: 1 });
+    expect(result).not.toHaveProperty('contentHash');
+    expect(result).not.toHaveProperty('observedContentHash');
+  });
+
+  it.each([
+    { status: 403, exposedHealth: 'unavailable' },
+    { status: 404, exposedHealth: 'unavailable' },
+    { status: 429, exposedHealth: 'temporary-error' },
+    { status: 500, exposedHealth: 'temporary-error' },
+    { status: 503, exposedHealth: 'temporary-error' },
+  ] as const)('keeps page identity HTTP $status failures behind the third-attempt threshold', async ({ status, exposedHealth }) => {
+    const previous = {
+      sourceId: pageIdentitySource.id,
+      health: 'ok',
+      lastSuccessfulAt: '2026-08-07T03:17:00.000Z',
+      consecutiveFailures: 0,
+    };
+    const first = await checkSource(pageIdentitySource, failingFetch(status), previous, now1);
+    const second = await checkSource(pageIdentitySource, failingFetch(status), first, now2);
+    const third = await checkSource(pageIdentitySource, failingFetch(status), second, now3);
+
+    expect(first).toMatchObject({ health: 'ok', consecutiveFailures: 1 });
+    expect(second).toMatchObject({ health: 'ok', consecutiveFailures: 2 });
+    expect(third).toMatchObject({ health: exposedHealth, consecutiveFailures: 3 });
+  });
+
   it('records a successful source check', async () => {
     const result = await checkSource(source, vi.fn().mockResolvedValue(response(200, { etag: 'v1' })), undefined, new Date('2026-08-01T10:00:00Z'));
     expect(result).toMatchObject({ sourceId: 'source-1', health: 'ok', httpStatus: 200, etag: 'v1', lastSuccessfulAt: '2026-08-01T10:00:00.000Z' });

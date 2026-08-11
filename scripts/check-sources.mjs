@@ -14,14 +14,16 @@ function redirectDestination(status, source) {
 }
 
 function semanticState(status, source) {
-  return {
+  const state = {
     contentHash: status?.contentHash,
     observedContentHash: status?.observedContentHash,
     health: status?.health,
     redirectDestination: redirectDestination(status, source),
     consecutiveFailures: status?.consecutiveFailures ?? 0,
-    lastSuccessfulAt: status?.lastSuccessfulAt,
+    missingRequiredText: status?.missingRequiredText,
   };
+  if (source.monitorMode !== 'page-identity') state.lastSuccessfulAt = status?.lastSuccessfulAt;
+  return state;
 }
 
 function hasSemanticChange(previous, attempt, source) {
@@ -40,12 +42,39 @@ async function writeJsonAtomically(path, value) {
   await rename(candidatePath, path);
 }
 
+export function loadCheckTargets({ chinaSources, mastersCourseDirectories }) {
+  const targets = [...chinaSources, ...mastersCourseDirectories];
+  const ids = new Set();
+  for (const target of targets) {
+    if (ids.has(target.id)) throw new TypeError(`duplicate check target id: ${target.id}`);
+    ids.add(target.id);
+    let url;
+    try {
+      url = new URL(target.url);
+    } catch {
+      throw new TypeError(`check target ${target.id} must use a valid HTTPS URL`);
+    }
+    if (url.protocol !== 'https:') {
+      throw new TypeError(`check target ${target.id} must use a valid HTTPS URL`);
+    }
+  }
+  return targets;
+}
+
 export async function runSourceChecks(options = {}) {
   const root = options.root ?? defaultRoot;
   const sourcesPath = options.sourcesPath ?? join(root, 'src', 'data', 'sources.json');
+  const mastersCourseDirectoriesPath = options.mastersCourseDirectoriesPath
+    ?? join(root, 'src', 'data', 'masters-course-directories.json');
   const statusPath = options.statusPath ?? join(root, 'src', 'data', 'status.json');
   const auditPath = options.auditPath ?? join(root, 'artifacts', 'source-audit.json');
-  const sources = options.sources ?? JSON.parse(await readFile(sourcesPath, 'utf8'));
+  const sources = options.sources
+    ? loadCheckTargets({ chinaSources: options.sources, mastersCourseDirectories: [] })
+    : loadCheckTargets({
+      chinaSources: options.chinaSources ?? JSON.parse(await readFile(sourcesPath, 'utf8')),
+      mastersCourseDirectories: options.mastersCourseDirectories
+        ?? JSON.parse(await readFile(mastersCourseDirectoriesPath, 'utf8')),
+    });
   const previous = options.previous ?? JSON.parse(await readFile(statusPath, 'utf8'));
   const fetchImpl = options.fetchImpl ?? fetch;
   const wait = options.wait ?? ((milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds)));

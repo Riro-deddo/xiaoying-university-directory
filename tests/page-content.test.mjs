@@ -174,6 +174,21 @@ describe('dual-direction search page', () => {
     expect(sources.find((source) => source.id === 'exeter-china')?.institutionRule.summaryZh).toContain('取消原有国内大学排名要求');
     expect(page.indexOf('university-rule-summary')).toBeLessThan(page.indexOf('source-actions'));
   });
+
+  it('extends the existing source action group without adding a seventh directory column', () => {
+    expect(page).toContain('chinaSourceActionModel(university.sources)');
+    expect(page).toContain('<details class="china-source-bundle">');
+    expect(page).toContain('data-china-source-summary');
+    expect(page).toContain("import { bindChinaSourceDetailsKeyboard } from '../lib/source-actions'");
+    expect(page).toContain('bindChinaSourceDetailsKeyboard(document)');
+    expect(page).toContain('class="masters-course-action"');
+    expect(page).toContain('查看全部硕士课程');
+    expect(page).toContain('硕士专业官网入口');
+    expect(page).toContain("['temporary-error', 'unavailable'].includes(university.mastersCourse.status?.health ?? 'unchecked')");
+    expect(page).toContain('官网入口暂不可用，请稍后重试');
+    expect(page).toContain('<span>来源 / 操作</span>');
+    expect(page).not.toContain('<span>硕士课程</span>');
+  });
 });
 
 describe('published methodology and contributor guidance', () => {

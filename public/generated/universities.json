@@ -71,6 +71,19 @@
         "displayRank": "8",
         "sortRank": 8
       }
+    },
+    "mastersCourse": {
+      "id": "masters-imperial-college-london",
+      "universityId": "imperial-college-london",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.imperial.ac.uk/study/courses/?courseType=postgraduate+taught",
+      "pageTitle": "Course search | Study | Imperial College London",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Find a course",
+        "Postgraduate taught"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -144,6 +157,19 @@
         "displayRank": "1",
         "sortRank": 1
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-oxford",
+      "universityId": "university-of-oxford",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.ox.ac.uk/admissions/graduate/courses/find-your-course",
+      "pageTitle": "Find your postgraduate course | Oxford University",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Find your postgraduate course",
+        "Use this search tool to explore all of Oxford's graduate courses."
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -233,6 +259,19 @@
         "displayRank": "=3",
         "sortRank": 3
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-cambridge",
+      "universityId": "university-of-cambridge",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.postgraduate.study.cam.ac.uk/courses",
+      "pageTitle": "Course Directory | Postgraduate Study",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Course Directory",
+        "Use the Course Directory to search over 300 postgraduate courses at Cambridge."
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -320,6 +359,19 @@
         "displayRank": "22",
         "sortRank": 22
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-college-london",
+      "universityId": "university-college-london",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.ucl.ac.uk/study/prospective-students/graduate",
+      "pageTitle": "Graduate degrees | Study at UCL",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Taught degrees",
+        "Research degrees"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -403,6 +455,19 @@
         "displayRank": "29",
         "sortRank": 29
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-edinburgh",
+      "universityId": "university-of-edinburgh",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://study.ed.ac.uk/postgraduate",
+      "pageTitle": "Postgraduate study | The University of Edinburgh",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Browse the degree finder",
+        "Search the degree finder"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -479,6 +544,19 @@
         "displayRank": "38",
         "sortRank": 38
       }
+    },
+    "mastersCourse": {
+      "id": "masters-kings-college-london",
+      "universityId": "kings-college-london",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.kcl.ac.uk/study/home?lang=en",
+      "pageTitle": "Study | King's College London",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Postgraduate taught",
+        "Postgraduate research"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -631,6 +709,19 @@
         "displayRank": "56",
         "sortRank": 56
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-manchester",
+      "universityId": "university-of-manchester",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.manchester.ac.uk/study/",
+      "pageTitle": "Study | The University of Manchester",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Taught master's",
+        "Postgraduate research"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -711,6 +802,19 @@
         "displayRank": "=80",
         "sortRank": 80
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-bristol",
+      "universityId": "university-of-bristol",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.bristol.ac.uk/study/postgraduate/",
+      "pageTitle": "Postgraduate study | Study at Bristol | University of Bristol",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Find your programme",
+        "Postgraduate study routes"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -786,6 +890,19 @@
         "displayRank": "52",
         "sortRank": 52
       }
+    },
+    "mastersCourse": {
+      "id": "masters-london-school-of-economics-and-political-science",
+      "universityId": "london-school-of-economics-and-political-science",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.lse.ac.uk/study-at-lse/Graduate",
+      "pageTitle": "Graduate",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Graduate study opportunities at LSE",
+        "Available programmes"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -870,6 +987,19 @@
         "displayRank": "=122",
         "sortRank": 122
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-warwick",
+      "universityId": "university-of-warwick",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://warwick.ac.uk/study/postgraduate/courses-2026/course-list/",
+      "pageTitle": "course-list",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Postgraduate Taught",
+        "Postgraduate Research"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -944,6 +1074,19 @@
         "displayRank": "=98",
         "sortRank": 98
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-birmingham",
+      "universityId": "university-of-birmingham",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.birmingham.ac.uk/study/postgraduate",
+      "pageTitle": "Postgraduate study & research at Birmingham - University of Birmingham",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Postgraduate study or research",
+        "over 600 taught postgraduate programmes"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -1018,6 +1161,19 @@
         "displayRank": "118",
         "sortRank": 118
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-leeds",
+      "universityId": "university-of-leeds",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://courses.leeds.ac.uk/courses/",
+      "pageTitle": "Course Search | University of Leeds",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Undergraduate and Masters course search",
+        "Search for postgraduate research opportunities"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -1111,6 +1267,19 @@
         "displayRank": "84",
         "sortRank": 84
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-glasgow",
+      "universityId": "university-of-glasgow",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.gla.ac.uk/postgraduate/",
+      "pageTitle": "University of Glasgow - Postgraduate study",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Find a programme",
+        "Postgraduate Research"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -1205,6 +1374,19 @@
         "displayRank": "=108",
         "sortRank": 108
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-sheffield",
+      "universityId": "university-of-sheffield",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://sheffield.ac.uk/postgraduate",
+      "pageTitle": "Postgraduate study | Postgraduate study | The University of Sheffield",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Postgraduate study",
+        "A masters or PhD at Sheffield"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -1278,6 +1460,19 @@
         "displayRank": "175",
         "sortRank": 175
       }
+    },
+    "mastersCourse": {
+      "id": "masters-durham-university",
+      "universityId": "durham-university",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.durham.ac.uk/study/postgraduate/",
+      "pageTitle": "Postgraduate - Durham University",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Postgraduate Taught degrees",
+        "Postgraduate Research"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -1362,6 +1557,19 @@
         "displayRank": "=145",
         "sortRank": 145
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-nottingham",
+      "universityId": "university-of-nottingham",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.nottingham.ac.uk/pgstudy/courses/courses.aspx",
+      "pageTitle": "Postgraduate course search - The University of Nottingham",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Postgraduate course search",
+        "Taught Research All"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -1435,6 +1643,19 @@
         "displayRank": "=134",
         "sortRank": 134
       }
+    },
+    "mastersCourse": {
+      "id": "masters-queen-mary-university-of-london",
+      "universityId": "queen-mary-university-of-london",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.qmul.ac.uk/postgraduate/",
+      "pageTitle": "Postgraduate study - Queen Mary University of London",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Masters programmes",
+        "Research degrees"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -1531,6 +1752,19 @@
         "displayRank": "129",
         "sortRank": 129
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-southampton",
+      "universityId": "university-of-southampton",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.southampton.ac.uk/courses",
+      "pageTitle": "CourseFinder | University of Southampton",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Find your course",
+        "Select study level"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -1605,6 +1839,19 @@
         "displayRank": "=162",
         "sortRank": 162
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-st-andrews",
+      "universityId": "university-of-st-andrews",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.st-andrews.ac.uk/study/postgraduate/",
+      "pageTitle": "Masters - Study at St Andrews - University of St Andrews",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Masters study at St Andrews",
+        "Research degrees"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -1679,6 +1926,19 @@
         "displayRank": "251–300",
         "sortRank": 251
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-bath",
+      "universityId": "university-of-bath",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.bath.ac.uk/courses/",
+      "pageTitle": "Courses",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Search for a course",
+        "Postgraduate research"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -1755,6 +2015,19 @@
         "displayRank": "=170",
         "sortRank": 170
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-exeter",
+      "universityId": "university-of-exeter",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.exeter.ac.uk/masters-degrees/",
+      "pageTitle": "Masters Degrees and Courses | University of Exeter",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Masters degrees and courses",
+        "Search for a course"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -1829,6 +2102,19 @@
         "displayRank": "143",
         "sortRank": 143
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-liverpool",
+      "universityId": "university-of-liverpool",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.liverpool.ac.uk/courses/postgraduate-taught",
+      "pageTitle": "Postgraduate taught | Courses | University of Liverpool",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Our courses",
+        "Postgraduate research"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -1905,6 +2191,19 @@
         "displayRank": "144",
         "sortRank": 144
       }
+    },
+    "mastersCourse": {
+      "id": "masters-newcastle-university",
+      "universityId": "newcastle-university",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.ncl.ac.uk/postgraduate/degrees/",
+      "pageTitle": "Find a Degree | Postgraduate | Newcastle University",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Find a Postgraduate Degree",
+        "more than 300 postgraduate degrees"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -1981,6 +2280,19 @@
         "displayRank": "=154",
         "sortRank": 154
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-york",
+      "universityId": "university-of-york",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.york.ac.uk/study/postgraduate/",
+      "pageTitle": "Postgraduate - Postgraduate, University of York",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Postgraduate taught",
+        "Masters by research"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -2056,6 +2368,19 @@
         "displayRank": "=184",
         "sortRank": 184
       }
+    },
+    "mastersCourse": {
+      "id": "masters-lancaster-university",
+      "universityId": "lancaster-university",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.lancaster.ac.uk/study/postgraduate/postgraduate-courses/",
+      "pageTitle": "Postgraduate courses - Lancaster University",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Postgraduate courses",
+        "Find your course"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -2129,6 +2454,19 @@
         "displayRank": "=198",
         "sortRank": 198
       }
+    },
+    "mastersCourse": {
+      "id": "masters-queens-university-belfast",
+      "universityId": "queens-university-belfast",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.qub.ac.uk/Study/postgraduate/",
+      "pageTitle": "Postgraduate Degrees  | Study | Queen's University Belfast",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Masters Degrees",
+        "Research Degrees"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -2202,6 +2540,19 @@
         "displayRank": "201–250",
         "sortRank": 201
       }
+    },
+    "mastersCourse": {
+      "id": "masters-cardiff-university",
+      "universityId": "cardiff-university",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.cardiff.ac.uk/study/postgraduate",
+      "pageTitle": "Postgraduate - Study - Cardiff University",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Find your course",
+        "A-Z of research programmes"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -2276,6 +2627,19 @@
         "displayRank": "201–250",
         "sortRank": 201
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-reading",
+      "universityId": "university-of-reading",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.reading.ac.uk/ready-to-study/study/postgraduate-study",
+      "pageTitle": "Postgraduate study",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Find a master's course",
+        "Postgraduate research"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -2337,7 +2701,20 @@
         }
       }
     ],
-    "rankings": {}
+    "rankings": {},
+    "mastersCourse": {
+      "id": "masters-cranfield-university",
+      "universityId": "cranfield-university",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.cranfield.ac.uk/courses",
+      "pageTitle": "Our courses",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Find a course",
+        "Our courses and research programmes"
+      ],
+      "monitorMode": "page-identity"
+    }
   },
   {
     "id": "london-business-school",
@@ -2402,7 +2779,20 @@
         }
       }
     ],
-    "rankings": {}
+    "rankings": {},
+    "mastersCourse": {
+      "id": "masters-london-business-school",
+      "universityId": "london-business-school",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.london.edu/masters-degrees",
+      "pageTitle": "Masters Degrees | London Business School",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Find the masters programme that's right for you.",
+        "Our Programmes"
+      ],
+      "monitorMode": "page-identity"
+    }
   },
   {
     "id": "london-school-of-hygiene-and-tropical-medicine",
@@ -2464,7 +2854,20 @@
         }
       }
     ],
-    "rankings": {}
+    "rankings": {},
+    "mastersCourse": {
+      "id": "masters-london-school-of-hygiene-and-tropical-medicine",
+      "universityId": "london-school-of-hygiene-and-tropical-medicine",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.lshtm.ac.uk/study/courses",
+      "pageTitle": "Courses | Study with us | LSHTM",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Course finder",
+        "LSHTM offers a wide range of Master's and Research degrees."
+      ],
+      "monitorMode": "page-identity"
+    }
   },
   {
     "id": "royal-college-of-art",
@@ -2523,7 +2926,20 @@
         }
       }
     ],
-    "rankings": {}
+    "rankings": {},
+    "mastersCourse": {
+      "id": "masters-royal-college-of-art",
+      "universityId": "royal-college-of-art",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.rca.ac.uk/study/programme-finder/",
+      "pageTitle": "Programme finder | Royal College of Art",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Programme finder",
+        "We offer a range of Graduate Diploma, MA, MArch, MEd, MFA, MDes, MRes, MPhil and PhD degree programmes across the art and design disciplines."
+      ],
+      "monitorMode": "page-identity"
+    }
   },
   {
     "id": "royal-veterinary-college",
@@ -2582,7 +2998,20 @@
         }
       }
     ],
-    "rankings": {}
+    "rankings": {},
+    "mastersCourse": {
+      "id": "masters-royal-veterinary-college",
+      "universityId": "royal-veterinary-college",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.rvc.ac.uk/study/postgraduate",
+      "pageTitle": "Postgraduate Courses",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Courses",
+        "Research"
+      ],
+      "monitorMode": "page-identity"
+    }
   },
   {
     "id": "royal-college-of-music",
@@ -2641,7 +3070,20 @@
         }
       }
     ],
-    "rankings": {}
+    "rankings": {},
+    "mastersCourse": {
+      "id": "masters-royal-college-of-music",
+      "universityId": "royal-college-of-music",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.rcm.ac.uk/courses/",
+      "pageTitle": "Courses | Royal College of Music",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Taught postgraduate",
+        "Research degrees"
+      ],
+      "monitorMode": "page-identity"
+    }
   },
   {
     "id": "institute-of-cancer-research-london",
@@ -2702,7 +3144,20 @@
         }
       }
     ],
-    "rankings": {}
+    "rankings": {},
+    "mastersCourse": {
+      "id": "masters-institute-of-cancer-research-london",
+      "universityId": "institute-of-cancer-research-london",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.icr.ac.uk/study-and-careers",
+      "pageTitle": "Study and careers",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Studying at the ICR",
+        "MSc in Oncology"
+      ],
+      "monitorMode": "page-identity"
+    }
   },
   {
     "id": "liverpool-school-of-tropical-medicine",
@@ -2761,7 +3216,20 @@
         }
       }
     ],
-    "rankings": {}
+    "rankings": {},
+    "mastersCourse": {
+      "id": "masters-liverpool-school-of-tropical-medicine",
+      "universityId": "liverpool-school-of-tropical-medicine",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://lstmed.ac.uk/study/",
+      "pageTitle": "Study | Liverpool School of Tropical Medicine",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Master’s degrees",
+        "Research degrees"
+      ],
+      "monitorMode": "page-identity"
+    }
   },
   {
     "id": "loughborough-university",
@@ -2836,6 +3304,19 @@
         "displayRank": "301–350",
         "sortRank": 301
       }
+    },
+    "mastersCourse": {
+      "id": "masters-loughborough-university",
+      "universityId": "loughborough-university",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.lboro.ac.uk/study/postgraduate/",
+      "pageTitle": "Postgraduate study | Loughborough University",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Master's degrees",
+        "PhD opportunities"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -2911,6 +3392,19 @@
         "displayRank": "351–400",
         "sortRank": 351
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-strathclyde",
+      "universityId": "university-of-strathclyde",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.strath.ac.uk/courses/",
+      "pageTitle": "University Courses in Scotland, UK - University of Strathclyde",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Find your course",
+        "Postgraduate research"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -2983,6 +3477,19 @@
         "displayRank": "201–250",
         "sortRank": 201
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-surrey",
+      "universityId": "university-of-surrey",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.surrey.ac.uk/prospectus-and-guides",
+      "pageTitle": "Create your Surrey prospectus | University of Surrey",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Postgraduate courses",
+        "Research courses"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -3057,6 +3564,19 @@
         "displayRank": "201–250",
         "sortRank": 201
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-sussex",
+      "universityId": "university-of-sussex",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.sussex.ac.uk/study/masters/",
+      "pageTitle": "Masters Courses, Degrees : Study : University of Sussex",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Masters courses",
+        "Find a course"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -3130,6 +3650,19 @@
         "displayRank": "201–250",
         "sortRank": 201
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-aberdeen",
+      "universityId": "university-of-aberdeen",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.abdn.ac.uk/study/postgraduate-taught/",
+      "pageTitle": "Where will your quest for knowledge take you? | Study Here | The University of Aberdeen",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Degree Search",
+        "Explore our Masters by Research"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -3204,6 +3737,19 @@
         "displayRank": "=192",
         "sortRank": 192
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-leicester",
+      "universityId": "university-of-leicester",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://le.ac.uk/courses?q=postgraduate",
+      "pageTitle": "Courses | University of Leicester",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Search for a course",
+        "Postgraduate"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -3281,6 +3827,19 @@
         "displayRank": "301–350",
         "sortRank": 301
       }
+    },
+    "mastersCourse": {
+      "id": "masters-swansea-university",
+      "universityId": "swansea-university",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.swansea.ac.uk/postgraduate/",
+      "pageTitle": "Postgraduate - Swansea University",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Search our Postgraduate Taught courses",
+        "Postgraduate Research Courses"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -3359,6 +3918,19 @@
         "displayRank": "401–500",
         "sortRank": 401
       }
+    },
+    "mastersCourse": {
+      "id": "masters-heriot-watt-university",
+      "universityId": "heriot-watt-university",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.hw.ac.uk/study",
+      "pageTitle": "Study | Heriot-Watt University",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Search our programmes",
+        "Research"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -3433,6 +4005,19 @@
         "displayRank": "401–500",
         "sortRank": 401
       }
+    },
+    "mastersCourse": {
+      "id": "masters-brunel-university-of-london",
+      "universityId": "brunel-university-of-london",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.brunel.ac.uk/study/courses",
+      "pageTitle": "Explore our courses | Brunel University of London",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Explore our courses",
+        "PhD & Research"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -3508,6 +4093,19 @@
         "displayRank": "301–350",
         "sortRank": 301
       }
+    },
+    "mastersCourse": {
+      "id": "masters-birkbeck-university-of-london",
+      "universityId": "birkbeck-university-of-london",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.bbk.ac.uk/courses/postgraduate",
+      "pageTitle": "Postgraduate - Birkbeck, University of London",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Browse courses by name, subject and study options",
+        "A - Z of Postgraduate courses"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -3587,6 +4185,19 @@
         "displayRank": "301–350",
         "sortRank": 301
       }
+    },
+    "mastersCourse": {
+      "id": "masters-city-st-georges-university-of-london",
+      "universityId": "city-st-georges-university-of-london",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.citystgeorges.ac.uk/prospective-students/courses",
+      "pageTitle": "All Degree, Foundation & Short Courses • City St George's, University of London",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Search courses",
+        "Postgraduate research degrees"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -3663,6 +4274,19 @@
         "displayRank": "251–300",
         "sortRank": 251
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-east-anglia",
+      "universityId": "university-of-east-anglia",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.uea.ac.uk/search/courses",
+      "pageTitle": "Find your course",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Refine by Postgraduate",
+        "Refine by PhD or other doctorate"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -3736,6 +4360,19 @@
         "displayRank": "801–1000",
         "sortRank": 801
       }
+    },
+    "mastersCourse": {
+      "id": "masters-oxford-brookes-university",
+      "universityId": "oxford-brookes-university",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.brookes.ac.uk/study/courses/postgraduate",
+      "pageTitle": "Postgraduate - Oxford Brookes University",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Master's and postgraduate courses",
+        "PhDs and postgraduate research"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -3809,6 +4446,19 @@
         "displayRank": "401–500",
         "sortRank": 401
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-kent",
+      "universityId": "university-of-kent",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.kent.ac.uk/courses/postgraduate",
+      "pageTitle": "Postgraduate courses - University of Kent",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Postgraduate courses",
+        "Research"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -3882,6 +4532,19 @@
         "displayRank": "401–500",
         "sortRank": 401
       }
+    },
+    "mastersCourse": {
+      "id": "masters-aston-university",
+      "universityId": "aston-university",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.aston.ac.uk/postgraduate/courses",
+      "pageTitle": "Postgraduate courses | Aston University",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Find your course",
+        "Research degrees/PhD"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -3956,6 +4619,19 @@
         "displayRank": "301–350",
         "sortRank": 301
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-essex",
+      "universityId": "university-of-essex",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.essex.ac.uk/postgraduate",
+      "pageTitle": "Postgraduate study at Essex | University of Essex",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Masters courses",
+        "research degrees"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -4063,6 +4739,19 @@
         "displayRank": "301–350",
         "sortRank": 301
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-dundee",
+      "universityId": "university-of-dundee",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.dundee.ac.uk/postgraduate",
+      "pageTitle": "Postgraduate | University of Dundee, UK",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Postgraduate taught courses and postgraduate research degrees",
+        "Find a PhD or Master's by Research opportunity"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -4137,6 +4826,19 @@
         "displayRank": "401–500",
         "sortRank": 401
       }
+    },
+    "mastersCourse": {
+      "id": "masters-soas-university-of-london",
+      "universityId": "soas-university-of-london",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.soas.ac.uk/study/find-course",
+      "pageTitle": "Find a course | SOAS",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Explore our courses",
+        "Choose from our list of undergraduate, postgraduate, online learning, research and short courses."
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -4211,6 +4913,19 @@
         "displayRank": "401–500",
         "sortRank": 401
       }
+    },
+    "mastersCourse": {
+      "id": "masters-royal-holloway-university-of-london",
+      "universityId": "royal-holloway-university-of-london",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.royalholloway.ac.uk/studying-here/",
+      "pageTitle": "Find the right course for you",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Search course or subject",
+        "MSc by Research"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -4284,6 +4999,19 @@
         "displayRank": "501–600",
         "sortRank": 501
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-bradford",
+      "universityId": "university-of-bradford",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.bradford.ac.uk/postgraduate/",
+      "pageTitle": "Postgraduate - Study - University of Bradford",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Postgraduate taught (PGT) courses",
+        "Postgraduate research (PGR) degrees"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -4357,6 +5085,19 @@
         "displayRank": "501–600",
         "sortRank": 501
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-huddersfield",
+      "universityId": "university-of-huddersfield",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://courses.hud.ac.uk/",
+      "pageTitle": "Coursefinder - University of Huddersfield",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Search a course",
+        "Search for undergraduate, postgraduate, research degrees and apprenticeships."
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -4432,6 +5173,19 @@
         "displayRank": "401–500",
         "sortRank": 401
       }
+    },
+    "mastersCourse": {
+      "id": "masters-northumbria-university",
+      "universityId": "northumbria-university",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.northumbria.ac.uk/study-at-northumbria/",
+      "pageTitle": "Study an Undergraduate or Postgraduate Course in the UK | Northumbria",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "FIND YOUR COURSE",
+        "Postgraduate Research Degrees"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -4505,6 +5259,19 @@
         "displayRank": "501–600",
         "sortRank": 501
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-stirling",
+      "universityId": "university-of-stirling",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.stir.ac.uk/courses/",
+      "pageTitle": "Find a course | University of Stirling",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "View full postgraduate taught course listing",
+        "View full postgraduate research degree listing"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -4579,6 +5346,19 @@
         "displayRank": "501–600",
         "sortRank": 501
       }
+    },
+    "mastersCourse": {
+      "id": "masters-bangor-university",
+      "universityId": "bangor-university",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.bangor.ac.uk/postgraduate",
+      "pageTitle": "Postgraduate Study | Bangor University",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Search Postgraduate Taught Courses",
+        "Search Postgraduate Research Courses"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -4652,6 +5432,19 @@
         "displayRank": "501–600",
         "sortRank": 501
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-hull",
+      "universityId": "university-of-hull",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.hull.ac.uk/study/types-of-postgraduate-qualifications",
+      "pageTitle": "Type of Postgraduate Qualification | University of Hull",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Search for your perfect postgraduate degree",
+        "All postgraduate research degrees"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -4725,6 +5518,19 @@
         "displayRank": "601–800",
         "sortRank": 601
       }
+    },
+    "mastersCourse": {
+      "id": "masters-coventry-university",
+      "universityId": "coventry-university",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.coventry.ac.uk/study-at-coventry/postgraduate-study/",
+      "pageTitle": "Postgraduate Study | Coventry University",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Postgraduate A-Z course list",
+        "Research degrees"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -4798,6 +5604,19 @@
         "displayRank": "601–800",
         "sortRank": 601
       }
+    },
+    "mastersCourse": {
+      "id": "masters-ulster-university",
+      "universityId": "ulster-university",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.ulster.ac.uk/courses",
+      "pageTitle": "Courses at Ulster University | Courses at Ulster University",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Course Finder",
+        "PG Research"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -4872,6 +5691,19 @@
         "displayRank": "601–800",
         "sortRank": 601
       }
+    },
+    "mastersCourse": {
+      "id": "masters-manchester-metropolitan-university",
+      "universityId": "manchester-metropolitan-university",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.mmu.ac.uk/study/postgraduate/options",
+      "pageTitle": "Postgraduate study options | Manchester Metropolitan University",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Find a postgraduate course",
+        "Postgraduate research"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -4946,6 +5778,19 @@
         "displayRank": "601–800",
         "sortRank": 601
       }
+    },
+    "mastersCourse": {
+      "id": "masters-nottingham-trent-university",
+      "universityId": "nottingham-trent-university",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.ntu.ac.uk/study-and-courses/courses/find-your-course",
+      "pageTitle": "Course search | Nottingham Trent University",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Course search",
+        "Masters"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -5019,6 +5864,19 @@
         "displayRank": "401–500",
         "sortRank": 401
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-portsmouth",
+      "universityId": "university-of-portsmouth",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.port.ac.uk/study/postgraduate",
+      "pageTitle": "Portsmouth: Perfect for postgraduates | University of Portsmouth",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Master's and postgraduate taught courses",
+        "PhDs and postgraduate research"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -5093,6 +5951,19 @@
         "displayRank": "801–1000",
         "sortRank": 801
       }
+    },
+    "mastersCourse": {
+      "id": "masters-kingston-university-london",
+      "universityId": "kingston-university-london",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.kingston.ac.uk/study/postgraduate",
+      "pageTitle": "Postgraduate study | Kingston University London",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Search all postgraduate courses",
+        "We offer a wide range of taught and research masters courses."
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -5166,6 +6037,19 @@
         "displayRank": "501–600",
         "sortRank": 501
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-plymouth",
+      "universityId": "university-of-plymouth",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.plymouth.ac.uk/study/postgraduate",
+      "pageTitle": "Postgraduate study - University of Plymouth",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Search for a course",
+        "Research degrees backed by a UK top-20 experience*"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -5239,6 +6123,19 @@
         "displayRank": "501–600",
         "sortRank": 501
       }
+    },
+    "mastersCourse": {
+      "id": "masters-goldsmiths-university-of-london",
+      "universityId": "goldsmiths-university-of-london",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.gold.ac.uk/pg/",
+      "pageTitle": "Postgraduate | Goldsmiths, University of London",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Postgraduate courses",
+        "Research degrees"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -5313,6 +6210,19 @@
         "displayRank": "601–800",
         "sortRank": 601
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-the-west-of-england",
+      "universityId": "university-of-the-west-of-england",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://courses.uwe.ac.uk/Search",
+      "pageTitle": "Find a course - UWE Bristol: Courses",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Course search",
+        "Postgraduate Research"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -5386,6 +6296,19 @@
         "displayRank": "601–800",
         "sortRank": 601
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-greenwich",
+      "universityId": "university-of-greenwich",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.gre.ac.uk/postgraduate-courses",
+      "pageTitle": "Postgraduate courses | University of Greenwich, London",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Course search:",
+        "Research degrees"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -5460,6 +6383,19 @@
         "displayRank": "601–800",
         "sortRank": 601
       }
+    },
+    "mastersCourse": {
+      "id": "masters-aberystwyth-university",
+      "universityId": "aberystwyth-university",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.aber.ac.uk/en/study-with-us/pg-studies/",
+      "pageTitle": "Postgraduate Studies  : Aberystwyth University",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Find your course",
+        "The Doctoral Academy"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -5533,6 +6469,19 @@
         "displayRank": "401–500",
         "sortRank": 401
       }
+    },
+    "mastersCourse": {
+      "id": "masters-bournemouth-university",
+      "universityId": "bournemouth-university",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.bournemouth.ac.uk/study/postgraduate",
+      "pageTitle": "Postgraduate study | Bournemouth University",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Browse our courses",
+        "PhDs and postgraduate research degrees"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -5607,6 +6556,19 @@
         "displayRank": "601–800",
         "sortRank": 601
       }
+    },
+    "mastersCourse": {
+      "id": "masters-edinburgh-napier-university",
+      "universityId": "edinburgh-napier-university",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.napier.ac.uk/courses",
+      "pageTitle": "Courses",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Find the course that’s right for you at Edinburgh Napier University.",
+        "Find out how to become a postgraduate researcher"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -5680,6 +6642,19 @@
         "displayRank": "501–600",
         "sortRank": 501
       }
+    },
+    "mastersCourse": {
+      "id": "masters-keele-university",
+      "universityId": "keele-university",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.keele.ac.uk/study/postgraduatestudy/",
+      "pageTitle": "Postgraduate study - Keele University",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Postgraduate courses A-Z",
+        "Postgraduate research"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -5755,6 +6730,19 @@
         "displayRank": "601–800",
         "sortRank": 601
       }
+    },
+    "mastersCourse": {
+      "id": "masters-de-montfort-university",
+      "universityId": "de-montfort-university",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.dmu.ac.uk/study/courses/postgraduate-courses/postgraduate-courses.aspx",
+      "pageTitle": "Postgraduate courses at De Montfort University",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Postgraduate courses at De Montfort University",
+        "DMU Courses"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -5829,6 +6817,19 @@
         "displayRank": "501–600",
         "sortRank": 501
       }
+    },
+    "mastersCourse": {
+      "id": "masters-liverpool-john-moores-university",
+      "universityId": "liverpool-john-moores-university",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.ljmu.ac.uk/study/postgraduate-students",
+      "pageTitle": "Postgraduate | Liverpool John Moores University",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Find your course",
+        "postgraduate research opportunities"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -5902,6 +6903,19 @@
         "displayRank": "601–800",
         "sortRank": 601
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-hertfordshire",
+      "universityId": "university-of-hertfordshire",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.herts.ac.uk/courses",
+      "pageTitle": "Courses | University of Hertfordshire",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Postgraduate and Master’s Degree Courses",
+        "Research degrees"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -5976,6 +6990,19 @@
         "displayRank": "601–800",
         "sortRank": 601
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-lincoln",
+      "universityId": "university-of-lincoln",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.lincoln.ac.uk/course/",
+      "pageTitle": "Courses | Study at Lincoln | University of Lincoln",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Courses",
+        "Postgraduate Research"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -6024,6 +7051,19 @@
         "displayRank": "1501+",
         "sortRank": 1501
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-the-arts-london",
+      "universityId": "university-of-the-arts-london",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.arts.ac.uk/courses",
+      "pageTitle": "Courses | UAL",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Postgraduate",
+        "Research degrees"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -6098,6 +7138,19 @@
         "displayRank": "801–1000",
         "sortRank": 801
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-westminster",
+      "universityId": "university-of-westminster",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.westminster.ac.uk/study/postgraduate",
+      "pageTitle": "Postgraduate | University of Westminster, London",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Find your course",
+        "Research degrees"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -6171,6 +7224,19 @@
         "displayRank": "601–800",
         "sortRank": 601
       }
+    },
+    "mastersCourse": {
+      "id": "masters-london-south-bank-university",
+      "universityId": "london-south-bank-university",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.lsbu.ac.uk/study/course-finder",
+      "pageTitle": "Course finder | London South Bank University",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Postgraduate",
+        "Research and Doctorates"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -6245,6 +7311,19 @@
         "displayRank": "501–600",
         "sortRank": 501
       }
+    },
+    "mastersCourse": {
+      "id": "masters-middlesex-university",
+      "universityId": "middlesex-university",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.mdx.ac.uk/courses/?courseStudyType=postgraduate",
+      "pageTitle": "Find a course | Middlesex University",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Postgraduate",
+        "Research degrees"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -6319,6 +7398,19 @@
         "displayRank": "601–800",
         "sortRank": 601
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-brighton",
+      "universityId": "university-of-brighton",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.brighton.ac.uk/courses/index.aspx",
+      "pageTitle": "Courses",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "University course search: Find the best courses to study",
+        "PhD, MPhil and professional doctorates"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -6393,6 +7485,19 @@
         "displayRank": "601–800",
         "sortRank": 601
       }
+    },
+    "mastersCourse": {
+      "id": "masters-anglia-ruskin-university",
+      "universityId": "anglia-ruskin-university",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.aru.ac.uk/study",
+      "pageTitle": "Study a degree course at Anglia Ruskin University - ARU",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Study a Masters or research degree at ARU",
+        "Research programmes"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -6467,6 +7572,19 @@
         "displayRank": "801–1000",
         "sortRank": 801
       }
+    },
+    "mastersCourse": {
+      "id": "masters-birmingham-city-university",
+      "universityId": "birmingham-city-university",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.bcu.ac.uk/courses",
+      "pageTitle": "Courses | Birmingham City University",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Postgraduate Taught",
+        "Postgraduate Research"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -6541,6 +7659,19 @@
         "displayRank": "801–1000",
         "sortRank": 801
       }
+    },
+    "mastersCourse": {
+      "id": "masters-glasgow-caledonian-university",
+      "universityId": "glasgow-caledonian-university",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.gcu.ac.uk/study",
+      "pageTitle": "Study | Glasgow Caledonian University | Scotland, UK",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Find your course",
+        "Postgraduate research study"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -6615,6 +7746,19 @@
         "displayRank": "801–1000",
         "sortRank": 801
       }
+    },
+    "mastersCourse": {
+      "id": "masters-leeds-beckett-university",
+      "universityId": "leeds-beckett-university",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.leedsbeckett.ac.uk/postgraduate/",
+      "pageTitle": "Postgraduate study | Leeds Beckett University",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Find a course",
+        "Postgraduate research degrees"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -6690,6 +7834,19 @@
         "displayRank": "601–800",
         "sortRank": 601
       }
+    },
+    "mastersCourse": {
+      "id": "masters-london-metropolitan-university",
+      "universityId": "london-metropolitan-university",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.londonmet.ac.uk/courses/postgraduate/",
+      "pageTitle": "Postgraduate courses - London Metropolitan University",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Master's (MA, MSc, MBA) and research degrees",
+        "Search for a postgraduate course"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -6763,6 +7920,20 @@
         "displayRank": "801–1000",
         "sortRank": 801
       }
+    },
+    "mastersCourse": {
+      "id": "masters-robert-gordon-university",
+      "universityId": "robert-gordon-university",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.rgu.ac.uk/study/course-search",
+      "pageTitle": "Course Search | Study | RGU",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "RGU Course Search",
+        "Postgraduate",
+        "Graduate School"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -6838,6 +8009,19 @@
         "displayRank": "801–1000",
         "sortRank": 801
       }
+    },
+    "mastersCourse": {
+      "id": "masters-sheffield-hallam-university",
+      "universityId": "sheffield-hallam-university",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.shu.ac.uk/study-here/postgraduate",
+      "pageTitle": "Postgraduate | Sheffield Hallam University",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Masters and diplomas",
+        "PhDs"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -6874,6 +8058,19 @@
         "displayRank": "1001–1200",
         "sortRank": 1001
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-east-london",
+      "universityId": "university-of-east-london",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.uel.ac.uk/study/postgraduate",
+      "pageTitle": "Postgraduate | University of East London",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Search for a postgraduate programme",
+        "Research degrees (MPhil, PhD, Professional Doctorates)"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -6950,6 +8147,19 @@
         "displayRank": "1001–1200",
         "sortRank": 1001
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-lancashire",
+      "universityId": "university-of-lancashire",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.lancashire.ac.uk/courses/a-z",
+      "pageTitle": "A-Z Course List - Find Your Course",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Postgraduate taught A-Z",
+        "Postgraduate research A-Z"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -7024,6 +8234,19 @@
         "displayRank": "801–1000",
         "sortRank": 801
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-roehampton",
+      "universityId": "university-of-roehampton",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.roehampton.ac.uk/study/postgraduate-study/",
+      "pageTitle": "Postgraduate Study | University of Roehampton, London",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "postgraduate taught and research programmes",
+        "Research degrees"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -7096,6 +8319,19 @@
         "displayRank": "801–1000",
         "sortRank": 801
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-salford",
+      "universityId": "university-of-salford",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.salford.ac.uk/postgraduate",
+      "pageTitle": "Postgraduate | University of Salford",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Postgraduate taught courses",
+        "Postgraduate research courses"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -7172,6 +8408,19 @@
         "displayRank": "801–1000",
         "sortRank": 801
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-wolverhampton",
+      "universityId": "university-of-wolverhampton",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.wlv.ac.uk/courses/",
+      "pageTitle": "Courses - University of Wolverhampton",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Postgraduate Courses",
+        "Research (PhD)"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -7246,6 +8495,19 @@
         "edition": 2026,
         "placement": "unranked"
       }
+    },
+    "mastersCourse": {
+      "id": "masters-queen-margaret-university-edinburgh",
+      "universityId": "queen-margaret-university-edinburgh",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.qmu.ac.uk/study-here/course-a-z/",
+      "pageTitle": "Course A-Z | Queen Margaret University, Edinburgh",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "postgraduate taught courses",
+        "research degrees"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -7319,6 +8581,19 @@
         "displayRank": "1501+",
         "sortRank": 1501
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-northampton",
+      "universityId": "university-of-northampton",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.northampton.ac.uk/postgraduate/",
+      "pageTitle": "Master's Study | University of Northampton",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Master's and Postgraduate Courses",
+        "Research Degrees"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -7394,6 +8669,19 @@
         "displayRank": "601–800",
         "sortRank": 601
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-derby",
+      "universityId": "university-of-derby",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.derby.ac.uk/postgraduate/courses/",
+      "pageTitle": "Courses - Postgraduate - University of Derby",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Postgraduate course search",
+        "Research degrees"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -7468,6 +8756,19 @@
         "displayRank": "1201–1500",
         "sortRank": 1201
       }
+    },
+    "mastersCourse": {
+      "id": "masters-university-of-south-wales",
+      "universityId": "university-of-south-wales",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.southwales.ac.uk/courses/",
+      "pageTitle": "Courses - University of South Wales",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Find a course",
+        "Postgraduate Research Degrees"
+      ],
+      "monitorMode": "page-identity"
     }
   },
   {
@@ -7542,6 +8843,20 @@
         "displayRank": "1201–1500",
         "sortRank": 1201
       }
+    },
+    "mastersCourse": {
+      "id": "masters-canterbury-christ-church-university",
+      "universityId": "canterbury-christ-church-university",
+      "labelZh": "查看全部硕士课程",
+      "url": "https://www.canterbury.ac.uk/study-here/explore-postgraduate",
+      "pageTitle": "Explore postgraduate | CCCU",
+      "reviewedAt": "2026-08-11",
+      "requiredText": [
+        "Explore postgraduate",
+        "Find your perfect postgraduate course using our search.",
+        "Research subject areas"
+      ],
+      "monitorMode": "page-identity"
     }
   }
 ]

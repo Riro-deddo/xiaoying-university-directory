@@ -35,6 +35,9 @@ function workflowGithubScript(step) {
 const rankingIssueScript = workflowGithubScript(
   rankingSteps.find((step) => step.includes('Create or update one Issue per new ranking edition')),
 );
+const dailyIssueScript = workflowGithubScript(
+  dailyStepContaining('Create or update one Issue per source anomaly'),
+);
 
 const approvedOfficialActionPins = [
   ['actions/checkout', '3d3c42e5aac5ba805825da76410c181273ba90b1', 'v7.0.1', 4],
@@ -177,6 +180,16 @@ describe('weekly ranking edition review workflow', () => {
 });
 
 describe('guarded daily source workflow', () => {
+  it('serializes daily runs without cancelling an in-progress audit', () => {
+    const concurrencyBlock = dailyWorkflow.match(/^concurrency:\n([\s\S]*?)^jobs:/mu)?.[1] ?? '';
+
+    expect(concurrencyBlock).toBe([
+      '  group: daily-official-source-check',
+      '  cancel-in-progress: false',
+      '',
+    ].join('\n'));
+  });
+
   it('grants issue write permission only to the daily check', () => {
     expect(dailyWorkflow).toContain('issues: write');
     expect(ciWorkflow).not.toContain('issues: write');
@@ -195,6 +208,13 @@ describe('guarded daily source workflow', () => {
     const positions = orderedSteps.map((fragment) => dailySteps.findIndex((step) => step.includes(fragment)));
     expect(positions.every((position) => position >= 0)).toBe(true);
     expect(positions).toEqual([...positions].sort((a, b) => a - b));
+  });
+
+  it('checks both official-link registries with Lychee', () => {
+    const lycheeStep = dailyStepContaining('lycheeverse/lychee-action');
+
+    expect(lycheeStep).toContain('src/data/sources.json');
+    expect(lycheeStep).toContain('src/data/masters-course-directories.json');
   });
 
   it('runs the exact status-only commit contract after semantic review state changes', () => {
@@ -220,20 +240,16 @@ describe('guarded daily source workflow', () => {
     expect(dailyWorkflow).not.toMatch(/git add\s+\.|git add\s+-A/);
   });
 
-  it('renders issue candidates from the complete daily audit artifact', () => {
-    const issueStep = dailyStepContaining('Create or update one Issue per source anomaly');
-    expect(issueStep).toContain('artifacts/source-audit.json');
-    expect(issueStep).toContain("Object.values(audit)");
-    expect(issueStep).toContain("['changed', 'temporary-error', 'unavailable'].includes(status.health)");
-    expect(issueStep).not.toContain('source-anomalies.json');
-  });
-
-  it('passes accepted and current-attempt content fingerprints to daily Issue candidates', () => {
-    const issueStep = dailyStepContaining('Create or update one Issue per source anomaly');
-
-    expect(issueStep).toContain('acceptedContentHash: status.contentHash');
-    expect(issueStep).toContain('attemptObservedContentHash: status.attemptObservedContentHash');
-    expect(issueStep).not.toContain('observedContentHash: status.observedContentHash');
+  it('delegates anomaly Issue behavior to the tested repository module', () => {
+    expect(dailyIssueScript).toBe([
+      'const upsertPath = `${process.env.GITHUB_WORKSPACE}/scripts/upsert-source-anomaly-issues.mjs`;',
+      'const { upsertSourceAnomalyIssues } = await import(upsertPath);',
+      'await upsertSourceAnomalyIssues({',
+      '  workspace: process.env.GITHUB_WORKSPACE,',
+      '  github,',
+      '  context,',
+      '});',
+    ].join('\n'));
   });
 
   it('keeps CI read-only and checks reverse-index consistency', () => {

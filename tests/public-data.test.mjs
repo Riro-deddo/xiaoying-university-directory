@@ -26,18 +26,24 @@ describe('public lazy-data build', () => {
   it('keeps every public university row joined to the current catalog state, note, and sources', async () => {
     const root = process.cwd();
     const readJson = async (...parts) => JSON.parse(await readFile(join(root, ...parts), 'utf8'));
-    const [catalog, sourceRecords, statuses, publicRecords] = await Promise.all([
+    const [catalog, sourceRecords, mastersCourseDirectories, statuses, publicRecords] = await Promise.all([
       readJson('src', 'data', 'universities.json'),
       readJson('src', 'data', 'sources.json'),
+      readJson('src', 'data', 'masters-course-directories.json'),
       readJson('src', 'data', 'status.json'),
       readJson('public', 'generated', 'universities.json'),
     ]);
     const publicById = new Map(publicRecords.map((record) => [record.id, record]));
     const sourceById = new Map(sourceRecords.map((source) => [source.id, source]));
+    const mastersByUniversityId = new Map(
+      mastersCourseDirectories.map((directory) => [directory.universityId, directory]),
+    );
 
+    expect(publicRecords).toHaveLength(101);
     expect(publicRecords.map((record) => record.id)).toEqual(catalog.map((university) => university.id));
     for (const university of catalog) {
       const publicRecord = publicById.get(university.id);
+      const mastersCourse = mastersByUniversityId.get(university.id);
       expect(publicRecord?.id, university.id).toBe(university.id);
       expect(publicRecord?.state, university.id).toBe(university.state);
       expect(publicRecord?.noteZh, university.id).toBe(university.noteZh);
@@ -45,7 +51,20 @@ describe('public lazy-data build', () => {
         ...sourceById.get(sourceId),
         status: statuses[sourceId],
       })));
+      expect(publicRecord?.sources, university.id).toHaveLength(university.sourceIds.length);
+      expect(publicRecord?.sources.map((source) => source.id), university.id).toEqual(university.sourceIds);
+      expect(publicRecord?.sources.map((source) => source.status), university.id)
+        .toEqual(university.sourceIds.map((sourceId) => statuses[sourceId]));
+      expect(publicRecord?.mastersCourse, university.id).toEqual({
+        ...mastersCourse,
+        ...(statuses[mastersCourse.id] ? { status: statuses[mastersCourse.id] } : {}),
+      });
     }
+
+    expect(mastersCourseDirectories).toHaveLength(101);
+    expect(new Set(mastersCourseDirectories.map((directory) => directory.universityId)))
+      .toEqual(new Set(catalog.map((university) => university.id)));
+    expect(await readdir(join(root, 'public', 'generated'))).not.toContain('masters-course-directories.json');
 
     expect(publicRecords.filter((record) => record.state === 'china-requirements')).toHaveLength(81);
     expect(publicRecords.filter((record) => record.state === 'pending').map((record) => record.id).sort())
@@ -175,6 +194,87 @@ describe('public lazy-data build', () => {
       rankings: {},
     });
     expect(await readdir(outputDir)).not.toContain('rankings.json');
+  });
+
+  it('writes a strictly joined course entry only inside each university record', async () => {
+    const outputDir = await mkdtemp(join(tmpdir(), 'xiaoying-public-masters-course-'));
+    const university = {
+      id: 'example-university',
+      nameZh: 'Example University',
+      nameEn: 'Example University',
+      aliases: [],
+      directoryCategory: 'qs-directory',
+      qsDirectory: { firstEdition: 2027, verifiedEdition: 2027, current: true },
+      state: 'pending',
+      officialDomain: 'https://example.edu',
+      sourceIds: [],
+    };
+    const mastersCourse = {
+      id: 'masters-example-university',
+      universityId: university.id,
+      labelZh: '查看全部硕士课程',
+      url: 'https://example.edu/postgraduate/courses',
+      pageTitle: 'Postgraduate courses',
+      reviewedAt: '2026-08-11',
+      requiredText: ['Postgraduate courses'],
+      monitorMode: 'page-identity',
+    };
+    const courseStatus = {
+      sourceId: mastersCourse.id,
+      health: 'changed',
+      checkedAt: '2026-08-11T03:00:00.000Z',
+    };
+
+    await buildPublicData({
+      outputDir,
+      universities: [university],
+      rankings: { releases: [], records: [] },
+      mastersCourseDirectories: [mastersCourse],
+      institutions: [],
+      requirements: [],
+      sources: [],
+      statuses: { [mastersCourse.id]: courseStatus },
+    });
+
+    const [record] = JSON.parse(await readFile(join(outputDir, 'universities.json'), 'utf8'));
+    expect(record.mastersCourse).toEqual({ ...mastersCourse, status: courseStatus });
+    expect(await readdir(outputDir)).not.toContain('masters-course-directories.json');
+  });
+
+  it.each([
+    ['missing', [], /missing.*example-university/i],
+    ['extra', [
+      { id: 'masters-example-university', universityId: 'example-university' },
+      { id: 'masters-extra-university', universityId: 'extra-university' },
+    ], /extra.*extra-university/i],
+    ['duplicate', [
+      { id: 'masters-example-university', universityId: 'example-university' },
+      { id: 'masters-example-university-copy', universityId: 'example-university' },
+    ], /duplicate.*example-university/i],
+  ])('rejects a %s masters-course mapping in the public builder', async (_case, mastersCourseDirectories, error) => {
+    const outputDir = await mkdtemp(join(tmpdir(), 'xiaoying-public-masters-course-invalid-'));
+    const university = {
+      id: 'example-university',
+      nameZh: 'Example University',
+      nameEn: 'Example University',
+      aliases: [],
+      directoryCategory: 'qs-directory',
+      qsDirectory: { firstEdition: 2027, verifiedEdition: 2027, current: true },
+      state: 'pending',
+      officialDomain: 'https://example.edu',
+      sourceIds: [],
+    };
+
+    await expect(buildPublicData({
+      outputDir,
+      universities: [university],
+      rankings: { releases: [], records: [] },
+      mastersCourseDirectories,
+      institutions: [],
+      requirements: [],
+      sources: [],
+      statuses: {},
+    })).rejects.toThrow(error);
   });
 
   it('publishes a source successful-check date on its joined university record', async () => {

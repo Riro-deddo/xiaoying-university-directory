@@ -13,7 +13,31 @@ function structuredSources(sources) {
   return sources.filter((source) => source.parser.mode !== 'link-only' && source.institutionRule.type !== 'none');
 }
 
-function joinedUniversityRecords(universities, rankings, sources, statuses) {
+function joinedMastersCourseDirectories(universities, directories, statuses) {
+  const universityIds = new Set(universities.map((university) => university.id));
+  const directoryByUniversityId = new Map();
+
+  for (const directory of directories) {
+    if (directoryByUniversityId.has(directory.universityId)) {
+      throw new Error(`Duplicate masters course directory for university ${directory.universityId}`);
+    }
+    if (!universityIds.has(directory.universityId)) {
+      throw new Error(`Extra masters course directory for university ${directory.universityId}`);
+    }
+    directoryByUniversityId.set(directory.universityId, directory);
+  }
+
+  return universities.map((university) => {
+    const directory = directoryByUniversityId.get(university.id);
+    if (!directory) throw new Error(`Missing masters course directory for university ${university.id}`);
+    return {
+      ...university,
+      mastersCourse: { ...directory, status: statuses[directory.id] },
+    };
+  });
+}
+
+function joinedUniversityRecords(universities, rankings, sources, statuses, mastersCourseDirectories) {
   const sourceById = new Map(sources.map((source) => [source.id, source]));
   const rankingsByUniversity = new Map();
   for (const record of rankings.records) {
@@ -23,7 +47,7 @@ function joinedUniversityRecords(universities, rankings, sources, statuses) {
     rankingsByUniversity.set(record.universityId, universityRankings);
   }
 
-  return universities.map(({ sourceIds, ...university }) => ({
+  const joined = universities.map(({ sourceIds, ...university }) => ({
     ...university,
     sources: sourceIds.map((sourceId) => {
       const source = sourceById.get(sourceId);
@@ -32,9 +56,22 @@ function joinedUniversityRecords(universities, rankings, sources, statuses) {
     }),
     rankings: { ...(rankingsByUniversity.get(university.id) ?? {}) },
   }));
+
+  return mastersCourseDirectories === undefined
+    ? joined
+    : joinedMastersCourseDirectories(joined, mastersCourseDirectories, statuses);
 }
 
-export async function buildPublicData({ outputDir, universities, rankings, institutions, requirements, sources, statuses }) {
+export async function buildPublicData({
+  outputDir,
+  universities,
+  rankings,
+  mastersCourseDirectories,
+  institutions,
+  requirements,
+  sources,
+  statuses,
+}) {
   const institutionById = new Map(institutions.map((institution) => [institution.id, institution]));
   const listsDir = join(outputDir, 'lists');
   await mkdir(listsDir, { recursive: true });
@@ -63,7 +100,11 @@ export async function buildPublicData({ outputDir, universities, rankings, insti
 
   const reverseIndex = buildReverseIndex({ institutions, requirements, sources, statuses });
   if (universities && rankings) {
-    await writeFile(join(outputDir, 'universities.json'), json(joinedUniversityRecords(universities, rankings, sources, statuses)), 'utf8');
+    await writeFile(
+      join(outputDir, 'universities.json'),
+      json(joinedUniversityRecords(universities, rankings, sources, statuses, mastersCourseDirectories)),
+      'utf8',
+    );
   }
   await writeFile(join(outputDir, 'institutions.json'), json(institutions), 'utf8');
   await writeFile(join(outputDir, 'reverse-index.json'), json(reverseIndex), 'utf8');
@@ -75,16 +116,24 @@ async function loadJson(...parts) {
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
-  const [universities, rankings, institutions, requirements, sources, statuses] = await Promise.all([
+  const [universities, rankings, mastersCourseDirectories, institutions, requirements, sources, statuses] = await Promise.all([
     loadJson('src', 'data', 'universities.json'),
     loadJson('src', 'data', 'rankings.json'),
+    loadJson('src', 'data', 'masters-course-directories.json'),
     loadJson('src', 'data', 'institutions.json'),
     loadJson('src', 'data', 'generated', 'requirements.json'),
     loadJson('src', 'data', 'sources.json'),
     loadJson('src', 'data', 'status.json'),
   ]);
   const result = await buildPublicData({
-    outputDir: join(root, 'public', 'generated'), universities, rankings, institutions, requirements, sources, statuses,
+    outputDir: join(root, 'public', 'generated'),
+    universities,
+    rankings,
+    mastersCourseDirectories,
+    institutions,
+    requirements,
+    sources,
+    statuses,
   });
   console.log(`Built ${result.listFiles} public list files, ${result.institutionRecords} institutions, and ${result.reverseIndexEntries} reverse-index entries.`);
 }
