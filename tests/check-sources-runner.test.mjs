@@ -3,12 +3,130 @@ import { mkdtemp, readFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { describe, expect, it, vi } from 'vitest';
-import { runSourceChecks } from '../scripts/check-sources.mjs';
+import { loadCheckTargets, runSourceChecks } from '../scripts/check-sources.mjs';
 
 const acceptedRequirementsHash = '073161e41bae112ec5f0bfbaf37abef49c5126b3292fd7a167cefe4a5ddf2c0c';
 const observedRequirementsHash = 'c41057ea19a882bf56861a2807edaab496db5baf9042189c59c0db39f2b27fe0';
+const now1 = new Date('2026-08-08T03:17:00.000Z');
+const now2 = new Date('2026-08-09T03:17:00.000Z');
 
 describe('check-sources command', () => {
+  it('merges China sources before masters directories and rejects duplicate target IDs', () => {
+    const chinaSources = [
+      { id: 'china-one', universityId: 'one', url: 'https://one.example/china' },
+      { id: 'china-two', universityId: 'two', url: 'https://two.example/china' },
+    ];
+    const mastersCourseDirectories = [
+      { id: 'masters-one', universityId: 'one', url: 'https://one.example/masters' },
+    ];
+
+    expect(loadCheckTargets({ chinaSources, mastersCourseDirectories }))
+      .toEqual([...chinaSources, ...mastersCourseDirectories]);
+    expect(() => loadCheckTargets({
+      chinaSources,
+      mastersCourseDirectories: [{ ...mastersCourseDirectories[0], id: 'china-two' }],
+    })).toThrow(/duplicate check target id: china-two/u);
+  });
+
+  it('rejects a non-HTTPS target before any check runs', () => {
+    expect(() => loadCheckTargets({
+      chinaSources: [{ id: 'china-one', universityId: 'one', url: 'http://one.example/china' }],
+      mastersCourseDirectories: [],
+    })).toThrow(/HTTPS/u);
+  });
+
+  it('does not persist an ordinary page identity timestamp refresh', async () => {
+    const temporaryRoot = await mkdtemp(join(tmpdir(), 'xiaoying-page-identity-noise-'));
+    const source = {
+      id: 'masters-one',
+      universityId: 'one',
+      url: 'https://one.example/masters',
+      monitorMode: 'page-identity',
+      requiredText: ['Postgraduate courses'],
+    };
+    const previousStatus = {
+      'masters-one': {
+        sourceId: 'masters-one',
+        health: 'ok',
+        checkedAt: now1.toISOString(),
+        lastSuccessfulAt: now1.toISOString(),
+        httpStatus: 200,
+        finalUrl: source.url,
+        consecutiveFailures: 0,
+      },
+    };
+
+    try {
+      const result = await runSourceChecks({
+        root: temporaryRoot,
+        sources: [source],
+        previous: previousStatus,
+        fetchImpl: vi.fn().mockResolvedValue(new Response('<h1>Postgraduate courses</h1>', { status: 200 })),
+        now: now2,
+        minimumGapMs: 0,
+      });
+
+      expect(result.statusChanged).toBe(false);
+      expect(result.status).toEqual(previousStatus);
+      expect(result.attempts['masters-one']).toMatchObject({
+        checkedAt: now2.toISOString(),
+        lastSuccessfulAt: now2.toISOString(),
+      });
+      expect(existsSync(join(temporaryRoot, 'src', 'data', 'status.json'))).toBe(false);
+    } finally {
+      await rm(temporaryRoot, { recursive: true, force: true });
+    }
+  });
+
+  it('records a failed target and continues checking the next target', async () => {
+    const temporaryRoot = await mkdtemp(join(tmpdir(), 'xiaoying-source-continuation-'));
+    const sources = [
+      {
+        id: 'masters-one',
+        universityId: 'one',
+        url: 'https://one.example/masters',
+        monitorMode: 'page-identity',
+        requiredText: ['Postgraduate courses'],
+      },
+      {
+        id: 'masters-two',
+        universityId: 'two',
+        url: 'https://two.example/masters',
+        monitorMode: 'page-identity',
+        requiredText: ['Postgraduate courses'],
+      },
+    ];
+    const fetchImpl = vi.fn()
+      .mockRejectedValueOnce(new TypeError('network unavailable'))
+      .mockResolvedValueOnce(new Response('<h1>Postgraduate courses</h1>', { status: 200 }));
+
+    try {
+      const result = await runSourceChecks({
+        root: temporaryRoot,
+        sources,
+        previous: {},
+        fetchImpl,
+        now: now2,
+        minimumGapMs: 0,
+      });
+
+      expect(fetchImpl).toHaveBeenCalledTimes(2);
+      expect(result.attempts['masters-one']).toMatchObject({
+        health: 'unchecked',
+        consecutiveFailures: 1,
+        lastAttemptError: 'network unavailable',
+      });
+      expect(result.attempts['masters-two']).toMatchObject({
+        health: 'ok',
+        consecutiveFailures: 0,
+      });
+      const audit = JSON.parse(await readFile(join(temporaryRoot, 'artifacts', 'source-audit.json'), 'utf8'));
+      expect(Object.keys(audit)).toEqual(['masters-one', 'masters-two']);
+    } finally {
+      await rm(temporaryRoot, { recursive: true, force: true });
+    }
+  });
+
   it('writes every attempt to an audit artifact and persists a successful check date', async () => {
     const temporaryRoot = await mkdtemp(join(tmpdir(), 'xiaoying-source-audit-'));
 

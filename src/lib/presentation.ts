@@ -5,6 +5,7 @@ import type {
   StrengthEvidence,
   SourceHealth,
   SourceStatus,
+  SourceWithStatus,
   UniversityState,
   UniversityWithStatus,
 } from './types';
@@ -116,4 +117,17 @@ export function sourceFreshnessCopy(status?: SourceStatus): string {
     return `最近检查：${status.checkedAt.slice(0, 10)}`;
   }
   return '尚无检查时间';
+}
+
+export function chinaSourceActionModel(sources: readonly SourceWithStatus[]): {
+  collapsed: boolean;
+  count: number;
+  label: string;
+} {
+  const count = sources.length;
+  return {
+    collapsed: count >= 3,
+    count,
+    label: count >= 3 ? `中国硕士入学要求（${count} 条）` : '中国硕士入学要求',
+  };
 }

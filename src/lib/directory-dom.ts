@@ -3,9 +3,9 @@ import type { DirectorySort, UniversityWithStatus } from './types';
 
 const directorySorts: DirectorySort[] = ['qs', 'the', 'name'];
 
-export function sortInitialDirectoryUniversities(
-  universities: UniversityWithStatus[],
-): UniversityWithStatus[] {
+export function sortInitialDirectoryUniversities<T extends UniversityWithStatus>(
+  universities: T[],
+): T[] {
   return [...universities].sort((left, right) => compareDirectoryUniversities(left, right, 'qs'));
 }
 

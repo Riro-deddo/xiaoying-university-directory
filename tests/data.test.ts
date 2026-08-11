@@ -1,16 +1,23 @@
 import { describe, expect, it } from 'vitest';
+import mastersCourseDirectories from '../src/data/masters-course-directories.json';
 import rankings from '../src/data/rankings.json';
 import sources from '../src/data/sources.json';
 import universitiesJson from '../src/data/universities.json';
 import {
   DataValidationError,
+  joinMastersCourseDirectories,
   joinUniversityStatuses,
   loadRankings,
   loadUniversities,
   validateOfficialSources,
   validateUniversities,
 } from '../src/lib/data';
-import type { OfficialSourceConfig, StatusMap, University } from '../src/lib/types';
+import type {
+  MastersCourseDirectory,
+  OfficialSourceConfig,
+  StatusMap,
+  University,
+} from '../src/lib/types';
 
 const universities: University[] = validateUniversities(universitiesJson);
 
@@ -153,6 +160,71 @@ describe('joinUniversityStatuses', () => {
   });
 });
 
+describe('joinMastersCourseDirectories', () => {
+  const directory: MastersCourseDirectory = {
+    id: 'masters-imperial',
+    universityId: validUniversity.id,
+    labelZh: '查看全部硕士课程',
+    url: 'https://www.imperial.ac.uk/study/courses/',
+    pageTitle: 'Postgraduate courses',
+    reviewedAt: '2026-08-11',
+    requiredText: ['Postgraduate courses'],
+    monitorMode: 'page-identity',
+  };
+  const chinaStatus = {
+    sourceId: validSource.id,
+    health: 'ok' as const,
+    checkedAt: '2026-08-10T03:00:00.000Z',
+  };
+  const courseStatus = {
+    sourceId: directory.id,
+    health: 'changed' as const,
+    checkedAt: '2026-08-11T03:00:00.000Z',
+  };
+  const statuses: StatusMap = {
+    [validSource.id]: chinaStatus,
+    [directory.id]: courseStatus,
+  };
+
+  it('joins exactly the current course-entry status without mutating either input', () => {
+    const universityRecords = joinUniversityStatuses([validUniversity], [validSource], statuses);
+    const originalUniversities = structuredClone(universityRecords);
+    const originalDirectories = structuredClone([directory]);
+
+    const [joined] = joinMastersCourseDirectories(universityRecords, [directory], statuses);
+
+    expect(joined.mastersCourse).toEqual({ ...directory, status: courseStatus });
+    expect(joined.sources[0].status).toEqual(chinaStatus);
+    expect(universityRecords).toEqual(originalUniversities);
+    expect([directory]).toEqual(originalDirectories);
+  });
+
+  it('rejects a missing university directory', () => {
+    const universityRecords = joinUniversityStatuses([validUniversity], [validSource], statuses);
+
+    expect(() => joinMastersCourseDirectories(universityRecords, [], statuses))
+      .toThrow(/missing.*imperial/i);
+  });
+
+  it('rejects an extra university directory', () => {
+    const universityRecords = joinUniversityStatuses([validUniversity], [validSource], statuses);
+
+    expect(() => joinMastersCourseDirectories(universityRecords, [
+      directory,
+      { ...directory, id: 'masters-extra', universityId: 'extra' },
+    ], statuses)).toThrow(/extra.*extra/i);
+  });
+
+  it('rejects duplicate directory university IDs even when stable IDs differ', () => {
+    const universityRecords = joinUniversityStatuses([validUniversity], [validSource], statuses);
+
+    expect(() => joinMastersCourseDirectories(universityRecords, [
+      directory,
+      { ...directory, id: 'masters-imperial-copy' },
+    ], statuses)).toThrow(/duplicate.*imperial/i);
+  });
+});
+
 describe('QS 2027 starter ranks', () => {
   it('matches the published QS 2027 positions', () => {
     const ranks = Object.fromEntries(
@@ -170,6 +242,31 @@ describe('QS 2027 starter ranks', () => {
 });
 
 describe('explicit directory scope', () => {
+  it('loads all 101 universities with one matching course entry and unchanged China sources', () => {
+    const loaded = loadUniversities();
+    const directoriesByUniversity = new Map(
+      mastersCourseDirectories.map((directory) => [directory.universityId, directory]),
+    );
+
+    expect(loaded).toHaveLength(101);
+    expect(new Set(loaded.map((university) => university.id)))
+      .toEqual(new Set(mastersCourseDirectories.map((directory) => directory.universityId)));
+    expect(loaded.every((university) => university.mastersCourse.universityId === university.id)).toBe(true);
+    expect(loaded.every((university) => university.sources.every((source) => !source.id.startsWith('masters-'))))
+      .toBe(true);
+
+    for (const universityId of [
+      'imperial-college-london',
+      'university-of-oxford',
+      'university-of-manchester',
+      'university-of-greenwich',
+      'royal-college-of-art',
+    ]) {
+      expect(loaded.find((university) => university.id === universityId)?.mastersCourse)
+        .toEqual({ ...directoriesByUniversity.get(universityId), status: undefined });
+    }
+  });
+
   it('includes 93 ranked universities and exactly eight approved specialist institutions', () => {
     const universities = loadUniversities();
     const specialistIds = universities
