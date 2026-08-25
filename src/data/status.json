@@ -1,8 +1,8 @@
 {
   "imperial-china": {
     "sourceId": "imperial-china",
-    "checkedAt": "2026-08-24T04:04:57.918Z",
-    "lastSuccessfulAt": "2026-08-24T04:04:57.918Z",
+    "checkedAt": "2026-08-25T04:00:42.774Z",
+    "lastSuccessfulAt": "2026-08-25T04:00:42.774Z",
     "httpStatus": 200,
     "finalUrl": "https://www.imperial.ac.uk/study/apply/postgraduate-doctoral/application-process/entry-requirements/accepted-qualifications/",
     "health": "changed",
@@ -11,42 +11,42 @@
   },
   "oxford-china": {
     "sourceId": "oxford-china",
-    "checkedAt": "2026-08-24T04:05:00.042Z",
+    "checkedAt": "2026-08-25T04:00:44.912Z",
     "httpStatus": 403,
     "finalUrl": "https://www.ox.ac.uk/admissions/graduate/international-applicants/international-qualifiations?source=applicationguide",
     "health": "unavailable",
-    "consecutiveFailures": 17
+    "consecutiveFailures": 18
   },
   "cambridge-china": {
     "sourceId": "cambridge-china",
-    "checkedAt": "2026-08-24T04:05:00.723Z",
-    "lastSuccessfulAt": "2026-08-24T04:05:00.723Z",
+    "checkedAt": "2026-08-25T04:00:45.563Z",
+    "lastSuccessfulAt": "2026-08-25T04:00:45.563Z",
     "health": "changed",
     "finalUrl": "https://www.postgraduate.study.cam.ac.uk/apply/before/international-qualifications",
     "consecutiveFailures": 0,
     "contentHash": "90ad411083808e80f707bb67f2cb1cf9f4c5ac884b6e3cdfe926b359a09a1bf5",
     "httpStatus": 200,
-    "etag": "W/\"1787488435\"",
-    "lastModified": "Sun, 23 Aug 2026 12:33:55 GMT",
-    "observedContentHash": "2923d4eac163476ef237939ead9a882f04ccb84a22de1e0595161e048558911a"
+    "etag": "W/\"1787574854\"",
+    "lastModified": "Mon, 24 Aug 2026 12:34:14 GMT",
+    "observedContentHash": "1e584d9b6b2edf0e960274c78c652f5a739b7948e5c6aca627de31857380cc54"
   },
   "ucl-china": {
     "sourceId": "ucl-china",
-    "checkedAt": "2026-08-24T04:05:01.461Z",
-    "lastSuccessfulAt": "2026-08-24T04:05:01.461Z",
+    "checkedAt": "2026-08-25T04:00:46.560Z",
+    "lastSuccessfulAt": "2026-08-25T04:00:46.560Z",
     "health": "changed",
     "finalUrl": "https://www.ucl.ac.uk/prospective-students/international/china",
     "consecutiveFailures": 0,
     "contentHash": "b65a203e86dc1a150a3e3f4dce5131cc23c3db92adb6a4b9ed9e0fecf99cb643",
     "httpStatus": 200,
-    "etag": "\"1787464435-1\"",
-    "lastModified": "Sun, 23 Aug 2026 05:53:55 GMT",
-    "observedContentHash": "8b8c1586015269987375273332830fbf7bf368e37c8e87a4d9b6bafeeb826f0b"
+    "etag": "\"1787551773-1\"",
+    "lastModified": "Mon, 24 Aug 2026 06:09:33 GMT",
+    "observedContentHash": "934d524f4d979a3a80e2e0f2bd54cc415d7b3c502658abeeea5959276105fcec"
   },
   "edinburgh-china": {
     "sourceId": "edinburgh-china",
-    "checkedAt": "2026-08-24T04:05:02.422Z",
-    "lastSuccessfulAt": "2026-08-24T04:05:02.422Z",
+    "checkedAt": "2026-08-25T04:00:47.649Z",
+    "lastSuccessfulAt": "2026-08-25T04:00:47.649Z",
     "health": "ok",
     "finalUrl": "https://edwebcontent.ed.ac.uk/sites/default/files/atoms/files/priority_list_of_chinese_universities.pdf",
     "consecutiveFailures": 0,
@@ -57,39 +57,39 @@
   },
   "kcl-china": {
     "sourceId": "kcl-china",
-    "checkedAt": "2026-08-24T04:05:03.444Z",
-    "lastSuccessfulAt": "2026-08-24T04:05:03.444Z",
-    "httpStatus": 304,
+    "checkedAt": "2026-08-25T04:00:48.289Z",
+    "lastSuccessfulAt": "2026-08-25T04:00:48.289Z",
+    "httpStatus": 200,
     "finalUrl": "https://www.kcl.ac.uk/study/postgraduate-taught/courses/china-and-globalisation-msc/requirements",
     "health": "changed",
-    "etag": "W/\"5b971-fPAZAprDFcvi+b8nvIyyq8b8Fzk\"",
+    "etag": "W/\"5b998-99CR2GvgZym2qcuhzKimSSdWr5k\"",
     "consecutiveFailures": 0,
-    "observedContentHash": "7580cb09cb00485854d99ff26eac1db3dde06922ae7edcbe2d192791988bae49"
+    "observedContentHash": "10832e3144d086a2846838b6c4f9ff2cfa6e49e0374bc92c632e7ac642355343"
   },
   "manchester-china": {
     "sourceId": "manchester-china",
-    "checkedAt": "2026-08-24T04:05:04.426Z",
-    "lastSuccessfulAt": "2026-08-24T04:05:04.426Z",
+    "checkedAt": "2026-08-25T04:00:50.224Z",
+    "lastSuccessfulAt": "2026-08-25T04:00:50.224Z",
     "httpStatus": 200,
     "finalUrl": "https://www.manchester.ac.uk/study/international/country-specific-information/china-mainland/",
     "health": "changed",
     "consecutiveFailures": 0,
-    "observedContentHash": "a80288e1e16c8b7caa464d4e37fb49a6229ae77aef5795ec62d8f010652d9c67"
+    "observedContentHash": "09ccb0774d8ecdf9ac59ee345defd6de43fc89d7014da6c17fa3e8db65e24e51"
   },
   "manchester-computer-science-china": {
     "sourceId": "manchester-computer-science-china",
-    "checkedAt": "2026-08-24T04:05:05.387Z",
-    "lastSuccessfulAt": "2026-08-24T04:05:05.387Z",
+    "checkedAt": "2026-08-25T04:00:51.513Z",
+    "lastSuccessfulAt": "2026-08-25T04:00:51.513Z",
     "httpStatus": 200,
     "finalUrl": "https://www.manchester.ac.uk/study/masters/courses/list/21575/msc-cyber-security/",
     "health": "changed",
     "consecutiveFailures": 0,
-    "observedContentHash": "92ff833b2efe4b65b3451a8310922e4366fa06e41429218379376385b183e6af"
+    "observedContentHash": "aeb7deafa4a7516e0d68513cd8866ba6686e5491129a3429fa140b84032fa797"
   },
   "manchester-law-china": {
     "sourceId": "manchester-law-china",
-    "checkedAt": "2026-08-24T04:05:06.448Z",
-    "lastSuccessfulAt": "2026-08-24T04:05:06.448Z",
+    "checkedAt": "2026-08-25T04:00:52.607Z",
+    "lastSuccessfulAt": "2026-08-25T04:00:52.607Z",
     "httpStatus": 200,
     "finalUrl": "https://www.humanities.manchester.ac.uk/law/study/international-students/country-specific-information/china/",
     "health": "ok",
@@ -98,8 +98,8 @@
   },
   "bristol-china": {
     "sourceId": "bristol-china",
-    "checkedAt": "2026-08-24T04:05:08.181Z",
-    "lastSuccessfulAt": "2026-08-24T04:05:08.181Z",
+    "checkedAt": "2026-08-25T04:00:54.677Z",
+    "lastSuccessfulAt": "2026-08-25T04:00:54.677Z",
     "health": "changed",
     "finalUrl": "https://www.bristol.ac.uk/international/countries/china/accepted-universities-in-china/",
     "consecutiveFailures": 0,
@@ -111,41 +111,41 @@
   },
   "lse-china": {
     "sourceId": "lse-china",
-    "checkedAt": "2026-08-24T04:05:09.127Z",
-    "lastSuccessfulAt": "2026-08-24T04:05:09.127Z",
+    "checkedAt": "2026-08-25T04:00:56.060Z",
+    "lastSuccessfulAt": "2026-08-25T04:00:56.060Z",
     "httpStatus": 200,
     "finalUrl": "https://www.lse.ac.uk/study-at-lse/international-students/china",
     "health": "changed",
-    "etag": "W/\"53f55-x/50Ntye2pwzW4fZEhwXYrN1xKA\"",
+    "etag": "W/\"53f71-QnITROUx0mqvzL7FMDg+Y2gwJ1s\"",
     "consecutiveFailures": 0,
-    "observedContentHash": "e194d57e436fb9ae18fa5d3c6ad2149dec6daa092910cc56f4412c4604ac82c3"
+    "observedContentHash": "f79b32013f36bf4851ec2bcc257541e6ef30ffdf67aa2a6828f1e7cb063e1762"
   },
   "warwick-china": {
     "sourceId": "warwick-china",
-    "checkedAt": "2026-08-24T04:05:11.565Z",
-    "lastSuccessfulAt": "2026-08-24T04:05:11.565Z",
+    "checkedAt": "2026-08-25T04:00:58.078Z",
+    "lastSuccessfulAt": "2026-08-25T04:00:58.078Z",
     "health": "changed",
     "finalUrl": "https://warwick.ac.uk/study/international/countryinformation/eastasia/china/china-entry-requirements/",
     "consecutiveFailures": 0,
     "contentHash": "0654d595dd02a08bee9807bc164ae4d321f5ea9d649aa62ebb575cb8e2c08592",
     "httpStatus": 200,
-    "etag": "\"/1787544312487/false/false/1786619534232/false/false/none\"",
+    "etag": "\"/1787630459211/false/false/1786619534232/false/false/none\"",
     "observedContentHash": "775334d92fa014c8cdb0e86b56b5cd58fd138a6f7398e94c5e3126d273c0cd30"
   },
   "birmingham-china": {
     "sourceId": "birmingham-china",
-    "checkedAt": "2026-08-24T04:05:13.187Z",
-    "lastSuccessfulAt": "2026-08-24T04:05:13.187Z",
+    "checkedAt": "2026-08-25T04:00:59.924Z",
+    "lastSuccessfulAt": "2026-08-25T04:00:59.924Z",
     "httpStatus": 200,
     "finalUrl": "https://www.birmingham.ac.uk/study/international/country/china",
     "health": "changed",
     "consecutiveFailures": 0,
-    "observedContentHash": "56ab11348db8dd1c07502149ae83e33d2cf3bcbe8e409145e455707d52c2d782"
+    "observedContentHash": "0355f05b0dde7beab9d52831879ed0c17572773bbf4ae39d074f39d9c843d506"
   },
   "leeds-china": {
     "sourceId": "leeds-china",
-    "checkedAt": "2026-08-24T04:05:14.781Z",
-    "lastSuccessfulAt": "2026-08-24T04:05:14.781Z",
+    "checkedAt": "2026-08-25T04:01:01.618Z",
+    "lastSuccessfulAt": "2026-08-25T04:01:01.618Z",
     "httpStatus": 200,
     "finalUrl": "https://www.leeds.ac.uk/dir-record/profiles/21834/china",
     "health": "changed",
@@ -154,8 +154,8 @@
   },
   "glasgow-china": {
     "sourceId": "glasgow-china",
-    "checkedAt": "2026-08-24T04:05:16.927Z",
-    "lastSuccessfulAt": "2026-08-24T04:05:16.927Z",
+    "checkedAt": "2026-08-25T04:01:04.225Z",
+    "lastSuccessfulAt": "2026-08-25T04:01:04.225Z",
     "health": "ok",
     "finalUrl": "https://www.gla.ac.uk/media/Media_1221495_smxx.pdf",
     "consecutiveFailures": 0,
@@ -166,61 +166,61 @@
   },
   "sheffield-china": {
     "sourceId": "sheffield-china",
-    "checkedAt": "2026-08-24T04:05:18.093Z",
-    "lastSuccessfulAt": "2026-08-24T04:05:18.093Z",
+    "checkedAt": "2026-08-25T04:01:05.620Z",
+    "lastSuccessfulAt": "2026-08-25T04:01:05.620Z",
     "health": "changed",
     "finalUrl": "https://sheffield.ac.uk/international/entry-requirements/china/ranking-list",
     "consecutiveFailures": 0,
     "contentHash": "72a8a230f02aaca44280b36f95022b756ed7e7847c09b5592cdfa3a616e2b83c",
     "httpStatus": 200,
-    "etag": "\"1787482885-gzip\"",
-    "lastModified": "Sun, 23 Aug 2026 11:01:25 GMT",
-    "observedContentHash": "57dad369a6813f8f98264f764b2ebf47509a094538b50e0d80090d51dcfaa7ba"
+    "etag": "\"1787593257-gzip\"",
+    "lastModified": "Mon, 24 Aug 2026 17:40:57 GMT",
+    "observedContentHash": "2b590ec5afeaf57a02326661c7764e7e05fd68c695ac24ace5261fa0e8ee6d5c"
   },
   "durham-china": {
     "sourceId": "durham-china",
-    "checkedAt": "2026-08-24T04:05:20.021Z",
+    "checkedAt": "2026-08-25T04:01:08.058Z",
     "httpStatus": 403,
     "finalUrl": "https://www.durham.ac.uk/study/international/your-country/china/",
     "health": "unavailable",
-    "consecutiveFailures": 17
+    "consecutiveFailures": 18
   },
   "nottingham-china": {
     "sourceId": "nottingham-china",
-    "checkedAt": "2026-08-24T04:05:20.982Z",
-    "lastSuccessfulAt": "2026-08-24T04:05:20.982Z",
+    "checkedAt": "2026-08-25T04:01:08.870Z",
+    "lastSuccessfulAt": "2026-08-25T04:01:08.870Z",
     "health": "changed",
     "finalUrl": "https://www.nottingham.ac.uk/studywithus/international-applicants/country-info/countryinformation/china-institution-list.aspx",
     "consecutiveFailures": 0,
     "contentHash": "4c39554afa7d9d6c592c82effa60b4e41deb6c1bebb0785b6f083222095d05a7",
     "httpStatus": 200,
-    "observedContentHash": "c3386ff007e3eab1936a422c8dd01d3fbc22d3eb7e7390b14cc41164f45c3d04"
+    "observedContentHash": "20a199452037c2c7eab609280a6c1937bcfa8a0eea5d8b90dd4b5327e0f49473"
   },
   "qmul-china": {
     "sourceId": "qmul-china",
-    "checkedAt": "2026-08-24T04:05:22.639Z",
+    "checkedAt": "2026-08-25T04:01:10.721Z",
     "httpStatus": 403,
     "finalUrl": "https://www.qmul.ac.uk/international-students/regions/east-asia/entry-requirements/mainland-china/",
     "health": "unavailable",
-    "consecutiveFailures": 17
+    "consecutiveFailures": 18
   },
   "southampton-china": {
     "sourceId": "southampton-china",
-    "checkedAt": "2026-08-24T04:05:23.566Z",
-    "lastSuccessfulAt": "2026-08-24T04:05:23.566Z",
+    "checkedAt": "2026-08-25T04:01:11.486Z",
+    "lastSuccessfulAt": "2026-08-25T04:01:11.486Z",
     "health": "changed",
     "finalUrl": "https://www.southampton.ac.uk/international/entry-qualification-equivalencies/china/postgraduate-taught-tier-list",
     "consecutiveFailures": 0,
     "contentHash": "7d4863b4e9280af44e286eb72c7e57075444faaca0a6729da98385b04310ca0d",
     "httpStatus": 200,
-    "etag": "W/\"1787474636\"",
-    "lastModified": "Sun, 23 Aug 2026 08:43:56 GMT",
-    "observedContentHash": "9f9bb82f39d2e6d4a108725abf0a7fb32f1998868ab2490944212bed7740d159"
+    "etag": "W/\"1787587744\"",
+    "lastModified": "Mon, 24 Aug 2026 16:09:04 GMT",
+    "observedContentHash": "15706a5cb3d632d1cc621cf309d1e596797b5ee23286d27eca735e6d7245e97e"
   },
   "st-andrews-china": {
     "sourceId": "st-andrews-china",
-    "checkedAt": "2026-08-24T04:05:26.020Z",
-    "lastSuccessfulAt": "2026-08-24T04:05:26.020Z",
+    "checkedAt": "2026-08-25T04:01:13.411Z",
+    "lastSuccessfulAt": "2026-08-25T04:01:13.411Z",
     "httpStatus": 200,
     "finalUrl": "https://www.st-andrews.ac.uk/subjects/entry/china/",
     "health": "changed",
@@ -229,18 +229,18 @@
   },
   "bath-china": {
     "sourceId": "bath-china",
-    "checkedAt": "2026-08-24T04:05:27.750Z",
-    "lastSuccessfulAt": "2026-08-24T04:05:27.750Z",
+    "checkedAt": "2026-08-25T04:01:14.973Z",
+    "lastSuccessfulAt": "2026-08-25T04:01:14.973Z",
     "httpStatus": 200,
     "finalUrl": "https://www.bath.ac.uk/corporate-information/entry-requirements-for-international-students/",
     "health": "changed",
     "consecutiveFailures": 0,
-    "observedContentHash": "3548f04d419b4a997a2fc8f3fc4a16cdeb8c97c527ea2c157792d32f349c402d"
+    "observedContentHash": "9aaf7606ec67609b2a6c9365f146eae0ebc15a2712452bb3bfc8a5576febdf85"
   },
   "exeter-china": {
     "sourceId": "exeter-china",
-    "checkedAt": "2026-08-24T04:05:29.467Z",
-    "lastSuccessfulAt": "2026-08-24T04:05:29.467Z",
+    "checkedAt": "2026-08-25T04:01:16.741Z",
+    "lastSuccessfulAt": "2026-08-25T04:01:16.741Z",
     "httpStatus": 304,
     "finalUrl": "https://www.exeter.ac.uk/international-students/china/",
     "health": "ok",
@@ -250,18 +250,18 @@
   },
   "liverpool-china": {
     "sourceId": "liverpool-china",
-    "checkedAt": "2026-08-24T04:05:30.406Z",
-    "lastSuccessfulAt": "2026-08-24T04:05:30.406Z",
+    "checkedAt": "2026-08-25T04:01:17.505Z",
+    "lastSuccessfulAt": "2026-08-25T04:01:17.505Z",
     "httpStatus": 200,
     "finalUrl": "https://www.liverpool.ac.uk/international/countries/chinamainland.php",
     "health": "changed",
     "consecutiveFailures": 0,
-    "observedContentHash": "dd7b75f50215885e52524a53a676f17bfbe1eb79a64010fe56ffef201df4de19"
+    "observedContentHash": "ac135274072d519fc10c377493d89ec3da9c06ef28177afa2414744d71827520"
   },
   "newcastle-china": {
     "sourceId": "newcastle-china",
-    "checkedAt": "2026-08-24T04:05:32.460Z",
-    "lastSuccessfulAt": "2026-08-24T04:05:32.460Z",
+    "checkedAt": "2026-08-25T04:01:19.683Z",
+    "lastSuccessfulAt": "2026-08-25T04:01:19.683Z",
     "httpStatus": 200,
     "finalUrl": "https://www.ncl.ac.uk/international/country/china/",
     "health": "changed",
@@ -272,8 +272,8 @@
   },
   "york-china": {
     "sourceId": "york-china",
-    "checkedAt": "2026-08-24T04:05:34.422Z",
-    "lastSuccessfulAt": "2026-08-24T04:05:34.422Z",
+    "checkedAt": "2026-08-25T04:01:21.854Z",
+    "lastSuccessfulAt": "2026-08-25T04:01:21.854Z",
     "httpStatus": 304,
     "finalUrl": "https://www.york.ac.uk/study/international/your-country/china/",
     "health": "changed",
@@ -284,56 +284,56 @@
   },
   "lancaster-china": {
     "sourceId": "lancaster-china",
-    "checkedAt": "2026-08-24T04:05:35.087Z",
-    "lastSuccessfulAt": "2026-08-24T04:05:35.087Z",
+    "checkedAt": "2026-08-25T04:01:22.525Z",
+    "lastSuccessfulAt": "2026-08-25T04:01:22.525Z",
     "httpStatus": 200,
     "finalUrl": "https://www.lancaster.ac.uk/study/entry-requirements/postgraduate-qualifications/?country=China",
     "health": "changed",
     "consecutiveFailures": 0,
-    "observedContentHash": "e6a79658960a87056ce802a2c8bea2adaa50ce886487260dc2c53e3d628f27b8"
+    "observedContentHash": "d01a5a4e097af78a96eeccdab36876169c909810061ecc113ff99d15467d3a58"
   },
   "qub-china": {
     "sourceId": "qub-china",
-    "checkedAt": "2026-08-24T04:05:36.963Z",
+    "checkedAt": "2026-08-25T04:01:24.650Z",
     "httpStatus": 403,
     "finalUrl": "https://www.qub.ac.uk/Study/international-students/your-country/china/",
     "health": "unavailable",
-    "consecutiveFailures": 17
+    "consecutiveFailures": 18
   },
   "cardiff-china": {
     "sourceId": "cardiff-china",
-    "checkedAt": "2026-08-24T04:05:37.775Z",
+    "checkedAt": "2026-08-25T04:01:25.285Z",
     "httpStatus": 403,
     "finalUrl": "https://www.cardiff.ac.uk/study/international/your-country/asia/china/entry-requirements",
     "health": "unavailable",
-    "consecutiveFailures": 17
+    "consecutiveFailures": 18
   },
   "reading-china": {
     "sourceId": "reading-china",
-    "checkedAt": "2026-08-24T04:05:38.873Z",
-    "lastSuccessfulAt": "2026-08-24T04:05:38.873Z",
+    "checkedAt": "2026-08-25T04:01:26.239Z",
+    "lastSuccessfulAt": "2026-08-25T04:01:26.239Z",
     "httpStatus": 200,
     "finalUrl": "https://www.reading.ac.uk/ready-to-study/international-and-eu/country-specific-information/country-specific-china",
     "health": "changed",
     "consecutiveFailures": 0,
-    "observedContentHash": "3c15ad2730fa51020fe37b7de8f36b5853539f98bfce0d7a877c0e7d34333932"
+    "observedContentHash": "777b81d233c75bba3f250a12a9e6da670b7ecfd8cb31986de5ac0e2185571cae"
   },
   "lbs-mim-entry": {
     "sourceId": "lbs-mim-entry",
-    "checkedAt": "2026-08-24T04:05:41.305Z",
-    "lastSuccessfulAt": "2026-08-24T04:05:41.305Z",
+    "checkedAt": "2026-08-25T04:01:28.898Z",
+    "lastSuccessfulAt": "2026-08-25T04:01:28.898Z",
     "httpStatus": 200,
     "finalUrl": "https://www.london.edu/masters-degrees/masters-in-management/apply",
     "health": "changed",
-    "etag": "W/\"149cp34t3h4c4js-df\"",
+    "etag": "W/\"13mbkyxoabsc4lq-df\"",
     "consecutiveFailures": 0,
-    "observedContentHash": "0e8037ef9398c25a1346d1fb4b2d0375f28b438af0d299f08175179254d99b1e"
+    "observedContentHash": "d1633b299fcc8b16a0a43ee23bb224e52c9e34afcadc8253c27c80174bfc5664"
   },
   "lshtm-china-entry": {
     "sourceId": "lshtm-china-entry",
     "health": "unavailable",
-    "consecutiveFailures": 14,
-    "checkedAt": "2026-08-24T04:05:42.860Z",
+    "consecutiveFailures": 15,
+    "checkedAt": "2026-08-25T04:01:30.748Z",
     "httpStatus": 403,
     "finalUrl": "https://www.lshtm.ac.uk/study/international/country-region-information/china"
   },
@@ -341,27 +341,27 @@
     "sourceId": "cranfield-china-entry",
     "health": "changed",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:05:43.518Z",
-    "lastSuccessfulAt": "2026-08-24T04:05:43.518Z",
+    "checkedAt": "2026-08-25T04:01:31.405Z",
+    "lastSuccessfulAt": "2026-08-25T04:01:31.405Z",
     "httpStatus": 200,
     "finalUrl": "https://www.cranfield.ac.uk/china",
-    "observedContentHash": "9e08775d9546607660aadeb2a3bd934d9cc21889362d9f1e4b2b25e6228cb792"
+    "observedContentHash": "215b5a039e5e60b3335d1d865096e07e7824d808d73ab38385bd8f3c002c1ea2"
   },
   "rca-postgraduate-entry": {
     "sourceId": "rca-postgraduate-entry",
     "health": "changed",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:05:45.487Z",
-    "lastSuccessfulAt": "2026-08-24T04:05:45.487Z",
+    "checkedAt": "2026-08-25T04:01:33.556Z",
+    "lastSuccessfulAt": "2026-08-25T04:01:33.556Z",
     "httpStatus": 200,
     "finalUrl": "https://www.rca.ac.uk/study/apply-to-study/",
-    "observedContentHash": "e8901cf687c85f04a825db7982c6a06dfae48a9f98e47909753a49fd8e843461"
+    "observedContentHash": "a52e24ac8e43292265792a31f789f56efe47a9e65e1ea2708c13d8a45bc268ee"
   },
   "rvc-international-entry": {
     "sourceId": "rvc-international-entry",
     "health": "unavailable",
-    "consecutiveFailures": 14,
-    "checkedAt": "2026-08-24T04:05:47.940Z",
+    "consecutiveFailures": 15,
+    "checkedAt": "2026-08-25T04:01:36.938Z",
     "httpStatus": 403,
     "finalUrl": "https://www.rvc.ac.uk/study/international-students/how-to-apply"
   },
@@ -369,8 +369,8 @@
     "sourceId": "rcm-china-entry",
     "health": "ok",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:05:49.065Z",
-    "lastSuccessfulAt": "2026-08-24T04:05:49.065Z",
+    "checkedAt": "2026-08-25T04:01:38.195Z",
+    "lastSuccessfulAt": "2026-08-25T04:01:38.195Z",
     "httpStatus": 200,
     "finalUrl": "https://www.rcm.ac.uk/international/china/",
     "observedContentHash": "3e856d80495da4945fca72c558e8979251f97af49b235fe757b9c693f36a3f4a"
@@ -378,8 +378,8 @@
   "icr-msc-oncology-entry": {
     "sourceId": "icr-msc-oncology-entry",
     "health": "unavailable",
-    "consecutiveFailures": 14,
-    "checkedAt": "2026-08-24T04:05:50.657Z",
+    "consecutiveFailures": 15,
+    "checkedAt": "2026-08-25T04:01:40.249Z",
     "httpStatus": 403,
     "finalUrl": "https://www.icr.ac.uk/study-and-careers/opportunities-for-clinicians/msc-in-oncology"
   },
@@ -387,20 +387,20 @@
     "sourceId": "lstm-postgraduate-entry",
     "health": "changed",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:05:51.315Z",
-    "lastSuccessfulAt": "2026-08-24T04:05:51.315Z",
+    "checkedAt": "2026-08-25T04:01:40.910Z",
+    "lastSuccessfulAt": "2026-08-25T04:01:40.910Z",
     "httpStatus": 200,
     "finalUrl": "https://lstmed.ac.uk/study/",
-    "etag": "W/\"6a8b2f37-2b3ba\"",
-    "lastModified": "Sun, 23 Aug 2026 17:34:47 GMT",
-    "observedContentHash": "aa88e59c76c699aca33b1c1fc85822dfd8289a62ecac94562ad5ef7e37036463"
+    "etag": "W/\"6a8cf070-2f1e8\"",
+    "lastModified": "Tue, 25 Aug 2026 01:31:28 GMT",
+    "observedContentHash": "e8325d838af1d4e72fec13f377b62460d9ee20c39dbe994e09e78e440898fb97"
   },
   "loughborough-china-institution-lookup": {
     "sourceId": "loughborough-china-institution-lookup",
     "health": "changed",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:05:53.155Z",
-    "lastSuccessfulAt": "2026-08-24T04:05:53.155Z",
+    "checkedAt": "2026-08-25T04:01:42.767Z",
+    "lastSuccessfulAt": "2026-08-25T04:01:42.767Z",
     "httpStatus": 304,
     "finalUrl": "https://www.lboro.ac.uk/study/postgraduate/entry-requirements-china/",
     "etag": "\"4a608-6593c4add12c0-gzip\"",
@@ -411,8 +411,8 @@
     "sourceId": "strathclyde-china-entry",
     "health": "changed",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:05:54.414Z",
-    "lastSuccessfulAt": "2026-08-24T04:05:54.414Z",
+    "checkedAt": "2026-08-25T04:01:44.128Z",
+    "lastSuccessfulAt": "2026-08-25T04:01:44.128Z",
     "httpStatus": 200,
     "finalUrl": "https://www.strath.ac.uk/studywithus/internationalstudents/entryrequirements/",
     "observedContentHash": "78d296feaedab874055027da1c2e2d28072215066041db4bf969683c16dda3c5"
@@ -421,20 +421,20 @@
     "sourceId": "surrey-china-entry",
     "health": "changed",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:05:56.067Z",
-    "lastSuccessfulAt": "2026-08-24T04:05:56.067Z",
+    "checkedAt": "2026-08-25T04:01:45.978Z",
+    "lastSuccessfulAt": "2026-08-25T04:01:45.978Z",
     "httpStatus": 200,
     "finalUrl": "https://www.surrey.ac.uk/china/entry-requirements",
-    "etag": "\"1787544282\"",
-    "lastModified": "Mon, 24 Aug 2026 04:04:42 GMT",
-    "observedContentHash": "a5bb343df91557663150553c4ae934771727e09b5889e5daba15b957729190bf"
+    "etag": "\"1787630187\"",
+    "lastModified": "Tue, 25 Aug 2026 03:56:27 GMT",
+    "observedContentHash": "4ee418012a761cf94ce64d82388eac2b5a73ac5dd1e913702fbfbb00dab77d7d"
   },
   "sussex-china-entry": {
     "sourceId": "sussex-china-entry",
     "health": "ok",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:05:58.322Z",
-    "lastSuccessfulAt": "2026-08-24T04:05:58.322Z",
+    "checkedAt": "2026-08-25T04:01:48.532Z",
+    "lastSuccessfulAt": "2026-08-25T04:01:48.532Z",
     "httpStatus": 200,
     "finalUrl": "https://www.sussex.ac.uk/study/international-students/information-by-country/china",
     "observedContentHash": "f25cfc33f7b8ddbb1e6e9bd6b96acdb7c5bdefb1fe86e6970209330e1a40c88e"
@@ -442,8 +442,8 @@
   "leicester-china-entry": {
     "sourceId": "leicester-china-entry",
     "health": "unavailable",
-    "consecutiveFailures": 14,
-    "checkedAt": "2026-08-24T04:06:00.391Z",
+    "consecutiveFailures": 15,
+    "checkedAt": "2026-08-25T04:01:50.242Z",
     "httpStatus": 403,
     "finalUrl": "https://le.ac.uk/study/international-students/countries/asia/china"
   },
@@ -451,38 +451,38 @@
     "sourceId": "swansea-china-pgt-entry",
     "health": "changed",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:06:01.296Z",
-    "lastSuccessfulAt": "2026-08-24T04:06:01.296Z",
+    "checkedAt": "2026-08-25T04:01:51.026Z",
+    "lastSuccessfulAt": "2026-08-25T04:01:51.026Z",
     "httpStatus": 200,
     "finalUrl": "https://www.swansea.ac.uk/postgraduate/apply/entry-requirements/country-specific/",
-    "observedContentHash": "b5f42f910f5fd953463516efed3a924f32b889f1b53812686ba4f30fce6d1449"
+    "observedContentHash": "ab117b091a589cf1e6ed0b98b3a5f4ec7a7856f5344f5bffa33ad4e4e5798d3f"
   },
   "heriot-watt-china-pgt-entry": {
     "sourceId": "heriot-watt-china-pgt-entry",
     "health": "changed",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:06:03.104Z",
-    "lastSuccessfulAt": "2026-08-24T04:06:03.104Z",
+    "checkedAt": "2026-08-25T04:01:53.272Z",
+    "lastSuccessfulAt": "2026-08-25T04:01:53.272Z",
     "httpStatus": 200,
     "finalUrl": "https://www.hw.ac.uk/china/apply-now/postgraduate-programmes",
-    "observedContentHash": "4734c861c1e0595dab076f0fe2fb00ff9e0a9972335224332b514e18311bf1bd"
+    "observedContentHash": "f31b3eee97e84a0e8d5fbb735823223d625d0c6cf3e08dc5d59cbf10a42851c0"
   },
   "brunel-china-entry": {
     "sourceId": "brunel-china-entry",
     "health": "changed",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:06:04.158Z",
-    "lastSuccessfulAt": "2026-08-24T04:06:04.158Z",
+    "checkedAt": "2026-08-25T04:01:54.301Z",
+    "lastSuccessfulAt": "2026-08-25T04:01:54.301Z",
     "httpStatus": 200,
     "finalUrl": "https://www.brunel.ac.uk/international/your-country-and-region/China",
-    "observedContentHash": "fb1ea8fc13ae8d29fa7f6db0776aa0448c98cdda0a777f31a298fc9f64a15257"
+    "observedContentHash": "c3153fb5f40fc23d12afe99358679a62c5459272775914aa8026adb059e4567d"
   },
   "birkbeck-china-entry": {
     "sourceId": "birkbeck-china-entry",
     "health": "ok",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:06:05.887Z",
-    "lastSuccessfulAt": "2026-08-24T04:06:05.887Z",
+    "checkedAt": "2026-08-25T04:01:55.934Z",
+    "lastSuccessfulAt": "2026-08-25T04:01:55.934Z",
     "httpStatus": 200,
     "finalUrl": "https://www.bbk.ac.uk/international/country-region-information/china",
     "observedContentHash": "ec57eeb844db5029b7dfd65d768123a36f6208de2d7192666d6664f9940bc251"
@@ -490,8 +490,8 @@
   "city-st-georges-international-commercial-law-china": {
     "sourceId": "city-st-georges-international-commercial-law-china",
     "health": "unavailable",
-    "consecutiveFailures": 14,
-    "checkedAt": "2026-08-24T04:06:07.679Z",
+    "consecutiveFailures": 15,
+    "checkedAt": "2026-08-25T04:01:58.086Z",
     "httpStatus": 403,
     "finalUrl": "https://www.citystgeorges.ac.uk/prospective-students/courses/postgraduate/international-commercial-law-llm/2026"
   },
@@ -499,8 +499,8 @@
     "sourceId": "kent-china-requirements",
     "health": "changed",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:06:08.342Z",
-    "lastSuccessfulAt": "2026-08-24T04:06:08.342Z",
+    "checkedAt": "2026-08-25T04:01:58.755Z",
+    "lastSuccessfulAt": "2026-08-25T04:01:58.755Z",
     "httpStatus": 200,
     "finalUrl": "https://www.kent.ac.uk/international/countries/china",
     "observedContentHash": "8b70e49dc4781229736c8864109825ce70b8bddb0926d825a81b03a2b5f383a2"
@@ -509,37 +509,37 @@
     "sourceId": "aston-china-requirements",
     "health": "changed",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:06:10.174Z",
-    "lastSuccessfulAt": "2026-08-24T04:06:10.174Z",
+    "checkedAt": "2026-08-25T04:02:00.791Z",
+    "lastSuccessfulAt": "2026-08-25T04:02:00.791Z",
     "httpStatus": 200,
     "finalUrl": "https://www.aston.ac.uk/international/aston-in-your-country/north-east-asia/china",
-    "etag": "W/\"1787544284\"",
-    "lastModified": "Mon, 24 Aug 2026 04:04:44 GMT",
+    "etag": "W/\"1787630365\"",
+    "lastModified": "Tue, 25 Aug 2026 03:59:25 GMT",
     "observedContentHash": "ae82a6dfc7a6e35bdd076f0f4a62462479c6480cc29a713444481182e80a5b1f"
   },
   "essex-china-requirements": {
     "sourceId": "essex-china-requirements",
     "health": "changed",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:06:12.222Z",
-    "lastSuccessfulAt": "2026-08-24T04:06:12.222Z",
+    "checkedAt": "2026-08-25T04:02:03.252Z",
+    "lastSuccessfulAt": "2026-08-25T04:02:03.252Z",
     "httpStatus": 200,
     "finalUrl": "https://www.essex.ac.uk/international/country-specific-information/china",
-    "observedContentHash": "dc39b1d790b9b84da858af73d9e12e804b1adb32363cd12a9402464fcfa9ec57"
+    "observedContentHash": "74f06a097ddda167c1f5e5880e7fd1c1d916782aa7c2265013583359de5b31fc"
   },
   "dundee-china-requirements": {
     "sourceId": "dundee-china-requirements",
     "health": "unavailable",
-    "consecutiveFailures": 14,
-    "checkedAt": "2026-08-24T04:06:14.036Z",
+    "consecutiveFailures": 15,
+    "checkedAt": "2026-08-25T04:02:05.265Z",
     "httpStatus": 403,
     "finalUrl": "https://www.dundee.ac.uk/countries/china"
   },
   "dundee-international-business-management-china-requirements": {
     "sourceId": "dundee-international-business-management-china-requirements",
     "health": "unavailable",
-    "consecutiveFailures": 14,
-    "checkedAt": "2026-08-24T04:06:14.687Z",
+    "consecutiveFailures": 15,
+    "checkedAt": "2026-08-25T04:02:05.920Z",
     "httpStatus": 403,
     "finalUrl": "https://www.dundee.ac.uk/postgraduate/international-business-management/entry-requirements/all"
   },
@@ -547,20 +547,20 @@
     "sourceId": "soas-china-requirements",
     "health": "changed",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:06:15.346Z",
-    "lastSuccessfulAt": "2026-08-24T04:06:15.346Z",
+    "checkedAt": "2026-08-25T04:02:06.561Z",
+    "lastSuccessfulAt": "2026-08-25T04:02:06.561Z",
     "httpStatus": 200,
     "finalUrl": "https://www.soas.ac.uk/international/information-region/information-prospective-students-china",
-    "etag": "\"1787544285\"",
-    "lastModified": "Mon, 24 Aug 2026 04:04:45 GMT",
+    "etag": "\"1787630526\"",
+    "lastModified": "Tue, 25 Aug 2026 04:02:06 GMT",
     "observedContentHash": "98cb3ac59e124e082bd0c54629f72dd8696b5a1cded2f50cf8b9f3660da449d9"
   },
   "royal-holloway-china-requirements": {
     "sourceId": "royal-holloway-china-requirements",
     "health": "changed",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:06:16.237Z",
-    "lastSuccessfulAt": "2026-08-24T04:06:16.237Z",
+    "checkedAt": "2026-08-25T04:02:09.006Z",
+    "lastSuccessfulAt": "2026-08-25T04:02:09.006Z",
     "httpStatus": 200,
     "finalUrl": "https://www.royalholloway.ac.uk/studying-here/international-students/find-your-country/china/",
     "observedContentHash": "405e9ecf4de730c5ba8b0194b7f1067561cd287789b74d92dabb87afc1457d27"
@@ -569,8 +569,8 @@
     "sourceId": "bradford-china-requirements",
     "health": "ok",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:06:19.810Z",
-    "lastSuccessfulAt": "2026-08-24T04:06:19.810Z",
+    "checkedAt": "2026-08-25T04:02:10.870Z",
+    "lastSuccessfulAt": "2026-08-25T04:02:10.870Z",
     "httpStatus": 200,
     "finalUrl": "https://www.bradford.ac.uk/international/country/china/",
     "observedContentHash": "9160f9ce1db99798ef71dd31bf6a99c68f712599b1098e21c9fd9072d7d4d4be"
@@ -579,8 +579,8 @@
     "sourceId": "huddersfield-china-requirements",
     "health": "changed",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:06:21.415Z",
-    "lastSuccessfulAt": "2026-08-24T04:06:21.415Z",
+    "checkedAt": "2026-08-25T04:02:12.611Z",
+    "lastSuccessfulAt": "2026-08-25T04:02:12.611Z",
     "httpStatus": 200,
     "finalUrl": "https://london.hud.ac.uk/how-to-apply/entry-requirements",
     "etag": "W/\"ensdercicu4i7m\"",
@@ -590,8 +590,8 @@
     "sourceId": "northumbria-china-requirements",
     "health": "redirected",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:06:22.270Z",
-    "lastSuccessfulAt": "2026-08-24T04:06:22.270Z",
+    "checkedAt": "2026-08-25T04:02:13.583Z",
+    "lastSuccessfulAt": "2026-08-25T04:02:13.583Z",
     "httpStatus": 304,
     "finalUrl": "https://www.northumbria.ac.uk/-/media/documents/agent%20zone/publication%20359527china%20approved.ashx",
     "etag": "0207a39061484111959ceedcf667f434",
@@ -602,8 +602,8 @@
     "sourceId": "stirling-china-requirements",
     "health": "changed",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:06:25.081Z",
-    "lastSuccessfulAt": "2026-08-24T04:06:25.081Z",
+    "checkedAt": "2026-08-25T04:02:16.720Z",
+    "lastSuccessfulAt": "2026-08-25T04:02:16.720Z",
     "httpStatus": 200,
     "finalUrl": "https://www.stir.ac.uk/international/international-students/international-entry-requirements/",
     "etag": "\"30764-659044e26f870-gzip\"",
@@ -614,51 +614,51 @@
     "sourceId": "bangor-china-requirements",
     "health": "changed",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:06:26.770Z",
-    "lastSuccessfulAt": "2026-08-24T04:06:26.770Z",
+    "checkedAt": "2026-08-25T04:02:18.406Z",
+    "lastSuccessfulAt": "2026-08-25T04:02:18.406Z",
     "httpStatus": 200,
     "finalUrl": "https://www.bangor.ac.uk/international/countries/china",
-    "etag": "\"1787544287-gzip\"",
-    "lastModified": "Mon, 24 Aug 2026 04:04:47 GMT",
-    "observedContentHash": "06c728dd88d83eb7a1d80823dba139a2c105031b09531b71584621769ccc9a54"
+    "etag": "\"1787629570-gzip\"",
+    "lastModified": "Tue, 25 Aug 2026 03:46:10 GMT",
+    "observedContentHash": "3294318cec1dc37b2526826b1f1962c907b0fc268d05798d88f0c9b829d10fd1"
   },
   "hull-china-requirements": {
     "sourceId": "hull-china-requirements",
     "health": "changed",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:06:28.425Z",
-    "lastSuccessfulAt": "2026-08-24T04:06:28.425Z",
+    "checkedAt": "2026-08-25T04:02:20.225Z",
+    "lastSuccessfulAt": "2026-08-25T04:02:20.225Z",
     "httpStatus": 200,
     "finalUrl": "https://www.hull.ac.uk/study/international-students/your-country/china",
-    "observedContentHash": "0caf74161285574a5a1b2a3fa530052709ad2c09a86387c3676424341b3e7e46"
+    "observedContentHash": "efab06ef84acafcd4eff4c9a97534f5066829deb381751ef8020f4898ab8c9cc"
   },
   "coventry-china-requirements": {
     "sourceId": "coventry-china-requirements",
     "health": "changed",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:06:30.414Z",
-    "lastSuccessfulAt": "2026-08-24T04:06:30.414Z",
+    "checkedAt": "2026-08-25T04:02:22.155Z",
+    "lastSuccessfulAt": "2026-08-25T04:02:22.155Z",
     "httpStatus": 200,
     "finalUrl": "https://www.coventry.ac.uk/international-students-hub/entry-requirements/?country=China&region=ea",
-    "lastModified": "Mon, 24 Aug 2026 04:06:30 GMT",
-    "observedContentHash": "c3f287b2ea315f36fefc87c5162912b2c312b4307e2314644451a319b80be974"
+    "lastModified": "Tue, 25 Aug 2026 04:02:22 GMT",
+    "observedContentHash": "cc0bae6835f99d7a20fbe60df7ccdfb7f4d3794415f85b07cde0609d47efdba2"
   },
   "oxford-brookes-china-entry": {
     "sourceId": "oxford-brookes-china-entry",
     "health": "changed",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:06:31.549Z",
-    "lastSuccessfulAt": "2026-08-24T04:06:31.549Z",
+    "checkedAt": "2026-08-25T04:02:23.391Z",
+    "lastSuccessfulAt": "2026-08-25T04:02:23.391Z",
     "httpStatus": 200,
     "finalUrl": "https://www.brookes.ac.uk/study/international-students/your-country/china/entry-requirements",
-    "lastModified": "Mon, 24 Aug 2026 04:06:32 GMT",
-    "observedContentHash": "d1e20a3afe52668193590da2b39c8b9e650060887faf33b93f967a8c08f1709b"
+    "lastModified": "Tue, 25 Aug 2026 04:02:24 GMT",
+    "observedContentHash": "c27a0037d88974ec1d6a7361fdde65de49fd6a3f5dd4aab54803ffcc3e2598cc"
   },
   "ulster-china-requirements": {
     "sourceId": "ulster-china-requirements",
     "health": "unavailable",
-    "consecutiveFailures": 14,
-    "checkedAt": "2026-08-24T04:06:33.467Z",
+    "consecutiveFailures": 15,
+    "checkedAt": "2026-08-25T04:02:25.459Z",
     "httpStatus": 403,
     "finalUrl": "https://www.ulster.ac.uk/global/apply/country/china"
   },
@@ -666,18 +666,18 @@
     "sourceId": "manchester-metropolitan-china-requirements",
     "health": "changed",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:06:34.181Z",
-    "lastSuccessfulAt": "2026-08-24T04:06:34.181Z",
+    "checkedAt": "2026-08-25T04:02:26.140Z",
+    "lastSuccessfulAt": "2026-08-25T04:02:26.140Z",
     "httpStatus": 200,
     "finalUrl": "https://www.mmu.ac.uk/study/international/international-students/china",
-    "lastModified": "Mon, 24 Aug 2026 04:04:49 GMT",
-    "observedContentHash": "b141a2f34770a949861c48ac6d77ade8136cdcf5bdd787623a825a41cefdab61"
+    "lastModified": "Tue, 25 Aug 2026 03:59:30 GMT",
+    "observedContentHash": "185884ce05b71b4f2d78c8b2a243fa3b6763d728ecf62e127d56577219c225a9"
   },
   "nottingham-trent-china-requirements": {
     "sourceId": "nottingham-trent-china-requirements",
     "health": "unavailable",
-    "consecutiveFailures": 14,
-    "checkedAt": "2026-08-24T04:06:34.944Z",
+    "consecutiveFailures": 15,
+    "checkedAt": "2026-08-25T04:02:26.884Z",
     "httpStatus": 403,
     "finalUrl": "https://www.ntu.ac.uk/international/countries/asia/china"
   },
@@ -685,18 +685,18 @@
     "sourceId": "portsmouth-china-requirements",
     "health": "changed",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:06:35.897Z",
-    "lastSuccessfulAt": "2026-08-24T04:06:35.897Z",
+    "checkedAt": "2026-08-25T04:02:27.913Z",
+    "lastSuccessfulAt": "2026-08-25T04:02:27.913Z",
     "httpStatus": 200,
     "finalUrl": "https://www.port.ac.uk/study/international-students/your-country/china",
-    "lastModified": "Mon, 24 Aug 2026 02:51:36 GMT",
-    "observedContentHash": "a4169202b95e31fceb6d8ae0a48654959a8d9696b0bc61fb385e2ad67d5b6ae6"
+    "lastModified": "Tue, 25 Aug 2026 02:04:51 GMT",
+    "observedContentHash": "ebe89a8f30617a75adcdddff811c8db56414af70c81c135b075e0e1121bc4dbb"
   },
   "kingston-china-requirements": {
     "sourceId": "kingston-china-requirements",
     "health": "unavailable",
-    "consecutiveFailures": 14,
-    "checkedAt": "2026-08-24T04:06:37.326Z",
+    "consecutiveFailures": 15,
+    "checkedAt": "2026-08-25T04:02:29.553Z",
     "httpStatus": 403,
     "finalUrl": "https://www.kingston.ac.uk/study/international-students/country-specific-information"
   },
@@ -704,8 +704,8 @@
     "sourceId": "plymouth-china-requirements",
     "health": "changed",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:06:38.215Z",
-    "lastSuccessfulAt": "2026-08-24T04:06:38.215Z",
+    "checkedAt": "2026-08-25T04:02:30.493Z",
+    "lastSuccessfulAt": "2026-08-25T04:02:30.493Z",
     "httpStatus": 304,
     "finalUrl": "https://www.plymouth.ac.uk/international/study/international-students-country-guides/china",
     "etag": "W/\"99bb72db0446663b71d0eeb617235bee\"",
@@ -716,8 +716,8 @@
     "sourceId": "goldsmiths-china-requirements",
     "health": "ok",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:06:39.340Z",
-    "lastSuccessfulAt": "2026-08-24T04:06:39.340Z",
+    "checkedAt": "2026-08-25T04:02:31.624Z",
+    "lastSuccessfulAt": "2026-08-25T04:02:31.624Z",
     "httpStatus": 200,
     "finalUrl": "https://www.gold.ac.uk/international/regions/china/",
     "observedContentHash": "cc384091b58ea7b836c6a1beeb5aad439c1913f9c69997ccaaaeca0c82a6fd64"
@@ -726,58 +726,58 @@
     "sourceId": "uwe-china-requirements",
     "health": "changed",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:06:41.070Z",
-    "lastSuccessfulAt": "2026-08-24T04:06:41.070Z",
+    "checkedAt": "2026-08-25T04:02:33.725Z",
+    "lastSuccessfulAt": "2026-08-25T04:02:33.725Z",
     "httpStatus": 200,
     "finalUrl": "https://www.uwe.ac.uk/courses/international-study/country-or-region/china",
-    "observedContentHash": "0b1717e91c03a37fa89bbba7b313c288c2555febdcef0631ab69f1c664883b91"
+    "observedContentHash": "43090a72041192e6fe86c8defb59eb4b6be55f35dccb054cc991c1ad785714fa"
   },
   "greenwich-china-requirements": {
     "sourceId": "greenwich-china-requirements",
     "health": "changed",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:06:43.225Z",
-    "lastSuccessfulAt": "2026-08-24T04:06:43.225Z",
+    "checkedAt": "2026-08-25T04:02:35.899Z",
+    "lastSuccessfulAt": "2026-08-25T04:02:35.899Z",
     "httpStatus": 200,
     "finalUrl": "https://www.gre.ac.uk/international/countries/china",
-    "observedContentHash": "56af6afcd51b9359da848b6fc6fddba027048e76c07240724108980795e2bcd6"
+    "observedContentHash": "e7fc0568e2dccce01cded263a301549a435e68cc4c0f7dad4ea7f2dc8177ff48"
   },
   "aberystwyth-china-requirements": {
     "sourceId": "aberystwyth-china-requirements",
-    "health": "ok",
+    "health": "changed",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:06:47.414Z",
-    "lastSuccessfulAt": "2026-08-24T04:06:47.414Z",
-    "httpStatus": 304,
+    "checkedAt": "2026-08-25T04:02:40.458Z",
+    "lastSuccessfulAt": "2026-08-25T04:02:40.458Z",
+    "httpStatus": 200,
     "finalUrl": "https://www.aber.ac.uk/en/study-with-us/international/countries/china/",
-    "lastModified": "Wed, 29 Jul 2026 09:13:22 GMT",
-    "observedContentHash": "8e239e439afc1474b16839eb2e0e7fbd064f34bc35b156be21200043aa2c1f07",
-    "etag": "\"dea6-657bc5dfc31ba\""
+    "lastModified": "Mon, 24 Aug 2026 15:13:29 GMT",
+    "observedContentHash": "8e239e439afc1474b16839eb2e0e7fbd064f34bc35b156be21200043aa2c1f07"
   },
   "bournemouth-china-requirements": {
     "sourceId": "bournemouth-china-requirements",
     "health": "unavailable",
-    "consecutiveFailures": 14,
-    "checkedAt": "2026-08-24T04:06:48.429Z",
+    "consecutiveFailures": 15,
+    "checkedAt": "2026-08-25T04:02:42.504Z",
     "httpStatus": 403,
     "finalUrl": "https://www.bournemouth.ac.uk/study/international/bu-your-country/china/entry-requirements-chinese-students"
   },
   "edinburgh-napier-china-requirements": {
     "sourceId": "edinburgh-napier-china-requirements",
     "health": "changed",
-    "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:06:49.083Z",
+    "consecutiveFailures": 1,
+    "checkedAt": "2026-08-25T04:02:43.188Z",
     "lastSuccessfulAt": "2026-08-24T04:06:49.083Z",
     "httpStatus": 200,
     "finalUrl": "https://www.napier.ac.uk/study-with-us/international-students/your-country/east-asia/china",
-    "observedContentHash": "7f5738f75ba121432803d83132c007999f07a0e6d577a6f3cb0214d0a34b710b"
+    "observedContentHash": "7f5738f75ba121432803d83132c007999f07a0e6d577a6f3cb0214d0a34b710b",
+    "lastAttemptError": "fetch failed"
   },
   "keele-china-requirements": {
     "sourceId": "keele-china-requirements",
     "health": "changed",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:06:51.295Z",
-    "lastSuccessfulAt": "2026-08-24T04:06:51.295Z",
+    "checkedAt": "2026-08-25T04:02:54.282Z",
+    "lastSuccessfulAt": "2026-08-25T04:02:54.282Z",
     "httpStatus": 200,
     "finalUrl": "https://www.keele.ac.uk/study/internationalstudents/yourcountry/asia/china/",
     "observedContentHash": "d1284c4c7006f24ec788cf65eb33cc7d869df900b8de0f647898ef3200b364c4"
@@ -786,18 +786,18 @@
     "sourceId": "dmu-china-requirements",
     "health": "changed",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:06:54.450Z",
-    "lastSuccessfulAt": "2026-08-24T04:06:54.450Z",
+    "checkedAt": "2026-08-25T04:02:57.681Z",
+    "lastSuccessfulAt": "2026-08-25T04:02:57.681Z",
     "httpStatus": 200,
     "finalUrl": "https://www.dmu.ac.uk/international/en/entry-requirements.aspx",
-    "observedContentHash": "6a9eafeb778db52ce445c8cdd1cc6ad1a7b3c4fd0fd5eb79dd002997015d76e8"
+    "observedContentHash": "da9e9e9c6c5436b23652260c8b22b7f6af7e7a3b0fc7ec484f1aa89f57835bb0"
   },
   "ljmu-china-requirements": {
     "sourceId": "ljmu-china-requirements",
     "health": "changed",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:06:56.135Z",
-    "lastSuccessfulAt": "2026-08-24T04:06:56.135Z",
+    "checkedAt": "2026-08-25T04:02:59.536Z",
+    "lastSuccessfulAt": "2026-08-25T04:02:59.536Z",
     "httpStatus": 200,
     "finalUrl": "https://www.ljmu.ac.uk/study/courses/international-entry-requirements/china",
     "observedContentHash": "e7bbbd72c7e2cff23d29f8cecca0b953b437c1a2f057160633e0574809b6df78"
@@ -805,8 +805,8 @@
   "hertfordshire-china-requirements": {
     "sourceId": "hertfordshire-china-requirements",
     "health": "unavailable",
-    "consecutiveFailures": 14,
-    "checkedAt": "2026-08-24T04:06:58.326Z",
+    "consecutiveFailures": 15,
+    "checkedAt": "2026-08-25T04:03:02.010Z",
     "httpStatus": 403,
     "finalUrl": "https://www.herts.ac.uk/international/guidance-for-your-region/south-east-and-east-asia/china"
   },
@@ -814,8 +814,8 @@
     "sourceId": "lincoln-china-requirements",
     "health": "changed",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:06:59.102Z",
-    "lastSuccessfulAt": "2026-08-24T04:06:59.102Z",
+    "checkedAt": "2026-08-25T04:03:02.819Z",
+    "lastSuccessfulAt": "2026-08-25T04:03:02.819Z",
     "httpStatus": 200,
     "finalUrl": "https://www.lincoln.ac.uk/studywithus/internationalstudents/entryrequirementsandyourcountry/china/",
     "etag": "\"a9f1-6596fb96d87c8-gzip\"",
@@ -826,18 +826,18 @@
     "sourceId": "westminster-china-requirements",
     "health": "changed",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:07:00.573Z",
-    "lastSuccessfulAt": "2026-08-24T04:07:00.573Z",
+    "checkedAt": "2026-08-25T04:03:04.220Z",
+    "lastSuccessfulAt": "2026-08-25T04:03:04.220Z",
     "httpStatus": 200,
     "finalUrl": "https://www.westminster.ac.uk/international/your-country/china",
-    "lastModified": "Sun, 23 Aug 2026 23:35:11 GMT",
-    "observedContentHash": "1275450784b264c70b079704dd6cf50ef27099560efce308781a4ed6707eeb6e"
+    "lastModified": "Tue, 25 Aug 2026 01:39:30 GMT",
+    "observedContentHash": "73bf1923f6303c1964c5f1ab789e43677fa2fc036ebbfdf6d1c070264bf9fb79"
   },
   "lsbu-china-requirements": {
     "sourceId": "lsbu-china-requirements",
     "health": "unavailable",
-    "consecutiveFailures": 14,
-    "checkedAt": "2026-08-24T04:07:02.044Z",
+    "consecutiveFailures": 15,
+    "checkedAt": "2026-08-25T04:03:05.788Z",
     "httpStatus": 403,
     "finalUrl": "https://www.lsbu.ac.uk/international/your-country/asia-and-oceania/china"
   },
@@ -845,8 +845,8 @@
     "sourceId": "middlesex-china-requirements",
     "health": "changed",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:07:02.737Z",
-    "lastSuccessfulAt": "2026-08-24T04:07:02.737Z",
+    "checkedAt": "2026-08-25T04:03:06.509Z",
+    "lastSuccessfulAt": "2026-08-25T04:03:06.509Z",
     "httpStatus": 304,
     "finalUrl": "https://www.mdx.ac.uk/international/support-in-your-countries-and-regions/china/",
     "etag": "\"1169c-65953289f44a0-gzip\"",
@@ -857,28 +857,28 @@
     "sourceId": "brighton-china-requirements",
     "health": "changed",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:07:03.650Z",
-    "lastSuccessfulAt": "2026-08-24T04:07:03.650Z",
+    "checkedAt": "2026-08-25T04:03:07.285Z",
+    "lastSuccessfulAt": "2026-08-25T04:03:07.285Z",
     "httpStatus": 200,
     "finalUrl": "https://www.brighton.ac.uk/international/study-with-us/your-country-or-territory-info/china.aspx",
-    "observedContentHash": "7a29e3306852b570578fd5029f6638a9bcc7bad887f3a463c5bbc9399fd6cedc"
+    "observedContentHash": "7b7de7176b6c9144c7314ea31e24c2edb84a87bc38671fa1882e74221559c1f2"
   },
   "aru-china-requirements": {
     "sourceId": "aru-china-requirements",
     "health": "changed",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:07:05.140Z",
-    "lastSuccessfulAt": "2026-08-24T04:07:05.140Z",
+    "checkedAt": "2026-08-25T04:03:08.980Z",
+    "lastSuccessfulAt": "2026-08-25T04:03:08.980Z",
     "httpStatus": 200,
     "finalUrl": "https://www.aru.ac.uk/international/north-east-asia",
-    "observedContentHash": "dc93ef1c5faa75473ca21271f532556b7f37095f8148fb21f28fae7e0ba1a7a5"
+    "observedContentHash": "38c855ec66bfc269b1bf962cfc7b19447c0b1c3a5208ab7ecea904e9186912ed"
   },
   "bcu-china-requirements": {
     "sourceId": "bcu-china-requirements",
     "health": "ok",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:07:06.667Z",
-    "lastSuccessfulAt": "2026-08-24T04:07:06.667Z",
+    "checkedAt": "2026-08-25T04:03:10.219Z",
+    "lastSuccessfulAt": "2026-08-25T04:03:10.219Z",
     "httpStatus": 200,
     "finalUrl": "https://www.bcu.ac.uk/international/bcu-in-your-country/china",
     "observedContentHash": "712cef646985cb8a9275929ac94a14706dc0903fce5c0acbc34a8636fe10d89c"
@@ -886,8 +886,8 @@
   "gcu-china-requirements": {
     "sourceId": "gcu-china-requirements",
     "health": "unavailable",
-    "consecutiveFailures": 14,
-    "checkedAt": "2026-08-24T04:07:09.417Z",
+    "consecutiveFailures": 15,
+    "checkedAt": "2026-08-25T04:03:12.657Z",
     "httpStatus": 403,
     "finalUrl": "https://www.gcu.ac.uk/internationalstudy/your-region/country-pages/china"
   },
@@ -895,49 +895,49 @@
     "sourceId": "leeds-beckett-china-requirements",
     "health": "changed",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:07:10.097Z",
-    "lastSuccessfulAt": "2026-08-24T04:07:10.097Z",
+    "checkedAt": "2026-08-25T04:03:13.346Z",
+    "lastSuccessfulAt": "2026-08-25T04:03:13.346Z",
     "httpStatus": 200,
     "finalUrl": "https://www.leedsbeckett.ac.uk/international-students/countries/china/china-entry-requirements/",
-    "observedContentHash": "07479b247a5cf965f321914b0a8ffd2100adfcfbe79283256f665f2fad318c85"
+    "observedContentHash": "616878f227bfb48a17e8ba9dfe0093c4c45626c7879bf1c020219d5ba2124725"
   },
   "rgu-china-requirements": {
     "sourceId": "rgu-china-requirements",
     "health": "changed",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:07:12.594Z",
-    "lastSuccessfulAt": "2026-08-24T04:07:12.594Z",
+    "checkedAt": "2026-08-25T04:03:15.891Z",
+    "lastSuccessfulAt": "2026-08-25T04:03:15.891Z",
     "httpStatus": 200,
     "finalUrl": "https://www.rgu.ac.uk/study/international-students/your-country-or-territory/china",
-    "lastModified": "Mon, 24 Aug 2026 04:07:13 GMT",
-    "observedContentHash": "746a074e0c59db743367d31831ed8fbb5ef5d63ee660b05d47eb178f90d22618"
+    "lastModified": "Tue, 25 Aug 2026 04:03:11 GMT",
+    "observedContentHash": "e64132a928c63188451d038b3bea6d9d58efd82401bd7b2a9974a8fee3e01614"
   },
   "shu-china-entry-requirements": {
     "sourceId": "shu-china-entry-requirements",
     "health": "changed",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:07:14.739Z",
-    "lastSuccessfulAt": "2026-08-24T04:07:14.739Z",
+    "checkedAt": "2026-08-25T04:03:18.290Z",
+    "lastSuccessfulAt": "2026-08-25T04:03:18.290Z",
     "httpStatus": 200,
     "finalUrl": "https://www.shu.ac.uk/study-here/international/entry-requirements/entry-requirements-for-china",
-    "observedContentHash": "2dd0382406546319e8b52111357334c80e56fbe10a6c7e7c18bf4d0110d69d71"
+    "observedContentHash": "498e9149c75c0500d9110d92aef9440991ab6ef8d2a25f118900b7860c07d76e"
   },
   "lancashire-china-requirements": {
     "sourceId": "lancashire-china-requirements",
     "health": "changed",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:07:16.420Z",
-    "lastSuccessfulAt": "2026-08-24T04:07:16.420Z",
+    "checkedAt": "2026-08-25T04:03:20.376Z",
+    "lastSuccessfulAt": "2026-08-25T04:03:20.376Z",
     "httpStatus": 200,
     "finalUrl": "https://www.lancashire.ac.uk/international-students/country/china",
-    "observedContentHash": "0a4e6798065e44b6603a488fd83557aa4ae21ff81a8bd5f21d091a7ee3b48e2b"
+    "observedContentHash": "3c8e5110e1abc45bd3e7216eeb7fb594fd2ec1fc2f89d48955e7925ca8fbb4ca"
   },
   "derby-mainland-china-international-entry": {
     "sourceId": "derby-mainland-china-international-entry",
     "health": "changed",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:07:17.445Z",
-    "lastSuccessfulAt": "2026-08-24T04:07:17.445Z",
+    "checkedAt": "2026-08-25T04:03:21.789Z",
+    "lastSuccessfulAt": "2026-08-25T04:03:21.789Z",
     "httpStatus": 200,
     "finalUrl": "https://www.derby.ac.uk/undergraduate/apply/entry-requirements/international/",
     "observedContentHash": "2c01c2fe9b50e43bb87faac90b9b22c18223cb5de9bcc847f63a450e6b0a05e0"
@@ -946,8 +946,8 @@
     "sourceId": "cccu-china-requirements",
     "health": "changed",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:07:19.395Z",
-    "lastSuccessfulAt": "2026-08-24T04:07:19.395Z",
+    "checkedAt": "2026-08-25T04:03:23.414Z",
+    "lastSuccessfulAt": "2026-08-25T04:03:23.414Z",
     "httpStatus": 304,
     "finalUrl": "https://www.canterbury.ac.uk/study-here/international/find-your-country/china",
     "etag": "W/\"13d8db-LPKSfG8yBhkbboLlWA3R2lD+xTk\"",
@@ -956,12 +956,13 @@
   "aberdeen-china-entry-requirements": {
     "sourceId": "aberdeen-china-entry-requirements",
     "health": "ok",
-    "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:07:20.793Z",
+    "consecutiveFailures": 1,
+    "checkedAt": "2026-08-25T04:03:24.906Z",
     "lastSuccessfulAt": "2026-08-24T04:07:20.793Z",
     "httpStatus": 200,
     "finalUrl": "https://www.abdn.ac.uk/study/international/country-territory/china/entry/",
-    "observedContentHash": "107f2b5fe41f7eb63fc596dc7472fdc7962f7ff666ad928f11d0aa8409682c45"
+    "observedContentHash": "107f2b5fe41f7eb63fc596dc7472fdc7962f7ff666ad928f11d0aa8409682c45",
+    "lastAttemptError": "fetch failed"
   },
   "uea-china-country-requirements": {
     "sourceId": "uea-china-country-requirements",
@@ -975,8 +976,8 @@
     "sourceId": "london-metropolitan-china-requirements",
     "health": "ok",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:07:26.657Z",
-    "lastSuccessfulAt": "2026-08-24T04:07:26.657Z",
+    "checkedAt": "2026-08-25T04:03:37.721Z",
+    "lastSuccessfulAt": "2026-08-25T04:03:37.721Z",
     "httpStatus": 200,
     "finalUrl": "https://www.londonmet.ac.uk/international/applying/countries/students-from-china/",
     "etag": "\"11d1c-65731332f33c3-gzip\"",
@@ -987,30 +988,30 @@
     "sourceId": "roehampton-china-requirements",
     "health": "changed",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:07:28.317Z",
-    "lastSuccessfulAt": "2026-08-24T04:07:28.317Z",
+    "checkedAt": "2026-08-25T04:03:39.493Z",
+    "lastSuccessfulAt": "2026-08-25T04:03:39.493Z",
     "httpStatus": 200,
     "finalUrl": "https://www.roehampton.ac.uk/student-support/international-students/countries/china/",
-    "observedContentHash": "6ff449ae7b99388da45f501b4cdbd09388c680dd77d134f57508050b338596ea"
+    "observedContentHash": "60698c0dbf8278ded0117ce31e009a9a8aea2d37caee0d6b9a298637de0280d1"
   },
   "salford-china-requirements": {
     "sourceId": "salford-china-requirements",
     "health": "changed",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:07:30.507Z",
-    "lastSuccessfulAt": "2026-08-24T04:07:30.507Z",
-    "httpStatus": 304,
+    "checkedAt": "2026-08-25T04:03:42.062Z",
+    "lastSuccessfulAt": "2026-08-25T04:03:42.062Z",
+    "httpStatus": 200,
     "finalUrl": "https://www.salford.ac.uk/international/your-country-or-region/salford-and-china",
-    "etag": "\"1787370974-gzip\"",
-    "lastModified": "Sat, 22 Aug 2026 03:56:14 GMT",
-    "observedContentHash": "5a56658a6afa31aeffb91518638164aaacc8f7b7935f28b851926f7e57f9db87"
+    "etag": "\"1787575873-gzip\"",
+    "lastModified": "Mon, 24 Aug 2026 12:51:13 GMT",
+    "observedContentHash": "5c8f1c610a1b8df9ca30a4d8081f822c32f75770b67b243fd8b1212ce4730d50"
   },
   "wolverhampton-china-requirements": {
     "sourceId": "wolverhampton-china-requirements",
     "health": "ok",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:07:31.585Z",
-    "lastSuccessfulAt": "2026-08-24T04:07:31.585Z",
+    "checkedAt": "2026-08-25T04:03:43.712Z",
+    "lastSuccessfulAt": "2026-08-25T04:03:43.712Z",
     "httpStatus": 202,
     "finalUrl": "https://www.wlv.ac.uk/international/your-country/china/",
     "observedContentHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
@@ -1019,8 +1020,8 @@
     "sourceId": "qmu-china-requirements",
     "health": "changed",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:07:32.481Z",
-    "lastSuccessfulAt": "2026-08-24T04:07:32.481Z",
+    "checkedAt": "2026-08-25T04:03:44.486Z",
+    "lastSuccessfulAt": "2026-08-25T04:03:44.486Z",
     "httpStatus": 200,
     "finalUrl": "https://www.qmu.ac.uk/study-here/international-students/information-for-your-country/china",
     "observedContentHash": "af81ce3ec981157fd0a5071512608974628971e7cce0a75e07b9e3cc04b1ed32"
@@ -1029,8 +1030,8 @@
     "sourceId": "northampton-china-entry-requirements",
     "health": "changed",
     "consecutiveFailures": 0,
-    "checkedAt": "2026-08-24T04:07:33.900Z",
-    "lastSuccessfulAt": "2026-08-24T04:07:33.900Z",
+    "checkedAt": "2026-08-25T04:03:45.745Z",
+    "lastSuccessfulAt": "2026-08-25T04:03:45.745Z",
     "httpStatus": 200,
     "finalUrl": "https://www.northampton.ac.uk/international/your-country/east-asia-and-south-east-asia/",
     "observedContentHash": "32df18818863eecef0cfbdc778d989f2df4fccc2142c956aff2fea756a2f9327"
@@ -1038,8 +1039,8 @@
   "usw-china-entry-requirements": {
     "sourceId": "usw-china-entry-requirements",
     "health": "unavailable",
-    "consecutiveFailures": 14,
-    "checkedAt": "2026-08-24T04:07:35.578Z",
+    "consecutiveFailures": 15,
+    "checkedAt": "2026-08-25T04:03:47.630Z",
     "httpStatus": 403,
     "finalUrl": "https://www.southwales.ac.uk/international/your-country/china/"
   },
@@ -1054,11 +1055,11 @@
   },
   "masters-university-of-oxford": {
     "sourceId": "masters-university-of-oxford",
-    "checkedAt": "2026-08-24T04:07:37.866Z",
+    "checkedAt": "2026-08-25T04:03:50.121Z",
     "httpStatus": 403,
     "finalUrl": "https://www.ox.ac.uk/admissions/graduate/courses/find-your-course",
     "health": "unavailable",
-    "consecutiveFailures": 14
+    "consecutiveFailures": 15
   },
   "masters-university-of-cambridge": {
     "sourceId": "masters-university-of-cambridge",
@@ -1107,12 +1108,16 @@
   },
   "masters-university-of-bristol": {
     "sourceId": "masters-university-of-bristol",
-    "checkedAt": "2026-08-11T15:52:39.868Z",
-    "health": "ok",
-    "lastSuccessfulAt": "2026-08-11T15:52:39.868Z",
+    "checkedAt": "2026-08-25T04:03:57.877Z",
+    "health": "changed",
+    "lastSuccessfulAt": "2026-08-25T04:03:57.877Z",
     "httpStatus": 200,
     "finalUrl": "https://www.bristol.ac.uk/study/postgraduate/",
-    "consecutiveFailures": 0
+    "consecutiveFailures": 0,
+    "missingRequiredText": [
+      "Find your programme",
+      "Postgraduate study routes"
+    ]
   },
   "masters-london-school-of-economics-and-political-science": {
     "sourceId": "masters-london-school-of-economics-and-political-science",
@@ -1178,11 +1183,11 @@
   },
   "masters-durham-university": {
     "sourceId": "masters-durham-university",
-    "checkedAt": "2026-08-24T04:07:55.653Z",
+    "checkedAt": "2026-08-25T04:04:08.217Z",
     "httpStatus": 403,
     "finalUrl": "https://www.durham.ac.uk/study/postgraduate/",
     "health": "unavailable",
-    "consecutiveFailures": 14
+    "consecutiveFailures": 15
   },
   "masters-university-of-nottingham": {
     "sourceId": "masters-university-of-nottingham",
@@ -1195,11 +1200,11 @@
   },
   "masters-queen-mary-university-of-london": {
     "sourceId": "masters-queen-mary-university-of-london",
-    "checkedAt": "2026-08-24T04:07:57.832Z",
+    "checkedAt": "2026-08-25T04:04:10.532Z",
     "httpStatus": 403,
     "finalUrl": "https://www.qmul.ac.uk/postgraduate/",
     "health": "unavailable",
-    "consecutiveFailures": 14
+    "consecutiveFailures": 15
   },
   "masters-university-of-southampton": {
     "sourceId": "masters-university-of-southampton",
@@ -1275,19 +1280,19 @@
   },
   "masters-queens-university-belfast": {
     "sourceId": "masters-queens-university-belfast",
-    "checkedAt": "2026-08-24T04:08:08.248Z",
+    "checkedAt": "2026-08-25T04:04:21.607Z",
     "httpStatus": 403,
     "finalUrl": "https://www.qub.ac.uk/Study/postgraduate/",
     "health": "unavailable",
-    "consecutiveFailures": 14
+    "consecutiveFailures": 15
   },
   "masters-cardiff-university": {
     "sourceId": "masters-cardiff-university",
-    "checkedAt": "2026-08-24T04:08:08.969Z",
+    "checkedAt": "2026-08-25T04:04:22.246Z",
     "httpStatus": 403,
     "finalUrl": "https://www.cardiff.ac.uk/study/postgraduate",
     "health": "unavailable",
-    "consecutiveFailures": 14
+    "consecutiveFailures": 15
   },
   "masters-university-of-reading": {
     "sourceId": "masters-university-of-reading",
@@ -1318,11 +1323,11 @@
   },
   "masters-london-school-of-hygiene-and-tropical-medicine": {
     "sourceId": "masters-london-school-of-hygiene-and-tropical-medicine",
-    "checkedAt": "2026-08-24T04:08:14.229Z",
+    "checkedAt": "2026-08-25T04:04:27.968Z",
     "httpStatus": 403,
     "finalUrl": "https://www.lshtm.ac.uk/study/courses",
     "health": "unavailable",
-    "consecutiveFailures": 14
+    "consecutiveFailures": 15
   },
   "masters-royal-college-of-art": {
     "sourceId": "masters-royal-college-of-art",
@@ -1335,11 +1340,11 @@
   },
   "masters-royal-veterinary-college": {
     "sourceId": "masters-royal-veterinary-college",
-    "checkedAt": "2026-08-24T04:08:16.449Z",
+    "checkedAt": "2026-08-25T04:04:31.055Z",
     "httpStatus": 403,
     "finalUrl": "https://www.rvc.ac.uk/study/postgraduate",
     "health": "unavailable",
-    "consecutiveFailures": 14
+    "consecutiveFailures": 15
   },
   "masters-royal-college-of-music": {
     "sourceId": "masters-royal-college-of-music",
@@ -1352,11 +1357,11 @@
   },
   "masters-institute-of-cancer-research-london": {
     "sourceId": "masters-institute-of-cancer-research-london",
-    "checkedAt": "2026-08-24T04:08:18.797Z",
+    "checkedAt": "2026-08-25T04:04:33.758Z",
     "httpStatus": 403,
     "finalUrl": "https://www.icr.ac.uk/study-and-careers",
     "health": "unavailable",
-    "consecutiveFailures": 14
+    "consecutiveFailures": 15
   },
   "masters-liverpool-school-of-tropical-medicine": {
     "sourceId": "masters-liverpool-school-of-tropical-medicine",
@@ -1405,20 +1410,21 @@
   },
   "masters-university-of-aberdeen": {
     "sourceId": "masters-university-of-aberdeen",
-    "checkedAt": "2026-08-11T15:53:27.442Z",
+    "checkedAt": "2026-08-25T04:04:41.937Z",
     "health": "ok",
     "lastSuccessfulAt": "2026-08-11T15:53:27.442Z",
     "httpStatus": 200,
     "finalUrl": "https://www.abdn.ac.uk/study/postgraduate-taught/",
-    "consecutiveFailures": 0
+    "consecutiveFailures": 1,
+    "lastAttemptError": "fetch failed"
   },
   "masters-university-of-leicester": {
     "sourceId": "masters-university-of-leicester",
-    "checkedAt": "2026-08-24T04:08:28.801Z",
+    "checkedAt": "2026-08-25T04:04:53.030Z",
     "httpStatus": 403,
     "finalUrl": "https://le.ac.uk/courses?q=postgraduate",
     "health": "unavailable",
-    "consecutiveFailures": 14
+    "consecutiveFailures": 15
   },
   "masters-swansea-university": {
     "sourceId": "masters-swansea-university",
@@ -1461,11 +1467,11 @@
   },
   "masters-city-st-georges-university-of-london": {
     "sourceId": "masters-city-st-georges-university-of-london",
-    "checkedAt": "2026-08-24T04:08:35.881Z",
+    "checkedAt": "2026-08-25T04:05:00.152Z",
     "httpStatus": 403,
     "finalUrl": "https://www.citystgeorges.ac.uk/prospective-students/courses",
     "health": "unavailable",
-    "consecutiveFailures": 14
+    "consecutiveFailures": 15
   },
   "masters-university-of-east-anglia": {
     "sourceId": "masters-university-of-east-anglia",
@@ -1507,20 +1513,24 @@
   },
   "masters-university-of-essex": {
     "sourceId": "masters-university-of-essex",
-    "checkedAt": "2026-08-18T04:02:14.673Z",
-    "health": "ok",
-    "lastSuccessfulAt": "2026-08-18T04:02:14.673Z",
+    "checkedAt": "2026-08-25T04:05:07.070Z",
+    "health": "changed",
+    "lastSuccessfulAt": "2026-08-25T04:05:07.070Z",
     "httpStatus": 200,
     "finalUrl": "https://www.essex.ac.uk/postgraduate",
-    "consecutiveFailures": 0
+    "consecutiveFailures": 0,
+    "missingRequiredText": [
+      "Masters courses",
+      "research degrees"
+    ]
   },
   "masters-university-of-dundee": {
     "sourceId": "masters-university-of-dundee",
-    "checkedAt": "2026-08-24T04:08:43.049Z",
+    "checkedAt": "2026-08-25T04:05:08.498Z",
     "httpStatus": 403,
     "finalUrl": "https://www.dundee.ac.uk/postgraduate",
     "health": "unavailable",
-    "consecutiveFailures": 14
+    "consecutiveFailures": 15
   },
   "masters-soas-university-of-london": {
     "sourceId": "masters-soas-university-of-london",
@@ -1613,11 +1623,11 @@
   },
   "masters-ulster-university": {
     "sourceId": "masters-ulster-university",
-    "checkedAt": "2026-08-24T04:08:56.322Z",
+    "checkedAt": "2026-08-25T04:05:34.984Z",
     "httpStatus": 403,
     "finalUrl": "https://www.ulster.ac.uk/courses",
     "health": "unavailable",
-    "consecutiveFailures": 14
+    "consecutiveFailures": 15
   },
   "masters-manchester-metropolitan-university": {
     "sourceId": "masters-manchester-metropolitan-university",
@@ -1630,11 +1640,11 @@
   },
   "masters-nottingham-trent-university": {
     "sourceId": "masters-nottingham-trent-university",
-    "checkedAt": "2026-08-24T04:08:57.674Z",
+    "checkedAt": "2026-08-25T04:05:36.839Z",
     "httpStatus": 403,
     "finalUrl": "https://www.ntu.ac.uk/study-and-courses/courses/find-your-course",
     "health": "unavailable",
-    "consecutiveFailures": 14
+    "consecutiveFailures": 15
   },
   "masters-university-of-portsmouth": {
     "sourceId": "masters-university-of-portsmouth",
@@ -1647,11 +1657,11 @@
   },
   "masters-kingston-university-london": {
     "sourceId": "masters-kingston-university-london",
-    "checkedAt": "2026-08-24T04:09:00.234Z",
+    "checkedAt": "2026-08-25T04:05:38.897Z",
     "httpStatus": 403,
     "finalUrl": "https://www.kingston.ac.uk/study/postgraduate",
     "health": "unavailable",
-    "consecutiveFailures": 14
+    "consecutiveFailures": 15
   },
   "masters-university-of-plymouth": {
     "sourceId": "masters-university-of-plymouth",
@@ -1703,20 +1713,21 @@
   },
   "masters-bournemouth-university": {
     "sourceId": "masters-bournemouth-university",
-    "checkedAt": "2026-08-24T04:09:08.102Z",
+    "checkedAt": "2026-08-25T04:05:48.135Z",
     "httpStatus": 403,
     "finalUrl": "https://www.bournemouth.ac.uk/study/postgraduate",
     "health": "unavailable",
-    "consecutiveFailures": 14
+    "consecutiveFailures": 15
   },
   "masters-edinburgh-napier-university": {
     "sourceId": "masters-edinburgh-napier-university",
-    "checkedAt": "2026-08-11T15:54:21.786Z",
+    "checkedAt": "2026-08-25T04:05:48.841Z",
     "health": "ok",
     "lastSuccessfulAt": "2026-08-11T15:54:21.786Z",
     "httpStatus": 200,
     "finalUrl": "https://www.napier.ac.uk/courses",
-    "consecutiveFailures": 0
+    "consecutiveFailures": 1,
+    "lastAttemptError": "fetch failed"
   },
   "masters-keele-university": {
     "sourceId": "masters-keele-university",
@@ -1747,11 +1758,11 @@
   },
   "masters-university-of-hertfordshire": {
     "sourceId": "masters-university-of-hertfordshire",
-    "checkedAt": "2026-08-24T04:09:18.098Z",
+    "checkedAt": "2026-08-25T04:06:04.455Z",
     "httpStatus": 403,
     "finalUrl": "https://www.herts.ac.uk/courses",
     "health": "unavailable",
-    "consecutiveFailures": 14
+    "consecutiveFailures": 15
   },
   "masters-university-of-lincoln": {
     "sourceId": "masters-university-of-lincoln",
@@ -1768,11 +1779,11 @@
   },
   "masters-university-of-the-arts-london": {
     "sourceId": "masters-university-of-the-arts-london",
-    "checkedAt": "2026-08-24T04:09:20.061Z",
+    "checkedAt": "2026-08-25T04:06:06.638Z",
     "httpStatus": 403,
     "finalUrl": "https://www.arts.ac.uk/courses",
     "health": "unavailable",
-    "consecutiveFailures": 14
+    "consecutiveFailures": 15
   },
   "masters-university-of-westminster": {
     "sourceId": "masters-university-of-westminster",
@@ -1789,11 +1800,11 @@
   },
   "masters-london-south-bank-university": {
     "sourceId": "masters-london-south-bank-university",
-    "checkedAt": "2026-08-24T04:09:22.328Z",
+    "checkedAt": "2026-08-25T04:06:09.245Z",
     "httpStatus": 403,
     "finalUrl": "https://www.lsbu.ac.uk/study/course-finder",
     "health": "unavailable",
-    "consecutiveFailures": 14
+    "consecutiveFailures": 15
   },
   "masters-middlesex-university": {
     "sourceId": "masters-middlesex-university",
@@ -1833,11 +1844,11 @@
   },
   "masters-glasgow-caledonian-university": {
     "sourceId": "masters-glasgow-caledonian-university",
-    "checkedAt": "2026-08-24T04:09:28.576Z",
+    "checkedAt": "2026-08-25T04:06:15.527Z",
     "httpStatus": 403,
     "finalUrl": "https://www.gcu.ac.uk/study",
     "health": "unavailable",
-    "consecutiveFailures": 14
+    "consecutiveFailures": 15
   },
   "masters-leeds-beckett-university": {
     "sourceId": "masters-leeds-beckett-university",
@@ -1953,11 +1964,11 @@
   },
   "masters-university-of-south-wales": {
     "sourceId": "masters-university-of-south-wales",
-    "checkedAt": "2026-08-24T04:09:44.743Z",
+    "checkedAt": "2026-08-25T04:06:32.536Z",
     "httpStatus": 403,
     "finalUrl": "https://www.southwales.ac.uk/courses/",
     "health": "unavailable",
-    "consecutiveFailures": 14
+    "consecutiveFailures": 15
   },
   "masters-canterbury-christ-church-university": {
     "sourceId": "masters-canterbury-christ-church-university",
