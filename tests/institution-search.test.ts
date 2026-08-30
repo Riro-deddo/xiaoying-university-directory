@@ -57,9 +57,10 @@ describe('createInstitutionSearch', () => {
     expect(search.suggest('Peking Universty').map((record) => record.id)).toEqual(['peking-university']);
   });
 
-  it('keeps only the two reviewed normalized English collisions and singular canonical Chinese names', () => {
+  it('keeps only the reviewed normalized English collisions and singular canonical Chinese names', () => {
     const institutions = loadInstitutions();
     expect(exactSearchNameCollisions(institutions)).toEqual([
+      ['chongqing institute of engineering', ['cn-c1c6db12d8c0bf1b', 'cn-f7207212a237fd55']],
       ['taizhou university', ['cn-79d6215ce67db635', 'cn-c2388dc8089d8ecb']],
       ['wuyi university', ['cn-0f4e2477ec1b1de6', 'cn-606aa744bd4add70']],
     ]);

@@ -66,7 +66,7 @@ describe('public lazy-data build', () => {
       .toEqual(new Set(catalog.map((university) => university.id)));
     expect(await readdir(join(root, 'public', 'generated'))).not.toContain('masters-course-directories.json');
 
-    expect(publicRecords.filter((record) => record.state === 'china-requirements')).toHaveLength(81);
+    expect(publicRecords.filter((record) => record.state === 'china-requirements')).toHaveLength(80);
     expect(publicRecords.filter((record) => record.state === 'pending').map((record) => record.id).sort())
       .toEqual(['university-of-east-london', 'university-of-the-arts-london']);
 
@@ -346,7 +346,7 @@ describe('public lazy-data build', () => {
     ]);
   });
 
-  it('writes all nine reviewed university-level lists from the trusted source snapshot', async () => {
+  it('writes all thirteen reviewed official lists from the trusted source snapshot', async () => {
     const root = process.cwd();
     const outputDir = await mkdtemp(join(tmpdir(), 'xiaoying-public-full-'));
     const readJson = async (...parts) => JSON.parse(await readFile(join(root, ...parts), 'utf8'));
@@ -357,10 +357,13 @@ describe('public lazy-data build', () => {
       sources: await readJson('src', 'data', 'sources.json'),
       statuses: await readJson('src', 'data', 'status.json'),
     });
-    expect(result.listFiles).toBe(9);
+    expect(result.listFiles).toBe(13);
     expect((await readdir(join(outputDir, 'lists'))).sort()).toEqual([
       'bristol-china.json', 'cambridge-china.json', 'edinburgh-china.json', 'glasgow-china.json',
-      'nottingham-china.json', 'sheffield-china.json', 'southampton-china.json', 'ucl-china.json', 'warwick-china.json',
+      'leeds-business-china.json', 'leeds-computer-science-media-china.json',
+      'leeds-other-schools-a-l-china.json', 'leeds-other-schools-m-z-china.json',
+      'nottingham-china.json', 'sheffield-china.json', 'southampton-china.json', 'ucl-china.json',
+      'warwick-china.json',
     ]);
     expect(result.reverseIndexEntries).toBeGreaterThan(4_000);
     expect(result.institutionRecords).toBeGreaterThan(2_900);

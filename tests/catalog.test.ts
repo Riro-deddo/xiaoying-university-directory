@@ -12,6 +12,13 @@ import { normalizeInstitutionName } from '../src/lib/institution-search';
 import { expectUnacceptedLinkOnlyStatus } from './helpers/source-status';
 
 const officialBaseHost = (url: string) => new URL(url).hostname.replace(/^www\./u, '');
+const leedsSourceIds = [
+  'leeds-business-china',
+  'leeds-computer-science-media-china',
+  'leeds-other-schools-a-l-china',
+  'leeds-other-schools-m-z-china',
+] as const;
+const replacedBaselineSourceIds = new Set(['leeds-china']);
 const sha256 = async (value: unknown) => Array.from(new Uint8Array(await crypto.subtle.digest(
   'SHA-256',
   new TextEncoder().encode(JSON.stringify(value)),
@@ -77,9 +84,10 @@ describe('QS cohort and official source registry', () => {
     expect(audit.filter((row) => row.reviewStatus === 'reviewed')).toHaveLength(99);
     expect(audit.filter((row) => row.reviewStatus === 'blocked')).toHaveLength(2);
     expect(audit.filter((row) => row.reviewStatus === 'unreviewed')).toHaveLength(0);
-    expect(audit.filter((row) => baseline.nonTargetAuditRows.some((baselineRow) => baselineRow.universityId === row.universityId))
+    expect(audit.filter((row) => row.universityId !== 'university-of-leeds'
+      && baseline.nonTargetAuditRows.some((baselineRow) => baselineRow.universityId === row.universityId))
       .map(({ reviewStatus: _reviewStatus, ...row }) => row))
-      .toEqual(baseline.nonTargetAuditRows);
+      .toEqual(baseline.nonTargetAuditRows.filter((row) => row.universityId !== 'university-of-leeds'));
     expect(audit.filter((row) => row.expectedState === 'official-list').map((row) => row.universityId).sort()).toEqual([
       'loughborough-university',
       'university-college-london',
@@ -87,6 +95,7 @@ describe('QS cohort and official source registry', () => {
       'university-of-cambridge',
       'university-of-edinburgh',
       'university-of-glasgow',
+      'university-of-leeds',
       'university-of-nottingham',
       'university-of-sheffield',
       'university-of-southampton',
@@ -144,8 +153,10 @@ describe('QS cohort and official source registry', () => {
     ]);
     expect(universities.filter((university) => university.state === 'pending').map((university) => university.id))
       .toEqual(baseline.pendingUniversityIds.filter((id) => !batchReviewedIds.has(id)));
-    const preExistingSourceIds = new Set(baseline.sourceConfigs.map((source) => source.id));
-    expect(sources.filter((source) => preExistingSourceIds.has(source.id))).toEqual(baseline.sourceConfigs);
+    const preservedBaselineSources = baseline.sourceConfigs
+      .filter((source) => !replacedBaselineSourceIds.has(source.id));
+    const preExistingSourceIds = new Set(preservedBaselineSources.map((source) => source.id));
+    expect(sources.filter((source) => preExistingSourceIds.has(source.id))).toEqual(preservedBaselineSources);
     const baselineRequirements = requirements.filter((fact) => preExistingSourceIds.has(fact.sourceId));
     expect(baselineRequirements).toHaveLength(baseline.reviewedRequirementCount);
     expect(await sha256(baselineRequirements)).toBe(baseline.requirementsSha256);
@@ -159,6 +170,7 @@ describe('QS cohort and official source registry', () => {
       'university-of-cambridge',
       'university-of-edinburgh',
       'university-of-glasgow',
+      'university-of-leeds',
       'university-of-nottingham',
       'university-of-sheffield',
       'university-of-southampton',
@@ -182,7 +194,6 @@ describe('QS cohort and official source registry', () => {
       'queen-mary-university-of-london',
       'queens-university-belfast',
       'university-of-birmingham',
-      'university-of-leeds',
       'university-of-leicester',
       'university-of-liverpool',
       'university-of-manchester',
@@ -316,12 +327,15 @@ describe('QS cohort and official source registry', () => {
       'rgu-china-requirements', 'shu-china-entry-requirements', 'lancashire-china-requirements',
       'derby-mainland-china-international-entry', 'cccu-china-requirements',
     ]);
+    const leedsUpdatedSources = new Set<string>(leedsSourceIds);
     for (const source of sources) {
       expect(source.url).toMatch(/^https:\/\//u);
       expect(source.scopeZh.trim()).toBeTruthy();
       expect(source.institutionRule.summaryZh.trim()).toBeTruthy();
       expect(source.institutionRule.verification).toMatchObject({
-        reviewedAt: recheckedSources.has(source.id)
+        reviewedAt: leedsUpdatedSources.has(source.id)
+          ? '2026-08-30'
+          : recheckedSources.has(source.id)
           ? '2026-08-10'
           : newlyReviewedSources.has(source.id) ? '2026-08-09' : '2026-08-02',
         url: expect.stringMatching(/^https:\/\//u),
@@ -619,7 +633,7 @@ describe('QS cohort and official source registry', () => {
     }
   });
 
-  it('limits full-registry normalized search conflicts to the two reviewed ambiguities', () => {
+  it('limits full-registry normalized search conflicts to the reviewed ambiguities', () => {
     const recordIdsByName = new Map<string, Set<string>>();
     for (const record of institutions) {
       for (const name of [record.nameZh, record.nameEn, ...record.aliases]) {
@@ -634,9 +648,9 @@ describe('QS cohort and official source registry', () => {
     const registeredIds = new Set(institutions.map((record) => record.id));
     const referencedIds = new Set(requirements.map((fact) => fact.institutionId));
 
-    expect(institutions).toHaveLength(2914);
-    expect(requirements).toHaveLength(5754);
-    expect(collisionKeys).toEqual(['taizhou university', 'wuyi university']);
+    expect(institutions).toHaveLength(2979);
+    expect(requirements).toHaveLength(8898);
+    expect(collisionKeys).toEqual(['chongqing institute of engineering', 'taizhou university', 'wuyi university']);
     expect(requirements.every((fact) => registeredIds.has(fact.institutionId))).toBe(true);
     expect(institutions.every((record) => referencedIds.has(record.id))).toBe(true);
     expect(registeredIds.has('the-second-military-medical-university-55f6f4f4')).toBe(false);
@@ -659,6 +673,9 @@ describe('QS cohort and official source registry', () => {
       'bristol-china',
       'cambridge-china',
       'edinburgh-china',
+      'leeds-business-china',
+      'leeds-computer-science-media-china',
+      'leeds-other-schools-m-z-china',
       'sheffield-china',
       'southampton-china',
       'warwick-china',

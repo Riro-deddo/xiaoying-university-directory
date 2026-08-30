@@ -370,28 +370,144 @@
     }
   },
   {
-    "id": "leeds-china",
+    "id": "leeds-business-china",
     "universityId": "university-of-leeds",
-    "labelZh": "中国研究生入学要求",
-    "url": "https://www.leeds.ac.uk/dir-record/profiles/21834/china",
-    "kind": "china-requirements",
-    "scope": "university",
-    "scopeZh": "学校面向中国申请人的研究生要求",
+    "labelZh": "商学院中国院校名单",
+    "url": "https://business.leeds.ac.uk/masters/doc/accepted-chinese-institutions",
+    "kind": "official-list",
+    "scope": "faculty",
+    "scopeZh": "利兹大学商学院全部硕士课程",
+    "cycle": "2026/27",
     "institutionRule": {
-      "type": "none",
-      "summaryZh": "利兹说明不同学院可采用不同的本科院校标准；未发现可作为当前全校结论的完整名单，旧申请季学院 PDF 仅作历史资料。",
+      "type": "eligibility",
+      "summaryZh": "2026/27 入学：利兹大学商学院只接受官网名单内的中国院校，最低均分通常为 75%–80%，具体取决于本科院校。",
+      "listedMeaningZh": "名单内院校可按商学院公布的 75%–80% 最低均分范围核对申请条件。",
+      "unlistedMeaningZh": "官网说明未列出的中国院校不在该申请范围内。",
+      "caveatZh": "名单和分数仅作申请指引，最终决定由利兹大学招生团队作出。",
       "verification": {
-        "reviewedAt": "2026-08-02",
-        "url": "https://www.leeds.ac.uk/dir-record/profiles/21834/china",
-        "requiredText": ["China", "postgraduate"]
+        "reviewedAt": "2026-08-30",
+        "url": "https://business.leeds.ac.uk/masters/doc/accepted-chinese-institutions",
+        "requiredText": ["Accepted Chinese institutions", "All Business School programmes", "75%-80%"]
       }
     },
     "parser": {
-      "mode": "link-only",
+      "mode": "html-grouped-items",
+      "groups": [
+        { "selector": ".single-accordion .accordion-body", "tierOfficial": "Leeds University Business School · minimum GPA 75%-80%" }
+      ],
+      "itemSelector": "p",
+      "institutionPattern": "^(?<institutionNameZh>[^A-Z]+?)\\s*(?<institutionOfficial>[A-Z].+)$",
       "guard": {
-        "minimumRecords": 0,
-        "maximumRecords": 1,
-        "maximumRemovalRatio": 0
+        "minimumRecords": 850,
+        "maximumRecords": 1000,
+        "maximumRemovalRatio": 0.05
+      }
+    }
+  },
+  {
+    "id": "leeds-computer-science-media-china",
+    "universityId": "university-of-leeds",
+    "labelZh": "计算机与传媒学院中国院校名单",
+    "url": "https://www.leeds.ac.uk/international-applying/doc/accepted-chinese-institutions-postgraduate-admissions/page/3",
+    "kind": "official-list",
+    "scope": "faculty",
+    "scopeZh": "计算机学院与传媒学院全部硕士课程",
+    "cycle": "2026/27",
+    "institutionRule": {
+      "type": "eligibility",
+      "summaryZh": "2026/27 入学：计算机学院与传媒学院采用同一套中国院校名单，最低均分通常为 75%–80%，具体取决于本科院校和课程。",
+      "listedMeaningZh": "名单内院校可按计算机学院与传媒学院公布的 75%–80% 最低均分范围核对申请条件。",
+      "unlistedMeaningZh": "官网说明未列出的中国院校不在该申请范围内。",
+      "caveatZh": "名单和分数仅作申请指引，最终决定由利兹大学招生团队作出。",
+      "verification": {
+        "reviewedAt": "2026-08-30",
+        "url": "https://www.leeds.ac.uk/international-applying/doc/accepted-chinese-institutions-postgraduate-admissions/page/3",
+        "requiredText": ["School of Computer Science", "School of Media and Communication", "75%-80%"]
+      }
+    },
+    "parser": {
+      "mode": "html-grouped-items",
+      "groups": [
+        { "selector": ".uol-rich-text.uol-rich-text--with-lead > .uol-accordion:has(.uol-accordion__content li)", "tierOfficial": "School of Computer Science and School of Media and Communication · minimum GPA 75%-80%" },
+        { "selector": ".uol-rich-text.uol-rich-text--with-lead > .uol-accordion:nth-of-type(18)", "tierOfficial": "School of Computer Science and School of Media and Communication · minimum GPA 75%-80%" }
+      ],
+      "itemSelector": ".uol-accordion__content li, .uol-accordion__content > p",
+      "institutionPattern": "^(?<institutionNameZh>[^A-Z]+?)\\s*(?<institutionOfficial>[A-Z].+)$",
+      "guard": {
+        "minimumRecords": 850,
+        "maximumRecords": 1000,
+        "maximumRemovalRatio": 0.05
+      }
+    }
+  },
+  {
+    "id": "leeds-other-schools-a-l-china",
+    "universityId": "university-of-leeds",
+    "labelZh": "其他学院中国院校名单（A–L）",
+    "url": "https://www.leeds.ac.uk/international-applying/doc/accepted-chinese-institutions-postgraduate-admissions/page/4",
+    "kind": "official-list",
+    "scope": "faculty",
+    "scopeZh": "官网列出的其他学院硕士课程；院校英文名 A–L",
+    "cycle": "2026/27",
+    "institutionRule": {
+      "type": "eligibility",
+      "summaryZh": "2026/27 入学：官网列出的其他学院采用这套中国院校名单，最低均分通常为 70%–85%，具体取决于本科院校和课程。",
+      "listedMeaningZh": "本页收录英文名 A–L 的院校，可按其他学院公布的 70%–85% 最低均分范围核对申请条件。",
+      "unlistedMeaningZh": "官网说明未列出的中国院校不在该申请范围内。",
+      "caveatZh": "仅适用于官网列出的学院；名单和分数仅作申请指引，最终决定由利兹大学招生团队作出。",
+      "verification": {
+        "reviewedAt": "2026-08-30",
+        "url": "https://www.leeds.ac.uk/international-applying/doc/accepted-chinese-institutions-postgraduate-admissions/page/4",
+        "requiredText": ["All other courses - page 1", "70%-85%", "School of Law"]
+      }
+    },
+    "parser": {
+      "mode": "html-grouped-items",
+      "groups": [
+        { "selector": ".uol-rich-text.uol-rich-text--with-lead > .uol-accordion", "tierOfficial": "Other listed schools · minimum GPA 70%-85% · A-L" }
+      ],
+      "itemSelector": ".uol-accordion__content li",
+      "institutionPattern": "^(?<institutionNameZh>[^A-Z]+?)\\s*(?<institutionOfficial>[A-Z].+)$",
+      "guard": {
+        "minimumRecords": 600,
+        "maximumRecords": 750,
+        "maximumRemovalRatio": 0.05
+      }
+    }
+  },
+  {
+    "id": "leeds-other-schools-m-z-china",
+    "universityId": "university-of-leeds",
+    "labelZh": "其他学院中国院校名单（M–Z）",
+    "url": "https://www.leeds.ac.uk/international-applying/doc/accepted-chinese-institutions-postgraduate-admissions/page/5",
+    "kind": "official-list",
+    "scope": "faculty",
+    "scopeZh": "官网列出的其他学院硕士课程；院校英文名 M–Z",
+    "cycle": "2026/27",
+    "institutionRule": {
+      "type": "eligibility",
+      "summaryZh": "2026/27 入学：官网列出的其他学院采用这套中国院校名单，最低均分通常为 70%–85%，具体取决于本科院校和课程。",
+      "listedMeaningZh": "本页收录英文名 M–Z 的院校，可按其他学院公布的 70%–85% 最低均分范围核对申请条件。",
+      "unlistedMeaningZh": "官网说明未列出的中国院校不在该申请范围内。",
+      "caveatZh": "仅适用于官网列出的学院；名单和分数仅作申请指引，最终决定由利兹大学招生团队作出。",
+      "verification": {
+        "reviewedAt": "2026-08-30",
+        "url": "https://www.leeds.ac.uk/international-applying/doc/accepted-chinese-institutions-postgraduate-admissions/page/5",
+        "requiredText": ["All other courses - page 2", "70%-85%", "School of Law"]
+      }
+    },
+    "parser": {
+      "mode": "html-grouped-items",
+      "groups": [
+        { "selector": ".uol-rich-text.uol-rich-text--with-lead > .uol-accordion:has(.uol-accordion__content li)", "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z" },
+        { "selector": ".uol-rich-text.uol-rich-text--with-lead > .uol-accordion:nth-of-type(6)", "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z" }
+      ],
+      "itemSelector": ".uol-accordion__content li, .uol-accordion__content > p",
+      "institutionPattern": "^(?<institutionNameZh>[^A-Z]+?)\\s*(?<institutionOfficial>[A-Z].+)$",
+      "guard": {
+        "minimumRecords": 600,
+        "maximumRecords": 750,
+        "maximumRemovalRatio": 0.05
       }
     }
   },

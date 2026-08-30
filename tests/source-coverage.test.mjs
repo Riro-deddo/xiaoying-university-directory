@@ -54,11 +54,11 @@ describe('source coverage report', () => {
       'Cohort universities: 28',
       'QS universities: 93',
       'Specialist universities: 8',
-      'Full public lists: 10',
-      'Rule-only universities: 81',
+      'Full public lists: 11',
+      'Rule-only universities: 80',
       'No-public-list records: 8',
-      'Parser-enabled sources: 9',
-      'Link-only sources: 93',
+      'Parser-enabled sources: 13',
+      'Link-only sources: 92',
     ]);
   });
   it('covers 93 QS universities and eight approved specialists with one audit row each', () => {
@@ -83,8 +83,9 @@ describe('source coverage report', () => {
     expect(universities.filter((university) => university.state === 'pending').map((university) => university.id))
       .toEqual(baseline.pendingUniversityIds.filter((id) => !batchReviewedIds.has(id)));
     expect(baseline.nonTargetAuditRows).toHaveLength(36);
-    const preExistingSourceIds = new Set(baseline.sourceConfigs.map((source) => source.id));
-    expect(sources.filter((source) => preExistingSourceIds.has(source.id))).toEqual(baseline.sourceConfigs);
+    const preservedBaselineSources = baseline.sourceConfigs.filter((source) => source.id !== 'leeds-china');
+    const preExistingSourceIds = new Set(preservedBaselineSources.map((source) => source.id));
+    expect(sources.filter((source) => preExistingSourceIds.has(source.id))).toEqual(preservedBaselineSources);
     expect(baseline.reviewedRequirementCount).toBe(5754);
     expect(baseline.requirementsSha256).toBe('f932710580077d2bf84c0fccffc239e4ed9c3cba4fdb807c6a58ad2b1c802f00');
   });
@@ -93,8 +94,11 @@ describe('source coverage report', () => {
     expect(audit.filter((row) => row.reviewStatus === 'reviewed')).toHaveLength(99);
     expect(audit.filter((row) => row.reviewStatus === 'blocked')).toHaveLength(2);
     expect(audit.filter((row) => row.reviewStatus === 'unreviewed')).toHaveLength(0);
-    expect(audit.filter((row) => baseline.nonTargetAuditRows.some((baselineRow) => baselineRow.universityId === row.universityId))
-      .map((row) => row.universityId)).toEqual(baseline.nonTargetAuditRows.map((row) => row.universityId));
+    expect(audit.filter((row) => row.universityId !== 'university-of-leeds'
+      && baseline.nonTargetAuditRows.some((baselineRow) => baselineRow.universityId === row.universityId))
+      .map((row) => row.universityId)).toEqual(baseline.nonTargetAuditRows
+      .filter((row) => row.universityId !== 'university-of-leeds')
+      .map((row) => row.universityId));
     expect(audit.filter((row) => row.reviewStatus === 'unreviewed').map((row) => row.universityId)).toEqual([]);
   });
 
@@ -329,8 +333,8 @@ describe('source coverage report', () => {
     expect(evaluateCoverage({ cohort, rankings, universities, sources, audit }).counts).toMatchObject({
       qsUniversities: 93,
       specialistUniversities: 8,
-      fullPublicLists: 10,
-      ruleOnlyUniversities: 81,
+      fullPublicLists: 11,
+      ruleOnlyUniversities: 80,
       noPublicListRecords: 8,
     });
   });
