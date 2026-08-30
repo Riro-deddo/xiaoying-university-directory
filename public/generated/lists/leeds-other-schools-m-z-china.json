@@ -1,0 +1,3953 @@
+{
+  "sourceId": "leeds-other-schools-m-z-china",
+  "rows": [
+    {
+      "institutionId": "cn-50154ee2d7fbaa61",
+      "nameZh": "北方工业大学",
+      "nameEn": "North China University of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-38fe392afb9e622f",
+      "nameZh": "北方民族大学",
+      "nameEn": "North Minzu University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-4c4584e0cd28fa90",
+      "nameZh": "北华航天工业学院",
+      "nameEn": "North China Institute of Aerospace Engineering",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "peking-university-4818c188",
+      "nameZh": "北京大学",
+      "nameEn": "Peking University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "university-of-science-and-technology-beijing-0c404289",
+      "nameZh": "北京科技大学",
+      "nameEn": "University of Science and Technology Beijing",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-e50493d10a7bad9c",
+      "nameZh": "北京科技大学天津学院",
+      "nameEn": "Tianjin College, University of Science and Technology Beijing",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-a1290c79e9017064",
+      "nameZh": "北京协和医学院",
+      "nameEn": "Peking Union Medical College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-411417c1f09cae92",
+      "nameZh": "成都理工大学工程技术学院",
+      "nameEn": "The Engineering&Technical College of Chengdu University of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-2c49a35a60d423f9",
+      "nameZh": "重庆工商大学派斯学院",
+      "nameEn": "Pass College of Chongqing Technology and Business University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-73bcde1a2a031cbb",
+      "nameZh": "川北医学院",
+      "nameEn": "North Sichuan Medical College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-52213434653ff816",
+      "nameZh": "大连医科大学中山学院",
+      "nameEn": "Zhongshan College of Dalian Medical University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-7917aadeee3a8d4b",
+      "nameZh": "滇西科技师范学院",
+      "nameEn": "West Yunnan University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-59f37fca84e30c7b",
+      "nameZh": "滇西应用技术大学",
+      "nameEn": "West Yunnan University of Applied Sciences",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "university-of-electronic-science-and-technology-of-china-101301b5",
+      "nameZh": "电子科技大学",
+      "nameEn": "University of Electronic Science and Technology of China",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-bac54e0cdb72a029",
+      "nameZh": "电子科技大学中山学院",
+      "nameEn": "University of Electronic Science and Technology of China, Zhongshan Institute",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "northeastern-university-677adfe6",
+      "nameZh": "东北大学",
+      "nameEn": "Northeastern University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-414ed377bb3a1145",
+      "nameZh": "东北电力大学",
+      "nameEn": "Northeast Electric Power University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "northeast-forestry-university-d79f64f5",
+      "nameZh": "东北林业大学",
+      "nameEn": "Northeast Forestry University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "northeast-agricultural-university-271d6328",
+      "nameZh": "东北农业大学",
+      "nameEn": "Northeast Agricultural University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "northeast-normal-university-a77c4549",
+      "nameZh": "东北师范大学",
+      "nameEn": "Northeast Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-d5290d315c617d17",
+      "nameZh": "东北石油大学",
+      "nameEn": "Northeast Petroleum University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "southeast-university-53eebce9",
+      "nameZh": "东南大学",
+      "nameEn": "Southeast University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-a5942a26fba26161",
+      "nameZh": "东南大学成贤学院",
+      "nameEn": "Southeast University Chengxian College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "university-of-international-business-and-economics-2a13872d",
+      "nameZh": "对外经济贸易大学",
+      "nameEn": "University of International Business and Economics",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-90887ce277253105",
+      "nameZh": "鄂尔多斯应用技术学院",
+      "nameEn": "Ordos Institute of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-0c50c6ba69bed731",
+      "nameZh": "赣南师范大学科技学院",
+      "nameEn": "Science and Technology College GanNan Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-c73d14c585cdca76",
+      "nameZh": "广东东软学院",
+      "nameEn": "Neusoft Institute Guangdong",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-72b1508a5f292d25",
+      "nameZh": "广西民族大学相思湖学院",
+      "nameEn": "Xiangsihu College of Guangxi Minzu University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-647fb3607197cd05",
+      "nameZh": "广州南方学院",
+      "nameEn": "Nanfang College Guangzhou",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-90d30d6ceac59d4b",
+      "nameZh": "广州软件学院",
+      "nameEn": "Software Engineering Institute of Guangzhou",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-4c191c8158e19072",
+      "nameZh": "贵州医科大学神奇民族医药学院",
+      "nameEn": "ShenQi Ethnic Medicine College of Guizhou Medical University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-0c829717a25e41a4",
+      "nameZh": "贵州中医药大学时珍学院",
+      "nameEn": "Shizhen College of Guizhou University of Traditional Chinese Medicine",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "national-university-of-defense-technology-471f1540",
+      "nameZh": "国防科技大学",
+      "nameEn": "National University of Defense Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-bb3a66e826796ad3",
+      "nameZh": "国际关系学院",
+      "nameEn": "University of International Relations",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-6a86e42541ad0d56",
+      "nameZh": "河南开封科技传媒学院",
+      "nameEn": "Technology & Media University of Henan Kaifeng",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-921472f7fc0e4cc7",
+      "nameZh": "衡阳师范学院南岳学院",
+      "nameEn": "Nanyue College of Hengyang Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-6bf02795e21c89ff",
+      "nameZh": "湖北大学知行学院",
+      "nameEn": "ZhiXing College of HuBei University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-9988c30263342260",
+      "nameZh": "湖北汽车工业学院科技学院",
+      "nameEn": "Science and Technology College of Hubei University of Automotive Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-78f8fd44bdd24a8e",
+      "nameZh": "湖北文理学院理工学院",
+      "nameEn": "Science and Technology College of Hubei University of Arts and Science",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-2f61d0d1e989e749",
+      "nameZh": "湖南科技大学潇湘学院",
+      "nameEn": "Xiaoxiang College of Hunan University of Science and Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-0a4f3e69c2e259ea",
+      "nameZh": "湖南农业大学东方科技学院",
+      "nameEn": "Orient Science and Technology College of Hunan Agricultural University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-089b41c74faa1b20",
+      "nameZh": "湖南中医药大学湘杏学院",
+      "nameEn": "Xiangxing College of Hunan University of Chinese Medicine",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "north-china-electric-power-university-huabei-electric-power-university-68bcce4b",
+      "nameZh": "华北电力大学",
+      "nameEn": "North China Electric Power University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-01f3706e918c807c",
+      "nameZh": "华北科技学院",
+      "nameEn": "North China Institute of Science and Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-5b86ab909d4ce14d",
+      "nameZh": "华北理工大学",
+      "nameEn": "North China University of Science and Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-190c219e29fa4cb5",
+      "nameZh": "华北理工大学轻工学院",
+      "nameEn": "Qinggong College, North China University of Science and Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-13829b04052ede09",
+      "nameZh": "华北水利水电大学",
+      "nameEn": "North China University of Water Resources and Electric Power",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "south-china-university-of-technology-09771dd9",
+      "nameZh": "华南理工大学",
+      "nameEn": "South China University of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-ce4376976a045805",
+      "nameZh": "华南农业大学",
+      "nameEn": "South China Agricultural University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-772694fbef49f1e7",
+      "nameZh": "华南农业大学珠江学院",
+      "nameEn": "Zhujiang College, South China Agricultural University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "south-china-normal-university-1646a6bc",
+      "nameZh": "华南师范大学",
+      "nameEn": "South China Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-4541f8c66e145e3e",
+      "nameZh": "济南大学",
+      "nameEn": "University of Jinan",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-07b139080134f9e8",
+      "nameZh": "江苏科技大学苏州理工学院",
+      "nameEn": "Suzhou Institute of Technology,Jiangsu University of Science and Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-a458e0b38ea20500",
+      "nameZh": "江西农业大学南昌商学院",
+      "nameEn": "NanChang Business College of JXAU",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-0d09cb6397158c1c",
+      "nameZh": "锦州医科大学医疗学院",
+      "nameEn": "Medical College of Jinzhou Medical University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-5dea15b3e3333431",
+      "nameZh": "康复大学",
+      "nameEn": "University of Health and Rehabilitation Sciences",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-c6f8f582ab2a49d6",
+      "nameZh": "昆明文理学院",
+      "nameEn": "The College of Arts and Sciences Kunming",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-d1dc31e1aa5df302",
+      "nameZh": "辽宁科技大学",
+      "nameEn": "University of Science and Technology LiaoNing",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-c2301683e42fb73c",
+      "nameZh": "辽宁中医药大学杏林学院",
+      "nameEn": "Xinglin College of Liaoning University of Traditional Chinese Medicine",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-fcbb221afaf0723d",
+      "nameZh": "马鞍山学院",
+      "nameEn": "Maanshan University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-1afb36d2e88d9075",
+      "nameZh": "茅台学院",
+      "nameEn": "Moutai Institute",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-f70e2711e34051e1",
+      "nameZh": "绵阳城市学院",
+      "nameEn": "Mianyang City College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-4851a28dfdd5fd02",
+      "nameZh": "绵阳师范学院",
+      "nameEn": "Mianyang Teachers' College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-b66fd8021d6912b2",
+      "nameZh": "闽江学院",
+      "nameEn": "Minjiang University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-2c09f679bc517534",
+      "nameZh": "闽南科技学院",
+      "nameEn": "Minnan Science and Technology College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-7e52df5ff84b1903",
+      "nameZh": "闽南理工学院",
+      "nameEn": "Minnan University of Science and Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-5dbaf033b2ac7712",
+      "nameZh": "闽南师范大学",
+      "nameEn": "Minnan Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-fde4f5b27f86fa2d",
+      "nameZh": "牡丹江师范学院",
+      "nameEn": "Mudanjiang Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-c2d504692a024a08",
+      "nameZh": "牡丹江医科大学",
+      "nameEn": "Mudanjiang Medical University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "nanchang-university-3dc3ad6c",
+      "nameZh": "南昌大学",
+      "nameEn": "Nanchang University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-58e5826f0576f63d",
+      "nameZh": "南昌大学科学技术学院",
+      "nameEn": "Nanchang University College of Science and Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-b59d839935176592",
+      "nameZh": "南昌工学院",
+      "nameEn": "Nanchang Institute of Science & Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-e2a1f04ae5a5794a",
+      "nameZh": "南昌航空大学",
+      "nameEn": "Nanchang Hangkong University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-50ec747f724cbc38",
+      "nameZh": "南昌航空大学科技学院",
+      "nameEn": "Science and Technology College of NCHU",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-0d3ea8d4818b34b6",
+      "nameZh": "南昌交通学院",
+      "nameEn": "Nanchang Jiaotong Institute",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-b8f2ae9f9e50d8de",
+      "nameZh": "南昌理工学院",
+      "nameEn": "Nanchang Institute of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-64b3839d04f10b00",
+      "nameZh": "南昌师范学院",
+      "nameEn": "Nanchang Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-c2fe93f826054b85",
+      "nameZh": "南昌医学院",
+      "nameEn": "Nanchang Medical College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-b13a1988ae001ab3",
+      "nameZh": "南昌应用技术师范学院",
+      "nameEn": "Nanchang Normal College of Applied Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-fd334bd375069320",
+      "nameZh": "南方科技大学",
+      "nameEn": "Southern University of Science and Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-25d485384721b830",
+      "nameZh": "南方医科大学",
+      "nameEn": "Southern Medical University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-b2514758578ec733",
+      "nameZh": "南华大学",
+      "nameEn": "University of South China",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-cfd80442d89c0935",
+      "nameZh": "南京财经大学",
+      "nameEn": "Nanjing University of Finance & Economics",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-e034cc0cb463b989",
+      "nameZh": "南京财经大学红山学院",
+      "nameEn": "Nanjing University of Finance and Economics Hongshan College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "nanjing-university-8fbdf4ba",
+      "nameZh": "南京大学",
+      "nameEn": "Nanjing University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-b86a6a64f19e7da2",
+      "nameZh": "南京大学金陵学院",
+      "nameEn": "Nanjing University Jinling College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-c3547543a17c1e2e",
+      "nameZh": "南京工程学院",
+      "nameEn": "Nanjing Institute of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-66d2d094bcb5412d",
+      "nameZh": "南京工业大学",
+      "nameEn": "Nanjing Tech University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-9ff5dea5495b800c",
+      "nameZh": "南京工业大学浦江学院",
+      "nameEn": "Nanjing Tech University Pujiang Institute",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-455084ec13ada5a4",
+      "nameZh": "南京航空航天大学",
+      "nameEn": "Nanjing University of Aeronautics and Astronautics",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "nanhang-jincheng-college-independent-college-of-nanjing-university-of-aeronautics-and-astronautics-7e1b9462",
+      "nameZh": "南京航空航天大学金城学院",
+      "nameEn": "Nanhang Jincheng College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-2302eacd0602ab8c",
+      "nameZh": "南京警察学院",
+      "nameEn": "Nanjing Police University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "nanjing-university-of-science-and-technology-af39a57f",
+      "nameZh": "南京理工大学",
+      "nameEn": "Nanjing University of Science and Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-60511ab1bb57f2a4",
+      "nameZh": "南京理工大学泰州科技学院",
+      "nameEn": "Taizhou Institute of Sci.& Tech., NUST",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-59f630855c3c2e49",
+      "nameZh": "南京理工大学紫金学院",
+      "nameEn": "Nanjing University of Science and Technology ZiJin College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-7fc8cb9cf80e2f0e",
+      "nameZh": "南京林业大学",
+      "nameEn": "Nanjing Forestry University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "nanjing-agricultural-university-c39b4a83",
+      "nameZh": "南京农业大学",
+      "nameEn": "Nanjing Agricultural University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-8626f600ce33bc20",
+      "nameZh": "南京审计大学",
+      "nameEn": "Nanjing Audit University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-37f739f4b49ee611",
+      "nameZh": "南京审计大学金审学院",
+      "nameEn": "Nanjing Audit University Jinshen College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "nanjing-normal-university-4bbad3a8",
+      "nameZh": "南京师范大学",
+      "nameEn": "Nanjing Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-063d7c2152b5c2c5",
+      "nameZh": "南京师范大学泰州学院",
+      "nameEn": "Nanjing Normal University Taizhou College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-e2c427fa9a070b49",
+      "nameZh": "南京师范大学中北学院",
+      "nameEn": "Nanjing Normal University Zhongbei College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-26b4c2b26039c345",
+      "nameZh": "南京特殊教育师范学院",
+      "nameEn": "Nanjing Normal University Of Special Education",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-61dfd5110e994e7f",
+      "nameZh": "南京体育学院",
+      "nameEn": "Nanjing Sport Institute",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-cf2eacbe4baba83a",
+      "nameZh": "南京晓庄学院",
+      "nameEn": "Nanjing Xiaozhuang University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-52596fb2bd34dd3f",
+      "nameZh": "南京信息工程大学",
+      "nameEn": "Nanjing University of Information Science & Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-e0fc5173f5b0b813",
+      "nameZh": "南京医科大学",
+      "nameEn": "Nanjing Medical University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-c040f3f9fbaf2edd",
+      "nameZh": "南京艺术学院",
+      "nameEn": "Nanjing University of the Arts",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-98ded03fe5b061ca",
+      "nameZh": "南京邮电大学",
+      "nameEn": "Nanjing University of Posts and Telecommunications",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-ee36e7ca8d651457",
+      "nameZh": "南京邮电大学通达学院",
+      "nameEn": "Tongda College of Nanjing University of Posts & Telecommunications",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-0518fdd161b38fa4",
+      "nameZh": "南京中医药大学",
+      "nameEn": "Nanjing University of Chinese Medicine",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-710f7faa96f628b8",
+      "nameZh": "南京中医药大学翰林学院",
+      "nameEn": "Nanjing University of Chinese Medicine Hanlin College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "nankai-university-fed7345f",
+      "nameZh": "南开大学",
+      "nameEn": "Nankai University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-effb7226e0e36c2a",
+      "nameZh": "南开大学滨海学院",
+      "nameEn": "Nankai University Binhai College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-cc06bfbbc448f9b9",
+      "nameZh": "南宁理工学院",
+      "nameEn": "Nanning College of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-b82946bc356cda3d",
+      "nameZh": "南宁师范大学",
+      "nameEn": "Nanning Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-313d3ec1aef136ea",
+      "nameZh": "南宁师范大学师园学院",
+      "nameEn": "Shiyuan College of Nanning Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-a2500204bd839f2f",
+      "nameZh": "南宁学院",
+      "nameEn": "Nanning University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-2028b05d1de45079",
+      "nameZh": "南通大学",
+      "nameEn": "Nantong University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-8c38b34e766fbf45",
+      "nameZh": "南通大学杏林学院",
+      "nameEn": "Nantong University Xinglin College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-4e86271dc89e95a0",
+      "nameZh": "南通理工学院",
+      "nameEn": "Nantong Institute of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-7f7eb5050ca3119a",
+      "nameZh": "南阳理工学院",
+      "nameEn": "Nanyang Institute of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-980caa765e427846",
+      "nameZh": "南阳师范学院",
+      "nameEn": "Nanyang Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-0b8604eeeadcfc3b",
+      "nameZh": "内江师范学院",
+      "nameEn": "Neijiang Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-b588c6f533c0dd19",
+      "nameZh": "内蒙古大学创业学院",
+      "nameEn": "Pioneer College, Inner Mongolia University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-ac531376537a4593",
+      "nameZh": "宁波财经学院",
+      "nameEn": "Ningbo University of Finance and Economics",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-3d37c7d0c88d7564",
+      "nameZh": "宁波大学",
+      "nameEn": "Ningbo University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-561929b07cda1165",
+      "nameZh": "宁波工程学院",
+      "nameEn": "Ningbo University of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-7e4136357c9c0ca1",
+      "nameZh": "宁波诺丁汉大学",
+      "nameEn": "University of Nottingham Ningbo China",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-dd38bca4ca3bf331",
+      "nameZh": "宁德师范学院",
+      "nameEn": "Ningde Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "ningxia-university-b5450df6",
+      "nameZh": "宁夏大学",
+      "nameEn": "Ningxia University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-e9f7d5041d81af69",
+      "nameZh": "宁夏大学新华学院",
+      "nameEn": "XINHUA COLLEGE OF NINGXIA UNIVERSITY",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-ea7e3e250b3f2b93",
+      "nameZh": "宁夏理工学院",
+      "nameEn": "Ningxia Institute of Science and Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-420d922c78eeff4e",
+      "nameZh": "宁夏师范大学",
+      "nameEn": "Ningxia Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-f029b5c4de40ffc9",
+      "nameZh": "宁夏医科大学",
+      "nameEn": "Ningxia Mediacal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-2bf38792bc58042c",
+      "nameZh": "攀枝花学院",
+      "nameEn": "Panzhihua University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-3c2a3fcc930103f2",
+      "nameZh": "平顶山学院",
+      "nameEn": "Pingdingshan University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-9b0681270485662e",
+      "nameZh": "萍乡学院",
+      "nameEn": "Pingxiang University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-e9ab44f034c6c97c",
+      "nameZh": "莆田学院",
+      "nameEn": "Putian University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-cdb080c6760ac280",
+      "nameZh": "普洱学院",
+      "nameEn": "Puer University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-2503de36c5364431",
+      "nameZh": "齐鲁工业大学",
+      "nameEn": "Qilu University Of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-28dfaa434273fecc",
+      "nameZh": "齐鲁理工学院",
+      "nameEn": "Qilu Institute of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-348541a2dbb165b1",
+      "nameZh": "齐鲁师范学院",
+      "nameEn": "Qilu Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-29904446fb3732b5",
+      "nameZh": "齐鲁医药学院",
+      "nameEn": "Qilu Medical University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-ee629141ac48a74d",
+      "nameZh": "齐齐哈尔大学",
+      "nameEn": "Qiqihar University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-9ed7027014331122",
+      "nameZh": "齐齐哈尔工程学院",
+      "nameEn": "Qiqihar Institute of Engineering",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-e3663f777b3078b5",
+      "nameZh": "齐齐哈尔医学院",
+      "nameEn": "Qiqihar Medical University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-9f9e55b3d3c6308a",
+      "nameZh": "黔南民族师范学院",
+      "nameEn": "Qiannan Normal University for Nationalities",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-7cdffd96edf0a332",
+      "nameZh": "青岛滨海学院",
+      "nameEn": "Qingdao Binhai University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-e1081944b32c4a84",
+      "nameZh": "青岛城市学院",
+      "nameEn": "Qingdao City University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-cefdddc5afd82a02",
+      "nameZh": "青岛大学",
+      "nameEn": "Qingdao University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-798a43f1d58b93f6",
+      "nameZh": "青岛电影学院",
+      "nameEn": "Qingdao Film Academy",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-00a2799797fe33f4",
+      "nameZh": "青岛工学院",
+      "nameEn": "Qingdao Institute of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-d0501c4f4f85cd1f",
+      "nameZh": "青岛黄海学院",
+      "nameEn": "Qingdao Huanghai University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-2d18ecf9189ca65f",
+      "nameZh": "青岛科技大学",
+      "nameEn": "Qingdao University of Science & Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-e4372d68e6cf954b",
+      "nameZh": "青岛理工大学",
+      "nameEn": "Qingdao University of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-14039889388d7bd2",
+      "nameZh": "青岛农业大学",
+      "nameEn": "Qingdao Agricultural University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "qinghai-university-e7f8995a",
+      "nameZh": "青海大学",
+      "nameEn": "Qinghai University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-6af5b5eeebf11679",
+      "nameZh": "青海理工学院",
+      "nameEn": "Qinghai Institute of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-c864bc89aa62f740",
+      "nameZh": "青海民族大学",
+      "nameEn": "Qinghai Nationalities University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-4ccda4da248fdfdc",
+      "nameZh": "青海师范大学",
+      "nameEn": "Qinghai Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "tsinghua-university-88293fa6",
+      "nameZh": "清华大学",
+      "nameEn": "Tsinghua University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-020974d2b4f1f430",
+      "nameZh": "琼台师范学院",
+      "nameEn": "Qiongtai Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-5c2642748d1d5e9b",
+      "nameZh": "曲阜师范大学",
+      "nameEn": "Qufu Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-e1ff45f0da4d0569",
+      "nameZh": "曲靖健康医学院",
+      "nameEn": "Qujing University of Medicin & Health Sciences",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-39bb87a1a6601ce4",
+      "nameZh": "曲靖师范学院",
+      "nameEn": "Qujing Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-7e8eabf58577ba8b",
+      "nameZh": "衢州学院",
+      "nameEn": "Quzhou University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-b081a4a748551193",
+      "nameZh": "泉州师范学院",
+      "nameEn": "Quanzhou Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-837b6849a1ad7186",
+      "nameZh": "泉州信息工程学院",
+      "nameEn": "Quanzhou University of Information Engineering",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-2586545e2ab75e43",
+      "nameZh": "三江学院",
+      "nameEn": "Sanjiang University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-8af9230c5764083d",
+      "nameZh": "三明学院",
+      "nameEn": "Sanming University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-ec514a81777dab6f",
+      "nameZh": "三亚学院",
+      "nameEn": "University of Sanya",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "xiamen-university-5271b226",
+      "nameZh": "厦门大学",
+      "nameEn": "Xiamen University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-3a555acba710ed1a",
+      "nameZh": "厦门大学嘉庚学院",
+      "nameEn": "Xiamen University Tan Kah Kee College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-086910bfe435e004",
+      "nameZh": "厦门工学院",
+      "nameEn": "Xiamen Institute of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-48ae8929b0a635c3",
+      "nameZh": "厦门华厦学院",
+      "nameEn": "Xiamen Huaxia University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-6bca0031f717dc4e",
+      "nameZh": "厦门理工学院",
+      "nameEn": "Xiamen University of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-46e27d52246390b8",
+      "nameZh": "厦门医学院",
+      "nameEn": "Xiamen Medical College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-7d878327ab4225d7",
+      "nameZh": "山东财经大学",
+      "nameEn": "Shandong University of Finance and Economics",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-b12c609b0979ada8",
+      "nameZh": "山东财经大学燕山学院",
+      "nameEn": "Yanshan College Shandong University of Finance and Economics",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "shandong-university-fd3a1051",
+      "nameZh": "山东大学",
+      "nameEn": "Shandong University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-c33b92447be76a83",
+      "nameZh": "山东第二医科大学",
+      "nameEn": "Shandong Second Medical University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-22bbfe9561215d71",
+      "nameZh": "山东第一医科大学",
+      "nameEn": "Shandong First Medical University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-fbdb8252ab4315ed",
+      "nameZh": "山东工商学院",
+      "nameEn": "Shandong Technology and Business University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-42a4a776197b63a2",
+      "nameZh": "山东工艺美术学院",
+      "nameEn": "Shandong University of Art & Design",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-5dee15fe816c4dfb",
+      "nameZh": "山东管理学院",
+      "nameEn": "Shandong Management University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-37f52063d7661c77",
+      "nameZh": "山东航空学院",
+      "nameEn": "Shandong University of Aeronautics",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-9d2f505a73696fd2",
+      "nameZh": "山东华宇工学院",
+      "nameEn": "SHANDONG HUAYU UNIVERSITY OF TECHNOLOGY",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-7b1cf34f4c998443",
+      "nameZh": "山东建筑大学",
+      "nameEn": "Shandong Jianzhu University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-820fd738c4099eff",
+      "nameZh": "山东交通学院",
+      "nameEn": "Shandong Jiaotong University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-95632bf53773f567",
+      "nameZh": "山东警察学院",
+      "nameEn": "Shandong Police College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-11c7d41c24a0e8c6",
+      "nameZh": "山东科技大学",
+      "nameEn": "Shandong University of Science and Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-ec637cc1b188241d",
+      "nameZh": "山东理工大学",
+      "nameEn": "Shandong University of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-82d9531d6a84e5f3",
+      "nameZh": "山东农业大学",
+      "nameEn": "Shandong Agricultural University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-b1506fd73f92d581",
+      "nameZh": "山东农业工程学院",
+      "nameEn": "Shandong Agriculture And Engineering University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-7a75dcb69cf29b04",
+      "nameZh": "山东女子学院",
+      "nameEn": "Shandong Women's University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-1a9ab6593dfaad4b",
+      "nameZh": "山东青年政治学院",
+      "nameEn": "Shandong Youth University Of Political Science",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-631f59041ec1fc89",
+      "nameZh": "山东师范大学",
+      "nameEn": "Shandong Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-d23e20c3eab774df",
+      "nameZh": "山东石油化工学院",
+      "nameEn": "Shandong Institute of Petroleum and Chemical Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-ffb292091970adeb",
+      "nameZh": "山东体育学院",
+      "nameEn": "Shandong Sport University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-4da254abb6bb31e3",
+      "nameZh": "山东现代学院",
+      "nameEn": "Shandong Xiandai University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-a41e11531aa2aa31",
+      "nameZh": "山东协和学院",
+      "nameEn": "Shandong Xiehe University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-922a7c3b2b1a0f73",
+      "nameZh": "山东艺术学院",
+      "nameEn": "Shandong University Of Arts",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-a80030749fa876e4",
+      "nameZh": "山东英才学院",
+      "nameEn": "Shandong Yingcai University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-382f1ca7d266384d",
+      "nameZh": "山东政法学院",
+      "nameEn": "Shandong University of Political Science and Law",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-20b304937d7795da",
+      "nameZh": "山东中医药大学",
+      "nameEn": "Shandong University of Traditional Chinese Medicine",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-de7ed595888bd6ad",
+      "nameZh": "山西财经大学",
+      "nameEn": "Shanxi University of Finance & Economics",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-58dd61dfb7f49efb",
+      "nameZh": "山西财经大学华商学院",
+      "nameEn": "Shanxi University of Finance and Economics Huashang College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-cb6811f5475b77e6",
+      "nameZh": "山西大同大学",
+      "nameEn": "Shanxi Datong University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-6e7eaa04028d873e",
+      "nameZh": "山西大学",
+      "nameEn": "Shanxi University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-429ce01ecf0b0b37",
+      "nameZh": "山西电子科技学院",
+      "nameEn": "Shanxi University of Electronic Science and Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-67ed82b06a033957",
+      "nameZh": "山西工程技术学院",
+      "nameEn": "Shanxi Institute of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-e27f918eb00cb604",
+      "nameZh": "山西工商学院",
+      "nameEn": "Shanxi Technology And Business College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-e06a73579186c398",
+      "nameZh": "山西工学院",
+      "nameEn": "Shanxi College of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-f7066084e242ca6a",
+      "nameZh": "山西晋中理工学院",
+      "nameEn": "Shanxi Jinzhong Institute of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-5d672fbfb36127f0",
+      "nameZh": "山西警察学院",
+      "nameEn": "Shanxi Police College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-2a576f5d92eb20d4",
+      "nameZh": "山西科技学院",
+      "nameEn": "Shanxi Institute of Science and Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-959e110ef72987ef",
+      "nameZh": "山西能源学院",
+      "nameEn": "Shanxi Institute of Energy",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-8e8d39b7e602465b",
+      "nameZh": "山西农业大学",
+      "nameEn": "Shanxi Agricultural University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-de7f00aea57752bd",
+      "nameZh": "山西师范大学",
+      "nameEn": "Shanxi Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-57145af4454592bd",
+      "nameZh": "山西医科大学",
+      "nameEn": "Shanxi Medical University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-ae5544d4de54c04c",
+      "nameZh": "山西医药学院",
+      "nameEn": "Shanxi University of Medicine",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-a6a60fd4ddb5b185",
+      "nameZh": "山西应用科技学院",
+      "nameEn": "Shanxi College Of Applied Science And Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-90b4d58f29ffec37",
+      "nameZh": "山西中医药大学",
+      "nameEn": "Shanxi University of Chinese Medicine",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-e2e4550a4cccc0ce",
+      "nameZh": "陕西服装工程学院",
+      "nameEn": "SHAANXI FASHION ENGINEERING UNIVERSITY",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-24815544ebf23d0d",
+      "nameZh": "陕西国际商贸学院",
+      "nameEn": "Shaanxi Institute of International Trade & Commerce",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-ad2aa00ff7e118af",
+      "nameZh": "陕西科技大学",
+      "nameEn": "Shaanxi University of Science and Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-185b495fb2a2b8be",
+      "nameZh": "陕西理工大学",
+      "nameEn": "Shaanxi University of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "shaanxi-normal-university-d6405edd",
+      "nameZh": "陕西师范大学",
+      "nameEn": "Shaanxi Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-18d37467d884e80b",
+      "nameZh": "陕西学前师范学院",
+      "nameEn": "SHAANXI XUEQIAN NORMAL UNIVERSITY",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-f21387d39854a964",
+      "nameZh": "陕西中医药大学",
+      "nameEn": "Shaanxi University of Chinese Medicine",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-3248e9701268a380",
+      "nameZh": "汕头大学",
+      "nameEn": "Shantou University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-ebf0e4ce1ec846ea",
+      "nameZh": "商洛学院",
+      "nameEn": "Shangluo University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-290d57ca0e0c80cb",
+      "nameZh": "商丘工学院",
+      "nameEn": "Shangqiu Institute of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-a094de7ee43dd489",
+      "nameZh": "商丘师范学院",
+      "nameEn": "Shangqiu Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-0c0bb4b0614fc6df",
+      "nameZh": "商丘学院",
+      "nameEn": "Shangqiu University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "shanghai-university-of-finance-and-economics-a5566168",
+      "nameZh": "上海财经大学",
+      "nameEn": "Shanghai University of Finance and Economics",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-2d8ef8ac42cd7e6b",
+      "nameZh": "上海财经大学浙江学院",
+      "nameEn": "Shanghai University of Finance and Economics Zhejiang College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "shanghai-university-b933744c",
+      "nameZh": "上海大学",
+      "nameEn": "Shanghai University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-f1b7d27b50c3e665",
+      "nameZh": "上海第二工业大学",
+      "nameEn": "Shanghai Polytechnic University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-9001c8fa38cafcaf",
+      "nameZh": "上海电机学院",
+      "nameEn": "Shanghai Dianji University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-a9d74cfb80feea9f",
+      "nameZh": "上海电力大学",
+      "nameEn": "Shanghai University of Electric Power",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-b5644094c5e79432",
+      "nameZh": "上海对外经贸大学",
+      "nameEn": "Shanghai University of International Business and Economics",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-e65e4a6296230250",
+      "nameZh": "上海工程技术大学",
+      "nameEn": "Shanghai University of Engineering Science",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-d2de21c9853e47a1",
+      "nameZh": "上海公安学院",
+      "nameEn": "Shanghai Police College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-1d0ed119cebb0f32",
+      "nameZh": "上海海关学院",
+      "nameEn": "Shanghai Customs College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-d10a95448b63a97c",
+      "nameZh": "上海海事大学",
+      "nameEn": "Shanghai Maritime University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-cfc7b6e5ea305c78",
+      "nameZh": "上海海洋大学",
+      "nameEn": "Shanghai Ocean University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-76c5fb8a29eb0b74",
+      "nameZh": "上海建桥学院",
+      "nameEn": "Shanghai Jian Qiao University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-d88e57bcc7df41c2",
+      "nameZh": "上海健康医学院",
+      "nameEn": "Shanghai University of Medicine & Health Sciences",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "shanghai-jiaotong-university-95ef14bb",
+      "nameZh": "上海交通大学",
+      "nameEn": "Shanghai Jiao Tong University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-eb45aa61b7f92334",
+      "nameZh": "上海科技大学",
+      "nameEn": "ShanghaiTech University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-d29a6543c8bb3bd9",
+      "nameZh": "上海理工大学",
+      "nameEn": "University of Shanghai for Science and Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-7a2d52b420049cf2",
+      "nameZh": "上海立达学院",
+      "nameEn": "Shanghai Lida University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-9dcfdf65ccfe4cf1",
+      "nameZh": "上海立信会计金融学院",
+      "nameEn": "Shanghai Lixin University of Accounting and Finance",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-18dd0a52323f889e",
+      "nameZh": "上海纽约大学",
+      "nameEn": "NYU Shanghai",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-ec5573f21607c289",
+      "nameZh": "上海杉达学院",
+      "nameEn": "Sanda University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-d50e1f5e986521fc",
+      "nameZh": "上海商学院",
+      "nameEn": "Shanghai Business School",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-6c705e0f6bc8cb9c",
+      "nameZh": "上海师范大学",
+      "nameEn": "Shanghai Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-6fe6346450ce9dad",
+      "nameZh": "上海师范大学天华学院",
+      "nameEn": "Shanghai Normal University Tianhua College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-cc8859b820a6285b",
+      "nameZh": "上海视觉艺术学院",
+      "nameEn": "Shanghai Institute of Visual Arts",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-b0c5ad9361839895",
+      "nameZh": "上海体育大学",
+      "nameEn": "Shanghai University of Sport",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "shanghai-international-studies-university-b9e33065",
+      "nameZh": "上海外国语大学",
+      "nameEn": "Shanghai International Studies University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-fe7b6d381f8d229f",
+      "nameZh": "上海外国语大学贤达经济人文学院",
+      "nameEn": "Xianda College of Economics and Humanities Shanghai International Studies University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-e9bfa20de5215a34",
+      "nameZh": "上海戏剧学院",
+      "nameEn": "Shanghai Theatre Academy",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-e1e296ddd6576b13",
+      "nameZh": "上海兴伟学院",
+      "nameEn": "Xing Wei College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-76ab0dbb8e91e76a",
+      "nameZh": "上海音乐学院",
+      "nameEn": "Shanghai Conservatory of Music",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-5d67b3f01219151f",
+      "nameZh": "上海应用技术大学",
+      "nameEn": "Shanghai Institute of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-8fbfa46ba68bb9cc",
+      "nameZh": "上海政法学院",
+      "nameEn": "Shanghai University of Political Science and Law",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-4cb8ebbd13c8f9a0",
+      "nameZh": "上海中医药大学",
+      "nameEn": "Shanghai University of Traditional Chinese Medicine",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-29ef66b4ce7aa7ac",
+      "nameZh": "上饶师范学院",
+      "nameEn": "Shangrao Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-f6e82e044ecd3ab6",
+      "nameZh": "韶关学院",
+      "nameEn": "Shaoguan University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-1f13c3fad0f9b53b",
+      "nameZh": "邵阳学院",
+      "nameEn": "Shaoyang University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-26a2decdc07eea0b",
+      "nameZh": "绍兴理工学院",
+      "nameEn": "Shaoxing Institute of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-5f8d261e8651f188",
+      "nameZh": "绍兴文理学院",
+      "nameEn": "Shaoxing University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "shenzhen-moscow-state-university-and-beijing-institute-of-technology-university-85730974",
+      "nameZh": "深圳北理莫斯科大学",
+      "nameEn": "Shenzhen MSU-BIT University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "shenzhen-university-c29d3a31",
+      "nameZh": "深圳大学",
+      "nameEn": "Shenzhen University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-2f607cfb2cd2f8e2",
+      "nameZh": "深圳技术大学",
+      "nameEn": "Shenzhen Technology University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-2d46d05ecf656c5f",
+      "nameZh": "深圳理工大学",
+      "nameEn": "Shenzhen University of Advanced Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-e8278a954f9cbf84",
+      "nameZh": "沈阳城市建设学院",
+      "nameEn": "Shenyang Urban Construction University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-637e2c5ab9da1cb1",
+      "nameZh": "沈阳城市学院",
+      "nameEn": "Shenyang City University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-1852dc4a1e3466a0",
+      "nameZh": "沈阳大学",
+      "nameEn": "Shenyang University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-439fa065864f2c02",
+      "nameZh": "沈阳工程学院",
+      "nameEn": "Shenyang Institute of Engineering",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-7d541a52771f7a15",
+      "nameZh": "沈阳工学院",
+      "nameEn": "Shenyang Institute of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-b9604c716fb30c4a",
+      "nameZh": "沈阳工业大学",
+      "nameEn": "Shenyang University of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-15ce08ce64e818e8",
+      "nameZh": "沈阳航空航天大学",
+      "nameEn": "Shenyang Aerospace University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-cb2331af15da7eda",
+      "nameZh": "沈阳化工大学",
+      "nameEn": "Shenyang University of Chemical Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-4df8111109118a64",
+      "nameZh": "沈阳建筑大学",
+      "nameEn": "Shenyang Jianzhu University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-472d97a334b2cc01",
+      "nameZh": "沈阳科技学院",
+      "nameEn": "Shenyang Institute of Science and Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-0332b94a1d1ff267",
+      "nameZh": "沈阳理工大学",
+      "nameEn": "Shenyang Ligong University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-9f17441fdd3ac472",
+      "nameZh": "沈阳农业大学",
+      "nameEn": "Shenyang Agricultural University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-45f92ebdd67244ad",
+      "nameZh": "沈阳师范大学",
+      "nameEn": "Shenyang Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-0fae165f6df95b3a",
+      "nameZh": "沈阳体育学院",
+      "nameEn": "Shenyang Sport University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-45770eb68fdbdd20",
+      "nameZh": "沈阳药科大学",
+      "nameEn": "Shenyang Pharmaceutical University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-8071d9aea340c24f",
+      "nameZh": "沈阳医学院",
+      "nameEn": "Shenyang Medical College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-dece23ddcb9b5038",
+      "nameZh": "沈阳音乐学院",
+      "nameEn": "Shenyang Conservatory of Music",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "shihezi-university-2f997caf",
+      "nameZh": "石河子大学",
+      "nameEn": "Shihezi University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-5ba2d0b9952e0330",
+      "nameZh": "石家庄铁道大学",
+      "nameEn": "Shijiazhuang Tiedao University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-66144faad039c23c",
+      "nameZh": "石家庄铁道大学四方学院",
+      "nameEn": "Shijiazhuang Tiedao University SiFang College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-0699209d33d7607e",
+      "nameZh": "石家庄学院",
+      "nameEn": "Shijiazhuang University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-b2d6116cefebce41",
+      "nameZh": "四川传媒学院",
+      "nameEn": "Sichuan University of Media and Communications",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "sichuan-university-2721d57b",
+      "nameZh": "四川大学",
+      "nameEn": "Sichuan University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-e0e7c337467c7bee",
+      "nameZh": "四川大学锦江学院",
+      "nameEn": "Sichuan University Jinjiang College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-dfbad85b82a29fcf",
+      "nameZh": "四川电影电视学院",
+      "nameEn": "SICHUAN FILM AND TELEVISION UNIVERSITY",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-9bc959e60fac5dff",
+      "nameZh": "四川工商学院",
+      "nameEn": "Sichuan Technology and Business University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-20e69e930537a7a1",
+      "nameZh": "四川工业科技学院",
+      "nameEn": "Sichuan Institute of Industrial technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-d5aa73e207289784",
+      "nameZh": "四川警察学院",
+      "nameEn": "Sichuan Police College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-9ace08daae038137",
+      "nameZh": "四川旅游学院",
+      "nameEn": "Sichuan Tourism University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "sichuan-fine-arts-institute-60415366",
+      "nameZh": "四川美术学院",
+      "nameEn": "Sichuan Fine Arts Institute",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-0969f1c3bbf11a0c",
+      "nameZh": "四川民族学院",
+      "nameEn": "Sichuan Minzu College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "sichuan-agricultural-university-2e7fba53",
+      "nameZh": "四川农业大学",
+      "nameEn": "Sichuan Agricultural University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-a2c2f00fccfa7688",
+      "nameZh": "四川轻化工大学",
+      "nameEn": "Sichuan University of Science and Engineering",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-7ab7a137b3cddb15",
+      "nameZh": "四川师范大学",
+      "nameEn": "Sichuan Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-745ddc6644648d7e",
+      "nameZh": "四川外国语大学",
+      "nameEn": "Sichuan International Studies University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-e4d68f0cda509009",
+      "nameZh": "四川文化艺术学院",
+      "nameEn": "Sichuan University of Culture and Arts",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-bff4f266b2fd2880",
+      "nameZh": "四川文理学院",
+      "nameEn": "Sichuan University of Arts and Science",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-2d57174532e7e143",
+      "nameZh": "四川音乐学院",
+      "nameEn": "Sichuan Conservatory of Music",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-71b1d0b56052561a",
+      "nameZh": "苏州城市学院",
+      "nameEn": "Suzhou City University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "suzhou-soochow-university-16c0f71b",
+      "nameZh": "苏州大学",
+      "nameEn": "Soochow University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-9bf323500e5c0f52",
+      "nameZh": "苏州工学院",
+      "nameEn": "Suzhou University of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-950b0187a36af8c8",
+      "nameZh": "苏州科技大学",
+      "nameEn": "Suzhou University of Science and Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-558e2005e9e9e1af",
+      "nameZh": "苏州科技大学天平学院",
+      "nameEn": "Tianping College of Suzhou University of Science and Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-95b9166353df08c3",
+      "nameZh": "宿迁学院",
+      "nameEn": "Suqian University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-afb4b1f993585a40",
+      "nameZh": "宿州学院",
+      "nameEn": "Suzhou University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-0f96355e12a49281",
+      "nameZh": "绥化学院",
+      "nameEn": "Sui Hua University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-2957b2487bcebe9a",
+      "nameZh": "塔里木大学",
+      "nameEn": "Tarim University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-c2388dc8089d8ecb",
+      "nameZh": "台州学院",
+      "nameEn": "Taizhou University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-60a3b8a4a0f6cf8b",
+      "nameZh": "太原工业学院",
+      "nameEn": "Taiyuan Institute of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-15e6ab28437466cc",
+      "nameZh": "太原科技大学",
+      "nameEn": "Taiyuan University of Science and Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-3138f45f7d32ad1c",
+      "nameZh": "太原理工大学",
+      "nameEn": "Taiyuan University of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-3fdddaae783e1c00",
+      "nameZh": "太原师范学院",
+      "nameEn": "Taiyuan Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-1695fcd6dc0266c4",
+      "nameZh": "太原学院",
+      "nameEn": "Taiyuan University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-d8f4dd018e19e12b",
+      "nameZh": "泰山科技学院",
+      "nameEn": "Taishan College of Science and Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-bdb98b73075a5aaf",
+      "nameZh": "泰山学院",
+      "nameEn": "Taishan University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-79d6215ce67db635",
+      "nameZh": "泰州学院",
+      "nameEn": "Taizhou University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-ac0952a67833d1eb",
+      "nameZh": "唐山师范学院",
+      "nameEn": "Tangshan Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-2252630b7a0cc721",
+      "nameZh": "唐山学院",
+      "nameEn": "Tangshan University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-866b18aa83952ef9",
+      "nameZh": "天津财经大学",
+      "nameEn": "Tianjin University of Finance and Economics",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-148edd5bba18afee",
+      "nameZh": "天津财经大学珠江学院",
+      "nameEn": "Tianjin University of Finance and Economics Pearl River College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-797a1aca562250a2",
+      "nameZh": "天津城建大学",
+      "nameEn": "Tianjin Chengjian University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-8e302e42f9720c2c",
+      "nameZh": "天津传媒学院",
+      "nameEn": "Tianjin College of Media and Arts",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "tianjin-university-1c8bcb86",
+      "nameZh": "天津大学",
+      "nameEn": "Tianjin University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-a9a9f87f07b8162d",
+      "nameZh": "天津工业大学",
+      "nameEn": "Tiangong University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-44181d7b54320498",
+      "nameZh": "天津科技大学",
+      "nameEn": "Tianjin University of Science & Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-9f67267b73bdaaa1",
+      "nameZh": "天津理工大学",
+      "nameEn": "Tianjin University of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-c739e02e4bb49dbb",
+      "nameZh": "天津理工大学中环信息学院",
+      "nameEn": "Zhonghuan Information College Tianjin University of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-36e869a7152adce3",
+      "nameZh": "天津美术学院",
+      "nameEn": "Tianjin Academy of Fine Arts",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-134679c27d5e9cbf",
+      "nameZh": "天津农学院",
+      "nameEn": "Tianjin Agricultural University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-e183d3f8f0ff0da5",
+      "nameZh": "天津仁爱学院",
+      "nameEn": "Tianjin Renai College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-2d6f3bcc703de246",
+      "nameZh": "天津商业大学",
+      "nameEn": "Tianjin University of Commerce",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-57046983e9a5bac4",
+      "nameZh": "天津商业大学宝德学院",
+      "nameEn": "Tianjin University of Commerce Boustead College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-9992f1d0e6ea7b43",
+      "nameZh": "天津师范大学",
+      "nameEn": "Tianjin Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-75006af589981dda",
+      "nameZh": "天津师范大学津沽学院",
+      "nameEn": "Tianjin Normal University Jingu College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-70aaae4034d7d81e",
+      "nameZh": "天津体育学院",
+      "nameEn": "Tianjin University of Sport",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-c3658237b1604279",
+      "nameZh": "天津天狮学院",
+      "nameEn": "Tianshi College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-88b67394f3f00103",
+      "nameZh": "天津外国语大学",
+      "nameEn": "Tianjin Foreign Studies University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "tianjin-medical-university-65b3512e",
+      "nameZh": "天津医科大学",
+      "nameEn": "Tianjin Medical University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-16e111ac51e23b43",
+      "nameZh": "天津音乐学院",
+      "nameEn": "Tianjin Conservatory of Music",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-7ea120c6e923ca65",
+      "nameZh": "天津职业技术师范大学",
+      "nameEn": "Tianjin University of Technology and Education",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-946f630faaf65808",
+      "nameZh": "天津中德应用技术大学",
+      "nameEn": "Tianjin Sino-German University of Applied Sciences",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-3646ec25e5e26c13",
+      "nameZh": "天津中医药大学",
+      "nameEn": "Tianjin University of Traditional Chinese Medicine",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-b9b1939ac1e73bf8",
+      "nameZh": "天水师范大学",
+      "nameEn": "Tianshui Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-793ded852734e759",
+      "nameZh": "通化师范学院",
+      "nameEn": "Tonghua Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "tongji-university-a6533d2e",
+      "nameZh": "同济大学",
+      "nameEn": "Tongji University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-bfa748b7683fe323",
+      "nameZh": "同济大学浙江学院",
+      "nameEn": "TongJi ZheJiang College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-c6590061d3e5a8d2",
+      "nameZh": "铜陵学院",
+      "nameEn": "Tongling University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-4cb7727abd273623",
+      "nameZh": "铜仁学院",
+      "nameEn": "Tongren University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-896aac0b245f6024",
+      "nameZh": "皖江工学院",
+      "nameEn": "Wanjiang University of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-a3c71d110a8fe7f5",
+      "nameZh": "皖南医学院",
+      "nameEn": "Wannan Medical College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-b0668d159d4aaef3",
+      "nameZh": "皖西学院",
+      "nameEn": "West Anhui University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-ba3c0f4702a72cee",
+      "nameZh": "潍坊科技学院",
+      "nameEn": "Weifang University of Science & Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-a6af20ae2bb16569",
+      "nameZh": "潍坊理工学院",
+      "nameEn": "Weifang Institute of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-95e136e7ce4bf8d0",
+      "nameZh": "潍坊学院",
+      "nameEn": "Weifang University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-1319fda1b0097994",
+      "nameZh": "渭南师范学院",
+      "nameEn": "Weinan Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-586b61d1f799c7c2",
+      "nameZh": "温州大学",
+      "nameEn": "Wenzhou University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-5b5751cfd0151431",
+      "nameZh": "温州肯恩大学",
+      "nameEn": "Wenzhou-Kean University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-48b08efd1a690487",
+      "nameZh": "温州理工学院",
+      "nameEn": "Wenzhou University of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-ac23613fb4dafd33",
+      "nameZh": "温州商学院",
+      "nameEn": "Wenzhou Business College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-123f1a90e1196282",
+      "nameZh": "温州医科大学",
+      "nameEn": "Wenzhou Medical University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-db56a2132f31f997",
+      "nameZh": "温州医科大学仁济学院",
+      "nameEn": "Wenzhou Medical University Renji College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-71d38e0df75212f3",
+      "nameZh": "文华学院",
+      "nameEn": "Wenhua College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-51314af84be5fd25",
+      "nameZh": "文山学院",
+      "nameEn": "WenShan University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-ba9ef5ad85daadba",
+      "nameZh": "无锡太湖学院",
+      "nameEn": "Wuxi Taihu University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-7cd7dac7f399c0a6",
+      "nameZh": "无锡学院",
+      "nameEn": "Wuxi University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-6e190a42d977a2c7",
+      "nameZh": "芜湖学院",
+      "nameEn": "Wuhu University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-a8974cb41d153be5",
+      "nameZh": "梧州学院",
+      "nameEn": "Wuzhou University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-606aa744bd4add70",
+      "nameZh": "五邑大学",
+      "nameEn": "Wuyi University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-1f7b16def512e267",
+      "nameZh": "武昌工学院",
+      "nameEn": "Wuchang Institute of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-2887d61534ec4a97",
+      "nameZh": "武昌理工学院",
+      "nameEn": "Wuchang University of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-0a73fd093dc0479b",
+      "nameZh": "武昌首义学院",
+      "nameEn": "Wuchang Shouyi University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-7b12090658274d46",
+      "nameZh": "武汉城市学院",
+      "nameEn": "Wuhan City College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-5e4f2f3a4ad0c511",
+      "nameZh": "武汉传媒学院",
+      "nameEn": "Wuhan University of Communication",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "wuhan-university-102c49fc",
+      "nameZh": "武汉大学",
+      "nameEn": "Wuhan University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-72d784fe13d43d6b",
+      "nameZh": "武汉东湖学院",
+      "nameEn": "Wuhan Donghu University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-c15e3685422f1b6d",
+      "nameZh": "武汉纺织大学",
+      "nameEn": "Wuhan Textile University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-ad2473fd149df5dd",
+      "nameZh": "武汉工程大学",
+      "nameEn": "Wuhan Institute of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-c3114592fe117025",
+      "nameZh": "武汉工程大学邮电与信息工程学院",
+      "nameEn": "The College of Post and Telecommunication of WIT",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-757b40ad1d6d7254",
+      "nameZh": "武汉工程科技学院",
+      "nameEn": "Wuhan University of Engineering Science",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-2ba863671a3fd40d",
+      "nameZh": "武汉工商学院",
+      "nameEn": "Wuhan Technology and Business University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-b0729eec2091e3bc",
+      "nameZh": "武汉华夏理工学院",
+      "nameEn": "Wuhan Huaxia Institute of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-86f6965b9a3b5269",
+      "nameZh": "武汉科技大学",
+      "nameEn": "Wuhan University of Science and Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "wuhan-university-of-technology-85782e2d",
+      "nameZh": "武汉理工大学",
+      "nameEn": "Wuhan University of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-9ed28ff778297114",
+      "nameZh": "武汉轻工大学",
+      "nameEn": "Wuhan Polytechnic University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-e3002bf977e5c354",
+      "nameZh": "武汉晴川学院",
+      "nameEn": "Wuhan Qingchuan University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-eace07f6c2f3fae8",
+      "nameZh": "武汉商学院",
+      "nameEn": "Wuhan Business University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-a91334cd067682b9",
+      "nameZh": "武汉设计工程学院",
+      "nameEn": "Wuhan Institute of Design and Sciences",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-ae6038cfbedd9adc",
+      "nameZh": "武汉生物工程学院",
+      "nameEn": "Wuhan University of Bioengineering",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-9909693b33cef561",
+      "nameZh": "武汉体育学院",
+      "nameEn": "Wuhan Sports University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-eeb6a49097c4d828",
+      "nameZh": "武汉体育学院体育科技学院",
+      "nameEn": "The College of Sports Science and Technology of Wuhan Sports University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-8214bc384be26804",
+      "nameZh": "武汉文理学院",
+      "nameEn": "Wuhan College of Arts & Science",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-0b46b6deddf61a34",
+      "nameZh": "武汉学院",
+      "nameEn": "Wuhan College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-4b9946c21d4a4991",
+      "nameZh": "武汉音乐学院",
+      "nameEn": "Wuhan Conservatory Of Music",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-0f4e2477ec1b1de6",
+      "nameZh": "武夷学院",
+      "nameEn": "Wuyi University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-885e4dd1f6bcc2e4",
+      "nameZh": "西安财经大学",
+      "nameEn": "Xi'an University of Finance and Economics",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-4a71a54a23dfea4d",
+      "nameZh": "西安财经大学行知学院",
+      "nameEn": "Xing Zhi College of Xi'an University of Finance and Economics",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "xidian-university-also-known-as-xi-an-electronic-science-and-technology-university-14c4a29e",
+      "nameZh": "西安电子科技大学",
+      "nameEn": "Xidian University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-69a4c20df7cb3760",
+      "nameZh": "西安翻译学院",
+      "nameEn": "Xi'an Fanyi University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-e157ba255dc83b03",
+      "nameZh": "西安工程大学",
+      "nameEn": "Xi'an Polytechnic University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-60dc3e76db739989",
+      "nameZh": "西安工商学院",
+      "nameEn": "Xi'an Technology and Business College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-7159f8b96c5a7ba6",
+      "nameZh": "西安工业大学",
+      "nameEn": "Xi'an Technological University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-8a7dfcc44de26438",
+      "nameZh": "西安航空学院",
+      "nameEn": "Xi'an Aeronautical Institute",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-de989aba09911e4c",
+      "nameZh": "西安建筑科技大学",
+      "nameEn": "Xi'an University of Architecture and Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-6cbbdad3abeee723",
+      "nameZh": "西安建筑科技大学华清学院",
+      "nameEn": "Xian University of Architecture and Technology Huaqing College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "xi-an-jiaotong-university-95c2779f",
+      "nameZh": "西安交通大学",
+      "nameEn": "Xi'an Jiaotong University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-9261e0354bad751d",
+      "nameZh": "西安交通大学城市学院",
+      "nameEn": "Xi'an Jiaotong University City College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-bf66089f708badf6",
+      "nameZh": "西安交通工程学院",
+      "nameEn": "Xi'an Traffic Enginering Institute",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-c1a38cd93310b57a",
+      "nameZh": "西安科技大学",
+      "nameEn": "Xi'an University of Science and Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-b3b80d66a927a43e",
+      "nameZh": "西安科技大学高新学院",
+      "nameEn": "Xi'an Kedagaoxin University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-0013ad2fd63e891f",
+      "nameZh": "西安理工大学",
+      "nameEn": "Xi'an University of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-1fadd6379b614883",
+      "nameZh": "西安理工大学高科学院",
+      "nameEn": "The Hi-tech College of Xi'an University of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-7f166b19f5f7b265",
+      "nameZh": "西安美术学院",
+      "nameEn": "Xi'an Academy of Fine Arts",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-560777f8b9726d27",
+      "nameZh": "西安明德理工学院",
+      "nameEn": "Xi'an Mingde Institute of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-df7e61cfcf46207f",
+      "nameZh": "西安欧亚学院",
+      "nameEn": "Xi'an Eurasia University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-712219d014b0f79d",
+      "nameZh": "西安培华学院",
+      "nameEn": "Xi'an Peihua University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-e7af3667c2186a37",
+      "nameZh": "西安石油大学",
+      "nameEn": "Xi'an Shiyou University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-cdcd83b5615a81ed",
+      "nameZh": "西安思源学院",
+      "nameEn": "Xi'an Siyuan University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-08de04d1c7df448c",
+      "nameZh": "西安体育学院",
+      "nameEn": "Xi'an Physical Education University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-6efda8a5a04542f6",
+      "nameZh": "西安外国语大学",
+      "nameEn": "Xi'an International Studies University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-af0f1c16193437b0",
+      "nameZh": "西安外事学院",
+      "nameEn": "Xi'an International University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-79f512b9a9b59e52",
+      "nameZh": "西安文理学院",
+      "nameEn": "Xi'an University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-bf3ca456da2a198d",
+      "nameZh": "西安医学院",
+      "nameEn": "Xi'an Medical University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-f7a27d752d951a4f",
+      "nameZh": "西安音乐学院",
+      "nameEn": "Xi'an Conservatory of Music",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-7f1f5a2004436880",
+      "nameZh": "西安邮电大学",
+      "nameEn": "Xi'an Univerisity of Post & Telecommunications",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "northwest-university-2a8585db",
+      "nameZh": "西北大学",
+      "nameEn": "Northwest University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-a95b12e8534bdce6",
+      "nameZh": "西北大学现代学院",
+      "nameEn": "Modern College of Northwest University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "northwestern-polytechnical-university-1e858b31",
+      "nameZh": "西北工业大学",
+      "nameEn": "Northwestern Polytechnical University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-db00874b3081c30f",
+      "nameZh": "西北民族大学",
+      "nameEn": "Northwest Minzu University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-34b69de534cefc31",
+      "nameZh": "西北农林科技大学",
+      "nameEn": "Northwest A&F University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-a02edfc06783b0c8",
+      "nameZh": "西北师范大学",
+      "nameEn": "Northwest Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-e41047038b07ee3a",
+      "nameZh": "西北政法大学",
+      "nameEn": "Northwest University of Political Science and Law",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-46113e050ff5d5f8",
+      "nameZh": "西藏藏医药大学",
+      "nameEn": "Tibetan Traditional Medicine College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "tibet-university-44adba65",
+      "nameZh": "西藏大学",
+      "nameEn": "Tibet University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-c5e4f7b68db8fbb7",
+      "nameZh": "西藏民族大学",
+      "nameEn": "Xizang Minzu University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-247a999d490c5497",
+      "nameZh": "西藏农牧大学",
+      "nameEn": "Xizang Agricultural and Animal Husbandry University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-a8a057a98332bdcf",
+      "nameZh": "西昌学院",
+      "nameEn": "Xichang University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-71cc3cb798a72343",
+      "nameZh": "西湖大学",
+      "nameEn": "Westlake University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-a915c92606d1bbaa",
+      "nameZh": "西华大学",
+      "nameEn": "Xihua University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-6e4724265455ad15",
+      "nameZh": "西交利物浦大学",
+      "nameEn": "Xi'an Jiaotong-Liverpool University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-34193943f518d3c2",
+      "nameZh": "西京学院",
+      "nameEn": "Xijing University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "southwestern-university-of-finance-and-economics-9e667ea4",
+      "nameZh": "西南财经大学",
+      "nameEn": "Southwestern University of Finance and Economics",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-da7eb547357680d3",
+      "nameZh": "西南财经大学天府学院",
+      "nameEn": "Tianfu College of SWUFE",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "southwest-university-14772c4d",
+      "nameZh": "西南大学",
+      "nameEn": "Southwest University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "southwest-jiaotong-university-9e83d9d0",
+      "nameZh": "西南交通大学",
+      "nameEn": "Southwest Jiaotong University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-24aa12a09f15469e",
+      "nameZh": "西南交通大学希望学院",
+      "nameEn": "Southwest Jiaotong University Hope College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-c994aee33c22b253",
+      "nameZh": "西南科技大学",
+      "nameEn": "Southwest University of Science and Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-7b675314194f87e8",
+      "nameZh": "西南林业大学",
+      "nameEn": "Southwest Forestry University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-66ee34cc8d89fe4b",
+      "nameZh": "西南民族大学",
+      "nameEn": "Southwest Minzu University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-60ccec0d7e09389a",
+      "nameZh": "西南石油大学",
+      "nameEn": "Southwest Petroleum University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-3fa6249495c2a90e",
+      "nameZh": "西南医科大学",
+      "nameEn": "Southwest Medical University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-93c2f8f9024ca6e3",
+      "nameZh": "西南政法大学",
+      "nameEn": "Southwest University of Political Science and Law",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-bf7e5b687c8d35bd",
+      "nameZh": "咸阳师范学院",
+      "nameEn": "Xianyang Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-2a43c086fb3735e8",
+      "nameZh": "香港科技大学(广州)",
+      "nameEn": "The Hong Kong University of Science and Technology (Guangzhou)",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-4ca65817c8ab1919",
+      "nameZh": "香港中文大学(深圳)",
+      "nameEn": "The Chinese University of Hong Kong, Shenzhen",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-9b79c3adbd2171ec",
+      "nameZh": "湘南学院",
+      "nameEn": "Xiangnan University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "xiangtan-university-cfb27bdb",
+      "nameZh": "湘潭大学",
+      "nameEn": "Xiangtan University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-2db092959dd55ce1",
+      "nameZh": "湘潭大学兴湘学院",
+      "nameEn": "Xingxiang College of Xiangtan University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-2d449096f3491c3d",
+      "nameZh": "湘潭理工学院",
+      "nameEn": "Xiangtan Institute of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-1fbd889ff15df2d5",
+      "nameZh": "忻州师范学院",
+      "nameEn": "Xinzhou Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-046148e7f4930ca7",
+      "nameZh": "新疆财经大学",
+      "nameEn": "Xinjiang University of Finance and Economics",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "xinjiang-university-e1c08fa3",
+      "nameZh": "新疆大学",
+      "nameEn": "Xinjiang University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-03268bc407863a9c",
+      "nameZh": "新疆第二医学院",
+      "nameEn": "Xinjiang Second Medical College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-f6489e02804ef630",
+      "nameZh": "新疆工程学院",
+      "nameEn": "Xinjiang Institute of Engineering",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-250956268747cf8b",
+      "nameZh": "新疆和田学院",
+      "nameEn": "Xinjiang Hetian College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-40e391fe4ef0b2ae",
+      "nameZh": "新疆警察学院",
+      "nameEn": "Xinjiang police college",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-3fe59cc14713c4da",
+      "nameZh": "新疆科技学院",
+      "nameEn": "Xinjiang University of Science and Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-55b47d1c3b13ed59",
+      "nameZh": "新疆理工学院",
+      "nameEn": "Xinjiang Institute of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-fb17d9cf5a58368c",
+      "nameZh": "新疆农业大学",
+      "nameEn": "Xinjiang Agricultural University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-ffee234ddb4190da",
+      "nameZh": "新疆师范大学",
+      "nameEn": "Xinjiang Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-7df8cd8df3ce1278",
+      "nameZh": "新疆医科大学",
+      "nameEn": "Xinjiang Medical University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-0613e1ae10bec1e4",
+      "nameZh": "新疆艺术学院",
+      "nameEn": "Xinjiang Arts University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-e0e88cd34577ed68",
+      "nameZh": "新疆政法学院",
+      "nameEn": "Xinjiang College of Political Science and Law",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-122e583628aeb6f9",
+      "nameZh": "新乡工程学院",
+      "nameEn": "Xinxiang Institute of Engineering",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-62e74a44d9dda774",
+      "nameZh": "新乡学院",
+      "nameEn": "Xinxiang University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-cbe15265f5a4b779",
+      "nameZh": "新余学院",
+      "nameEn": "Xinyu University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-1b8540df3934e147",
+      "nameZh": "信阳农林学院",
+      "nameEn": "Xinyang Agriculture and Forestry University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-517889c51df22bec",
+      "nameZh": "信阳师范大学",
+      "nameEn": "Xinyang Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-5cec6cbea221734d",
+      "nameZh": "信阳学院",
+      "nameEn": "Xinyang University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-7c7ac8b41aada9ea",
+      "nameZh": "星海音乐学院",
+      "nameEn": "Xinghai Conservatory of Music",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-09fb429c7ec4aef1",
+      "nameZh": "邢台学院",
+      "nameEn": "Xingtai University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-3644dc8ae527ce12",
+      "nameZh": "邢台医学院",
+      "nameEn": "Xingtai Medical College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-8ca8c522ca913335",
+      "nameZh": "兴义民族师范学院",
+      "nameEn": "Minzu Normal University of Xingyi",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-78f07023ef745ff1",
+      "nameZh": "徐州工程学院",
+      "nameEn": "Xuzhou University of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-689048fb0fff408f",
+      "nameZh": "徐州医科大学",
+      "nameEn": "Xuzhou Medical University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-b1bf356a5165372e",
+      "nameZh": "许昌学院",
+      "nameEn": "Xuchang University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-484060233a93bcb1",
+      "nameZh": "烟台大学",
+      "nameEn": "Yantai University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-bc69dfc05f9ec5a7",
+      "nameZh": "烟台科技学院",
+      "nameEn": "Yantai Institute of Science and Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-930b35ee240cbcc9",
+      "nameZh": "烟台理工学院",
+      "nameEn": "Yantai Institute of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-831af7db5ee4ea55",
+      "nameZh": "烟台南山学院",
+      "nameEn": "Yantai Nanshan University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-93fd83828fc3c3b1",
+      "nameZh": "延安大学",
+      "nameEn": "Yan'an University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-f72bf8e2a4b6afbf",
+      "nameZh": "延安大学西安创新学院",
+      "nameEn": "Xi'an Innovation College of Yan'an University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "yanbian-university-61996de7",
+      "nameZh": "延边大学",
+      "nameEn": "Yanbian University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-d0b8ba46da5c8043",
+      "nameZh": "盐城工学院",
+      "nameEn": "Yancheng Institute of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-9460998b2c94ed58",
+      "nameZh": "盐城师范学院",
+      "nameEn": "Yancheng Teachers University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-83beee2b7aa1658c",
+      "nameZh": "燕京理工学院",
+      "nameEn": "Yanching Institute of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "yanshan-university-634a3bf5",
+      "nameZh": "燕山大学",
+      "nameEn": "Yanshan University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-8c9ed7b1b710f042",
+      "nameZh": "扬州大学",
+      "nameEn": "Yangzhou University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-9b753fc7ee27b71f",
+      "nameZh": "扬州大学广陵学院",
+      "nameEn": "Yangzhou University Guangling College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-92e51f8fb761d7c1",
+      "nameZh": "阳光学院",
+      "nameEn": "Yango College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-13dcb2e919d1dccd",
+      "nameZh": "仰恩大学",
+      "nameEn": "Yang-En University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-8e869295f3c945de",
+      "nameZh": "伊犁师范大学",
+      "nameEn": "Yili Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-7a641cb73f188725",
+      "nameZh": "宜宾学院",
+      "nameEn": "Yibin University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-c3646d041f47be51",
+      "nameZh": "宜春学院",
+      "nameEn": "Yichun University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-21ef7c769eb0ba93",
+      "nameZh": "银川科技学院",
+      "nameEn": "Yinchuan University of Science and Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-c9a6fd7fe2f5142b",
+      "nameZh": "银川能源学院",
+      "nameEn": "Yinchuan University of Energy",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-3f1f0df372ff21ba",
+      "nameZh": "营口理工学院",
+      "nameEn": "YingKou Institute of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-5b9f7792e80ad10b",
+      "nameZh": "右江民族医学院",
+      "nameEn": "Youjiang Medical University for Nationalities",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-f4681a4b9f33cc93",
+      "nameZh": "榆林学院",
+      "nameEn": "Yulin University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-7fc6fd80a97471d7",
+      "nameZh": "玉林师范学院",
+      "nameEn": "Yulin Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-05543c59e4b1c221",
+      "nameZh": "玉溪师范学院",
+      "nameEn": "Yuxi Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-dd139164fed97d7d",
+      "nameZh": "豫北医学院",
+      "nameEn": "North Henan Medical University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-fd309a0acb8b4617",
+      "nameZh": "豫章师范学院",
+      "nameEn": "Yuzhang Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-c54f77a1dd3c5305",
+      "nameZh": "岳阳学院",
+      "nameEn": "Yueyang University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-605d0e59d5dabab5",
+      "nameZh": "云南财经大学",
+      "nameEn": "Yunnan University of Finance and Economics",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "yunnan-university-d0bc6178",
+      "nameZh": "云南大学",
+      "nameEn": "Yunnan University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-32c7bd66a51a1264",
+      "nameZh": "云南工商学院",
+      "nameEn": "Yunnan Technology and Business University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-d3623727853cc32f",
+      "nameZh": "云南经济管理学院",
+      "nameEn": "Yunnan College Of Bussiness Management",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-e53c6272597a69be",
+      "nameZh": "云南警官学院",
+      "nameEn": "Yunnan Poice College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-9c9b6e00eae87e6c",
+      "nameZh": "云南民族大学",
+      "nameEn": "Yunnan Minzu University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-d000bc6b9dc1384c",
+      "nameZh": "云南农业大学",
+      "nameEn": "Yunnan Agricultural University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-9be767e0dacaa70e",
+      "nameZh": "云南师范大学",
+      "nameEn": "Yunnan Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-3825f433f87ec024",
+      "nameZh": "云南艺术学院",
+      "nameEn": "Yunnan Arts University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-27b4d875fb085522",
+      "nameZh": "云南中医药大学",
+      "nameEn": "Yunnan University of Chinese Medicine",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-8a12a1993201d306",
+      "nameZh": "运城学院",
+      "nameEn": "Yuncheng University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-cba9bcc927dcb305",
+      "nameZh": "枣庄学院",
+      "nameEn": "Zaozhuang University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-33c7e1e655f4e4fe",
+      "nameZh": "湛江科技学院",
+      "nameEn": "Zhanjiang University of Science and Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-4e5d6589ac44a441",
+      "nameZh": "张家界学院",
+      "nameEn": "Zhangjiajie College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-5b71f9f85b74301c",
+      "nameZh": "张家口学院",
+      "nameEn": "Zhangjiakou University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-b7fbe758ebe03d5f",
+      "nameZh": "长春大学旅游学院",
+      "nameEn": "The Tourism College of Changchun University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-7c89575d4ee5a577",
+      "nameZh": "长江大学",
+      "nameEn": "Yangtze University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-9de6ca7824899a4a",
+      "nameZh": "长江大学文理学院",
+      "nameEn": "Yangtze University College of Arts and Sciences",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-b8747b1a6d3cc53f",
+      "nameZh": "长江师范学院",
+      "nameEn": "Yangtze Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-30704b9836ccdae2",
+      "nameZh": "昭通学院",
+      "nameEn": "Zhaotong University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-c8ac3e85ee9fbac6",
+      "nameZh": "肇庆学院",
+      "nameEn": "Zhaoqing University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-668da361a380a009",
+      "nameZh": "肇庆医学院",
+      "nameEn": "Zhaoqing Medical College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-5e462a0463a6da6f",
+      "nameZh": "浙大宁波理工学院",
+      "nameEn": "NingboTech University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-dfba598c4bb8fb7a",
+      "nameZh": "浙江财经大学",
+      "nameEn": "Zhejiang University of Finance & Economics",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-7625cc75181ad73f",
+      "nameZh": "浙江财经大学东方学院",
+      "nameEn": "Zhejiang University of Finance and Economics Dongfang College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "zhejiang-university-41292b6f",
+      "nameZh": "浙江大学",
+      "nameEn": "Zhejiang University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-e8a7da73db6d24a7",
+      "nameZh": "浙江工商大学",
+      "nameEn": "Zhejiang Gongshang University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-c13247359f869952",
+      "nameZh": "浙江工商大学杭州商学院",
+      "nameEn": "Zhejiang Gongshang University Hangzhou College of Commerce",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "zhejiang-university-of-technology-86cf9f79",
+      "nameZh": "浙江工业大学",
+      "nameEn": "Zhejiang University of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-986b8130075ccb53",
+      "nameZh": "浙江工业大学之江学院",
+      "nameEn": "Zhijiang college of zhejiang university of technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-7c822bf225fb1f38",
+      "nameZh": "浙江海洋大学",
+      "nameEn": "Zhejiang Ocean University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-5e73f7795951d0c3",
+      "nameZh": "浙江警察学院",
+      "nameEn": "Zhejiang Police College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-0141ce1ecb916d53",
+      "nameZh": "浙江科技大学",
+      "nameEn": "Zhejiang University of Science and Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-23848683755c00bd",
+      "nameZh": "浙江理工大学",
+      "nameEn": "Zhejiang Sci-Tech University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-957d524fdb966b85",
+      "nameZh": "浙江农林大学",
+      "nameEn": "Zhejiang A&F University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-8149281acc873225",
+      "nameZh": "浙江师范大学",
+      "nameEn": "Zhejiang Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-24d7480f91d351e5",
+      "nameZh": "浙江师范大学行知学院",
+      "nameEn": "Zhejiang Normal University Xingzhi College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-3016ad038539ee1a",
+      "nameZh": "浙江树人学院",
+      "nameEn": "Zhejiang Shuren University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-0fe907aada49f984",
+      "nameZh": "浙江水利水电学院",
+      "nameEn": "Zhejiang University of Water Resources and Electric Power",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-aaf3d6d0164e1321",
+      "nameZh": "浙江外国语学院",
+      "nameEn": "Zhejiang International Studies University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-0977fc50a8bf4f72",
+      "nameZh": "浙江万里学院",
+      "nameEn": "Zhejiang Wanli University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-5e021dc4e8ecaf6a",
+      "nameZh": "浙江音乐学院",
+      "nameEn": "Zhejiang Conservatory of Music",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-77524bd3e4513c8c",
+      "nameZh": "浙江越秀外国语学院",
+      "nameEn": "Zhejiang Yuexiu University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-053c66b2b00eb7a1",
+      "nameZh": "浙江中医药大学",
+      "nameEn": "Zhejiang Chinese Medical University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-cd40a5a927b81471",
+      "nameZh": "郑州财经学院",
+      "nameEn": "Zhengzhou College of Finance and Economics",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "zhengzhou-university-ccf4b546",
+      "nameZh": "郑州大学",
+      "nameEn": "Zhengzhou University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-e690332c30f94712",
+      "nameZh": "郑州工程技术学院",
+      "nameEn": "Zhengzhou University of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-15be7f56ceb2e54d",
+      "nameZh": "郑州工商学院",
+      "nameEn": "Zhengzhou Technology and Business University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-9e1a0e3aed6dee6f",
+      "nameZh": "郑州工业应用技术学院",
+      "nameEn": "Zhengzhou University of Industrial Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-70c04cde2f6b2884",
+      "nameZh": "郑州航空工业管理学院",
+      "nameEn": "Zhengzhou University of Aeronautics",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-cdf10202c2d1c951",
+      "nameZh": "郑州健康学院",
+      "nameEn": "Zhengzhou Health College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-212cf4b6672c751e",
+      "nameZh": "郑州经贸学院",
+      "nameEn": "Zhengzhou College of Economics and Business",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-a8e3b4d45786bb4b",
+      "nameZh": "郑州警察学院",
+      "nameEn": "Zhengzhou Police University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-c9c52917c9aa84ff",
+      "nameZh": "郑州科技学院",
+      "nameEn": "Zhengzhou University of Science and Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-02ee6eefb07c57af",
+      "nameZh": "郑州美术学院",
+      "nameEn": "Zhengzhou Academy of Fine Arts",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-52df5f87e0b05569",
+      "nameZh": "郑州轻工业大学",
+      "nameEn": "Zhengzhou University of Light Industry",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-625edd79bec0dc53",
+      "nameZh": "郑州商学院",
+      "nameEn": "Zhengzhou Business University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-983f47dcd31718f5",
+      "nameZh": "郑州升达经贸管理学院",
+      "nameEn": "Zhengzhou Shengda University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-46c2eeee09d2fd9c",
+      "nameZh": "郑州师范学院",
+      "nameEn": "Zhengzhou Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-b1d17f6aad09d161",
+      "nameZh": "郑州西亚斯学院",
+      "nameEn": "Sias University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-53132dacf393404a",
+      "nameZh": "中北大学",
+      "nameEn": "North University of China",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "ocean-university-of-china-qingdao-ab3847cd",
+      "nameZh": "中国海洋大学",
+      "nameEn": "Ocean University of China",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "university-of-science-and-technology-of-china-ustc-a638543a",
+      "nameZh": "中国科学技术大学",
+      "nameEn": "University of Science and Technology of China",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-ac0ae816716042b1",
+      "nameZh": "中国科学院大学",
+      "nameEn": "University of Chinese Academy of Sciences",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-ae42530401f5cbac",
+      "nameZh": "中国矿业大学徐海学院",
+      "nameEn": "Xuhai College, China University of Mining & Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "renmin-university-of-china-9e74b938",
+      "nameZh": "中国人民大学",
+      "nameEn": "Renmin University of China",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-3b5a7566d0cf1963",
+      "nameZh": "中国人民公安大学",
+      "nameEn": "People's Public Security University of China",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-464329c0b729f7d5",
+      "nameZh": "中国人民解放军国防大学",
+      "nameEn": "National Defence University PLA China",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-17e08eb4c8d84b6b",
+      "nameZh": "中国人民解放军哈尔滨飞行学院",
+      "nameEn": "The PLA Air Force Flight Academy Harbin",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-6c59c9cad7985739",
+      "nameZh": "中国人民解放军海军大连舰艇学院",
+      "nameEn": "The PLA Dalian Naval Academy",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-6481561e15c9e212",
+      "nameZh": "中国人民解放军海军工程大学",
+      "nameEn": "The PLA Naval University of Engineering",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-59c0b290b379f28f",
+      "nameZh": "中国人民解放军海军航空大学",
+      "nameEn": "The PLA Naval Aeronautical University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-9f87dd4ea325c693",
+      "nameZh": "中国人民解放军海军军医大学",
+      "nameEn": "The Second Military Medical University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-93342276d090b8b1",
+      "nameZh": "中国人民解放军海军潜艇学院",
+      "nameEn": "The PLA Navy Submarine Academy",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-b9d5f2f87f572e67",
+      "nameZh": "中国人民解放军海军勤务学院",
+      "nameEn": "The PLA Navy Logistics University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-f73469d80185b2ce",
+      "nameZh": "中国人民解放军海军士官学校",
+      "nameEn": "The PLA Navy Officer School",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-7d4d38c855928ed5",
+      "nameZh": "中国人民解放军海军指挥学院",
+      "nameEn": "The PLA Navy Command College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-8dd8ce99fe158171",
+      "nameZh": "中国人民解放军火箭军工程大学",
+      "nameEn": "The PLA Rocket Force University of Engineering",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-e299dd79fe9ba6e7",
+      "nameZh": "中国人民解放军火箭军士官学校",
+      "nameEn": "The PLA Rocket Force Officers College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-15720e48b7e3f64a",
+      "nameZh": "中国人民解放军火箭军指挥学院",
+      "nameEn": "The PLA Rocket Force Command College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-3700d281f0b37d82",
+      "nameZh": "中国人民解放军空军工程大学",
+      "nameEn": "The PLA Air Force Engineering University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-b36135b15aee303f",
+      "nameZh": "中国人民解放军空军航空大学",
+      "nameEn": "The PLA Air Force Aviation University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-3cef1fb4f3716c89",
+      "nameZh": "中国人民解放军空军军医大学",
+      "nameEn": "The Fourth Military Medical University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-5d680729f1ddf4dc",
+      "nameZh": "中国人民解放军空军勤务学院",
+      "nameEn": "The PLA Air Force Logistics University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-de295a5bab75df4c",
+      "nameZh": "中国人民解放军空军通信士官学校",
+      "nameEn": "The PLA Air Force Communications Officers College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-c31a72fdc00f6abb",
+      "nameZh": "中国人民解放军空军预警学院",
+      "nameEn": "The PLA Air Force Early Warning Academy",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-57c21e3daa39c203",
+      "nameZh": "中国人民解放军空军指挥学院",
+      "nameEn": "The PLA Air Force Command College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-9852d8e835996d16",
+      "nameZh": "中国人民解放军陆军边海防学院",
+      "nameEn": "The PLA Army Academy of Boarder and Coastal Defence",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-692c171b4b5fa59b",
+      "nameZh": "中国人民解放军陆军步兵学院",
+      "nameEn": "The Army Infantry Academy of PLA",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-4573dd09294df308",
+      "nameZh": "中国人民解放军陆军防化学院",
+      "nameEn": "The PLA Insititute of NBC Defence",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-9020ed9eafa38063",
+      "nameZh": "中国人民解放军陆军工程大学",
+      "nameEn": "The PLA Army Engineering University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-06546a0c5ccbf02b",
+      "nameZh": "中国人民解放军陆军航空兵学院",
+      "nameEn": "The PLA Army Aviation College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-f2ea6c1fb26f1c44",
+      "nameZh": "中国人民解放军陆军军事交通学院",
+      "nameEn": "The PLA Academy of Military Transportation",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-311e0db941bf50a6",
+      "nameZh": "中国人民解放军陆军军医大学",
+      "nameEn": "The PLA Army Medical University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-f6dbdb397f35ab30",
+      "nameZh": "中国人民解放军陆军炮兵防空兵学院",
+      "nameEn": "The PLA Army Artillery Air Defense Academy",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-b51a0a1dd81fe581",
+      "nameZh": "中国人民解放军陆军勤务学院",
+      "nameEn": "The PLA Army Logistics University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-e77979ec9fa02fbe",
+      "nameZh": "中国人民解放军陆军特种作战学院",
+      "nameEn": "The PLA Army Special Operations College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-b2e92f70d6d54d17",
+      "nameZh": "中国人民解放军陆军指挥学院",
+      "nameEn": "The PLA Army Command College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-0a6eb18025345fab",
+      "nameZh": "中国人民解放军陆军装甲兵学院",
+      "nameEn": "The PLA Army Armored Forces Academy",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-5b7a351dc57bbbb3",
+      "nameZh": "中国人民解放军石家庄飞行学院",
+      "nameEn": "The PLA Air Force Flight Academy Shijiazhuang",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-6cc81f02003fda7b",
+      "nameZh": "中国人民解放军西安飞行学院",
+      "nameEn": "The PLA Air Force Flight Academy Xi'an",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-9a9bba402610aaa5",
+      "nameZh": "中国人民解放军战略支援部队航天工程大学",
+      "nameEn": "The PLA Aerospace Engineering University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-f316444b86bc97b9",
+      "nameZh": "中国人民解放军战略支援部队信息工程大学",
+      "nameEn": "The PLA Information Engineering University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-a613fe6207f5c1f2",
+      "nameZh": "中国人民武装警察部队工程大学",
+      "nameEn": "The PAP Engineering University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-359169bd63944ac3",
+      "nameZh": "中国人民武装警察部队后勤学院",
+      "nameEn": "The PAP Logistics College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-a409773bfcdfb4b9",
+      "nameZh": "中国人民武装警察部队警官学院",
+      "nameEn": "The PAP Police Academy",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-7167e122eb9503d2",
+      "nameZh": "中国人民武装警察部队士官学校",
+      "nameEn": "The PAP Officers College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-0a89f5d14727dc48",
+      "nameZh": "中国人民武装警察部队特种警察学院",
+      "nameEn": "The PAP Special Police College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-abdbb1cfa85c1742",
+      "nameZh": "中国人民武装警察部队指挥学院",
+      "nameEn": "The PAP Command College",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-da6a725bc9bb1812",
+      "nameZh": "中国社会科学院大学",
+      "nameEn": "University of Chinese Academy of Social Sciences",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-eef21eddc4b3bea2",
+      "nameZh": "中国戏曲学院",
+      "nameEn": "National Academy of Chinese Theater Arts",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "zhongnan-university-of-economics-and-law-71156a7a",
+      "nameZh": "中南财经政法大学",
+      "nameEn": "Zhongnan University of Economics and Law",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-2242ddb41c80ece0",
+      "nameZh": "中南林业科技大学涉外学院",
+      "nameEn": "Swan College, Central South University of Forestry and Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-e31169eb60aa48af",
+      "nameZh": "中南民族大学",
+      "nameEn": "South-Central Minzu University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "sun-yat-sen-university-might-appear-as-zhongshan-university-d94644f6",
+      "nameZh": "中山大学",
+      "nameEn": "Sun Yat-Sen University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "minzu-university-of-china-7bbdd5ab",
+      "nameZh": "中央民族大学",
+      "nameEn": "Minzu University of China",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-8301f0575a794a16",
+      "nameZh": "中央司法警官学院",
+      "nameEn": "The National Police University for Criminal Justice",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-e8bb522d65cb9397",
+      "nameZh": "中央戏剧学院",
+      "nameEn": "The Central Academy Of Drama",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-1fed216d641f6aec",
+      "nameZh": "中原工学院",
+      "nameEn": "Zhongyuan University of Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-263d148e0d3513b8",
+      "nameZh": "中原科技学院",
+      "nameEn": "Zhongyuan Institute of Science and Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-c32eb4c267e325b3",
+      "nameZh": "仲恺农业工程学院",
+      "nameEn": "Zhongkai University of Agriculture and Engineering",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-61863303f16f1f01",
+      "nameZh": "周口师范学院",
+      "nameEn": "Zhoukou Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-0b3004b2be000a1a",
+      "nameZh": "珠海科技学院",
+      "nameEn": "Zhuhai College of Science and Technology",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-862a0b1eeb7f588c",
+      "nameZh": "遵义师范学院",
+      "nameEn": "Zunyi Normal University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-f8e04f1eb3b1e6aa",
+      "nameZh": "遵义医科大学",
+      "nameEn": "Zunyi Medical University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    },
+    {
+      "institutionId": "cn-9ebe954298f58642",
+      "nameZh": "遵义医科大学医学与科技学院",
+      "nameEn": "Medicine and Technology School of Zunyi Medical University",
+      "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+    }
+  ]
+}

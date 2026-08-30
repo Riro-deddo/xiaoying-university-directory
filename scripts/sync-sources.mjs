@@ -18,6 +18,10 @@ const bilingualRegistryProviderIds = new Set([
   'glasgow-china',
   'nottingham-china',
   'southampton-china',
+  'leeds-business-china',
+  'leeds-computer-science-media-china',
+  'leeds-other-schools-a-l-china',
+  'leeds-other-schools-m-z-china',
 ]);
 
 const reviewedInstitutionIdMigrations = new Map([
@@ -44,6 +48,15 @@ const reviewedInstitutionIdMigrations = new Map([
   ['cn-5014762bda41f881', 'cn-c54a8bf9427f90d1'],
   ['cn-e198010d37f04649', 'cn-8e869295f3c945de'],
   ['the-second-military-medical-university-55f6f4f4', 'cn-9f87dd4ea325c693'],
+  ['cn-1ea73d206dd443f7', 'cn-244a574d4cfb3332'],
+  ['cn-29d54f2779473379', 'cn-b80944fc30e71725'],
+  ['cn-897bce5aa8e13764', 'cn-b9b1939ac1e73bf8'],
+  ['cn-a400de4efa9f357c', 'cn-247a999d490c5497'],
+  ['cn-6bf5aa2786abf146', 'cn-f56ddf5450199c82'],
+  ['cn-08ff50ca88df7341', 'cn-f1d8cbbeacc21400'],
+  ['cn-81236dc437d8cdf3', 'cn-9f87dd4ea325c693'],
+  ['cn-1d7ff4c3cffaa3a6', 'cn-3644dc8ae527ce12'],
+  ['cn-5109cee27cccd05a', 'cn-668da361a380a009'],
 ]);
 
 const reviewedHistoricalInstitutionIds = new Set([
@@ -58,6 +71,15 @@ const reviewedHistoricalInstitutionIds = new Set([
   'cn-5014762bda41f881',
   'cn-e198010d37f04649',
   'the-second-military-medical-university-55f6f4f4',
+  'cn-1ea73d206dd443f7',
+  'cn-29d54f2779473379',
+  'cn-897bce5aa8e13764',
+  'cn-a400de4efa9f357c',
+  'cn-6bf5aa2786abf146',
+  'cn-08ff50ca88df7341',
+  'cn-81236dc437d8cdf3',
+  'cn-1d7ff4c3cffaa3a6',
+  'cn-5109cee27cccd05a',
 ]);
 
 const reviewedCanonicalInstitutionNames = new Map([
@@ -67,6 +89,19 @@ const reviewedCanonicalInstitutionNames = new Map([
   ['cn-d5e12e3100f1bfb3', 'Beijing Normal University, Zhuhai Campus'],
   ['cn-a384f90b16d88cfa', 'China University of Geosciences (Wuhan)'],
   ['cn-d65eedfa9c42cf79', 'College of Applied Science, Jiangxi University of Science and Technology'],
+  ['cn-de295a5bab75df4c', 'The PLA Air Force Communications Officers College'],
+  ['cn-f60444605c40d429', 'Inner Mongolia University of Science and Technology (Baotou Medical College)'],
+]);
+
+const reviewedCanonicalInstitutionChineseNames = new Map([
+  ['cn-244a574d4cfb3332', '桂林医科大学'],
+  ['cn-b80944fc30e71725', '吉林化工大学'],
+  ['cn-b9b1939ac1e73bf8', '天水师范大学'],
+  ['cn-247a999d490c5497', '西藏农牧大学'],
+  ['cn-f56ddf5450199c82', '沧州交通学院'],
+  ['cn-f1d8cbbeacc21400', '中国人民武装警察部队海警学院'],
+  ['cn-3644dc8ae527ce12', '邢台医学院'],
+  ['cn-668da361a380a009', '肇庆医学院'],
 ]);
 
 const reviewedPreservedPreviousCanonicalNames = new Set(['cn-fd334bd375069320']);
@@ -88,6 +123,8 @@ const reviewedForbiddenRegistryNames = new Map([
   ['cn-d5e12e3100f1bfb3', new Set(['beijing normal university zhuhai'])],
   ['cn-a384f90b16d88cfa', new Set(['china university of geosciences'])],
   ['cn-d65eedfa9c42cf79', new Set(['gannan university of science and technology'])],
+  ['cn-de295a5bab75df4c', new Set(['the pla rocket force command college'])],
+  ['cn-f60444605c40d429', new Set(['inner mongolia university of science and technology baotou teachers college'])],
 ]);
 
 const reviewedParserArtifactCorrections = new Map([
@@ -97,6 +134,7 @@ const reviewedParserArtifactCorrections = new Map([
   [')香港科技大学(广州)', { institutionNameZh: '香港科技大学(广州)', institutionOfficial: 'Hong Kong University of Science and Technology (Guangzhou)' }],
   [')浙大宁波理工学院', { institutionNameZh: '浙大宁波理工学院', institutionOfficial: 'NingboTech University (Zhejiang University Ningbo Institute of Technology)' }],
   ['浙江树人学院浙江树人大学', { institutionNameZh: '浙江树人学院', institutionOfficial: 'Zhejiang Shuren University' }],
+  ['内蒙古科技大学(包头医学院)', { institutionNameZh: '内蒙古科技大学(包头医学院)', institutionOfficial: 'Inner Mongolia University of Science and Technology (Baotou Medical College)' }],
 ]);
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -162,6 +200,14 @@ function reconcileReviewedInstitutionRegistry(inputInstitutions, inputRequiremen
     const previousName = institution.nameEn;
     institution.nameEn = canonicalName;
     if (reviewedPreservedPreviousCanonicalNames.has(institutionId)) appendAlias(institution, previousName);
+  }
+
+  for (const [institutionId, canonicalNameZh] of reviewedCanonicalInstitutionChineseNames) {
+    const institution = institutionById.get(institutionId);
+    if (!institution || institution.nameZh === canonicalNameZh) continue;
+    const previousNameZh = institution.nameZh;
+    institution.nameZh = canonicalNameZh;
+    appendAlias(institution, previousNameZh);
   }
 
   for (const [institutionId, aliases] of reviewedRequiredInstitutionAliases) {

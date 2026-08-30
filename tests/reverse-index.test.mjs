@@ -21,6 +21,8 @@ describe('build-reverse-index', () => {
     expect(sourceIds).toEqual(new Set([
       'cambridge-china', 'warwick-china', 'bristol-china', 'glasgow-china',
       'nottingham-china', 'sheffield-china', 'southampton-china', 'ucl-china', 'edinburgh-china',
+      'leeds-business-china', 'leeds-computer-science-media-china',
+      'leeds-other-schools-a-l-china', 'leeds-other-schools-m-z-china',
     ]));
   });
 

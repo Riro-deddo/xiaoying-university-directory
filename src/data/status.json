@@ -142,16 +142,6 @@
     "consecutiveFailures": 0,
     "observedContentHash": "debec5355e5190079435ce471ae64f2d96dad7ebdfc2cbd886293a6d25c172db"
   },
-  "leeds-china": {
-    "sourceId": "leeds-china",
-    "checkedAt": "2026-08-30T09:13:41.937Z",
-    "lastSuccessfulAt": "2026-08-30T09:13:41.937Z",
-    "httpStatus": 200,
-    "finalUrl": "https://www.leeds.ac.uk/dir-record/profiles/21834/china",
-    "health": "changed",
-    "consecutiveFailures": 0,
-    "observedContentHash": "2745c75cdd58640152ab6d82ffe4da10b2309a9fa5620dbd19168ec1d4e560c4"
-  },
   "glasgow-china": {
     "sourceId": "glasgow-china",
     "checkedAt": "2026-08-30T09:13:44.325Z",
@@ -1967,5 +1957,45 @@
       "Find your perfect postgraduate course using our search.",
       "Research subject areas"
     ]
+  },
+  "leeds-business-china": {
+    "sourceId": "leeds-business-china",
+    "checkedAt": "2026-08-30T20:51:28.893Z",
+    "lastSuccessfulAt": "2026-08-30T20:51:28.893Z",
+    "contentHash": "3f528101ccb4789c64d9a369184ac604f9b7f2f5b55a7fe163839ce18bd50517",
+    "consecutiveFailures": 0,
+    "health": "ok",
+    "httpStatus": 200,
+    "finalUrl": "https://business.leeds.ac.uk/masters/doc/accepted-chinese-institutions"
+  },
+  "leeds-computer-science-media-china": {
+    "sourceId": "leeds-computer-science-media-china",
+    "checkedAt": "2026-08-30T20:51:28.893Z",
+    "lastSuccessfulAt": "2026-08-30T20:51:28.893Z",
+    "contentHash": "0d91066077bb70a85c2d875b340e433277e226c5a61c88bfabf23eb30f6ed720",
+    "consecutiveFailures": 0,
+    "health": "ok",
+    "httpStatus": 200,
+    "finalUrl": "https://www.leeds.ac.uk/international-applying/doc/accepted-chinese-institutions-postgraduate-admissions/page/3"
+  },
+  "leeds-other-schools-a-l-china": {
+    "sourceId": "leeds-other-schools-a-l-china",
+    "checkedAt": "2026-08-30T20:51:28.893Z",
+    "lastSuccessfulAt": "2026-08-30T20:51:28.893Z",
+    "contentHash": "cb897b692ebd1bfef46efa6e8ef986f4ce81ed04b984a8508bef34bf096c40a6",
+    "consecutiveFailures": 0,
+    "health": "ok",
+    "httpStatus": 200,
+    "finalUrl": "https://www.leeds.ac.uk/international-applying/doc/accepted-chinese-institutions-postgraduate-admissions/page/4"
+  },
+  "leeds-other-schools-m-z-china": {
+    "sourceId": "leeds-other-schools-m-z-china",
+    "checkedAt": "2026-08-30T20:51:28.893Z",
+    "lastSuccessfulAt": "2026-08-30T20:51:28.893Z",
+    "contentHash": "0fedfdcea864874549b3c4989e9e1f087f314ab71f74c0e0ef3b940e36154dc4",
+    "consecutiveFailures": 0,
+    "health": "ok",
+    "httpStatus": 200,
+    "finalUrl": "https://www.leeds.ac.uk/international-applying/doc/accepted-chinese-institutions-postgraduate-admissions/page/5"
   }
 }

@@ -18,6 +18,9 @@ const featureStartBaseline = baseline as typeof baseline & {
   institutionsCount: number;
   institutionsSha256: string;
 };
+const postLeedsInstitutionsCount = 2979;
+const postLeedsInstitutionsSha256 = 'ba64c91249537c85d78e11103b1b9d8c7bb5a932ecb3370d40d5aa83fda25371';
+const replacedBaselineSourceIds = new Set(['leeds-china']);
 
 const batch1Ids = [
   'loughborough-university',
@@ -144,12 +147,16 @@ describe('first pending China-rule audit batch', () => {
 
   it('preserves the feature-start reviewed audit rows, source configurations, and requirement facts', async () => {
     const baselineAuditRows = audit
-      .filter((row) => baseline.nonTargetAuditRows.some((baselineRow) => baselineRow.universityId === row.universityId))
+      .filter((row) => row.universityId !== 'university-of-leeds'
+        && baseline.nonTargetAuditRows.some((baselineRow) => baselineRow.universityId === row.universityId))
       .map(({ reviewStatus: _reviewStatus, ...row }) => row);
-    expect(baselineAuditRows).toEqual(baseline.nonTargetAuditRows);
+    expect(baselineAuditRows).toEqual(baseline.nonTargetAuditRows
+      .filter((row) => row.universityId !== 'university-of-leeds'));
 
-    const preExistingSourceIds = new Set(baseline.sourceConfigs.map((source) => source.id));
-    expect(sources.filter((source) => preExistingSourceIds.has(source.id))).toEqual(baseline.sourceConfigs);
+    const preservedBaselineSources = baseline.sourceConfigs
+      .filter((source) => !replacedBaselineSourceIds.has(source.id));
+    const preExistingSourceIds = new Set(preservedBaselineSources.map((source) => source.id));
+    expect(sources.filter((source) => preExistingSourceIds.has(source.id))).toEqual(preservedBaselineSources);
 
     const baselineRequirements = requirements.filter((fact) => preExistingSourceIds.has(fact.sourceId));
     expect(baselineRequirements).toHaveLength(baseline.reviewedRequirementCount);
@@ -157,17 +164,20 @@ describe('first pending China-rule audit batch', () => {
       .toBe(baseline.requirementsSha256);
   });
 
-  it('preserves every feature-start reviewed university object', () => {
+  it('preserves every unchanged feature-start reviewed university object', () => {
     expect(featureStartBaseline.reviewedUniversities).toHaveLength(36);
-    const reviewedUniversityIds = new Set(featureStartBaseline.reviewedUniversities.map((university) => university.id));
+    const preservedReviewedUniversities = featureStartBaseline.reviewedUniversities
+      .filter((university) => university.id !== 'university-of-leeds');
+    const reviewedUniversityIds = new Set(preservedReviewedUniversities.map((university) => university.id));
     expect(universities.filter((university) => reviewedUniversityIds.has(university.id)))
-      .toEqual(featureStartBaseline.reviewedUniversities);
+      .toEqual(preservedReviewedUniversities);
   });
 
-  it('preserves the feature-start institutions dataset digest', async () => {
-    expect(featureStartBaseline.institutionsCount).toBe(institutions.length);
+  it('records the reviewed Leeds registry expansion without unrelated identity drift', async () => {
+    expect(institutions).toHaveLength(postLeedsInstitutionsCount);
     expect(await sha256(institutions))
-      .toBe(featureStartBaseline.institutionsSha256);
+      .toBe(postLeedsInstitutionsSha256);
+    expect(requirements.filter((fact) => fact.sourceId.startsWith('leeds-'))).toHaveLength(3144);
   });
 });
 
@@ -256,9 +266,9 @@ describe('second pending China-rule audit batch', () => {
   it('does not turn broad China categories into institution or requirement records', async () => {
     const batch2SourceIds = new Set(batch2SourceManifest.map(([, sourceId]) => sourceId));
     expect(requirements.some((fact) => batch2SourceIds.has(fact.sourceId))).toBe(false);
-    expect(institutions).toHaveLength(featureStartBaseline.institutionsCount);
+    expect(institutions).toHaveLength(postLeedsInstitutionsCount);
     expect(await sha256(institutions))
-      .toBe(featureStartBaseline.institutionsSha256);
+      .toBe(postLeedsInstitutionsSha256);
   });
 
   it('retains the source-specific access and scope caveats', () => {
@@ -366,9 +376,9 @@ describe('third pending China-rule audit batch', () => {
   it('does not turn broad China guidance into institution or generated requirement records', async () => {
     const batch3SourceIds = new Set(batch3SourceManifest.map(([, sourceId]) => sourceId));
     expect(requirements.some((fact) => batch3SourceIds.has(fact.sourceId))).toBe(false);
-    expect(institutions).toHaveLength(featureStartBaseline.institutionsCount);
+    expect(institutions).toHaveLength(postLeedsInstitutionsCount);
     expect(await sha256(institutions))
-      .toBe(featureStartBaseline.institutionsSha256);
+      .toBe(postLeedsInstitutionsSha256);
   });
 
   it('retains the source-specific caveats that prohibit external or unrelated list inference', () => {
@@ -495,9 +505,9 @@ describe('fourth pending China-rule audit batch', () => {
   it('does not manufacture institutions or generated requirements from China guidance', async () => {
     const batch4SourceIds = new Set(batch4SourceManifest.map(([, sourceId]) => sourceId));
     expect(requirements.some((fact) => batch4SourceIds.has(fact.sourceId))).toBe(false);
-    expect(institutions).toHaveLength(featureStartBaseline.institutionsCount);
+    expect(institutions).toHaveLength(postLeedsInstitutionsCount);
     expect(await sha256(institutions))
-      .toBe(featureStartBaseline.institutionsSha256);
+      .toBe(postLeedsInstitutionsSha256);
   });
 
   it('keeps UAL subject-strength evidence separate from its blocked China-rule review', () => {

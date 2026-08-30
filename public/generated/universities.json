@@ -45,12 +45,13 @@
         },
         "status": {
           "sourceId": "imperial-china",
-          "checkedAt": "2026-08-08T04:21:00.620Z",
-          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
+          "checkedAt": "2026-08-30T09:13:23.187Z",
+          "lastSuccessfulAt": "2026-08-30T09:13:23.187Z",
           "httpStatus": 200,
           "finalUrl": "https://www.imperial.ac.uk/study/apply/postgraduate-doctoral/application-process/entry-requirements/accepted-qualifications/",
-          "health": "ok",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "observedContentHash": "31f964773459c8836c07501cb4595ff654c08241bde17c780cb5c22f47d86a06"
         }
       }
     ],
@@ -83,7 +84,16 @@
         "Find a course",
         "Postgraduate taught"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-imperial-college-london",
+        "checkedAt": "2026-08-11T15:52:30.709Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:52:30.709Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.imperial.ac.uk/study/courses/?courseType=postgraduate+taught",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -132,11 +142,11 @@
         },
         "status": {
           "sourceId": "oxford-china",
-          "checkedAt": "2026-08-08T04:21:00.620Z",
+          "checkedAt": "2026-08-30T09:13:25.384Z",
           "httpStatus": 403,
           "finalUrl": "https://www.ox.ac.uk/admissions/graduate/international-applicants/international-qualifiations?source=applicationguide",
           "health": "unavailable",
-          "consecutiveFailures": 3
+          "consecutiveFailures": 23
         }
       }
     ],
@@ -169,7 +179,15 @@
         "Find your postgraduate course",
         "Use this search tool to explore all of Oxford's graduate courses."
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-oxford",
+        "checkedAt": "2026-08-30T09:16:08.205Z",
+        "httpStatus": 403,
+        "finalUrl": "https://www.ox.ac.uk/admissions/graduate/courses/find-your-course",
+        "health": "unavailable",
+        "consecutiveFailures": 20
+      }
     }
   },
   {
@@ -233,12 +251,16 @@
         },
         "status": {
           "sourceId": "cambridge-china",
-          "checkedAt": "2026-08-08T04:21:00.620Z",
-          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
-          "health": "ok",
+          "checkedAt": "2026-08-30T09:13:26.094Z",
+          "lastSuccessfulAt": "2026-08-30T09:13:26.094Z",
+          "health": "changed",
           "finalUrl": "https://www.postgraduate.study.cam.ac.uk/apply/before/international-qualifications",
           "consecutiveFailures": 0,
-          "contentHash": "90ad411083808e80f707bb67f2cb1cf9f4c5ac884b6e3cdfe926b359a09a1bf5"
+          "contentHash": "90ad411083808e80f707bb67f2cb1cf9f4c5ac884b6e3cdfe926b359a09a1bf5",
+          "httpStatus": 200,
+          "etag": "W/\"1788004057\"",
+          "lastModified": "Sat, 29 Aug 2026 11:47:37 GMT",
+          "observedContentHash": "f9d3d90109fb2afecccba4b50dec185d856f305ba62bb4332772a218b5a77f83"
         }
       }
     ],
@@ -271,7 +293,16 @@
         "Course Directory",
         "Use the Course Directory to search over 300 postgraduate courses at Cambridge."
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-cambridge",
+        "checkedAt": "2026-08-11T15:52:33.314Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:52:33.314Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.postgraduate.study.cam.ac.uk/courses",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -333,12 +364,16 @@
         },
         "status": {
           "sourceId": "ucl-china",
-          "checkedAt": "2026-08-08T04:21:00.620Z",
-          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
-          "health": "ok",
+          "checkedAt": "2026-08-30T09:13:26.945Z",
+          "lastSuccessfulAt": "2026-08-30T09:13:26.945Z",
+          "health": "changed",
           "finalUrl": "https://www.ucl.ac.uk/prospective-students/international/china",
           "consecutiveFailures": 0,
-          "contentHash": "b65a203e86dc1a150a3e3f4dce5131cc23c3db92adb6a4b9ed9e0fecf99cb643"
+          "contentHash": "b65a203e86dc1a150a3e3f4dce5131cc23c3db92adb6a4b9ed9e0fecf99cb643",
+          "httpStatus": 200,
+          "etag": "\"1787974243-1\"",
+          "lastModified": "Sat, 29 Aug 2026 03:30:43 GMT",
+          "observedContentHash": "49c52b653dad3c7a6051dc6b0cb237021d5d66427c2049b546d5dee3bda3b916"
         }
       }
     ],
@@ -371,7 +406,16 @@
         "Taught degrees",
         "Research degrees"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-college-london",
+        "checkedAt": "2026-08-11T15:52:34.588Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:52:34.588Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.ucl.ac.uk/study/prospective-students/graduate",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -429,12 +473,15 @@
         },
         "status": {
           "sourceId": "edinburgh-china",
-          "checkedAt": "2026-08-08T04:21:00.620Z",
-          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
+          "checkedAt": "2026-08-30T09:13:27.960Z",
+          "lastSuccessfulAt": "2026-08-30T09:13:27.960Z",
           "health": "ok",
           "finalUrl": "https://edwebcontent.ed.ac.uk/sites/default/files/atoms/files/priority_list_of_chinese_universities.pdf",
           "consecutiveFailures": 0,
-          "contentHash": "d89ccc58ecedaf9685656b4304ae4c79adbb32f6699cba9dc3fa947c70f573d2"
+          "contentHash": "d89ccc58ecedaf9685656b4304ae4c79adbb32f6699cba9dc3fa947c70f573d2",
+          "httpStatus": 200,
+          "etag": "\"6740c0c3-31fa2\"",
+          "lastModified": "Fri, 22 Nov 2024 17:34:59 GMT"
         }
       }
     ],
@@ -467,7 +514,16 @@
         "Browse the degree finder",
         "Search the degree finder"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-edinburgh",
+        "checkedAt": "2026-08-11T15:52:35.948Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:52:35.948Z",
+        "httpStatus": 200,
+        "finalUrl": "https://study.ed.ac.uk/postgraduate",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -517,13 +573,14 @@
         },
         "status": {
           "sourceId": "kcl-china",
-          "checkedAt": "2026-08-08T04:21:00.620Z",
-          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
+          "checkedAt": "2026-08-30T09:13:28.708Z",
+          "lastSuccessfulAt": "2026-08-30T09:13:28.708Z",
           "httpStatus": 200,
           "finalUrl": "https://www.kcl.ac.uk/study/postgraduate-taught/courses/china-and-globalisation-msc/requirements",
           "health": "changed",
-          "etag": "W/\"5c079-2vGHvYlPk2r8TjyN0WsVS9hzVjk\"",
-          "consecutiveFailures": 0
+          "etag": "W/\"5bc55-IAAdzu7AZZKjPK5DufTTUSIuVZg\"",
+          "consecutiveFailures": 0,
+          "observedContentHash": "0761db3ac1dc6d0975a0404454b537cfac93880e7c182e9261cc053d5e51ab18"
         }
       }
     ],
@@ -556,7 +613,16 @@
         "Postgraduate taught",
         "Postgraduate research"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-kings-college-london",
+        "checkedAt": "2026-08-11T15:52:36.581Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:52:36.581Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.kcl.ac.uk/study/home?lang=en",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -605,12 +671,13 @@
         },
         "status": {
           "sourceId": "manchester-china",
-          "checkedAt": "2026-08-08T04:21:00.620Z",
-          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
+          "checkedAt": "2026-08-30T09:13:30.338Z",
+          "lastSuccessfulAt": "2026-08-30T09:13:30.338Z",
           "httpStatus": 200,
           "finalUrl": "https://www.manchester.ac.uk/study/international/country-specific-information/china-mainland/",
-          "health": "ok",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "observedContentHash": "8193ac5c492b0fd2982a6fc212ab0bbb3e9c8cdbfac53e2e529d1a67ab6dfc94"
         }
       },
       {
@@ -644,12 +711,13 @@
         },
         "status": {
           "sourceId": "manchester-computer-science-china",
-          "checkedAt": "2026-08-08T04:21:00.620Z",
-          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
+          "checkedAt": "2026-08-30T09:13:31.519Z",
+          "lastSuccessfulAt": "2026-08-30T09:13:31.519Z",
           "httpStatus": 200,
           "finalUrl": "https://www.manchester.ac.uk/study/masters/courses/list/21575/msc-cyber-security/",
-          "health": "ok",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "observedContentHash": "0c481a74ae440acad960ede0bc2144c7cbe10c4a45e8b29414394de7fdd2ccf2"
         }
       },
       {
@@ -683,12 +751,13 @@
         },
         "status": {
           "sourceId": "manchester-law-china",
-          "checkedAt": "2026-08-08T04:21:00.620Z",
-          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
+          "checkedAt": "2026-08-30T09:13:32.928Z",
+          "lastSuccessfulAt": "2026-08-30T09:13:32.928Z",
           "httpStatus": 200,
           "finalUrl": "https://www.humanities.manchester.ac.uk/law/study/international-students/country-specific-information/china/",
           "health": "ok",
-          "consecutiveFailures": 0
+          "consecutiveFailures": 0,
+          "observedContentHash": "3c84dd2f95b16fcaa018ab1753c5d90676c88b8f598711d85c8cee68f61dd8f3"
         }
       }
     ],
@@ -721,7 +790,16 @@
         "Taught master's",
         "Postgraduate research"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-manchester",
+        "checkedAt": "2026-08-11T15:52:38.840Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:52:38.840Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.manchester.ac.uk/study/",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -776,12 +854,16 @@
         },
         "status": {
           "sourceId": "bristol-china",
-          "checkedAt": "2026-08-08T04:21:00.620Z",
-          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
-          "health": "ok",
+          "checkedAt": "2026-08-30T09:13:35.175Z",
+          "lastSuccessfulAt": "2026-08-30T09:13:35.175Z",
+          "health": "changed",
           "finalUrl": "https://www.bristol.ac.uk/international/countries/china/accepted-universities-in-china/",
           "consecutiveFailures": 0,
-          "contentHash": "91d956a10e104aaecbf9801728390b438faba6a45608c4ee8576d84981d10b2e"
+          "contentHash": "91d956a10e104aaecbf9801728390b438faba6a45608c4ee8576d84981d10b2e",
+          "httpStatus": 304,
+          "etag": "\"168b8-658ffda642edf\"",
+          "lastModified": "Fri, 14 Aug 2026 11:09:24 GMT",
+          "observedContentHash": "fb388680361901def5dd6af22561c38f28f75e3d87838f1d03fce466d3e517b9"
         }
       }
     ],
@@ -814,7 +896,16 @@
         "Find your programme",
         "Postgraduate study routes"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-bristol",
+        "checkedAt": "2026-08-26T04:05:32.508Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-26T04:05:32.508Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.bristol.ac.uk/study/postgraduate/",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -863,13 +954,14 @@
         },
         "status": {
           "sourceId": "lse-china",
-          "checkedAt": "2026-08-08T04:21:00.620Z",
-          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
+          "checkedAt": "2026-08-30T09:13:36.131Z",
+          "lastSuccessfulAt": "2026-08-30T09:13:36.131Z",
           "httpStatus": 200,
           "finalUrl": "https://www.lse.ac.uk/study-at-lse/international-students/china",
           "health": "changed",
-          "etag": "W/\"53d10-waw4fDUBvK+1Vl0B8afx2FxjoXU\"",
-          "consecutiveFailures": 0
+          "etag": "W/\"543ff-yS8704bfgtCSz6CHKC6myQtIAMI\"",
+          "consecutiveFailures": 0,
+          "observedContentHash": "ecd6fbb749cc5b6f83f320fbcca1f3bb2122a981fa8b4f126fbb59c483b66fcd"
         }
       }
     ],
@@ -902,7 +994,16 @@
         "Graduate study opportunities at LSE",
         "Available programmes"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-london-school-of-economics-and-political-science",
+        "checkedAt": "2026-08-11T15:52:41.575Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:52:41.575Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.lse.ac.uk/study-at-lse/Graduate",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -961,12 +1062,15 @@
         },
         "status": {
           "sourceId": "warwick-china",
-          "checkedAt": "2026-08-08T04:21:00.620Z",
-          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
-          "health": "ok",
+          "checkedAt": "2026-08-30T09:13:38.049Z",
+          "lastSuccessfulAt": "2026-08-30T09:13:38.049Z",
+          "health": "changed",
           "finalUrl": "https://warwick.ac.uk/study/international/countryinformation/eastasia/china/china-entry-requirements/",
           "consecutiveFailures": 0,
-          "contentHash": "0654d595dd02a08bee9807bc164ae4d321f5ea9d649aa62ebb575cb8e2c08592"
+          "contentHash": "0654d595dd02a08bee9807bc164ae4d321f5ea9d649aa62ebb575cb8e2c08592",
+          "httpStatus": 200,
+          "etag": "\"/1788081219269/false/false/1787910198759/false/false/none\"",
+          "observedContentHash": "d7e99f13f5ca58274a672af2f95fd3a8aea835143e3aafbae260dc91b28574a5"
         }
       }
     ],
@@ -999,7 +1103,16 @@
         "Postgraduate Taught",
         "Postgraduate Research"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-warwick",
+        "checkedAt": "2026-08-28T15:25:46.652Z",
+        "health": "redirected",
+        "lastSuccessfulAt": "2026-08-28T15:25:46.652Z",
+        "httpStatus": 200,
+        "finalUrl": "https://warwick.ac.uk/study/postgraduate/courses/course-list/",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -1048,12 +1161,13 @@
         },
         "status": {
           "sourceId": "birmingham-china",
-          "checkedAt": "2026-08-08T04:21:00.620Z",
-          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
+          "checkedAt": "2026-08-30T09:13:39.968Z",
+          "lastSuccessfulAt": "2026-08-30T09:13:39.968Z",
           "httpStatus": 200,
           "finalUrl": "https://www.birmingham.ac.uk/study/international/country/china",
-          "health": "ok",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "observedContentHash": "debec5355e5190079435ce471ae64f2d96dad7ebdfc2cbd886293a6d25c172db"
         }
       }
     ],
@@ -1086,7 +1200,16 @@
         "Postgraduate study or research",
         "over 600 taught postgraduate programmes"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-birmingham",
+        "checkedAt": "2026-08-11T15:52:45.828Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:52:45.828Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.birmingham.ac.uk/study/postgraduate",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -1102,45 +1225,223 @@
       "verifiedEdition": 2027,
       "current": true
     },
-    "state": "china-requirements",
+    "state": "official-list",
     "officialDomain": "https://www.leeds.ac.uk",
     "sources": [
       {
-        "id": "leeds-china",
+        "id": "leeds-business-china",
         "universityId": "university-of-leeds",
-        "labelZh": "中国研究生入学要求",
-        "url": "https://www.leeds.ac.uk/dir-record/profiles/21834/china",
-        "kind": "china-requirements",
-        "scope": "university",
-        "scopeZh": "学校面向中国申请人的研究生要求",
+        "labelZh": "商学院中国院校名单",
+        "url": "https://business.leeds.ac.uk/masters/doc/accepted-chinese-institutions",
+        "kind": "official-list",
+        "scope": "faculty",
+        "scopeZh": "利兹大学商学院全部硕士课程",
+        "cycle": "2026/27",
         "institutionRule": {
-          "type": "none",
-          "summaryZh": "利兹说明不同学院可采用不同的本科院校标准；未发现可作为当前全校结论的完整名单，旧申请季学院 PDF 仅作历史资料。",
+          "type": "eligibility",
+          "summaryZh": "2026/27 入学：利兹大学商学院只接受官网名单内的中国院校，最低均分通常为 75%–80%，具体取决于本科院校。",
+          "listedMeaningZh": "名单内院校可按商学院公布的 75%–80% 最低均分范围核对申请条件。",
+          "unlistedMeaningZh": "官网说明未列出的中国院校不在该申请范围内。",
+          "caveatZh": "名单和分数仅作申请指引，最终决定由利兹大学招生团队作出。",
           "verification": {
-            "reviewedAt": "2026-08-02",
-            "url": "https://www.leeds.ac.uk/dir-record/profiles/21834/china",
+            "reviewedAt": "2026-08-30",
+            "url": "https://business.leeds.ac.uk/masters/doc/accepted-chinese-institutions",
             "requiredText": [
-              "China",
-              "postgraduate"
+              "Accepted Chinese institutions",
+              "All Business School programmes",
+              "75%-80%"
             ]
           }
         },
         "parser": {
-          "mode": "link-only",
+          "mode": "html-grouped-items",
+          "groups": [
+            {
+              "selector": ".single-accordion .accordion-body",
+              "tierOfficial": "Leeds University Business School · minimum GPA 75%-80%"
+            }
+          ],
+          "itemSelector": "p",
+          "institutionPattern": "^(?<institutionNameZh>[^A-Z]+?)\\s*(?<institutionOfficial>[A-Z].+)$",
           "guard": {
-            "minimumRecords": 0,
-            "maximumRecords": 1,
-            "maximumRemovalRatio": 0
+            "minimumRecords": 850,
+            "maximumRecords": 1000,
+            "maximumRemovalRatio": 0.05
           }
         },
         "status": {
-          "sourceId": "leeds-china",
-          "checkedAt": "2026-08-08T04:21:00.620Z",
-          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
-          "httpStatus": 200,
-          "finalUrl": "https://www.leeds.ac.uk/dir-record/profiles/21834/china",
+          "sourceId": "leeds-business-china",
+          "checkedAt": "2026-08-30T20:51:28.893Z",
+          "lastSuccessfulAt": "2026-08-30T20:51:28.893Z",
+          "contentHash": "3f528101ccb4789c64d9a369184ac604f9b7f2f5b55a7fe163839ce18bd50517",
+          "consecutiveFailures": 0,
           "health": "ok",
-          "consecutiveFailures": 0
+          "httpStatus": 200,
+          "finalUrl": "https://business.leeds.ac.uk/masters/doc/accepted-chinese-institutions"
+        }
+      },
+      {
+        "id": "leeds-computer-science-media-china",
+        "universityId": "university-of-leeds",
+        "labelZh": "计算机与传媒学院中国院校名单",
+        "url": "https://www.leeds.ac.uk/international-applying/doc/accepted-chinese-institutions-postgraduate-admissions/page/3",
+        "kind": "official-list",
+        "scope": "faculty",
+        "scopeZh": "计算机学院与传媒学院全部硕士课程",
+        "cycle": "2026/27",
+        "institutionRule": {
+          "type": "eligibility",
+          "summaryZh": "2026/27 入学：计算机学院与传媒学院采用同一套中国院校名单，最低均分通常为 75%–80%，具体取决于本科院校和课程。",
+          "listedMeaningZh": "名单内院校可按计算机学院与传媒学院公布的 75%–80% 最低均分范围核对申请条件。",
+          "unlistedMeaningZh": "官网说明未列出的中国院校不在该申请范围内。",
+          "caveatZh": "名单和分数仅作申请指引，最终决定由利兹大学招生团队作出。",
+          "verification": {
+            "reviewedAt": "2026-08-30",
+            "url": "https://www.leeds.ac.uk/international-applying/doc/accepted-chinese-institutions-postgraduate-admissions/page/3",
+            "requiredText": [
+              "School of Computer Science",
+              "School of Media and Communication",
+              "75%-80%"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "html-grouped-items",
+          "groups": [
+            {
+              "selector": ".uol-rich-text.uol-rich-text--with-lead > .uol-accordion:has(.uol-accordion__content li)",
+              "tierOfficial": "School of Computer Science and School of Media and Communication · minimum GPA 75%-80%"
+            },
+            {
+              "selector": ".uol-rich-text.uol-rich-text--with-lead > .uol-accordion:nth-of-type(18)",
+              "tierOfficial": "School of Computer Science and School of Media and Communication · minimum GPA 75%-80%"
+            }
+          ],
+          "itemSelector": ".uol-accordion__content li, .uol-accordion__content > p",
+          "institutionPattern": "^(?<institutionNameZh>[^A-Z]+?)\\s*(?<institutionOfficial>[A-Z].+)$",
+          "guard": {
+            "minimumRecords": 850,
+            "maximumRecords": 1000,
+            "maximumRemovalRatio": 0.05
+          }
+        },
+        "status": {
+          "sourceId": "leeds-computer-science-media-china",
+          "checkedAt": "2026-08-30T20:51:28.893Z",
+          "lastSuccessfulAt": "2026-08-30T20:51:28.893Z",
+          "contentHash": "0d91066077bb70a85c2d875b340e433277e226c5a61c88bfabf23eb30f6ed720",
+          "consecutiveFailures": 0,
+          "health": "ok",
+          "httpStatus": 200,
+          "finalUrl": "https://www.leeds.ac.uk/international-applying/doc/accepted-chinese-institutions-postgraduate-admissions/page/3"
+        }
+      },
+      {
+        "id": "leeds-other-schools-a-l-china",
+        "universityId": "university-of-leeds",
+        "labelZh": "其他学院中国院校名单（A–L）",
+        "url": "https://www.leeds.ac.uk/international-applying/doc/accepted-chinese-institutions-postgraduate-admissions/page/4",
+        "kind": "official-list",
+        "scope": "faculty",
+        "scopeZh": "官网列出的其他学院硕士课程；院校英文名 A–L",
+        "cycle": "2026/27",
+        "institutionRule": {
+          "type": "eligibility",
+          "summaryZh": "2026/27 入学：官网列出的其他学院采用这套中国院校名单，最低均分通常为 70%–85%，具体取决于本科院校和课程。",
+          "listedMeaningZh": "本页收录英文名 A–L 的院校，可按其他学院公布的 70%–85% 最低均分范围核对申请条件。",
+          "unlistedMeaningZh": "官网说明未列出的中国院校不在该申请范围内。",
+          "caveatZh": "仅适用于官网列出的学院；名单和分数仅作申请指引，最终决定由利兹大学招生团队作出。",
+          "verification": {
+            "reviewedAt": "2026-08-30",
+            "url": "https://www.leeds.ac.uk/international-applying/doc/accepted-chinese-institutions-postgraduate-admissions/page/4",
+            "requiredText": [
+              "All other courses - page 1",
+              "70%-85%",
+              "School of Law"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "html-grouped-items",
+          "groups": [
+            {
+              "selector": ".uol-rich-text.uol-rich-text--with-lead > .uol-accordion",
+              "tierOfficial": "Other listed schools · minimum GPA 70%-85% · A-L"
+            }
+          ],
+          "itemSelector": ".uol-accordion__content li",
+          "institutionPattern": "^(?<institutionNameZh>[^A-Z]+?)\\s*(?<institutionOfficial>[A-Z].+)$",
+          "guard": {
+            "minimumRecords": 600,
+            "maximumRecords": 750,
+            "maximumRemovalRatio": 0.05
+          }
+        },
+        "status": {
+          "sourceId": "leeds-other-schools-a-l-china",
+          "checkedAt": "2026-08-30T20:51:28.893Z",
+          "lastSuccessfulAt": "2026-08-30T20:51:28.893Z",
+          "contentHash": "cb897b692ebd1bfef46efa6e8ef986f4ce81ed04b984a8508bef34bf096c40a6",
+          "consecutiveFailures": 0,
+          "health": "ok",
+          "httpStatus": 200,
+          "finalUrl": "https://www.leeds.ac.uk/international-applying/doc/accepted-chinese-institutions-postgraduate-admissions/page/4"
+        }
+      },
+      {
+        "id": "leeds-other-schools-m-z-china",
+        "universityId": "university-of-leeds",
+        "labelZh": "其他学院中国院校名单（M–Z）",
+        "url": "https://www.leeds.ac.uk/international-applying/doc/accepted-chinese-institutions-postgraduate-admissions/page/5",
+        "kind": "official-list",
+        "scope": "faculty",
+        "scopeZh": "官网列出的其他学院硕士课程；院校英文名 M–Z",
+        "cycle": "2026/27",
+        "institutionRule": {
+          "type": "eligibility",
+          "summaryZh": "2026/27 入学：官网列出的其他学院采用这套中国院校名单，最低均分通常为 70%–85%，具体取决于本科院校和课程。",
+          "listedMeaningZh": "本页收录英文名 M–Z 的院校，可按其他学院公布的 70%–85% 最低均分范围核对申请条件。",
+          "unlistedMeaningZh": "官网说明未列出的中国院校不在该申请范围内。",
+          "caveatZh": "仅适用于官网列出的学院；名单和分数仅作申请指引，最终决定由利兹大学招生团队作出。",
+          "verification": {
+            "reviewedAt": "2026-08-30",
+            "url": "https://www.leeds.ac.uk/international-applying/doc/accepted-chinese-institutions-postgraduate-admissions/page/5",
+            "requiredText": [
+              "All other courses - page 2",
+              "70%-85%",
+              "School of Law"
+            ]
+          }
+        },
+        "parser": {
+          "mode": "html-grouped-items",
+          "groups": [
+            {
+              "selector": ".uol-rich-text.uol-rich-text--with-lead > .uol-accordion:has(.uol-accordion__content li)",
+              "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+            },
+            {
+              "selector": ".uol-rich-text.uol-rich-text--with-lead > .uol-accordion:nth-of-type(6)",
+              "tierOfficial": "Other listed schools · minimum GPA 70%-85% · M-Z"
+            }
+          ],
+          "itemSelector": ".uol-accordion__content li, .uol-accordion__content > p",
+          "institutionPattern": "^(?<institutionNameZh>[^A-Z]+?)\\s*(?<institutionOfficial>[A-Z].+)$",
+          "guard": {
+            "minimumRecords": 600,
+            "maximumRecords": 750,
+            "maximumRemovalRatio": 0.05
+          }
+        },
+        "status": {
+          "sourceId": "leeds-other-schools-m-z-china",
+          "checkedAt": "2026-08-30T20:51:28.893Z",
+          "lastSuccessfulAt": "2026-08-30T20:51:28.893Z",
+          "contentHash": "0fedfdcea864874549b3c4989e9e1f087f314ab71f74c0e0ef3b940e36154dc4",
+          "consecutiveFailures": 0,
+          "health": "ok",
+          "httpStatus": 200,
+          "finalUrl": "https://www.leeds.ac.uk/international-applying/doc/accepted-chinese-institutions-postgraduate-admissions/page/5"
         }
       }
     ],
@@ -1173,7 +1474,16 @@
         "Undergraduate and Masters course search",
         "Search for postgraduate research opportunities"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-leeds",
+        "checkedAt": "2026-08-11T15:52:47.110Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:52:47.110Z",
+        "httpStatus": 200,
+        "finalUrl": "https://courses.leeds.ac.uk/courses/",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -1241,12 +1551,15 @@
         },
         "status": {
           "sourceId": "glasgow-china",
-          "checkedAt": "2026-08-08T04:21:00.620Z",
-          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
+          "checkedAt": "2026-08-30T09:13:44.325Z",
+          "lastSuccessfulAt": "2026-08-30T09:13:44.325Z",
           "health": "ok",
           "finalUrl": "https://www.gla.ac.uk/media/Media_1221495_smxx.pdf",
           "consecutiveFailures": 0,
-          "contentHash": "129c7f7e8c924142b5e67ad97a0d5ccd3b3d25066cabe4a47a20c79f29eb82af"
+          "contentHash": "129c7f7e8c924142b5e67ad97a0d5ccd3b3d25066cabe4a47a20c79f29eb82af",
+          "httpStatus": 304,
+          "etag": "\"459bd-65968453e7cf4\"",
+          "lastModified": "Wed, 19 Aug 2026 15:43:53 GMT"
         }
       }
     ],
@@ -1279,7 +1592,20 @@
         "Find a programme",
         "Postgraduate Research"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-glasgow",
+        "checkedAt": "2026-08-11T15:52:48.833Z",
+        "health": "changed",
+        "lastSuccessfulAt": "2026-08-11T15:52:48.833Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.gla.ac.uk/postgraduate/",
+        "consecutiveFailures": 0,
+        "missingRequiredText": [
+          "Find a programme",
+          "Postgraduate Research"
+        ]
+      }
     }
   },
   {
@@ -1348,12 +1674,16 @@
         },
         "status": {
           "sourceId": "sheffield-china",
-          "checkedAt": "2026-08-08T04:21:00.620Z",
-          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
-          "health": "ok",
+          "checkedAt": "2026-08-30T09:13:45.520Z",
+          "lastSuccessfulAt": "2026-08-30T09:13:45.520Z",
+          "health": "changed",
           "finalUrl": "https://sheffield.ac.uk/international/entry-requirements/china/ranking-list",
           "consecutiveFailures": 0,
-          "contentHash": "72a8a230f02aaca44280b36f95022b756ed7e7847c09b5592cdfa3a616e2b83c"
+          "contentHash": "72a8a230f02aaca44280b36f95022b756ed7e7847c09b5592cdfa3a616e2b83c",
+          "httpStatus": 200,
+          "etag": "\"1788023641-gzip\"",
+          "lastModified": "Sat, 29 Aug 2026 17:14:01 GMT",
+          "observedContentHash": "3b15557a2673989a1e7b2572336ca1aa9f4fe0d59d657347ea5762aaa113101d"
         }
       }
     ],
@@ -1386,7 +1716,16 @@
         "Postgraduate study",
         "A masters or PhD at Sheffield"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-sheffield",
+        "checkedAt": "2026-08-11T15:52:50.469Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:52:50.469Z",
+        "httpStatus": 200,
+        "finalUrl": "https://sheffield.ac.uk/postgraduate",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -1435,11 +1774,11 @@
         },
         "status": {
           "sourceId": "durham-china",
-          "checkedAt": "2026-08-08T04:21:00.620Z",
+          "checkedAt": "2026-08-30T09:13:47.807Z",
           "httpStatus": 403,
           "finalUrl": "https://www.durham.ac.uk/study/international/your-country/china/",
           "health": "unavailable",
-          "consecutiveFailures": 3
+          "consecutiveFailures": 23
         }
       }
     ],
@@ -1472,7 +1811,15 @@
         "Postgraduate Taught degrees",
         "Postgraduate Research"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-durham-university",
+        "checkedAt": "2026-08-30T09:16:27.387Z",
+        "httpStatus": 403,
+        "finalUrl": "https://www.durham.ac.uk/study/postgraduate/",
+        "health": "unavailable",
+        "consecutiveFailures": 20
+      }
     }
   },
   {
@@ -1531,12 +1878,14 @@
         },
         "status": {
           "sourceId": "nottingham-china",
-          "checkedAt": "2026-08-08T04:21:00.620Z",
-          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
-          "health": "ok",
+          "checkedAt": "2026-08-30T09:13:48.827Z",
+          "lastSuccessfulAt": "2026-08-30T09:13:48.827Z",
+          "health": "changed",
           "finalUrl": "https://www.nottingham.ac.uk/studywithus/international-applicants/country-info/countryinformation/china-institution-list.aspx",
           "consecutiveFailures": 0,
-          "contentHash": "4c39554afa7d9d6c592c82effa60b4e41deb6c1bebb0785b6f083222095d05a7"
+          "contentHash": "4c39554afa7d9d6c592c82effa60b4e41deb6c1bebb0785b6f083222095d05a7",
+          "httpStatus": 200,
+          "observedContentHash": "369957c93bb0c0478e66874a9f2742f5cc33b95c8f93400ea646ade98df621bf"
         }
       }
     ],
@@ -1569,7 +1918,16 @@
         "Postgraduate course search",
         "Taught Research All"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-nottingham",
+        "checkedAt": "2026-08-11T15:52:53.085Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:52:53.085Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.nottingham.ac.uk/pgstudy/courses/courses.aspx",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -1618,11 +1976,11 @@
         },
         "status": {
           "sourceId": "qmul-china",
-          "checkedAt": "2026-08-08T04:21:00.620Z",
+          "checkedAt": "2026-08-30T09:13:50.858Z",
           "httpStatus": 403,
           "finalUrl": "https://www.qmul.ac.uk/international-students/regions/east-asia/entry-requirements/mainland-china/",
           "health": "unavailable",
-          "consecutiveFailures": 3
+          "consecutiveFailures": 23
         }
       }
     ],
@@ -1655,7 +2013,15 @@
         "Masters programmes",
         "Research degrees"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-queen-mary-university-of-london",
+        "checkedAt": "2026-08-30T09:16:29.859Z",
+        "httpStatus": 403,
+        "finalUrl": "https://www.qmul.ac.uk/postgraduate/",
+        "health": "unavailable",
+        "consecutiveFailures": 20
+      }
     }
   },
   {
@@ -1726,12 +2092,16 @@
         },
         "status": {
           "sourceId": "southampton-china",
-          "checkedAt": "2026-08-08T04:21:00.620Z",
-          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
-          "health": "ok",
+          "checkedAt": "2026-08-30T09:13:52.062Z",
+          "lastSuccessfulAt": "2026-08-30T09:13:52.062Z",
+          "health": "changed",
           "finalUrl": "https://www.southampton.ac.uk/international/entry-qualification-equivalencies/china/postgraduate-taught-tier-list",
           "consecutiveFailures": 0,
-          "contentHash": "7d4863b4e9280af44e286eb72c7e57075444faaca0a6729da98385b04310ca0d"
+          "contentHash": "7d4863b4e9280af44e286eb72c7e57075444faaca0a6729da98385b04310ca0d",
+          "httpStatus": 200,
+          "etag": "W/\"1788081181\"",
+          "lastModified": "Sun, 30 Aug 2026 09:13:01 GMT",
+          "observedContentHash": "46ccc74153ac0943f58d394fc08663adbe799782b876952ef402d0eb31d9f4f8"
         }
       }
     ],
@@ -1764,7 +2134,16 @@
         "Find your course",
         "Select study level"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-southampton",
+        "checkedAt": "2026-08-11T15:52:55.921Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:52:55.921Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.southampton.ac.uk/courses",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -1813,12 +2192,13 @@
         },
         "status": {
           "sourceId": "st-andrews-china",
-          "checkedAt": "2026-08-08T04:21:00.620Z",
-          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
+          "checkedAt": "2026-08-30T09:13:53.859Z",
+          "lastSuccessfulAt": "2026-08-30T09:13:53.859Z",
           "httpStatus": 200,
           "finalUrl": "https://www.st-andrews.ac.uk/subjects/entry/china/",
-          "health": "ok",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "observedContentHash": "b47dcfc028e37543cbb5e5b73b0f076f7cc65310d17f2c098c21c5cee43e9d5c"
         }
       }
     ],
@@ -1851,7 +2231,16 @@
         "Masters study at St Andrews",
         "Research degrees"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-st-andrews",
+        "checkedAt": "2026-08-11T15:52:57.865Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:52:57.865Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.st-andrews.ac.uk/study/postgraduate/",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -1900,12 +2289,13 @@
         },
         "status": {
           "sourceId": "bath-china",
-          "checkedAt": "2026-08-08T04:21:00.620Z",
-          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
+          "checkedAt": "2026-08-30T09:13:55.720Z",
+          "lastSuccessfulAt": "2026-08-30T09:13:55.720Z",
           "httpStatus": 200,
           "finalUrl": "https://www.bath.ac.uk/corporate-information/entry-requirements-for-international-students/",
-          "health": "ok",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "observedContentHash": "96134bac6f9c097a55606816ef9df50be0f3c723d8e93f75fa848c70180f9338"
         }
       }
     ],
@@ -1938,7 +2328,16 @@
         "Search for a course",
         "Postgraduate research"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-bath",
+        "checkedAt": "2026-08-11T15:52:59.303Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:52:59.303Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.bath.ac.uk/courses/",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -1988,13 +2387,14 @@
         },
         "status": {
           "sourceId": "exeter-china",
-          "checkedAt": "2026-08-08T04:21:00.620Z",
-          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
+          "checkedAt": "2026-08-30T09:13:57.342Z",
+          "lastSuccessfulAt": "2026-08-30T09:13:57.342Z",
           "httpStatus": 304,
           "finalUrl": "https://www.exeter.ac.uk/international-students/china/",
-          "health": "ok",
-          "lastModified": "Tue, 28 Jul 2026 00:00:00 GMT",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "lastModified": "Tue, 25 Aug 2026 00:00:00 GMT",
+          "consecutiveFailures": 0,
+          "observedContentHash": "fc125ffb2817097de5407b765f83609a024e6b726f0d67321ae3b176946bc6d3"
         }
       }
     ],
@@ -2027,7 +2427,16 @@
         "Masters degrees and courses",
         "Search for a course"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-exeter",
+        "checkedAt": "2026-08-11T15:53:00.556Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:53:00.556Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.exeter.ac.uk/masters-degrees/",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -2076,12 +2485,13 @@
         },
         "status": {
           "sourceId": "liverpool-china",
-          "checkedAt": "2026-08-08T04:21:00.620Z",
-          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
+          "checkedAt": "2026-08-30T09:13:58.396Z",
+          "lastSuccessfulAt": "2026-08-30T09:13:58.396Z",
           "httpStatus": 200,
           "finalUrl": "https://www.liverpool.ac.uk/international/countries/chinamainland.php",
-          "health": "ok",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "observedContentHash": "a06c95b40e241cebd38118caac0de86f6008100401bdf443d5d04c9e3d32291e"
         }
       }
     ],
@@ -2114,7 +2524,16 @@
         "Our courses",
         "Postgraduate research"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-liverpool",
+        "checkedAt": "2026-08-11T15:53:01.485Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:53:01.485Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.liverpool.ac.uk/courses/postgraduate-taught",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -2163,14 +2582,15 @@
         },
         "status": {
           "sourceId": "newcastle-china",
-          "checkedAt": "2026-08-08T04:21:00.620Z",
-          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
+          "checkedAt": "2026-08-30T09:14:00.646Z",
+          "lastSuccessfulAt": "2026-08-30T09:14:00.646Z",
           "httpStatus": 200,
           "finalUrl": "https://www.ncl.ac.uk/international/country/china/",
           "health": "changed",
-          "etag": "\"1dd11-6587705d0ef0a-gzip\"",
-          "lastModified": "Fri, 07 Aug 2026 15:54:42 GMT",
-          "consecutiveFailures": 0
+          "etag": "\"1dd10-658c0d209f376-gzip\"",
+          "lastModified": "Tue, 11 Aug 2026 07:57:21 GMT",
+          "consecutiveFailures": 0,
+          "observedContentHash": "ce732215d44c282c08224f1e6e0402b459713a20d479439426a48f7163278584"
         }
       }
     ],
@@ -2203,7 +2623,16 @@
         "Find a Postgraduate Degree",
         "more than 300 postgraduate degrees"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-newcastle-university",
+        "checkedAt": "2026-08-11T15:53:03.054Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:53:03.054Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.ncl.ac.uk/postgraduate/degrees/",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -2252,14 +2681,15 @@
         },
         "status": {
           "sourceId": "york-china",
-          "checkedAt": "2026-08-08T04:21:00.620Z",
-          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
+          "checkedAt": "2026-08-30T09:14:02.730Z",
+          "lastSuccessfulAt": "2026-08-30T09:14:02.730Z",
           "httpStatus": 304,
           "finalUrl": "https://www.york.ac.uk/study/international/your-country/china/",
-          "health": "ok",
-          "etag": "\"131be-658690381f4bf-gzip\"",
-          "lastModified": "Thu, 06 Aug 2026 23:11:53 GMT",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "etag": "\"12c23-65a1e882cb5e4-gzip\"",
+          "lastModified": "Fri, 28 Aug 2026 17:10:40 GMT",
+          "consecutiveFailures": 0,
+          "observedContentHash": "1ec494012dac61327f142d033c0dc20f19743151b52ba8a8ac07773cc6e852c6"
         }
       }
     ],
@@ -2292,7 +2722,16 @@
         "Postgraduate taught",
         "Masters by research"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-york",
+        "checkedAt": "2026-08-11T15:53:04.654Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:53:04.654Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.york.ac.uk/study/postgraduate/",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -2342,12 +2781,13 @@
         },
         "status": {
           "sourceId": "lancaster-china",
-          "checkedAt": "2026-08-08T04:21:00.620Z",
-          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
+          "checkedAt": "2026-08-30T09:14:03.375Z",
+          "lastSuccessfulAt": "2026-08-30T09:14:03.375Z",
           "httpStatus": 200,
           "finalUrl": "https://www.lancaster.ac.uk/study/entry-requirements/postgraduate-qualifications/?country=China",
-          "health": "ok",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "observedContentHash": "bcbb00f78a798154dadd1503ee610108f3cefa87ed57cbbac96e6d8e266dba3d"
         }
       }
     ],
@@ -2380,7 +2820,16 @@
         "Postgraduate courses",
         "Find your course"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-lancaster-university",
+        "checkedAt": "2026-08-11T15:53:05.286Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:53:05.286Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.lancaster.ac.uk/study/postgraduate/postgraduate-courses/",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -2429,11 +2878,11 @@
         },
         "status": {
           "sourceId": "qub-china",
-          "checkedAt": "2026-08-08T04:21:00.620Z",
+          "checkedAt": "2026-08-30T09:14:05.358Z",
           "httpStatus": 403,
           "finalUrl": "https://www.qub.ac.uk/Study/international-students/your-country/china/",
           "health": "unavailable",
-          "consecutiveFailures": 3
+          "consecutiveFailures": 23
         }
       }
     ],
@@ -2466,7 +2915,15 @@
         "Masters Degrees",
         "Research Degrees"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-queens-university-belfast",
+        "checkedAt": "2026-08-30T09:16:40.732Z",
+        "httpStatus": 403,
+        "finalUrl": "https://www.qub.ac.uk/Study/postgraduate/",
+        "health": "unavailable",
+        "consecutiveFailures": 20
+      }
     }
   },
   {
@@ -2515,11 +2972,11 @@
         },
         "status": {
           "sourceId": "cardiff-china",
-          "checkedAt": "2026-08-08T04:21:00.620Z",
+          "checkedAt": "2026-08-30T09:14:06.105Z",
           "httpStatus": 403,
           "finalUrl": "https://www.cardiff.ac.uk/study/international/your-country/asia/china/entry-requirements",
           "health": "unavailable",
-          "consecutiveFailures": 3
+          "consecutiveFailures": 23
         }
       }
     ],
@@ -2552,7 +3009,15 @@
         "Find your course",
         "A-Z of research programmes"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-cardiff-university",
+        "checkedAt": "2026-08-30T09:16:41.518Z",
+        "httpStatus": 403,
+        "finalUrl": "https://www.cardiff.ac.uk/study/postgraduate",
+        "health": "unavailable",
+        "consecutiveFailures": 20
+      }
     }
   },
   {
@@ -2601,12 +3066,13 @@
         },
         "status": {
           "sourceId": "reading-china",
-          "checkedAt": "2026-08-08T04:21:00.620Z",
-          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
+          "checkedAt": "2026-08-30T09:14:07.240Z",
+          "lastSuccessfulAt": "2026-08-30T09:14:07.240Z",
           "httpStatus": 200,
           "finalUrl": "https://www.reading.ac.uk/ready-to-study/international-and-eu/country-specific-information/country-specific-china",
-          "health": "ok",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "observedContentHash": "0d5f15298347fb398ac3e79d1a61f742491ffeb14cf59aac911aaeb60b5ea340"
         }
       }
     ],
@@ -2639,7 +3105,16 @@
         "Find a master's course",
         "Postgraduate research"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-reading",
+        "checkedAt": "2026-08-11T15:53:08.472Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:53:08.472Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.reading.ac.uk/ready-to-study/study/postgraduate-study",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -2696,8 +3171,13 @@
         },
         "status": {
           "sourceId": "cranfield-china-entry",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:14:11.673Z",
+          "lastSuccessfulAt": "2026-08-30T09:14:11.673Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.cranfield.ac.uk/china",
+          "observedContentHash": "e3ad730039b7a4f5c054d2a63fbd73b2e72f0cf568d61548abe7a85a747e78f8"
         }
       }
     ],
@@ -2713,7 +3193,16 @@
         "Find a course",
         "Our courses and research programmes"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-cranfield-university",
+        "checkedAt": "2026-08-11T15:53:10.339Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:53:10.339Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.cranfield.ac.uk/courses",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -2769,13 +3258,14 @@
         },
         "status": {
           "sourceId": "lbs-mim-entry",
-          "checkedAt": "2026-08-08T04:21:00.620Z",
-          "lastSuccessfulAt": "2026-08-08T04:21:00.620Z",
+          "checkedAt": "2026-08-30T09:14:09.764Z",
+          "lastSuccessfulAt": "2026-08-30T09:14:09.764Z",
           "httpStatus": 200,
           "finalUrl": "https://www.london.edu/masters-degrees/masters-in-management/apply",
           "health": "changed",
-          "etag": "W/\"z8ieoc9pl3c3oa-df\"",
-          "consecutiveFailures": 0
+          "etag": "W/\"djegfykguyc46w\"",
+          "consecutiveFailures": 0,
+          "observedContentHash": "23561098c4d4b6f56cfc2aac5063dd2caa3d743ab67a6c0259a25bb0f8a6e700"
         }
       }
     ],
@@ -2791,7 +3281,16 @@
         "Find the masters programme that's right for you.",
         "Our Programmes"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-london-business-school",
+        "checkedAt": "2026-08-11T15:53:11.927Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:53:11.927Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.london.edu/masters-degrees",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -2849,8 +3348,11 @@
         },
         "status": {
           "sourceId": "lshtm-china-entry",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "unavailable",
+          "consecutiveFailures": 20,
+          "checkedAt": "2026-08-30T09:14:10.932Z",
+          "httpStatus": 403,
+          "finalUrl": "https://www.lshtm.ac.uk/study/international/country-region-information/china"
         }
       }
     ],
@@ -2866,7 +3368,15 @@
         "Course finder",
         "LSHTM offers a wide range of Master's and Research degrees."
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-london-school-of-hygiene-and-tropical-medicine",
+        "checkedAt": "2026-08-30T09:16:47.024Z",
+        "httpStatus": 403,
+        "finalUrl": "https://www.lshtm.ac.uk/study/courses",
+        "health": "unavailable",
+        "consecutiveFailures": 20
+      }
     }
   },
   {
@@ -2921,8 +3431,13 @@
         },
         "status": {
           "sourceId": "rca-postgraduate-entry",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:14:13.813Z",
+          "lastSuccessfulAt": "2026-08-30T09:14:13.813Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.rca.ac.uk/study/apply-to-study/",
+          "observedContentHash": "7bbaa1a7c0c7e02aae41020b4bdcde054c87eea195437ee3fe9f74914816e33b"
         }
       }
     ],
@@ -2938,7 +3453,16 @@
         "Programme finder",
         "We offer a range of Graduate Diploma, MA, MArch, MEd, MFA, MDes, MRes, MPhil and PhD degree programmes across the art and design disciplines."
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-royal-college-of-art",
+        "checkedAt": "2026-08-11T15:53:14.201Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:53:14.201Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.rca.ac.uk/study/programme-finder/",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -2993,8 +3517,11 @@
         },
         "status": {
           "sourceId": "rvc-international-entry",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "unavailable",
+          "consecutiveFailures": 20,
+          "checkedAt": "2026-08-30T09:14:16.128Z",
+          "httpStatus": 403,
+          "finalUrl": "https://www.rvc.ac.uk/study/international-students/how-to-apply"
         }
       }
     ],
@@ -3010,7 +3537,15 @@
         "Courses",
         "Research"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-royal-veterinary-college",
+        "checkedAt": "2026-08-30T09:16:49.261Z",
+        "httpStatus": 403,
+        "finalUrl": "https://www.rvc.ac.uk/study/postgraduate",
+        "health": "unavailable",
+        "consecutiveFailures": 20
+      }
     }
   },
   {
@@ -3065,8 +3600,13 @@
         },
         "status": {
           "sourceId": "rcm-china-entry",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "ok",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:14:17.277Z",
+          "lastSuccessfulAt": "2026-08-30T09:14:17.277Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.rcm.ac.uk/international/china/",
+          "observedContentHash": "3e856d80495da4945fca72c558e8979251f97af49b235fe757b9c693f36a3f4a"
         }
       }
     ],
@@ -3082,7 +3622,16 @@
         "Taught postgraduate",
         "Research degrees"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-royal-college-of-music",
+        "checkedAt": "2026-08-11T15:53:17.337Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:53:17.337Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.rcm.ac.uk/courses/",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -3139,8 +3688,11 @@
         },
         "status": {
           "sourceId": "icr-msc-oncology-entry",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "unavailable",
+          "consecutiveFailures": 20,
+          "checkedAt": "2026-08-30T09:14:18.983Z",
+          "httpStatus": 403,
+          "finalUrl": "https://www.icr.ac.uk/study-and-careers/opportunities-for-clinicians/msc-in-oncology"
         }
       }
     ],
@@ -3156,7 +3708,15 @@
         "Studying at the ICR",
         "MSc in Oncology"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-institute-of-cancer-research-london",
+        "checkedAt": "2026-08-30T09:16:51.593Z",
+        "httpStatus": 403,
+        "finalUrl": "https://www.icr.ac.uk/study-and-careers",
+        "health": "unavailable",
+        "consecutiveFailures": 20
+      }
     }
   },
   {
@@ -3211,8 +3771,15 @@
         },
         "status": {
           "sourceId": "lstm-postgraduate-entry",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:14:19.664Z",
+          "lastSuccessfulAt": "2026-08-30T09:14:19.664Z",
+          "httpStatus": 200,
+          "finalUrl": "https://lstmed.ac.uk/study/",
+          "etag": "W/\"6a93d574-2a3c7\"",
+          "lastModified": "Sun, 30 Aug 2026 07:02:12 GMT",
+          "observedContentHash": "3800c2716e3029c78e644f51e25aed685b3ba05feb6657e8a8c3e07921d35a5c"
         }
       }
     ],
@@ -3228,7 +3795,16 @@
         "Master’s degrees",
         "Research degrees"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-liverpool-school-of-tropical-medicine",
+        "checkedAt": "2026-08-11T15:53:19.507Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:53:19.507Z",
+        "httpStatus": 200,
+        "finalUrl": "https://lstmed.ac.uk/study/",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -3282,8 +3858,15 @@
         },
         "status": {
           "sourceId": "loughborough-china-institution-lookup",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:14:21.498Z",
+          "lastSuccessfulAt": "2026-08-30T09:14:21.498Z",
+          "httpStatus": 304,
+          "finalUrl": "https://www.lboro.ac.uk/study/postgraduate/entry-requirements-china/",
+          "etag": "\"4a608-6593c4add12c0-gzip\"",
+          "lastModified": "Mon, 17 Aug 2026 11:15:49 GMT",
+          "observedContentHash": "55101fd2d2c5ece7589028571b1cbe189b418c2b884631b181373fc3880b7a35"
         }
       }
     ],
@@ -3316,7 +3899,16 @@
         "Master's degrees",
         "PhD opportunities"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-loughborough-university",
+        "checkedAt": "2026-08-11T15:53:20.897Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:53:20.897Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.lboro.ac.uk/study/postgraduate/",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -3370,8 +3962,13 @@
         },
         "status": {
           "sourceId": "strathclyde-china-entry",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:14:22.766Z",
+          "lastSuccessfulAt": "2026-08-30T09:14:22.766Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.strath.ac.uk/studywithus/internationalstudents/entryrequirements/",
+          "observedContentHash": "78d296feaedab874055027da1c2e2d28072215066041db4bf969683c16dda3c5"
         }
       }
     ],
@@ -3404,7 +4001,16 @@
         "Find your course",
         "Postgraduate research"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-strathclyde",
+        "checkedAt": "2026-08-11T15:53:22.295Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:53:22.295Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.strath.ac.uk/courses/",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -3455,8 +4061,15 @@
         },
         "status": {
           "sourceId": "surrey-china-entry",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:14:24.532Z",
+          "lastSuccessfulAt": "2026-08-30T09:14:24.532Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.surrey.ac.uk/china/entry-requirements",
+          "etag": "\"1788058281\"",
+          "lastModified": "Sun, 30 Aug 2026 02:51:21 GMT",
+          "observedContentHash": "f8325a917133322c543a56dfdfcd9cf098945d6d2f7d53f47208ead8ba598bfd"
         }
       }
     ],
@@ -3489,7 +4102,16 @@
         "Postgraduate courses",
         "Research courses"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-surrey",
+        "checkedAt": "2026-08-11T15:53:23.883Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:53:23.883Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.surrey.ac.uk/prospectus-and-guides",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -3542,8 +4164,13 @@
         },
         "status": {
           "sourceId": "sussex-china-entry",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "ok",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:14:27.098Z",
+          "lastSuccessfulAt": "2026-08-30T09:14:27.098Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.sussex.ac.uk/study/international-students/information-by-country/china",
+          "observedContentHash": "f25cfc33f7b8ddbb1e6e9bd6b96acdb7c5bdefb1fe86e6970209330e1a40c88e"
         }
       }
     ],
@@ -3576,7 +4203,16 @@
         "Masters courses",
         "Find a course"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-sussex",
+        "checkedAt": "2026-08-11T15:53:25.902Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:53:25.902Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.sussex.ac.uk/study/masters/",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -3628,8 +4264,13 @@
         },
         "status": {
           "sourceId": "aberdeen-china-entry-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "ok",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:15:50.777Z",
+          "lastSuccessfulAt": "2026-08-30T09:15:50.777Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.abdn.ac.uk/study/international/country-territory/china/entry/",
+          "observedContentHash": "107f2b5fe41f7eb63fc596dc7472fdc7962f7ff666ad928f11d0aa8409682c45"
         }
       }
     ],
@@ -3662,7 +4303,16 @@
         "Degree Search",
         "Explore our Masters by Research"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-aberdeen",
+        "checkedAt": "2026-08-26T04:06:15.603Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-26T04:06:15.603Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.abdn.ac.uk/study/postgraduate-taught/",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -3715,8 +4365,11 @@
         },
         "status": {
           "sourceId": "leicester-china-entry",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "unavailable",
+          "consecutiveFailures": 20,
+          "checkedAt": "2026-08-30T09:14:29.139Z",
+          "httpStatus": 403,
+          "finalUrl": "https://le.ac.uk/study/international-students/countries/asia/china"
         }
       }
     ],
@@ -3749,7 +4402,15 @@
         "Search for a course",
         "Postgraduate"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-leicester",
+        "checkedAt": "2026-08-30T09:17:01.257Z",
+        "httpStatus": 403,
+        "finalUrl": "https://le.ac.uk/courses?q=postgraduate",
+        "health": "unavailable",
+        "consecutiveFailures": 20
+      }
     }
   },
   {
@@ -3805,8 +4466,13 @@
         },
         "status": {
           "sourceId": "swansea-china-pgt-entry",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:14:30.025Z",
+          "lastSuccessfulAt": "2026-08-30T09:14:30.025Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.swansea.ac.uk/postgraduate/apply/entry-requirements/country-specific/",
+          "observedContentHash": "128652c2409e609c86470c9afd47e68ab98b35327bc060ffc0866f7ac40248aa"
         }
       }
     ],
@@ -3839,7 +4505,16 @@
         "Search our Postgraduate Taught courses",
         "Postgraduate Research Courses"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-swansea-university",
+        "checkedAt": "2026-08-11T15:53:30.028Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:53:30.028Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.swansea.ac.uk/postgraduate/",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -3896,8 +4571,13 @@
         },
         "status": {
           "sourceId": "heriot-watt-china-pgt-entry",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:14:32.049Z",
+          "lastSuccessfulAt": "2026-08-30T09:14:32.049Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.hw.ac.uk/china/apply-now/postgraduate-programmes",
+          "observedContentHash": "daa3f575275c2c921650add8db1b9ce232ed5e693c97296b7412399a1043d9a7"
         }
       }
     ],
@@ -3930,7 +4610,16 @@
         "Search our programmes",
         "Research"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-heriot-watt-university",
+        "checkedAt": "2026-08-11T15:53:31.777Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:53:31.777Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.hw.ac.uk/study",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -3983,8 +4672,13 @@
         },
         "status": {
           "sourceId": "brunel-china-entry",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:14:33.253Z",
+          "lastSuccessfulAt": "2026-08-30T09:14:33.253Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.brunel.ac.uk/international/your-country-and-region/China",
+          "observedContentHash": "f62315ca80371ff85334fc5e4f4eb6f437e077a5982e5e0a74e285efe89c2825"
         }
       }
     ],
@@ -4017,7 +4711,19 @@
         "Explore our courses",
         "PhD & Research"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-brunel-university-of-london",
+        "checkedAt": "2026-08-11T15:53:32.695Z",
+        "health": "changed",
+        "lastSuccessfulAt": "2026-08-11T15:53:32.695Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.brunel.ac.uk/study/courses",
+        "consecutiveFailures": 0,
+        "missingRequiredText": [
+          "PhD & Research"
+        ]
+      }
     }
   },
   {
@@ -4071,8 +4777,13 @@
         },
         "status": {
           "sourceId": "birkbeck-china-entry",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:14:34.647Z",
+          "lastSuccessfulAt": "2026-08-30T09:14:34.647Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.bbk.ac.uk/international/country-region-information/china",
+          "observedContentHash": "5e40bae51b45be89f94eb1044f90ad334a206f306d5cc27f011c48abf084ad08"
         }
       }
     ],
@@ -4105,7 +4816,16 @@
         "Browse courses by name, subject and study options",
         "A - Z of Postgraduate courses"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-birkbeck-university-of-london",
+        "checkedAt": "2026-08-11T15:53:34.080Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:53:34.080Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.bbk.ac.uk/courses/postgraduate",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -4163,8 +4883,11 @@
         },
         "status": {
           "sourceId": "city-st-georges-international-commercial-law-china",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "unavailable",
+          "consecutiveFailures": 20,
+          "checkedAt": "2026-08-30T09:14:36.542Z",
+          "httpStatus": 403,
+          "finalUrl": "https://www.citystgeorges.ac.uk/prospective-students/courses/postgraduate/international-commercial-law-llm/2026"
         }
       }
     ],
@@ -4197,7 +4920,15 @@
         "Search courses",
         "Postgraduate research degrees"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-city-st-georges-university-of-london",
+        "checkedAt": "2026-08-30T09:17:08.171Z",
+        "httpStatus": 403,
+        "finalUrl": "https://www.citystgeorges.ac.uk/prospective-students/courses",
+        "health": "unavailable",
+        "consecutiveFailures": 20
+      }
     }
   },
   {
@@ -4252,8 +4983,11 @@
         },
         "status": {
           "sourceId": "uea-china-country-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "unavailable",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-11T15:52:16.794Z",
+          "httpStatus": 405,
+          "finalUrl": "https://www.uea.ac.uk/study/international-students/country-map/china"
         }
       }
     ],
@@ -4286,7 +5020,14 @@
         "Refine by Postgraduate",
         "Refine by PhD or other doctorate"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-east-anglia",
+        "checkedAt": "2026-08-11T15:53:37.983Z",
+        "httpStatus": 405,
+        "finalUrl": "https://www.uea.ac.uk/search/courses",
+        "health": "unavailable"
+      }
     }
   },
   {
@@ -4338,8 +5079,14 @@
         },
         "status": {
           "sourceId": "oxford-brookes-china-entry",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:15:00.800Z",
+          "lastSuccessfulAt": "2026-08-30T09:15:00.800Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.brookes.ac.uk/study/international-students/your-country/china/entry-requirements",
+          "lastModified": "Sun, 30 Aug 2026 09:13:12 GMT",
+          "observedContentHash": "fa690f0f02910561551bc643fd830efaa156d4aaf0a241f890a45fa81c028aeb"
         }
       }
     ],
@@ -4372,7 +5119,16 @@
         "Master's and postgraduate courses",
         "PhDs and postgraduate research"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-oxford-brookes-university",
+        "checkedAt": "2026-08-11T15:53:39.182Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:53:39.182Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.brookes.ac.uk/study/courses/postgraduate",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -4424,8 +5180,13 @@
         },
         "status": {
           "sourceId": "kent-china-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:14:37.235Z",
+          "lastSuccessfulAt": "2026-08-30T09:14:37.235Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.kent.ac.uk/international/countries/china",
+          "observedContentHash": "268847df648d2e797d4dffe6539842b1b87604a92dc279d039a69ae12298c983"
         }
       }
     ],
@@ -4458,7 +5219,16 @@
         "Postgraduate courses",
         "Research"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-kent",
+        "checkedAt": "2026-08-11T15:53:40.588Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:53:40.588Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.kent.ac.uk/courses/postgraduate",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -4510,8 +5280,15 @@
         },
         "status": {
           "sourceId": "aston-china-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:14:39.236Z",
+          "lastSuccessfulAt": "2026-08-30T09:14:39.236Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.aston.ac.uk/international/aston-in-your-country/north-east-asia/china",
+          "etag": "W/\"1788077883\"",
+          "lastModified": "Sun, 30 Aug 2026 08:18:03 GMT",
+          "observedContentHash": "ae82a6dfc7a6e35bdd076f0f4a62462479c6480cc29a713444481182e80a5b1f"
         }
       }
     ],
@@ -4544,7 +5321,20 @@
         "Find your course",
         "Research degrees/PhD"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-aston-university",
+        "checkedAt": "2026-08-11T15:53:42.418Z",
+        "health": "changed",
+        "lastSuccessfulAt": "2026-08-11T15:53:42.418Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.aston.ac.uk/postgraduate/courses",
+        "consecutiveFailures": 0,
+        "missingRequiredText": [
+          "Find your course",
+          "Research degrees/PhD"
+        ]
+      }
     }
   },
   {
@@ -4597,8 +5387,13 @@
         },
         "status": {
           "sourceId": "essex-china-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:14:41.521Z",
+          "lastSuccessfulAt": "2026-08-30T09:14:41.521Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.essex.ac.uk/international/country-specific-information/china",
+          "observedContentHash": "4f2e989254d80e921343d2c4d4acd5bd9d4181e96257fdb55ca23e0b690800f5"
         }
       }
     ],
@@ -4631,7 +5426,16 @@
         "Masters courses",
         "research degrees"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-essex",
+        "checkedAt": "2026-08-29T10:06:14.725Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-29T10:06:14.725Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.essex.ac.uk/postgraduate",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -4682,8 +5486,11 @@
         },
         "status": {
           "sourceId": "dundee-china-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "unavailable",
+          "consecutiveFailures": 20,
+          "checkedAt": "2026-08-30T09:14:43.422Z",
+          "httpStatus": 403,
+          "finalUrl": "https://www.dundee.ac.uk/countries/china"
         }
       },
       {
@@ -4717,8 +5524,11 @@
         },
         "status": {
           "sourceId": "dundee-international-business-management-china-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "unavailable",
+          "consecutiveFailures": 20,
+          "checkedAt": "2026-08-30T09:14:44.114Z",
+          "httpStatus": 403,
+          "finalUrl": "https://www.dundee.ac.uk/postgraduate/international-business-management/entry-requirements/all"
         }
       }
     ],
@@ -4751,7 +5561,15 @@
         "Postgraduate taught courses and postgraduate research degrees",
         "Find a PhD or Master's by Research opportunity"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-dundee",
+        "checkedAt": "2026-08-30T09:17:15.361Z",
+        "httpStatus": 403,
+        "finalUrl": "https://www.dundee.ac.uk/postgraduate",
+        "health": "unavailable",
+        "consecutiveFailures": 20
+      }
     }
   },
   {
@@ -4804,8 +5622,15 @@
         },
         "status": {
           "sourceId": "soas-china-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:14:44.814Z",
+          "lastSuccessfulAt": "2026-08-30T09:14:44.814Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.soas.ac.uk/international/information-region/information-prospective-students-china",
+          "etag": "\"1788081189\"",
+          "lastModified": "Sun, 30 Aug 2026 09:13:09 GMT",
+          "observedContentHash": "7f8ae499e2f2714ee2a580eb62d698414bdf890071945e39e7d957bbfe2a2404"
         }
       }
     ],
@@ -4838,7 +5663,16 @@
         "Explore our courses",
         "Choose from our list of undergraduate, postgraduate, online learning, research and short courses."
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-soas-university-of-london",
+        "checkedAt": "2026-08-11T15:53:45.941Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:53:45.941Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.soas.ac.uk/study/find-course",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -4891,8 +5725,13 @@
         },
         "status": {
           "sourceId": "royal-holloway-china-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:14:46.092Z",
+          "lastSuccessfulAt": "2026-08-30T09:14:46.092Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.royalholloway.ac.uk/studying-here/international-students/find-your-country/china/",
+          "observedContentHash": "4b29d712f4740e1adaf7867c0b334158dc4b315d28921ed357bdead2895a77b8"
         }
       }
     ],
@@ -4925,7 +5764,16 @@
         "Search course or subject",
         "MSc by Research"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-royal-holloway-university-of-london",
+        "checkedAt": "2026-08-11T15:53:46.772Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:53:46.772Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.royalholloway.ac.uk/studying-here/",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -4977,8 +5825,13 @@
         },
         "status": {
           "sourceId": "bradford-china-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "ok",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:14:48.360Z",
+          "lastSuccessfulAt": "2026-08-30T09:14:48.360Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.bradford.ac.uk/international/country/china/",
+          "observedContentHash": "9160f9ce1db99798ef71dd31bf6a99c68f712599b1098e21c9fd9072d7d4d4be"
         }
       }
     ],
@@ -5011,7 +5864,16 @@
         "Postgraduate taught (PGT) courses",
         "Postgraduate research (PGR) degrees"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-bradford",
+        "checkedAt": "2026-08-11T15:53:48.663Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:53:48.663Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.bradford.ac.uk/postgraduate/",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -5063,8 +5925,14 @@
         },
         "status": {
           "sourceId": "huddersfield-china-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:14:50.055Z",
+          "lastSuccessfulAt": "2026-08-30T09:14:50.055Z",
+          "httpStatus": 200,
+          "finalUrl": "https://london.hud.ac.uk/how-to-apply/entry-requirements",
+          "etag": "W/\"ubasvjyboi4i8k\"",
+          "observedContentHash": "3bb480a5264c5cbd8cddb7e6c513e672aaa1cfec3f22462fd99fb13014859dd2"
         }
       }
     ],
@@ -5097,7 +5965,16 @@
         "Search a course",
         "Search for undergraduate, postgraduate, research degrees and apprenticeships."
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-huddersfield",
+        "checkedAt": "2026-08-11T15:53:50.273Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:53:50.273Z",
+        "httpStatus": 200,
+        "finalUrl": "https://courses.hud.ac.uk/",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -5151,8 +6028,15 @@
         },
         "status": {
           "sourceId": "northumbria-china-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "redirected",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:14:51.089Z",
+          "lastSuccessfulAt": "2026-08-30T09:14:51.089Z",
+          "httpStatus": 304,
+          "finalUrl": "https://www.northumbria.ac.uk/-/media/documents/agent%20zone/publication%20359527china%20approved.ashx",
+          "etag": "0207a39061484111959ceedcf667f434",
+          "lastModified": "Tue, 21 Feb 2017 10:34:33 GMT",
+          "observedContentHash": "0ec57a85f2b500b0f3adc4078f17a237efc1a478d9f189b766bbdc3df3ecc02e"
         }
       }
     ],
@@ -5185,7 +6069,20 @@
         "FIND YOUR COURSE",
         "Postgraduate Research Degrees"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-northumbria-university",
+        "checkedAt": "2026-08-29T10:06:28.153Z",
+        "health": "changed",
+        "lastSuccessfulAt": "2026-08-29T10:06:28.153Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.northumbria.ac.uk/study-at-northumbria/",
+        "consecutiveFailures": 0,
+        "missingRequiredText": [
+          "FIND YOUR COURSE",
+          "Postgraduate Research Degrees"
+        ]
+      }
     }
   },
   {
@@ -5237,8 +6134,15 @@
         },
         "status": {
           "sourceId": "stirling-china-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:14:54.121Z",
+          "lastSuccessfulAt": "2026-08-30T09:14:54.121Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.stir.ac.uk/international/international-students/international-entry-requirements/",
+          "etag": "\"30764-659044e26f870-gzip\"",
+          "lastModified": "Fri, 14 Aug 2026 16:28:06 GMT",
+          "observedContentHash": "2409f9860a85a4a438a5aed8a48a5726886dcac8b2baa3edd3142eeb4f86a11f"
         }
       }
     ],
@@ -5271,7 +6175,16 @@
         "View full postgraduate taught course listing",
         "View full postgraduate research degree listing"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-stirling",
+        "checkedAt": "2026-08-11T15:54:02.108Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:54:02.108Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.stir.ac.uk/courses/",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -5324,8 +6237,15 @@
         },
         "status": {
           "sourceId": "bangor-china-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:14:55.726Z",
+          "lastSuccessfulAt": "2026-08-30T09:14:55.726Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.bangor.ac.uk/international/countries/china",
+          "etag": "\"1788081191-gzip\"",
+          "lastModified": "Sun, 30 Aug 2026 09:13:11 GMT",
+          "observedContentHash": "ae3d40346fb0b8b3f662c43e027a3d50ee1f2c0d3663007d0f1bd24ecb90bf54"
         }
       }
     ],
@@ -5358,7 +6278,16 @@
         "Search Postgraduate Taught Courses",
         "Search Postgraduate Research Courses"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-bangor-university",
+        "checkedAt": "2026-08-11T15:54:03.356Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:54:03.356Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.bangor.ac.uk/postgraduate",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -5410,8 +6339,13 @@
         },
         "status": {
           "sourceId": "hull-china-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:14:57.553Z",
+          "lastSuccessfulAt": "2026-08-30T09:14:57.553Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.hull.ac.uk/study/international-students/your-country/china",
+          "observedContentHash": "f450b729d62d419379029213bc9fc9f7d2ef8a2fe29a5d70e6ae9cfdd0ae8f5d"
         }
       }
     ],
@@ -5444,7 +6378,20 @@
         "Search for your perfect postgraduate degree",
         "All postgraduate research degrees"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-hull",
+        "checkedAt": "2026-08-11T15:54:04.716Z",
+        "health": "changed",
+        "lastSuccessfulAt": "2026-08-11T15:54:04.716Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.hull.ac.uk/study/types-of-postgraduate-qualifications",
+        "consecutiveFailures": 0,
+        "missingRequiredText": [
+          "Search for your perfect postgraduate degree",
+          "All postgraduate research degrees"
+        ]
+      }
     }
   },
   {
@@ -5496,8 +6443,14 @@
         },
         "status": {
           "sourceId": "coventry-china-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:14:59.612Z",
+          "lastSuccessfulAt": "2026-08-30T09:14:59.612Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.coventry.ac.uk/international-students-hub/entry-requirements/?country=China&region=ea",
+          "lastModified": "Sun, 30 Aug 2026 09:15:00 GMT",
+          "observedContentHash": "d9b2f679743ffdf820768706ba430f933d528f41829b77d76419f340d03f3837"
         }
       }
     ],
@@ -5530,7 +6483,16 @@
         "Postgraduate A-Z course list",
         "Research degrees"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-coventry-university",
+        "checkedAt": "2026-08-11T15:54:06.737Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:54:06.737Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.coventry.ac.uk/study-at-coventry/postgraduate-study/",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -5582,8 +6544,11 @@
         },
         "status": {
           "sourceId": "ulster-china-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "unavailable",
+          "consecutiveFailures": 20,
+          "checkedAt": "2026-08-30T09:15:02.585Z",
+          "httpStatus": 403,
+          "finalUrl": "https://www.ulster.ac.uk/global/apply/country/china"
         }
       }
     ],
@@ -5616,7 +6581,15 @@
         "Course Finder",
         "PG Research"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-ulster-university",
+        "checkedAt": "2026-08-30T09:17:27.953Z",
+        "httpStatus": 403,
+        "finalUrl": "https://www.ulster.ac.uk/courses",
+        "health": "unavailable",
+        "consecutiveFailures": 20
+      }
     }
   },
   {
@@ -5669,8 +6642,14 @@
         },
         "status": {
           "sourceId": "manchester-metropolitan-china-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:15:03.288Z",
+          "lastSuccessfulAt": "2026-08-30T09:15:03.288Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.mmu.ac.uk/study/international/international-students/china",
+          "lastModified": "Sun, 30 Aug 2026 09:13:12 GMT",
+          "observedContentHash": "98661566fc344d8efc542fcdd1d80e29c019a5bf22b76f9b76a45ab4c01ed3a7"
         }
       }
     ],
@@ -5703,7 +6682,16 @@
         "Find a postgraduate course",
         "Postgraduate research"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-manchester-metropolitan-university",
+        "checkedAt": "2026-08-11T15:54:08.600Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:54:08.600Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.mmu.ac.uk/study/postgraduate/options",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -5756,8 +6744,11 @@
         },
         "status": {
           "sourceId": "nottingham-trent-china-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "unavailable",
+          "consecutiveFailures": 20,
+          "checkedAt": "2026-08-30T09:15:04.019Z",
+          "httpStatus": 403,
+          "finalUrl": "https://www.ntu.ac.uk/international/countries/asia/china"
         }
       }
     ],
@@ -5790,7 +6781,15 @@
         "Course search",
         "Masters"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-nottingham-trent-university",
+        "checkedAt": "2026-08-30T09:17:29.411Z",
+        "httpStatus": 403,
+        "finalUrl": "https://www.ntu.ac.uk/study-and-courses/courses/find-your-course",
+        "health": "unavailable",
+        "consecutiveFailures": 20
+      }
     }
   },
   {
@@ -5842,8 +6841,14 @@
         },
         "status": {
           "sourceId": "portsmouth-china-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:15:04.991Z",
+          "lastSuccessfulAt": "2026-08-30T09:15:04.991Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.port.ac.uk/study/international-students/your-country/china",
+          "lastModified": "Sun, 30 Aug 2026 04:07:35 GMT",
+          "observedContentHash": "ae9ff8af0443d9384276804e1694ec81a4a25cbf3af7a1f39b62d1359c6d8ae5"
         }
       }
     ],
@@ -5876,7 +6881,16 @@
         "Master's and postgraduate taught courses",
         "PhDs and postgraduate research"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-portsmouth",
+        "checkedAt": "2026-08-11T15:54:10.509Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:54:10.509Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.port.ac.uk/study/postgraduate",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -5929,8 +6943,11 @@
         },
         "status": {
           "sourceId": "kingston-china-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "unavailable",
+          "consecutiveFailures": 20,
+          "checkedAt": "2026-08-30T09:15:06.585Z",
+          "httpStatus": 403,
+          "finalUrl": "https://www.kingston.ac.uk/study/international-students/country-specific-information"
         }
       }
     ],
@@ -5963,7 +6980,15 @@
         "Search all postgraduate courses",
         "We offer a wide range of taught and research masters courses."
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-kingston-university-london",
+        "checkedAt": "2026-08-30T09:17:31.828Z",
+        "httpStatus": 403,
+        "finalUrl": "https://www.kingston.ac.uk/study/postgraduate",
+        "health": "unavailable",
+        "consecutiveFailures": 20
+      }
     }
   },
   {
@@ -6015,8 +7040,15 @@
         },
         "status": {
           "sourceId": "plymouth-china-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:15:07.518Z",
+          "lastSuccessfulAt": "2026-08-30T09:15:07.518Z",
+          "httpStatus": 304,
+          "finalUrl": "https://www.plymouth.ac.uk/international/study/international-students-country-guides/china",
+          "etag": "W/\"99bb72db0446663b71d0eeb617235bee\"",
+          "lastModified": "Thu, 13 Aug 2026 13:56:55 GMT",
+          "observedContentHash": "0ac249d1089327b3fbee71588f63751f84c8443ea84d671a45ad7e4ec5a5c15a"
         }
       }
     ],
@@ -6049,7 +7081,16 @@
         "Search for a course",
         "Research degrees backed by a UK top-20 experience*"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-plymouth",
+        "checkedAt": "2026-08-11T15:54:12.998Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:54:12.998Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.plymouth.ac.uk/study/postgraduate",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -6101,8 +7142,13 @@
         },
         "status": {
           "sourceId": "goldsmiths-china-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:15:08.666Z",
+          "lastSuccessfulAt": "2026-08-30T09:15:08.666Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.gold.ac.uk/international/regions/china/",
+          "observedContentHash": "a9b6672aadc54afe7924bcacba9891616fa36c124e51214400821f3b63900ba7"
         }
       }
     ],
@@ -6135,7 +7181,16 @@
         "Postgraduate courses",
         "Research degrees"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-goldsmiths-university-of-london",
+        "checkedAt": "2026-08-11T15:54:14.337Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:54:14.337Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.gold.ac.uk/pg/",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -6188,8 +7243,13 @@
         },
         "status": {
           "sourceId": "uwe-china-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:15:10.510Z",
+          "lastSuccessfulAt": "2026-08-30T09:15:10.510Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.uwe.ac.uk/courses/international-study/country-or-region/china",
+          "observedContentHash": "08014034d01568d14f40bfa8048c68037fbccdf1ced4f72905b111284035c349"
         }
       }
     ],
@@ -6222,7 +7282,19 @@
         "Course search",
         "Postgraduate Research"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-the-west-of-england",
+        "checkedAt": "2026-08-11T15:54:15.835Z",
+        "health": "changed",
+        "lastSuccessfulAt": "2026-08-11T15:54:15.835Z",
+        "httpStatus": 200,
+        "finalUrl": "https://courses.uwe.ac.uk/Search",
+        "consecutiveFailures": 0,
+        "missingRequiredText": [
+          "Postgraduate Research"
+        ]
+      }
     }
   },
   {
@@ -6274,8 +7346,13 @@
         },
         "status": {
           "sourceId": "greenwich-china-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:15:12.780Z",
+          "lastSuccessfulAt": "2026-08-30T09:15:12.780Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.gre.ac.uk/international/countries/china",
+          "observedContentHash": "ff444ccf7852ac194e543ba7c87f52205cb39b1e8bdf1293239226f5eef709dc"
         }
       }
     ],
@@ -6308,7 +7385,16 @@
         "Course search:",
         "Research degrees"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-greenwich",
+        "checkedAt": "2026-08-11T15:54:17.156Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:54:17.156Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.gre.ac.uk/postgraduate-courses",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -6361,8 +7447,15 @@
         },
         "status": {
           "sourceId": "aberystwyth-china-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:15:17.537Z",
+          "lastSuccessfulAt": "2026-08-30T09:15:17.537Z",
+          "httpStatus": 304,
+          "finalUrl": "https://www.aber.ac.uk/en/study-with-us/international/countries/china/",
+          "lastModified": "Wed, 26 Aug 2026 11:13:20 GMT",
+          "observedContentHash": "cb764e2fdb88430d6e95551e94eb6999b466f506604c54248707069009c702d2",
+          "etag": "\"ddc8-659f14e8c3beb\""
         }
       }
     ],
@@ -6395,7 +7488,16 @@
         "Find your course",
         "The Doctoral Academy"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-aberystwyth-university",
+        "checkedAt": "2026-08-11T15:54:19.853Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:54:19.853Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.aber.ac.uk/en/study-with-us/pg-studies/",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -6447,8 +7549,11 @@
         },
         "status": {
           "sourceId": "bournemouth-china-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "unavailable",
+          "consecutiveFailures": 20,
+          "checkedAt": "2026-08-30T09:15:18.525Z",
+          "httpStatus": 403,
+          "finalUrl": "https://www.bournemouth.ac.uk/study/international/bu-your-country/china/entry-requirements-chinese-students"
         }
       }
     ],
@@ -6481,7 +7586,15 @@
         "Browse our courses",
         "PhDs and postgraduate research degrees"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-bournemouth-university",
+        "checkedAt": "2026-08-30T09:17:39.513Z",
+        "httpStatus": 403,
+        "finalUrl": "https://www.bournemouth.ac.uk/study/postgraduate",
+        "health": "unavailable",
+        "consecutiveFailures": 20
+      }
     }
   },
   {
@@ -6534,8 +7647,13 @@
         },
         "status": {
           "sourceId": "edinburgh-napier-china-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:15:19.235Z",
+          "lastSuccessfulAt": "2026-08-30T09:15:19.235Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.napier.ac.uk/study-with-us/international-students/your-country/east-asia/china",
+          "observedContentHash": "7778178214b742cec24be5f8918151afc62d10ca7f3390f92dd562e5fc4db32a"
         }
       }
     ],
@@ -6568,7 +7686,16 @@
         "Find the course that’s right for you at Edinburgh Napier University.",
         "Find out how to become a postgraduate researcher"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-edinburgh-napier-university",
+        "checkedAt": "2026-08-26T04:06:54.376Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-26T04:06:54.376Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.napier.ac.uk/courses",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -6620,8 +7747,13 @@
         },
         "status": {
           "sourceId": "keele-china-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:15:21.521Z",
+          "lastSuccessfulAt": "2026-08-30T09:15:21.521Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.keele.ac.uk/study/internationalstudents/yourcountry/asia/china/",
+          "observedContentHash": "f47865685443f41cd200787d3c15c04633d6b3371430196bfc9448914263c757"
         }
       }
     ],
@@ -6654,7 +7786,16 @@
         "Postgraduate courses A-Z",
         "Postgraduate research"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-keele-university",
+        "checkedAt": "2026-08-11T15:54:27.309Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:54:27.309Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.keele.ac.uk/study/postgraduatestudy/",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -6708,8 +7849,13 @@
         },
         "status": {
           "sourceId": "dmu-china-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:15:24.586Z",
+          "lastSuccessfulAt": "2026-08-30T09:15:24.586Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.dmu.ac.uk/international/en/entry-requirements.aspx",
+          "observedContentHash": "73bbd6e3367781ac953bc1f7a559a9b361e0d1f329fab57aae08b75d83201909"
         }
       }
     ],
@@ -6742,7 +7888,16 @@
         "Postgraduate courses at De Montfort University",
         "DMU Courses"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-de-montfort-university",
+        "checkedAt": "2026-08-11T15:54:28.497Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:54:28.497Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.dmu.ac.uk/study/courses/postgraduate-courses/postgraduate-courses.aspx",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -6795,8 +7950,13 @@
         },
         "status": {
           "sourceId": "ljmu-china-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:15:26.170Z",
+          "lastSuccessfulAt": "2026-08-30T09:15:26.170Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.ljmu.ac.uk/study/courses/international-entry-requirements/china",
+          "observedContentHash": "e7bbbd72c7e2cff23d29f8cecca0b953b437c1a2f057160633e0574809b6df78"
         }
       }
     ],
@@ -6829,7 +7989,16 @@
         "Find your course",
         "postgraduate research opportunities"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-liverpool-john-moores-university",
+        "checkedAt": "2026-08-11T15:54:30.036Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:54:30.036Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.ljmu.ac.uk/study/postgraduate-students",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -6881,8 +8050,11 @@
         },
         "status": {
           "sourceId": "hertfordshire-china-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "unavailable",
+          "consecutiveFailures": 20,
+          "checkedAt": "2026-08-30T09:15:28.310Z",
+          "httpStatus": 403,
+          "finalUrl": "https://www.herts.ac.uk/international/guidance-for-your-region/south-east-and-east-asia/china"
         }
       }
     ],
@@ -6915,7 +8087,15 @@
         "Postgraduate and Master’s Degree Courses",
         "Research degrees"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-hertfordshire",
+        "checkedAt": "2026-08-30T09:17:49.540Z",
+        "httpStatus": 403,
+        "finalUrl": "https://www.herts.ac.uk/courses",
+        "health": "unavailable",
+        "consecutiveFailures": 20
+      }
     }
   },
   {
@@ -6968,8 +8148,15 @@
         },
         "status": {
           "sourceId": "lincoln-china-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:15:29.246Z",
+          "lastSuccessfulAt": "2026-08-30T09:15:29.246Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.lincoln.ac.uk/studywithus/internationalstudents/entryrequirementsandyourcountry/china/",
+          "etag": "\"a9a4-65a24bba1e600-gzip\"",
+          "lastModified": "Sat, 29 Aug 2026 00:34:33 GMT",
+          "observedContentHash": "18ce26483848e22dc382ad0f20409577bdff6bc87d940df050d6ad49b772c20c"
         }
       }
     ],
@@ -7002,7 +8189,20 @@
         "Courses",
         "Postgraduate Research"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-lincoln",
+        "checkedAt": "2026-08-11T15:54:33.015Z",
+        "health": "changed",
+        "lastSuccessfulAt": "2026-08-11T15:54:33.015Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.lincoln.ac.uk/course/",
+        "consecutiveFailures": 0,
+        "missingRequiredText": [
+          "Courses",
+          "Postgraduate Research"
+        ]
+      }
     }
   },
   {
@@ -7063,7 +8263,15 @@
         "Postgraduate",
         "Research degrees"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-the-arts-london",
+        "checkedAt": "2026-08-30T09:17:51.362Z",
+        "httpStatus": 403,
+        "finalUrl": "https://www.arts.ac.uk/courses",
+        "health": "unavailable",
+        "consecutiveFailures": 20
+      }
     }
   },
   {
@@ -7116,8 +8324,14 @@
         },
         "status": {
           "sourceId": "westminster-china-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:15:30.867Z",
+          "lastSuccessfulAt": "2026-08-30T09:15:30.867Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.westminster.ac.uk/international/your-country/china",
+          "lastModified": "Sun, 30 Aug 2026 05:40:21 GMT",
+          "observedContentHash": "f919a5cfff1a1e2d1237cd5a51131824f42d389842520e3db173dfdbd483fd26"
         }
       }
     ],
@@ -7150,7 +8364,20 @@
         "Find your course",
         "Research degrees"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-westminster",
+        "checkedAt": "2026-08-11T15:54:34.959Z",
+        "health": "changed",
+        "lastSuccessfulAt": "2026-08-11T15:54:34.959Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.westminster.ac.uk/study/postgraduate",
+        "consecutiveFailures": 0,
+        "missingRequiredText": [
+          "Find your course",
+          "Research degrees"
+        ]
+      }
     }
   },
   {
@@ -7202,8 +8429,11 @@
         },
         "status": {
           "sourceId": "lsbu-china-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "unavailable",
+          "consecutiveFailures": 20,
+          "checkedAt": "2026-08-30T09:15:32.052Z",
+          "httpStatus": 403,
+          "finalUrl": "https://www.lsbu.ac.uk/international/your-country/asia-and-oceania/china"
         }
       }
     ],
@@ -7236,7 +8466,15 @@
         "Postgraduate",
         "Research and Doctorates"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-london-south-bank-university",
+        "checkedAt": "2026-08-30T09:17:53.423Z",
+        "httpStatus": 403,
+        "finalUrl": "https://www.lsbu.ac.uk/study/course-finder",
+        "health": "unavailable",
+        "consecutiveFailures": 20
+      }
     }
   },
   {
@@ -7289,8 +8527,15 @@
         },
         "status": {
           "sourceId": "middlesex-china-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:15:32.805Z",
+          "lastSuccessfulAt": "2026-08-30T09:15:32.805Z",
+          "httpStatus": 304,
+          "finalUrl": "https://www.mdx.ac.uk/international/support-in-your-countries-and-regions/china/",
+          "etag": "\"1169c-65953289f44a0-gzip\"",
+          "lastModified": "Tue, 18 Aug 2026 14:32:38 GMT",
+          "observedContentHash": "b12491fdcf882b846490033a04889ccd4f0d51b267ffc622695b9a67ef23da94"
         }
       }
     ],
@@ -7323,7 +8568,16 @@
         "Postgraduate",
         "Research degrees"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-middlesex-university",
+        "checkedAt": "2026-08-11T15:54:37.492Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:54:37.492Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.mdx.ac.uk/courses/?courseStudyType=postgraduate",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -7376,8 +8630,13 @@
         },
         "status": {
           "sourceId": "brighton-china-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:15:33.750Z",
+          "lastSuccessfulAt": "2026-08-30T09:15:33.750Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.brighton.ac.uk/international/study-with-us/your-country-or-territory-info/china.aspx",
+          "observedContentHash": "e98d684222ce869d095cb1eac8052184b6aea7cad05f2e3bff2caaeafa9c7513"
         }
       }
     ],
@@ -7410,7 +8669,16 @@
         "University course search: Find the best courses to study",
         "PhD, MPhil and professional doctorates"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-brighton",
+        "checkedAt": "2026-08-11T15:54:38.351Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:54:38.351Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.brighton.ac.uk/courses/index.aspx",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -7463,8 +8731,13 @@
         },
         "status": {
           "sourceId": "aru-china-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:15:35.226Z",
+          "lastSuccessfulAt": "2026-08-30T09:15:35.226Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.aru.ac.uk/international/north-east-asia",
+          "observedContentHash": "86e7b6df7c082bf9cb5116edd8c87d81c77a2be796920e01d5ea7ec10af1c093"
         }
       }
     ],
@@ -7497,7 +8770,16 @@
         "Study a Masters or research degree at ARU",
         "Research programmes"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-anglia-ruskin-university",
+        "checkedAt": "2026-08-11T15:54:39.611Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:54:39.611Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.aru.ac.uk/study",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -7550,8 +8832,13 @@
         },
         "status": {
           "sourceId": "bcu-china-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:15:36.329Z",
+          "lastSuccessfulAt": "2026-08-30T09:15:36.329Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.bcu.ac.uk/international/bcu-in-your-country/china",
+          "observedContentHash": "e73aa6352aee658f18d7db322e7a0b6a33b0ee857fd6edc6e5ec0fd41f01d885"
         }
       }
     ],
@@ -7584,7 +8871,16 @@
         "Postgraduate Taught",
         "Postgraduate Research"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-birmingham-city-university",
+        "checkedAt": "2026-08-11T15:54:40.549Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:54:40.549Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.bcu.ac.uk/courses",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -7637,8 +8933,11 @@
         },
         "status": {
           "sourceId": "gcu-china-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "unavailable",
+          "consecutiveFailures": 20,
+          "checkedAt": "2026-08-30T09:15:38.764Z",
+          "httpStatus": 403,
+          "finalUrl": "https://www.gcu.ac.uk/internationalstudy/your-region/country-pages/china"
         }
       }
     ],
@@ -7671,7 +8970,15 @@
         "Find your course",
         "Postgraduate research study"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-glasgow-caledonian-university",
+        "checkedAt": "2026-08-30T09:17:59.073Z",
+        "httpStatus": 403,
+        "finalUrl": "https://www.gcu.ac.uk/study",
+        "health": "unavailable",
+        "consecutiveFailures": 20
+      }
     }
   },
   {
@@ -7724,8 +9031,13 @@
         },
         "status": {
           "sourceId": "leeds-beckett-china-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:15:39.477Z",
+          "lastSuccessfulAt": "2026-08-30T09:15:39.477Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.leedsbeckett.ac.uk/international-students/countries/china/china-entry-requirements/",
+          "observedContentHash": "3654a2b5b2ff1209e1e61d4fb930aa767db6a183c3934593ec17154d727d6bf6"
         }
       }
     ],
@@ -7758,7 +9070,16 @@
         "Find a course",
         "Postgraduate research degrees"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-leeds-beckett-university",
+        "checkedAt": "2026-08-11T15:54:43.327Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:54:43.327Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.leedsbeckett.ac.uk/postgraduate/",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -7812,8 +9133,15 @@
         },
         "status": {
           "sourceId": "london-metropolitan-china-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "ok",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:15:56.756Z",
+          "lastSuccessfulAt": "2026-08-30T09:15:56.756Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.londonmet.ac.uk/international/applying/countries/students-from-china/",
+          "etag": "\"11d1c-65731332f33c3-gzip\"",
+          "lastModified": "Wed, 22 Jul 2026 11:11:24 GMT",
+          "observedContentHash": "7271b81e6f6f22b00f562496063326169e74cce5b8aba43de031d9e789608482"
         }
       }
     ],
@@ -7846,7 +9174,16 @@
         "Master's (MA, MSc, MBA) and research degrees",
         "Search for a postgraduate course"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-london-metropolitan-university",
+        "checkedAt": "2026-08-11T15:54:45.462Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:54:45.462Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.londonmet.ac.uk/courses/postgraduate/",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -7898,8 +9235,14 @@
         },
         "status": {
           "sourceId": "rgu-china-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:15:42.190Z",
+          "lastSuccessfulAt": "2026-08-30T09:15:42.190Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.rgu.ac.uk/study/international-students/your-country-or-territory/china",
+          "lastModified": "Sun, 30 Aug 2026 09:15:37 GMT",
+          "observedContentHash": "c8b6f91cc8888f6c9e4faab2f87bfc158d0d52d05b226affcb35c9aed03f3f9e"
         }
       }
     ],
@@ -7933,7 +9276,16 @@
         "Postgraduate",
         "Graduate School"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-robert-gordon-university",
+        "checkedAt": "2026-08-11T15:54:46.642Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:54:46.642Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.rgu.ac.uk/study/course-search",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -7987,8 +9339,13 @@
         },
         "status": {
           "sourceId": "shu-china-entry-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:15:44.387Z",
+          "lastSuccessfulAt": "2026-08-30T09:15:44.387Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.shu.ac.uk/study-here/international/entry-requirements/entry-requirements-for-china",
+          "observedContentHash": "eab35d602b187955df1c01306bdaa07ffd863e38e18975252c9a5aecaaba6ac0"
         }
       }
     ],
@@ -8021,7 +9378,16 @@
         "Masters and diplomas",
         "PhDs"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-sheffield-hallam-university",
+        "checkedAt": "2026-08-11T15:54:48.251Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:54:48.251Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.shu.ac.uk/study-here/postgraduate",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -8070,7 +9436,16 @@
         "Search for a postgraduate programme",
         "Research degrees (MPhil, PhD, Professional Doctorates)"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-east-london",
+        "checkedAt": "2026-08-11T15:54:49.690Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:54:49.690Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.uel.ac.uk/study/postgraduate",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -8125,8 +9500,13 @@
         },
         "status": {
           "sourceId": "lancashire-china-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:15:46.332Z",
+          "lastSuccessfulAt": "2026-08-30T09:15:46.332Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.lancashire.ac.uk/international-students/country/china",
+          "observedContentHash": "eb6f62f85479d4c549a2ab275853fc2f7129424a25aeee6ab05634dfdb28b711"
         }
       }
     ],
@@ -8159,7 +9539,16 @@
         "Postgraduate taught A-Z",
         "Postgraduate research A-Z"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-lancashire",
+        "checkedAt": "2026-08-11T15:54:55.341Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:54:55.341Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.lancashire.ac.uk/courses/a-z",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -8212,8 +9601,13 @@
         },
         "status": {
           "sourceId": "roehampton-china-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:15:58.404Z",
+          "lastSuccessfulAt": "2026-08-30T09:15:58.404Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.roehampton.ac.uk/student-support/international-students/countries/china/",
+          "observedContentHash": "60698c0dbf8278ded0117ce31e009a9a8aea2d37caee0d6b9a298637de0280d1"
         }
       }
     ],
@@ -8246,7 +9640,16 @@
         "postgraduate taught and research programmes",
         "Research degrees"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-roehampton",
+        "checkedAt": "2026-08-11T15:54:56.037Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:54:56.037Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.roehampton.ac.uk/study/postgraduate-study/",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -8297,8 +9700,15 @@
         },
         "status": {
           "sourceId": "salford-china-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:16:00.834Z",
+          "lastSuccessfulAt": "2026-08-30T09:16:00.834Z",
+          "httpStatus": 304,
+          "finalUrl": "https://www.salford.ac.uk/international/your-country-or-region/salford-and-china",
+          "etag": "\"1787930536-gzip\"",
+          "lastModified": "Fri, 28 Aug 2026 15:22:16 GMT",
+          "observedContentHash": "5f73731f5ade2e9b36039eb2beac31875df22fc2dd71c44fc1da477845850a8a"
         }
       }
     ],
@@ -8331,7 +9741,16 @@
         "Postgraduate taught courses",
         "Postgraduate research courses"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-salford",
+        "checkedAt": "2026-08-11T15:54:57.555Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:54:57.555Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.salford.ac.uk/postgraduate",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -8386,8 +9805,13 @@
         },
         "status": {
           "sourceId": "wolverhampton-china-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "ok",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:16:01.871Z",
+          "lastSuccessfulAt": "2026-08-30T09:16:01.871Z",
+          "httpStatus": 202,
+          "finalUrl": "https://www.wlv.ac.uk/international/your-country/china/",
+          "observedContentHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
         }
       }
     ],
@@ -8420,7 +9844,20 @@
         "Postgraduate Courses",
         "Research (PhD)"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-wolverhampton",
+        "checkedAt": "2026-08-11T15:54:58.869Z",
+        "health": "changed",
+        "lastSuccessfulAt": "2026-08-11T15:54:58.869Z",
+        "httpStatus": 202,
+        "finalUrl": "https://www.wlv.ac.uk/courses/",
+        "consecutiveFailures": 0,
+        "missingRequiredText": [
+          "Postgraduate Courses",
+          "Research (PhD)"
+        ]
+      }
     }
   },
   {
@@ -8475,8 +9912,13 @@
         },
         "status": {
           "sourceId": "qmu-china-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:16:02.833Z",
+          "lastSuccessfulAt": "2026-08-30T09:16:02.833Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.qmu.ac.uk/study-here/international-students/information-for-your-country/china",
+          "observedContentHash": "727e4f05664abb68a8d4b1fbed67c807be98351dc99458033afc0d7cc9a10ba1"
         }
       }
     ],
@@ -8507,7 +9949,16 @@
         "postgraduate taught courses",
         "research degrees"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-queen-margaret-university-edinburgh",
+        "checkedAt": "2026-08-11T15:54:59.641Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:54:59.641Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.qmu.ac.uk/study-here/course-a-z/",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -8559,8 +10010,13 @@
         },
         "status": {
           "sourceId": "northampton-china-entry-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:16:03.943Z",
+          "lastSuccessfulAt": "2026-08-30T09:16:03.943Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.northampton.ac.uk/international/your-country/east-asia-and-south-east-asia/",
+          "observedContentHash": "d5d038ce5707b6192b8becd6a7c147bae7ccd56b6bef2f63c9434d195691e39b"
         }
       }
     ],
@@ -8593,7 +10049,16 @@
         "Master's and Postgraduate Courses",
         "Research Degrees"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-northampton",
+        "checkedAt": "2026-08-11T15:55:00.878Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:55:00.878Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.northampton.ac.uk/postgraduate/",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -8647,8 +10112,13 @@
         },
         "status": {
           "sourceId": "derby-mainland-china-international-entry",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:15:47.334Z",
+          "lastSuccessfulAt": "2026-08-30T09:15:47.334Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.derby.ac.uk/undergraduate/apply/entry-requirements/international/",
+          "observedContentHash": "b0ffcaf61dd35afbeed52ddb48e8f204eaef387541999e9ffc72ea58919ad24b"
         }
       }
     ],
@@ -8681,7 +10151,16 @@
         "Postgraduate course search",
         "Research degrees"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-derby",
+        "checkedAt": "2026-08-11T15:55:02.523Z",
+        "health": "ok",
+        "lastSuccessfulAt": "2026-08-11T15:55:02.523Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.derby.ac.uk/postgraduate/courses/",
+        "consecutiveFailures": 0
+      }
     }
   },
   {
@@ -8734,8 +10213,11 @@
         },
         "status": {
           "sourceId": "usw-china-entry-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "unavailable",
+          "consecutiveFailures": 20,
+          "checkedAt": "2026-08-30T09:16:05.653Z",
+          "httpStatus": 403,
+          "finalUrl": "https://www.southwales.ac.uk/international/your-country/china/"
         }
       }
     ],
@@ -8768,7 +10250,15 @@
         "Find a course",
         "Postgraduate Research Degrees"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-university-of-south-wales",
+        "checkedAt": "2026-08-30T09:18:16.453Z",
+        "httpStatus": 403,
+        "finalUrl": "https://www.southwales.ac.uk/courses/",
+        "health": "unavailable",
+        "consecutiveFailures": 20
+      }
     }
   },
   {
@@ -8821,8 +10311,14 @@
         },
         "status": {
           "sourceId": "cccu-china-requirements",
-          "health": "unchecked",
-          "consecutiveFailures": 0
+          "health": "changed",
+          "consecutiveFailures": 0,
+          "checkedAt": "2026-08-30T09:15:48.892Z",
+          "lastSuccessfulAt": "2026-08-30T09:15:48.892Z",
+          "httpStatus": 200,
+          "finalUrl": "https://www.canterbury.ac.uk/study-here/international/find-your-country/china",
+          "etag": "W/\"139b47-Yey3wY1SU0APRhmV+VXIM7nkiLc\"",
+          "observedContentHash": "a21e504171004a9d1e4153792127b900098dfed8a9432a766083cdd843646fc6"
         }
       }
     ],
@@ -8856,7 +10352,20 @@
         "Find your perfect postgraduate course using our search.",
         "Research subject areas"
       ],
-      "monitorMode": "page-identity"
+      "monitorMode": "page-identity",
+      "status": {
+        "sourceId": "masters-canterbury-christ-church-university",
+        "checkedAt": "2026-08-11T15:55:04.488Z",
+        "health": "changed",
+        "lastSuccessfulAt": "2026-08-11T15:55:04.488Z",
+        "httpStatus": 200,
+        "finalUrl": "https://www.canterbury.ac.uk/study-here/explore-postgraduate",
+        "consecutiveFailures": 0,
+        "missingRequiredText": [
+          "Find your perfect postgraduate course using our search.",
+          "Research subject areas"
+        ]
+      }
     }
   }
 ]

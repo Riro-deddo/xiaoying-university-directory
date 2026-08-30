@@ -90,9 +90,9 @@
   {
     "universityId": "university-of-leeds",
     "directoryCategory": "qs-directory",
-    "expectedState": "china-requirements",
-    "reviewDate": "2026-08-02",
-    "finding": "The university says schools use different institution standards; no current university-wide complete roster was found.",
+    "expectedState": "official-list",
+    "reviewDate": "2026-08-30",
+    "finding": "For 2026/27 entry, the university publishes separate accepted Chinese institution lists for the Business School, Computer Science and Media and Communication, and its other listed schools.",
     "reviewStatus": "reviewed"
   },
   {
