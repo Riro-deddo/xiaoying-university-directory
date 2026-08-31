@@ -1,6 +1,9 @@
 import type {
   EvidenceState,
   InstitutionRuleType,
+  MastersScholarshipEntryKind,
+  MastersScholarshipEntryWithStatus,
+  MastersScholarshipLink,
   RankingRecord,
   StrengthEvidence,
   SourceHealth,
@@ -129,5 +132,41 @@ export function chinaSourceActionModel(sources: readonly SourceWithStatus[]): {
     collapsed: count >= 3,
     count,
     label: count >= 3 ? `中国硕士入学要求（${count} 条）` : '中国硕士入学要求',
+  };
+}
+
+const mastersScholarshipKindLabels = {
+  'masters-directory': '官方奖学金目录',
+  'masters-search': '官方奖学金搜索器',
+  'postgraduate-funding': '研究生资助官网',
+  category: '官方分类资助入口',
+} satisfies Record<MastersScholarshipEntryKind, string>;
+
+export function mastersScholarshipKindCopy(link: MastersScholarshipLink): string {
+  const label = mastersScholarshipKindLabels[link.kind];
+  return link.requiresFiltering ? `${label}（含硕士，请筛选）` : label;
+}
+
+export function mastersScholarshipActionModel(entry: MastersScholarshipEntryWithStatus): {
+  entryState: MastersScholarshipEntryWithStatus['entryState'];
+  collapsed: boolean;
+  count: number;
+  label: string;
+} {
+  if (entry.entryState === 'no-public-entry') {
+    return {
+      entryState: entry.entryState,
+      collapsed: false,
+      count: 0,
+      label: '未发现公开硕士奖学金入口',
+    };
+  }
+
+  const count = entry.links.length;
+  return {
+    entryState: entry.entryState,
+    collapsed: count > 1,
+    count,
+    label: count > 1 ? `查看硕士奖学金官网（${count} 个入口）` : '查看硕士奖学金官网',
   };
 }
