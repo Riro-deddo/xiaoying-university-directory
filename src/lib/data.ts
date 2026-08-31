@@ -107,12 +107,20 @@ function assertUniversityOwnedUrl(
   path: string,
   approvedAliases: ReadonlySet<string>,
 ): void {
+  let recordUrl: URL;
+  let officialUrl: URL;
   let recordHost: string;
   let officialHost: string;
   try {
-    recordHost = new URL(url).hostname.toLowerCase().replace(/^www\./u, '');
-    officialHost = new URL(university.officialDomain).hostname.toLowerCase().replace(/^www\./u, '');
+    recordUrl = new URL(url);
+    officialUrl = new URL(university.officialDomain);
+    recordHost = recordUrl.hostname.toLowerCase().replace(/^www\./u, '');
+    officialHost = officialUrl.hostname.toLowerCase().replace(/^www\./u, '');
   } catch {
+    throw new DataValidationError(dataset, [`${path} must be a valid HTTPS URL`]);
+  }
+
+  if (recordUrl.protocol !== 'https:') {
     throw new DataValidationError(dataset, [`${path} must be a valid HTTPS URL`]);
   }
 
@@ -121,6 +129,20 @@ function assertUniversityOwnedUrl(
     && !approvedAliases.has(recordHost)) {
     throw new DataValidationError(dataset, [`${path} must use the university official domain`]);
   }
+}
+
+export function assertMastersScholarshipUniversityOwnedUrl(
+  url: string,
+  university: University,
+  path: string,
+): void {
+  assertUniversityOwnedUrl(
+    url,
+    university,
+    'Masters scholarship entry',
+    path,
+    firstPartyScholarshipDomainAliases.get(university.id) ?? new Set(),
+  );
 }
 
 function assertUniqueInstitutionNames(records: InstitutionRecord[]): void {
@@ -207,6 +229,7 @@ export function validateMastersScholarshipEntries(
   const universitiesById = new Map(universities.map((university) => [university.id, university]));
   const universityGroups = new Set<string>();
   const linkIds = new Set<string>();
+  const normalizedLinkUrls = new Set<string>();
 
   records.forEach((record, index) => {
     if (universityGroups.has(record.universityId)) {
@@ -241,13 +264,18 @@ export function validateMastersScholarshipEntries(
         ]);
       }
       linkIds.add(link.id);
-      assertUniversityOwnedUrl(
+      assertMastersScholarshipUniversityOwnedUrl(
         link.url,
         university,
-        'Masters scholarship entry',
         `${path}/url`,
-        firstPartyScholarshipDomainAliases.get(record.universityId) ?? new Set(),
       );
+      const normalizedUrl = new URL(link.url).href;
+      if (normalizedLinkUrls.has(normalizedUrl)) {
+        throw new DataValidationError('Masters scholarship entry', [
+          `${path}/url duplicate normalized URL`,
+        ]);
+      }
+      normalizedLinkUrls.add(normalizedUrl);
     });
   });
 

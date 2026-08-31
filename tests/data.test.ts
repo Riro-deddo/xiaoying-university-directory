@@ -378,7 +378,7 @@ describe('QS 2027 starter ranks', () => {
     try {
       const { loadUniversities: loadUniversitiesWithInvalidInputs } = await import('../src/lib/data');
 
-      expect(() => loadUniversitiesWithInvalidInputs()).toThrowError(expect.objectContaining({
+      expect(() => loadUniversitiesWithInvalidInputs()).toThrow(expect.objectContaining({
         dataset: 'Ranking',
       }));
     } finally {

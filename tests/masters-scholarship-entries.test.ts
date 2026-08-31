@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import universitiesJson from '../src/data/universities.json';
+import batch2ResearchMarkdown from '../docs/research/masters-scholarship-entry-batch-2.md?raw';
 import {
   loadMastersScholarshipEntries,
   validateMastersScholarshipEntries,
@@ -86,6 +87,8 @@ describe('masters scholarship entry registry', () => {
     expect(new Set(loaded.map((entry) => entry.universityId)))
       .toEqual(new Set(catalog.map((university) => university.id)));
     expect(new Set(linkIds).size).toBe(linkIds.length);
+    const normalizedUrls = loaded.flatMap((entry) => entry.links.map((link) => new URL(link.url).href));
+    expect(new Set(normalizedUrls).size).toBe(normalizedUrls.length);
 
     for (const entry of loaded) {
       expect(entry.reviewedAt).toBe('2026-08-31');
@@ -162,6 +165,31 @@ describe('masters scholarship entry registry', () => {
     }], universities)).toThrow(/duplicate/i);
   });
 
+  it('rejects distinct link IDs with the same normalized URL across university groups', () => {
+    const secondUniversity: University = {
+      ...universities[0],
+      id: 'imperial-business-school',
+      nameZh: '帝国理工商学院',
+      nameEn: 'Imperial Business School',
+    };
+    const duplicateUrlEntry: MastersScholarshipEntry = {
+      ...valid[0],
+      universityId: secondUniversity.id,
+      entryState: 'available',
+      links: [{
+        ...valid[0].links[0],
+        id: `scholarships-${secondUniversity.id}-directory`,
+        universityId: secondUniversity.id,
+        url: 'https://www.imperial.ac.uk:443/study/fees-and-funding/postgraduate/',
+      }],
+    };
+
+    expect(() => validateMastersScholarshipEntries(
+      [...valid, duplicateUrlEntry],
+      [...universities, secondUniversity],
+    )).toThrow(/duplicate.*url/i);
+  });
+
   it('rejects a link assigned to another university', () => {
     expect(() => validateMastersScholarshipEntries([{
       ...valid[0],
@@ -196,6 +224,28 @@ describe('masters scholarship research evidence table parser', () => {
   const row = '| imperial-college-london | scholarships-imperial-college-london-directory | https://www.imperial.ac.uk/study/fees-and-funding/postgraduate/ | https://www.imperial.ac.uk/study/fees-and-funding/postgraduate/ | masters-directory | false | Postgraduate fees and funding | Postgraduate | Scholarships | 2026-08-31 | Official directory &#124; postgraduate funding |';
   const negativeRow = '| imperial-college-london | evidence-imperial-college-london-no-public-entry | https://www.imperial.ac.uk/study/fees-and-funding/ | https://www.imperial.ac.uk/study/fees-and-funding/ | no-public-entry | false | Fees and funding | Taught course students | Funding assistance | 2026-08-31 | No public masters scholarship entry found |';
 
+  const completeResearchMarkdown = (overrides: Record<string, string> = {}) => {
+    const values = {
+      universityId: 'imperial-college-london',
+      evidenceId: 'scholarships-imperial-college-london-directory',
+      officialUrl: 'https://www.imperial.ac.uk/study/fees-and-funding/postgraduate/',
+      finalUrl: 'https://www.imperial.ac.uk/study/fees-and-funding/postgraduate/',
+      kind: 'masters-directory',
+      requiresFiltering: 'false',
+      pageTitle: 'Postgraduate fees and funding',
+      requiredTextFirst: 'Postgraduate',
+      requiredTextSecond: 'Scholarships',
+      reviewedAt: '2026-08-31',
+      decisionNote: 'Official postgraduate scholarship directory',
+      ...overrides,
+    };
+    return [
+      header,
+      separator,
+      `| ${Object.values(values).join(' | ')} |`,
+    ].join('\n');
+  };
+
   it('parses a complete official scholarship research row', () => {
     expect(parseMastersScholarshipResearch([header, separator, row].join('\n'))).toEqual([{
       universityId: 'imperial-college-london',
@@ -224,6 +274,69 @@ describe('masters scholarship research evidence table parser', () => {
       reviewedAt: '2026-08-31',
       decisionNote: 'No public masters scholarship entry found',
     }]);
+  });
+
+  it('accepts the reviewed University of Greenwich scholarship alias in research evidence', () => {
+    expect(() => parseMastersScholarshipResearch(completeResearchMarkdown({
+      universityId: 'university-of-greenwich',
+      evidenceId: 'scholarships-university-of-greenwich-postgraduate-funding',
+      officialUrl: 'https://www.gre.ac.uk/finance/funding-your-studies/scholarships-and-bursaries',
+      finalUrl: 'https://www.gre.ac.uk/finance/funding-your-studies/scholarships-and-bursaries',
+      kind: 'postgraduate-funding',
+      requiresFiltering: 'true',
+    }))).not.toThrow();
+  });
+
+  it.each([
+    'https://www.gre.ac.uk.evil.test/finance/funding-your-studies/scholarships-and-bursaries',
+    'https://www.notgre.ac.uk/finance/funding-your-studies/scholarships-and-bursaries',
+  ])('rejects University of Greenwich scholarship alias lookalike research URL %s', (url) => {
+    expect(() => parseMastersScholarshipResearch(completeResearchMarkdown({
+      universityId: 'university-of-greenwich',
+      evidenceId: 'scholarships-university-of-greenwich-postgraduate-funding',
+      officialUrl: url,
+      finalUrl: url,
+      kind: 'postgraduate-funding',
+      requiresFiltering: 'true',
+    }))).toThrow(/official domain/i);
+  });
+
+  it.each([
+    ['unknown university', { universityId: 'unknown-university', evidenceId: 'scholarships-unknown-university-directory' }],
+    ['third-party official URL', { officialUrl: 'https://scholarships.example.test/postgraduate/' }],
+    ['non-HTTPS final URL', { finalUrl: 'http://www.imperial.ac.uk/study/fees-and-funding/postgraduate/' }],
+    ['empty page title', { pageTitle: '' }],
+    ['empty decision note', { decisionNote: '' }],
+    ['empty identity anchor', { requiredTextFirst: '' }],
+    ['duplicate identity anchors', { requiredTextSecond: 'Postgraduate' }],
+    ['non-ISO review date', { reviewedAt: '31-08-2026' }],
+    ['bad available evidence ID', { evidenceId: 'evidence-imperial-college-london-directory' }],
+    ['empty available evidence ID suffix', { evidenceId: 'scholarships-imperial-college-london-' }],
+    ['empty negative evidence ID suffix', {
+      evidenceId: 'evidence-imperial-college-london-',
+      kind: 'no-public-entry',
+    }],
+  ])('rejects research evidence with %s', (_label, overrides) => {
+    expect(() => parseMastersScholarshipResearch(completeResearchMarkdown(overrides)))
+      .toThrow(/university|official domain|https|title|decision|anchor|date|id/i);
+  });
+
+  it('fully validates the ICR official negative evidence row', () => {
+    const row = parseMastersScholarshipResearch(batch2ResearchMarkdown)
+      .find((candidate) => candidate.universityId === 'institute-of-cancer-research-london');
+
+    expect(row).toEqual({
+      universityId: 'institute-of-cancer-research-london',
+      evidenceId: 'evidence-institute-of-cancer-research-london-no-public-entry',
+      officialUrl: 'https://www.icr.ac.uk/study-and-careers/student-life-and-support/fees-costs-support',
+      finalUrl: 'https://www.icr.ac.uk/study-and-careers/student-life-and-support/fees-costs-support',
+      kind: 'no-public-entry',
+      requiresFiltering: false,
+      pageTitle: 'Tuition fees',
+      requiredText: ['Tuition fees', 'Taught course students'],
+      reviewedAt: '2026-08-31',
+      decisionNote: expect.stringContaining('no public master'),
+    });
   });
 
   it.each([
