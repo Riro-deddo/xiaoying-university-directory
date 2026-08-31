@@ -30,6 +30,7 @@ import type {
   University,
   UniversityDirectoryRecord,
   UniversityState,
+  UniversityWithMastersCourse,
   UniversityWithStatus,
 } from './types';
 
@@ -451,7 +452,7 @@ export function joinMastersCourseDirectories(
   universities: UniversityWithStatus[],
   directories: MastersCourseDirectory[],
   statuses: StatusMap,
-): UniversityDirectoryRecord[] {
+): UniversityWithMastersCourse[] {
   const universityIds = new Set(universities.map((university) => university.id));
   const directoryByUniversityId = new Map<string, MastersCourseDirectory>();
 
@@ -475,16 +476,53 @@ export function joinMastersCourseDirectories(
   });
 }
 
+export function joinMastersScholarshipEntries(
+  universities: UniversityWithMastersCourse[],
+  entries: MastersScholarshipEntry[],
+  statuses: StatusMap,
+): UniversityDirectoryRecord[] {
+  const universityIds = new Set(universities.map((university) => university.id));
+  const entryByUniversityId = new Map<string, MastersScholarshipEntry>();
+
+  for (const entry of entries) {
+    if (entryByUniversityId.has(entry.universityId)) {
+      throw new Error(`Duplicate masters scholarship entry for university ${entry.universityId}`);
+    }
+    if (!universityIds.has(entry.universityId)) {
+      throw new Error(`Extra masters scholarship entry for university ${entry.universityId}`);
+    }
+    entryByUniversityId.set(entry.universityId, entry);
+  }
+
+  return universities.map((university) => {
+    const entry = entryByUniversityId.get(university.id);
+    if (!entry) throw new Error(`Missing masters scholarship entry for university ${university.id}`);
+    return {
+      ...university,
+      mastersScholarships: entry.entryState === 'available'
+        ? {
+          ...entry,
+          links: entry.links.map((link) => ({ ...link, status: statuses[link.id] })),
+        }
+        : { ...entry, links: [] },
+    };
+  });
+}
+
 export function loadUniversities(): UniversityDirectoryRecord[] {
   const universities = validateUniversities(universitiesJson);
   const sources = validateOfficialSources(sourcesJson);
   const statuses = statusesJson as StatusMap;
-  return joinMastersCourseDirectories(
-    joinUniversityRankings(
-      joinUniversityStatuses(universities, sources, statuses),
-      loadRankings(undefined, universities),
+  return joinMastersScholarshipEntries(
+    joinMastersCourseDirectories(
+      joinUniversityRankings(
+        joinUniversityStatuses(universities, sources, statuses),
+        loadRankings(undefined, universities),
+      ),
+      loadMastersCourseDirectories(),
+      statuses,
     ),
-    loadMastersCourseDirectories(),
+    loadMastersScholarshipEntries(),
     statuses,
   );
 }

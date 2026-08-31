@@ -22,14 +22,62 @@ const source = {
   parser: { mode: 'html-list', guard: { minimumRecords: 1, maximumRecords: 100, maximumRemovalRatio: 0.2 } },
 };
 
+function exampleUniversity(id = 'example-university') {
+  return {
+    id,
+    nameZh: 'Example University',
+    nameEn: 'Example University',
+    aliases: [],
+    directoryCategory: 'qs-directory',
+    qsDirectory: { firstEdition: 2027, verifiedEdition: 2027, current: true },
+    state: 'pending',
+    officialDomain: 'https://example.edu',
+    sourceIds: [],
+  };
+}
+
+function availableScholarshipEntry(universityId) {
+  return {
+    universityId,
+    entryState: 'available',
+    reviewedAt: '2026-08-31',
+    links: [{
+      id: `scholarships-${universityId}-directory`,
+      universityId,
+      labelZh: '查看硕士奖学金官网',
+      scopeZh: '硕士奖学金官方目录',
+      kind: 'masters-directory',
+      requiresFiltering: false,
+      url: 'https://example.edu/postgraduate/funding',
+      pageTitle: 'Postgraduate funding',
+      reviewedAt: '2026-08-31',
+      requiredText: ['Postgraduate', 'Scholarships'],
+      monitorMode: 'page-identity',
+    }, {
+      id: `scholarships-${universityId}-search`,
+      universityId,
+      labelZh: '查看硕士奖学金官网',
+      scopeZh: '硕士奖学金官方搜索器',
+      kind: 'masters-search',
+      requiresFiltering: false,
+      url: 'https://example.edu/postgraduate/funding/search',
+      pageTitle: 'Scholarship search',
+      reviewedAt: '2026-08-31',
+      requiredText: ['Scholarships', 'Search'],
+      monitorMode: 'page-identity',
+    }],
+  };
+}
+
 describe('public lazy-data build', () => {
   it('keeps every public university row joined to the current catalog state, note, and sources', async () => {
     const root = process.cwd();
     const readJson = async (...parts) => JSON.parse(await readFile(join(root, ...parts), 'utf8'));
-    const [catalog, sourceRecords, mastersCourseDirectories, statuses, publicRecords] = await Promise.all([
+    const [catalog, sourceRecords, mastersCourseDirectories, mastersScholarshipEntries, statuses, publicRecords] = await Promise.all([
       readJson('src', 'data', 'universities.json'),
       readJson('src', 'data', 'sources.json'),
       readJson('src', 'data', 'masters-course-directories.json'),
+      readJson('src', 'data', 'masters-scholarship-entries.json'),
       readJson('src', 'data', 'status.json'),
       readJson('public', 'generated', 'universities.json'),
     ]);
@@ -38,12 +86,16 @@ describe('public lazy-data build', () => {
     const mastersByUniversityId = new Map(
       mastersCourseDirectories.map((directory) => [directory.universityId, directory]),
     );
+    const scholarshipsByUniversityId = new Map(
+      mastersScholarshipEntries.map((entry) => [entry.universityId, entry]),
+    );
 
     expect(publicRecords).toHaveLength(101);
     expect(publicRecords.map((record) => record.id)).toEqual(catalog.map((university) => university.id));
     for (const university of catalog) {
       const publicRecord = publicById.get(university.id);
       const mastersCourse = mastersByUniversityId.get(university.id);
+      const mastersScholarships = scholarshipsByUniversityId.get(university.id);
       expect(publicRecord?.id, university.id).toBe(university.id);
       expect(publicRecord?.state, university.id).toBe(university.state);
       expect(publicRecord?.noteZh, university.id).toBe(university.noteZh);
@@ -59,12 +111,22 @@ describe('public lazy-data build', () => {
         ...mastersCourse,
         ...(statuses[mastersCourse.id] ? { status: statuses[mastersCourse.id] } : {}),
       });
+      expect(publicRecord?.mastersScholarships, university.id).toEqual({
+        ...mastersScholarships,
+        links: mastersScholarships.entryState === 'available'
+          ? mastersScholarships.links.map((link) => ({
+            ...link,
+            ...(statuses[link.id] ? { status: statuses[link.id] } : {}),
+          }))
+          : [],
+      });
     }
 
     expect(mastersCourseDirectories).toHaveLength(101);
     expect(new Set(mastersCourseDirectories.map((directory) => directory.universityId)))
       .toEqual(new Set(catalog.map((university) => university.id)));
     expect(await readdir(join(root, 'public', 'generated'))).not.toContain('masters-course-directories.json');
+    expect(await readdir(join(root, 'public', 'generated'))).not.toContain('masters-scholarship-entries.json');
 
     expect(publicRecords.filter((record) => record.state === 'china-requirements')).toHaveLength(81);
     expect(publicRecords.filter((record) => record.state === 'pending').map((record) => record.id).sort())
@@ -277,6 +339,117 @@ describe('public lazy-data build', () => {
       sources: [],
       statuses: {},
     })).rejects.toThrow(error);
+  });
+
+  it('writes an available scholarship group with independently joined link statuses', async () => {
+    const outputDir = await mkdtemp(join(tmpdir(), 'xiaoying-public-masters-scholarships-'));
+    const university = exampleUniversity();
+    const entry = availableScholarshipEntry(university.id);
+    const statuses = {
+      [entry.links[0].id]: { sourceId: entry.links[0].id, health: 'ok' },
+      [entry.links[1].id]: { sourceId: entry.links[1].id, health: 'changed' },
+    };
+
+    await buildPublicData({
+      outputDir,
+      universities: [university],
+      rankings: { releases: [], records: [] },
+      mastersScholarshipEntries: [entry],
+      institutions: [],
+      requirements: [],
+      sources: [],
+      statuses,
+    });
+
+    const [record] = JSON.parse(await readFile(join(outputDir, 'universities.json'), 'utf8'));
+    expect(record.mastersScholarships).toEqual({
+      universityId: university.id,
+      entryState: entry.entryState,
+      reviewedAt: entry.reviewedAt,
+      links: entry.links.map((link) => ({ ...link, status: statuses[link.id] })),
+    });
+    expect(await readdir(outputDir)).not.toContain('masters-scholarship-entries.json');
+  });
+
+  it('preserves a no-public-entry group with zero links and performs no scholarship status lookup', async () => {
+    const outputDir = await mkdtemp(join(tmpdir(), 'xiaoying-public-no-scholarship-entry-'));
+    const university = exampleUniversity();
+    const entry = {
+      universityId: university.id,
+      entryState: 'no-public-entry',
+      reviewedAt: '2026-08-30',
+      links: [],
+    };
+    const statuses = new Proxy({}, {
+      get(target, property, receiver) {
+        if (typeof property === 'string' && property.startsWith('scholarships-')) {
+          throw new Error('no-public-entry must not look up a link status');
+        }
+        return Reflect.get(target, property, receiver);
+      },
+    });
+
+    await buildPublicData({
+      outputDir,
+      universities: [university],
+      rankings: { releases: [], records: [] },
+      mastersScholarshipEntries: [entry],
+      institutions: [],
+      requirements: [],
+      sources: [],
+      statuses,
+    });
+
+    const [record] = JSON.parse(await readFile(join(outputDir, 'universities.json'), 'utf8'));
+    expect(record.mastersScholarships).toEqual(entry);
+  });
+
+  it.each([
+    ['missing', [], /missing.*example-university/i],
+    ['extra', [
+      availableScholarshipEntry('example-university'),
+      { ...availableScholarshipEntry('extra-university'), links: [] },
+    ], /extra.*extra-university/i],
+    ['duplicate', [
+      availableScholarshipEntry('example-university'),
+      { ...availableScholarshipEntry('example-university'), reviewedAt: '2026-08-30' },
+    ], /duplicate.*example-university/i],
+  ])('rejects a %s masters-scholarship mapping in the public builder', async (_case, mastersScholarshipEntries, error) => {
+    const outputDir = await mkdtemp(join(tmpdir(), 'xiaoying-public-masters-scholarship-invalid-'));
+
+    await expect(buildPublicData({
+      outputDir,
+      universities: [exampleUniversity()],
+      rankings: { releases: [], records: [] },
+      mastersScholarshipEntries,
+      institutions: [],
+      requirements: [],
+      sources: [],
+      statuses: {},
+    })).rejects.toThrow(error);
+  });
+
+  it('does not borrow group or unrelated-link status for scholarship links', async () => {
+    const outputDir = await mkdtemp(join(tmpdir(), 'xiaoying-public-scholarship-status-isolation-'));
+    const university = exampleUniversity();
+    const entry = availableScholarshipEntry(university.id);
+
+    await buildPublicData({
+      outputDir,
+      universities: [university],
+      rankings: { releases: [], records: [] },
+      mastersScholarshipEntries: [entry],
+      institutions: [],
+      requirements: [],
+      sources: [],
+      statuses: {
+        [university.id]: { sourceId: university.id, health: 'unavailable' },
+        'scholarships-other-directory': { sourceId: 'scholarships-other-directory', health: 'temporary-error' },
+      },
+    });
+
+    const [record] = JSON.parse(await readFile(join(outputDir, 'universities.json'), 'utf8'));
+    expect(record.mastersScholarships.links.every((link) => !('status' in link))).toBe(true);
   });
 
   it('publishes a source successful-check date on its joined university record', async () => {

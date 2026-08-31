@@ -263,6 +263,10 @@ export type UniversityWithStatus = Omit<University, 'sourceIds'> & {
   rankings: Partial<Record<RankingProvider, RankingRecord>>;
 };
 
-export type UniversityDirectoryRecord = UniversityWithStatus & {
+export type UniversityWithMastersCourse = UniversityWithStatus & {
   mastersCourse: MastersCourseDirectoryWithStatus;
+};
+
+export type UniversityDirectoryRecord = UniversityWithMastersCourse & {
+  mastersScholarships: MastersScholarshipEntryWithStatus;
 };
