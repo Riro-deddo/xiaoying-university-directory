@@ -37,12 +37,12 @@ const valid: MastersScholarshipEntry[] = [{
 }];
 
 describe('masters scholarship entry registry', () => {
-  it('loads the independent production registry after the first reviewed batch', () => {
+  it('loads the independent production registry after the second reviewed batch', () => {
     const loaded = loadMastersScholarshipEntries();
 
-    expect(loaded).toHaveLength(26);
+    expect(loaded).toHaveLength(51);
     expect(loaded[0]?.universityId).toBe('imperial-college-london');
-    expect(loaded.at(-1)?.universityId).toBe('queens-university-belfast');
+    expect(loaded.at(-1)?.universityId).toBe('aston-university');
   });
 
   it('accepts a complete official scholarship entry', () => {

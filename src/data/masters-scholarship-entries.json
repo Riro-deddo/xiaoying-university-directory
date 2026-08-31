@@ -466,5 +466,468 @@
         "monitorMode": "page-identity"
       }
     ]
+  },
+  {
+    "universityId": "cardiff-university",
+    "links": [
+      {
+        "id": "scholarships-cardiff-university-postgraduate-funding",
+        "universityId": "cardiff-university",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "研究生资助官网（含硕士，请筛选）",
+        "kind": "postgraduate-funding",
+        "requiresFiltering": true,
+        "url": "https://www.cardiff.ac.uk/study/postgraduate/funding/scholarships",
+        "pageTitle": "Scholarships - Study - Cardiff University",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Scholarships", "Course-specific funding"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "university-of-reading",
+    "links": [
+      {
+        "id": "scholarships-university-of-reading-directory",
+        "universityId": "university-of-reading",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "硕士奖学金官方目录",
+        "kind": "masters-directory",
+        "requiresFiltering": false,
+        "url": "https://www.reading.ac.uk/ready-to-study/study/fees-and-funding/masters-scholarships",
+        "pageTitle": "Master's scholarships",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Master's Scholarships", "University of Reading Master’s Scholarships"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "cranfield-university",
+    "links": [
+      {
+        "id": "scholarships-cranfield-university-search",
+        "universityId": "cranfield-university",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "硕士奖学金官方搜索器（请筛选）",
+        "kind": "masters-search",
+        "requiresFiltering": true,
+        "url": "https://search.cranfield.ac.uk/s/search.html?f.Tabs%7Ccranfield%7Eds-funding=Funding&profile=_default&query=&collection=cranfield%7Esp-meta",
+        "pageTitle": "Search Cranfield University",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Search Cranfield University", "Filter by Course Type"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "london-business-school",
+    "links": [
+      {
+        "id": "scholarships-london-business-school-search",
+        "universityId": "london-business-school",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "硕士奖学金官方搜索器",
+        "kind": "masters-search",
+        "requiresFiltering": false,
+        "url": "https://www.london.edu/masters-degrees/financial-aid/search-for-funding",
+        "pageTitle": "Scholarships and loans | Search for funding | London Business School",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Search for funding", "Your masters programme"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "london-school-of-hygiene-and-tropical-medicine",
+    "links": [
+      {
+        "id": "scholarships-london-school-of-hygiene-and-tropical-medicine-directory",
+        "universityId": "london-school-of-hygiene-and-tropical-medicine",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "硕士奖学金官方目录",
+        "kind": "masters-directory",
+        "requiresFiltering": false,
+        "url": "https://www.lshtm.ac.uk/study/fees-and-funding/funding-scholarships/masters-funding",
+        "pageTitle": "Masters (MSc) funding and scholarships | Fees and funding | LSHTM",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Masters (MSc) funding and scholarships", "This table is updated as and when new funding is made available"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "royal-college-of-art",
+    "links": [
+      {
+        "id": "scholarships-royal-college-of-art-postgraduate-funding",
+        "universityId": "royal-college-of-art",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "研究生资助官网（含硕士，请筛选）",
+        "kind": "postgraduate-funding",
+        "requiresFiltering": true,
+        "url": "https://www.rca.ac.uk/study/apply-to-study/funding-your-studies/",
+        "pageTitle": "Funding your studies | Royal College of Art",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Funding your studies", "External funding for Master's Home students"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "royal-veterinary-college",
+    "links": [
+      {
+        "id": "scholarships-royal-veterinary-college-postgraduate-funding",
+        "universityId": "royal-veterinary-college",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "研究生资助官网（含硕士，请筛选）",
+        "kind": "postgraduate-funding",
+        "requiresFiltering": true,
+        "url": "https://www.rvc.ac.uk/study/scholarships-and-bursaries/postgraduate",
+        "pageTitle": "RVC Scholarships for Postgraduates - Scholarships and Bursaries at the RVC - Royal Veterinary College, RVC",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["RVC Scholarships for Postgraduates", "Funding opportunities"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "royal-college-of-music",
+    "links": [
+      {
+        "id": "scholarships-royal-college-of-music-postgraduate-funding",
+        "universityId": "royal-college-of-music",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "研究生资助官网（含硕士，请筛选）",
+        "kind": "postgraduate-funding",
+        "requiresFiltering": true,
+        "url": "https://www.rcm.ac.uk/apply/feesandfunding/scholarships/",
+        "pageTitle": "RCM scholarships and awards | Royal College of Music",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["RCM scholarships and awards", "Scholarships for students on taught performance & composition courses"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "institute-of-cancer-research-london",
+    "links": [
+      {
+        "id": "scholarships-institute-of-cancer-research-london-postgraduate-funding",
+        "universityId": "institute-of-cancer-research-london",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "研究生资助官网（含硕士，请筛选）",
+        "kind": "postgraduate-funding",
+        "requiresFiltering": true,
+        "url": "https://www.icr.ac.uk/study-and-careers/student-life-and-support/fees-costs-support",
+        "pageTitle": "Tuition fees",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Tuition fees", "Taught course students"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "liverpool-school-of-tropical-medicine",
+    "links": [
+      {
+        "id": "scholarships-liverpool-school-of-tropical-medicine-uk-category",
+        "universityId": "liverpool-school-of-tropical-medicine",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "英国学生硕士资助分类入口（请筛选）",
+        "kind": "category",
+        "requiresFiltering": true,
+        "url": "https://lstmed.ac.uk/study/fees-and-funding/",
+        "pageTitle": "Fees and funding | Liverpool School of Tropical Medicine",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Fees and funding for UK students", "LSTM scholarships and bursaries"],
+        "monitorMode": "page-identity"
+      },
+      {
+        "id": "scholarships-liverpool-school-of-tropical-medicine-international-category",
+        "universityId": "liverpool-school-of-tropical-medicine",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "国际学生硕士资助分类入口（请筛选）",
+        "kind": "category",
+        "requiresFiltering": true,
+        "url": "https://lstmed.ac.uk/study/fees-and-funding-international/",
+        "pageTitle": "Fees and Funding (International) | Liverpool School of Tropical Medicine",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Fees and funding for international students", "LSTM Scholarships"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "loughborough-university",
+    "links": [
+      {
+        "id": "scholarships-loughborough-university-search",
+        "universityId": "loughborough-university",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "硕士奖学金官方搜索器",
+        "kind": "masters-search",
+        "requiresFiltering": false,
+        "url": "https://www.lboro.ac.uk/study/postgraduate/fees-funding/masters-funding/",
+        "pageTitle": "Master's degree funding | Postgraduate study | Loughborough University",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Master's degree funding", "All funding opportunities"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "university-of-strathclyde",
+    "links": [
+      {
+        "id": "scholarships-university-of-strathclyde-directory",
+        "universityId": "university-of-strathclyde",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "硕士奖学金官方目录",
+        "kind": "masters-directory",
+        "requiresFiltering": false,
+        "url": "https://www.strath.ac.uk/studywithus/postgraduatetaught/postgraduatescholarships/",
+        "pageTitle": "Postgraduate Scholarships UK - University of Strathclyde",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Postgraduate taught", "International students (non-EU)"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "university-of-surrey",
+    "links": [
+      {
+        "id": "scholarships-university-of-surrey-search",
+        "universityId": "university-of-surrey",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "硕士奖学金官方搜索器",
+        "kind": "masters-search",
+        "requiresFiltering": false,
+        "url": "https://www.surrey.ac.uk/fees-and-funding/scholarships-and-bursaries?field_student_level_value%5Bpostgraduate%5D=postgraduate",
+        "pageTitle": "Scholarships and bursaries | University of Surrey",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Scholarships and bursaries", "Active Filter: Postgraduate"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "university-of-sussex",
+    "links": [
+      {
+        "id": "scholarships-university-of-sussex-search",
+        "universityId": "university-of-sussex",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "硕士奖学金官方搜索器",
+        "kind": "masters-search",
+        "requiresFiltering": false,
+        "url": "https://www.sussex.ac.uk/study/fees-funding/masters-scholarships",
+        "pageTitle": "Masters scholarships : Fees and funding : Study with us : University of Sussex",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Masters scholarships", "Search for a Masters scholarship"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "university-of-aberdeen",
+    "links": [
+      {
+        "id": "scholarships-university-of-aberdeen-directory",
+        "universityId": "university-of-aberdeen",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "硕士奖学金官方目录",
+        "kind": "masters-directory",
+        "requiresFiltering": false,
+        "url": "https://www.abdn.ac.uk/study/postgraduate-taught/finance/",
+        "pageTitle": "Finance and Funding | Study Here | The University of Aberdeen",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Finance and Funding", "Funding Database"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "university-of-leicester",
+    "links": [
+      {
+        "id": "scholarships-university-of-leicester-directory",
+        "universityId": "university-of-leicester",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "硕士奖学金官方目录",
+        "kind": "masters-directory",
+        "requiresFiltering": false,
+        "url": "https://le.ac.uk/study/postgraduates/fees-funding/scholarships-discounts",
+        "pageTitle": "Scholarships and discounts | Postgraduates | University of Leicester",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Postgraduates", "All available scholarships and discounts"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "swansea-university",
+    "links": [
+      {
+        "id": "scholarships-swansea-university-directory",
+        "universityId": "swansea-university",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "硕士奖学金官方目录",
+        "kind": "masters-directory",
+        "requiresFiltering": false,
+        "url": "https://www.swansea.ac.uk/postgraduate/scholarships/taught/",
+        "pageTitle": "Taught Master's Scholarships - Swansea University",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Taught Master's Scholarships", "University scholarships available for taught master's study are listed alphabetically below"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "heriot-watt-university",
+    "links": [
+      {
+        "id": "scholarships-heriot-watt-university-search",
+        "universityId": "heriot-watt-university",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "硕士奖学金官方搜索器",
+        "kind": "masters-search",
+        "requiresFiltering": false,
+        "url": "https://www.hw.ac.uk/search/scholarships?f.Level=Postgraduate+taught&gscope1=uk",
+        "pageTitle": "Search all Scholarships | Heriot-Watt University",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Search all Scholarships", "Level Postgraduate taught"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "brunel-university-of-london",
+    "links": [
+      {
+        "id": "scholarships-brunel-university-of-london-postgraduate-funding",
+        "universityId": "brunel-university-of-london",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "研究生资助官网（含硕士，请筛选）",
+        "kind": "postgraduate-funding",
+        "requiresFiltering": true,
+        "url": "https://www.brunel.ac.uk/study/postgraduate-fees-and-funding",
+        "pageTitle": "Postgraduate fees and funding | Brunel University of London",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Postgraduate fees and funding", "Scholarships, prizes and further fee reductions"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "birkbeck-university-of-london",
+    "links": [
+      {
+        "id": "scholarships-birkbeck-university-of-london-postgraduate-funding",
+        "universityId": "birkbeck-university-of-london",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "研究生资助官网（含硕士，请筛选）",
+        "kind": "postgraduate-funding",
+        "requiresFiltering": true,
+        "url": "https://www.bbk.ac.uk/student-services/financial-support/postgraduate",
+        "pageTitle": "Postgraduate financial support - Birkbeck, University of London",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Postgraduate financial support", "Financial support"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "city-st-georges-university-of-london",
+    "links": [
+      {
+        "id": "scholarships-city-st-georges-university-of-london-search",
+        "universityId": "city-st-georges-university-of-london",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "硕士奖学金官方搜索器",
+        "kind": "masters-search",
+        "requiresFiltering": false,
+        "url": "https://www.citystgeorges.ac.uk/prospective-students/finance/funding?meta_level_sand=postgraduate+taught+degrees",
+        "pageTitle": "Search for funding options • City St George's, University of London",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Search for funding options", "Postgraduate taught degree"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "university-of-east-anglia",
+    "links": [
+      {
+        "id": "scholarships-university-of-east-anglia-directory",
+        "universityId": "university-of-east-anglia",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "硕士奖学金官方目录",
+        "kind": "masters-directory",
+        "requiresFiltering": false,
+        "url": "https://www.uea.ac.uk/study/fees-and-funding/funding-options/uk-student-funding/postgraduates/postgraduate-finances-explained",
+        "pageTitle": "Postgraduate Finances Explained",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Postgraduate Finances Explained", "University Bursaries and Scholarships"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "oxford-brookes-university",
+    "links": [
+      {
+        "id": "scholarships-oxford-brookes-university-search",
+        "universityId": "oxford-brookes-university",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "硕士奖学金官方搜索器（请筛选）",
+        "kind": "masters-search",
+        "requiresFiltering": true,
+        "url": "https://www.brookes.ac.uk/study/funding",
+        "pageTitle": "Funding and financial support - Oxford Brookes University",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Funding and financial support", "Funding finder"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "university-of-kent",
+    "links": [
+      {
+        "id": "scholarships-university-of-kent-postgraduate-funding",
+        "universityId": "university-of-kent",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "研究生资助官网（含硕士，请筛选）",
+        "kind": "postgraduate-funding",
+        "requiresFiltering": true,
+        "url": "https://www.kent.ac.uk/scholarships/postgraduate",
+        "pageTitle": "Postgraduate funding and scholarships - Scholarships - University of Kent",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Postgraduate funding and scholarships", "Postgraduate Taught"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "aston-university",
+    "links": [
+      {
+        "id": "scholarships-aston-university-postgraduate-funding",
+        "universityId": "aston-university",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "研究生资助官网（含硕士，请筛选）",
+        "kind": "postgraduate-funding",
+        "requiresFiltering": true,
+        "url": "https://www.aston.ac.uk/postgraduate/application/funding",
+        "pageTitle": "Postgraduate Funding | Aston University",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Postgraduate Funding", "Scholarships"],
+        "monitorMode": "page-identity"
+      }
+    ]
   }
 ]
