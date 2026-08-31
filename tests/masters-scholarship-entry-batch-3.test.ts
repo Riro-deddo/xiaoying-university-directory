@@ -3,35 +3,36 @@ import { describe, expect, it } from 'vitest';
 import { loadMastersScholarshipEntries } from '../src/lib/data';
 import { parseMastersScholarshipResearch } from './helpers/masters-scholarship-research';
 
-const batch2UniversityIds = [
-  'cardiff-university', 'university-of-reading', 'cranfield-university',
-  'london-business-school', 'london-school-of-hygiene-and-tropical-medicine',
-  'royal-college-of-art', 'royal-veterinary-college', 'royal-college-of-music',
-  'institute-of-cancer-research-london', 'liverpool-school-of-tropical-medicine',
-  'loughborough-university', 'university-of-strathclyde', 'university-of-surrey',
-  'university-of-sussex', 'university-of-aberdeen', 'university-of-leicester',
-  'swansea-university', 'heriot-watt-university', 'brunel-university-of-london',
-  'birkbeck-university-of-london', 'city-st-georges-university-of-london',
-  'university-of-east-anglia', 'oxford-brookes-university', 'university-of-kent',
-  'aston-university',
+const batch3UniversityIds = [
+  'university-of-essex', 'university-of-dundee', 'soas-university-of-london',
+  'royal-holloway-university-of-london', 'university-of-bradford',
+  'university-of-huddersfield', 'northumbria-university', 'university-of-stirling',
+  'bangor-university', 'university-of-hull', 'coventry-university',
+  'ulster-university', 'manchester-metropolitan-university',
+  'nottingham-trent-university', 'university-of-portsmouth',
+  'kingston-university-london', 'university-of-plymouth',
+  'goldsmiths-university-of-london', 'university-of-the-west-of-england',
+  'university-of-greenwich', 'aberystwyth-university', 'bournemouth-university',
+  'edinburgh-napier-university', 'keele-university', 'de-montfort-university',
 ] as const;
 
 const researchMarkdown = readFileSync(
-  new URL('../docs/research/masters-scholarship-entry-batch-2.md', import.meta.url),
+  new URL('../docs/research/masters-scholarship-entry-batch-3.md', import.meta.url),
   'utf8',
 );
 
-describe('masters scholarship entry batch 2', () => {
-  it('matches every reviewed row to the production registry', () => {
+describe('masters scholarship entry batch 3', () => {
+  it('matches every reviewed row to the production registry and completes 76 groups', () => {
     const researchRows = parseMastersScholarshipResearch(researchMarkdown);
     const registry = loadMastersScholarshipEntries();
     const groupsByUniversity = new Map(registry.map((group) => [group.universityId, group]));
     expect(groupsByUniversity.size).toBe(registry.length);
+    expect(registry).toHaveLength(76);
     expect(new Set(researchRows.map((row) => row.universityId)))
-      .toEqual(new Set(batch2UniversityIds));
+      .toEqual(new Set(batch3UniversityIds));
     expect(new Set(researchRows.map((row) => row.evidenceId)).size).toBe(researchRows.length);
 
-    for (const universityId of batch2UniversityIds) {
+    for (const universityId of batch3UniversityIds) {
       const group = groupsByUniversity.get(universityId);
       expect(group, `missing production scholarship group for ${universityId}`).toBeDefined();
       expect(group?.reviewedAt).toBe('2026-08-31');

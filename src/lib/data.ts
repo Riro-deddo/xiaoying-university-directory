@@ -54,7 +54,9 @@ const validateRankingSchema = ajv.compile(rankingsSchema);
 const firstPartyCourseDirectoryDomainAliases = new Map<string, ReadonlySet<string>>([
   ['university-of-greenwich', new Set(['gre.ac.uk'])],
 ]);
-const firstPartyScholarshipDomainAliases = new Map<string, ReadonlySet<string>>();
+const firstPartyScholarshipDomainAliases = new Map<string, ReadonlySet<string>>([
+  ['university-of-greenwich', new Set(['gre.ac.uk'])],
+]);
 
 export class DataValidationError extends Error {
   constructor(

@@ -1017,5 +1017,544 @@
         "monitorMode": "page-identity"
       }
     ]
+  },
+  {
+    "universityId": "university-of-essex",
+    "entryState": "available",
+    "reviewedAt": "2026-08-31",
+    "links": [
+      {
+        "id": "scholarships-university-of-essex-directory",
+        "universityId": "university-of-essex",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "硕士奖学金官方目录",
+        "kind": "masters-directory",
+        "requiresFiltering": false,
+        "url": "https://www.essex.ac.uk/postgraduate/masters/fees-and-funding/scholarships-and-funding",
+        "pageTitle": "Postgraduate Taught scholarships and funding | University of Essex",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Scholarships and funding", "Masters scholarship and funding opportunities"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "university-of-dundee",
+    "entryState": "available",
+    "reviewedAt": "2026-08-31",
+    "links": [
+      {
+        "id": "scholarships-university-of-dundee-postgraduate-funding",
+        "universityId": "university-of-dundee",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "研究生资助官网（含硕士，请筛选）",
+        "kind": "postgraduate-funding",
+        "requiresFiltering": true,
+        "url": "https://www.dundee.ac.uk/scholarships",
+        "pageTitle": "Scholarships | University of Dundee, UK",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Postgraduate scholarships", "Postgraduate applicants from the United Kingdom or the Republic of Ireland"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "soas-university-of-london",
+    "entryState": "available",
+    "reviewedAt": "2026-08-31",
+    "links": [
+      {
+        "id": "scholarships-soas-university-of-london-directory",
+        "universityId": "soas-university-of-london",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "硕士奖学金官方目录",
+        "kind": "masters-directory",
+        "requiresFiltering": false,
+        "url": "https://www.soas.ac.uk/study/fees-and-funding/scholarships-bursaries-and-awards/postgraduate-taught-scholarships",
+        "pageTitle": "Postgraduate taught scholarships | SOAS",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Postgraduate taught scholarships", "Full scholarships"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "royal-holloway-university-of-london",
+    "entryState": "available",
+    "reviewedAt": "2026-08-31",
+    "links": [
+      {
+        "id": "scholarships-royal-holloway-university-of-london-postgraduate-funding",
+        "universityId": "royal-holloway-university-of-london",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "研究生资助官网（含硕士，请筛选）",
+        "kind": "postgraduate-funding",
+        "requiresFiltering": true,
+        "url": "https://www.royalholloway.ac.uk/studying-here/fees-and-funding/scholarships/",
+        "pageTitle": "Scholarships",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Scholarships", "level of study (undergraduate or postgraduate)"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "university-of-bradford",
+    "entryState": "available",
+    "reviewedAt": "2026-08-31",
+    "links": [
+      {
+        "id": "scholarships-university-of-bradford-postgraduate-funding",
+        "universityId": "university-of-bradford",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "研究生资助官网（含硕士，请筛选）",
+        "kind": "postgraduate-funding",
+        "requiresFiltering": true,
+        "url": "https://www.bradford.ac.uk/scholarships/",
+        "pageTitle": "Find scholarships and bursaries - Fees, Financial Support and Scholarships - University of Bradford",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Find scholarships and bursaries", "Postgraduate Taught"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "university-of-huddersfield",
+    "entryState": "available",
+    "reviewedAt": "2026-08-31",
+    "links": [
+      {
+        "id": "scholarships-university-of-huddersfield-postgraduate-funding",
+        "universityId": "university-of-huddersfield",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "研究生资助官网（含硕士，请筛选）",
+        "kind": "postgraduate-funding",
+        "requiresFiltering": true,
+        "url": "https://www.hud.ac.uk/postgraduate/funding-studies/",
+        "pageTitle": "Support in funding your postgraduate studies | University of Huddersfield - University of Huddersfield",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Support to fund your studies", "postgraduate taught courses and research degrees"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "northumbria-university",
+    "entryState": "available",
+    "reviewedAt": "2026-08-31",
+    "links": [
+      {
+        "id": "scholarships-northumbria-university-search",
+        "universityId": "northumbria-university",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "硕士奖学金官方搜索器",
+        "kind": "masters-search",
+        "requiresFiltering": false,
+        "url": "https://www.northumbria.ac.uk/study-at-northumbria/fees-funding/pg-fees-funding/masters-funding/",
+        "pageTitle": "Funding a Masters | Masters Degree Funding & Scholarships | Northumbria",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["UK Masters Funding and Scholarships", "Search our Scholarships"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "university-of-stirling",
+    "entryState": "available",
+    "reviewedAt": "2026-08-31",
+    "links": [
+      {
+        "id": "scholarships-university-of-stirling-search",
+        "universityId": "university-of-stirling",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "硕士奖学金官方搜索器",
+        "kind": "masters-search",
+        "requiresFiltering": false,
+        "url": "https://www.stir.ac.uk/scholarships/?level=Postgraduate+Taught&page=1",
+        "pageTitle": "Scholarships | University of Stirling",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Find a scholarship", "Postgraduate (taught)"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "bangor-university",
+    "entryState": "available",
+    "reviewedAt": "2026-08-31",
+    "links": [
+      {
+        "id": "scholarships-bangor-university-postgraduate-funding",
+        "universityId": "bangor-university",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "研究生资助官网（含硕士，请筛选）",
+        "kind": "postgraduate-funding",
+        "requiresFiltering": true,
+        "url": "https://www.bangor.ac.uk/studentfinance/postgraduate/funding",
+        "pageTitle": "Scholarships, Studentships & Bursaries | Bangor University",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Scholarships, Studentships & Bursaries", "Opportunities by Subject Areas"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "university-of-hull",
+    "entryState": "available",
+    "reviewedAt": "2026-08-31",
+    "links": [
+      {
+        "id": "scholarships-university-of-hull-search",
+        "universityId": "university-of-hull",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "硕士奖学金官方搜索器",
+        "kind": "masters-search",
+        "requiresFiltering": false,
+        "url": "https://www.hull.ac.uk/study/postgraduate-taught/fees-and-funding/scholarships-and-awards",
+        "pageTitle": "Postgraduate Taught Scholarships and Awards | University of Hull",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Postgraduate taught scholarships and awards", "Where are you from"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "coventry-university",
+    "entryState": "available",
+    "reviewedAt": "2026-08-31",
+    "links": [
+      {
+        "id": "scholarships-coventry-university-postgraduate-funding",
+        "universityId": "coventry-university",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "研究生资助官网（含硕士，请筛选）",
+        "kind": "postgraduate-funding",
+        "requiresFiltering": true,
+        "url": "https://www.coventry.ac.uk/study-at-coventry/postgraduate-study/fees-and-funding/funding-your-postgraduate-course/",
+        "pageTitle": "Funding Your Postgraduate Course | Coventry University",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Funding your postgraduate course", "Other scholarships"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "ulster-university",
+    "entryState": "available",
+    "reviewedAt": "2026-08-31",
+    "links": [
+      {
+        "id": "scholarships-ulster-university-postgraduate-funding",
+        "universityId": "ulster-university",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "研究生资助官网（含硕士，请筛选）",
+        "kind": "postgraduate-funding",
+        "requiresFiltering": true,
+        "url": "https://www.ulster.ac.uk/scholarships",
+        "pageTitle": "Discover Scholarships at Ulster University | Ulster University Scholarships",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Find the Right Scholarship for You", "Scholarships for Postgraduate (taught) students"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "manchester-metropolitan-university",
+    "entryState": "available",
+    "reviewedAt": "2026-08-31",
+    "links": [
+      {
+        "id": "scholarships-manchester-metropolitan-university-uk-category",
+        "universityId": "manchester-metropolitan-university",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "英国学生硕士奖学金分类入口",
+        "kind": "category",
+        "requiresFiltering": false,
+        "url": "https://www.mmu.ac.uk/study/postgraduate/how-to-apply/funding/bursaries-scholarships-loans",
+        "pageTitle": "Postgraduate scholarships and financial support | Manchester Met",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Postgraduate scholarships, bursaries and financial support", "Postgraduate scholarships for taught courses"],
+        "monitorMode": "page-identity"
+      },
+      {
+        "id": "scholarships-manchester-metropolitan-university-international-category",
+        "universityId": "manchester-metropolitan-university",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "国际学生资助分类入口（含硕士，请筛选）",
+        "kind": "category",
+        "requiresFiltering": true,
+        "url": "https://www.mmu.ac.uk/study/international/before-you-apply/fees-and-funding/scholarships-and-funding/scholarships",
+        "pageTitle": "International scholarships | Manchester Metropolitan University",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["International scholarships from Manchester Met", "Postgraduate (September 2026 entry - international applicants only)"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "nottingham-trent-university",
+    "entryState": "available",
+    "reviewedAt": "2026-08-31",
+    "links": [
+      {
+        "id": "scholarships-nottingham-trent-university-directory",
+        "universityId": "nottingham-trent-university",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "硕士奖学金官方目录",
+        "kind": "masters-directory",
+        "requiresFiltering": false,
+        "url": "https://www.ntu.ac.uk/study-and-courses/postgraduate/masters/fees-and-funding/postgraduate-scholarships",
+        "pageTitle": "Postgraduate Masters scholarships | Nottingham Trent University",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Postgraduate Masters scholarships", "Masters scholarships for international students"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "university-of-portsmouth",
+    "entryState": "available",
+    "reviewedAt": "2026-08-31",
+    "links": [
+      {
+        "id": "scholarships-university-of-portsmouth-home-category",
+        "universityId": "university-of-portsmouth",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "英国学生硕士奖学金分类入口",
+        "kind": "category",
+        "requiresFiltering": false,
+        "url": "https://www.port.ac.uk/study/masters-and-postgraduate-taught/fees-and-funding/scholarships-and-bursaries",
+        "pageTitle": "Loans, scholarships and bursaries | University of Portsmouth",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Master's loans, scholarships, bursaries", "scholarships for international students"],
+        "monitorMode": "page-identity"
+      },
+      {
+        "id": "scholarships-university-of-portsmouth-international-category",
+        "universityId": "university-of-portsmouth",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "国际学生资助分类入口（含硕士，请筛选）",
+        "kind": "category",
+        "requiresFiltering": true,
+        "url": "https://www.port.ac.uk/study/international-students/funding/scholarships",
+        "pageTitle": "Scholarships for international students | University of Portsmouth",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Scholarships for international students", "postgraduate taught"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "kingston-university-london",
+    "entryState": "available",
+    "reviewedAt": "2026-08-31",
+    "links": [
+      {
+        "id": "scholarships-kingston-university-london-postgraduate-funding",
+        "universityId": "kingston-university-london",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "研究生资助官网（含硕士，请筛选）",
+        "kind": "postgraduate-funding",
+        "requiresFiltering": true,
+        "url": "https://www.kingston.ac.uk/study/fees-and-funding/postgraduate",
+        "pageTitle": "Postgraduate finance | Kingston University London",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Postgraduate finance", "Scholarships and bursaries"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "university-of-plymouth",
+    "entryState": "available",
+    "reviewedAt": "2026-08-31",
+    "links": [
+      {
+        "id": "scholarships-university-of-plymouth-postgraduate-funding",
+        "universityId": "university-of-plymouth",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "研究生资助官网（含硕士，请筛选）",
+        "kind": "postgraduate-funding",
+        "requiresFiltering": true,
+        "url": "https://www.plymouth.ac.uk/study/funding/postgraduate-taught",
+        "pageTitle": "Funding for postgraduate taught students - University of Plymouth",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Funding for postgraduate taught students", "Scholarships, bursaries and support funds"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "goldsmiths-university-of-london",
+    "entryState": "available",
+    "reviewedAt": "2026-08-31",
+    "links": [
+      {
+        "id": "scholarships-goldsmiths-university-of-london-postgraduate-funding",
+        "universityId": "goldsmiths-university-of-london",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "研究生资助官网（含硕士，请筛选）",
+        "kind": "postgraduate-funding",
+        "requiresFiltering": true,
+        "url": "https://www.gold.ac.uk/fees-funding/scholarships/",
+        "pageTitle": "Scholarships finder | Goldsmiths, University of London",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Scholarships finder", "postgraduate taught masters"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "university-of-the-west-of-england",
+    "entryState": "available",
+    "reviewedAt": "2026-08-31",
+    "links": [
+      {
+        "id": "scholarships-university-of-the-west-of-england-postgraduate-funding",
+        "universityId": "university-of-the-west-of-england",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "研究生资助官网（含硕士，请筛选）",
+        "kind": "postgraduate-funding",
+        "requiresFiltering": true,
+        "url": "https://www.uwe.ac.uk/courses/funding/scholarships-and-bursaries",
+        "pageTitle": "Scholarships and bursaries - Funding and scholarships | UWE Bristol",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Scholarships and bursaries", "Level of study"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "university-of-greenwich",
+    "entryState": "available",
+    "reviewedAt": "2026-08-31",
+    "links": [
+      {
+        "id": "scholarships-university-of-greenwich-postgraduate-funding",
+        "universityId": "university-of-greenwich",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "研究生资助官网（含硕士，请筛选）",
+        "kind": "postgraduate-funding",
+        "requiresFiltering": true,
+        "url": "https://www.gre.ac.uk/finance/funding-your-studies/scholarships-and-bursaries",
+        "pageTitle": "Scholarships and bursaries | Fees and funding | University of Greenwich",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Scholarships and bursaries", "awards for postgraduate study"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "aberystwyth-university",
+    "entryState": "available",
+    "reviewedAt": "2026-08-31",
+    "links": [
+      {
+        "id": "scholarships-aberystwyth-university-postgraduate-funding",
+        "universityId": "aberystwyth-university",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "研究生资助官网（含硕士，请筛选）",
+        "kind": "postgraduate-funding",
+        "requiresFiltering": true,
+        "url": "https://www.aber.ac.uk/en/study-with-us/fees/postgrad/calculator/",
+        "pageTitle": "Aberystwyth University - Study With Us : Calculator",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Funding & Scholarship Calculator", "Taught Courses"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "bournemouth-university",
+    "entryState": "available",
+    "reviewedAt": "2026-08-31",
+    "links": [
+      {
+        "id": "scholarships-bournemouth-university-search",
+        "universityId": "bournemouth-university",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "硕士奖学金官方搜索器（含硕士，请筛选）",
+        "kind": "masters-search",
+        "requiresFiltering": true,
+        "url": "https://www.bournemouth.ac.uk/study/postgraduate/fees-funding",
+        "pageTitle": "Postgraduate fees and funding | Bournemouth University",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Scholarships and discounts calculator", "Postgraduate taught"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "edinburgh-napier-university",
+    "entryState": "available",
+    "reviewedAt": "2026-08-31",
+    "links": [
+      {
+        "id": "scholarships-edinburgh-napier-university-directory",
+        "universityId": "edinburgh-napier-university",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "硕士奖学金官方目录",
+        "kind": "masters-directory",
+        "requiresFiltering": false,
+        "url": "https://www.napier.ac.uk/study-with-us/postgraduate/fees-and-funding",
+        "pageTitle": "Fees and Funding",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Postgraduate Fees & Funding", "Scholarships and Bursaries"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "keele-university",
+    "entryState": "available",
+    "reviewedAt": "2026-08-31",
+    "links": [
+      {
+        "id": "scholarships-keele-university-postgraduate-funding",
+        "universityId": "keele-university",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "研究生资助官网（含硕士，请筛选）",
+        "kind": "postgraduate-funding",
+        "requiresFiltering": true,
+        "url": "https://www.keele.ac.uk/study/postgraduatestudy/tuitionfeesandfunding/postgraduatefunding/",
+        "pageTitle": "Postgraduate funding - Keele University",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Postgraduate Funding and Support", "International students"],
+        "monitorMode": "page-identity"
+      }
+    ]
+  },
+  {
+    "universityId": "de-montfort-university",
+    "entryState": "available",
+    "reviewedAt": "2026-08-31",
+    "links": [
+      {
+        "id": "scholarships-de-montfort-university-home-category",
+        "universityId": "de-montfort-university",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "英国学生硕士奖学金分类入口",
+        "kind": "category",
+        "requiresFiltering": false,
+        "url": "https://www.dmu.ac.uk/study/fees-funding/postgraduate-scholarships-bursaries.aspx",
+        "pageTitle": "Postgraduate scholarships and bursaries",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["Postgraduate scholarships and bursaries", "Postgraduate Alumni Scholarship"],
+        "monitorMode": "page-identity"
+      },
+      {
+        "id": "scholarships-de-montfort-university-international-category",
+        "universityId": "de-montfort-university",
+        "labelZh": "查看硕士奖学金官网",
+        "scopeZh": "国际学生资助分类入口（含硕士，请筛选）",
+        "kind": "category",
+        "requiresFiltering": true,
+        "url": "https://www.dmu.ac.uk/international/en/fees-and-scholarships/international-scholarships.aspx",
+        "pageTitle": "International Scholarships",
+        "reviewedAt": "2026-08-31",
+        "requiredText": ["International Scholarships", "undergraduate or postgraduate degree"],
+        "monitorMode": "page-identity"
+      }
+    ]
   }
 ]

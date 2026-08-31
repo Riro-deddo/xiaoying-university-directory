@@ -26,6 +26,7 @@ describe('masters scholarship entry batch 1', () => {
     const researchRows = parseMastersScholarshipResearch(researchMarkdown);
     const registry = loadMastersScholarshipEntries();
     const groupsByUniversity = new Map(registry.map((group) => [group.universityId, group]));
+    expect(groupsByUniversity.size).toBe(registry.length);
     expect(new Set(researchRows.map((row) => row.universityId)))
       .toEqual(new Set(batch1UniversityIds));
     expect(new Set(researchRows.map((row) => row.evidenceId)).size).toBe(researchRows.length);

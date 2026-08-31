@@ -38,20 +38,61 @@ const valid: MastersScholarshipEntry[] = [{
   }],
 }];
 
+const greenwichUniversities: University[] = validateUniversities([{
+  id: 'university-of-greenwich',
+  nameZh: '格林威治大学',
+  nameEn: 'University of Greenwich',
+  aliases: ['Greenwich'],
+  directoryCategory: 'qs-directory',
+  qsDirectory: { firstEdition: 2027, verifiedEdition: 2027, current: true },
+  state: 'china-requirements',
+  officialDomain: 'https://www.greenwich.ac.uk',
+  sourceIds: [],
+}]);
+
+const greenwichAliasEntry: MastersScholarshipEntry[] = [{
+  universityId: 'university-of-greenwich',
+  entryState: 'available',
+  reviewedAt: '2026-08-31',
+  links: [{
+    ...valid[0].links[0],
+    id: 'scholarships-university-of-greenwich-postgraduate-funding',
+    universityId: 'university-of-greenwich',
+    kind: 'postgraduate-funding',
+    requiresFiltering: true,
+    url: 'https://www.gre.ac.uk/finance/funding-your-studies/scholarships-and-bursaries',
+  }],
+}];
+
 describe('masters scholarship entry registry', () => {
-  it('loads the independent production registry after the second reviewed batch', () => {
+  it('loads the independent production registry after the third reviewed batch', () => {
     const loaded = loadMastersScholarshipEntries();
 
-    expect(loaded).toHaveLength(51);
-    expect(loaded.filter((entry) => entry.entryState === 'available')).toHaveLength(50);
+    expect(loaded).toHaveLength(76);
+    expect(loaded.filter((entry) => entry.entryState === 'available')).toHaveLength(75);
     expect(loaded.filter((entry) => entry.entryState === 'no-public-entry')).toHaveLength(1);
-    expect(loaded.flatMap((entry) => entry.links)).toHaveLength(51);
+    expect(loaded.flatMap((entry) => entry.links)).toHaveLength(79);
     expect(loaded[0]?.universityId).toBe('imperial-college-london');
-    expect(loaded.at(-1)?.universityId).toBe('aston-university');
+    expect(loaded.at(-1)?.universityId).toBe('de-montfort-university');
   });
 
   it('accepts a complete official scholarship entry', () => {
     expect(validateMastersScholarshipEntries(valid, universities)).toEqual(valid);
+  });
+
+  it('accepts the directly verified University of Greenwich scholarship alias', () => {
+    expect(validateMastersScholarshipEntries(greenwichAliasEntry, greenwichUniversities))
+      .toEqual(greenwichAliasEntry);
+  });
+
+  it.each([
+    'https://www.gre.ac.uk.evil.test/finance/funding-your-studies/scholarships-and-bursaries',
+    'https://www.notgre.ac.uk/finance/funding-your-studies/scholarships-and-bursaries',
+  ])('rejects University of Greenwich scholarship alias lookalike %s', (url) => {
+    expect(() => validateMastersScholarshipEntries([{
+      ...greenwichAliasEntry[0],
+      links: [{ ...greenwichAliasEntry[0].links[0], url }],
+    }], greenwichUniversities)).toThrow(/official domain/i);
   });
 
   it('accepts a reviewed no-public-entry group with no action links', () => {
