@@ -23,7 +23,28 @@ const researchMarkdown = readFileSync(
   'utf8',
 );
 
+const mixedCategoryLinkIds = [
+  'scholarships-university-of-brighton-home-category',
+  'scholarships-university-of-brighton-international-category',
+  'scholarships-university-of-roehampton-home-category',
+  'scholarships-university-of-roehampton-international-category',
+] as const;
+
 describe('masters scholarship entry batch 4', () => {
+  it('marks the mixed Brighton and Roehampton category pages as requiring filtering', () => {
+    const linksById = new Map(loadMastersScholarshipEntries()
+      .flatMap((group) => group.links)
+      .map((link) => [link.id, link]));
+
+    for (const linkId of mixedCategoryLinkIds) {
+      const link = linksById.get(linkId);
+      expect(link, `missing mixed category link ${linkId}`).toBeDefined();
+      expect(link?.kind).toBe('category');
+      expect(link?.requiresFiltering).toBe(true);
+      expect(link?.scopeZh).toContain('请筛选');
+    }
+  });
+
   it('matches every reviewed row bidirectionally to the production registry', () => {
     const researchRows = parseMastersScholarshipResearch(researchMarkdown);
     const registry = loadMastersScholarshipEntries();
