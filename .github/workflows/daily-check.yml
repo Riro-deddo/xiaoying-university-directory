@@ -25,7 +25,7 @@ jobs:
         id: lychee
         uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
         with:
-          args: --config .lychee.toml src/data/sources.json src/data/masters-course-directories.json
+          args: --config .lychee.toml src/data/sources.json src/data/masters-course-directories.json src/data/masters-scholarship-entries.json
           fail: false
           jobSummary: true
       - name: Check official-source review state

@@ -19,6 +19,16 @@ function indexSources(sources) {
   return sourceById;
 }
 
+function flattenMastersScholarshipLinks(entries) {
+  return entries.flatMap((entry) => entry.entryState === 'available' ? entry.links : []);
+}
+
+function resourceKindFromId(sourceId) {
+  if (sourceId.startsWith('scholarships-')) return 'masters-scholarship-entry';
+  if (sourceId.startsWith('masters-')) return 'masters-course-entry';
+  return 'china-rule-source';
+}
+
 function anomalyFromStatus(status, source) {
   return {
     sourceId: status.sourceId,
@@ -31,6 +41,7 @@ function anomalyFromStatus(status, source) {
     acceptedContentHash: status.contentHash,
     attemptObservedContentHash: status.attemptObservedContentHash,
     retainedTrustedFacts: true,
+    resourceKind: resourceKindFromId(status.sourceId),
   };
 }
 
@@ -42,12 +53,17 @@ export async function upsertSourceAnomalyIssues({ workspace, github, context }) 
   const auditPath = join(workspace, 'artifacts', 'source-audit.json');
   if (!existsSync(auditPath)) return { candidates: 0, created: 0, updated: 0 };
 
-  const [audit, sources, mastersCourseDirectories] = await Promise.all([
+  const [audit, sources, mastersCourseDirectories, mastersScholarshipEntries] = await Promise.all([
     readJson(auditPath),
     readJson(join(workspace, 'src', 'data', 'sources.json')),
     readJson(join(workspace, 'src', 'data', 'masters-course-directories.json')),
+    readJson(join(workspace, 'src', 'data', 'masters-scholarship-entries.json')),
   ]);
-  const sourceById = indexSources([...sources, ...mastersCourseDirectories]);
+  const sourceById = indexSources([
+    ...sources,
+    ...mastersCourseDirectories,
+    ...flattenMastersScholarshipLinks(mastersScholarshipEntries),
+  ]);
   const payloadByKey = new Map();
   for (const status of Object.values(audit)) {
     if (!anomalousHealth.has(status.health)) continue;

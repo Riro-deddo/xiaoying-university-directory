@@ -8,6 +8,7 @@ const anomaly = {
   reason: 'removal-ratio-exceeded',
   detectedAt: '2026-08-01T03:17:00.000Z',
   retainedTrustedFacts: true,
+  resourceKind: 'china-rule-source',
 };
 
 describe('source anomaly Issue renderer', () => {
@@ -84,6 +85,7 @@ describe('source anomaly Issue renderer', () => {
       monitorMode: 'page-identity',
       missingRequiredText: ['Postgraduate courses'],
       retainedTrustedFacts: true,
+      resourceKind: 'masters-course-entry',
     };
 
     const payload = anomalyIssuePayload(pageIdentityAnomaly);
@@ -93,5 +95,28 @@ describe('source anomaly Issue renderer', () => {
     expect(payload.body).toContain('Postgraduate courses');
     expect(payload.body).toContain('上一版公开状态已保留');
     expect(payload.body).not.toContain('内容指纹');
+  });
+
+  it('clearly identifies a masters scholarship page identity anomaly', () => {
+    const scholarshipAnomaly = {
+      sourceId: 'scholarships-example-directory',
+      universityId: 'example',
+      sourceUrl: 'https://www.example.ac.uk/scholarships',
+      reason: 'source-changed',
+      detectedAt: '2026-08-31T03:17:00.000Z',
+      monitorMode: 'page-identity',
+      missingRequiredText: ['Scholarships'],
+      retainedTrustedFacts: true,
+      resourceKind: 'masters-scholarship-entry',
+    };
+
+    const payload = anomalyIssuePayload(scholarshipAnomaly);
+    expect(payload.title).toBe('[奖学金入口异常] scholarships-example-directory');
+    expect(payload.body).toContain('硕士奖学金官网入口身份异常');
+    expect(payload.body).toContain('不会自动替换正式入口');
+  });
+
+  it('rejects resource kinds outside the three monitored registries', () => {
+    expect(() => renderAnomalyIssue({ ...anomaly, resourceKind: 'other' })).toThrow(/resourceKind/u);
   });
 });
