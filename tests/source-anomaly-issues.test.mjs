@@ -20,6 +20,29 @@ async function writeWorkspace(root, audit) {
     monitorMode: 'page-identity',
     requiredText: ['Postgraduate courses'],
   }]), 'utf8');
+  await writeFile(join(root, 'src', 'data', 'masters-scholarship-entries.json'), JSON.stringify([
+    {
+      universityId: 'university-three',
+      entryState: 'available',
+      links: [
+        {
+          id: 'scholarships-three-directory',
+          universityId: 'university-three',
+          url: 'https://three.example/scholarships',
+          monitorMode: 'page-identity',
+          requiredText: ['Scholarships'],
+        },
+        {
+          id: 'scholarships-three-search',
+          universityId: 'university-three',
+          url: 'https://three.example/scholarship-search',
+          monitorMode: 'page-identity',
+          requiredText: ['Scholarship Search'],
+        },
+      ],
+    },
+    { universityId: 'icr', entryState: 'no-public-entry', links: [] },
+  ]), 'utf8');
 }
 
 function githubDouble(openIssues = []) {
@@ -143,6 +166,72 @@ describe('daily source anomaly Issue upsert', () => {
       expect(client.createCalls[0].body.split('\n')).toContain('<!-- source-anomaly:china-one -->');
       expect(client.createCalls[0].body).toContain('`' + 'a'.repeat(64) + '`');
       expect(client.createCalls[0].body).toContain('`' + 'b'.repeat(64) + '`');
+    } finally {
+      await rm(root, { recursive: true, force: true });
+    }
+  });
+
+  it('indexes each available grouped scholarship link and renders its scholarship Issue', async () => {
+    const root = await mkdtemp(join(tmpdir(), 'xiaoying-source-issue-scholarship-'));
+    const client = githubDouble();
+    try {
+      await writeWorkspace(root, {
+        candidate: {
+          sourceId: 'scholarships-three-search',
+          health: 'changed',
+          checkedAt: '2026-08-31T03:17:00.000Z',
+          missingRequiredText: ['Scholarship Search'],
+        },
+      });
+
+      await upsertSourceAnomalyIssues({ workspace: root, github: client.github, context });
+
+      expect(client.createCalls).toHaveLength(1);
+      expect(client.createCalls[0].title).toBe('[奖学金入口异常] scholarships-three-search');
+      expect(client.createCalls[0].body).toContain('硕士奖学金官网入口身份异常');
+      expect(client.createCalls[0].body).toContain('不会自动替换正式入口');
+    } finally {
+      await rm(root, { recursive: true, force: true });
+    }
+  });
+
+  it('does not synthesize an Issue for a no-public-entry group', async () => {
+    const root = await mkdtemp(join(tmpdir(), 'xiaoying-source-issue-no-public-'));
+    const client = githubDouble();
+    try {
+      await writeWorkspace(root, {});
+
+      const result = await upsertSourceAnomalyIssues({ workspace: root, github: client.github, context });
+
+      expect(result).toEqual({ candidates: 0, created: 0, updated: 0 });
+      expect(client.createCalls).toHaveLength(0);
+      expect(client.updateCalls).toHaveLength(0);
+    } finally {
+      await rm(root, { recursive: true, force: true });
+    }
+  });
+
+  it('rejects a duplicate ID between a scholarship link and another registry', async () => {
+    const root = await mkdtemp(join(tmpdir(), 'xiaoying-source-issue-duplicate-'));
+    const client = githubDouble();
+    try {
+      await writeWorkspace(root, {});
+      await writeFile(join(root, 'src', 'data', 'masters-scholarship-entries.json'), JSON.stringify([{
+        universityId: 'university-three',
+        entryState: 'available',
+        links: [{
+          id: 'china-one',
+          universityId: 'university-three',
+          url: 'https://three.example/scholarships',
+          monitorMode: 'page-identity',
+          requiredText: ['Scholarships'],
+        }],
+      }]), 'utf8');
+
+      await expect(upsertSourceAnomalyIssues({ workspace: root, github: client.github, context }))
+        .rejects.toThrow(/duplicate source id: china-one/u);
+      expect(client.createCalls).toHaveLength(0);
+      expect(client.updateCalls).toHaveLength(0);
     } finally {
       await rm(root, { recursive: true, force: true });
     }

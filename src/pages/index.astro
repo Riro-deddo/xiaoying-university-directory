@@ -9,6 +9,8 @@ import {
   directoryScopeCopy,
   chinaSourceActionModel,
   institutionRuleTypeCopy,
+  mastersScholarshipActionModel,
+  mastersScholarshipKindCopy,
   officialPanelTitle,
   sourceFreshnessCopy,
   sourceHealthCopy,
@@ -159,11 +161,25 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
                       <small>{sourceHealthCopy[source.status?.health ?? 'unchecked']} · {sourceFreshnessCopy(source.status)}</small>
                     </a>
                   ));
+                  const scholarshipModel = mastersScholarshipActionModel(university.mastersScholarships);
+                  const scholarshipLinks = university.mastersScholarships.links.map((link) => (
+                    <a href={link.url} target="_blank" rel="noopener noreferrer">
+                      <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9"></path><path d="M19 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6"></path></svg>
+                      <span>{link.labelZh}</span>
+                      <small>{link.scopeZh}</small>
+                      {mastersScholarshipKindCopy(link) !== link.scopeZh && (
+                        <small>{mastersScholarshipKindCopy(link)}</small>
+                      )}
+                      {['temporary-error', 'unavailable'].includes(link.status?.health ?? 'unchecked') && (
+                        <small class="scholarship-link-warning">官网入口暂不可用，请稍后重试</small>
+                      )}
+                    </a>
+                  ));
                   return (
                     <Fragment>
                       {sourceModel.collapsed ? (
                         <details class="china-source-bundle">
-                          <summary data-china-source-summary>
+                          <summary data-source-summary>
                             <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9"></path><path d="M19 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6"></path></svg>
                             <span>{sourceModel.label}</span>
                           </summary>
@@ -178,6 +194,29 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
                           <small class="course-link-warning">官网入口暂不可用，请稍后重试</small>
                         )}
                       </a>
+                      {scholarshipModel.entryState === 'no-public-entry' ? (
+                        <span class="masters-scholarship-action">{scholarshipModel.label}</span>
+                      ) : scholarshipModel.collapsed ? (
+                        <details class="masters-scholarship-bundle">
+                          <summary data-source-summary>
+                            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9"></path><path d="M19 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6"></path></svg>
+                            <span>{scholarshipModel.label}</span>
+                          </summary>
+                          <div class="masters-scholarship-bundle-list">{scholarshipLinks}</div>
+                        </details>
+                      ) : (
+                        <a class="masters-scholarship-action" href={university.mastersScholarships.links[0].url} target="_blank" rel="noopener noreferrer">
+                          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9"></path><path d="M19 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6"></path></svg>
+                          <span>{scholarshipModel.label}</span>
+                          <small>{university.mastersScholarships.links[0].scopeZh}</small>
+                          {mastersScholarshipKindCopy(university.mastersScholarships.links[0]) !== university.mastersScholarships.links[0].scopeZh && (
+                            <small>{mastersScholarshipKindCopy(university.mastersScholarships.links[0])}</small>
+                          )}
+                          {['temporary-error', 'unavailable'].includes(university.mastersScholarships.links[0].status?.health ?? 'unchecked') && (
+                            <small class="scholarship-link-warning">官网入口暂不可用，请稍后重试</small>
+                          )}
+                        </a>
+                      )}
                     </Fragment>
                   );
                 })()}
@@ -234,7 +273,7 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
       import { createInstitutionEvidenceSearch, createUniversitySearch, type ReverseIndexEntry } from '../lib/search';
       import { fetchInstitutionSearchData } from '../lib/lazy-institution-data';
       import { directoryRankCopy, directoryScopeCopy, evidenceCopyFor, sourceFreshnessCopy } from '../lib/presentation';
-      import { bindChinaSourceDetailsKeyboard } from '../lib/source-actions';
+      import { bindSourceDetailsKeyboard } from '../lib/source-actions';
       import type { DirectorySort, InstitutionRecord, UniversityState, UniversityWithStatus } from '../lib/types';
 
       const dataNode = document.querySelector<HTMLScriptElement>('#directory-data');
@@ -503,7 +542,7 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
         }
       }
 
-      bindChinaSourceDetailsKeyboard(document);
+      bindSourceDetailsKeyboard(document);
       document.querySelectorAll<HTMLDetailsElement>('.official-list-panel').forEach((panel) => {
         panel.addEventListener('toggle', () => { if (panel.open) void loadOfficialList(panel); });
         panel.querySelector<HTMLButtonElement>('.list-retry')?.addEventListener('click', () => void loadOfficialList(panel));

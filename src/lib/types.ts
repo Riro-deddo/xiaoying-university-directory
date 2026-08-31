@@ -183,6 +183,55 @@ export interface MastersCourseDirectory {
 export type MastersCourseDirectoryWithStatus =
   MastersCourseDirectory & { status?: SourceStatus };
 
+export type MastersScholarshipEntryKind =
+  | 'masters-directory'
+  | 'masters-search'
+  | 'postgraduate-funding'
+  | 'category';
+
+export interface MastersScholarshipLink {
+  id: string;
+  universityId: string;
+  labelZh: '查看硕士奖学金官网';
+  scopeZh: string;
+  kind: MastersScholarshipEntryKind;
+  requiresFiltering: boolean;
+  url: string;
+  pageTitle: string;
+  reviewedAt: string;
+  requiredText: string[];
+  monitorMode: 'page-identity';
+}
+
+export type MastersScholarshipEntryState = 'available' | 'no-public-entry';
+
+interface MastersScholarshipEntryBase {
+  universityId: string;
+  entryState: MastersScholarshipEntryState;
+  reviewedAt: string;
+}
+
+export interface AvailableMastersScholarshipEntry extends MastersScholarshipEntryBase {
+  entryState: 'available';
+  links: MastersScholarshipLink[];
+}
+
+export interface NoPublicMastersScholarshipEntry extends MastersScholarshipEntryBase {
+  entryState: 'no-public-entry';
+  links: [];
+}
+
+export type MastersScholarshipEntry =
+  | AvailableMastersScholarshipEntry
+  | NoPublicMastersScholarshipEntry;
+
+export type MastersScholarshipLinkWithStatus =
+  MastersScholarshipLink & { status?: SourceStatus };
+
+export type MastersScholarshipEntryWithStatus =
+  | (Omit<AvailableMastersScholarshipEntry, 'links'> & { links: MastersScholarshipLinkWithStatus[] })
+  | NoPublicMastersScholarshipEntry;
+
 export interface InstitutionRecord {
   id: string;
   nameZh: string;
@@ -209,11 +258,17 @@ export interface RequirementFact {
 
 export type StatusMap = Record<string, SourceStatus>;
 export type SourceWithStatus = OfficialSourceConfig & { status?: SourceStatus };
-export type UniversityWithStatus = Omit<University, 'sourceIds'> & {
-  sources: SourceWithStatus[];
+export type UniversityWithRankings = University & {
   rankings: Partial<Record<RankingProvider, RankingRecord>>;
 };
+export type UniversityWithStatus = Omit<UniversityWithRankings, 'sourceIds'> & {
+  sources: SourceWithStatus[];
+};
 
-export type UniversityDirectoryRecord = UniversityWithStatus & {
+export type UniversityWithMastersCourse = UniversityWithStatus & {
   mastersCourse: MastersCourseDirectoryWithStatus;
+};
+
+export type UniversityDirectoryRecord = UniversityWithMastersCourse & {
+  mastersScholarships: MastersScholarshipEntryWithStatus;
 };

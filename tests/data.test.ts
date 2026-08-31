@@ -1,5 +1,6 @@
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import mastersCourseDirectories from '../src/data/masters-course-directories.json';
+import mastersScholarshipEntries from '../src/data/masters-scholarship-entries.json';
 import rankings from '../src/data/rankings.json';
 import sources from '../src/data/sources.json';
 import statusesJson from '../src/data/status.json';
@@ -7,6 +8,7 @@ import universitiesJson from '../src/data/universities.json';
 import {
   DataValidationError,
   joinMastersCourseDirectories,
+  joinMastersScholarshipEntries,
   joinUniversityStatuses,
   loadRankings,
   loadUniversities,
@@ -15,6 +17,7 @@ import {
 } from '../src/lib/data';
 import type {
   MastersCourseDirectory,
+  MastersScholarshipEntry,
   OfficialSourceConfig,
   StatusMap,
   University,
@@ -227,7 +230,164 @@ describe('joinMastersCourseDirectories', () => {
   });
 });
 
+describe('joinMastersScholarshipEntries', () => {
+  const directory: MastersCourseDirectory = {
+    id: 'masters-imperial',
+    universityId: validUniversity.id,
+    labelZh: '查看全部硕士课程',
+    url: 'https://www.imperial.ac.uk/study/courses/',
+    pageTitle: 'Postgraduate courses',
+    reviewedAt: '2026-08-11',
+    requiredText: ['Postgraduate courses'],
+    monitorMode: 'page-identity',
+  };
+  const links = [{
+    id: 'scholarships-imperial-directory',
+    universityId: validUniversity.id,
+    labelZh: '查看硕士奖学金官网' as const,
+    scopeZh: '硕士奖学金官方目录',
+    kind: 'masters-directory' as const,
+    requiresFiltering: false,
+    url: 'https://www.imperial.ac.uk/study/fees-and-funding/postgraduate/',
+    pageTitle: 'Postgraduate fees and funding',
+    reviewedAt: '2026-08-31',
+    requiredText: ['Postgraduate', 'Scholarships'],
+    monitorMode: 'page-identity' as const,
+  }, {
+    id: 'scholarships-imperial-search',
+    universityId: validUniversity.id,
+    labelZh: '查看硕士奖学金官网' as const,
+    scopeZh: '硕士奖学金官方搜索器',
+    kind: 'masters-search' as const,
+    requiresFiltering: false,
+    url: 'https://www.imperial.ac.uk/study/fees-and-funding/postgraduate/search/',
+    pageTitle: 'Scholarships search',
+    reviewedAt: '2026-08-31',
+    requiredText: ['Scholarships', 'Search'],
+    monitorMode: 'page-identity' as const,
+  }];
+  const availableEntry: MastersScholarshipEntry = {
+    universityId: validUniversity.id,
+    entryState: 'available',
+    reviewedAt: '2026-08-31',
+    links,
+  };
+  const scholarshipStatuses: StatusMap = {
+    [links[0].id]: { sourceId: links[0].id, health: 'ok', checkedAt: '2026-08-31T03:00:00.000Z' },
+    [links[1].id]: { sourceId: links[1].id, health: 'changed', checkedAt: '2026-08-31T03:01:00.000Z' },
+  };
+
+  function courseJoinedUniversities() {
+    return joinMastersCourseDirectories(
+      joinUniversityStatuses([validUniversity], [validSource], {}),
+      [directory],
+      {},
+    );
+  }
+
+  it('joins each available scholarship link to only its own status without mutating inputs', () => {
+    const universityRecords = courseJoinedUniversities();
+    const originalUniversities = structuredClone(universityRecords);
+    const originalEntries = structuredClone([availableEntry]);
+
+    const [joined] = joinMastersScholarshipEntries(
+      universityRecords,
+      [availableEntry],
+      scholarshipStatuses,
+    );
+
+    expect(joined.mastersScholarships).toEqual({
+      universityId: validUniversity.id,
+      entryState: availableEntry.entryState,
+      reviewedAt: availableEntry.reviewedAt,
+      links: links.map((link) => ({ ...link, status: scholarshipStatuses[link.id] })),
+    });
+    expect(universityRecords).toEqual(originalUniversities);
+    expect([availableEntry]).toEqual(originalEntries);
+  });
+
+  it('preserves a no-public-entry state and date with zero links and no status lookup', () => {
+    const noPublicEntry: MastersScholarshipEntry = {
+      universityId: validUniversity.id,
+      entryState: 'no-public-entry',
+      reviewedAt: '2026-08-30',
+      links: [],
+    };
+    const noLookupStatuses = new Proxy({} as StatusMap, {
+      get() {
+        throw new Error('no-public-entry must not look up a link status');
+      },
+    });
+
+    const [joined] = joinMastersScholarshipEntries(
+      courseJoinedUniversities(),
+      [noPublicEntry],
+      noLookupStatuses,
+    );
+
+    expect(joined.mastersScholarships).toEqual(noPublicEntry);
+  });
+
+  it.each([
+    ['missing', [], /missing.*imperial/i],
+    ['extra', [
+      availableEntry,
+      { ...availableEntry, universityId: 'extra', links: [] },
+    ], /extra.*extra/i],
+    ['duplicate', [
+      availableEntry,
+      { ...availableEntry, reviewedAt: '2026-08-30' },
+    ], /duplicate.*imperial/i],
+  ])('rejects a %s scholarship group mapping', (_case, entries, error) => {
+    expect(() => joinMastersScholarshipEntries(
+      courseJoinedUniversities(),
+      entries as MastersScholarshipEntry[],
+      scholarshipStatuses,
+    )).toThrow(error);
+  });
+
+  it('does not borrow a group or unrelated-link status for an available link', () => {
+    const isolatedStatuses: StatusMap = {
+      [validUniversity.id]: { sourceId: validUniversity.id, health: 'unavailable' },
+      'scholarships-other-directory': { sourceId: 'scholarships-other-directory', health: 'temporary-error' },
+    };
+
+    const [joined] = joinMastersScholarshipEntries(
+      courseJoinedUniversities(),
+      [availableEntry],
+      isolatedStatuses,
+    );
+
+    expect(joined.mastersScholarships.links.every((link) => link.status === undefined)).toBe(true);
+  });
+});
+
 describe('QS 2027 starter ranks', () => {
+  it('validates rankings before joining China sources when both inputs would fail', async () => {
+    const invalidRankings = {
+      ...rankings,
+      records: rankings.records.filter((record) => record.universityId !== 'imperial-college-london'),
+    };
+    const imperial = universitiesJson.find((university) => university.id === 'imperial-college-london')!;
+    const imperialSourceIds = new Set<string>(imperial.sourceIds);
+    const invalidSources = sources.filter((source) => !imperialSourceIds.has(source.id));
+
+    vi.resetModules();
+    vi.doMock('../src/data/rankings.json', () => ({ default: invalidRankings }));
+    vi.doMock('../src/data/sources.json', () => ({ default: invalidSources }));
+    try {
+      const { loadUniversities: loadUniversitiesWithInvalidInputs } = await import('../src/lib/data');
+
+      expect(() => loadUniversitiesWithInvalidInputs()).toThrow(expect.objectContaining({
+        dataset: 'Ranking',
+      }));
+    } finally {
+      vi.doUnmock('../src/data/rankings.json');
+      vi.doUnmock('../src/data/sources.json');
+      vi.resetModules();
+    }
+  });
+
   it('matches the published QS 2027 positions', () => {
     const ranks = Object.fromEntries(
       loadUniversities()
@@ -254,6 +414,9 @@ describe('explicit directory scope', () => {
     expect(new Set(loaded.map((university) => university.id)))
       .toEqual(new Set(mastersCourseDirectories.map((directory) => directory.universityId)));
     expect(loaded.every((university) => university.mastersCourse.universityId === university.id)).toBe(true);
+    expect(loaded.every((university) => university.mastersScholarships.universityId === university.id)).toBe(true);
+    expect(new Set(loaded.map((university) => university.mastersScholarships.universityId)))
+      .toEqual(new Set(mastersScholarshipEntries.map((entry) => entry.universityId)));
     expect(loaded.every((university) => university.sources.every((source) => !source.id.startsWith('masters-'))))
       .toBe(true);
 

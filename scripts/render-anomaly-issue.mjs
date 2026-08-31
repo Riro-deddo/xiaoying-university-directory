@@ -1,5 +1,10 @@
 const sourceIdPattern = /^[a-z0-9][a-z0-9._-]*$/u;
 const contentHashPattern = /^[a-f0-9]{64}$/u;
+const resourceKinds = new Set([
+  'china-rule-source',
+  'masters-course-entry',
+  'masters-scholarship-entry',
+]);
 
 function validateAnomaly(anomaly) {
   if (!anomaly || typeof anomaly !== 'object') throw new TypeError('anomaly must be an object');
@@ -7,6 +12,9 @@ function validateAnomaly(anomaly) {
   if (!sourceIdPattern.test(anomaly.universityId ?? '')) throw new TypeError('universityId must be a safe stable identifier');
   if (!sourceIdPattern.test(anomaly.reason ?? '')) throw new TypeError('reason must be a safe stable identifier');
   if (anomaly.retainedTrustedFacts !== true) throw new TypeError('retainedTrustedFacts must be true');
+  if (!resourceKinds.has(anomaly.resourceKind)) {
+    throw new TypeError('resourceKind must identify a monitored registry');
+  }
   if (anomaly.monitorMode !== undefined && anomaly.monitorMode !== 'page-identity') {
     throw new TypeError('monitorMode must be page-identity when supplied');
   }
@@ -35,6 +43,30 @@ function validateAnomaly(anomaly) {
 
 export function renderAnomalyIssue(anomaly) {
   validateAnomaly(anomaly);
+  if (anomaly.resourceKind === 'masters-scholarship-entry') {
+    const missingAnchors = anomaly.missingRequiredText?.length
+      ? anomaly.missingRequiredText.map((text) => `- \`${text}\``).join('\n')
+      : '本次异常不是由正文锚点缺失触发。';
+    return `<!-- source-anomaly:${anomaly.sourceId} -->
+## 硕士奖学金官网入口身份异常
+
+| 项目 | 内容 |
+| --- | --- |
+| 入口 ID | \`${anomaly.sourceId}\` |
+| 大学 ID | \`${anomaly.universityId}\` |
+| 官方奖学金入口 | ${anomaly.sourceUrl} |
+| 异常原因 | \`${anomaly.reason}\` |
+| 检测时间 | ${anomaly.detectedAt ?? '未记录'} |
+
+### 缺失的页面身份锚点
+
+${missingAnchors}
+
+上一版公开状态已保留；自动巡查不会自动替换正式入口或改写奖学金数据。
+
+请人工检查官网入口、跳转结果或页面身份锚点，确认后再更新受审数据。本 Issue 不代表奖学金资格结论。
+`;
+  }
   if (anomaly.monitorMode === 'page-identity') {
     const missingAnchors = anomaly.missingRequiredText?.length
       ? anomaly.missingRequiredText.map((text) => `- \`${text}\``).join('\n')
@@ -83,7 +115,9 @@ export function anomalyIssuePayload(anomaly) {
   return {
     key: `source-anomaly:${anomaly.sourceId}`,
     title: anomaly.monitorMode === 'page-identity'
-      ? `[课程入口异常] ${anomaly.sourceId}`
+      ? anomaly.resourceKind === 'masters-scholarship-entry'
+        ? `[奖学金入口异常] ${anomaly.sourceId}`
+        : `[课程入口异常] ${anomaly.sourceId}`
       : `[数据异常] ${anomaly.sourceId}`,
     body: renderAnomalyIssue(anomaly),
   };

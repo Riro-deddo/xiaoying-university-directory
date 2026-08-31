@@ -1,5 +1,5 @@
-export function bindChinaSourceDetailsKeyboard(root: ParentNode): void {
-  root.querySelectorAll<HTMLElement>('[data-china-source-summary]').forEach((summary) => {
+export function bindSourceDetailsKeyboard(root: ParentNode): void {
+  root.querySelectorAll<HTMLElement>('[data-source-summary]').forEach((summary) => {
     summary.addEventListener('keydown', (event) => {
       if (event.key !== 'Enter' && event.key !== ' ') return;
 

@@ -3,7 +3,11 @@ import { mkdtemp, readFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { describe, expect, it, vi } from 'vitest';
-import { loadCheckTargets, runSourceChecks } from '../scripts/check-sources.mjs';
+import {
+  flattenMastersScholarshipLinks,
+  loadCheckTargets,
+  runSourceChecks,
+} from '../scripts/check-sources.mjs';
 
 const acceptedRequirementsHash = '073161e41bae112ec5f0bfbaf37abef49c5126b3292fd7a167cefe4a5ddf2c0c';
 const observedRequirementsHash = 'c41057ea19a882bf56861a2807edaab496db5baf9042189c59c0db39f2b27fe0';
@@ -11,7 +15,7 @@ const now1 = new Date('2026-08-08T03:17:00.000Z');
 const now2 = new Date('2026-08-09T03:17:00.000Z');
 
 describe('check-sources command', () => {
-  it('merges China sources before masters directories and rejects duplicate target IDs', () => {
+  it('flattens only available scholarship links after China sources and masters directories', async () => {
     const chinaSources = [
       { id: 'china-one', universityId: 'one', url: 'https://one.example/china' },
       { id: 'china-two', universityId: 'two', url: 'https://two.example/china' },
@@ -19,34 +23,94 @@ describe('check-sources command', () => {
     const mastersCourseDirectories = [
       { id: 'masters-one', universityId: 'one', url: 'https://one.example/masters' },
     ];
+    const availableLinks = [
+      { id: 'scholarships-one-directory', universityId: 'one', url: 'https://one.example/scholarships' },
+      { id: 'scholarships-one-search', universityId: 'one', url: 'https://one.example/scholarship-search' },
+    ];
+    const mastersScholarshipEntries = [
+      { universityId: 'one', entryState: 'available', links: availableLinks },
+      { universityId: 'icr', entryState: 'no-public-entry', links: [] },
+    ];
 
-    expect(loadCheckTargets({ chinaSources, mastersCourseDirectories }))
-      .toEqual([...chinaSources, ...mastersCourseDirectories]);
+    expect(flattenMastersScholarshipLinks(mastersScholarshipEntries)).toEqual(availableLinks);
+    expect(loadCheckTargets({ chinaSources, mastersCourseDirectories, mastersScholarshipEntries }))
+      .toEqual([...chinaSources, ...mastersCourseDirectories, ...availableLinks]);
+
+    const temporaryRoot = await mkdtemp(join(tmpdir(), 'xiaoying-no-public-entry-'));
+    const fetchImpl = vi.fn();
+    try {
+      const noPublicResult = await runSourceChecks({
+        root: temporaryRoot,
+        chinaSources: [],
+        mastersCourseDirectories: [],
+        mastersScholarshipEntries: [mastersScholarshipEntries[1]],
+        previous: {},
+        fetchImpl,
+        minimumGapMs: 0,
+      });
+      expect(noPublicResult.attempts).toEqual({});
+      expect(fetchImpl).not.toHaveBeenCalled();
+    } finally {
+      await rm(temporaryRoot, { recursive: true, force: true });
+    }
+  });
+
+  it('rejects duplicate target IDs across registries before any network request', async () => {
+    const temporaryRoot = await mkdtemp(join(tmpdir(), 'xiaoying-duplicate-preflight-'));
+    const fetchImpl = vi.fn();
+    try {
+      await expect(runSourceChecks({
+        root: temporaryRoot,
+        chinaSources: [{ id: 'shared-id', universityId: 'one', url: 'https://one.example/china' }],
+        mastersCourseDirectories: [],
+        mastersScholarshipEntries: [{
+          universityId: 'two',
+          entryState: 'available',
+          links: [{ id: 'shared-id', universityId: 'two', url: 'https://two.example/scholarships' }],
+        }],
+        previous: {},
+        fetchImpl,
+        minimumGapMs: 0,
+      })).rejects.toThrow(/duplicate check target id: shared-id/u);
+
+      expect(fetchImpl).not.toHaveBeenCalled();
+    } finally {
+      await rm(temporaryRoot, { recursive: true, force: true });
+    }
+  });
+
+  it('rejects duplicate target IDs within the scholarship registry', () => {
+    const duplicate = { id: 'scholarships-duplicate', universityId: 'one', url: 'https://one.example/scholarships' };
     expect(() => loadCheckTargets({
-      chinaSources,
-      mastersCourseDirectories: [{ ...mastersCourseDirectories[0], id: 'china-two' }],
-    })).toThrow(/duplicate check target id: china-two/u);
+      chinaSources: [],
+      mastersCourseDirectories: [],
+      mastersScholarshipEntries: [
+        { universityId: 'one', entryState: 'available', links: [duplicate] },
+        { universityId: 'two', entryState: 'available', links: [{ ...duplicate, universityId: 'two' }] },
+      ],
+    })).toThrow(/duplicate check target id: scholarships-duplicate/u);
   });
 
   it('rejects a non-HTTPS target before any check runs', () => {
     expect(() => loadCheckTargets({
       chinaSources: [{ id: 'china-one', universityId: 'one', url: 'http://one.example/china' }],
       mastersCourseDirectories: [],
+      mastersScholarshipEntries: [],
     })).toThrow(/HTTPS/u);
   });
 
-  it('does not persist an ordinary page identity timestamp refresh', async () => {
+  it('audits but does not persist an ordinary scholarship page identity timestamp refresh', async () => {
     const temporaryRoot = await mkdtemp(join(tmpdir(), 'xiaoying-page-identity-noise-'));
     const source = {
-      id: 'masters-one',
+      id: 'scholarships-one-directory',
       universityId: 'one',
       url: 'https://one.example/masters',
       monitorMode: 'page-identity',
       requiredText: ['Postgraduate courses'],
     };
     const previousStatus = {
-      'masters-one': {
-        sourceId: 'masters-one',
+      'scholarships-one-directory': {
+        sourceId: 'scholarships-one-directory',
         health: 'ok',
         checkedAt: now1.toISOString(),
         lastSuccessfulAt: now1.toISOString(),
@@ -59,7 +123,9 @@ describe('check-sources command', () => {
     try {
       const result = await runSourceChecks({
         root: temporaryRoot,
-        sources: [source],
+        chinaSources: [],
+        mastersCourseDirectories: [],
+        mastersScholarshipEntries: [{ universityId: 'one', entryState: 'available', links: [source] }],
         previous: previousStatus,
         fetchImpl: vi.fn().mockResolvedValue(new Response('<h1>Postgraduate courses</h1>', { status: 200 })),
         now: now2,
@@ -68,11 +134,64 @@ describe('check-sources command', () => {
 
       expect(result.statusChanged).toBe(false);
       expect(result.status).toEqual(previousStatus);
-      expect(result.attempts['masters-one']).toMatchObject({
+      expect(result.attempts['scholarships-one-directory']).toMatchObject({
         checkedAt: now2.toISOString(),
         lastSuccessfulAt: now2.toISOString(),
       });
+      const audit = JSON.parse(await readFile(join(temporaryRoot, 'artifacts', 'source-audit.json'), 'utf8'));
+      expect(audit['scholarships-one-directory'].lastSuccessfulAt).toBe(now2.toISOString());
       expect(existsSync(join(temporaryRoot, 'src', 'data', 'status.json'))).toBe(false);
+    } finally {
+      await rm(temporaryRoot, { recursive: true, force: true });
+    }
+  });
+
+  it('audits a failed scholarship link and still checks the next scholarship link', async () => {
+    const temporaryRoot = await mkdtemp(join(tmpdir(), 'xiaoying-scholarship-continuation-'));
+    const links = [
+      {
+        id: 'scholarships-one-directory',
+        universityId: 'one',
+        url: 'https://one.example/scholarships',
+        monitorMode: 'page-identity',
+        requiredText: ['Scholarships', 'Postgraduate'],
+      },
+      {
+        id: 'scholarships-two-search',
+        universityId: 'two',
+        url: 'https://two.example/scholarships',
+        monitorMode: 'page-identity',
+        requiredText: ['Scholarship Search', 'Study level'],
+      },
+    ];
+    const fetchImpl = vi.fn()
+      .mockResolvedValueOnce(new Response('temporarily unavailable', { status: 503 }))
+      .mockResolvedValueOnce(new Response('<h1>Scholarship Search</h1><label>Study level</label>', { status: 200 }));
+
+    try {
+      const result = await runSourceChecks({
+        root: temporaryRoot,
+        chinaSources: [],
+        mastersCourseDirectories: [],
+        mastersScholarshipEntries: [{ universityId: 'one', entryState: 'available', links }],
+        previous: {},
+        fetchImpl,
+        now: now2,
+        minimumGapMs: 0,
+      });
+
+      expect(fetchImpl).toHaveBeenCalledTimes(2);
+      expect(result.attempts['scholarships-one-directory']).toMatchObject({
+        health: 'unchecked',
+        httpStatus: 503,
+        consecutiveFailures: 1,
+      });
+      expect(result.attempts['scholarships-two-search']).toMatchObject({
+        health: 'ok',
+        consecutiveFailures: 0,
+      });
+      const audit = JSON.parse(await readFile(join(temporaryRoot, 'artifacts', 'source-audit.json'), 'utf8'));
+      expect(Object.keys(audit)).toEqual(['scholarships-one-directory', 'scholarships-two-search']);
     } finally {
       await rm(temporaryRoot, { recursive: true, force: true });
     }

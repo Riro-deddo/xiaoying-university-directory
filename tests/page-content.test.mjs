@@ -178,20 +178,37 @@ describe('dual-direction search page', () => {
   it('extends the existing source action group without adding a seventh directory column', () => {
     expect(page).toContain('chinaSourceActionModel(university.sources)');
     expect(page).toContain('<details class="china-source-bundle">');
-    expect(page).toContain('data-china-source-summary');
-    expect(page).toContain("import { bindChinaSourceDetailsKeyboard } from '../lib/source-actions'");
-    expect(page).toContain('bindChinaSourceDetailsKeyboard(document)');
+    expect(page).toContain('data-source-summary');
+    expect(page).toContain("import { bindSourceDetailsKeyboard } from '../lib/source-actions'");
+    expect(page).toContain('bindSourceDetailsKeyboard(document)');
     expect(page).toContain('class="masters-course-action"');
     expect(page).toContain('查看全部硕士课程');
     expect(page).toContain('硕士专业官网入口');
     expect(page).toContain("['temporary-error', 'unavailable'].includes(university.mastersCourse.status?.health ?? 'unchecked')");
     expect(page).toContain('官网入口暂不可用，请稍后重试');
+    expect(page).toContain('mastersScholarshipActionModel(university.mastersScholarships)');
+    expect(page).toContain('mastersScholarshipKindCopy(link)');
+    expect(page).toContain('class="masters-scholarship-bundle"');
+    expect(page).toContain('class="masters-scholarship-action"');
+    expect(presentation).toContain("label: '未发现公开硕士奖学金入口'");
     expect(page).toContain('<span>来源 / 操作</span>');
     expect(page).not.toContain('<span>硕士课程</span>');
+    expect(page).not.toContain('<span>硕士奖学金</span>');
   });
 });
 
 describe('published methodology and contributor guidance', () => {
+  it('explains the navigation-only scope of official masters scholarship entries', () => {
+    for (const phrase of [
+      '官方硕士奖学金入口',
+      '不代表奖学金正在开放',
+      '不代表用户符合条件或能够获奖',
+      '具体项目、金额、资格、申请方式和期限全部以大学官网当时显示的信息为准',
+    ]) {
+      expect(`${readme}\n${methodology}`).toContain(phrase);
+    }
+  });
+
   it('defines pending evidence as unavailable public verification rather than unreviewed', () => {
     expect(methodology).toContain('<dt>官网暂无可核验规则</dt>');
     expect(methodology).toContain('已核查当前公开官网');

@@ -1,9 +1,17 @@
 import { parseHTML } from 'linkedom';
 import { beforeAll, describe, expect, it } from 'vitest';
 import { loadUniversities } from '../src/lib/data';
-import { chinaSourceActionModel } from '../src/lib/presentation';
-import { bindChinaSourceDetailsKeyboard } from '../src/lib/source-actions';
-import type { SourceWithStatus } from '../src/lib/types';
+import {
+  chinaSourceActionModel,
+  mastersScholarshipActionModel,
+  mastersScholarshipKindCopy,
+} from '../src/lib/presentation';
+import { bindSourceDetailsKeyboard } from '../src/lib/source-actions';
+import type {
+  MastersScholarshipEntryWithStatus,
+  MastersScholarshipLink,
+  SourceWithStatus,
+} from '../src/lib/types';
 
 function source(id: string): SourceWithStatus {
   return {
@@ -29,6 +37,26 @@ function source(id: string): SourceWithStatus {
   };
 }
 
+function scholarshipLink(
+  id: string,
+  overrides: Partial<MastersScholarshipLink> = {},
+): MastersScholarshipLink {
+  return {
+    id,
+    universityId: 'example-university',
+    labelZh: '查看硕士奖学金官网',
+    scopeZh: '硕士奖学金官方目录',
+    kind: 'masters-directory',
+    requiresFiltering: false,
+    url: `https://example.edu/${id}`,
+    pageTitle: 'Scholarships',
+    reviewedAt: '2026-08-31',
+    requiredText: ['Scholarships', 'Masters'],
+    monitorMode: 'page-identity',
+    ...overrides,
+  };
+}
+
 describe('China source action model', () => {
   it('keeps fewer than three China sources as peer links', () => {
     expect(chinaSourceActionModel([source('a'), source('b')])).toEqual({
@@ -44,6 +72,61 @@ describe('China source action model', () => {
       count: 3,
       label: '中国硕士入学要求（3 条）',
     });
+  });
+});
+
+describe('masters scholarship action model', () => {
+  it('renders one available link as a direct scholarship action', () => {
+    expect(mastersScholarshipActionModel({
+      universityId: 'one',
+      entryState: 'available',
+      reviewedAt: '2026-08-31',
+      links: [scholarshipLink('one')],
+    })).toEqual({
+      entryState: 'available',
+      collapsed: false,
+      count: 1,
+      label: '查看硕士奖学金官网',
+    });
+  });
+
+  it('collapses multiple available links under their exact entry count', () => {
+    expect(mastersScholarshipActionModel({
+      universityId: 'one',
+      entryState: 'available',
+      reviewedAt: '2026-08-31',
+      links: [scholarshipLink('one'), scholarshipLink('two')],
+    })).toEqual({
+      entryState: 'available',
+      collapsed: true,
+      count: 2,
+      label: '查看硕士奖学金官网（2 个入口）',
+    });
+  });
+
+  it('models no public entry as a non-clickable unavailable action', () => {
+    const entry: MastersScholarshipEntryWithStatus = {
+      universityId: 'one',
+      entryState: 'no-public-entry',
+      reviewedAt: '2026-08-31',
+      links: [],
+    };
+    expect(mastersScholarshipActionModel(entry)).toEqual({
+      entryState: 'no-public-entry',
+      collapsed: false,
+      count: 0,
+      label: '未发现公开硕士奖学金入口',
+    });
+  });
+
+  it.each([
+    ['masters-directory', false, '官方奖学金目录'],
+    ['masters-search', false, '官方奖学金搜索器'],
+    ['postgraduate-funding', false, '研究生资助官网'],
+    ['category', false, '官方分类资助入口'],
+    ['postgraduate-funding', true, '研究生资助官网（含硕士，请筛选）'],
+  ] as const)('renders %s kind copy with filtering=%s', (kind, requiresFiltering, expected) => {
+    expect(mastersScholarshipKindCopy(scholarshipLink('kind', { kind, requiresFiltering }))).toBe(expected);
   });
 });
 
@@ -83,26 +166,83 @@ describe('rendered source actions', () => {
     }
   });
 
+  it('renders exactly one scholarship action root per row and all 106 available links', () => {
+    const roots = [...document.querySelectorAll<HTMLElement>(
+      '.university-row > .source-actions > :is(.masters-scholarship-action, .masters-scholarship-bundle)',
+    )];
+    const links = [...document.querySelectorAll<HTMLAnchorElement>(
+      '.masters-scholarship-action[href], .masters-scholarship-bundle-list > a',
+    )];
+    const availableLinks = universities.flatMap((university) => university.mastersScholarships.links);
+
+    expect(roots).toHaveLength(101);
+    expect(new Set(roots.map((root) => root.closest<HTMLElement>('.university-row')?.dataset.id)).size).toBe(101);
+    expect(links).toHaveLength(106);
+    expect(links.map((link) => link.getAttribute('href')).sort()).toEqual(availableLinks.map((link) => link.url).sort());
+  });
+
+  it('renders Imperial as an ordinary direct scholarship link after its masters-course action', () => {
+    const imperial = document.querySelector<HTMLElement>('[data-id="imperial-college-london"]')!;
+    const actionGroup = imperial.querySelector<HTMLElement>('.source-actions')!;
+    const expected = universities.find((university) => university.id === 'imperial-college-london')!
+      .mastersScholarships.links[0]!;
+    const action = actionGroup.querySelector<HTMLAnchorElement>(':scope > a.masters-scholarship-action')!;
+
+    expect(actionGroup.children.item(actionGroup.children.length - 2)?.classList.contains('masters-course-action')).toBe(true);
+    expect(actionGroup.lastElementChild).toBe(action);
+    expect(action.href).toBe(expected.url);
+    expect(action.querySelector('span')?.textContent).toBe('查看硕士奖学金官网');
+    expect([...action.querySelectorAll('small')].map((item) => item.textContent)).toEqual([
+      expected.scopeZh,
+      '官方奖学金目录',
+    ]);
+  });
+
+  it('renders ICR unavailable copy without a link, disclosure, or timestamp', () => {
+    const icr = document.querySelector<HTMLElement>('[data-id="institute-of-cancer-research-london"]')!;
+    const actionGroup = icr.querySelector<HTMLElement>('.source-actions')!;
+    const action = actionGroup.querySelector<HTMLElement>(':scope > .masters-scholarship-action')!;
+
+    expect(action.tagName).toBe('SPAN');
+    expect(action.textContent).toBe('未发现公开硕士奖学金入口');
+    expect(action.querySelector('a, details')).toBeNull();
+    expect(action.textContent).not.toMatch(/2026|最近|检查/u);
+  });
+
+  it('shows the mandatory masters filtering copy on Oxford direct action', () => {
+    const oxford = document.querySelector<HTMLElement>('[data-id="university-of-oxford"]')!;
+    const action = oxford.querySelector<HTMLAnchorElement>('.masters-scholarship-action[href]')!;
+
+    expect(action.textContent).toContain('含硕士，请筛选');
+    expect([...action.querySelectorAll('small')].map((item) => item.textContent)).toEqual([
+      '研究生资助官网（含硕士，请筛选）',
+    ]);
+    expect(action.textContent).not.toMatch(/2026|最近|检查/u);
+  });
+
   it('keeps Imperial source links and its masters entry as peer actions', () => {
     const imperial = document.querySelector<HTMLElement>('[data-id="imperial-college-london"]')!;
     const actionGroup = imperial.querySelector<HTMLElement>('.source-actions')!;
     const expected = universities.find((university) => university.id === 'imperial-college-london')!;
     const directSourceLinks = [...actionGroup.children]
-      .filter((child): child is HTMLAnchorElement => child.matches('a:not(.masters-course-action)'));
+      .filter((child): child is HTMLAnchorElement => child.matches(
+        'a:not(.masters-course-action):not(.masters-scholarship-action)',
+      ));
 
     expect(actionGroup.querySelector('details')).toBeNull();
     expect(directSourceLinks.map((link) => link.href)).toEqual(expected.sources.map((item) => item.url));
     expect([...actionGroup.children].filter((child) => child.matches('.masters-course-action'))).toHaveLength(1);
+    expect([...actionGroup.children].filter((child) => child.matches('.masters-scholarship-action'))).toHaveLength(1);
   });
 
-  it('runs the real Manchester keyboard listener while preserving focus and all three exact sources', () => {
+  it('runs the real generic keyboard listener for China and scholarship disclosures without losing focus', () => {
     const manchester = document.querySelector<HTMLElement>('[data-id="university-of-manchester"]')!;
     const actionGroup = manchester.querySelector<HTMLElement>('.source-actions')!;
     const details = actionGroup.querySelector<HTMLDetailsElement>(':scope > details.china-source-bundle')!;
     const summary = details.querySelector<HTMLElement>(':scope > summary')!;
     const expected = universities.find((university) => university.id === 'university-of-manchester')!.sources;
 
-    expect([...actionGroup.children].map((child) => child.tagName)).toEqual(['DETAILS', 'A']);
+    expect([...actionGroup.children].map((child) => child.tagName)).toEqual(['DETAILS', 'A', 'A']);
     expect(Boolean(details.open)).toBe(false);
     expect(summary.textContent).toBe('中国硕士入学要求（3 条）');
     expect(summary.parentElement).toBe(details);
@@ -117,7 +257,7 @@ describe('rendered source actions', () => {
     summary.addEventListener('focus', () => { focusedElement = summary; });
     summary.addEventListener('blur', () => { focusedElement = null; });
     summary.focus();
-    bindChinaSourceDetailsKeyboard(document);
+    bindSourceDetailsKeyboard(document);
 
     const keydown = (key: string) => {
       const event = new document.defaultView!.Event('keydown', {
@@ -150,5 +290,44 @@ describe('rendered source actions', () => {
     expect(details.open).toBe(false);
     expect(arrowDown.defaultPrevented).toBe(false);
     expect(document.activeElement).toBe(summary);
+
+    const lstm = document.querySelector<HTMLElement>('[data-id="liverpool-school-of-tropical-medicine"]')!;
+    const scholarshipDetails = lstm.querySelector<HTMLDetailsElement>('.masters-scholarship-bundle')!;
+    const scholarshipSummary = scholarshipDetails.querySelector<HTMLElement>(':scope > summary')!;
+    const scholarshipExpected = universities.find(
+      (university) => university.id === 'liverpool-school-of-tropical-medicine',
+    )!.mastersScholarships.links;
+
+    scholarshipSummary.addEventListener('focus', () => { focusedElement = scholarshipSummary; });
+    scholarshipSummary.addEventListener('blur', () => { focusedElement = null; });
+    scholarshipSummary.focus();
+    const scholarshipKeydown = (key: string) => {
+      const event = new document.defaultView!.Event('keydown', { bubbles: true, cancelable: true }) as KeyboardEvent;
+      Object.defineProperty(event, 'key', { value: key });
+      scholarshipSummary.dispatchEvent(event);
+      return event;
+    };
+
+    const scholarshipEnter = scholarshipKeydown('Enter');
+    expect(scholarshipDetails.open).toBe(true);
+    expect(scholarshipEnter.defaultPrevented).toBe(true);
+    expect(document.activeElement).toBe(scholarshipSummary);
+    expect(scholarshipSummary.textContent).toBe('查看硕士奖学金官网（2 个入口）');
+    expect([...scholarshipDetails.querySelectorAll<HTMLAnchorElement>('.masters-scholarship-bundle-list > a')]
+      .map((link) => ({ href: link.href, text: link.textContent })))
+      .toEqual(scholarshipExpected.map((link) => ({
+        href: link.url,
+        text: `${link.labelZh}${link.scopeZh}官方分类资助入口（含硕士，请筛选）`,
+      })));
+
+    const scholarshipSpace = scholarshipKeydown(' ');
+    expect(scholarshipDetails.open).toBe(false);
+    expect(scholarshipSpace.defaultPrevented).toBe(true);
+    expect(document.activeElement).toBe(scholarshipSummary);
+
+    const scholarshipArrowDown = scholarshipKeydown('ArrowDown');
+    expect(scholarshipDetails.open).toBe(false);
+    expect(scholarshipArrowDown.defaultPrevented).toBe(false);
+    expect(document.activeElement).toBe(scholarshipSummary);
   });
 });

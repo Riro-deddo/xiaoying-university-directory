@@ -42,8 +42,20 @@ async function writeJsonAtomically(path, value) {
   await rename(candidatePath, path);
 }
 
-export function loadCheckTargets({ chinaSources, mastersCourseDirectories }) {
-  const targets = [...chinaSources, ...mastersCourseDirectories];
+export function flattenMastersScholarshipLinks(entries) {
+  return entries.flatMap((entry) => entry.entryState === 'available' ? entry.links : []);
+}
+
+export function loadCheckTargets({
+  chinaSources = [],
+  mastersCourseDirectories = [],
+  mastersScholarshipEntries = [],
+}) {
+  const targets = [
+    ...chinaSources,
+    ...mastersCourseDirectories,
+    ...flattenMastersScholarshipLinks(mastersScholarshipEntries),
+  ];
   const ids = new Set();
   for (const target of targets) {
     if (ids.has(target.id)) throw new TypeError(`duplicate check target id: ${target.id}`);
@@ -66,14 +78,22 @@ export async function runSourceChecks(options = {}) {
   const sourcesPath = options.sourcesPath ?? join(root, 'src', 'data', 'sources.json');
   const mastersCourseDirectoriesPath = options.mastersCourseDirectoriesPath
     ?? join(root, 'src', 'data', 'masters-course-directories.json');
+  const mastersScholarshipEntriesPath = options.mastersScholarshipEntriesPath
+    ?? join(root, 'src', 'data', 'masters-scholarship-entries.json');
   const statusPath = options.statusPath ?? join(root, 'src', 'data', 'status.json');
   const auditPath = options.auditPath ?? join(root, 'artifacts', 'source-audit.json');
   const sources = options.sources
-    ? loadCheckTargets({ chinaSources: options.sources, mastersCourseDirectories: [] })
+    ? loadCheckTargets({
+      chinaSources: options.sources,
+      mastersCourseDirectories: [],
+      mastersScholarshipEntries: [],
+    })
     : loadCheckTargets({
       chinaSources: options.chinaSources ?? JSON.parse(await readFile(sourcesPath, 'utf8')),
       mastersCourseDirectories: options.mastersCourseDirectories
         ?? JSON.parse(await readFile(mastersCourseDirectoriesPath, 'utf8')),
+      mastersScholarshipEntries: options.mastersScholarshipEntries
+        ?? JSON.parse(await readFile(mastersScholarshipEntriesPath, 'utf8')),
     });
   const previous = options.previous ?? JSON.parse(await readFile(statusPath, 'utf8'));
   const fetchImpl = options.fetchImpl ?? fetch;

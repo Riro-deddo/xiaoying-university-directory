@@ -210,11 +210,13 @@ describe('guarded daily source workflow', () => {
     expect(positions).toEqual([...positions].sort((a, b) => a - b));
   });
 
-  it('checks both official-link registries with Lychee', () => {
+  it('checks all official-link registries with Lychee without failing the patrol', () => {
     const lycheeStep = dailyStepContaining('lycheeverse/lychee-action');
 
     expect(lycheeStep).toContain('src/data/sources.json');
     expect(lycheeStep).toContain('src/data/masters-course-directories.json');
+    expect(lycheeStep).toContain('src/data/masters-scholarship-entries.json');
+    expect(lycheeStep).toContain('fail: false');
   });
 
   it('runs the exact status-only commit contract after semantic review state changes', () => {
