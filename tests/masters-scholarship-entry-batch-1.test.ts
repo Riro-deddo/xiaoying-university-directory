@@ -1,6 +1,6 @@
-import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { loadMastersScholarshipEntries } from '../src/lib/data';
+import researchMarkdown from '../docs/research/masters-scholarship-entry-batch-1.md?raw';
 import { parseMastersScholarshipResearch } from './helpers/masters-scholarship-research';
 
 const batch1UniversityIds = [
@@ -15,11 +15,6 @@ const batch1UniversityIds = [
   'university-of-liverpool', 'newcastle-university', 'university-of-york',
   'lancaster-university', 'queens-university-belfast',
 ] as const;
-
-const researchMarkdown = readFileSync(
-  new URL('../docs/research/masters-scholarship-entry-batch-1.md', import.meta.url),
-  'utf8',
-);
 
 describe('masters scholarship entry batch 1', () => {
   it('matches every reviewed row to the production registry', () => {

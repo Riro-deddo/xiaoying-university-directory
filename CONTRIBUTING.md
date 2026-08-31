@@ -44,3 +44,7 @@ node scripts/report-source-coverage.mjs
 ```
 
 如果修改了解析器，还要用对应的最小测试样本运行聚焦测试。所有自动生成文件必须可复现，`git diff` 中不应出现未解释的名单大量删除或跨大学事实。
+
+## 硕士奖学金入口年度复核
+
+每个申请季开始前，重新打开四个 `docs/research/masters-scholarship-entry-batch-*.md` 文件中的每一行，核对最终 URL、硕士范围（或未发现公开入口的否定证据结论）、页面标题、两个身份锚点和 `reviewedAt`，并同步更新分组与证据的 `reviewedAt`。对每所“未发现公开硕士奖学金入口”大学重新搜索是否出现合格的公开入口。完成后重跑四个 `tests/masters-scholarship-entry-batch-{1,2,3,4}.test.ts` 测试，通过常规 Pull Request 提交更新；严禁将一次日常观测自动提升为已接受的证据或入口变更。

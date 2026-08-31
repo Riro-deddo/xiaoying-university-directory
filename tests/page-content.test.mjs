@@ -198,6 +198,17 @@ describe('dual-direction search page', () => {
 });
 
 describe('published methodology and contributor guidance', () => {
+  it('explains the navigation-only scope of official masters scholarship entries', () => {
+    for (const phrase of [
+      '官方硕士奖学金入口',
+      '不代表奖学金正在开放',
+      '不代表用户符合条件或能够获奖',
+      '具体项目、金额、资格、申请方式和期限全部以大学官网当时显示的信息为准',
+    ]) {
+      expect(`${readme}\n${methodology}`).toContain(phrase);
+    }
+  });
+
   it('defines pending evidence as unavailable public verification rather than unreviewed', () => {
     expect(methodology).toContain('<dt>官网暂无可核验规则</dt>');
     expect(methodology).toContain('已核查当前公开官网');

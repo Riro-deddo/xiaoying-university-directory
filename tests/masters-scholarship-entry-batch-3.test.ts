@@ -1,6 +1,6 @@
-import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { loadMastersScholarshipEntries } from '../src/lib/data';
+import researchMarkdown from '../docs/research/masters-scholarship-entry-batch-3.md?raw';
 import { parseMastersScholarshipResearch } from './helpers/masters-scholarship-research';
 
 const batch3UniversityIds = [
@@ -15,11 +15,6 @@ const batch3UniversityIds = [
   'university-of-greenwich', 'aberystwyth-university', 'bournemouth-university',
   'edinburgh-napier-university', 'keele-university', 'de-montfort-university',
 ] as const;
-
-const researchMarkdown = readFileSync(
-  new URL('../docs/research/masters-scholarship-entry-batch-3.md', import.meta.url),
-  'utf8',
-);
 
 describe('masters scholarship entry batch 3', () => {
   it('uses generic postgraduate page text for the DMU home-category identity anchors', () => {
