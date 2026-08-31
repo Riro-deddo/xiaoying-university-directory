@@ -3,6 +3,7 @@ import audit from '../src/data/china-rule-audit.json';
 import sources from '../src/data/sources.json';
 import statuses from '../src/data/status.json';
 import universities from '../src/data/universities.json';
+import { expectUnacceptedLinkOnlyStatus } from './helpers/source-status';
 
 const university = universities.find((item) => item.id === 'durham-university');
 const source = sources.find((item) => item.id === 'durham-china');
@@ -52,11 +53,7 @@ describe('Durham Mainland China postgraduate requirements', () => {
     expect(auditRow?.finding).toContain('90%');
   });
 
-  it('clears the obsolete 403 status tied to the retired URL until the next daily check', () => {
-    expect(statuses['durham-china']).toEqual({
-      sourceId: 'durham-china',
-      health: 'unchecked',
-      consecutiveFailures: 0,
-    });
+  it('allows daily probe metadata to refresh without treating the source as reviewed content', () => {
+    expectUnacceptedLinkOnlyStatus(statuses['durham-china'], 'durham-china');
   });
 });
