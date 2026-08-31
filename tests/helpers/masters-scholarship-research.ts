@@ -31,7 +31,11 @@ export function parseMastersScholarshipResearch(markdown: string): MastersSchola
         .map((cell, index, values) => (index === values.length - 1 ? cell.replace(/ \|$/u, '') : cell))
         .map((cell) => cell.replaceAll('&#124;', '|'));
 
-      if (cells[0] === 'University ID' || cells.every((cell) => /^:?-{3,}:?$/u.test(cell))) {
+      if (
+        cells[0] === 'universityId'
+        || cells[0] === 'University ID'
+        || cells.every((cell) => /^:?-{3,}:?$/u.test(cell))
+      ) {
         return [];
       }
       if (cells.length !== 11) {

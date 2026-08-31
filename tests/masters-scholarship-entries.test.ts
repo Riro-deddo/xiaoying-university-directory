@@ -37,8 +37,12 @@ const valid: MastersScholarshipEntry[] = [{
 }];
 
 describe('masters scholarship entry registry', () => {
-  it('loads the independent production registry', () => {
-    expect(loadMastersScholarshipEntries()).toEqual([]);
+  it('loads the independent production registry after the first reviewed batch', () => {
+    const loaded = loadMastersScholarshipEntries();
+
+    expect(loaded).toHaveLength(26);
+    expect(loaded[0]?.universityId).toBe('imperial-college-london');
+    expect(loaded.at(-1)?.universityId).toBe('queens-university-belfast');
   });
 
   it('accepts a complete official scholarship entry', () => {
@@ -94,7 +98,7 @@ describe('masters scholarship entry registry', () => {
 });
 
 describe('masters scholarship research evidence table parser', () => {
-  const header = '| University ID | Link ID | Official URL | Final URL | Kind | Requires filtering | Page title | Required text 1 | Required text 2 | Reviewed at | Decision note |';
+  const header = '| universityId | linkId | official URL | final URL | kind | requiresFiltering | page title | requiredText 1 | requiredText 2 | reviewedAt | decision note |';
   const separator = '| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |';
   const row = '| imperial-college-london | scholarships-imperial-college-london-directory | https://www.imperial.ac.uk/study/fees-and-funding/postgraduate/ | https://www.imperial.ac.uk/study/fees-and-funding/postgraduate/ | masters-directory | false | Postgraduate fees and funding | Postgraduate | Scholarships | 2026-08-31 | Official directory &#124; postgraduate funding |';
 
