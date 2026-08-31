@@ -369,7 +369,8 @@ describe('QS 2027 starter ranks', () => {
       records: rankings.records.filter((record) => record.universityId !== 'imperial-college-london'),
     };
     const imperial = universitiesJson.find((university) => university.id === 'imperial-college-london')!;
-    const invalidSources = sources.filter((source) => !imperial.sourceIds.includes(source.id));
+    const imperialSourceIds = new Set<string>(imperial.sourceIds);
+    const invalidSources = sources.filter((source) => !imperialSourceIds.has(source.id));
 
     vi.resetModules();
     vi.doMock('../src/data/rankings.json', () => ({ default: invalidRankings }));
