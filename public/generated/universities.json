@@ -1741,26 +1741,30 @@
       "verifiedEdition": 2027,
       "current": true
     },
-    "state": "not-public",
+    "state": "china-requirements",
     "officialDomain": "https://www.durham.ac.uk",
     "sources": [
       {
         "id": "durham-china",
         "universityId": "durham-university",
         "labelZh": "中国研究生入学要求",
-        "url": "https://www.durham.ac.uk/study/international/your-country/china/",
+        "url": "https://www.durham.ac.uk/study/international/regional-pages/mainland-china-/",
         "kind": "china-requirements",
         "scope": "university",
         "scopeZh": "学校面向中国申请人的研究生要求",
         "institutionRule": {
-          "type": "none",
-          "summaryZh": "杜伦的中国研究生要求页面存在，但本轮未发现当前公开的选择性中国本科院校名单或明确分档表。",
+          "type": "grade-threshold",
+          "summaryZh": "杜伦面向中国大陆申请人公开研究生学历要求：通常要求四年制全日制学士学位；受认可的高声誉大学一般要求平均分 75%–85%，非高声誉院校达到 90% 以上可获逐案考虑。官网未公开“高声誉大学”的完整校名名单。",
+          "listedMeaningZh": "受认可的高声誉大学申请人一般适用 75%–85% 的最低平均分要求。",
+          "unlistedMeaningZh": "非高声誉院校申请人达到 90% 以上可获逐案考虑；官网未公开如何判定院校类别。",
+          "caveatZh": "官网未公开“高声誉大学”的完整校名名单；各专业对本科专业背景及成绩要求可能不同，以课程页面为准。",
           "verification": {
-            "reviewedAt": "2026-08-02",
-            "url": "https://www.durham.ac.uk/study/international/your-country/china/",
+            "reviewedAt": "2026-08-31",
+            "url": "https://www.durham.ac.uk/study/international/regional-pages/mainland-china-/",
             "requiredText": [
-              "China",
-              "postgraduate"
+              "A standard full-time bachelor’s degree (4 years minimum)",
+              "minimum average grade of between 75% - 85%",
+              "minimum grade of 90% or above will be considered on a case-by-case basis"
             ]
           }
         },
@@ -1768,17 +1772,14 @@
           "mode": "link-only",
           "guard": {
             "minimumRecords": 0,
-            "maximumRecords": 1,
+            "maximumRecords": 0,
             "maximumRemovalRatio": 0
           }
         },
         "status": {
           "sourceId": "durham-china",
-          "checkedAt": "2026-08-30T09:13:47.807Z",
-          "httpStatus": 403,
-          "finalUrl": "https://www.durham.ac.uk/study/international/your-country/china/",
-          "health": "unavailable",
-          "consecutiveFailures": 23
+          "health": "unchecked",
+          "consecutiveFailures": 0
         }
       }
     ],
@@ -1841,24 +1842,27 @@
       {
         "id": "nottingham-china",
         "universityId": "university-of-nottingham",
-        "labelZh": "中国研究生入学要求",
+        "labelZh": "2027 中国研究生院校分档",
         "url": "https://www.nottingham.ac.uk/studywithus/international-applicants/country-info/countryinformation/china-institution-list.aspx",
         "kind": "official-list",
         "scope": "university",
-        "scopeZh": "学校授课型硕士的中国 Tier 1/Tier 2 双语院校表；法学院另有要求",
+        "scopeZh": "所有学院、学部与系的研究生申请",
+        "cycle": "2027",
         "institutionRule": {
           "type": "grade-threshold",
-          "summaryZh": "诺丁汉公布 Tier 1/Tier 2 中英文院校表，对应成绩要求；法学院规则另行适用。",
-          "listedMeaningZh": "Tier 1/Tier 2 表中院校适用对应的官方成绩门槛。",
-          "unlistedMeaningZh": "未列出不应被本站外推为课程结果，尤其不适用于法学院另行要求。",
-          "caveatZh": "此来源范围为授课型硕士，法学院另有要求。",
+          "summaryZh": "诺丁汉 2027 中国院校名单适用于所有学院、学部与系；官网已经取消法学院单独名单。中国院校仍分为 Tier 1、Tier 2 和 Tier 3。",
+          "listedMeaningZh": "列入 Tier 1 或 Tier 2 的院校按对应分档核对具体课程成绩要求。",
+          "unlistedMeaningZh": "未列入 Tier 1 或 Tier 2 的院校归入 Tier 3；具体课程成绩要求仍以课程页面为准。",
+          "caveatZh": "官网已取消法学院单独名单；所有学院、学部和系使用同一份分档表。",
           "verification": {
-            "reviewedAt": "2026-08-02",
+            "reviewedAt": "2026-08-31",
             "url": "https://www.nottingham.ac.uk/studywithus/international-applicants/country-info/countryinformation/china-institution-list.aspx",
             "requiredText": [
+              "2027 entry requirement updates for Chinese applicants",
+              "The separate list for Law School has been removed",
+              "Entry requirements for all faculties/schools/departments",
               "Tier 1",
-              "Tier 2",
-              "China"
+              "Tier 2"
             ]
           }
         },
@@ -1872,20 +1876,19 @@
           "institutionPattern": "^(?<institutionNameZh>[^,]+?)(?:,|\\s+)\\s*(?<institutionOfficial>[A-Z][^,]+)",
           "guard": {
             "minimumRecords": 150,
-            "maximumRecords": 220,
+            "maximumRecords": 500,
             "maximumRemovalRatio": 0.1
           }
         },
         "status": {
           "sourceId": "nottingham-china",
-          "checkedAt": "2026-08-30T09:13:48.827Z",
-          "lastSuccessfulAt": "2026-08-30T09:13:48.827Z",
-          "health": "changed",
-          "finalUrl": "https://www.nottingham.ac.uk/studywithus/international-applicants/country-info/countryinformation/china-institution-list.aspx",
+          "checkedAt": "2026-08-31T00:01:46.029Z",
+          "lastSuccessfulAt": "2026-08-31T00:01:46.029Z",
+          "contentHash": "71445a601e1eb559b9c948764660a66d4691d684650f90e2dda8ac213f794200",
           "consecutiveFailures": 0,
-          "contentHash": "4c39554afa7d9d6c592c82effa60b4e41deb6c1bebb0785b6f083222095d05a7",
+          "health": "ok",
           "httpStatus": 200,
-          "observedContentHash": "369957c93bb0c0478e66874a9f2742f5cc33b95c8f93400ea646ade98df621bf"
+          "finalUrl": "https://www.nottingham.ac.uk/studywithus/international-applicants/country-info/countryinformation/china-institution-list.aspx"
         }
       }
     ],

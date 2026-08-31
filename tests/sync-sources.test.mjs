@@ -477,7 +477,8 @@ describe('syncRegisteredSources', () => {
       'cn-4608925f6f37c011', 'cn-f31b82d745f6036c', 'cn-5014762bda41f881', 'cn-e198010d37f04649',
       'cn-1ea73d206dd443f7', 'cn-29d54f2779473379', 'cn-897bce5aa8e13764', 'cn-a400de4efa9f357c',
       'cn-6bf5aa2786abf146', 'cn-08ff50ca88df7341', 'cn-81236dc437d8cdf3', 'cn-1d7ff4c3cffaa3a6',
-      'cn-5109cee27cccd05a',
+      'cn-5109cee27cccd05a', 'cn-e111c2d270007593', 'cn-956aefa25a18a4db',
+      'cn-8a2f6d614d7f64b5', 'cn-418546fdcdab5198',
       'the-second-military-medical-university-55f6f4f4',
     ];
     const expectedCanonicalFactCounts = new Map([
@@ -538,7 +539,7 @@ describe('syncRegisteredSources', () => {
     });
 
     expect(first.institutions).toHaveLength(2979);
-    expect(first.requirements).toHaveLength(8898);
+    expect(first.requirements).toHaveLength(9155);
     expect(first.institutions.some((record) => obsoleteIds.includes(record.id))).toBe(false);
     expect(first.requirements.some((fact) => obsoleteIds.includes(fact.institutionId))).toBe(false);
     for (const [id, expectedCount] of expectedCanonicalFactCounts) {

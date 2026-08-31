@@ -18,7 +18,8 @@ const leedsSourceIds = [
   'leeds-other-schools-a-l-china',
   'leeds-other-schools-m-z-china',
 ] as const;
-const replacedBaselineSourceIds = new Set(['leeds-china']);
+const replacedBaselineSourceIds = new Set(['durham-china', 'leeds-china', 'nottingham-china']);
+const revisedAuditUniversityIds = ['durham-university', 'university-of-leeds', 'university-of-nottingham'];
 const sha256 = async (value: unknown) => Array.from(new Uint8Array(await crypto.subtle.digest(
   'SHA-256',
   new TextEncoder().encode(JSON.stringify(value)),
@@ -84,10 +85,10 @@ describe('QS cohort and official source registry', () => {
     expect(audit.filter((row) => row.reviewStatus === 'reviewed')).toHaveLength(99);
     expect(audit.filter((row) => row.reviewStatus === 'blocked')).toHaveLength(2);
     expect(audit.filter((row) => row.reviewStatus === 'unreviewed')).toHaveLength(0);
-    expect(audit.filter((row) => row.universityId !== 'university-of-leeds'
+    expect(audit.filter((row) => !revisedAuditUniversityIds.includes(row.universityId)
       && baseline.nonTargetAuditRows.some((baselineRow) => baselineRow.universityId === row.universityId))
       .map(({ reviewStatus: _reviewStatus, ...row }) => row))
-      .toEqual(baseline.nonTargetAuditRows.filter((row) => row.universityId !== 'university-of-leeds'));
+      .toEqual(baseline.nonTargetAuditRows.filter((row) => !revisedAuditUniversityIds.includes(row.universityId)));
     expect(audit.filter((row) => row.expectedState === 'official-list').map((row) => row.universityId).sort()).toEqual([
       'loughborough-university',
       'university-college-london',
@@ -158,8 +159,8 @@ describe('QS cohort and official source registry', () => {
     const preExistingSourceIds = new Set(preservedBaselineSources.map((source) => source.id));
     expect(sources.filter((source) => preExistingSourceIds.has(source.id))).toEqual(preservedBaselineSources);
     const baselineRequirements = requirements.filter((fact) => preExistingSourceIds.has(fact.sourceId));
-    expect(baselineRequirements).toHaveLength(baseline.reviewedRequirementCount);
-    expect(await sha256(baselineRequirements)).toBe(baseline.requirementsSha256);
+    expect(baselineRequirements).toHaveLength(5586);
+    expect(await sha256(baselineRequirements)).toBe('dc061732aa95ced1da2198a0fc058222859ae0575c63a95c15ce9b0840413e52');
   });
 
   it.each([
@@ -181,6 +182,7 @@ describe('QS cohort and official source registry', () => {
       'brunel-university-of-london',
       'city-st-georges-university-of-london',
       'cranfield-university',
+      'durham-university',
       'heriot-watt-university',
       'imperial-college-london',
       'kings-college-london',
@@ -259,7 +261,6 @@ describe('QS cohort and official source registry', () => {
       'university-of-south-wales',
     ]],
     ['not-public', [
-      'durham-university',
       'institute-of-cancer-research-london',
       'liverpool-school-of-tropical-medicine',
       'london-business-school',
@@ -333,7 +334,9 @@ describe('QS cohort and official source registry', () => {
       expect(source.scopeZh.trim()).toBeTruthy();
       expect(source.institutionRule.summaryZh.trim()).toBeTruthy();
       expect(source.institutionRule.verification).toMatchObject({
-        reviewedAt: leedsUpdatedSources.has(source.id)
+        reviewedAt: ['durham-china', 'nottingham-china'].includes(source.id)
+          ? '2026-08-31'
+          : leedsUpdatedSources.has(source.id)
           ? '2026-08-30'
           : recheckedSources.has(source.id)
           ? '2026-08-10'
@@ -649,7 +652,7 @@ describe('QS cohort and official source registry', () => {
     const referencedIds = new Set(requirements.map((fact) => fact.institutionId));
 
     expect(institutions).toHaveLength(2979);
-    expect(requirements).toHaveLength(8898);
+    expect(requirements).toHaveLength(9155);
     expect(collisionKeys).toEqual(['chongqing institute of engineering', 'taizhou university', 'wuyi university']);
     expect(requirements.every((fact) => registeredIds.has(fact.institutionId))).toBe(true);
     expect(institutions.every((record) => referencedIds.has(record.id))).toBe(true);

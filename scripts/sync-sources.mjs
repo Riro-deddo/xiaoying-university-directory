@@ -57,6 +57,10 @@ const reviewedInstitutionIdMigrations = new Map([
   ['cn-81236dc437d8cdf3', 'cn-9f87dd4ea325c693'],
   ['cn-1d7ff4c3cffaa3a6', 'cn-3644dc8ae527ce12'],
   ['cn-5109cee27cccd05a', 'cn-668da361a380a009'],
+  ['cn-e111c2d270007593', 'cn-a2c2f00fccfa7688'],
+  ['cn-956aefa25a18a4db', 'cn-885e4dd1f6bcc2e4'],
+  ['cn-8a2f6d614d7f64b5', 'cn-517889c51df22bec'],
+  ['cn-418546fdcdab5198', 'cn-52df5f87e0b05569'],
 ]);
 
 const reviewedHistoricalInstitutionIds = new Set([
@@ -80,6 +84,10 @@ const reviewedHistoricalInstitutionIds = new Set([
   'cn-81236dc437d8cdf3',
   'cn-1d7ff4c3cffaa3a6',
   'cn-5109cee27cccd05a',
+  'cn-e111c2d270007593',
+  'cn-956aefa25a18a4db',
+  'cn-8a2f6d614d7f64b5',
+  'cn-418546fdcdab5198',
 ]);
 
 const reviewedCanonicalInstitutionNames = new Map([

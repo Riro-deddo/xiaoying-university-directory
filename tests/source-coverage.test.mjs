@@ -55,8 +55,8 @@ describe('source coverage report', () => {
       'QS universities: 93',
       'Specialist universities: 8',
       'Full public lists: 11',
-      'Rule-only universities: 80',
-      'No-public-list records: 8',
+      'Rule-only universities: 81',
+      'No-public-list records: 7',
       'Parser-enabled sources: 13',
       'Link-only sources: 92',
     ]);
@@ -83,7 +83,8 @@ describe('source coverage report', () => {
     expect(universities.filter((university) => university.state === 'pending').map((university) => university.id))
       .toEqual(baseline.pendingUniversityIds.filter((id) => !batchReviewedIds.has(id)));
     expect(baseline.nonTargetAuditRows).toHaveLength(36);
-    const preservedBaselineSources = baseline.sourceConfigs.filter((source) => source.id !== 'leeds-china');
+    const preservedBaselineSources = baseline.sourceConfigs
+      .filter((source) => !['durham-china', 'leeds-china', 'nottingham-china'].includes(source.id));
     const preExistingSourceIds = new Set(preservedBaselineSources.map((source) => source.id));
     expect(sources.filter((source) => preExistingSourceIds.has(source.id))).toEqual(preservedBaselineSources);
     expect(baseline.reviewedRequirementCount).toBe(5754);
@@ -334,8 +335,8 @@ describe('source coverage report', () => {
       qsUniversities: 93,
       specialistUniversities: 8,
       fullPublicLists: 11,
-      ruleOnlyUniversities: 80,
-      noPublicListRecords: 8,
+      ruleOnlyUniversities: 81,
+      noPublicListRecords: 7,
     });
   });
 });
