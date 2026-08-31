@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+import universitiesJson from '../src/data/universities.json';
 import {
   loadMastersScholarshipEntries,
   validateMastersScholarshipEntries,
@@ -65,15 +66,37 @@ const greenwichAliasEntry: MastersScholarshipEntry[] = [{
 }];
 
 describe('masters scholarship entry registry', () => {
-  it('loads the independent production registry after the third reviewed batch', () => {
+  it('loads the completed independent production registry', () => {
     const loaded = loadMastersScholarshipEntries();
 
-    expect(loaded).toHaveLength(76);
-    expect(loaded.filter((entry) => entry.entryState === 'available')).toHaveLength(75);
+    expect(loaded).toHaveLength(101);
+    expect(loaded.filter((entry) => entry.entryState === 'available')).toHaveLength(100);
     expect(loaded.filter((entry) => entry.entryState === 'no-public-entry')).toHaveLength(1);
-    expect(loaded.flatMap((entry) => entry.links)).toHaveLength(79);
+    expect(loaded.flatMap((entry) => entry.links)).toHaveLength(106);
     expect(loaded[0]?.universityId).toBe('imperial-college-london');
-    expect(loaded.at(-1)?.universityId).toBe('de-montfort-university');
+    expect(loaded.at(-1)?.universityId).toBe('canterbury-christ-church-university');
+  });
+
+  it('covers the exact validated 101-university catalog once with explicit lifecycle state', () => {
+    const catalog = validateUniversities(universitiesJson);
+    const loaded = loadMastersScholarshipEntries();
+    const linkIds = loaded.flatMap((entry) => entry.links.map((link) => link.id));
+
+    expect(loaded).toHaveLength(101);
+    expect(new Set(loaded.map((entry) => entry.universityId)))
+      .toEqual(new Set(catalog.map((university) => university.id)));
+    expect(new Set(linkIds).size).toBe(linkIds.length);
+
+    for (const entry of loaded) {
+      expect(entry.reviewedAt).toBe('2026-08-31');
+      if (entry.entryState === 'available') {
+        expect(entry.links.length).toBeGreaterThanOrEqual(1);
+        expect(entry.links.length).toBeLessThanOrEqual(3);
+      } else {
+        expect(entry.entryState).toBe('no-public-entry');
+        expect(entry.links).toEqual([]);
+      }
+    }
   });
 
   it('accepts a complete official scholarship entry', () => {
