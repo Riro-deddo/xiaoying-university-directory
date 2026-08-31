@@ -66,7 +66,7 @@ describe('public lazy-data build', () => {
       .toEqual(new Set(catalog.map((university) => university.id)));
     expect(await readdir(join(root, 'public', 'generated'))).not.toContain('masters-course-directories.json');
 
-    expect(publicRecords.filter((record) => record.state === 'china-requirements')).toHaveLength(80);
+    expect(publicRecords.filter((record) => record.state === 'china-requirements')).toHaveLength(81);
     expect(publicRecords.filter((record) => record.state === 'pending').map((record) => record.id).sort())
       .toEqual(['university-of-east-london', 'university-of-the-arts-london']);
 

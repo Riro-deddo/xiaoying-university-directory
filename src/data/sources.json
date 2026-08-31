@@ -592,24 +592,31 @@
     "id": "durham-china",
     "universityId": "durham-university",
     "labelZh": "中国研究生入学要求",
-    "url": "https://www.durham.ac.uk/study/international/your-country/china/",
+    "url": "https://www.durham.ac.uk/study/international/regional-pages/mainland-china-/",
     "kind": "china-requirements",
     "scope": "university",
     "scopeZh": "学校面向中国申请人的研究生要求",
     "institutionRule": {
-      "type": "none",
-      "summaryZh": "杜伦的中国研究生要求页面存在，但本轮未发现当前公开的选择性中国本科院校名单或明确分档表。",
+      "type": "grade-threshold",
+      "summaryZh": "杜伦面向中国大陆申请人公开研究生学历要求：通常要求四年制全日制学士学位；受认可的高声誉大学一般要求平均分 75%–85%，非高声誉院校达到 90% 以上可获逐案考虑。官网未公开“高声誉大学”的完整校名名单。",
+      "listedMeaningZh": "受认可的高声誉大学申请人一般适用 75%–85% 的最低平均分要求。",
+      "unlistedMeaningZh": "非高声誉院校申请人达到 90% 以上可获逐案考虑；官网未公开如何判定院校类别。",
+      "caveatZh": "官网未公开“高声誉大学”的完整校名名单；各专业对本科专业背景及成绩要求可能不同，以课程页面为准。",
       "verification": {
-        "reviewedAt": "2026-08-02",
-        "url": "https://www.durham.ac.uk/study/international/your-country/china/",
-        "requiredText": ["China", "postgraduate"]
+        "reviewedAt": "2026-08-31",
+        "url": "https://www.durham.ac.uk/study/international/regional-pages/mainland-china-/",
+        "requiredText": [
+          "A standard full-time bachelor’s degree (4 years minimum)",
+          "minimum average grade of between 75% - 85%",
+          "minimum grade of 90% or above will be considered on a case-by-case basis"
+        ]
       }
     },
     "parser": {
       "mode": "link-only",
       "guard": {
         "minimumRecords": 0,
-        "maximumRecords": 1,
+        "maximumRecords": 0,
         "maximumRemovalRatio": 0
       }
     }

@@ -20,7 +20,8 @@ const featureStartBaseline = baseline as typeof baseline & {
 };
 const reviewedInstitutionsCount = 2979;
 const reviewedInstitutionsSha256 = 'af8c0fb7cc9d85c1a05637162de14f5d29e3b667e42127b434456b751cffcd54';
-const replacedBaselineSourceIds = new Set(['leeds-china', 'nottingham-china']);
+const replacedBaselineSourceIds = new Set(['durham-china', 'leeds-china', 'nottingham-china']);
+const revisedAuditUniversityIds = ['durham-university', 'university-of-leeds', 'university-of-nottingham'];
 
 const batch1Ids = [
   'loughborough-university',
@@ -147,11 +148,11 @@ describe('first pending China-rule audit batch', () => {
 
   it('preserves the feature-start reviewed audit rows, source configurations, and requirement facts', async () => {
     const baselineAuditRows = audit
-      .filter((row) => !['university-of-leeds', 'university-of-nottingham'].includes(row.universityId)
+      .filter((row) => !revisedAuditUniversityIds.includes(row.universityId)
         && baseline.nonTargetAuditRows.some((baselineRow) => baselineRow.universityId === row.universityId))
       .map(({ reviewStatus: _reviewStatus, ...row }) => row);
     expect(baselineAuditRows).toEqual(baseline.nonTargetAuditRows
-      .filter((row) => !['university-of-leeds', 'university-of-nottingham'].includes(row.universityId)));
+      .filter((row) => !revisedAuditUniversityIds.includes(row.universityId)));
 
     const preservedBaselineSources = baseline.sourceConfigs
       .filter((source) => !replacedBaselineSourceIds.has(source.id));
@@ -167,13 +168,13 @@ describe('first pending China-rule audit batch', () => {
   it('preserves every unchanged feature-start reviewed university object', () => {
     expect(featureStartBaseline.reviewedUniversities).toHaveLength(36);
     const preservedReviewedUniversities = featureStartBaseline.reviewedUniversities
-      .filter((university) => university.id !== 'university-of-leeds');
+      .filter((university) => !['durham-university', 'university-of-leeds'].includes(university.id));
     const reviewedUniversityIds = new Set(preservedReviewedUniversities.map((university) => university.id));
     expect(universities.filter((university) => reviewedUniversityIds.has(university.id)))
       .toEqual(preservedReviewedUniversities);
   });
 
-  it('records the reviewed Leeds and Nottingham registry updates without unrelated identity drift', async () => {
+  it('records the reviewed Durham, Leeds, and Nottingham updates without unrelated identity drift', async () => {
     expect(institutions).toHaveLength(reviewedInstitutionsCount);
     expect(await sha256(institutions))
       .toBe(reviewedInstitutionsSha256);

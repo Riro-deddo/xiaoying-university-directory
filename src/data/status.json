@@ -169,11 +169,8 @@
   },
   "durham-china": {
     "sourceId": "durham-china",
-    "checkedAt": "2026-08-30T09:13:47.807Z",
-    "httpStatus": 403,
-    "finalUrl": "https://www.durham.ac.uk/study/international/your-country/china/",
-    "health": "unavailable",
-    "consecutiveFailures": 23
+    "health": "unchecked",
+    "consecutiveFailures": 0
   },
   "nottingham-china": {
     "sourceId": "nottingham-china",

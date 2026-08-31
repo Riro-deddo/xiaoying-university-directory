@@ -114,9 +114,9 @@
   {
     "universityId": "durham-university",
     "directoryCategory": "qs-directory",
-    "expectedState": "not-public",
-    "reviewDate": "2026-08-02",
-    "finding": "No current complete public Chinese university list or explicit institution-tier table was found in this review.",
+    "expectedState": "china-requirements",
+    "reviewDate": "2026-08-31",
+    "finding": "Durham publishes Mainland China postgraduate thresholds of 75%–85% for recognised prestigious universities and case-by-case consideration from 90% for non-prestigious institutions, but no complete institution membership list.",
     "reviewStatus": "reviewed"
   },
   {
