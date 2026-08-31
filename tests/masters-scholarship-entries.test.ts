@@ -21,6 +21,8 @@ const universities: University[] = validateUniversities([{
 
 const valid: MastersScholarshipEntry[] = [{
   universityId: 'imperial-college-london',
+  entryState: 'available',
+  reviewedAt: '2026-08-31',
   links: [{
     id: 'scholarships-imperial-college-london-directory',
     universityId: 'imperial-college-london',
@@ -41,6 +43,9 @@ describe('masters scholarship entry registry', () => {
     const loaded = loadMastersScholarshipEntries();
 
     expect(loaded).toHaveLength(51);
+    expect(loaded.filter((entry) => entry.entryState === 'available')).toHaveLength(50);
+    expect(loaded.filter((entry) => entry.entryState === 'no-public-entry')).toHaveLength(1);
+    expect(loaded.flatMap((entry) => entry.links)).toHaveLength(51);
     expect(loaded[0]?.universityId).toBe('imperial-college-london');
     expect(loaded.at(-1)?.universityId).toBe('aston-university');
   });
@@ -49,17 +54,41 @@ describe('masters scholarship entry registry', () => {
     expect(validateMastersScholarshipEntries(valid, universities)).toEqual(valid);
   });
 
+  it('accepts a reviewed no-public-entry group with no action links', () => {
+    const unavailable: MastersScholarshipEntry[] = [{
+      universityId: 'imperial-college-london',
+      entryState: 'no-public-entry',
+      reviewedAt: '2026-08-31',
+      links: [],
+    }];
+
+    expect(validateMastersScholarshipEntries(unavailable, universities)).toEqual(unavailable);
+  });
+
   it('rejects duplicate university groups', () => {
     expect(() => validateMastersScholarshipEntries([...valid, ...valid], universities))
       .toThrow(/duplicate university/i);
   });
 
-  it.each([
-    ['zero links', []],
-    ['four links', Array.from({ length: 4 }, (_, index) => ({ ...valid[0].links[0], id: `scholarships-imperial-college-london-${index}` }))],
-  ])('rejects an entry with %s', (_label, links) => {
+  it('rejects an available entry with zero links', () => {
+    expect(() => validateMastersScholarshipEntries([{ ...valid[0], links: [] }], universities))
+      .toThrow(/schema/i);
+  });
+
+  it('rejects an available entry with four links', () => {
+    const links = Array.from({ length: 4 }, (_, index) => ({
+      ...valid[0].links[0],
+      id: `scholarships-imperial-college-london-${index}`,
+    }));
     expect(() => validateMastersScholarshipEntries([{ ...valid[0], links }], universities))
       .toThrow(/schema/i);
+  });
+
+  it('rejects a no-public-entry group with an action link', () => {
+    expect(() => validateMastersScholarshipEntries([{
+      ...valid[0],
+      entryState: 'no-public-entry',
+    }], universities)).toThrow(/schema/i);
   });
 
   it('rejects duplicate link IDs across the registry', () => {
@@ -98,14 +127,15 @@ describe('masters scholarship entry registry', () => {
 });
 
 describe('masters scholarship research evidence table parser', () => {
-  const header = '| universityId | linkId | official URL | final URL | kind | requiresFiltering | page title | requiredText 1 | requiredText 2 | reviewedAt | decision note |';
+  const header = '| universityId | evidenceId | official URL | final URL | kind | requiresFiltering | page title | requiredText 1 | requiredText 2 | reviewedAt | decision note |';
   const separator = '| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |';
   const row = '| imperial-college-london | scholarships-imperial-college-london-directory | https://www.imperial.ac.uk/study/fees-and-funding/postgraduate/ | https://www.imperial.ac.uk/study/fees-and-funding/postgraduate/ | masters-directory | false | Postgraduate fees and funding | Postgraduate | Scholarships | 2026-08-31 | Official directory &#124; postgraduate funding |';
+  const negativeRow = '| imperial-college-london | evidence-imperial-college-london-no-public-entry | https://www.imperial.ac.uk/study/fees-and-funding/ | https://www.imperial.ac.uk/study/fees-and-funding/ | no-public-entry | false | Fees and funding | Taught course students | Funding assistance | 2026-08-31 | No public masters scholarship entry found |';
 
   it('parses a complete official scholarship research row', () => {
     expect(parseMastersScholarshipResearch([header, separator, row].join('\n'))).toEqual([{
       universityId: 'imperial-college-london',
-      linkId: 'scholarships-imperial-college-london-directory',
+      evidenceId: 'scholarships-imperial-college-london-directory',
       officialUrl: 'https://www.imperial.ac.uk/study/fees-and-funding/postgraduate/',
       finalUrl: 'https://www.imperial.ac.uk/study/fees-and-funding/postgraduate/',
       kind: 'masters-directory',
@@ -117,10 +147,26 @@ describe('masters scholarship research evidence table parser', () => {
     }]);
   });
 
+  it('parses official negative evidence without turning it into an action link', () => {
+    expect(parseMastersScholarshipResearch([header, separator, negativeRow].join('\n'))).toEqual([{
+      universityId: 'imperial-college-london',
+      evidenceId: 'evidence-imperial-college-london-no-public-entry',
+      officialUrl: 'https://www.imperial.ac.uk/study/fees-and-funding/',
+      finalUrl: 'https://www.imperial.ac.uk/study/fees-and-funding/',
+      kind: 'no-public-entry',
+      requiresFiltering: false,
+      pageTitle: 'Fees and funding',
+      requiredText: ['Taught course students', 'Funding assistance'],
+      reviewedAt: '2026-08-31',
+      decisionNote: 'No public masters scholarship entry found',
+    }]);
+  });
+
   it.each([
     ['wrong cell count', '| imperial-college-london | scholarships-imperial-college-london-directory |'],
     ['invalid boolean', row.replace(' | false | ', ' | no | ')],
     ['unknown kind', row.replace(' | masters-directory | ', ' | bursary | ')],
+    ['non-evidence ID for a negative finding', negativeRow.replace('evidence-imperial-college-london-', 'scholarships-imperial-college-london-')],
   ])('rejects a row with %s', (_label, malformedRow) => {
     expect(() => parseMastersScholarshipResearch([header, separator, malformedRow].join('\n')))
       .toThrow(/malformed|boolean|kind/i);

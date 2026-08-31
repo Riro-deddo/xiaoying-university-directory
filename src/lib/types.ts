@@ -203,16 +203,34 @@ export interface MastersScholarshipLink {
   monitorMode: 'page-identity';
 }
 
-export interface MastersScholarshipEntry {
+export type MastersScholarshipEntryState = 'available' | 'no-public-entry';
+
+interface MastersScholarshipEntryBase {
   universityId: string;
+  entryState: MastersScholarshipEntryState;
+  reviewedAt: string;
+}
+
+export interface AvailableMastersScholarshipEntry extends MastersScholarshipEntryBase {
+  entryState: 'available';
   links: MastersScholarshipLink[];
 }
+
+export interface NoPublicMastersScholarshipEntry extends MastersScholarshipEntryBase {
+  entryState: 'no-public-entry';
+  links: [];
+}
+
+export type MastersScholarshipEntry =
+  | AvailableMastersScholarshipEntry
+  | NoPublicMastersScholarshipEntry;
 
 export type MastersScholarshipLinkWithStatus =
   MastersScholarshipLink & { status?: SourceStatus };
 
 export type MastersScholarshipEntryWithStatus =
-  Omit<MastersScholarshipEntry, 'links'> & { links: MastersScholarshipLinkWithStatus[] };
+  | (Omit<AvailableMastersScholarshipEntry, 'links'> & { links: MastersScholarshipLinkWithStatus[] })
+  | NoPublicMastersScholarshipEntry;
 
 export interface InstitutionRecord {
   id: string;

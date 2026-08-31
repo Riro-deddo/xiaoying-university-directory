@@ -1,11 +1,15 @@
 import type { MastersScholarshipEntryKind } from '../../src/lib/types';
 
+export type MastersScholarshipResearchKind =
+  | MastersScholarshipEntryKind
+  | 'no-public-entry';
+
 export interface MastersScholarshipResearchRow {
   universityId: string;
-  linkId: string;
+  evidenceId: string;
   officialUrl: string;
   finalUrl: string;
-  kind: MastersScholarshipEntryKind;
+  kind: MastersScholarshipResearchKind;
   requiresFiltering: boolean;
   pageTitle: string;
   requiredText: [string, string];
@@ -13,11 +17,12 @@ export interface MastersScholarshipResearchRow {
   decisionNote: string;
 }
 
-const scholarshipEntryKinds = new Set<MastersScholarshipEntryKind>([
+const scholarshipEntryKinds = new Set<MastersScholarshipResearchKind>([
   'masters-directory',
   'masters-search',
   'postgraduate-funding',
   'category',
+  'no-public-entry',
 ]);
 
 export function parseMastersScholarshipResearch(markdown: string): MastersScholarshipResearchRow[] {
@@ -44,7 +49,7 @@ export function parseMastersScholarshipResearch(markdown: string): MastersSchola
 
       const [
         universityId,
-        linkId,
+        evidenceId,
         officialUrl,
         finalUrl,
         kind,
@@ -58,16 +63,24 @@ export function parseMastersScholarshipResearch(markdown: string): MastersSchola
       if (requiresFiltering !== 'true' && requiresFiltering !== 'false') {
         throw new Error(`Malformed scholarship research row ${lineIndex + 1}: requiresFiltering must be true or false`);
       }
-      if (!scholarshipEntryKinds.has(kind as MastersScholarshipEntryKind)) {
+      if (!scholarshipEntryKinds.has(kind as MastersScholarshipResearchKind)) {
         throw new Error(`Malformed scholarship research row ${lineIndex + 1}: unknown kind`);
+      }
+      if (
+        kind === 'no-public-entry'
+        && !evidenceId.startsWith(`evidence-${universityId}-`)
+      ) {
+        throw new Error(
+          `Malformed scholarship research row ${lineIndex + 1}: no-public-entry requires a university-specific evidence ID`,
+        );
       }
 
       return [{
         universityId,
-        linkId,
+        evidenceId,
         officialUrl,
         finalUrl,
-        kind: kind as MastersScholarshipEntryKind,
+        kind: kind as MastersScholarshipResearchKind,
         requiresFiltering: requiresFiltering === 'true',
         pageTitle,
         requiredText: [requiredTextFirst, requiredTextSecond],

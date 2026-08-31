@@ -26,23 +26,29 @@ describe('masters scholarship entry batch 1', () => {
     const researchRows = parseMastersScholarshipResearch(researchMarkdown);
     const registry = loadMastersScholarshipEntries();
     const groupsByUniversity = new Map(registry.map((group) => [group.universityId, group]));
-    const linksById = new Map(registry.flatMap((group) => group.links.map((link) => [link.id, link] as const)));
-
     expect(new Set(researchRows.map((row) => row.universityId)))
       .toEqual(new Set(batch1UniversityIds));
-    expect(new Set(researchRows.map((row) => row.linkId)).size).toBe(researchRows.length);
-    expect(new Set(linksById).size).toBe(registry.flatMap((group) => group.links).length);
+    expect(new Set(researchRows.map((row) => row.evidenceId)).size).toBe(researchRows.length);
 
     for (const universityId of batch1UniversityIds) {
       const group = groupsByUniversity.get(universityId);
       expect(group, `missing production scholarship group for ${universityId}`).toBeDefined();
+      expect(group?.entryState).toBe('available');
+      expect(group?.reviewedAt).toBe('2026-08-31');
       expect(group?.links.length).toBeGreaterThanOrEqual(1);
       expect(group?.links.length).toBeLessThanOrEqual(3);
+
+      const evidenceIds = researchRows
+        .filter((row) => row.universityId === universityId)
+        .map((row) => row.evidenceId);
+      expect(new Set(group?.links.map((link) => link.id))).toEqual(new Set(evidenceIds));
     }
 
     for (const row of researchRows) {
-      const link = linksById.get(row.linkId);
-      expect(link, `missing production scholarship link ${row.linkId}`).toBeDefined();
+      expect(row.kind).not.toBe('no-public-entry');
+      const link = groupsByUniversity.get(row.universityId)?.links
+        .find((candidate) => candidate.id === row.evidenceId);
+      expect(link, `missing production scholarship link ${row.evidenceId}`).toBeDefined();
       expect(link).toMatchObject({
         universityId: row.universityId,
         url: row.finalUrl,

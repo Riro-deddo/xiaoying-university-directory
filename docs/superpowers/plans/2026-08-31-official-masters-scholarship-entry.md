@@ -2,9 +2,9 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Add one verified official masters-scholarship navigation record for each of the 101 directory universities, render a compact official link in the existing source/action area, and include every link in the non-destructive daily source review.
+**Goal:** Add one reviewed masters-scholarship entry-state record for each of the 101 directory universities, render either compact official navigation or an honest non-clickable unavailable state in the existing source/action area, and include every available link in the non-destructive daily source review.
 
-**Architecture:** Keep scholarship navigation in a new independent registry grouped by stable university ID; each university owns one to three official page-identity links. Join the registry into the existing public university records, render one direct action or one accessible multi-link disclosure, and flatten the links only at the daily-check boundary. The site never stores individual scholarship awards, amounts, deadlines, or eligibility decisions.
+**Architecture:** Keep scholarship navigation in a new independent registry grouped by stable university ID. Every university has a reviewed `available` or `no-public-entry` state; available groups own one to three official page-identity links while no-public-entry groups own none. Join the registry into the existing public university records, render one action root as a direct action, accessible multi-link disclosure, or non-clickable unavailable state, and flatten only available links at the daily-check boundary. The site never stores individual scholarship awards, amounts, deadlines, or eligibility decisions.
 
 **Tech Stack:** Astro 7, TypeScript 6, JSON Schema 2020-12 with AJV 8, Vitest 4, Linkedom, Node.js 22, GitHub Actions, existing source checker and page-identity monitor.
 
@@ -13,13 +13,13 @@
 ## Global Constraints
 
 - The production registry must cover exactly the current 101 universities once by `universityId`.
-- Each university record must contain 1–3 official HTTPS links; ordinary records use one unified directory or search page.
+- Each university record must contain group-level `entryState` and `reviewedAt`; `available` records contain 1–3 official HTTPS links, while `no-public-entry` records contain zero links and retain their official negative evidence only in research.
 - Masters scope includes MA, MSc, MBA, LLM, MEd, MPH, MRes, and independently awarded MPhil; it excludes MEng, MSci, PGCert, PGDip, PhD, DPhil, EngD, and doctoral studentships.
 - Use only university-owned domains or an explicitly reviewed first-party alias with a lookalike-rejection test.
 - Prefer masters-specific or postgraduate-taught funding pages; a combined postgraduate page is allowed only when masters coverage is directly verified and `requiresFiltering` is `true`.
 - Never store or render individual scholarship names, amounts, application states, dates, deadlines, or eligibility summaries.
 - Do not change the six-column desktop layout, the mobile university-card order, Chinese rules, Lists, rankings, or the existing masters-course entry.
-- Daily checks may update source health and review dates, but never replace accepted links or mutate admissions facts automatically.
+- Daily checks may update available-link health and audit timestamps, but never group-level `reviewedAt`, replace accepted links, or mutate admissions facts automatically. Group review dates and no-public-entry conclusions change only through annual/manual review.
 - Preserve the pre-existing user modification in `tests/search.test.ts`; do not stage it in any scholarship commit.
 - Add no production dependency.
 
@@ -78,6 +78,8 @@ Create `tests/masters-scholarship-entries.test.ts` with a synthetic official uni
 ```ts
 const valid: MastersScholarshipEntry[] = [{
   universityId: 'imperial-college-london',
+  entryState: 'available',
+  reviewedAt: '2026-08-31',
   links: [{
     id: 'scholarships-imperial-college-london-directory',
     universityId: 'imperial-college-london',
@@ -94,7 +96,7 @@ const valid: MastersScholarshipEntry[] = [{
 }];
 ```
 
-Test that the validator accepts the fixture and rejects: duplicate university groups, zero or four links, duplicate link IDs, link/group university mismatch, an ID without the `scholarships-${universityId}-` prefix, non-HTTPS URLs, official-domain lookalikes, duplicate `requiredText`, an unknown `kind`, and `postgraduate-funding` with `requiresFiltering: false`.
+Test that the validator accepts the fixture plus a reviewed `no-public-entry` fixture with zero links and rejects: duplicate university groups, an available group with zero or four links, a no-public-entry group with any link, duplicate link IDs, link/group university mismatch, an ID without the `scholarships-${universityId}-` prefix, non-HTTPS URLs, official-domain lookalikes, duplicate `requiredText`, an unknown `kind`, and `postgraduate-funding` with `requiresFiltering: false`.
 
 - [ ] **Step 2: Run the focused test and confirm the missing contract**
 
@@ -127,19 +129,37 @@ export interface MastersScholarshipLink {
   monitorMode: 'page-identity';
 }
 
-export interface MastersScholarshipEntry {
+export type MastersScholarshipEntryState = 'available' | 'no-public-entry';
+
+interface MastersScholarshipEntryBase {
   universityId: string;
+  entryState: MastersScholarshipEntryState;
+  reviewedAt: string;
+}
+
+export interface AvailableMastersScholarshipEntry extends MastersScholarshipEntryBase {
+  entryState: 'available';
   links: MastersScholarshipLink[];
 }
+
+export interface NoPublicMastersScholarshipEntry extends MastersScholarshipEntryBase {
+  entryState: 'no-public-entry';
+  links: [];
+}
+
+export type MastersScholarshipEntry =
+  | AvailableMastersScholarshipEntry
+  | NoPublicMastersScholarshipEntry;
 
 export type MastersScholarshipLinkWithStatus =
   MastersScholarshipLink & { status?: SourceStatus };
 
 export type MastersScholarshipEntryWithStatus =
-  Omit<MastersScholarshipEntry, 'links'> & { links: MastersScholarshipLinkWithStatus[] };
+  | (Omit<AvailableMastersScholarshipEntry, 'links'> & { links: MastersScholarshipLinkWithStatus[] })
+  | NoPublicMastersScholarshipEntry;
 ```
 
-Create `src/data/masters-scholarship-entries.json` as `[]` and create a strict schema requiring every property above, 1–3 links, two unique identity anchors, the fixed Chinese label, an HTTPS URL, and `monitorMode: page-identity`. Add a schema conditional that requires `requiresFiltering: true` when `kind` is `postgraduate-funding`.
+Create `src/data/masters-scholarship-entries.json` as `[]` and create a strict schema requiring the group state/date and every link property above. Use a conditional cardinality contract: `available` requires 1–3 links; `no-public-entry` requires zero. Available links require two unique identity anchors, the fixed Chinese label, an HTTPS URL, and `monitorMode: page-identity`. Add a link conditional that requires `requiresFiltering: true` when `kind` is `postgraduate-funding`.
 
 - [ ] **Step 4: Implement registry validation and loading**
 
@@ -215,10 +235,10 @@ Create `tests/helpers/masters-scholarship-research.ts` with this row contract:
 ```ts
 export interface MastersScholarshipResearchRow {
   universityId: string;
-  linkId: string;
+  evidenceId: string;
   officialUrl: string;
   finalUrl: string;
-  kind: MastersScholarshipEntryKind;
+  kind: MastersScholarshipEntryKind | 'no-public-entry';
   requiresFiltering: boolean;
   pageTitle: string;
   requiredText: [string, string];
@@ -227,7 +247,7 @@ export interface MastersScholarshipResearchRow {
 }
 ```
 
-Parse only table rows beginning with `| `, skip the header/separator, split cells on ` | `, decode `&#124;` back to `|`, require exactly 11 cells, parse `true`/`false` strictly, and throw on malformed rows. Add a unit test in `tests/masters-scholarship-entries.test.ts` using one complete Markdown row and one malformed row.
+Parse only table rows beginning with `| `, skip the header/separator, split cells on ` | `, decode `&#124;` back to `|`, require exactly 11 cells, parse `true`/`false` strictly, and throw on malformed rows. Allow `no-public-entry` only as a research-evidence kind, never as `MastersScholarshipEntryKind`. Add unit tests for one complete clickable row, one official negative-evidence row, and malformed rows.
 
 - [ ] **Step 6: Run focused tests**
 
@@ -275,22 +295,22 @@ const batch1UniversityIds = [
 ] as const;
 ```
 
-For each ID, open the university's official site and choose one unified masters/postgraduate-taught scholarship directory or search page. Record 2–3 category pages only when no unified page exists. Reject search snippets, third-party aggregators, undergraduate-only pages, doctoral-only pages, news articles, and individual-award pages used as a substitute for a directory.
+For each ID, open the university's official site and choose one unified masters/postgraduate-taught scholarship directory or search page. Record 2–3 category pages only when no unified page exists. Reject search snippets, third-party aggregators, undergraduate-only pages, doctoral-only pages, news articles, and individual-award pages used as a substitute for a directory. If exhaustive first-party review finds no qualifying public master's entry, record one official negative-evidence row and produce a `no-public-entry` group rather than promoting an unrelated page.
 
 - [ ] **Step 2: Record the complete evidence table**
 
 Create `docs/research/masters-scholarship-entry-batch-1.md` with this exact header and one row per admitted link:
 
 ```markdown
-| universityId | linkId | official URL | final URL | kind | requiresFiltering | page title | requiredText 1 | requiredText 2 | reviewedAt | decision note |
+| universityId | evidenceId | official URL | final URL | kind | requiresFiltering | page title | requiredText 1 | requiredText 2 | reviewedAt | decision note |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 ```
 
-Use `&#124;` inside page titles. Each decision note must say how masters coverage was verified and why the selected page is broader than a single award. For anti-bot pages, record the successful browser-DOM verification and expected checker behavior.
+Use `&#124;` inside page titles. Each available-link decision note must say how masters coverage was verified and why the selected page is broader than a single award. A `no-public-entry` row uses a stable `evidence-*` ID and explains why the official page is negative evidence rather than an action destination. For anti-bot pages, record the successful browser-DOM verification and expected checker behavior.
 
 - [ ] **Step 3: Write the failing batch parity test**
 
-In `tests/masters-scholarship-entry-batch-1.test.ts`, parse the research table, assert that its university set equals `batch1UniversityIds`, locate every `linkId` in the production registry, and compare `universityId`, `url: finalUrl`, `kind`, `requiresFiltering`, `pageTitle`, both identity anchors, and `reviewedAt`. Assert each university has 1–3 links and all link IDs are unique.
+In `tests/masters-scholarship-entry-batch-1.test.ts`, parse the research table and assert that its university set equals `batch1UniversityIds`. For each university, assert group `entryState` and `reviewedAt`, then compare the production link-ID set bidirectionally with that university's available evidence-ID set so neither missing nor extra links pass. Compare each available row's `universityId`, `url: finalUrl`, `kind`, `requiresFiltering`, `pageTitle`, both identity anchors, and `reviewedAt`. For negative evidence, assert a single `no-public-entry` row, the production state/date, and zero links.
 
 - [ ] **Step 4: Run the test and confirm production data is missing**
 
@@ -300,7 +320,7 @@ Expected: FAIL because batch 1 groups are absent from the registry.
 
 - [ ] **Step 5: Add the reviewed groups to the production registry**
 
-Convert every admitted research row into the `MastersScholarshipEntry` structure. Group rows by `universityId`, preserve the fixed batch order, use `labelZh: 查看硕士奖学金官网`, and set `monitorMode: page-identity`. Where an external first-party alias is unavoidable, add only that exact normalized hostname to the scholarship alias map and add one accepted-alias plus two lookalike-rejection tests.
+Convert every university's research result into the `MastersScholarshipEntry` structure with explicit group state/date. Group available rows by `universityId`, preserve fixed batch order, use `labelZh: 查看硕士奖学金官网`, and set `monitorMode: page-identity`; convert a negative-evidence row only to `entryState: no-public-entry` with `links: []`. Where an external first-party alias is unavoidable, add only that exact normalized hostname to the scholarship alias map and add one accepted-alias plus two lookalike-rejection tests.
 
 - [ ] **Step 6: Run batch and contract tests**
 
@@ -346,15 +366,15 @@ const batch2UniversityIds = [
 ] as const;
 ```
 
-Record the same 11 evidence columns. Specialist institutions still require a complete masters-funding gateway; do not replace it with one prominent award.
+Record the same 11 evidence columns. Specialist institutions still require a complete masters-funding gateway; do not replace it with one prominent award. If none exists publicly, retain an official negative-evidence row and use `no-public-entry` with zero links.
 
 - [ ] **Step 2: Write and run the failing batch parity test**
 
-Create `tests/masters-scholarship-entry-batch-2.test.ts` with the same exact evidence-to-registry comparison as batch 1, importing batch 2 research. Run it and expect missing-group failures.
+Create `tests/masters-scholarship-entry-batch-2.test.ts` with the same exact bidirectional evidence-to-registry comparison and negative-evidence handling as batch 1, importing batch 2 research. Run it and expect missing-group failures.
 
 - [ ] **Step 3: Add all reviewed batch 2 groups**
 
-Append the 25 groups in batch order, add only evidence-backed domain aliases, and keep every group within 1–3 links.
+Append the 25 groups in batch order with explicit state/date, add only evidence-backed domain aliases, keep available groups within 1–3 links, and keep no-public-entry groups at zero links.
 
 - [ ] **Step 4: Run cumulative tests**
 
@@ -400,11 +420,11 @@ const batch3UniversityIds = [
 ] as const;
 ```
 
-Apply the same direct-open, masters-coverage, directory-over-individual-award, and first-party-domain rules.
+Apply the same direct-open, masters-coverage, directory-over-individual-award, first-party-domain, bidirectional-parity, and official negative-evidence rules.
 
 - [ ] **Step 2: Write and run the failing batch parity test**
 
-Create `tests/masters-scholarship-entry-batch-3.test.ts`, compare every evidence row with production, and expect missing batch 3 groups before the JSON change.
+Create `tests/masters-scholarship-entry-batch-3.test.ts`, compare every university's available evidence-ID set bidirectionally with production, handle no-public-entry evidence as zero-link state, and expect missing batch 3 groups before the JSON change.
 
 - [ ] **Step 3: Add all reviewed batch 3 groups and rerun cumulative tests**
 
@@ -452,9 +472,11 @@ const batch4UniversityIds = [
 ] as const;
 ```
 
+Apply the same direct-open, bidirectional evidence parity, and official negative-evidence rules. Every final group must have explicit state/date; no-public-entry groups retain one official evidence row but zero production links.
+
 - [ ] **Step 2: Write and run the failing batch parity test**
 
-Create `tests/masters-scholarship-entry-batch-4.test.ts`, compare every evidence row with production, and expect missing batch 4 groups before the JSON change.
+Create `tests/masters-scholarship-entry-batch-4.test.ts`, compare every university's available evidence-ID set bidirectionally with production, handle no-public-entry evidence as zero-link state, and expect missing batch 4 groups before the JSON change.
 
 - [ ] **Step 3: Add final groups and exact-catalog assertions**
 
@@ -466,14 +488,16 @@ const entries = loadMastersScholarshipEntries();
 expect(entries).toHaveLength(101);
 expect(new Set(entries.map((entry) => entry.universityId)))
   .toEqual(new Set(catalog.map((university) => university.id)));
-expect(entries.every((entry) => entry.links.length >= 1 && entry.links.length <= 3)).toBe(true);
+expect(entries.every((entry) => entry.entryState === 'available'
+  ? entry.links.length >= 1 && entry.links.length <= 3
+  : entry.links.length === 0)).toBe(true);
 ```
 
 - [ ] **Step 4: Run all registry and evidence tests**
 
 Run: `pnpm vitest run tests/masters-scholarship-entries.test.ts tests/masters-scholarship-entry-batch-{1,2,3,4}.test.ts`
 
-Expected: PASS with exactly 101 groups and at least 101 unique official links.
+Expected: PASS with exactly 101 groups; every group has explicit state/date, every available group has 1–3 unique official links, and every no-public-entry group has zero links. Do not require at least 101 clickable links.
 
 - [ ] **Step 5: Commit batch 4**
 
@@ -501,16 +525,18 @@ git commit -m "data: complete masters scholarship entry registry"
 
 - [ ] **Step 1: Write failing strict-join tests**
 
-Add tests to `tests/data.test.ts` covering one valid group with two links and status objects, plus missing, extra, duplicate-university, and link-status isolation cases. The valid assertion is:
+Add tests to `tests/data.test.ts` covering one available group with two links and status objects, one no-public-entry group with zero links, plus missing, extra, duplicate-university, and link-status isolation cases. The available assertion is:
 
 ```ts
 expect(joined.mastersScholarships).toEqual({
   universityId: university.id,
+  entryState: entry.entryState,
+  reviewedAt: entry.reviewedAt,
   links: entry.links.map((link) => ({ ...link, status: statuses[link.id] })),
 });
 ```
 
-Add the same strict mapping cases to `tests/public-data.test.mjs` and extend the checked-in snapshot assertion so every public university has both `mastersCourse` and `mastersScholarships`.
+For no-public-entry, assert the state/date survive unchanged, `links` stays empty, and no status is looked up. Add the same strict mapping cases to `tests/public-data.test.mjs` and extend the checked-in snapshot assertion so every public university has both `mastersCourse` and `mastersScholarships`.
 
 - [ ] **Step 2: Run focused tests and confirm the join is absent**
 
@@ -532,7 +558,7 @@ export type UniversityDirectoryRecord = UniversityWithMastersCourse & {
 };
 ```
 
-Change `joinMastersCourseDirectories` to return `UniversityWithMastersCourse[]`. Add `joinMastersScholarshipEntries` with the same missing/extra/duplicate protection and map each link status by link ID. Update `loadUniversities()` to join rankings, China sources, course entry, then scholarship entry.
+Change `joinMastersCourseDirectories` to return `UniversityWithMastersCourse[]`. Add `joinMastersScholarshipEntries` with the same missing/extra/duplicate protection, preserve group state/date, and map statuses only for available links by link ID. A no-public-entry group remains a zero-link state object. Update `loadUniversities()` to join rankings, China sources, course entry, then scholarship entry.
 
 - [ ] **Step 4: Extend the public-data builder**
 
@@ -554,7 +580,9 @@ function joinedMastersScholarshipEntries(universities, entries, statuses) {
       ...university,
       mastersScholarships: {
         ...entry,
-        links: entry.links.map((link) => ({ ...link, status: statuses[link.id] })),
+        links: entry.entryState === 'available'
+          ? entry.links.map((link) => ({ ...link, status: statuses[link.id] }))
+          : [],
       },
     };
   });
@@ -591,8 +619,8 @@ git commit -m "feat: join masters scholarship entries into directory data"
 - Modify: `tests/page-content.test.mjs`
 
 **Interfaces:**
-- Consumes: `UniversityDirectoryRecord.mastersScholarships.links`.
-- Produces: `mastersScholarshipActionModel(entry)` returning `{ collapsed, count, label }`.
+- Consumes: `UniversityDirectoryRecord.mastersScholarships` including group state/date and links.
+- Produces: `mastersScholarshipActionModel(entry)` returning an available direct/disclosure model or an unavailable non-clickable model.
 - Produces: `mastersScholarshipKindCopy(link)` for the four fixed source types and the mandatory filtering warning.
 - Produces: `bindSourceDetailsKeyboard(root: ParentNode): void` for China and scholarship disclosures.
 
@@ -601,19 +629,36 @@ git commit -m "feat: join masters scholarship entries into directory data"
 Add these unit expectations to `tests/source-actions.test.ts`:
 
 ```ts
-expect(mastersScholarshipActionModel({ universityId: 'one', links: [link] })).toEqual({
+expect(mastersScholarshipActionModel({
+  universityId: 'one', entryState: 'available', reviewedAt: '2026-08-31', links: [link],
+})).toEqual({
+  entryState: 'available',
   collapsed: false,
   count: 1,
   label: '查看硕士奖学金官网',
 });
-expect(mastersScholarshipActionModel({ universityId: 'one', links: [link, secondLink] })).toEqual({
+expect(mastersScholarshipActionModel({
+  universityId: 'one', entryState: 'available', reviewedAt: '2026-08-31', links: [link, secondLink],
+})).toEqual({
+  entryState: 'available',
   collapsed: true,
   count: 2,
   label: '查看硕士奖学金官网（2 个入口）',
 });
+expect(mastersScholarshipActionModel({
+  universityId: 'one',
+  entryState: 'no-public-entry',
+  reviewedAt: '2026-08-31',
+  links: [],
+})).toEqual({
+  entryState: 'no-public-entry',
+  collapsed: false,
+  count: 0,
+  label: '未发现公开硕士奖学金入口',
+});
 ```
 
-Extend the built-DOM tests to require exactly 101 scholarship action roots, one per university. Test one ordinary direct link and one production multi-link university discovered during research. Verify that Enter and Space toggle both China and scholarship `<details>` summaries without changing focus, while ArrowDown remains untouched.
+Extend the built-DOM tests to require exactly 101 scholarship action roots, one per university, while asserting that the number of clickable scholarship links equals the flattened available-link count rather than 101. Test one ordinary direct link, one production multi-link university discovered during research, and one no-public-entry university that renders only “未发现公开硕士奖学金入口”. Verify that Enter and Space toggle both China and scholarship `<details>` summaries without changing focus, while ArrowDown remains untouched.
 
 - [ ] **Step 2: Run the focused action tests**
 
@@ -640,8 +685,17 @@ export function mastersScholarshipKindCopy(link: MastersScholarshipLink): string
 }
 
 export function mastersScholarshipActionModel(entry: MastersScholarshipEntryWithStatus) {
+  if (entry.entryState === 'no-public-entry') {
+    return {
+      entryState: entry.entryState,
+      collapsed: false,
+      count: 0,
+      label: '未发现公开硕士奖学金入口',
+    };
+  }
   const count = entry.links.length;
   return {
+    entryState: entry.entryState,
     collapsed: count > 1,
     count,
     label: count > 1 ? `查看硕士奖学金官网（${count} 个入口）` : '查看硕士奖学金官网',
@@ -653,7 +707,7 @@ Rename `bindChinaSourceDetailsKeyboard` to `bindSourceDetailsKeyboard` and query
 
 - [ ] **Step 4: Render one link or one disclosure inside the current action group**
 
-In `src/pages/index.astro`, preserve China sources first and the masters-course action second. Add the scholarship action third. A single link renders directly with its kind copy. Multiple links render:
+In `src/pages/index.astro`, preserve China sources first and the masters-course action second. Add the scholarship action root third. A no-public-entry group renders only non-clickable text “未发现公开硕士奖学金入口”; it must not render an `<a>` or an empty disclosure. An available single link renders directly with its kind copy. Multiple available links render:
 
 ```astro
 <details class="masters-scholarship-bundle">
@@ -665,7 +719,7 @@ In `src/pages/index.astro`, preserve China sources first and the masters-course 
 </details>
 ```
 
-Each expanded link displays `link.labelZh`, `link.scopeZh`, and `mastersScholarshipKindCopy(link)`. A direct single link uses the same function. Add a unit assertion that any `requiresFiltering: true` link visibly contains “含硕士，请筛选”. A `temporary-error` or `unavailable` status adds “官网入口暂不可用，请稍后重试”; normal links do not add a visible timestamp line.
+Each expanded link displays `link.labelZh`, `link.scopeZh`, and `mastersScholarshipKindCopy(link)`. A direct single link uses the same function. Add a unit assertion that any `requiresFiltering: true` link visibly contains “含硕士，请筛选”. A link health status of `temporary-error` or `unavailable` adds “官网入口暂不可用，请稍后重试”; this is distinct from the group-level no-public-entry state. Normal links and the no-public-entry message do not add a visible timestamp line.
 
 - [ ] **Step 5: Add narrowly scoped responsive CSS**
 
@@ -677,7 +731,7 @@ Run: `pnpm vitest run tests/source-actions.test.ts tests/page-content.test.mjs`
 
 Run: `pnpm build`
 
-Expected: PASS; Astro reports no type error and the built DOM has 101 scholarship action roots.
+Expected: PASS; Astro reports no type error and the built DOM has 101 scholarship action roots, with unavailable roots non-clickable and clickable link count derived only from available groups.
 
 - [ ] **Step 7: Commit the UI**
 
@@ -707,7 +761,7 @@ git commit -m "feat: add compact masters scholarship actions"
 
 - [ ] **Step 1: Write failing checker-target tests**
 
-Extend `tests/check-sources-runner.test.mjs` with one group containing two scholarship links. Assert the exact order is China sources, masters-course directories, then flattened scholarship links. Assert duplicate IDs across any category fail before network access. Add a run test where the first scholarship link returns 503 and the second returns a page containing both required anchors; both attempts must appear in the audit.
+Extend `tests/check-sources-runner.test.mjs` with one available group containing two scholarship links and one no-public-entry group containing none. Assert the exact order is China sources, masters-course directories, then flattened available scholarship links; the no-public-entry group must produce no monitor target or network request. Assert duplicate IDs across any category fail before network access. Add a run test where the first scholarship link returns 503 and the second returns a page containing both required anchors; both attempts must appear in the audit.
 
 Also assert that an unchanged successful scholarship page-identity attempt records a fresh `lastSuccessfulAt` in the daily audit but does not persist a status-only timestamp refresh, matching the existing low-noise page-identity contract.
 
@@ -735,7 +789,7 @@ Implement:
 
 ```js
 export function flattenMastersScholarshipLinks(entries) {
-  return entries.flatMap((entry) => entry.links);
+  return entries.flatMap((entry) => entry.entryState === 'available' ? entry.links : []);
 }
 
 export function loadCheckTargets({
@@ -753,7 +807,7 @@ export function loadCheckTargets({
 }
 ```
 
-Load the new registry path in `runSourceChecks`. Keep the `options.sources` shortcut working by supplying both directory arrays as empty.
+Load the new registry path in `runSourceChecks`. Keep the `options.sources` shortcut working by supplying both directory arrays as empty. No-public-entry groups participate only in annual human review and must never be synthesized into checker targets or anomaly Issues.
 
 - [ ] **Step 5: Index grouped links and render accurate Issues**
 
@@ -814,9 +868,9 @@ Expected: FAIL on the new scholarship wording.
 
 - [ ] **Step 3: Add concise navigation-only documentation**
 
-Add one sentence to the README feature summary and one paragraph to the methodology source/update section. State that the site verifies official destinations only, does not reproduce individual awards, and leaves availability, amount, eligibility, application method, and deadline to the live university page.
+Add one sentence to the README feature summary and one paragraph to the methodology source/update section. State that the site verifies official destinations only, does not reproduce individual awards, and leaves availability, amount, eligibility, application method, and deadline to the live university page. Explain that “未发现公开硕士奖学金入口” is a reviewed non-clickable state, not proof that no internal or non-public support exists.
 
-Add a “硕士奖学金入口年度复核” section to `CONTRIBUTING.md`: before each application season, reopen every row in the four research files, confirm the final URL, masters coverage, page title, and both identity anchors, update `reviewedAt`, rerun all four batch tests, and submit the reviewed changes through a normal pull request. Explicitly forbid accepting a daily observation automatically.
+Add a “硕士奖学金入口年度复核” section to `CONTRIBUTING.md`: before each application season, reopen every row in the four research files, confirm the final URL, masters coverage or negative-evidence conclusion, page title, and both identity anchors, update group and evidence `reviewedAt`, rerun all four batch tests, and submit the reviewed changes through a normal pull request. Re-search every no-public-entry university for a newly published qualifying gateway. Explicitly forbid accepting a daily observation automatically.
 
 - [ ] **Step 4: Regenerate and run the full automated verification**
 
@@ -835,11 +889,12 @@ Start `pnpm dev -- --host 127.0.0.1` and inspect at a desktop viewport:
 - Imperial or another single-link university shows China source(s), “查看全部硕士课程”, then one “查看硕士奖学金官网” action.
 - Manchester keeps its three China sources in the existing disclosure and shows the two new independent navigation actions without an extra column.
 - A production multi-link scholarship university defaults closed, opens with mouse and keyboard, and shows every classified official page once.
+- ICR shows one non-clickable “未发现公开硕士奖学金入口” action root and no scholarship anchor or empty disclosure.
 - No university row overlaps, no action is clipped, and the console has no errors or warnings.
 
 - [ ] **Step 6: Run 390px mobile acceptance**
 
-At 390px, inspect the same three university cases. Confirm Chinese/English names, ranking pills, state, scope, China sources, course link, and scholarship link stay in the existing card order; all action text wraps horizontally; no single-character vertical column or horizontal page overflow appears.
+At 390px, inspect the same cases. Confirm Chinese/English names, ranking pills, state, scope, China sources, course link, and scholarship action state stay in the existing card order; all action text wraps horizontally; no single-character vertical column or horizontal page overflow appears.
 
 - [ ] **Step 7: Commit documentation and final generated output**
 
