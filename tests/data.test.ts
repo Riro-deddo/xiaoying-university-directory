@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import mastersCourseDirectories from '../src/data/masters-course-directories.json';
 import mastersScholarshipEntries from '../src/data/masters-scholarship-entries.json';
 import rankings from '../src/data/rankings.json';
@@ -363,6 +363,30 @@ describe('joinMastersScholarshipEntries', () => {
 });
 
 describe('QS 2027 starter ranks', () => {
+  it('validates rankings before joining China sources when both inputs would fail', async () => {
+    const invalidRankings = {
+      ...rankings,
+      records: rankings.records.filter((record) => record.universityId !== 'imperial-college-london'),
+    };
+    const imperial = universitiesJson.find((university) => university.id === 'imperial-college-london')!;
+    const invalidSources = sources.filter((source) => !imperial.sourceIds.includes(source.id));
+
+    vi.resetModules();
+    vi.doMock('../src/data/rankings.json', () => ({ default: invalidRankings }));
+    vi.doMock('../src/data/sources.json', () => ({ default: invalidSources }));
+    try {
+      const { loadUniversities: loadUniversitiesWithInvalidInputs } = await import('../src/lib/data');
+
+      expect(() => loadUniversitiesWithInvalidInputs()).toThrowError(expect.objectContaining({
+        dataset: 'Ranking',
+      }));
+    } finally {
+      vi.doUnmock('../src/data/rankings.json');
+      vi.doUnmock('../src/data/sources.json');
+      vi.resetModules();
+    }
+  });
+
   it('matches the published QS 2027 positions', () => {
     const ranks = Object.fromEntries(
       loadUniversities()

@@ -31,6 +31,7 @@ import type {
   UniversityDirectoryRecord,
   UniversityState,
   UniversityWithMastersCourse,
+  UniversityWithRankings,
   UniversityWithStatus,
 } from './types';
 
@@ -409,7 +410,7 @@ export function loadRequirements(input: unknown = requirementsJson): Requirement
 }
 
 export function joinUniversityStatuses(
-  universities: University[],
+  universities: Array<University | UniversityWithRankings>,
   sources: OfficialSourceConfig[],
   statuses: StatusMap,
 ): UniversityWithStatus[] {
@@ -425,14 +426,22 @@ export function joinUniversityStatuses(
       }
       return { ...source, status: statuses[source.id] };
     }),
-    rankings: {},
+    rankings: 'rankings' in university ? { ...university.rankings } : {},
   }));
 }
 
 export function joinUniversityRankings(
+  universities: University[],
+  dataset: RankingDataset,
+): UniversityWithRankings[];
+export function joinUniversityRankings(
   universities: UniversityWithStatus[],
   dataset: RankingDataset,
-): UniversityWithStatus[] {
+): UniversityWithStatus[];
+export function joinUniversityRankings(
+  universities: Array<University | UniversityWithStatus>,
+  dataset: RankingDataset,
+): Array<UniversityWithRankings | UniversityWithStatus> {
   const rankingsByUniversity = new Map<string, Partial<Record<RankingRecord['provider'], RankingRecord>>>();
 
   for (const record of dataset.records) {
@@ -511,17 +520,20 @@ export function joinMastersScholarshipEntries(
 
 export function loadUniversities(): UniversityDirectoryRecord[] {
   const universities = validateUniversities(universitiesJson);
+  const withRankings = joinUniversityRankings(
+    universities,
+    loadRankings(undefined, universities),
+  );
   const sources = validateOfficialSources(sourcesJson);
   const statuses = statusesJson as StatusMap;
+  const withSources = joinUniversityStatuses(withRankings, sources, statuses);
+  const withMastersCourse = joinMastersCourseDirectories(
+    withSources,
+    loadMastersCourseDirectories(),
+    statuses,
+  );
   return joinMastersScholarshipEntries(
-    joinMastersCourseDirectories(
-      joinUniversityRankings(
-        joinUniversityStatuses(universities, sources, statuses),
-        loadRankings(undefined, universities),
-      ),
-      loadMastersCourseDirectories(),
-      statuses,
-    ),
+    withMastersCourse,
     loadMastersScholarshipEntries(),
     statuses,
   );

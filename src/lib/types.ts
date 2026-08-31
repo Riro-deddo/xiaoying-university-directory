@@ -258,9 +258,11 @@ export interface RequirementFact {
 
 export type StatusMap = Record<string, SourceStatus>;
 export type SourceWithStatus = OfficialSourceConfig & { status?: SourceStatus };
-export type UniversityWithStatus = Omit<University, 'sourceIds'> & {
-  sources: SourceWithStatus[];
+export type UniversityWithRankings = University & {
   rankings: Partial<Record<RankingProvider, RankingRecord>>;
+};
+export type UniversityWithStatus = Omit<UniversityWithRankings, 'sourceIds'> & {
+  sources: SourceWithStatus[];
 };
 
 export type UniversityWithMastersCourse = UniversityWithStatus & {
