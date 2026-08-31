@@ -192,7 +192,13 @@ export function validateMastersScholarshipEntries(
         ]);
       }
       linkIds.add(link.id);
-      assertUniversityOwnedUrl(link.url, university, 'Masters scholarship entry', `/${recordIndex}/links/${linkIndex}/url`);
+      assertUniversityOwnedUrl(
+        link.url,
+        university,
+        'Masters scholarship entry',
+        `/${recordIndex}/links/${linkIndex}/url`,
+        firstPartyScholarshipDomainAliases.get(record.universityId) ?? new Set(),
+      );
     });
   });
 
