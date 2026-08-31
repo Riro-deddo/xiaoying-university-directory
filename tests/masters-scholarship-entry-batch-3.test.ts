@@ -22,6 +22,19 @@ const researchMarkdown = readFileSync(
 );
 
 describe('masters scholarship entry batch 3', () => {
+  it('uses generic postgraduate page text for the DMU home-category identity anchors', () => {
+    const dmuGroup = loadMastersScholarshipEntries()
+      .find((group) => group.universityId === 'de-montfort-university');
+    const dmuHomeCategory = dmuGroup?.links
+      .find((link) => link.id === 'scholarships-de-montfort-university-home-category');
+
+    expect(dmuHomeCategory?.requiredText).not.toContain('Postgraduate Alumni Scholarship');
+    expect(dmuHomeCategory?.requiredText).toEqual([
+      'Postgraduate scholarships and bursaries',
+      'funding of postgraduate course',
+    ]);
+  });
+
   it('matches every reviewed row to the production registry and completes 76 groups', () => {
     const researchRows = parseMastersScholarshipResearch(researchMarkdown);
     const registry = loadMastersScholarshipEntries();
