@@ -167,7 +167,9 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
                       <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9"></path><path d="M19 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6"></path></svg>
                       <span>{link.labelZh}</span>
                       <small>{link.scopeZh}</small>
-                      <small>{mastersScholarshipKindCopy(link)}</small>
+                      {mastersScholarshipKindCopy(link) !== link.scopeZh && (
+                        <small>{mastersScholarshipKindCopy(link)}</small>
+                      )}
                       {['temporary-error', 'unavailable'].includes(link.status?.health ?? 'unchecked') && (
                         <small class="scholarship-link-warning">官网入口暂不可用，请稍后重试</small>
                       )}
@@ -207,7 +209,9 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
                           <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9"></path><path d="M19 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6"></path></svg>
                           <span>{scholarshipModel.label}</span>
                           <small>{university.mastersScholarships.links[0].scopeZh}</small>
-                          <small>{mastersScholarshipKindCopy(university.mastersScholarships.links[0])}</small>
+                          {mastersScholarshipKindCopy(university.mastersScholarships.links[0]) !== university.mastersScholarships.links[0].scopeZh && (
+                            <small>{mastersScholarshipKindCopy(university.mastersScholarships.links[0])}</small>
+                          )}
                           {['temporary-error', 'unavailable'].includes(university.mastersScholarships.links[0].status?.health ?? 'unchecked') && (
                             <small class="scholarship-link-warning">官网入口暂不可用，请稍后重试</small>
                           )}

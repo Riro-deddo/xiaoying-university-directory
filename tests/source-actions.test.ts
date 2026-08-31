@@ -214,6 +214,9 @@ describe('rendered source actions', () => {
     const action = oxford.querySelector<HTMLAnchorElement>('.masters-scholarship-action[href]')!;
 
     expect(action.textContent).toContain('含硕士，请筛选');
+    expect([...action.querySelectorAll('small')].map((item) => item.textContent)).toEqual([
+      '研究生资助官网（含硕士，请筛选）',
+    ]);
     expect(action.textContent).not.toMatch(/2026|最近|检查/u);
   });
 
