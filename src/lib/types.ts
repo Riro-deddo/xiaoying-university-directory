@@ -183,6 +183,37 @@ export interface MastersCourseDirectory {
 export type MastersCourseDirectoryWithStatus =
   MastersCourseDirectory & { status?: SourceStatus };
 
+export type MastersScholarshipEntryKind =
+  | 'masters-directory'
+  | 'masters-search'
+  | 'postgraduate-funding'
+  | 'category';
+
+export interface MastersScholarshipLink {
+  id: string;
+  universityId: string;
+  labelZh: '查看硕士奖学金官网';
+  scopeZh: string;
+  kind: MastersScholarshipEntryKind;
+  requiresFiltering: boolean;
+  url: string;
+  pageTitle: string;
+  reviewedAt: string;
+  requiredText: string[];
+  monitorMode: 'page-identity';
+}
+
+export interface MastersScholarshipEntry {
+  universityId: string;
+  links: MastersScholarshipLink[];
+}
+
+export type MastersScholarshipLinkWithStatus =
+  MastersScholarshipLink & { status?: SourceStatus };
+
+export type MastersScholarshipEntryWithStatus =
+  Omit<MastersScholarshipEntry, 'links'> & { links: MastersScholarshipLinkWithStatus[] };
+
 export interface InstitutionRecord {
   id: string;
   nameZh: string;
