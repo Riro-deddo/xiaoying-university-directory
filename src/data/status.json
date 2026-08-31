@@ -177,14 +177,13 @@
   },
   "nottingham-china": {
     "sourceId": "nottingham-china",
-    "checkedAt": "2026-08-30T09:13:48.827Z",
-    "lastSuccessfulAt": "2026-08-30T09:13:48.827Z",
-    "health": "changed",
-    "finalUrl": "https://www.nottingham.ac.uk/studywithus/international-applicants/country-info/countryinformation/china-institution-list.aspx",
+    "checkedAt": "2026-08-31T00:01:46.029Z",
+    "lastSuccessfulAt": "2026-08-31T00:01:46.029Z",
+    "contentHash": "71445a601e1eb559b9c948764660a66d4691d684650f90e2dda8ac213f794200",
     "consecutiveFailures": 0,
-    "contentHash": "4c39554afa7d9d6c592c82effa60b4e41deb6c1bebb0785b6f083222095d05a7",
+    "health": "ok",
     "httpStatus": 200,
-    "observedContentHash": "369957c93bb0c0478e66874a9f2742f5cc33b95c8f93400ea646ade98df621bf"
+    "finalUrl": "https://www.nottingham.ac.uk/studywithus/international-applicants/country-info/countryinformation/china-institution-list.aspx"
   },
   "qmul-china": {
     "sourceId": "qmul-china",

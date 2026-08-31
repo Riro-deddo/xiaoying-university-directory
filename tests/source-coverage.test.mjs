@@ -83,7 +83,8 @@ describe('source coverage report', () => {
     expect(universities.filter((university) => university.state === 'pending').map((university) => university.id))
       .toEqual(baseline.pendingUniversityIds.filter((id) => !batchReviewedIds.has(id)));
     expect(baseline.nonTargetAuditRows).toHaveLength(36);
-    const preservedBaselineSources = baseline.sourceConfigs.filter((source) => source.id !== 'leeds-china');
+    const preservedBaselineSources = baseline.sourceConfigs
+      .filter((source) => !['leeds-china', 'nottingham-china'].includes(source.id));
     const preExistingSourceIds = new Set(preservedBaselineSources.map((source) => source.id));
     expect(sources.filter((source) => preExistingSourceIds.has(source.id))).toEqual(preservedBaselineSources);
     expect(baseline.reviewedRequirementCount).toBe(5754);
