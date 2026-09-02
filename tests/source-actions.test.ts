@@ -181,6 +181,34 @@ describe('rendered source actions', () => {
     expect(links.map((link) => link.getAttribute('href')).sort()).toEqual(availableLinks.map((link) => link.url).sort());
   });
 
+  it('renders scholarship availability warnings without replacing the reviewed link copy', () => {
+    const actions = [...document.querySelectorAll<HTMLAnchorElement>(
+      '.masters-scholarship-action[href], .masters-scholarship-bundle-list > a',
+    )];
+    const expectedByUrl = new Map(
+      universities.flatMap((university) => university.mastersScholarships.links)
+        .map((link) => [link.url, link]),
+    );
+
+    for (const action of actions) {
+      const href = action.getAttribute('href') ?? '';
+      const link = expectedByUrl.get(href);
+      const reviewedCopy = [...action.querySelectorAll('small:not(.scholarship-link-warning)')]
+        .map((item) => item.textContent);
+      const warning = action.querySelector<HTMLElement>('.scholarship-link-warning');
+
+      expect(link, href).toBeDefined();
+      if (!link) continue;
+      expect(reviewedCopy).toContain(link.scopeZh);
+      if (['temporary-error', 'unavailable'].includes(link.status?.health ?? 'unchecked')) {
+        expect(warning?.textContent).toBe('官网入口暂不可用，请稍后重试');
+      } else {
+        expect(warning).toBeNull();
+      }
+      expect(action.textContent).not.toMatch(/2026|最近|检查/u);
+    }
+  });
+
   it('renders Imperial as an ordinary direct scholarship link after its masters-course action', () => {
     const imperial = document.querySelector<HTMLElement>('[data-id="imperial-college-london"]')!;
     const actionGroup = imperial.querySelector<HTMLElement>('.source-actions')!;
@@ -192,7 +220,7 @@ describe('rendered source actions', () => {
     expect(actionGroup.lastElementChild).toBe(action);
     expect(action.href).toBe(expected.url);
     expect(action.querySelector('span')?.textContent).toBe('查看硕士奖学金官网');
-    expect([...action.querySelectorAll('small')].map((item) => item.textContent)).toEqual([
+    expect([...action.querySelectorAll('small:not(.scholarship-link-warning)')].map((item) => item.textContent)).toEqual([
       expected.scopeZh,
       '官方奖学金目录',
     ]);
@@ -209,12 +237,12 @@ describe('rendered source actions', () => {
     expect(action.textContent).not.toMatch(/2026|最近|检查/u);
   });
 
-  it('shows the mandatory masters filtering copy on Oxford direct action', () => {
+  it('keeps the Oxford filtering copy separate from its transient availability warning', () => {
     const oxford = document.querySelector<HTMLElement>('[data-id="university-of-oxford"]')!;
     const action = oxford.querySelector<HTMLAnchorElement>('.masters-scholarship-action[href]')!;
 
     expect(action.textContent).toContain('含硕士，请筛选');
-    expect([...action.querySelectorAll('small')].map((item) => item.textContent)).toEqual([
+    expect([...action.querySelectorAll('small:not(.scholarship-link-warning)')].map((item) => item.textContent)).toEqual([
       '研究生资助官网（含硕士，请筛选）',
     ]);
     expect(action.textContent).not.toMatch(/2026|最近|检查/u);
@@ -314,10 +342,15 @@ describe('rendered source actions', () => {
     expect(document.activeElement).toBe(scholarshipSummary);
     expect(scholarshipSummary.textContent).toBe('查看硕士奖学金官网（2 个入口）');
     expect([...scholarshipDetails.querySelectorAll<HTMLAnchorElement>('.masters-scholarship-bundle-list > a')]
-      .map((link) => ({ href: link.href, text: link.textContent })))
+      .map((link) => ({
+        href: link.href,
+        label: link.querySelector('span')?.textContent,
+        copy: [...link.querySelectorAll('small:not(.scholarship-link-warning)')].map((item) => item.textContent),
+      })))
       .toEqual(scholarshipExpected.map((link) => ({
         href: link.url,
-        text: `${link.labelZh}${link.scopeZh}官方分类资助入口（含硕士，请筛选）`,
+        label: link.labelZh,
+        copy: [link.scopeZh, '官方分类资助入口（含硕士，请筛选）'],
       })));
 
     const scholarshipSpace = scholarshipKeydown(' ');
