@@ -1,9 +1,6 @@
 name: Probe official sources with standard Chrome sessions
 
-on:
-  push:
-    branches: [spike/playwright-source-access]
-  workflow_dispatch:
+on: workflow_dispatch
 
 permissions:
   contents: read

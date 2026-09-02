@@ -15,6 +15,12 @@ const remainingBlockedHosts = new Set([
   'www.southwales.ac.uk',
 ]);
 const blockMarkers = ['access denied', 'attention required', 'human verification', 'just a moment', 'request blocked'];
+const officialAlternateSources = new Map([
+  ['www.uea.ac.uk', {
+    url: 'https://www.ueachina.cn/how-to-apply/',
+    requiredText: ['获得UEA认可的中国大学学士学位', '平均成绩达到65%至75%', 'admissions@uea.ac.uk'],
+  }],
+]);
 
 function representativeTargets(sources) {
   const byHost = new Map();
@@ -74,6 +80,28 @@ async function fetchViaReader(url) {
   }
 }
 
+async function fetchDirect(url) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 30_000);
+  try {
+    const response = await fetch(url, {
+      headers: { 'User-Agent': 'xiaoying-directory-source-check/1.0' },
+      redirect: 'follow',
+      signal: controller.signal,
+    });
+    const body = await response.text();
+    return { body, status: response.status };
+  } catch (error) {
+    return {
+      body: '',
+      status: undefined,
+      error: error instanceof Error ? error.message : 'unknown direct-fetch error',
+    };
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
 const sources = JSON.parse(await readFile(join(root, 'src', 'data', 'sources.json'), 'utf8'));
 const targets = representativeTargets(sources);
 const results = [];
@@ -81,18 +109,29 @@ const results = [];
 for (const [index, { host, source }] of targets.entries()) {
   const result = await fetchViaReader(source.url);
   const expected = expectedText(source);
-  const accessible = result.status === 200
+  const readerTextMatched = containsExpectedText(result.body, expected);
+  const readerAccessible = result.status === 200
     && result.body.length > 200
     && !result.blocked
-    && containsExpectedText(result.body, expected);
+    && readerTextMatched;
+  const alternate = officialAlternateSources.get(host);
+  const alternateResult = !readerAccessible && alternate ? await fetchDirect(alternate.url) : undefined;
+  const alternateTextMatched = Boolean(alternateResult
+    && alternate.requiredText.every((value) => alternateResult.body.includes(value)));
+  const alternateAccessible = Boolean(alternateResult
+    && alternateResult.status === 200
+    && alternateResult.body.length > 200
+    && alternateTextMatched);
   const item = {
     host,
     url: source.url,
-    status: result.status,
-    title: result.title,
-    textLength: result.body.length,
-    expectedTextMatched: containsExpectedText(result.body, expected),
-    accessible,
+    status: readerAccessible ? result.status : alternateResult?.status ?? result.status,
+    title: readerAccessible ? result.title : alternateAccessible ? 'UEA Chinese official website' : result.title,
+    textLength: readerAccessible ? result.body.length : alternateResult?.body.length ?? result.body.length,
+    expectedTextMatched: readerAccessible ? readerTextMatched : alternateTextMatched,
+    accessible: readerAccessible || alternateAccessible,
+    route: readerAccessible ? 'reader' : alternateAccessible ? 'official-microsite' : 'unavailable',
+    alternateUrl: alternateAccessible ? alternate.url : undefined,
     error: result.error,
   };
   results.push(item);
@@ -106,9 +145,9 @@ const summary = [
   '',
   `Recovered official source pages with required-text validation: ${recovered}/${results.length}`,
   '',
-  '| Host | Status | Required text | Title |',
-  '| --- | --- | --- | --- |',
-  ...results.map((item) => `| ${item.host} | ${item.status ?? 'error'} | ${item.expectedTextMatched ? 'yes' : 'no'} | ${item.title.replaceAll('|', '\\|')} |`),
+  '| Host | Route | Status | Required text | Title |',
+  '| --- | --- | --- | --- | --- |',
+  ...results.map((item) => `| ${item.host} | ${item.route} | ${item.status ?? 'error'} | ${item.expectedTextMatched ? 'yes' : 'no'} | ${item.title.replaceAll('|', '\\|')} |`),
   '',
 ].join('\n');
 
