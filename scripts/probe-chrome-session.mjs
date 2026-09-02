@@ -4,12 +4,11 @@ import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
-const representativeHosts = new Set([
-  'www.ox.ac.uk',
-  'le.ac.uk',
-  'www.citystgeorges.ac.uk',
-  'www.uea.ac.uk',
-  'www.arts.ac.uk',
+const alreadyRecovered = new Set([
+  'www.durham.ac.uk',
+  'www.qmul.ac.uk',
+  'www.qub.ac.uk',
+  'www.rvc.ac.uk',
 ]);
 const blockMarkers = ['access denied', 'attention required', 'human verification', 'just a moment', 'request blocked'];
 
@@ -17,11 +16,11 @@ function scholarshipLinks(entries) {
   return entries.flatMap((entry) => entry.entryState === 'available' ? entry.links : []);
 }
 
-function representativeTargets(targets, statuses) {
+function unavailableTargets(targets, statuses) {
   const byHost = new Map();
   for (const target of targets) {
     const host = new URL(target.url).hostname;
-    if (!representativeHosts.has(host) || statuses[target.id]?.health !== 'unavailable' || byHost.has(host)) continue;
+    if (alreadyRecovered.has(host) || statuses[target.id]?.health !== 'unavailable' || byHost.has(host)) continue;
     byHost.set(host, target);
   }
   return [...byHost.entries()].map(([host, target]) => ({ host, target }));
@@ -74,7 +73,7 @@ const [sources, courses, scholarships, statuses] = await Promise.all([
   readFile(join(root, 'src', 'data', 'masters-scholarship-entries.json'), 'utf8').then(JSON.parse),
   readFile(join(root, 'src', 'data', 'status.json'), 'utf8').then(JSON.parse),
 ]);
-const targets = representativeTargets([...sources, ...courses, ...scholarshipLinks(scholarships)], statuses);
+const targets = unavailableTargets([...sources, ...courses, ...scholarshipLinks(scholarships)], statuses);
 const headed = process.env.HEADED === '1';
 const browser = await chromium.launch({ channel: 'chrome', headless: !headed });
 const results = [];
