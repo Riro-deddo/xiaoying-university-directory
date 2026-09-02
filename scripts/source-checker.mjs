@@ -10,6 +10,9 @@ function base(source, previous, now) {
     lastAttemptError: _lastAttemptError,
     attemptObservedContentHash: _attemptObservedContentHash,
     missingRequiredText: _missingRequiredText,
+    checkRoute: _checkRoute,
+    checkedUrl: _checkedUrl,
+    accessAttempts: _accessAttempts,
     ...retained
   } = previous ?? {};
   return { ...retained, sourceId: source.id, checkedAt: now.toISOString() };
@@ -89,20 +92,23 @@ function successfulAttempt(source, previous, now, result, contentHash) {
   return next;
 }
 
-function successfulPageIdentityAttempt(source, previous, now, result, missing) {
+function successfulPageIdentityAttempt(source, previous, now, result, missing, access) {
   const next = withoutIdentityFingerprints({
     ...base(source, previous, now),
     health: missing.length > 0 ? 'changed' : (result.redirected ? 'redirected' : 'ok'),
     lastSuccessfulAt: now.toISOString(),
     httpStatus: result.status,
-    finalUrl: result.url || source.url,
+    finalUrl: access?.finalUrl ?? (result.url || source.url),
+    checkRoute: access?.route,
+    checkedUrl: access?.checkedUrl,
+    accessAttempts: access?.attempts,
     consecutiveFailures: 0,
   });
   if (missing.length > 0) next.missingRequiredText = missing;
   return next;
 }
 
-export async function checkSource(source, fetchImpl = fetch, previous, now = new Date()) {
+export async function checkSource(source, fetchImpl = fetch, previous, now = new Date(), options = {}) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), timeoutMs);
   const pageIdentity = source.monitorMode === 'page-identity';
@@ -114,8 +120,14 @@ export async function checkSource(source, fetchImpl = fetch, previous, now = new
 
   try {
     let result;
+    let pageAccessResult;
     if (pageIdentity) {
-      result = await fetchImpl(source.url, { method: 'GET', redirect: 'follow', signal: controller.signal, headers });
+      if (options.pageAccess) {
+        pageAccessResult = await options.pageAccess.fetch(source);
+        result = pageAccessResult.response;
+      } else {
+        result = await fetchImpl(source.url, { method: 'GET', redirect: 'follow', signal: controller.signal, headers });
+      }
     } else {
       result = await fetchImpl(source.url, { method: 'HEAD', redirect: 'follow', signal: controller.signal, headers });
       if ([405, 501].includes(result.status)) {
@@ -124,7 +136,14 @@ export async function checkSource(source, fetchImpl = fetch, previous, now = new
         result = await fetchImpl(source.url, { method: 'GET', redirect: 'follow', signal: controller.signal, headers });
       }
     }
-    const common = { ...base(source, previous, now), httpStatus: result.status, finalUrl: result.url || source.url };
+    const common = {
+      ...base(source, previous, now),
+      httpStatus: result.status,
+      finalUrl: pageAccessResult?.finalUrl ?? (result.url || source.url),
+      checkRoute: pageAccessResult?.route,
+      checkedUrl: pageAccessResult?.checkedUrl,
+      accessAttempts: pageAccessResult?.attempts,
+    };
     if (result.status === 304) {
       if (pageIdentity) {
         return withoutIdentityFingerprints(
@@ -147,13 +166,14 @@ export async function checkSource(source, fetchImpl = fetch, previous, now = new
     }
 
     if (pageIdentity) {
-      const html = await result.text();
+      const html = pageAccessResult?.html ?? await result.text();
       return successfulPageIdentityAttempt(
         source,
         previous,
         now,
         result,
-        missingRequiredText(html, source.requiredText),
+        missingRequiredText(html, pageAccessResult?.requiredText ?? source.requiredText),
+        pageAccessResult,
       );
     }
 

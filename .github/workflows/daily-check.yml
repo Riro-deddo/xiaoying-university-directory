@@ -29,7 +29,9 @@ jobs:
           fail: false
           jobSummary: true
       - name: Check official-source review state
-        run: pnpm check:sources
+        run: xvfb-run -a pnpm check:sources
+        env:
+          SOURCE_CHECK_HEADED: '1'
       - run: pnpm build:public
       - run: pnpm test:run
       - run: pnpm build

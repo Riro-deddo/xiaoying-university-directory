@@ -2,6 +2,7 @@ import { mkdir, readFile, rename, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { checkSource } from './source-checker.mjs';
+import { createPageIdentityAccess } from './source-page-access.mjs';
 
 const defaultRoot = join(dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -101,16 +102,22 @@ export async function runSourceChecks(options = {}) {
   const minimumGapMs = options.minimumGapMs ?? 600;
   const attempts = {};
   const next = {};
+  const ownsPageAccess = !options.pageAccess && options.fetchImpl === undefined;
+  const pageAccess = options.pageAccess ?? (ownsPageAccess ? createPageIdentityAccess() : undefined);
 
-  for (const [index, source] of sources.entries()) {
-    if (index > 0) await wait(minimumGapMs);
-    const now = typeof options.now === 'function' ? options.now() : (options.now ?? new Date());
-    const attempt = await checkSource(source, fetchImpl, previous[source.id], now);
-    attempts[source.id] = attempt;
-    const candidate = persistedStatus(attempt);
-    next[source.id] = hasSemanticChange(previous[source.id], candidate, source)
-      ? candidate
-      : previous[source.id];
+  try {
+    for (const [index, source] of sources.entries()) {
+      if (index > 0) await wait(minimumGapMs);
+      const now = typeof options.now === 'function' ? options.now() : (options.now ?? new Date());
+      const attempt = await checkSource(source, fetchImpl, previous[source.id], now, { pageAccess });
+      attempts[source.id] = attempt;
+      const candidate = persistedStatus(attempt);
+      next[source.id] = hasSemanticChange(previous[source.id], candidate, source)
+        ? candidate
+        : previous[source.id];
+    }
+  } finally {
+    if (ownsPageAccess) await pageAccess.close();
   }
 
   await writeJsonAtomically(auditPath, attempts);

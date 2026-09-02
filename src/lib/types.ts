@@ -166,6 +166,9 @@ export interface SourceStatus {
   observedContentHash?: string;
   consecutiveFailures?: number;
   lastAttemptError?: string;
+  checkRoute?: 'direct' | 'browser-like' | 'browser' | 'reader' | 'official-alternate' | 'fallback-exhausted';
+  checkedUrl?: string;
+  accessAttempts?: string[];
   error?: string;
 }
 
