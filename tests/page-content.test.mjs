@@ -195,9 +195,23 @@ describe('dual-direction search page', () => {
     expect(page).not.toContain('<span>硕士课程</span>');
     expect(page).not.toContain('<span>硕士奖学金</span>');
   });
+
+  it('keeps unavailable scholarship warnings in the text column instead of the icon column', () => {
+    expect(styles).toMatch(/\.source-actions \.scholarship-link-warning\{[^}]*grid-column:2/);
+  });
 });
 
 describe('published methodology and contributor guidance', () => {
+  it('documents the layered access fallback without weakening the human review boundary', () => {
+    for (const phrase of [
+      '浏览器请求',
+      '只读文本代理',
+      '不把代理返回的内容自动写入正式摘要或院校名单',
+    ]) {
+      expect(`${readme}\n${methodology}`).toContain(phrase);
+    }
+  });
+
   it('explains the navigation-only scope of official masters scholarship entries', () => {
     for (const phrase of [
       '官方硕士奖学金入口',

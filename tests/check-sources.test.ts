@@ -33,6 +33,58 @@ const okPrevious = (): SourceStatus => ({
 });
 
 describe('checkSource', () => {
+  it('records the successful fallback route while keeping page identity review semantics', async () => {
+    const pageAccess = {
+      fetch: vi.fn().mockResolvedValue({
+        response: new Response('<h1>Postgraduate courses</h1>', { status: 200 }),
+        html: '<h1>Postgraduate courses</h1>',
+        finalUrl: pageIdentitySource.url,
+        route: 'reader',
+        checkedUrl: `https://r.jina.ai/${pageIdentitySource.url}`,
+        attempts: ['direct:403', 'browser-like:403', 'reader:200'],
+      }),
+    };
+
+    const result = await checkSource(pageIdentitySource, vi.fn(), undefined, now1, { pageAccess });
+
+    expect(result).toMatchObject({
+      health: 'ok',
+      checkRoute: 'reader',
+      checkedUrl: `https://r.jina.ai/${pageIdentitySource.url}`,
+      accessAttempts: ['direct:403', 'browser-like:403', 'reader:200'],
+      lastSuccessfulAt: now1.toISOString(),
+    });
+  });
+
+  it('does not false-green a page when every safe fallback route is exhausted', async () => {
+    const previous = {
+      sourceId: pageIdentitySource.id,
+      health: 'ok',
+      lastSuccessfulAt: '2026-08-07T03:17:00.000Z',
+      consecutiveFailures: 0,
+    };
+    const pageAccess = {
+      fetch: vi.fn().mockResolvedValue({
+        response: new Response('Access denied by official site', { status: 403 }),
+        html: 'Access denied by official site',
+        finalUrl: pageIdentitySource.url,
+        route: 'fallback-exhausted',
+        checkedUrl: pageIdentitySource.url,
+        attempts: ['direct:403', 'browser-like:403', 'reader:200'],
+      }),
+    };
+
+    const result = await checkSource(pageIdentitySource, vi.fn(), previous, now1, { pageAccess });
+
+    expect(result).toMatchObject({
+      health: 'ok',
+      httpStatus: 403,
+      consecutiveFailures: 1,
+      checkRoute: 'fallback-exhausted',
+      lastSuccessfulAt: previous.lastSuccessfulAt,
+    });
+  });
+
   it('GETs page identity content without creating a content fingerprint', async () => {
     const fetchImpl = vi.fn().mockResolvedValue(new Response('<h1>Postgraduate courses</h1>', {
       status: 200,
