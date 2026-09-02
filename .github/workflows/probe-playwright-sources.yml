@@ -1,8 +1,6 @@
 name: Probe blocked official sources with Playwright
 
 on:
-  push:
-    branches: [spike/playwright-source-access]
   workflow_dispatch:
 
 permissions:
