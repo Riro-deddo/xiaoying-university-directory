@@ -45,10 +45,27 @@ test('keeps a long university name readable on a narrow phone', async ({ page },
   test.skip(testInfo.project.name !== 'mobile-webkit');
   const row = page.locator('[data-id="london-metropolitan-university"]');
   await row.scrollIntoViewIfNeeded();
-  const headingBox = await row.locator('h2').boundingBox();
+  const layout = await row.evaluate((element) => {
+    const heading = element.querySelector('h2');
 
-  expect(headingBox?.width ?? 0).toBeGreaterThan(120);
-  await expect(row).toHaveScreenshot('long-university-mobile.webp', {
-    maxDiffPixelRatio: 0.12,
+    if (!(heading instanceof HTMLElement)) {
+      throw new Error('Expected the university row to contain a heading');
+    }
+
+    const rowBox = element.getBoundingClientRect();
+    const headingBox = heading.getBoundingClientRect();
+
+    return {
+      headingWidth: headingBox.width,
+      headingWritingMode: getComputedStyle(heading).writingMode,
+      rowOverflow: element.scrollWidth - element.clientWidth,
+      rowRight: rowBox.right,
+      viewportWidth: window.innerWidth,
+    };
   });
+
+  expect(layout.headingWidth).toBeGreaterThan(120);
+  expect(layout.headingWritingMode).toBe('horizontal-tb');
+  expect(layout.rowOverflow).toBeLessThanOrEqual(1);
+  expect(layout.rowRight).toBeLessThanOrEqual(layout.viewportWidth + 1);
 });
