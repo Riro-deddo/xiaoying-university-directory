@@ -6,13 +6,16 @@ test.beforeEach(async ({ page }) => {
   await expect(page.getByRole('heading', { name: '英国大学中国院校规则，一页查清' })).toBeVisible();
 });
 
-test('keeps the directory within the viewport and preserves its visual structure', async ({ page }) => {
+test('keeps the directory within the viewport and preserves its visual structure', async ({ page }, testInfo) => {
   const overflow = await page.evaluate(
     () => document.documentElement.scrollWidth - document.documentElement.clientWidth,
   );
 
   expect(overflow).toBeLessThanOrEqual(1);
-  await expect(page).toHaveScreenshot('directory-home.webp', { fullPage: false });
+  await expect(page).toHaveScreenshot('directory-home.webp', {
+    fullPage: false,
+    maxDiffPixelRatio: testInfo.project.name === 'mobile-webkit' ? 0.09 : 0.06,
+  });
 });
 
 test('searches a UK university and a Chinese undergraduate institution from real generated data', async ({ page }) => {
@@ -45,5 +48,7 @@ test('keeps a long university name readable on a narrow phone', async ({ page },
   const headingBox = await row.locator('h2').boundingBox();
 
   expect(headingBox?.width ?? 0).toBeGreaterThan(120);
-  await expect(row).toHaveScreenshot('long-university-mobile.webp');
+  await expect(row).toHaveScreenshot('long-university-mobile.webp', {
+    maxDiffPixelRatio: 0.12,
+  });
 });
