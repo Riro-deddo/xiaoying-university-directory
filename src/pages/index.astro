@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import UiIcon from '../components/UiIcon.astro';
 import { loadInstitutions, loadRequirements, loadUniversities } from '../lib/data';
 import { buildOfficialListDisplays } from '../lib/official-list-display';
 import { sortInitialDirectoryUniversities } from '../lib/directory-dom';
@@ -80,7 +81,7 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
 
         <label class="search-box">
           <span id="search-label" class="sr-only">搜索英国大学</span>
-          <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m16 16 5 5"></path></svg>
+          <UiIcon name="search" />
           <input id="institution-search" type="search" placeholder="搜索大学中文名、英文名或简称" autocomplete="off" aria-describedby="search-help" />
         </label>
         <p id="search-help" class="search-help">按大学中文名、英文名或简称搜索，并可按公开信息状态筛选。</p>
@@ -155,7 +156,7 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
                   const sourceModel = chinaSourceActionModel(university.sources);
                   const sourceLinks = university.sources.map((source) => (
                     <a href={source.url} target="_blank" rel="noopener noreferrer">
-                      <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9"></path><path d="M19 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6"></path></svg>
+                      <UiIcon name="external-link" />
                       <span>{source.labelZh}</span>
                       <small class="rule-type">{institutionRuleTypeCopy[source.institutionRule.type].label}</small>
                       <small>{sourceHealthCopy[source.status?.health ?? 'unchecked']} · {sourceFreshnessCopy(source.status)}</small>
@@ -164,14 +165,14 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
                   const scholarshipModel = mastersScholarshipActionModel(university.mastersScholarships);
                   const scholarshipLinks = university.mastersScholarships.links.map((link) => (
                     <a href={link.url} target="_blank" rel="noopener noreferrer">
-                      <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9"></path><path d="M19 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6"></path></svg>
+                      <UiIcon name="external-link" />
                       <span>{link.labelZh}</span>
                       <small>{link.scopeZh}</small>
                       {mastersScholarshipKindCopy(link) !== link.scopeZh && (
                         <small>{mastersScholarshipKindCopy(link)}</small>
                       )}
                       {['temporary-error', 'unavailable'].includes(link.status?.health ?? 'unchecked') && (
-                        <small class="scholarship-link-warning">官网入口暂不可用，请稍后重试</small>
+                        <small class="scholarship-link-warning"><UiIcon name="alert-triangle" />官网入口暂不可用，请稍后重试</small>
                       )}
                     </a>
                   ));
@@ -179,41 +180,43 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
                     <Fragment>
                       {sourceModel.collapsed ? (
                         <details class="china-source-bundle">
-                          <summary data-source-summary>
-                            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9"></path><path d="M19 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6"></path></svg>
-                            <span>{sourceModel.label}</span>
+                          <summary class="disclosure-summary" data-source-summary>
+                            <UiIcon name="external-link" />
+                            <span class="disclosure-summary-label">{sourceModel.label}</span>
+                            <UiIcon name="chevron-down" class="disclosure-chevron" />
                           </summary>
                           <div class="china-source-bundle-list">{sourceLinks}</div>
                         </details>
                       ) : sourceLinks.length > 0 ? sourceLinks : <span class="no-source">尚无已核验的公开入口</span>}
                       <a class="masters-course-action" href={university.mastersCourse.url} target="_blank" rel="noopener noreferrer">
-                        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9"></path><path d="M19 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6"></path></svg>
+                        <UiIcon name="external-link" />
                         <span>查看全部硕士课程</span>
                         <small>硕士专业官网入口</small>
                         {['temporary-error', 'unavailable'].includes(university.mastersCourse.status?.health ?? 'unchecked') && (
-                          <small class="course-link-warning">官网入口暂不可用，请稍后重试</small>
+                          <small class="course-link-warning"><UiIcon name="alert-triangle" />官网入口暂不可用，请稍后重试</small>
                         )}
                       </a>
                       {scholarshipModel.entryState === 'no-public-entry' ? (
                         <span class="masters-scholarship-action">{scholarshipModel.label}</span>
                       ) : scholarshipModel.collapsed ? (
                         <details class="masters-scholarship-bundle">
-                          <summary data-source-summary>
-                            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9"></path><path d="M19 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6"></path></svg>
-                            <span>{scholarshipModel.label}</span>
+                          <summary class="disclosure-summary" data-source-summary>
+                            <UiIcon name="external-link" />
+                            <span class="disclosure-summary-label">{scholarshipModel.label}</span>
+                            <UiIcon name="chevron-down" class="disclosure-chevron" />
                           </summary>
                           <div class="masters-scholarship-bundle-list">{scholarshipLinks}</div>
                         </details>
                       ) : (
                         <a class="masters-scholarship-action" href={university.mastersScholarships.links[0].url} target="_blank" rel="noopener noreferrer">
-                          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9"></path><path d="M19 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6"></path></svg>
+                          <UiIcon name="external-link" />
                           <span>{scholarshipModel.label}</span>
                           <small>{university.mastersScholarships.links[0].scopeZh}</small>
                           {mastersScholarshipKindCopy(university.mastersScholarships.links[0]) !== university.mastersScholarships.links[0].scopeZh && (
                             <small>{mastersScholarshipKindCopy(university.mastersScholarships.links[0])}</small>
                           )}
                           {['temporary-error', 'unavailable'].includes(university.mastersScholarships.links[0].status?.health ?? 'unchecked') && (
-                            <small class="scholarship-link-warning">官网入口暂不可用，请稍后重试</small>
+                            <small class="scholarship-link-warning"><UiIcon name="alert-triangle" />官网入口暂不可用，请稍后重试</small>
                           )}
                         </a>
                       )}
@@ -223,7 +226,10 @@ const correctionUrl = 'https://github.com/Riro-deddo/xiaoying-university-directo
               </div>
               {(officialListPanelsByUniversity.get(university.id) ?? []).map((panel) => (
                 <details class="official-list-panel" data-list-url={panel.dataUrl} data-source-id={panel.sourceId} data-list-state="pending">
-                  <summary>{officialPanelTitle(panel.ruleType, panel.recordCount)}</summary>
+                  <summary class="disclosure-summary">
+                    <span class="disclosure-summary-label">{officialPanelTitle(panel.ruleType, panel.recordCount)}</span>
+                    <UiIcon name="chevron-down" class="disclosure-chevron" />
+                  </summary>
                   <div class="official-rule-meaning">
                     <strong>{panel.ruleSummaryZh}</strong>
                     <p><span>名单内：</span>{panel.listedMeaningZh}</p>
