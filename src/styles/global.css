@@ -8,3 +8,18 @@ body{min-width:0}
 .china-source-bundle,.masters-course-action{min-width:0;max-width:100%}.china-source-bundle{border-bottom:1px solid #d4d1cc}.china-source-bundle summary{display:grid;grid-template-columns:22px minmax(0,1fr);gap:0 10px;align-items:center;padding:8px 0;color:var(--navy);font-size:15px;cursor:pointer;overflow-wrap:anywhere}.china-source-bundle summary:focus-visible{outline:3px double var(--red);outline-offset:3px}.china-source-bundle summary svg{width:21px;fill:none;stroke:currentColor;stroke-width:1.8}.china-source-bundle[open] summary{border-bottom:1px solid #d4d1cc}.china-source-bundle-list{display:flex;flex-direction:column}.course-link-warning{color:var(--red)!important;font-weight:700}@media(max-width:800px){.source-actions,.china-source-bundle,.masters-course-action{width:100%}}@media(max-width:430px){.source-actions a,.china-source-bundle summary{overflow-wrap:anywhere}}
 .masters-scholarship-action,.masters-scholarship-bundle{min-width:0;max-width:100%}.masters-scholarship-bundle{border-bottom:1px solid #d4d1cc}.masters-scholarship-bundle summary{display:grid;grid-template-columns:22px minmax(0,1fr);gap:0 10px;align-items:center;padding:8px 0;color:var(--navy);font-size:15px;cursor:pointer;overflow-wrap:anywhere}.masters-scholarship-bundle summary:focus-visible{outline:3px double var(--red);outline-offset:3px}.masters-scholarship-bundle summary svg{width:21px;fill:none;stroke:currentColor;stroke-width:1.8}.masters-scholarship-bundle[open] summary{border-bottom:1px solid #d4d1cc}.masters-scholarship-bundle-list{display:flex;flex-direction:column}.masters-scholarship-action:not(a){padding:8px 0;color:var(--muted);font-size:13px;overflow-wrap:anywhere}.scholarship-link-warning{color:var(--red)!important;font-weight:700}@media(max-width:800px){.masters-scholarship-action,.masters-scholarship-bundle{width:100%}}@media(max-width:430px){.masters-scholarship-action,.masters-scholarship-bundle summary,.masters-scholarship-bundle-list a,.masters-scholarship-bundle-list small{overflow-wrap:anywhere}}
 .source-actions .scholarship-link-warning{grid-column:2;min-width:0;overflow-wrap:break-word;word-break:normal}
+:root{--control-min-size:44px;--radius-control:8px;--motion-fast:160ms;--ease-ui:cubic-bezier(.2,.8,.2,1)}
+.ui-icon{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
+.disclosure-summary{min-height:var(--control-min-size);display:grid;align-items:center;gap:10px;list-style:none;border-radius:var(--radius-control);transition:background-color var(--motion-fast) var(--ease-ui);user-select:none}
+.disclosure-summary::-webkit-details-marker{display:none}
+.disclosure-summary::marker{content:""}
+.disclosure-summary:hover{background:#eef2f6}
+.disclosure-summary-label{min-width:0;overflow-wrap:anywhere}
+.source-actions .disclosure-summary>.ui-icon{grid-row:auto}
+:is(.china-source-bundle,.masters-scholarship-bundle)>.disclosure-summary{grid-template-columns:22px minmax(0,1fr) 18px;padding-right:6px}
+.official-list-panel>.disclosure-summary{grid-template-columns:minmax(0,1fr) 18px}
+.disclosure-summary .disclosure-chevron{width:18px;height:18px;transition:transform var(--motion-fast) var(--ease-ui)}
+:is(.china-source-bundle,.masters-scholarship-bundle,.official-list-panel)[open]>.disclosure-summary .disclosure-chevron{transform:rotate(180deg)}
+.course-link-warning,.scholarship-link-warning{display:inline-flex;align-items:flex-start;gap:5px}
+.source-actions .ui-icon--alert-triangle{grid-row:auto;width:14px;height:14px;margin-top:2px}
+@media(prefers-reduced-motion:reduce){.disclosure-summary,.disclosure-summary .disclosure-chevron{transition:none}}

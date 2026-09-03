@@ -30,6 +30,35 @@ test('searches a UK university and a Chinese undergraduate institution from real
   await expect(page.locator('.evidence-card').first()).toBeVisible();
 });
 
+test('expands a source group with a clear, touch-safe disclosure control', async ({ page }) => {
+  const row = page.locator('[data-id="university-of-manchester"]');
+  await row.scrollIntoViewIfNeeded();
+  const details = row.locator('.china-source-bundle');
+  const summary = details.locator(':scope > summary');
+  const chevron = summary.locator('[data-ui-icon="chevron-down"]');
+
+  await expect(summary).toBeVisible();
+  await expect(chevron).toBeVisible();
+  const summaryBox = await summary.boundingBox();
+  const labelLayout = await summary.locator('.disclosure-summary-label').evaluate((element) => ({
+    width: element.getBoundingClientRect().width,
+    writingMode: getComputedStyle(element).writingMode,
+  }));
+  expect(summaryBox?.height ?? 0).toBeGreaterThanOrEqual(44);
+  expect(labelLayout.width).toBeGreaterThan(80);
+  expect(labelLayout.writingMode).toBe('horizontal-tb');
+
+  const closedTransform = await chevron.evaluate((element) => getComputedStyle(element).transform);
+  await summary.click();
+  await expect(details).toHaveAttribute('open', '');
+  const openTransform = await chevron.evaluate((element) => getComputedStyle(element).transform);
+
+  expect(openTransform).not.toBe(closedTransform);
+  await expect(row.locator('.china-source-bundle-list > a')).toHaveCount(3);
+  const overflow = await row.evaluate((element) => element.scrollWidth - element.clientWidth);
+  expect(overflow).toBeLessThanOrEqual(1);
+});
+
 test('has no serious or critical automated accessibility violations', async ({ page }) => {
   const result = await new AxeBuilder({ page })
     .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])

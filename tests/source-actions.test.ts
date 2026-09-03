@@ -181,6 +181,28 @@ describe('rendered source actions', () => {
     expect(links.map((link) => link.getAttribute('href')).sort()).toEqual(availableLinks.map((link) => link.url).sort());
   });
 
+  it('gives every expandable source panel one consistent, decorative disclosure affordance', () => {
+    const summaries = [...document.querySelectorAll<HTMLElement>(
+      ':is(.china-source-bundle, .masters-scholarship-bundle, .official-list-panel) > summary',
+    )];
+
+    expect(summaries.length).toBeGreaterThan(0);
+    for (const summary of summaries) {
+      expect(summary.classList.contains('disclosure-summary')).toBe(true);
+      const chevron = summary.querySelector<SVGElement>('[data-ui-icon="chevron-down"]');
+      expect(chevron).not.toBeNull();
+      expect(chevron?.getAttribute('aria-hidden')).toBe('true');
+      expect(chevron?.getAttribute('focusable')).toBe('false');
+    }
+
+    const decorativeIcons = [...document.querySelectorAll<SVGElement>('[data-ui-icon]')];
+    expect(decorativeIcons.length).toBeGreaterThan(summaries.length);
+    for (const icon of decorativeIcons) {
+      expect(icon.getAttribute('aria-hidden')).toBe('true');
+      expect(icon.getAttribute('focusable')).toBe('false');
+    }
+  });
+
   it('renders scholarship availability warnings without replacing the reviewed link copy', () => {
     const actions = [...document.querySelectorAll<HTMLAnchorElement>(
       '.masters-scholarship-action[href], .masters-scholarship-bundle-list > a',
