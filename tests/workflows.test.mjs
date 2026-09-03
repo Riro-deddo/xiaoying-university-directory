@@ -9,6 +9,7 @@ const dailyWorkflow = readFileSync('.github/workflows/daily-check.yml', 'utf8').
 const ciWorkflow = readFileSync('.github/workflows/ci.yml', 'utf8');
 const deployWorkflow = readFileSync('.github/workflows/deploy.yml', 'utf8');
 const rankingEditionWorkflow = readFileSync('.github/workflows/ranking-edition-check.yml', 'utf8').replace(/\r\n/g, '\n');
+const ciBrowserJob = ciWorkflow.split(/^  browser:\r?\n/mu)[1] ?? '';
 
 const officialWorkflowText = [ciWorkflow, dailyWorkflow, deployWorkflow, rankingEditionWorkflow].join('\n');
 const rankingSteps = (rankingEditionWorkflow.split('\n    steps:\n')[1] ?? '')
@@ -40,8 +41,9 @@ const dailyIssueScript = workflowGithubScript(
 );
 
 const approvedOfficialActionPins = [
-  ['actions/checkout', '3d3c42e5aac5ba805825da76410c181273ba90b1', 'v7.0.1', 4],
-  ['actions/setup-node', '820762786026740c76f36085b0efc47a31fe5020', 'v7.0.0', 4],
+  ['actions/checkout', '3d3c42e5aac5ba805825da76410c181273ba90b1', 'v7.0.1', 5],
+  ['actions/setup-node', '820762786026740c76f36085b0efc47a31fe5020', 'v7.0.0', 5],
+  ['actions/upload-artifact', '043fb46d1a93c77aae656e7c1c64a875d1fc6a0a', 'v7.0.1', 1],
   ['actions/github-script', '3a2844b7e9c422d3c10d287c895573f7108da1b3', 'v9.0.0', 2],
   ['actions/configure-pages', '45bfe0192ca1faeb007ade9deae92b16b8254a0d', 'v6.0.0', 2],
   ['actions/upload-pages-artifact', 'fc324d3547104276b827a68afc52ff2a11cc49c9', 'v5.0.0', 2],
@@ -52,12 +54,30 @@ describe('official GitHub Action pins', () => {
   it('uses only the approved Node 24-compatible official releases', () => {
     const officialUses = [...officialWorkflowText.matchAll(/uses:\s+(actions\/[^@\s]+)@([0-9a-f]{40})\s+#\s+(\S+)/g)];
 
-    expect(officialUses).toHaveLength(16);
+    expect(officialUses).toHaveLength(19);
     for (const [name, sha, version, count] of approvedOfficialActionPins) {
       const matches = officialUses.filter((match) => match[1] === name && match[2] === sha && match[3] === version);
       expect(matches, `${name}@${sha} # ${version}`).toHaveLength(count);
     }
-    expect(officialWorkflowText.match(/node-version:\s*22/g)).toHaveLength(4);
+    expect(officialWorkflowText.match(/node-version:\s*22/g)).toHaveLength(5);
+  });
+});
+
+describe('browser regression CI job', () => {
+  it('runs the browser gate on Windows after the normal verification job', () => {
+    expect(ciBrowserJob).toContain('needs: verify');
+    expect(ciBrowserJob).toContain('runs-on: windows-latest');
+    expect(ciBrowserJob).toContain('node node_modules/@playwright/test/cli.js install chromium webkit');
+    expect(ciBrowserJob).toContain('pnpm test:e2e');
+    expect(ciBrowserJob).not.toMatch(/\b(?:contents|issues|pages|security-events|id-token): write\b/u);
+  });
+
+  it('keeps failure diagnostics private and short-lived', () => {
+    expect(ciBrowserJob).toContain('actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1');
+    expect(ciBrowserJob).toContain('if: failure()');
+    expect(ciBrowserJob).toContain('path: playwright-report/');
+    expect(ciBrowserJob).toContain('retention-days: 7');
+    expect(ciBrowserJob).not.toContain('temporary-public-storage');
   });
 });
 
