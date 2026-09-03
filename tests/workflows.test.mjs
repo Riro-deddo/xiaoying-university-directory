@@ -1,4 +1,4 @@
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { mkdir, mkdtemp, rm, writeFile } from 'node:fs/promises';
 import { createRequire } from 'node:module';
 import { tmpdir } from 'node:os';
@@ -9,9 +9,13 @@ const dailyWorkflow = readFileSync('.github/workflows/daily-check.yml', 'utf8').
 const ciWorkflow = readFileSync('.github/workflows/ci.yml', 'utf8');
 const deployWorkflow = readFileSync('.github/workflows/deploy.yml', 'utf8');
 const rankingEditionWorkflow = readFileSync('.github/workflows/ranking-edition-check.yml', 'utf8').replace(/\r\n/g, '\n');
+const qualityWorkflowPath = '.github/workflows/workflow-quality.yml';
+const qualityWorkflow = existsSync(qualityWorkflowPath) ? readFileSync(qualityWorkflowPath, 'utf8') : '';
+const dependabotPath = '.github/dependabot.yml';
+const dependabotConfig = existsSync(dependabotPath) ? readFileSync(dependabotPath, 'utf8') : '';
 const ciBrowserJob = ciWorkflow.split(/^  browser:\r?\n/mu)[1] ?? '';
 
-const officialWorkflowText = [ciWorkflow, dailyWorkflow, deployWorkflow, rankingEditionWorkflow].join('\n');
+const officialWorkflowText = [ciWorkflow, dailyWorkflow, deployWorkflow, rankingEditionWorkflow, qualityWorkflow].join('\n');
 const rankingSteps = (rankingEditionWorkflow.split('\n    steps:\n')[1] ?? '')
   .split(/(?=^      - )/mu)
   .filter((step) => step.startsWith('      - '));
@@ -41,7 +45,7 @@ const dailyIssueScript = workflowGithubScript(
 );
 
 const approvedOfficialActionPins = [
-  ['actions/checkout', '3d3c42e5aac5ba805825da76410c181273ba90b1', 'v7.0.1', 5],
+  ['actions/checkout', '3d3c42e5aac5ba805825da76410c181273ba90b1', 'v7.0.1', 7],
   ['actions/setup-node', '820762786026740c76f36085b0efc47a31fe5020', 'v7.0.0', 5],
   ['actions/upload-artifact', '043fb46d1a93c77aae656e7c1c64a875d1fc6a0a', 'v7.0.1', 1],
   ['actions/github-script', '3a2844b7e9c422d3c10d287c895573f7108da1b3', 'v9.0.0', 2],
@@ -54,12 +58,35 @@ describe('official GitHub Action pins', () => {
   it('uses only the approved Node 24-compatible official releases', () => {
     const officialUses = [...officialWorkflowText.matchAll(/uses:\s+(actions\/[^@\s]+)@([0-9a-f]{40})\s+#\s+(\S+)/g)];
 
-    expect(officialUses).toHaveLength(19);
+    expect(officialUses).toHaveLength(21);
     for (const [name, sha, version, count] of approvedOfficialActionPins) {
       const matches = officialUses.filter((match) => match[1] === name && match[2] === sha && match[3] === version);
       expect(matches, `${name}@${sha} # ${version}`).toHaveLength(count);
     }
     expect(officialWorkflowText.match(/node-version:\s*22/g)).toHaveLength(5);
+  });
+});
+
+describe('repository maintenance automation', () => {
+  it('checks workflow syntax and security with immutable tool versions', () => {
+    expect(qualityWorkflow).toContain('actionlint_1.7.12_linux_amd64.tar.gz');
+    expect(qualityWorkflow).toContain('8aca8db96f1b94770f1b0d72b6dddcb1ebb8123cb3712530b08cc387b349a3d8');
+    expect(qualityWorkflow).toContain('zizmorcore/zizmor-action@70fb788f84895a7701f5643d103d587e460b5c99 # v0.6.3');
+    expect(qualityWorkflow).toContain('version: v1.30.0');
+    expect(qualityWorkflow).toContain('advanced-security: false');
+    expect(qualityWorkflow).toContain('min-severity: medium');
+    expect(qualityWorkflow).toContain('min-confidence: high');
+    expect(qualityWorkflow).toMatch(/^permissions: \{\}$/mu);
+  });
+
+  it('opens only a small weekly set of grouped dependency updates', () => {
+    expect(dependabotConfig.match(/package-ecosystem: /g)).toHaveLength(2);
+    expect(dependabotConfig).toContain('package-ecosystem: npm');
+    expect(dependabotConfig).toContain('package-ecosystem: github-actions');
+    expect(dependabotConfig.match(/interval: weekly/g)).toHaveLength(2);
+    expect(dependabotConfig.match(/open-pull-requests-limit: 2/g)).toHaveLength(2);
+    expect(dependabotConfig.match(/update-types: \[minor, patch\]/g)).toHaveLength(2);
+    expect(dependabotConfig.match(/default-days: 7/g)).toHaveLength(2);
   });
 });
 
