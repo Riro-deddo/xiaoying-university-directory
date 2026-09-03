@@ -31,4 +31,3 @@ Strengthen repository governance, dependency maintenance, GitHub Actions safety,
 - axe reports no automatically detectable serious or critical accessibility violations in the tested page states.
 - Every third-party GitHub Action is pinned to a full commit SHA, and actionlint/zizmor accept the workflows at the agreed threshold.
 - The daily workflow remains functionally unchanged and can still make a normal fast-forward push to `main`.
-

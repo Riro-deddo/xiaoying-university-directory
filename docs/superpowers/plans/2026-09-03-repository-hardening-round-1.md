@@ -296,4 +296,3 @@ git commit -m "test: finalize repository hardening checks"
 - [ ] **Step 5: Offer the standard branch integration choices**
 
 Follow `superpowers:finishing-a-development-branch` after fresh verification.
-
