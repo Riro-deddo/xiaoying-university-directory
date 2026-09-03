@@ -2,7 +2,7 @@ import AxeBuilder from '@axe-core/playwright';
 import { expect, test } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {
-  await page.goto('/');
+  await page.goto('./');
   await expect(page.getByRole('heading', { name: '英国大学中国院校规则，一页查清' })).toBeVisible();
 });
 
